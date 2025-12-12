@@ -1740,27 +1740,27 @@ export default function Branchen() {
     <>
       <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
       
-      <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
             Über <span className="text-blue-900">600 Branchen</span> vertrauen auf Taskey
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Passt Taskey zu Ihnen? Finden Sie es raus!
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12">
           <div className="relative">
             <input
               type="text"
               placeholder="Branche suchen..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-4 text-lg rounded-full border-2 border-gray-200 focus:border-blue-900 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
+              className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-full border-2 border-gray-200 focus:border-blue-900 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all"
             />
             {searchTerm && (
               <button

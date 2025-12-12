@@ -11,25 +11,25 @@ export default function Contact() {
     <>
       <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
       
-      <section id="contact" className="py-12 bg-blue-900 text-white relative overflow-hidden">
+      <section id="contact" className="py-8 sm:py-12 md:py-16 bg-blue-900 text-white relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-8">
-          <div className="inline-block mb-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-block mb-6 sm:mb-8">
             <img 
               src="/logoblue.png" 
               alt="Taskey Logo" 
-              className="h-32 w-auto mx-auto opacity-90"
+              className="h-20 sm:h-24 md:h-32 w-auto mx-auto opacity-90"
             />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 px-4">
             Fragen zu Gebrauch oder Preispaketen?
           </h2>
-          <p className="text-lg text-blue-100">
+          <p className="text-base sm:text-lg text-blue-100 px-4">
             Wir sind für Sie da – persönlich und kompetent
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           {/* Circular contact info */}
           <div className="space-y-4">
             {[

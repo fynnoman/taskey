@@ -66,16 +66,16 @@ export default function CookieBanner() {
     <>
       {/* Main Banner */}
       {!showSettings && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-2 sm:p-4">
           {/* Banner Content */}
           <div className="bg-white rounded-lg shadow-xl max-w-5xl mx-auto border-2 border-gray-200">
-            <div className="p-6">
-              <div className="mb-4">
-                <h2 className="text-xl font-bold text-gray-900 mb-3">
+            <div className="p-4 sm:p-6">
+              <div className="mb-3 sm:mb-4">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                   Cookie-Einstellungen
                 </h2>
                 
-                <div className="text-gray-700 space-y-3 text-sm leading-relaxed">
+                <div className="text-gray-700 space-y-2 sm:space-y-3 text-xs sm:text-sm leading-relaxed">
                   <p>
                     Wir verwenden auf unserer Website Cookies und ähnliche Technologien, um den technischen Betrieb 
                     der Website sicherzustellen, grundlegende Funktionen bereitzustellen und – sofern Sie ausdrücklich 
@@ -97,25 +97,27 @@ export default function CookieBanner() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 mt-4">
+              <div className="flex flex-col gap-2 sm:gap-3 mt-3 sm:mt-4">
                 <button
                   onClick={acceptAll}
-                  className="flex-1 bg-blue-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition text-sm"
+                  className="flex-1 bg-blue-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-semibold hover:bg-blue-700 transition text-xs sm:text-sm"
                 >
                   Alle Cookies akzeptieren
                 </button>
-                <button
-                  onClick={acceptNecessary}
-                  className="flex-1 bg-gray-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-gray-700 transition text-sm"
-                >
-                  Nur notwendige Cookies
-                </button>
-                <button
-                  onClick={() => setShowSettings(true)}
-                  className="flex-1 bg-white text-gray-800 px-5 py-2.5 rounded-md font-semibold border-2 border-gray-300 hover:bg-gray-50 transition text-sm"
-                >
-                  Einstellungen anpassen
-                </button>
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                  <button
+                    onClick={acceptNecessary}
+                    className="flex-1 bg-gray-600 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-semibold hover:bg-gray-700 transition text-xs sm:text-sm"
+                  >
+                    Nur notwendige
+                  </button>
+                  <button
+                    onClick={() => setShowSettings(true)}
+                    className="flex-1 bg-white text-gray-800 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-semibold border-2 border-gray-300 hover:bg-gray-50 transition text-xs sm:text-sm"
+                  >
+                    Anpassen
+                  </button>
+                </div>
               </div>
             </div>
           </div>
