@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taskey Website
 
-## Getting Started
+Eine moderne Website für Taskey - die Dienstleistungssoftware Nr. 1 aus Deutschland für effiziente Betriebe.
 
-First, run the development server:
+## 🚀 Projekt-Übersicht
+
+Diese Website präsentiert Taskey, eine umfassende Business-Management-Software für Handwerksbetriebe und Dienstleister. Die Website ist vollständig in deutscher Sprache und bietet:
+
+- **Homepage** mit Hero-Section, Features, Testimonials, FAQ und Kontakt
+- **Features-Seite** mit detaillierter Funktionsübersicht
+- **Pricing-Seite** mit flexiblen Preispaketen und Vergleichstabelle
+- **About-Seite** mit Unternehmensinfo, Mission und Werten
+- Impressum, Datenschutz und AGB
+
+## 🎨 Design
+
+- **Farbschema**: Weiß (Haupt), Dunkelgrau, Dunkelblau (Akzent)
+- **Framework**: Next.js 14 mit App Router
+- **Styling**: Tailwind CSS
+- **Responsive**: Mobile-First Design
+
+## 🛠️ Installation & Start
+
+Entwicklungsserver starten:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die Website ist dann unter [http://localhost:3000](http://localhost:3000) verfügbar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build für Produktion:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📁 Projektstruktur
 
-To learn more about Next.js, take a look at the following resources:
+```
+/app
+  /about          - Über uns Seite
+  /features       - Funktionsübersicht
+  /pricing        - Preise und Pakete
+  /impressum      - Impressum
+  /datenschutz    - Datenschutzerklärung
+  /agb            - Allgemeine Geschäftsbedingungen
+  page.tsx        - Homepage
+  layout.tsx      - Root Layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/components
+  /home           - Homepage-Komponenten
+    Hero.tsx
+    FeaturePreview.tsx
+    Testimonials.tsx
+    BusinessSize.tsx
+    AllFeatures.tsx
+    FAQ.tsx
+    Contact.tsx
+  Header.tsx      - Hauptnavigation
+  Footer.tsx      - Footer
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Features
 
-## Deploy on Vercel
+- ✅ Responsive Design für alle Geräte
+- ✅ Interaktive FAQ mit Dropdowns
+- ✅ Pricing-Tabelle mit monatlich/quartalsweise/jährlich Toggle
+- ✅ Moderne UI mit Tailwind CSS
+- ✅ SEO-optimiert mit Next.js Metadata
+- ✅ Schnelle Performance durch Next.js App Router
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Lizenz
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2025 Taskey. Alle Rechte vorbehalten.

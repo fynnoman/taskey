@@ -1,0 +1,8 @@
+export { default as Hero } from './Hero';
+export { default as FeaturePreview } from './FeaturePreview';
+export { default as Testimonials } from './Testimonials';
+export { default as BusinessSize } from './BusinessSize';
+export { default as AllFeatures } from './AllFeatures';
+export { default as Branchen } from './Branchen';
+export { default as FAQ } from './FAQ';
+export { default as Contact } from './Contact';
