@@ -15,35 +15,38 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create email subject and body
-    const subject = encodeURIComponent('🎯 DEMO BUCHEN - Neue Anfrage');
-    const body = encodeURIComponent(`Hallo Taskey Team,
+    try {
+      // Send email via API
+      const response = await fetch('/api/send-demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-ich interessiere mich für eine Demo von Taskey.
+      const data = await response.json();
 
-Meine Kontaktdaten:
-👤 Name: ${formData.name}
-📧 Email: ${formData.email}
-📱 Telefon: ${formData.phone}
-
-Bitte kontaktieren Sie mich für einen Demo-Termin.
-
-Mit freundlichen Grüßen
-${formData.name}`);
-
-    // Open email client with pre-filled data
-    window.location.href = `mailto:fynnschulzonline@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Reset form and close modal
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '' });
+      if (response.ok) {
+        // Success - show confirmation and close modal
+        alert('✅ Vielen Dank! Ihre Demo-Anfrage wurde erfolgreich versendet. Wir melden uns in Kürze bei Ihnen.');
+        setFormData({ name: '', email: '', phone: '' });
+        onClose();
+      } else {
+        // Error from server
+        alert('❌ ' + (data.error || 'Es gab ein Problem beim Senden Ihrer Anfrage. Bitte versuchen Sie es erneut.'));
+      }
+    } catch (error) {
+      // Network or other error
+      console.error('Error:', error);
+      alert('❌ Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
+    } finally {
       setIsSubmitting(false);
-      onClose();
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -142,7 +145,7 @@ ${formData.name}`);
 
             {/* Info text */}
             <p className="text-xs text-gray-500">
-              Nach dem Absenden öffnet sich Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht.
+              Ihre Anfrage wird direkt an unser Team gesendet. Wir melden uns in Kürze bei Ihnen.
             </p>
 
             {/* Submit button */}
