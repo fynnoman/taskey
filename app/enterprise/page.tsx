@@ -226,6 +226,61 @@ export default function EnterprisePage() {
           </div>
         </section>
 
+        {/* Titan Card Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-block mb-4">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-gray-900 text-sm font-bold px-6 py-2 rounded-full">
+                  EXKLUSIV FÜR ENTERPRISE
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
+                Die Taskey <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Titan Karte</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Ein Symbol für Premium-Status und exklusive Vorteile – für Ihre Leader im Enterprise-Paket
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Card Image */}
+              <div className="relative group perspective-1000">
+                <img 
+                  src="/taskeycard.png" 
+                  alt="Taskey Titan Karte" 
+                  className="w-full h-auto transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-3"
+                  style={{ transformStyle: 'preserve-3d' }}
+                />
+              </div>
+
+              {/* Features */}
+              <div className="space-y-6">
+                <div className="p-4 hover:translate-x-2 transition-all">
+                  <h3 className="text-xl font-bold text-white mb-2">Premium-Design</h3>
+                  <p className="text-gray-300">Elegante Metallkarte mit exklusivem Titan-Finish und individueller Gravur</p>
+                </div>
+
+                <div className="p-4 hover:translate-x-2 transition-all">
+                  <h3 className="text-xl font-bold text-white mb-2">VIP-Zugang</h3>
+                  <p className="text-gray-300">Schnellerer Support, exklusive Events und Premium-Features für Ihre Leader</p>
+                </div>
+
+                <div className="p-4 hover:translate-x-2 transition-all">
+                  <h3 className="text-xl font-bold text-white mb-2">Status-Symbol</h3>
+                  <p className="text-gray-300">Zeigen Sie Führungsstärke und gehören Sie zur Elite der Taskey-Nutzer</p>
+                </div>
+
+                <div className="mt-8 p-6 rounded-xl">
+                  <p className="text-center text-white font-semibold text-lg">
+                    Jeder Leader im Enterprise-Paket erhält automatisch eine personalisierte Titan Karte
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
