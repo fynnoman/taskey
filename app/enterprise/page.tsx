@@ -109,7 +109,7 @@ export default function EnterprisePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
                   icon: "/manager.png",
@@ -153,19 +153,6 @@ export default function EnterprisePage() {
                 </div>
               ))}
             </div>
-
-            {/* Centered Feature */}
-            <div className="flex justify-center">
-              <div className="p-6 flex gap-4 hover:scale-105 transition-all max-w-2xl">
-                <div className="flex-shrink-0">
-                  <img src="/plus2.png" alt="Benutzerdefinierte Rollen" className="w-16 h-16 opacity-100" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Benutzerdefinierte Rollen</h3>
-                  <p className="text-gray-300">Erstellen Sie individuelle Rollen mit spezifischen Berechtigungen für Ihre Organisationsstruktur</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -194,6 +181,7 @@ export default function EnterprisePage() {
                     { feature: "Mitarbeiteranzahl", enterprise: "Unbegrenzt" },
                     { feature: "Leader-Rollen", enterprise: "Unbegrenzt" },
                     { feature: "Fachkraft-Rollen", enterprise: "Unbegrenzt" },
+                    { feature: "Benutzerdefinierte Rollen", enterprise: "✓" },
                     { feature: "Support", enterprise: "Dediziert + SLA" },
                     { feature: "Onboarding", enterprise: "Persönlich + Workshops" },
                     { feature: "Custom-Features", enterprise: "✓" },
