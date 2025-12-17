@@ -32,7 +32,6 @@ export default function EnterprisePage() {
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400 rounded-full blur-3xl"></div>
         </div>
       </div>
-
       <main className="relative z-10 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 text-white relative">
@@ -129,7 +128,7 @@ export default function EnterprisePage() {
                 {
                   icon: "/sicherheit.png",
                   title: "Erweiterte Sicherheit",
-                  description: "Zusätzliche Sicherheitsmaßnahmen, On-Premise-Optionen und dedizierte Infrastruktur"
+                  description: "Zusätzliche Sicherheitsmaßnahmen und dedizierte Infrastruktur"
                 },
                 {
                   icon: "/onboarding.png",

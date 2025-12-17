@@ -18,7 +18,7 @@ export default function PricingPage() {
       limits: [
         "Max. 15 aktive Aufträge",
         "Max. 5 Projekte",
-        "1 Standort",
+        "5 Standorte",
         "Basis-Analytics",
         "Standard-Support",
       ],
@@ -39,7 +39,7 @@ export default function PricingPage() {
       limits: [
         "Max. 100 aktive Aufträge",
         "Max. 50 Projekte",
-        "Mehrere Standorte",
+        "Unbegrenzte Standorte",
         "Erweiterte Analytics & Reports",
         "Priorisierter Support",
       ],
@@ -78,7 +78,7 @@ export default function PricingPage() {
         { name: "Mitarbeiteranzahl", easy: "1–19 MA", pro: "1–49 MA", expert: "1–149 MA" },
         { name: "Aktive Aufträge", easy: "Max. 15", pro: "Max. 100", expert: "Unbegrenzt" },
         { name: "Projekte", easy: "Max. 5", pro: "Max. 50", expert: "Unbegrenzt" },
-        { name: "Standorte", easy: "1 Standort", pro: "Mehrere", expert: "Unbegrenzt" },
+        { name: "Standorte", easy: "5 Standorte", pro: "Unbegrenzt", expert: "Unbegrenzt" },
       ],
     },
     {
