@@ -28,25 +28,31 @@ export default function RollenPage() {
           {/* Quick Overview */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Kurz & klar
+              Ein Überblick
             </h2>
             <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="p-6 bg-gray-50 rounded-lg">
-                <div className="text-4xl mb-3">👷</div>
+              <div className="p-6 bg-gray-50 rounded-lg border-2 border-blue-900 hover:shadow-xl hover:scale-105 transition-all cursor-pointer">
+                <div className="flex justify-center mb-3">
+                  <img src="/Unbenanntes_Projekt 26.png" alt="Mitarbeiter" className="w-16 h-16 opacity-100" />
+                </div>
                 <h3 className="font-bold text-gray-900 mb-2">Mitarbeiter</h3>
                 <p className="text-sm text-gray-600">
                   Arbeiten beim Kunden und dokumentieren den Einsatz
                 </p>
               </div>
-              <div className="p-6 bg-blue-50 rounded-lg border-2 border-blue-900">
-                <div className="text-4xl mb-3">🧑‍💻</div>
+              <div className="p-6 bg-gray-50 rounded-lg border-2 border-blue-900 hover:shadow-xl hover:scale-105 transition-all cursor-pointer">
+                <div className="flex justify-center mb-3">
+                  <img src="/fachkraft2.png" alt="Fachkraft" className="w-24 h-24 opacity-100" />
+                </div>
                 <h3 className="font-bold text-gray-900 mb-2">Fachkraft</h3>
                 <p className="text-sm text-gray-600">
                   Planen, kontrollieren und steuern aus dem Büro
                 </p>
               </div>
-              <div className="p-6 bg-gray-50 rounded-lg">
-                <div className="text-4xl mb-3">👑</div>
+              <div className="p-6 bg-gray-50 rounded-lg border-2 border-blue-900 hover:shadow-xl hover:scale-105 transition-all cursor-pointer">
+                <div className="flex justify-center mb-3">
+                  <img src="/leader2.png" alt="Leader" className="w-24 h-24 opacity-100" />
+                </div>
                 <h3 className="font-bold text-gray-900 mb-2">Leader</h3>
                 <p className="text-sm text-gray-600">
                   Führen das Unternehmen und haben volle Kontrolle
@@ -64,7 +70,9 @@ export default function RollenPage() {
           {/* Mitarbeiter */}
           <div id="mitarbeiter" className="scroll-mt-24 bg-white rounded-xl shadow-xl p-8 md:p-12 border-l-8 border-gray-700">
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-6xl">👷</div>
+              <div>
+                <img src="/Unbenanntes_Projekt 26.png" alt="Mitarbeiter" className="w-24 h-24 opacity-100" />
+              </div>
               <div>
                 <h2 className="text-3xl font-bold text-gray-900">Mitarbeiter</h2>
                 <p className="text-lg text-gray-600">Außendienst / Ausführung beim Kunden</p>
@@ -140,7 +148,9 @@ export default function RollenPage() {
           {/* Fachkraft */}
           <div id="fachkraft" className="scroll-mt-24 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-xl p-8 md:p-12 border-l-8 border-blue-900">
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-6xl">🧑‍💻</div>
+              <div>
+                <img src="/fachkraft2.png" alt="Fachkraft" className="w-24 h-24 opacity-100" />
+              </div>
               <div>
                 <h2 className="text-3xl font-bold text-gray-900">Fachkraft</h2>
                 <p className="text-lg text-gray-600">Büro / Organisation / Controlling</p>
@@ -217,7 +227,9 @@ export default function RollenPage() {
           {/* Leader */}
           <div id="leader" className="scroll-mt-24 bg-gradient-to-br from-yellow-50 to-white rounded-xl shadow-xl p-8 md:p-12 border-l-8 border-yellow-500">
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-6xl">👑</div>
+              <div>
+                <img src="/leader2.png" alt="Leader" className="w-16 h-16 opacity-100" />
+              </div>
               <div>
                 <h2 className="text-3xl font-bold text-gray-900">Leader</h2>
                 <p className="text-lg text-gray-600">Unternehmer / Chef / Geschäftsführung</p>

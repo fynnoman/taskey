@@ -61,7 +61,9 @@ export default function EnterprisePage() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-6xl mb-4">👥</div>
+                <div className="flex justify-center mb-4">
+                  <img src="/1502.png" alt="150+ Mitarbeiter" className="w-24 h-24 opacity-100" />
+                </div>
                 <h3 className="text-2xl font-bold text-white mb-4">150+ Mitarbeiter</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Ihr Unternehmen hat mehr als 149 Mitarbeiter und benötigt eine skalierbare Lösung für große Teams
@@ -69,7 +71,9 @@ export default function EnterprisePage() {
               </div>
 
               <div className="p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-6xl mb-4">⭐</div>
+                <div className="flex justify-center mb-4">
+                  <img src="/plus2.png" alt="Erweiterte Rollen" className="w-24 h-24 opacity-100" />
+                </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Erweiterte Rollen</h3>
                 <p className="text-gray-300 leading-relaxed">
                   Sie benötigen deutlich mehr Leader oder Fachkräfte als in den Standard-Paketen enthalten sind
@@ -77,7 +81,9 @@ export default function EnterprisePage() {
               </div>
 
               <div className="p-8 text-center hover:scale-105 transition-transform">
-                <div className="text-6xl mb-4">🔧</div>
+                <div className="flex justify-center mb-4">
+                  <img src="/indi2.png" alt="Individuelle Anforderungen" className="w-24 h-24 opacity-100" />
+                </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Individuelle Anforderungen</h3>
                 <p className="text-gray-300 leading-relaxed">
                   SLA-Vereinbarungen, Custom-Features, spezielle Prozesse oder Integrationen sind erforderlich
@@ -102,48 +108,45 @@ export default function EnterprisePage() {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: "🎯",
+                  icon: "/manager.png",
                   title: "Dedizierter Account Manager",
                   description: "Ein persönlicher Ansprechpartner, der Ihr Unternehmen kennt und proaktiv unterstützt"
                 },
                 {
-                  icon: "⚡",
+                  icon: "/priorität.png",
                   title: "Priority Support & SLA",
                   description: "Garantierte Reaktionszeiten und vorrangige Bearbeitung Ihrer Anfragen"
                 },
                 {
-                  icon: "🔌",
+                  icon: "/custom.png",
                   title: "Custom-Integrationen",
                   description: "Maßgeschneiderte Schnittstellen zu Ihren bestehenden Systemen und Prozessen"
                 },
                 {
-                  icon: "🎨",
-                  title: "White-Label-Optionen",
-                  description: "Anpassung an Ihr Corporate Design und Branding"
-                },
-                {
-                  icon: "🔒",
+                  icon: "/sicherheit.png",
                   title: "Erweiterte Sicherheit",
                   description: "Zusätzliche Sicherheitsmaßnahmen, On-Premise-Optionen und dedizierte Infrastruktur"
                 },
                 {
-                  icon: "📊",
-                  title: "Custom-Reporting",
-                  description: "Individuell konfigurierbare Reports und Dashboards nach Ihren Anforderungen"
-                },
-                {
-                  icon: "🎓",
+                  icon: "/onboarding.png",
                   title: "Umfassendes Onboarding",
                   description: "Persönliche Schulungen, Workshops und Trainings für Ihre Teams"
                 },
                 {
-                  icon: "🔄",
+                  icon: "/flexibel.png",
                   title: "Flexible Vertragsgestaltung",
                   description: "Individuelle Laufzeiten, Zahlungsmodelle und Rahmenverträge"
                 },
+                {
+                  icon: "/plus2.png",
+                  title: "Benutzerdefinierte Rollen",
+                  description: "Erstellen Sie individuelle Rollen mit spezifischen Berechtigungen für Ihre Organisationsstruktur"
+                },
               ].map((benefit, index) => (
                 <div key={index} className="p-6 flex gap-4 hover:scale-105 transition-all">
-                  <div className="text-4xl flex-shrink-0">{benefit.icon}</div>
+                  <div className="flex-shrink-0">
+                    <img src={benefit.icon} alt={benefit.title} className="w-16 h-16 opacity-100" />
+                  </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
                     <p className="text-gray-300">{benefit.description}</p>
@@ -211,13 +214,15 @@ export default function EnterprisePage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: "🏗️", title: "Große Bauunternehmen", desc: "Mit mehreren Standorten und hunderten Mitarbeitern" },
-                { icon: "🏢", title: "Facility Management", desc: "Komplexe Prozesse und viele Kundenstandorte" },
-                { icon: "🚚", title: "Logistik-Konzerne", desc: "Große Flotten und internationale Teams" },
-                { icon: "🏭", title: "Industrie-Betriebe", desc: "Spezielle Anforderungen und Sicherheitsstandards" },
+                { icon: "/kran.png", title: "Große Bauunternehmen", desc: "Mit mehreren Standorten und hunderten Mitarbeitern" },
+                { icon: "/facilty.png", title: "Facility Management", desc: "Komplexe Prozesse und viele Kundenstandorte" },
+                { icon: "/truck.png", title: "Logistik-Konzerne", desc: "Große Flotten und internationale Teams" },
+                { icon: "/fabric.png", title: "Industrie-Betriebe", desc: "Spezielle Anforderungen und Sicherheitsstandards" },
               ].map((useCase, index) => (
                 <div key={index} className="p-6 text-center hover:scale-105 transition-transform">
-                  <div className="text-5xl mb-3">{useCase.icon}</div>
+                  <div className="flex justify-center mb-3">
+                    <img src={useCase.icon} alt={useCase.title} className="w-20 h-20 opacity-100" />
+                  </div>
                   <h3 className="text-lg font-bold text-white mb-2">{useCase.title}</h3>
                   <p className="text-sm text-gray-300">{useCase.desc}</p>
                 </div>
@@ -270,6 +275,40 @@ export default function EnterprisePage() {
                   <p className="text-center text-white font-semibold text-lg">
                     Jeder Leader im Enterprise-Paket erhält automatisch eine personalisierte Titan Karte
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Commitment Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-relaxed">
+                  Mit Taskey Enterprise stehen wir mit unserem Namen für Ihren Erfolg
+                </h2>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Als Enterprise-Kunde sind Sie nicht nur ein Nutzer – Sie sind unser Partner. 
+                  Wir verpflichten uns persönlich, Ihre Prozesse zu verstehen, Ihre Ziele zu unterstützen 
+                  und gemeinsam mit Ihnen zu wachsen.
+                </p>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Ihre Herausforderungen werden zu unseren Herausforderungen. Mit einem dedizierten Team 
+                  an Ihrer Seite garantieren wir, dass Taskey perfekt auf Ihre Bedürfnisse zugeschnitten ist.
+                </p>
+              </div>
+
+              {/* Blurred Grey Card with Image */}
+              <div className="relative backdrop-blur-xl bg-gray-500/20 rounded-3xl p-8 shadow-2xl border border-white/10">
+                <div className="relative">
+                  <img 
+                    src="/64d0fc940ef0c78160b64eee5f05d46747231c6c594626cc4a5773c6003fe073.png" 
+                    alt="Taskey Enterprise Team" 
+                    className="w-full h-auto rounded-2xl shadow-xl"
+                  />
                 </div>
               </div>
             </div>

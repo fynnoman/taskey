@@ -323,21 +323,27 @@ export default function PricingPage() {
             </h3>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Link href="/rollen#mitarbeiter" className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                <div className="text-4xl mb-2">👤</div>
+                <div className="flex justify-center mb-2">
+                  <img src="/Unbenanntes_Projekt 26.png" alt="Mitarbeiter" className="w-16 h-16 opacity-100" />
+                </div>
                 <h4 className="font-bold text-gray-900 mb-2">Mitarbeiter</h4>
                 <p className="text-3xl font-bold text-blue-900 mb-1">Basis</p>
                 <p className="text-sm text-gray-600 mb-3">Standard-Rolle im Paket enthalten</p>
                 <p className="text-xs text-blue-900 font-semibold">Mehr erfahren →</p>
               </Link>
-              <Link href="/rollen#fachkraft" className="bg-white rounded-lg p-6 text-center shadow-md border-2 border-blue-900 hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                <div className="text-4xl mb-2">⭐</div>
+              <Link href="/rollen#fachkraft" className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                <div className="flex justify-center mb-2">
+                  <img src="/fachkraft2.png" alt="Fachkraft" className="w-24 h-24 opacity-100" />
+                </div>
                 <h4 className="font-bold text-gray-900 mb-2">Fachkraft</h4>
                 <p className="text-3xl font-bold text-blue-900 mb-1">+5€</p>
                 <p className="text-sm text-gray-600 mb-3">Pro zusätzlicher Fachkraft / Monat</p>
                 <p className="text-xs text-blue-900 font-semibold">Mehr erfahren →</p>
               </Link>
-              <Link href="/rollen#leader" className="bg-white rounded-lg p-6 text-center shadow-md border-2 border-blue-900 hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                <div className="text-4xl mb-2">👑</div>
+              <Link href="/rollen#leader" className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
+                <div className="flex justify-center mb-2">
+                  <img src="/leader2.png" alt="Leader" className="w-24 h-24 opacity-100" />
+                </div>
                 <h4 className="font-bold text-gray-900 mb-2">Leader</h4>
                 <p className="text-3xl font-bold text-blue-900 mb-1">+9€</p>
                 <p className="text-sm text-gray-600 mb-3">Pro zusätzlichem Leader / Monat</p>
@@ -509,15 +515,21 @@ export default function PricingPage() {
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-4xl mb-3">👥</div>
+                  <div className="flex justify-center mb-3">
+                    <img src="/1502.png" alt="Mehr als 149 Mitarbeitern" className="w-16 h-16 opacity-100" />
+                  </div>
                   <p className="font-semibold text-lg">Mehr als 149 Mitarbeitern</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-4xl mb-3">⭐</div>
+                  <div className="flex justify-center mb-3">
+                    <img src="/plus2.png" alt="Überschreitung Rollen-Kontingente" className="w-16 h-16 opacity-100" />
+                  </div>
                   <p className="font-semibold text-lg">Deutlicher Überschreitung der Rollen-Kontingente</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-4xl mb-3">🔧</div>
+                  <div className="flex justify-center mb-3">
+                    <img src="/indi2.png" alt="Individuelle Anforderungen" className="w-16 h-16 opacity-100" />
+                  </div>
                   <p className="font-semibold text-lg">Individuellen Anforderungen (SLA, Custom-Features, Sonderprozesse)</p>
                 </div>
               </div>
