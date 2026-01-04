@@ -41,16 +41,19 @@ export default function EnterprisePage() {
                 Taskey <span className="text-cyan-400">Enterprise</span>
               </h1>
               <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto mb-10 leading-relaxed">
-                Maßgeschneiderte Lösungen für große Organisationen mit individuellen Anforderungen
+                Maßgeschneiderte, exklusive Lösungen für führende Organisationen — verfügbar nur für ausgewählte Partner
               </p>
               <div className="text-2xl md:text-3xl font-semibold text-cyan-400">
-                Preis auf Anfrage
+                Aufnahme nur auf Anfrage & Prüfung
               </div>
               <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
-                Individuelle, auf Ihr Unternehmen zugeschnittene Preise werden auf Anfrage erstellt. Kontaktieren Sie unser Enterprise‑Team für ein persönliches Angebot und eine maßgeschneiderte Kalkulation.
+                Wir bieten ein streng limitiertes Enterprise‑Programm an. Bewerbungen werden individuell geprüft und nur Unternehmen akzeptiert, die unsere hohen Anforderungen an Größe, Sicherheitsstandards und geschäftliche Relevanz erfüllen.
               </p>
               <p className="mt-2 text-sm text-gray-300 max-w-3xl mx-auto">
-                Hinweis: Die Preise werden pro Mitarbeiter berechnet und individuell auf Ihre Teamgröße sowie Anforderungen abgestimmt. Die faktische Abrechnung erfolgt monatlich, unabhängig von der vereinbarten Vertragslaufzeit.
+                Voraussetzungen können beispielsweise sein: Mindestgröße (150+ Angestellte), nachweisbare Marktführerschaft oder strategische Bedeutung sowie erweiterte Integrationsanforderungen.
+              </p>
+              <p className="mt-4 text-sm text-cyan-300 font-medium max-w-3xl mx-auto">
+                Hinweis: Die Aufnahme erfolgt nach individueller Prüfung.
               </p>
             </div>
           </div>
@@ -64,38 +67,38 @@ export default function EnterprisePage() {
                 Wann ist Enterprise das Richtige für Sie?
               </h2>
               <p className="text-xl text-gray-300">
-                Ein Enterprise-Paket wird angeboten bei:
+                Wir empfehlen Enterprise für Unternehmen mit einzigartigen Anforderungen und strategischer Relevanz
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="p-8 text-center hover:scale-105 transition-transform">
+              <div className="p-8 text-center">
                 <div className="flex justify-center mb-4">
-                  <img src="/1502.png" alt="150+ Mitarbeiter" className="w-24 h-24 opacity-100" />
+                  <img src="/1502.png" alt="150+ Angestellte" className="w-24 h-24 opacity-100" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">150+ Mitarbeiter</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">150+ Angestellte</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Ihr Unternehmen hat mehr als 149 Mitarbeiter und benötigt eine skalierbare Lösung für große Teams
+                  Skalierung auf Konzernebene: Wenn Ihre Organisation groß genug ist, dass Standard‑Pakete an ihre Grenzen stoßen.
                 </p>
               </div>
 
-              <div className="p-8 text-center hover:scale-105 transition-transform">
+              <div className="p-8 text-center">
                 <div className="flex justify-center mb-4">
-                  <img src="/plus2.png" alt="Erweiterte Rollen" className="w-24 h-24 opacity-100" />
+                  <img src="/plus2.png" alt="Strategische Bedeutung & Marktfuehrerschaft" className="w-24 h-24 opacity-100" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Erweiterte Rollen</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Strategische Bedeutung</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Sie benötigen deutlich mehr Chefs oder Fachkräfte als in den Standard‑Stufen enthalten sind
+                  Marktführende oder strategisch wichtige Organisationen, deren Anforderungen besondere Priorität verdienen.
                 </p>
               </div>
 
-              <div className="p-8 text-center hover:scale-105 transition-transform">
+              <div className="p-8 text-center">
                 <div className="flex justify-center mb-4">
-                  <img src="/indi2.png" alt="Individuelle Anforderungen" className="w-24 h-24 opacity-100" />
+                  <img src="/indi2.png" alt="Kritische Geschäftsprozesse und Compliance" className="w-24 h-24 opacity-100" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Individuelle Anforderungen</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Kritische Prozesse & Compliance</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  SLA-Vereinbarungen, Custom-Features, spezielle Prozesse oder Integrationen sind erforderlich
+                  Höchste Anforderungen an Sicherheit, Integrationen oder SLA‑Verpflichtungen — wir bauen für Sie individuelle Lösungen.
                 </p>
               </div>
             </div>
@@ -144,10 +147,10 @@ export default function EnterprisePage() {
                 {
                   icon: "/flexibel.png",
                   title: "Flexible Vertragsgestaltung",
-                  description: "Individuelle Laufzeiten und Vertragsmodelle; die Abrechnung erfolgt stets monatlich"
+                  description: "Individuelle Laufzeiten und Vertragsmodelle"
                 },
               ].map((benefit, index) => (
-                <div key={index} className="p-6 flex gap-4 hover:scale-105 transition-all">
+                <div key={index} className="p-6 flex gap-4">
                   <div className="flex-shrink-0">
                     <img src={benefit.icon} alt={benefit.title} className="w-16 h-16 opacity-100" />
                   </div>
@@ -157,16 +160,6 @@ export default function EnterprisePage() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Button to Pricing */}
-            <div className="flex justify-center mt-12">
-              <Link
-                href="/pricing"
-                className="px-8 py-4 bg-white text-blue-900 font-bold rounded-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl text-lg"
-              >
-                Zu den Angeboten
-              </Link>
             </div>
           </div>
         </section>
@@ -234,7 +227,7 @@ export default function EnterprisePage() {
                 { icon: "/truck.png", title: "Logistik-Konzerne", desc: "Große Flotten und internationale Teams" },
                 { icon: "/fabric.png", title: "Industrie-Betriebe", desc: "Spezielle Anforderungen und Sicherheitsstandards" },
               ].map((useCase, index) => (
-                <div key={index} className="p-6 text-center hover:scale-105 transition-transform">
+                <div key={index} className="p-6 text-center">
                   <div className="flex justify-center mb-3">
                     <img src={useCase.icon} alt={useCase.title} className="w-20 h-20 opacity-100" />
                   </div>
@@ -271,26 +264,42 @@ export default function EnterprisePage() {
 
               {/* Features */}
               <div className="space-y-6">
-                <div className="p-4 hover:translate-x-2 transition-all">
+                <div className="p-4">
                   <h3 className="text-xl font-bold text-white mb-2">Premium-Design</h3>
                   <p className="text-gray-300">Elegante Metallkarte mit exklusivem Titan-Finish und individueller Gravur</p>
                 </div>
 
-                <div className="p-4 hover:translate-x-2 transition-all">
+                <div className="p-4">
                   <h3 className="text-xl font-bold text-white mb-2">VIP-Zugang</h3>
                   <p className="text-gray-300">Schnellerer Support, exklusive Events und Premium-Features für Ihre Chefs</p>
                 </div>
 
-                <div className="p-4 hover:translate-x-2 transition-all">
+                <div className="p-4">
                   <h3 className="text-xl font-bold text-white mb-2">Status-Symbol</h3>
                   <p className="text-gray-300">Zeigen Sie Führungsstärke und gehören Sie zur Elite der Taskey-Nutzer</p>
                 </div>
 
                 <div className="mt-8 p-6 rounded-xl">
                   <p className="text-center text-white font-semibold text-lg">
-                    Jeder Chef im Enterprise‑Paket erhält automatisch eine personalisierte Titan Karte
+                    Jeder ausgewählte Chef im Enterprise‑Paket erhält eine personalisierte Titan Karte — limitierte Auflage, durchnummeriert und nur für eingeladene Partner.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* NFC Chip Feature Section */}
+        <section className="py-12">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/30">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-white mb-2">Integrierter NFC-Chip für schnellen Zugriff</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Die Titan Karte ist mehr als nur ein Prestige-Objekt. Mit dem integrierten NFC-Chip können Ihre Chefs sich blitzschnell 
+                  per Smartphone in der Taskey-App einloggen – ohne Passwort-Eingabe. Einfach Karte ans Handy halten und sofort Zugriff 
+                  auf alle wichtigen Funktionen erhalten. Maximale Sicherheit trifft auf höchsten Komfort.
+                </p>
               </div>
             </div>
           </div>
@@ -341,12 +350,12 @@ export default function EnterprisePage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button
-                onClick={() => setDemoModalOpen(true)}
+              <a
+                href="mailto:enterprise@taskey.de?subject=Bewerbung%20für%20Taskey%20Enterprise"
                 className="px-8 py-4 bg-cyan-400 text-gray-900 font-bold rounded-lg hover:bg-cyan-300 transition-all hover:scale-105 shadow-lg text-lg"
               >
-                Enterprise-Demo anfragen
-              </button>
+                Für Enterprise bewerben
+              </a>
               <a
                 href="mailto:enterprise@taskey.de"
                 className="px-8 py-4 text-white border-2 border-white/50 font-bold rounded-lg hover:bg-white/10 hover:border-white transition-all hover:scale-105 text-lg backdrop-blur-sm"
@@ -354,7 +363,7 @@ export default function EnterprisePage() {
                 E-Mail an Enterprise-Team
               </a>
             </div>
-            <p className="text-sm text-gray-300 mb-8">Hinweis: Auch bei Enterprise-Angeboten erfolgt die Rechnungsstellung monatlich, sofern nicht anders schriftlich vereinbart.</p>
+            <p className="text-sm text-gray-300 mb-8">Hinweis: Aufnahme ist selektiv und erfolgt nach Prüfung.</p>
 
             <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-300 mt-12">
               <div className="flex flex-col items-center gap-2">

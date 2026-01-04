@@ -68,7 +68,7 @@ export default function PricingPage() {
                     <span className="text-xl">€</span>
                   </div>
                   <span className={`text-lg font-semibold mt-2 ${opt.badge ? "text-blue-100" : "text-gray-700"}`}>pro Mitarbeiter pro Monat</span>
-                  <span className="text-sm text-gray-500 mt-1">Abrechnung: {opt.id === 'monthly' ? 'monatlich' : opt.id === 'quarterly' ? 'quartalsweise (monatlich fakturiert)' : 'jährlich (monatlich fakturiert)'}</span>
+                  <span className="text-sm text-gray-500 mt-1">Abrechnung: monatlich</span>
                   {opt.badge && <div className="mt-3 inline-block bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">BESTER WERT</div>}
                 </div>
 
@@ -92,12 +92,12 @@ export default function PricingPage() {
             <p className="text-sm text-gray-600">Anmerkung: Die faktische Abrechnung erfolgt monatlich. Die gewählte Laufzeit ändert die Vertragsbindung und den Preis pro Mitarbeiter, nicht die Art der Rechnungslegung.</p>
           </div>
 
-          {/* Enterprise CTA Button - bleibt bestehen, steht über den Standard‑Optionen */}
+          {/* Enterprise CTA Button */}
           <div className="text-center mb-20">
             <p className="text-lg text-gray-700 mb-4 font-semibold">Sind Sie ein Großkonzern und möchten Taskeys vollen Umfang kennenlernen?</p>
             <a
               href="#enterprise"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-400 text-gray-900 font-bold rounded-lg hover:bg-cyan-300 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-400 text-gray-900 font-bold rounded-lg hover:bg-cyan-300 transition shadow-lg"
             >
               <span>Jetzt Enterprise kennenlernen</span>
             </a>
@@ -203,7 +203,7 @@ export default function PricingPage() {
                 <thead>
                   <tr className="text-left text-sm text-gray-700">
                     <th className="px-4 py-2">Laufzeit</th>
-                    <th className="px-4 py-2">Preis / Monat</th>
+                    <th className="px-4 py-2">Preis / Mitarbeiter / Monat</th>
                     <th className="px-4 py-2">Abrechnung</th>
                     <th className="px-4 py-2">Jahreskosten (Beispiel)</th>
                     <th className="px-4 py-2">Ersparnis vs. monatlich</th>
@@ -218,7 +218,7 @@ export default function PricingPage() {
                       <tr key={opt.id} className="border-t border-gray-100">
                         <td className="px-4 py-3 font-semibold text-gray-900">{opt.title}</td>
                         <td className="px-4 py-3 text-gray-700">{opt.pricePerMonth}€</td>
-                        <td className="px-4 py-3 text-gray-700">{opt.id === 'monthly' ? 'monatlich' : opt.id === 'quarterly' ? 'quartalsweise' : 'jährlich'}</td>
+                        <td className="px-4 py-3 text-gray-700">monatlich</td>
                         <td className="px-4 py-3 text-gray-700">{yearlyTotal.toLocaleString('de-DE')}€</td>
                         <td className="px-4 py-3 text-gray-700">{opt.id === 'monthly' ? '–' : `${savings}%`}</td>
                       </tr>
@@ -242,15 +242,15 @@ export default function PricingPage() {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="flex justify-center mb-3">
-                    <img src="/1502.png" alt="Mehr als 149 Mitarbeitern" className="w-16 h-16 opacity-100" />
+                    <img src="/1502.png" alt="150+ Angestellte" className="w-16 h-16 opacity-100" />
                   </div>
-                  <p className="font-semibold text-lg">Mehr als 149 Mitarbeitern</p>
+                  <p className="font-semibold text-lg">150+ Angestellte</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="flex justify-center mb-3">
-                    <img src="/plus2.png" alt="Überschreitung Rollen-Kontingente" className="w-16 h-16 opacity-100" />
+                    <img src="/plus2.png" alt="Signifikanter Anstieg des Nutzerbedarfs" className="w-16 h-16 opacity-100" />
                   </div>
-                  <p className="font-semibold text-lg">Deutlicher Überschreitung der Rollen-Kontingente</p>
+                  <p className="font-semibold text-lg">Signifikanter Anstieg des Nutzerbedarfs</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                   <div className="flex justify-center mb-3">
@@ -263,11 +263,11 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/enterprise"
-                className="inline-flex items-center gap-2 bg-cyan-400 text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-cyan-300 transition-all hover:scale-105 shadow-lg group"
+                className="inline-flex items-center gap-2 bg-cyan-400 text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-cyan-300 transition shadow-lg"
               >
                 <span>Mehr zum Enterprise-Paket</span>
                 <svg 
-                  className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
+                  className="w-5 h-5" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -277,7 +277,7 @@ export default function PricingPage() {
               </Link>
               <Link
                 href="#contact"
-                className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
+                className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg"
               >
                 Kontakt aufnehmen
               </Link>
