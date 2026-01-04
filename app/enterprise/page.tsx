@@ -79,7 +79,7 @@ export default function EnterprisePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Erweiterte Rollen</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Sie benötigen deutlich mehr Leader oder Fachkräfte als in den Standard-Paketen enthalten sind
+                  Sie benötigen deutlich mehr Chefs oder Fachkräfte als in den Standard‑Stufen enthalten sind
                 </p>
               </div>
 
@@ -188,7 +188,7 @@ export default function EnterprisePage() {
                 <tbody>
                   {[
                     { feature: "Mitarbeiteranzahl", enterprise: "Unbegrenzt" },
-                    { feature: "Leader-Rollen", enterprise: "Unbegrenzt" },
+                    { feature: "Chefs-Rollen", enterprise: "Unbegrenzt" },
                     { feature: "Fachkraft-Rollen", enterprise: "Unbegrenzt" },
                     { feature: "Benutzerdefinierte Rollen", enterprise: "✓" },
                     { feature: "Support", enterprise: "Dediziert + SLA" },
@@ -248,7 +248,7 @@ export default function EnterprisePage() {
                 Die Taskey <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent">Titan Karte</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Ein Symbol für Premium-Status und exklusive Vorteile – für Ihre Leader im Enterprise-Paket
+                Ein Symbol für Premium‑Status und exklusive Vorteile – für Ihre Chefs im Enterprise‑Paket
               </p>
             </div>
 
@@ -272,7 +272,7 @@ export default function EnterprisePage() {
 
                 <div className="p-4 hover:translate-x-2 transition-all">
                   <h3 className="text-xl font-bold text-white mb-2">VIP-Zugang</h3>
-                  <p className="text-gray-300">Schnellerer Support, exklusive Events und Premium-Features für Ihre Leader</p>
+                  <p className="text-gray-300">Schnellerer Support, exklusive Events und Premium-Features für Ihre Chefs</p>
                 </div>
 
                 <div className="p-4 hover:translate-x-2 transition-all">
@@ -282,7 +282,7 @@ export default function EnterprisePage() {
 
                 <div className="mt-8 p-6 rounded-xl">
                   <p className="text-center text-white font-semibold text-lg">
-                    Jeder Leader im Enterprise-Paket erhält automatisch eine personalisierte Titan Karte
+                    Jeder Chef im Enterprise‑Paket erhält automatisch eine personalisierte Titan Karte
                   </p>
                 </div>
               </div>
@@ -314,7 +314,7 @@ export default function EnterprisePage() {
               <div className="relative backdrop-blur-xl bg-gray-500/20 rounded-3xl p-8 shadow-2xl border border-white/10">
                 <div className="relative">
                   <img 
-                    src="/64d0fc940ef0c78160b64eee5f05d46747231c6c594626cc4a5773c6003fe073.png" 
+                    src="/353E4782-1D75-4428-945C-6C7B500A53D0.png" 
                     alt="Taskey Enterprise Team" 
                     className="w-full h-auto rounded-2xl shadow-xl"
                   />
