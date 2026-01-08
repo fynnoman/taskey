@@ -78,8 +78,7 @@ export default function PricingPage() {
                     <li>• Voller Funktionsumfang aller Module</li>
                     <li>• Unbegrenzte Benutzerkonten</li>
                     <li>• Unbegrenzte Projekte & Aufträge</li>
-                    <li>• API, Integrationen & Exporte</li>
-                    <li>• Standard‑SLA & Support (Enterprise siehe unten)</li>
+                    <li>• Standard - Support</li>
                   </ul>
                 </div>
 
