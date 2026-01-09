@@ -8,9 +8,9 @@ export default function FeaturePreview() {
       image: "/Unbenanntes_Projekt 3.png",
     },
     {
-      title: "Intelligente Auftragsplanung",
+      title: "Intuitive Auftragsplanung",
       description:
-        "KI-gestützte Routenoptimierung und automatische Terminvergabe.",
+        "Routenoptimierung und automatische Terminvergabe.",
       color: "from-blue-700 to-blue-900",
       image: "/Unbenanntes_Projekt 5.png",
     },

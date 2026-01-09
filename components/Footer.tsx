@@ -62,8 +62,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Kontakt</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>+49 (174 545 9801)</li>
-              <li>kontaktvarsdevelopment@gmail.com</li>
+              <li>Generelle Fragen: +49 151 68488999</li>
+              <li>Technische Fragen: +49 174 5459801</li>
+              <li>fynn@vars-development.com</li>
               <li>In der Acht 44</li>
               <li>66333 Völklingen, Deutschland</li>
             </ul>

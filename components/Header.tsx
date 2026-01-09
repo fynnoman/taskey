@@ -47,6 +47,12 @@ export default function Header() {
               Was kann Taskey?
             </Link>
             <Link
+              href="/demo"
+              className="text-gray-700 hover:text-blue-900 transition font-semibold"
+            >
+              Live Demo
+            </Link>
+            <Link
               href="/pricing"
               className="text-gray-700 hover:text-blue-900 transition"
             >
@@ -131,6 +137,13 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Was kann Taskey?
+              </Link>
+              <Link
+                href="/demo"
+                className="text-gray-700 hover:text-blue-900 transition font-semibold"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Live Demo
               </Link>
               <Link
                 href="/pricing"
