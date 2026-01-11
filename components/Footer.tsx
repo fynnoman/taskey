@@ -59,6 +59,16 @@ export default function Footer() {
                   Kontakt
                 </Link>
               </li>
+              <li>
+                <a 
+                  href="https://taskey.vars-development.com/support" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition"
+                >
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 

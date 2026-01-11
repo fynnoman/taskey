@@ -69,6 +69,14 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex space-x-4">
+            <a
+              href="https://taskey.vars-development.com/support"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-gray-700 hover:text-blue-900 transition font-medium"
+            >
+              Support
+            </a>
             <button
               onClick={() => setDemoModalOpen(true)}
               className="px-4 py-2 text-blue-900 border border-blue-900 rounded-lg hover:bg-blue-50 transition"
@@ -161,6 +169,15 @@ export default function Header() {
               >
                 Über uns
               </Link>
+              <a
+                href="https://taskey.vars-development.com/support"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-blue-900 transition font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Support
+              </a>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
