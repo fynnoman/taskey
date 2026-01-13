@@ -321,16 +321,16 @@ export default function PricingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+498001234567"
+              href="tel:+4915168488999"
               className="px-8 py-4 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition"
             >
-              +49 (0) 800 123 4567
+              +49 151 684 88999
             </a>
             <a
-              href="mailto:kontakt@taskey.de"
+              href="mailto:fynn@vars-development.com"
               className="px-8 py-4 text-blue-900 border-2 border-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition"
             >
-              kontakt@taskey.de
+              fynn@vars-development.com
             </a>
           </div>
           <p className="mt-8 text-gray-600">
