@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import ManagerRequestModal from "@/components/ManagerRequestModal";
 
 export default function PricingPage() {
+  const [isManagerModalOpen, setIsManagerModalOpen] = useState(false);
+
   // Neuer Pricing‑Ansatz: Preise pro Mitarbeiter abhängig von gewählter Laufzeit
   const pricingOptions = [
     {
@@ -35,11 +38,8 @@ export default function PricingPage() {
       <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-600 text-white py-3 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shimmer_3s_ease-in-out_infinite]"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
-          <p className="text-sm md:text-base font-bold mb-1">
-            🎉 Exklusives Angebot: 20% Rabatt auf alle Pakete! 🎉
-          </p>
-          <p className="text-xs md:text-sm">
-            ⏰ Nur noch <strong>2 Monate</strong> gültig – Sichern Sie sich jetzt Ihre Ersparnis!
+          <p className="text-sm md:text-base font-bold">
+            20% Rabatt auf alle Pakete – Nur noch 2 Monate gültig
           </p>
         </div>
       </div>
@@ -310,6 +310,140 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Premium Dedicated Contact Section */}
+      <section className="relative py-24 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-950 overflow-hidden">
+        {/* Elegant background patterns */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Main Content - Centered */}
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-amber-500 to-amber-400 text-gray-900 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">
+              Ihr persönlicher Manager
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              Ein Manager <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">nur für Sie</span>
+            </h2>
+
+            <p className="text-xl md:text-2xl text-gray-400 mb-4 max-w-2xl mx-auto">
+              Ihr dedizierter Taskey Manager ist ausschließlich für Ihr Unternehmen zuständig
+            </p>
+            
+            <p className="text-lg text-gray-500 mb-12 max-w-xl mx-auto">
+              Eine Person bei Taskey, die sich zu 100% Ihnen widmet und durchschnittlich 50 Stunden pro Monat einspart
+            </p>
+
+            {/* Stats Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-6">
+                <div className="text-cyan-400 text-4xl font-black mb-2">50h</div>
+                <div className="text-gray-400 text-sm">Durchschnittliche Zeitersparnis</div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-6">
+                <div className="text-cyan-400 text-4xl font-black mb-2">1:1</div>
+                <div className="text-gray-400 text-sm">Persönlicher Manager</div>
+              </div>
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl p-6">
+                <div className="text-cyan-400 text-4xl font-black mb-2">24/7</div>
+                <div className="text-gray-400 text-sm">Erreichbarkeit</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "Ihr Manager kennt Sie",
+                  desc: "Versteht Ihre Prozesse, Ziele und Herausforderungen"
+                },
+                {
+                  title: "Manager-Direktleitung",
+                  desc: "Sofortiger Kontakt zu Ihrem persönlichen Manager"
+                },
+                {
+                  title: "Proaktiver Manager",
+                  desc: "Optimiert kontinuierlich Ihre Abläufe"
+                },
+                {
+                  title: "Manager vor Ort",
+                  desc: "Ihr Manager kommt persönlich zu Ihnen"
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-5 hover:border-cyan-400/50 transition-all duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                    <div>
+                      <h4 className="font-bold text-white mb-1">{feature.title}</h4>
+                      <p className="text-gray-500 text-sm">{feature.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pricing Card - Centered */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-3xl p-8 md:p-10">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+                <div>
+                  <div className="text-gray-500 text-sm uppercase tracking-wide mb-2">Zubuchbar zu jedem Paket</div>
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-6xl font-black text-white">239€</span>
+                    <span className="text-gray-500 text-xl">/ Woche</span>
+                  </div>
+                  <p className="text-cyan-400 font-semibold mt-2 text-sm">zzgl. MwSt. | Jederzeit kündbar</p>
+                </div>
+                <div className="text-center md:text-right">
+                  <div className="inline-block bg-amber-500 text-gray-900 text-xs font-black px-3 py-1.5 rounded-full">
+                    BEGRENZTES ANGEBOT
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <button
+                  onClick={() => setIsManagerModalOpen(true)}
+                  className="flex-1 group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-lg rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/50 text-center overflow-hidden"
+                >
+                  <span className="relative z-10">Manager sichern</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                </button>
+                
+                <a
+                  href="tel:+4915168488999"
+                  className="flex-1 px-8 py-4 bg-gray-800 border-2 border-gray-700 text-white font-bold text-lg rounded-xl hover:border-gray-600 hover:bg-gray-750 transition-all duration-300 text-center"
+                >
+                  Beratung
+                </a>
+              </div>
+
+              {/* Mehr erfahren Link */}
+              <div className="text-center">
+                <Link 
+                  href="/premium-manager" 
+                  className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm transition-colors duration-200 inline-flex items-center gap-2 group"
+                >
+                  <span>Mehr über Ihren persönlichen Manager erfahren</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -338,6 +472,12 @@ export default function PricingPage() {
           </p>
         </div>
       </section>
+
+      {/* Manager Request Modal */}
+      <ManagerRequestModal 
+        isOpen={isManagerModalOpen} 
+        onClose={() => setIsManagerModalOpen(false)} 
+      />
     </main>
   );
 }
