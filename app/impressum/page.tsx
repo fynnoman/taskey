@@ -25,21 +25,14 @@ export default function ImpressumPage() {
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Kontakt</h2>
           <p>
-            Telefon: +49 (174 545 9801)<br />
-            E-Mail: kontaktvarsdevelopment@gmail.com
-          </p>
-
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Registereintrag</h2>
-          <p>
-            Eintragung im Handelsregister<br />
-            Registergericht: Amtsgericht Berlin<br />
-            Registernummer: HRB 123456
+            Telefon: +49 151 684 88999<br />
+            E-Mail: fynn@vars-development.com
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Umsatzsteuer-ID</h2>
           <p>
             Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:<br />
-            DE123456789
+            DE458914838
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
