@@ -22,8 +22,9 @@ export default function DarkHeader() {
               alt="Taskey Logo - Dienstleistungssoftware" 
               width={40}
               height={40}
-              className="h-9 w-auto"
+              className="h-9 w-9"
               priority
+              sizes="40px"
             />
             <span className="text-xl font-bold text-white">TASKEY</span>
           </Link>

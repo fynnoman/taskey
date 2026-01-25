@@ -36,6 +36,7 @@ export default function FeaturePreview() {
               width={64}
               height={64}
               className="mx-auto mb-4"
+              sizes="64px"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

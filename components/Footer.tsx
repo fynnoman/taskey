@@ -15,7 +15,8 @@ export default function Footer() {
                 alt="Taskey Logo" 
                 width={32}
                 height={32}
-                className="h-8 w-auto"
+                className="h-8 w-8"
+                sizes="32px"
               />
               <h3 className="text-xl font-bold">Taskey</h3>
             </div>

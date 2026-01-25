@@ -6,9 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://taskey.de/sitemap.xml',
+    sitemap: 'https://www.taskey.de/sitemap.xml',
   }
 }

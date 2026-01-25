@@ -50,6 +50,7 @@ export default function AboutPage() {
                 height={128}
                 className="mx-auto"
                 priority
+                sizes="128px"
               />
             </div>
             <h2 className="text-4xl font-bold text-gray-900">
@@ -179,6 +180,7 @@ export default function AboutPage() {
                 width={128}
                 height={128}
                 className="mx-auto"
+                sizes="128px"
               />
             </div>
             <h2 className="text-4xl font-bold text-gray-900">

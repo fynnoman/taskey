@@ -3,8 +3,10 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import { WebVitals } from "./web-vitals";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.taskey.de'),
   title: {
     default: "Taskey - Dienstleistungssoftware für über 600 Branchen | Made in Germany",
     template: "%s | Taskey"
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://taskey.de",
+    url: "https://www.taskey.de",
     siteName: "Taskey",
     title: "Taskey - Dienstleistungssoftware für über 600 Branchen",
     description: "Automatische Zeiterfassung, intelligente Auftragsplanung & digitale Rechnungsstellung für Dienstleistungsbetriebe. Made in Germany, DSGVO-konform.",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     images: ["/logobittt.png"],
   },
   alternates: {
-    canonical: "https://taskey.de",
+    canonical: "https://www.taskey.de",
   },
   verification: {
     google: "your-google-verification-code-here",
@@ -62,7 +64,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
+      <head>
+        <link rel="preconnect" href="https://signup.vars-development.com" />
+        <link rel="preconnect" href="https://taskey.vars-development.com" />
+        <link rel="dns-prefetch" href="https://signup.vars-development.com" />
+        <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
+      </head>
       <body className="antialiased">
+        <WebVitals />
         <Header />
         {children}
         <Footer />
