@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import DemoBookingModal from "../DemoBookingModal";
 
@@ -15,10 +16,14 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-8">
           <div className="inline-block mb-6 sm:mb-8">
-            <img 
+            <Image 
               src="/logoblue.png" 
               alt="Taskey Logo" 
+              width={128}
+              height={128}
               className="h-20 sm:h-24 md:h-32 w-auto mx-auto opacity-90"
+              sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 128px"
+              quality={85}
             />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 px-4">

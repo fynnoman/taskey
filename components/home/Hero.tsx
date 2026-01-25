@@ -65,6 +65,8 @@ export default function Hero() {
                   WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
                 }}
                 priority
+                fetchPriority="high"
+                quality={85}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

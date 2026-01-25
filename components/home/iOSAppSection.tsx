@@ -53,6 +53,7 @@ export default function IOSAppSection() {
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="w-full h-auto block"
                   >
                     <source src="/Taskey (Neue iOS-App).mov" type="video/mp4" />

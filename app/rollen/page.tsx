@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function RollenPage() {
   return (
@@ -11,10 +12,14 @@ export default function RollenPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="mb-8">
-              <img 
+              <Image 
                 src="/logoblue.png" 
                 alt="Taskey Logo" 
+                width={96}
+                height={96}
                 className="h-24 w-auto mx-auto"
+                sizes="96px"
+                quality={85}
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

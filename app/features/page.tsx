@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Image from 'next/image';
 import DemoBookingModal from '@/components/DemoBookingModal';
 
 // Metadata will be set via head tags
@@ -339,10 +340,14 @@ export default function FeaturesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="mb-8">
-              <img 
+              <Image 
                 src="/logoblue.png" 
                 alt="Taskey Logo" 
+                width={144}
+                height={144}
                 className="h-36 w-auto mx-auto"
+                sizes="144px"
+                quality={85}
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -509,10 +514,14 @@ export default function FeaturesPage() {
             <div className="text-center">
               {/* Big Logo */}
               <div className="mb-10">
-                <img 
+                <Image 
                   src="/843B6B8E-CED8-4FF8-8C63-B354140A7BC5e5e1f940b1a8d4df34c43ec444a293f3116e09c2a98dcecd8e8882d3099b7c2d.png" 
                   alt="Taskey Logo" 
+                  width={192}
+                  height={192}
                   className="h-48 w-auto mx-auto opacity-90"
+                  sizes="192px"
+                  quality={85}
                 />
               </div>
               
