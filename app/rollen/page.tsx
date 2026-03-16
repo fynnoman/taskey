@@ -102,7 +102,7 @@ export default function RollenPage() {
                   {[
                     "Eigene Aufträge sehen, starten & beenden",
                     "Zeit-, Pausen- & Fahrterfassung",
-                    "Automatisches GPS-Tracking",
+                    "GPS-Standort beim Auftragsstart/-ende (kein Dauertracking)",
                     "Fotos & Dokumente zum Auftrag hochladen",
                     "Abschlussberichte ausfüllen",
                     "Digitale Kundensignatur erfassen",

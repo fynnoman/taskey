@@ -325,8 +325,8 @@ export default function PricingPage() {
                     { text: 'Besorgungsfahrten', dim: false },
                     { text: '45 NFC-Tags inklusive', dim: false },
                     { text: 'Fotogalerie für Projekte & Aufträge', dim: false },
-                    { text: 'Live-Tracking (Echtzeit)', dim: false },
-                    { text: 'Routenoptimierung + Live-Tracking', dim: false },
+                    { text: 'Karten-Übersicht (letzter Auftragseinsatzort)', dim: false },
+                    { text: 'Routenoptimierung + Auftragskarte', dim: false },
                     { text: '1 TB Speicher', dim: false },
                     { text: 'Unbegrenzte Historie (GoBD)', dim: false },
                     { text: 'Echtzeit-Rentabilität pro Projekt', dim: false },
@@ -383,7 +383,7 @@ export default function PricingPage() {
               'Dashboards & Auswertungen',
               'Rollen- & Rechteverwaltung',
               'Kundenverwaltung',
-              'Live-Map & Mitarbeiter-Roadmap',
+              'Karten-Übersicht (letzter Auftragseinsatzort)',
             ].map((text, i) => (
               <div key={i} className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 border border-gray-100 shadow-sm">
                 <svg className="w-4 h-4 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
