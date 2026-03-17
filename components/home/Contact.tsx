@@ -2,18 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import DemoBookingModal from "../DemoBookingModal";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const { t } = useLanguage();
   
   return (
     <>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
-      
       <section id="contact" className="pt-16 pb-20 sm:pt-20 sm:pb-24 md:pt-24 bg-gray-50 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-12">
@@ -95,12 +90,12 @@ export default function Contact() {
                 {t("contact.cta.subtitle")}
               </p>
               <div className="space-y-3">
-                <button
-                  onClick={() => setDemoModalOpen(true)}
+                <Link
+                  href="/demo"
                   className="block w-full px-5 py-3 bg-gray-900 text-white text-center font-bold rounded-xl hover:bg-gray-800 transition-colors text-sm"
                 >
-                  {t("contact.cta.demo")}
-                </button>
+                  Live Demo ansehen
+                </Link>
                 <Link
                   href="https://signup.vars-development.com"
                   target="_blank"

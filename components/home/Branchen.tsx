@@ -1,12 +1,11 @@
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
-import DemoBookingModal from '../DemoBookingModal';
+import Link from 'next/link';
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Branchen() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [selectedBranche, setSelectedBranche] = useState<string | null>(null);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -1869,8 +1868,6 @@ export default function Branchen() {
 
   return (
     <>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
-      
       <section className="relative pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-24 md:pb-28 bg-white">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-[160px]">
@@ -1955,12 +1952,12 @@ export default function Branchen() {
                     <div className="text-4xl mb-2">🤔</div>
                     <p className="text-gray-900 font-semibold mb-2">Keine passende Branche gefunden</p>
                     <p className="text-sm text-gray-500 mb-4">Aber keine Sorge – Taskey passt sich vielen Branchen an!</p>
-                    <button
-                      onClick={() => setDemoModalOpen(true)}
+                    <Link
+                      href="/demo"
                       className="text-sm text-blue-600 hover:text-blue-700 font-semibold underline"
                     >
                       Jetzt Beratung anfordern
-                    </button>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -2012,12 +2009,12 @@ export default function Branchen() {
               <p className="text-gray-500 mb-4">
                 Aber keine Sorge – Taskey ist flexibel und passt sich vielen Dienstleistungsbetrieben an!
               </p>
-              <button
-                onClick={() => setDemoModalOpen(true)}
+              <Link
+                href="https://signup.vars-development.com"
                 className="inline-block px-8 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all"
               >
                 {t("branchen.cta")}
-              </button>
+              </Link>
             </div>
           </div>
         )}
@@ -2031,20 +2028,20 @@ export default function Branchen() {
             Entdecken Sie, wie Taskey Ihren Betrieb effizienter macht
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => setDemoModalOpen(true)}
-              className="px-8 py-4 bg-gray-900 text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors"
-            >
-              {t("branchen.cta")}
-            </button>
-            <a
+            <Link
               href="https://signup.vars-development.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border border-gray-300 text-gray-700 text-lg font-semibold rounded-xl hover:border-gray-400 transition-colors"
+              className="px-8 py-4 bg-gray-900 text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors"
             >
               {t("hero.cta.trial")}
-            </a>
+            </Link>
+            <Link
+              href="/demo"
+              className="px-8 py-4 border border-gray-300 text-gray-700 text-lg font-semibold rounded-xl hover:border-gray-400 transition-colors"
+            >
+              Live Demo ansehen
+            </Link>
           </div>
         </div>
       </div>

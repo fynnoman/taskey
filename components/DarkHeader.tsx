@@ -3,16 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import DemoBookingModal from "./DemoBookingModal";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function DarkHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
 
   return (
     <>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
       
       <header className="bg-black border-b border-gray-800 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
@@ -56,6 +53,12 @@ export default function DarkHeader() {
             >
               Preise
             </Link>
+            <Link
+              href="/news"
+              className="text-gray-300 hover:text-white transition font-medium"
+            >
+              News
+            </Link>
             <a
               href="https://taskey.vars-development.com/support"
               target="_blank"
@@ -68,12 +71,6 @@ export default function DarkHeader() {
 
           <div className="hidden lg:flex items-center space-x-3">
             <LanguageSwitcher />
-            <button
-              onClick={() => setDemoModalOpen(true)}
-              className="px-5 py-2.5 text-gray-300 hover:text-white transition font-medium"
-            >
-              Demo buchen
-            </button>
             <Link
               href="https://signup.vars-development.com"
               target="_blank"
@@ -147,6 +144,13 @@ export default function DarkHeader() {
               >
                 Preise
               </Link>
+              <Link
+                href="/news"
+                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                News
+              </Link>
               <a
                 href="https://taskey.vars-development.com/support"
                 target="_blank"
@@ -157,15 +161,6 @@ export default function DarkHeader() {
                 Support
               </a>
               <div className="pt-4 px-4 space-y-2">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    setDemoModalOpen(true);
-                  }}
-                  className="w-full px-4 py-3 text-gray-300 border border-gray-700 rounded-lg hover:bg-gray-900 transition font-medium"
-                >
-                  Demo buchen
-                </button>
                 <Link
                   href="https://signup.vars-development.com"
                   target="_blank"

@@ -1,16 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import DemoBookingModal from "../DemoBookingModal";
 
 export default function Hero() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
-
   return (
     <>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
-
       <section className="bg-white pt-24 pb-24 sm:pt-32 sm:pb-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 
@@ -33,12 +27,12 @@ export default function Hero() {
                 >
                   14 Tage kostenlos testen →
                 </Link>
-                <button
-                  onClick={() => setDemoModalOpen(true)}
+                <Link
+                  href="/demo"
                   className="px-10 py-5 text-gray-900 border-2 border-gray-200 text-xl font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all"
                 >
-                  Demo buchen
-                </button>
+                  Live Demo ansehen
+                </Link>
               </div>
 
               <p className="mt-5 text-base text-gray-500">Keine Kreditkarte. Kein Risiko. Sofort loslegen.</p>

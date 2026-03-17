@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Image from 'next/image';
-import DemoBookingModal from '@/components/DemoBookingModal';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 // Metadata will be set via head tags
@@ -29,7 +29,6 @@ export default function FeaturesPage() {
   const [activeCategory, setActiveCategory] = useState('nfc');
   const [activeFeature, setActiveFeature] = useState('digitale-anlagenakte');
   const [expandedDetails, setExpandedDetails] = useState<string | null>(null);
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const { t } = useLanguage();
 
   const categories: Category[] = [
@@ -828,16 +827,18 @@ export default function FeaturesPage() {
 
               {/* CTA Buttons - Improved */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-                <button 
-                  onClick={() => setDemoModalOpen(true)}
+                <Link 
+                  href="https://signup.vars-development.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-lg px-10 py-5 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Jetzt Demo buchen</span>
+                  <span className="relative z-10">Jetzt kostenlos testen</span>
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </button>
+                </Link>
 
                 <a 
                   href="tel:+4915168488999" 
@@ -973,8 +974,7 @@ export default function FeaturesPage() {
         </div>
       </div>
 
-      {/* Demo Booking Modal */}
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
+      {/* Footer spacer */}
     </main>
   );
 }

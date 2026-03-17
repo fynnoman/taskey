@@ -78,8 +78,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-gray-300 hover:text-white transition">
-                  {t("footer.link.bookDemo")}
+                <Link href="/demo" className="text-gray-300 hover:text-white transition">
+                  Live Demo
                 </Link>
               </li>
             </ul>

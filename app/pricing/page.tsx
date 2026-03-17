@@ -7,9 +7,6 @@ import dynamic from "next/dynamic";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Lazy load modals for better initial load performance
-const DemoBookingModal = dynamic(() => import("@/components/DemoBookingModal"), {
-  ssr: false,
-});
 const ManagerRequestModal = dynamic(() => import("@/components/ManagerRequestModal"), {
   ssr: false,
 });
@@ -18,7 +15,6 @@ const EnterpriseApplicationModal = dynamic(() => import("@/components/Enterprise
 });
 
 export default function PricingPage() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [managerModalOpen, setManagerModalOpen] = useState(false);
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
   const { t } = useLanguage();
@@ -161,10 +157,10 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <button onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-4 rounded-xl font-bold text-slate-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4">
+                <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
+                  className="block w-full py-4 rounded-xl font-bold text-slate-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
                   Jetzt starten
-                </button>
+                </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-slate-400/30 bg-white/5 backdrop-blur-sm">
@@ -251,10 +247,10 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <button onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-4 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4">
+                <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
+                  className="block w-full py-4 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
                   Jetzt GROW buchen
-                </button>
+                </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-cyan-300/40 bg-gradient-to-br from-cyan-900/60 to-blue-900/60 backdrop-blur-sm">
@@ -339,10 +335,10 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <button onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-4 rounded-xl font-bold text-purple-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4">
+                <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
+                  className="block w-full py-4 rounded-xl font-bold text-purple-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
                   Jetzt SCALE buchen
-                </button>
+                </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-purple-300/30 bg-white/5 backdrop-blur-sm">
@@ -575,12 +571,14 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
                 
-                <button
-                  onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-3 rounded-xl font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all text-sm"
+                <Link
+                  href="https://signup.vars-development.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-xl font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all text-sm text-center"
                 >
                   Jetzt bestellen
-                </button>
+                </Link>
               </div>
 
               {/* Pro - EMPFOHLEN */}
@@ -607,12 +605,14 @@ export default function PricingPage() {
                   <p className="text-sm text-blue-100">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
                 
-                <button
-                  onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-3 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg"
+                <Link
+                  href="https://signup.vars-development.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg text-center"
                 >
                   Jetzt bestellen
-                </button>
+                </Link>
                 
                 <div className="mt-4 bg-white/10 rounded-xl p-3 text-xs text-center">
                   Inkl. Video-Onboarding für die ersten 5 Tags
@@ -637,12 +637,14 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
                 
-                <button
-                  onClick={() => setDemoModalOpen(true)}
-                  className="w-full py-3 rounded-xl font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all text-sm"
+                <Link
+                  href="https://signup.vars-development.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-xl font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all text-sm text-center"
                 >
                   Jetzt bestellen
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -737,12 +739,14 @@ export default function PricingPage() {
                           </div>
                         ))}
                       </div>
-                      <button
-                        onClick={() => setDemoModalOpen(true)}
-                        className="w-full py-3.5 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 transition-all text-sm shadow-lg hover:scale-105"
+                      <Link
+                        href="https://signup.vars-development.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full py-3.5 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 transition-all text-sm shadow-lg hover:scale-105 text-center"
                       >
                         GROW Setup buchen
-                      </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -765,12 +769,14 @@ export default function PricingPage() {
                           </div>
                         ))}
                       </div>
-                      <button
-                        onClick={() => setDemoModalOpen(true)}
-                        className="w-full py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 transition-all text-sm shadow-lg hover:scale-105"
+                      <Link
+                        href="https://signup.vars-development.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 transition-all text-sm shadow-lg hover:scale-105 text-center"
                       >
                         SCALE Setup buchen
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -1008,13 +1014,15 @@ export default function PricingPage() {
             Starten Sie jetzt kostenlos — in unter 5 Minuten einsatzbereit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setDemoModalOpen(true)}
+            <Link
+              href="https://signup.vars-development.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-blue-900 hover:bg-blue-800 text-white font-bold text-lg px-10 py-5 rounded-xl transition-all hover:scale-105 shadow-lg"
             >
               Kostenlos testen
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </button>
+            </Link>
             <a
               href="mailto:info@taskey.de"
               className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-900 font-bold text-lg px-10 py-5 rounded-xl border-2 border-gray-200 transition-all"
@@ -1039,9 +1047,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Demo Modal */}
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
-      
       {/* Manager Modal */}
       <ManagerRequestModal isOpen={managerModalOpen} onClose={() => setManagerModalOpen(false)} />
 

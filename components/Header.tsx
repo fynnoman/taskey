@@ -3,18 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import DemoBookingModal from "./DemoBookingModal";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const { t } = useLanguage();
 
   return (
     <>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
       
       <header className="bg-white/70 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
@@ -59,6 +56,12 @@ export default function Header() {
               {t("nav.pricing")}
             </Link>
             <Link
+              href="/news"
+              className="text-gray-600 hover:text-gray-900 transition font-medium"
+            >
+              News
+            </Link>
+            <Link
               href="/about"
               className="text-gray-600 hover:text-gray-900 transition font-medium"
             >
@@ -76,12 +79,6 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center space-x-3">
             <LanguageSwitcher />
-            <button
-              onClick={() => setDemoModalOpen(true)}
-              className="px-5 py-2.5 text-gray-700 hover:text-gray-900 transition font-medium"
-            >
-              {t("nav.bookDemo")}
-            </button>
             <Link
               href="https://signup.vars-development.com"
               target="_blank"
@@ -156,6 +153,13 @@ export default function Header() {
                 {t("nav.pricing")}
               </Link>
               <Link
+                href="/news"
+                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                News
+              </Link>
+              <Link
                 href="/about"
                 className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
                 onClick={() => setMobileMenuOpen(false)}
@@ -175,15 +179,6 @@ export default function Header() {
                 <div className="flex justify-start pb-1">
                   <LanguageSwitcher />
                 </div>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    setDemoModalOpen(true);
-                  }}
-                  className="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition font-medium"
-                >
-                  {t("nav.bookDemo")}
-                </button>
                 <Link
                   href="https://signup.vars-development.com"
                   target="_blank"

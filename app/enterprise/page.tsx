@@ -2,13 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import DemoBookingModal from "@/components/DemoBookingModal";
 import EnterpriseApplicationModal from "@/components/EnterpriseApplicationModal";
 import Head from "next/head";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function EnterprisePage() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
   const { t } = useLanguage();
 
@@ -17,7 +15,6 @@ export default function EnterprisePage() {
       <Head>
         <link rel="preload" href="/91A1A855-C7A4-4904-9E46-43FCEC6C5AC5.png" as="image" />
       </Head>
-      <DemoBookingModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
       <EnterpriseApplicationModal isOpen={enterpriseModalOpen} onClose={() => setEnterpriseModalOpen(false)} />
       
       {/* Fixed Background */}
