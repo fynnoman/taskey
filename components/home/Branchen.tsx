@@ -1868,22 +1868,22 @@ export default function Branchen() {
 
   return (
     <>
-      <section className="relative pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-24 md:pb-28 bg-white">
+      <section className="relative pt-16 sm:pt-32 md:pt-48 pb-14 sm:pb-24 md:pb-28 bg-white">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pr-[160px]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 lg:pr-[160px]">
         {/* Header */}
-        <div className="text-left mb-12 sm:mb-14 md:mb-20">
-          <p className="text-blue-600 text-xs font-semibold uppercase tracking-[0.3em] mb-4">Branchenabdeckung</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+        <div className="text-left mb-8 sm:mb-14 md:mb-20">
+          <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3 sm:mb-4">Branchenabdeckung</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-5">
             Über <span className="text-blue-600">600 Branchen</span> vertrauen auf Taskey
           </h2>
-          <p className="text-lg sm:text-xl text-gray-500 max-w-3xl">
+          <p className="text-sm sm:text-xl text-gray-500 max-w-3xl">
             Passt Taskey zu Ihnen? Finden Sie es raus!
           </p>
         </div>
 
         {/* Search Bar with Live Autocomplete */}
-        <div className="max-w-2xl mb-12" ref={searchRef}>
+        <div className="max-w-2xl mb-8 sm:mb-12" ref={searchRef}>
           <div className="relative">
             <input
               type="text"
@@ -1894,7 +1894,7 @@ export default function Branchen() {
                 if (!e.target.value) setSelectedBranche(null);
               }}
               onFocus={() => setIsSearchFocused(true)}
-              className="w-full px-6 py-4 text-lg rounded-2xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all"
+              className="w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg rounded-xl sm:rounded-2xl border border-gray-200 bg-gray-50 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all"
             />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
               {searchTerm && (
@@ -1971,19 +1971,19 @@ export default function Branchen() {
 
           {/* Selected Branche Info Card */}
           {selectedBranche && (
-            <div className="mt-6 bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm animate-fadeIn">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0">
+            <div className="mt-4 sm:mt-6 bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-sm animate-fadeIn">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="bg-blue-600 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl flex-shrink-0">
                   ✓
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2">
                     {selectedBranche}
                   </h3>
-                  <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                  <div className="bg-blue-50 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4">
                     <p className="text-gray-700 flex items-start gap-2">
-                      <span className="text-xl">💡</span>
-                      <span className="font-medium">{getReasonForBranch(selectedBranche)}</span>
+                      <span className="text-lg sm:text-xl">💡</span>
+                      <span className="font-medium text-sm sm:text-base">{getReasonForBranch(selectedBranche)}</span>
                     </p>
                   </div>
                   <p className="text-blue-600 text-sm font-semibold">
@@ -1997,21 +1997,21 @@ export default function Branchen() {
 
         {/* No Results Message - nur wenn nicht fokussiert */}
         {!isSearchFocused && noResults && !selectedBranche && (
-          <div className="text-left py-12 mb-12">
-            <div className="bg-gray-50 rounded-2xl p-8 max-w-2xl border border-gray-200">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="text-left py-6 sm:py-12 mb-8 sm:mb-12">
+            <div className="bg-gray-50 rounded-xl sm:rounded-2xl p-5 sm:p-8 max-w-2xl border border-gray-200">
+              <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">🔍</div>
+              <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2">
                 Keine Branche gefunden
               </h3>
-              <p className="text-gray-500 mb-6">
+              <p className="text-gray-500 text-sm sm:text-base mb-4 sm:mb-6">
                 Wir konnten keine passende Branche für &quot;{searchTerm}&quot; finden.
               </p>
-              <p className="text-gray-500 mb-4">
+              <p className="text-gray-500 text-sm sm:text-base mb-4">
                 Aber keine Sorge – Taskey ist flexibel und passt sich vielen Dienstleistungsbetrieben an!
               </p>
               <Link
                 href="https://signup.vars-development.com"
-                className="inline-block px-8 py-3 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all"
+                className="inline-block px-6 sm:px-8 py-3 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-xl"
               >
                 {t("branchen.cta")}
               </Link>
@@ -2020,25 +2020,25 @@ export default function Branchen() {
         )}
 
         {/* CTA Section */}
-        <div data-scrollline-cta className="mt-20 bg-gray-50 border border-gray-200 rounded-3xl p-12 text-left">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        <div data-scrollline-cta className="mt-10 sm:mt-20 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-3xl p-6 sm:p-12 text-left">
+          <h3 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-gray-900">
             Ist Ihre Branche dabei?
           </h3>
-          <p className="text-xl mb-8 text-gray-500">
+          <p className="text-sm sm:text-xl mb-5 sm:mb-8 text-gray-500">
             Entdecken Sie, wie Taskey Ihren Betrieb effizienter macht
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link
               href="https://signup.vars-development.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gray-900 text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-lg font-semibold rounded-xl text-center"
             >
               {t("hero.cta.trial")}
             </Link>
             <Link
               href="/demo"
-              className="px-8 py-4 border border-gray-300 text-gray-700 text-lg font-semibold rounded-xl hover:border-gray-400 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 border border-gray-300 text-gray-700 text-sm sm:text-lg font-semibold rounded-xl text-center"
             >
               Live Demo ansehen
             </Link>
