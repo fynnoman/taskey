@@ -5,8 +5,16 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <section className="bg-white pt-24 pb-24 sm:pt-32 sm:pb-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+      <section className="relative bg-white pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/Gemini_Generated_Image_u0ytjru0ytjru0yt.png')" }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-white/80" />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 
           <h1 className="text-[clamp(4rem,12vw,9rem)] font-black text-gray-900 leading-[0.9] tracking-tight mb-10">
                 Dein Betrieb.<br />
