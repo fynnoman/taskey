@@ -79,61 +79,96 @@ export default function BusinessSize() {
   }, [scrollYProgress, bend1Progress, bend2Progress, bend3Progress]);
 
   return (
-    <section
-      ref={sectionRef}
-      data-scrollline-biz
-      className="relative bg-white"
-      style={{ height: "300vh" }}
-    >
-      <div className="sticky top-0 h-screen overflow-hidden pointer-events-none select-none">
-
-        {/* Überschrift oben */}
-        <div className="absolute top-24 left-0 right-0 flex flex-col items-center gap-2 px-8">
-          <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.25em]">{t("biz.badge")}</p>
-          <h2 className="text-gray-900 text-4xl md:text-5xl font-bold text-center">
+    <>
+      {/* ── Mobile: Einfache gestackte Karten, keine Scroll-Animation ── */}
+      <section className="lg:hidden bg-white py-12 px-5">
+        <div className="text-center mb-8">
+          <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.25em] mb-2">{t("biz.badge")}</p>
+          <h2 className="text-gray-900 text-2xl font-bold">
             {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
           </h2>
         </div>
 
-        {/* Card — zentriert unterhalb der Überschrift */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-12 md:px-20 pointer-events-none" style={{ paddingTop: "180px" }}>
-          <AnimatePresence mode="wait">
-            {activeCard !== null && (
-              <motion.div
-                key={activeCard}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 8 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full max-w-3xl flex flex-col gap-6"
-              >
-                {/* Card image */}
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src={cards[activeCard - 1].image}
-                    alt=""
-                    className="w-full h-80 object-cover"
-                  />
-                </div>
-                {/* Text + Button */}
-                <div className="flex flex-col gap-3">
-                  <p className="text-blue-600 text-xs font-semibold uppercase tracking-widest">{cards[activeCard - 1].label}</p>
-                  <p className="text-gray-500 text-xl leading-relaxed">
-                    {cards[activeCard - 1].text}
-                  </p>
-                  <Link
-                    href="/pricing"
-                    className="mt-1 inline-block self-start px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-gray-800 transition-colors pointer-events-auto"
-                  >
-                    {t("biz.cta")}
-                  </Link>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        <div className="space-y-6 max-w-lg mx-auto">
+          {cards.map((card) => (
+            <div key={card.id} className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
+              <img
+                src={card.image}
+                alt=""
+                className="w-full h-44 object-cover"
+              />
+              <div className="p-4">
+                <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">{card.label}</p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-3">{card.text}</p>
+                <Link
+                  href="/pricing"
+                  className="inline-block px-5 py-2.5 bg-gray-900 text-white text-xs font-semibold rounded-lg"
+                >
+                  {t("biz.cta")}
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ── Desktop: Scroll-Animation wie bisher ── */}
+      <section
+        ref={sectionRef}
+        data-scrollline-biz
+        className="relative bg-white hidden lg:block"
+        style={{ height: "300vh" }}
+      >
+        <div className="sticky top-0 h-screen overflow-hidden pointer-events-none select-none">
+
+          {/* Überschrift oben */}
+          <div className="absolute top-24 left-0 right-0 flex flex-col items-center gap-2 px-8">
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.25em]">{t("biz.badge")}</p>
+            <h2 className="text-gray-900 text-4xl md:text-5xl font-bold text-center">
+              {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
+            </h2>
+          </div>
+
+          {/* Card — zentriert unterhalb der Überschrift */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-12 md:px-20 pointer-events-none" style={{ paddingTop: "180px" }}>
+            <AnimatePresence mode="wait">
+              {activeCard !== null && (
+                <motion.div
+                  key={activeCard}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="w-full max-w-3xl flex flex-col gap-6"
+                >
+                  {/* Card image */}
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src={cards[activeCard - 1].image}
+                      alt=""
+                      className="w-full h-80 object-cover"
+                    />
+                  </div>
+                  {/* Text + Button */}
+                  <div className="flex flex-col gap-3">
+                    <p className="text-blue-600 text-xs font-semibold uppercase tracking-widest">{cards[activeCard - 1].label}</p>
+                    <p className="text-gray-500 text-xl leading-relaxed">
+                      {cards[activeCard - 1].text}
+                    </p>
+                    <Link
+                      href="/pricing"
+                      className="mt-1 inline-block self-start px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-gray-800 transition-colors pointer-events-auto"
+                    >
+                      {t("biz.cta")}
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
