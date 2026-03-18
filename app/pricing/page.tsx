@@ -566,7 +566,7 @@ export default function PricingPage() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
                     <span className="text-lg font-bold text-gray-900">Ihr Preis</span>
-                    <span className="text-4xl font-black text-blue-900">9.00€</span>
+                    <span className="text-4xl font-black text-blue-900">6.30€</span>
                   </div>
                   <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
@@ -600,7 +600,7 @@ export default function PricingPage() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
                     <span className="text-lg font-bold">Ihr Preis</span>
-                    <span className="text-4xl font-black text-cyan-300">23.00€</span>
+                    <span className="text-4xl font-black text-cyan-300">16.10€</span>
                   </div>
                   <p className="text-sm text-blue-100">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
@@ -632,7 +632,7 @@ export default function PricingPage() {
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
                     <span className="text-lg font-bold text-gray-900">Ihr Preis</span>
-                    <span className="text-4xl font-black text-blue-900">44.00€</span>
+                    <span className="text-4xl font-black text-blue-900">30.80€</span>
                   </div>
                   <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
                 </div>
