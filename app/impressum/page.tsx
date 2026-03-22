@@ -14,7 +14,7 @@ export default function ImpressumPage() {
         <div className="prose prose-lg max-w-none text-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Angaben gemäß § 5 DDG</h2>
           <p>
-            Fynn-Luca Schulz<br />
+            Schulz &amp; Stosse GbR<br />
             Taskey<br />
             In der Acht 44<br />
             66333 Völklingen<br />
