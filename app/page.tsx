@@ -81,7 +81,7 @@ export default function Home() {
       />
       <main>
         <Hero />
-        <SectionDivider from="white" to="#f9fafb" variant="curve" />
+        <SectionDivider from="#111827" to="#f9fafb" variant="wave" />
         <NFCSection />
         <SectionDivider from="#f9fafb" to="white" variant="wave" />
 

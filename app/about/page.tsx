@@ -127,7 +127,7 @@ export default function AboutPage() {
               {[1, 2].map((i) => (
                 <div key={i} className="text-center">
                   <div className="w-48 h-48 rounded-full mx-auto mb-4 overflow-hidden relative">
-                    <Image src={i === 1 ? "/koko.jpeg" : "/julian.JPG"} alt={i === 1 ? "Fynn-Luca Schulz" : "Julian Stosse"} fill className="object-cover" sizes="192px" />
+                    <Image src={i === 1 ? "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg" : "/julian.JPG"} alt={i === 1 ? "Fynn-Luca Schulz" : "Julian Stosse"} fill className="object-cover" sizes="192px" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-1 text-xl">{i === 1 ? 'Fynn-Luca Schulz' : 'Julian Stosse'}</h3>
                 </div>
