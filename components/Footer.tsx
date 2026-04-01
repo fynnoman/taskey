@@ -104,6 +104,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/partnerschaften" className="text-gray-300 hover:text-white transition">
+                  Partnerschaften
+                </Link>
+              </li>
+              <li>
                 <Link href="#contact" className="text-gray-300 hover:text-white transition">
                   {t("footer.link.contact")}
                 </Link>
