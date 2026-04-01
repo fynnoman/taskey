@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Zeiterfassung Baustelle – GPS & NFC für den Bau | Taskey',
+  description: 'Digitale Zeiterfassung auf der Baustelle: GPS-gestützt, NFC-Tags, automatische Stundennachweise. Für Baufirmen & Subunternehmer. Jetzt testen!',
+  alternates: { canonical: 'https://taskey.de/loesungen/zeiterfassung-baustelle' },
+};
+
+const data: LandingPageData = {
+  badge: 'Zeiterfassung Baustelle',
+  headline: 'Baustellenzeiten erfassen –',
+  headlineHighlight: 'ohne Papier, ohne Stress.',
+  subheadline: 'Wer war wann auf welcher Baustelle? Mit Taskey weißt du es sofort.',
+  heroDescription: 'NFC-Tags am Baustelleneingang, GPS-Tracking in der App – deine Mitarbeiter stempeln automatisch ein und aus. Du hast in Echtzeit den Überblick über alle Baustellen.',
+  painPoints: [
+    { icon: '🏗️', text: 'Keiner weiß, welcher Mitarbeiter gerade auf welcher Baustelle ist.' },
+    { icon: '📝', text: 'Stundenzettel werden erst am Ende der Woche ausgefüllt – nach Erinnerung.' },
+    { icon: '💰', text: 'Stunden werden falsch zugeordnet – die Nachkalkulation stimmt nie.' },
+    { icon: '🔍', text: 'Bei Streitigkeiten fehlen Belege, wer wann vor Ort war.' },
+  ],
+  solutionTitle: 'Jede Baustelle. Jeder Mitarbeiter. In Echtzeit.',
+  solutionDescription: 'Taskey zeigt dir live, wer wo arbeitet – und rechnet alles automatisch ab.',
+  solutionSteps: [
+    { icon: '🏷️', title: 'NFC-Tag an der Baustelle', description: 'Klebe einen wetterfesten NFC-Tag an den Baustellencontainer. Mitarbeiter scannen beim Kommen und Gehen.' },
+    { icon: '📍', title: 'GPS-Protokollierung', description: 'Jeder Stempelvorgang wird mit GPS-Koordinaten gespeichert – Baustelle automatisch erkannt.' },
+    { icon: '📊', title: 'Stunden pro Baustelle', description: 'Automatische Aufteilung der Arbeitsstunden pro Baustelle – perfekt für die Nachkalkulation.' },
+  ],
+  ctaText: 'Jetzt Baustellenzeiten digitalisieren',
+  featureHighlights: [
+    { icon: '🗺️', title: 'Live-Baustellenübersicht', description: 'Sieh auf einer Karte, wer gerade auf welcher Baustelle arbeitet.' },
+    { icon: '🏷️', title: 'NFC-Stempeluhr', description: 'Ein Scan am Tag reicht – kein Handy entsperren, keine App öffnen.' },
+    { icon: '📋', title: 'Automatische Zuordnung', description: 'Stunden werden automatisch der richtigen Baustelle zugewiesen.' },
+    { icon: '🌧️', title: 'Wetterfeste Tags', description: 'Unsere NFC-Tags halten Wind, Regen und Baustellenstaub stand.' },
+    { icon: '👷', title: 'Subunternehmer-Zeiten', description: 'Auch Subunternehmer können per App Zeiten erfassen und zuordnen.' },
+    { icon: '📤', title: 'Nahtloser Export', description: 'Stundenübersichten pro Baustelle als PDF – für Auftraggeber und Steuerberater.' },
+  ],
+  closingHeadline: 'Baustelle im Griff. Zeiten im System.',
+  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Baustellenzeiterfassung sein kann.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

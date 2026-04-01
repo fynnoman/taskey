@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Aufträge organisieren Malerbetrieb | Taskey',
+  description: 'Aufträge im Malerbetrieb organisieren: Kunden, Termine, Material und Abrechnung – alles digital in einer App. Jetzt testen!',
+  alternates: { canonical: 'https://taskey.de/loesungen/auftraege-organisieren-malerbetrieb' },
+};
+
+const data: LandingPageData = {
+  badge: 'Malerbetrieb',
+  headline: 'Malerbetrieb organisieren –',
+  headlineHighlight: 'ohne Post-its und Chaos.',
+  subheadline: 'Aufträge, Farben, Flächen, Termine – alles an einem Ort statt auf 20 Zetteln.',
+  heroDescription: 'Taskey ist die Betriebssoftware für Malerbetriebe: Aufträge anlegen, Kolonnen zuweisen, Material planen und Stunden automatisch erfassen.',
+  painPoints: [
+    { icon: '🎨', text: 'Aufträge stehen auf Post-its am Bildschirm – einige fallen runter und gehen verloren.' },
+    { icon: '📞', text: 'Kunden rufen an und fragen nach einem Termin – du blätterst im Kalender.' },
+    { icon: '📝', text: 'Materialbestellungen werden vergessen – Baustelle steht still.' },
+    { icon: '💰', text: 'Am Ende weißt du nicht, ob sich der Auftrag gelohnt hat.' },
+  ],
+  solutionTitle: 'Dein Malerbetrieb, digital organisiert.',
+  solutionDescription: 'Vom Angebot über die Farbplanung bis zur Rechnung – alles in Taskey.',
+  solutionSteps: [
+    { icon: '📋', title: 'Auftrag anlegen', description: 'Kunde, Adresse, Flächen, gewünschte Farben – alles erfasst und dem Team zugewiesen.' },
+    { icon: '👷', title: 'Kolonne einplanen', description: 'Weise dein Team zu, plane den Zeitraum und füge Materiallisten hinzu.' },
+    { icon: '✅', title: 'Abschließen & abrechnen', description: 'Fotos hochladen, Stunden auswerten, Rechnung erstellen – aus einem Guss.' },
+  ],
+  ctaText: 'Malerbetrieb digitalisieren',
+  featureHighlights: [
+    { icon: '📋', title: 'Auftragsübersicht', description: 'Alle Aufträge mit Status, Termin und zugewiesener Kolonne.' },
+    { icon: '📸', title: 'Vorher/Nachher-Fotos', description: 'Dokumentiere deine Arbeit mit GPS- und Zeitstempel.' },
+    { icon: '🎨', title: 'Materialplanung', description: 'Farben, Mengen, Werkzeuge – alles zum Auftrag hinterlegt.' },
+    { icon: '⏱️', title: 'Zeiterfassung', description: 'Mitarbeiter stempeln per App – Zeiten werden dem Auftrag zugeordnet.' },
+    { icon: '📊', title: 'Nachkalkulation', description: 'War der Auftrag rentabel? Taskey zeigt es dir sofort.' },
+    { icon: '📄', title: 'Angebote & Rechnungen', description: 'Erstelle professionelle Dokumente direkt aus dem Auftrag.' },
+  ],
+  closingHeadline: 'Malerbetrieb im Griff. Digital.',
+  closingText: 'Starte jetzt und organisiere deinen Malerbetrieb mit Taskey.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

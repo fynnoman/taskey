@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Auftragsübersicht Handwerksbetrieb | Taskey',
+  description: 'Auftragsübersicht für Handwerksbetriebe: Alle Aufträge, Status und Termine auf einen Blick. Digital, übersichtlich, in Echtzeit. Jetzt testen!',
+  alternates: { canonical: 'https://taskey.de/loesungen/auftragsuebesicht-handwerksbetrieb' },
+};
+
+const data: LandingPageData = {
+  badge: 'Auftragsübersicht',
+  headline: 'Alle Aufträge –',
+  headlineHighlight: 'auf einen Blick.',
+  subheadline: 'Offen, in Arbeit, abgeschlossen – sieh sofort, wo jeder Auftrag steht.',
+  heroDescription: 'Taskey gibt dir eine zentrale Übersicht über alle Aufträge deines Handwerksbetriebs. Keine Zettel durchsuchen, kein Nachfragen – alles ist da.',
+  painPoints: [
+    { icon: '📋', text: 'Du weißt nicht, welche Aufträge noch offen sind und welche fertig.' },
+    { icon: '📞', text: 'Wenn ein Kunde anruft, musst du erst den zuständigen Mitarbeiter fragen.' },
+    { icon: '📊', text: 'Welche Aufträge bringen Geld, welche kosten nur? Keine Ahnung.' },
+    { icon: '📅', text: 'Termine werden doppelt vergeben oder vergessen.' },
+  ],
+  solutionTitle: 'Dein Auftrags-Dashboard.',
+  solutionDescription: 'Eine Ansicht, alle Aufträge, jeder Status – in Echtzeit.',
+  solutionSteps: [
+    { icon: '📊', title: 'Dashboard öffnen', description: 'Sieh alle Aufträge nach Status sortiert: Offen, In Arbeit, Abgeschlossen, Abgerechnet.' },
+    { icon: '🔍', title: 'Details per Klick', description: 'Tippe auf einen Auftrag und sieh: Zugewiesenes Team, Material, Stunden, Fotos, Notizen.' },
+    { icon: '📱', title: 'Immer aktuell', description: 'Das Dashboard aktualisiert sich in Echtzeit – Änderungen vom Team erscheinen sofort.' },
+  ],
+  ctaText: 'Auftragsübersicht testen',
+  featureHighlights: [
+    { icon: '📊', title: 'Status-Board', description: 'Kanban-ähnliche Ansicht: Alle Aufträge nach Status sortiert.' },
+    { icon: '🔍', title: 'Suche & Filter', description: 'Finde jeden Auftrag in Sekunden – nach Kunde, Datum oder Status.' },
+    { icon: '📅', title: 'Kalenderansicht', description: 'Alle Aufträge im Kalender – Termine auf einen Blick.' },
+    { icon: '📱', title: 'Mobil & Desktop', description: 'Nutze die Übersicht auf dem Handy, Tablet oder PC.' },
+    { icon: '🔔', title: 'Benachrichtigungen', description: 'Automatische Alerts bei überfälligen Aufträgen.' },
+    { icon: '📤', title: 'Export', description: 'Auftragslisten als PDF oder CSV exportieren.' },
+  ],
+  closingHeadline: 'Jeder Auftrag im Blick.',
+  closingText: 'Teste Taskey und erlebe die Übersicht, die dein Betrieb verdient.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

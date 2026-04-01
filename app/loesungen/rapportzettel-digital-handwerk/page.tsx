@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Rapportzettel digital Handwerk | Taskey',
+  description: 'Digitale Rapportzettel für Handwerksbetriebe: Arbeitszeiten, Material und Leistungen mobil erfassen. Mit Unterschrift. Jetzt testen!',
+  alternates: { canonical: 'https://taskey.de/loesungen/rapportzettel-digital-handwerk' },
+};
+
+const data: LandingPageData = {
+  badge: 'Rapportzettel digital',
+  headline: 'Rapportzettel –',
+  headlineHighlight: 'digital statt Durchschlag.',
+  subheadline: 'Arbeitszeiten, Material und Leistungen mobil erfassen – mit digitaler Unterschrift.',
+  heroDescription: 'Taskey ersetzt den Papier-Rapportzettel: Stunden, Material und ausgeführte Arbeiten werden direkt auf dem Handy erfasst. Der Kunde unterschreibt digital.',
+  painPoints: [
+    { icon: '📝', text: 'Rapportzettel sind unleserlich, gehen verloren oder kommen zu spät.' },
+    { icon: '📋', text: 'Infos müssen vom Zettel ins System abgetippt werden – fehleranfällig.' },
+    { icon: '✍️', text: 'Kundenunterschriften fehlen – Streitigkeiten vorprogrammiert.' },
+    { icon: '📁', text: 'Papierstapel im Büro – kein schneller Zugriff auf alte Rapporte.' },
+  ],
+  solutionTitle: 'Rapport ausfüllen. Unterschreiben. Fertig.',
+  solutionDescription: 'Alles digital auf dem Handy – mit Kundenunterschrift und sofortigem PDF.',
+  solutionSteps: [
+    { icon: '📱', title: 'Mobil ausfüllen', description: 'Stunden, Material und Leistungen direkt auf dem Handy erfassen – am Einsatzort.' },
+    { icon: '✍️', title: 'Kunde unterschreibt', description: 'Der Kunde unterschreibt direkt auf dem Display – rechtssicher.' },
+    { icon: '📤', title: 'PDF sofort', description: 'Ein fertiger Rapportzettel als PDF – sofort per Mail an Büro und Kunden.' },
+  ],
+  ctaText: 'Rapportzettel digitalisieren',
+  featureHighlights: [
+    { icon: '📱', title: 'Mobile Erfassung', description: 'Rapport direkt am Einsatzort auf dem Handy ausfüllen.' },
+    { icon: '✍️', title: 'Digitale Unterschrift', description: 'Kunden unterschreiben auf dem Display.' },
+    { icon: '📄', title: 'Sofort-PDF', description: 'PDF wird automatisch generiert und archiviert.' },
+    { icon: '📧', title: 'Auto-Versand', description: 'PDF geht automatisch an Büro und Kunde.' },
+    { icon: '📊', title: 'In Abrechnung', description: 'Rapportdaten fließen direkt in die Rechnungsstellung.' },
+    { icon: '🔍', title: 'Archiv', description: 'Alle Rapporte digital gespeichert und durchsuchbar.' },
+  ],
+  closingHeadline: 'Rapport. Digital. Unterschrieben.',
+  closingText: 'Starte jetzt und verabschiede dich vom Papier-Rapportzettel.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Bauabrechnung Software – Taskey',
+  description: 'Bauabrechnung Software für Baufirmen. Taskey erstellt Abschläge, Nachträge und Schlussrechnungen automatisch aus Ihren Projektdaten.',
+  alternates: { canonical: 'https://www.taskey.de/loesungen/bauabrechnung-software' },
+};
+
+const data: LandingPageData = {
+  badge: 'Bauabrechnung',
+  headline: 'Bauabrechnung –',
+  headlineHighlight: 'einfach & automatisch',
+  subheadline: 'Von der Aufmaß-Erfassung bis zur Schlussrechnung.',
+  heroDescription: 'Bauabrechnung muss nicht kompliziert sein. Taskey verbindet Aufmaß, Leistungserfassung und Rechnungsstellung zu einem nahtlosen Prozess.',
+  painPoints: [
+    { icon: '🧮', text: 'Komplexe Bauabrechnungen manuell erstellen – fehleranfällig und zeitraubend.' },
+    { icon: '📋', text: 'Aufmaße, Nachträge und Abschläge händisch zusammenführen.' },
+    { icon: '⚖️', text: 'Streitigkeiten mit Auftraggebern über abzurechnende Leistungen.' },
+    { icon: '⏳', text: 'Wochen zwischen Leistungserbringung und Rechnungsstellung.' },
+  ],
+  solutionTitle: 'Bauabrechnung aus einem Guss',
+  solutionDescription: 'Taskey verbindet alle Schritte der Bauabrechnung nahtlos.',
+  solutionSteps: [
+    { icon: '📐', title: 'Aufmaß erfassen', description: 'Mengen und Leistungen digital auf der Baustelle erfassen.' },
+    { icon: '🧾', title: 'Rechnung erstellen', description: 'Aus erfassten Leistungen automatisch Abrechnungen generieren.' },
+    { icon: '📊', title: 'Nachverfolgen', description: 'Zahlungseingänge überwachen und Liquidität planen.' },
+  ],
+  ctaText: 'Jetzt Bauabrechnung vereinfachen',
+  featureHighlights: [
+    { icon: '📐', title: 'Integriertes Aufmaß', description: 'Aufmaße direkt in die Abrechnung übernehmen.' },
+    { icon: '🔄', title: 'Nachtragsverwaltung', description: 'Nachträge dokumentieren und in die Abrechnung integrieren.' },
+    { icon: '📊', title: 'Soll-Ist-Vergleich', description: 'Abgerechnete vs. kalkulierte Leistungen vergleichen.' },
+    { icon: '🧾', title: 'Abschlagsrechnungen', description: 'Mehrstufige Abschlagsrechnungen automatisch erstellen.' },
+    { icon: '✅', title: 'VOB-konform', description: 'Abrechnungen nach VOB-Standards erstellen.' },
+    { icon: '📤', title: 'Export', description: 'Alle Abrechnungen als PDF oder in Buchhaltungssoftware exportieren.' },
+  ],
+  closingHeadline: 'Bauabrechnung – so einfach wie noch nie.',
+  closingText: 'Taskey macht Ihre Bauabrechnung automatisch, fehlerfrei und schnell.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

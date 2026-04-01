@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Fahrzeugplanung Handwerksbetrieb – Taskey',
+  description: 'Fahrzeugplanung für Handwerksbetriebe digitalisieren. Taskey verwaltet Ihren Fuhrpark und optimiert die Fahrzeugverteilung.',
+  alternates: { canonical: 'https://www.taskey.de/loesungen/fahrzeugplanung-handwerksbetrieb' },
+};
+
+const data: LandingPageData = {
+  badge: 'Fahrzeugplanung',
+  headline: 'Fahrzeugplanung für',
+  headlineHighlight: 'Handwerksbetriebe',
+  subheadline: 'Fuhrpark effizient einsetzen und verwalten.',
+  heroDescription: 'Welches Fahrzeug steht morgen zur Verfügung? Taskey gibt Ihnen den Überblick über Ihren Fuhrpark und optimiert die Fahrzeugverteilung auf Ihre Teams.',
+  painPoints: [
+    { icon: '🚗', text: 'Keine Übersicht, welches Fahrzeug wo im Einsatz ist.' },
+    { icon: '🔑', text: 'Schlüssel suchen, Fahrzeuge umparken – tägliches Chaos.' },
+    { icon: '🔧', text: 'TÜV-Termine und Wartungen werden vergessen.' },
+    { icon: '📊', text: 'Unklare Kostenverteilung pro Fahrzeug und Projekt.' },
+  ],
+  solutionTitle: 'Fuhrpark digital verwalten',
+  solutionDescription: 'Taskey bringt Ordnung in Ihre Fahrzeugverwaltung.',
+  solutionSteps: [
+    { icon: '🚗', title: 'Fahrzeuge anlegen', description: 'Alle Fahrzeuge mit Details, Dokumenten und Wartungsintervallen erfassen.' },
+    { icon: '📋', title: 'Einsätze planen', description: 'Fahrzeuge den Teams und Baustellen zuweisen.' },
+    { icon: '🔔', title: 'Wartung überwachen', description: 'Automatische Erinnerungen für TÜV, Inspektion und Reifenwechsel.' },
+  ],
+  ctaText: 'Jetzt Fuhrpark digitalisieren',
+  featureHighlights: [
+    { icon: '🚗', title: 'Fahrzeugübersicht', description: 'Alle Fahrzeuge mit Status, Standort und aktueller Zuordnung.' },
+    { icon: '📋', title: 'Einsatzplanung', description: 'Fahrzeuge den richtigen Teams und Projekten zuweisen.' },
+    { icon: '🔧', title: 'Wartungsmanagement', description: 'TÜV, Inspektion und Reparaturen planen und dokumentieren.' },
+    { icon: '⛽', title: 'Tankkosten', description: 'Kraftstoffverbrauch und -kosten pro Fahrzeug tracken.' },
+    { icon: '📊', title: 'Kostenanalyse', description: 'Gesamtkosten pro Fahrzeug für bessere Wirtschaftlichkeitsentscheidungen.' },
+    { icon: '📱', title: 'Mobile Übersicht', description: 'Fahrzeugstatus und Zuordnung auch unterwegs einsehen.' },
+  ],
+  closingHeadline: 'Ihr Fuhrpark – endlich organisiert.',
+  closingText: 'Taskey macht Fahrzeugplanung einfach und verhindert teure Ausfälle.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

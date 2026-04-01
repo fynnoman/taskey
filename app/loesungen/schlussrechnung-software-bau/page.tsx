@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Schlussrechnung Software Bau – Taskey',
+  description: 'Schlussrechnungen für Bauprojekte automatisch erstellen. Taskey verrechnet alle Abschläge und generiert die finale Rechnung in Sekunden.',
+  alternates: { canonical: 'https://www.taskey.de/loesungen/schlussrechnung-software-bau' },
+};
+
+const data: LandingPageData = {
+  badge: 'Schlussrechnung',
+  headline: 'Schlussrechnungen für',
+  headlineHighlight: 'Bauprojekte',
+  subheadline: 'automatisch & fehlerfrei erstellen',
+  heroDescription: 'Keine manuelle Verrechnung von Abschlägen mehr. Taskey generiert die korrekte Schlussrechnung inklusive aller Teilzahlungen automatisch.',
+  painPoints: [
+    { icon: '🧮', text: 'Abschläge manuell verrechnen ist fehleranfällig und dauert ewig.' },
+    { icon: '❌', text: 'Fehler in der Schlussrechnung führen zu Zahlungsverzögerungen.' },
+    { icon: '📋', text: 'Aufwändiges Zusammensuchen aller Teilrechnungen und Nachträge.' },
+    { icon: '⚖️', text: 'Streitigkeiten mit Auftraggebern über bereits geleistete Zahlungen.' },
+  ],
+  solutionTitle: 'Schlussrechnung auf Knopfdruck',
+  solutionDescription: 'Taskey kennt alle Abschläge und erstellt die finale Rechnung automatisch.',
+  solutionSteps: [
+    { icon: '📊', title: 'Projekt abschließen', description: 'Markieren Sie das Projekt als abgeschlossen – alle Leistungen sind erfasst.' },
+    { icon: '🧾', title: 'Schlussrechnung generieren', description: 'Taskey verrechnet automatisch alle Abschläge und erstellt die korrekte Endabrechnung.' },
+    { icon: '📤', title: 'Versenden & archivieren', description: 'Rechnung versenden und mit allen Projektunterlagen digital archivieren.' },
+  ],
+  ctaText: 'Jetzt Schlussrechnungen vereinfachen',
+  featureHighlights: [
+    { icon: '🔄', title: 'Automatische Verrechnung', description: 'Alle Abschlagszahlungen werden automatisch korrekt abgezogen.' },
+    { icon: '📋', title: 'Nachtragsverwaltung', description: 'Nachträge und Zusatzleistungen werden sauber in die Schlussrechnung integriert.' },
+    { icon: '📊', title: 'Soll-Ist-Vergleich', description: 'Angebotssumme vs. tatsächliche Kosten auf einen Blick.' },
+    { icon: '📁', title: 'Komplette Dokumentation', description: 'Alle Teilrechnungen, Nachträge und Leistungsnachweise gebündelt.' },
+    { icon: '✅', title: 'Rechtskonform', description: 'Alle Pflichtangaben automatisch enthalten – GoBD-konform.' },
+    { icon: '📤', title: 'Export & Versand', description: 'Als PDF exportieren oder direkt per E-Mail versenden.' },
+  ],
+  closingHeadline: 'Schlussrechnungen ohne Stress.',
+  closingText: 'Taskey verrechnet alles automatisch – Sie prüfen nur noch und versenden.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

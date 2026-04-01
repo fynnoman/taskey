@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Alles in einer App Handwerksbetrieb – Taskey',
+  description: 'Alles in einer App für Ihren Handwerksbetrieb. Taskey vereint Zeiterfassung, Aufträge, Dokumentation und Abrechnung in einer einzigen Plattform.',
+  alternates: { canonical: 'https://www.taskey.de/loesungen/alles-in-einer-app-handwerksbetrieb' },
+};
+
+const data: LandingPageData = {
+  badge: 'All-in-One',
+  headline: 'Alles in einer App für Ihren',
+  headlineHighlight: 'Handwerksbetrieb',
+  subheadline: 'Eine App statt zehn verschiedene Tools.',
+  heroDescription: 'Zeiterfassung hier, Aufträge dort, Rechnungen woanders – Schluss mit Tool-Chaos. Taskey vereint alles, was Ihr Handwerksbetrieb braucht, in einer einzigen App.',
+  painPoints: [
+    { icon: '📱', text: 'Fünf verschiedene Apps für fünf verschiedene Aufgaben – keiner blickt durch.' },
+    { icon: '💸', text: 'Mehrere Abo-Gebühren für Tools, die nicht zusammenarbeiten.' },
+    { icon: '🔄', text: 'Daten manuell zwischen verschiedenen Systemen übertragen.' },
+    { icon: '📚', text: 'Jedes Tool muss einzeln gelernt und geschult werden.' },
+  ],
+  solutionTitle: 'Eine App für alles',
+  solutionDescription: 'Taskey ersetzt Ihre Sammlung von Einzeltools durch eine integrierte Plattform.',
+  solutionSteps: [
+    { icon: '📱', title: 'Eine App installieren', description: 'Taskey deckt Zeiterfassung, Aufträge, Dokumentation und mehr ab.' },
+    { icon: '🔗', title: 'Alles verbunden', description: 'Zeiten fließen in Aufträge, Aufträge in Rechnungen – alles automatisch.' },
+    { icon: '🎯', title: 'Einfach loslegen', description: 'Eine App lernen, eine App nutzen – für das ganze Team.' },
+  ],
+  ctaText: 'Jetzt alles in einer App',
+  featureHighlights: [
+    { icon: '⏱️', title: 'Zeiterfassung', description: 'Arbeitszeiten per App, NFC oder GPS erfassen.' },
+    { icon: '📋', title: 'Auftragsverwaltung', description: 'Aufträge erstellen, zuweisen und nachverfolgen.' },
+    { icon: '📸', title: 'Dokumentation', description: 'Fotos, Berichte und Protokolle direkt in der App.' },
+    { icon: '🧾', title: 'Rechnungsstellung', description: 'Aus erfassten Leistungen Rechnungen generieren.' },
+    { icon: '👥', title: 'Personalplanung', description: 'Teams einteilen und Einsätze koordinieren.' },
+    { icon: '💬', title: 'Kommunikation', description: 'Team-Chat und Benachrichtigungen – alles in Taskey.' },
+  ],
+  closingHeadline: 'Eine App. Alles drin.',
+  closingText: 'Taskey ist die eine App, die Ihr Handwerksbetrieb wirklich braucht.',
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}
