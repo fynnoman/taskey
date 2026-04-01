@@ -3,12 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const pathname = usePathname();
 
   return (
     <>
@@ -33,37 +35,37 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-10">
             <Link
               href="/features"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/features' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               {t("nav.features")}
             </Link>
             <Link
               href="/demo"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/demo' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               {t("nav.liveDemo")}
             </Link>
             <Link
               href="/pricing"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/pricing' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               {t("nav.pricing")}
             </Link>
             <Link
               href="/news"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/news' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               News
             </Link>
             <Link
               href="/partnerschaften"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/partnerschaften' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               Partner werden
             </Link>
             <Link
               href="/about"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
+              className={`transition font-medium ${pathname === '/about' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
               {t("nav.about")}
             </Link>
@@ -126,42 +128,42 @@ export default function Header() {
             <div className="flex flex-col space-y-1">
               <Link
                 href="/features"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/features' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.features")}
               </Link>
               <Link
                 href="/demo"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/demo' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.liveDemo")}
               </Link>
               <Link
                 href="/pricing"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/pricing' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.pricing")}
               </Link>
               <Link
                 href="/news"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/news' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 News
               </Link>
               <Link
                 href="/partnerschaften"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/partnerschaften' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Partner werden
               </Link>
               <Link
                 href="/about"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/about' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.about")}

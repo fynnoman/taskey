@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function DarkHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -31,31 +33,31 @@ export default function DarkHeader() {
           <div className="hidden lg:flex items-center space-x-10">
             <Link
               href="/features"
-              className="text-gray-300 hover:text-white transition font-medium"
+              className={`transition font-medium ${pathname === '/features' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
               Features
             </Link>
             <Link
               href="/demo"
-              className="text-gray-300 hover:text-white transition font-medium"
+              className={`transition font-medium ${pathname === '/demo' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
               Live Demo
             </Link>
             <Link
               href="/pricing"
-              className="text-gray-300 hover:text-white transition font-medium"
+              className={`transition font-medium ${pathname === '/pricing' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
               Preise
             </Link>
             <Link
               href="/news"
-              className="text-gray-300 hover:text-white transition font-medium"
+              className={`transition font-medium ${pathname === '/news' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
               News
             </Link>
             <Link
               href="/partnerschaften"
-              className="text-gray-300 hover:text-white transition font-medium"
+              className={`transition font-medium ${pathname === '/partnerschaften' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
               Partner werden
             </Link>
@@ -118,35 +120,35 @@ export default function DarkHeader() {
             <div className="flex flex-col space-y-1">
               <Link
                 href="/features"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/features' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Features
               </Link>
               <Link
                 href="/demo"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/demo' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Live Demo
               </Link>
               <Link
                 href="/pricing"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/pricing' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Preise
               </Link>
               <Link
                 href="/news"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/news' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 News
               </Link>
               <Link
                 href="/partnerschaften"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                className={`px-4 py-3 rounded-lg transition ${pathname === '/partnerschaften' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Partner werden
