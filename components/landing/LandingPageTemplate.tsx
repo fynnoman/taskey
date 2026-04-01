@@ -89,8 +89,12 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
             {data.painPoints.map((pain, idx) => (
-              <div key={idx} className="flex items-start gap-4 bg-red-50 border border-red-100 rounded-xl p-5">
-                <span className="text-2xl flex-shrink-0">{pain.icon}</span>
+              <div key={idx} className="flex items-start gap-4 bg-red-50/50 border border-red-100 rounded-xl p-5">
+                <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
                 <p className="text-gray-800 font-medium leading-relaxed">{pain.text}</p>
               </div>
             ))}
@@ -114,8 +118,8 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.solutionSteps.map((step, idx) => (
               <div key={idx} className="bg-white rounded-2xl border border-gray-200 p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-2xl mb-5">
-                  {step.icon}
+                <div className="w-12 h-12 rounded-xl bg-blue-900 flex items-center justify-center mb-5">
+                  <span className="text-white font-black text-sm">{String(idx + 1).padStart(2, '0')}</span>
                 </div>
                 <h3 className="text-lg font-black text-gray-900 mb-2">{step.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
@@ -138,7 +142,11 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.featureHighlights.map((feat, idx) => (
               <div key={idx} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <span className="text-3xl mb-4 block">{feat.icon}</span>
+                <div className="w-10 h-10 rounded-lg bg-blue-900 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
                 <h3 className="font-bold text-gray-900 mb-2">{feat.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{feat.description}</p>
               </div>
