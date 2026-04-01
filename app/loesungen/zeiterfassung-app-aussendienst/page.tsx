@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Zeiterfassung App für Außendienst | Taskey',
   description: 'Zeiterfassung App für Außendienst-Mitarbeiter: GPS, NFC, offline-fähig. Perfekt für Handwerk, Technik & Service. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/zeiterfassung-app-aussendienst' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/zeiterfassung-app-aussendienst' },
 };
 
 const data: LandingPageData = {

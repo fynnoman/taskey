@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Handwerk Software einfach – Alles in einer App | Taskey',
   description: 'Einfache Handwerk-Software: Aufträge, Zeiten, Rechnungen in einer App. Keine IT nötig, sofort einsatzbereit. Jetzt 14 Tage kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/handwerk-software-einfach' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/handwerk-software-einfach' },
 };
 
 const data: LandingPageData = {

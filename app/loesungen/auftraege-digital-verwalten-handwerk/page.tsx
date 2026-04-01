@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Aufträge digital verwalten Handwerk | Taskey',
   description: 'Aufträge im Handwerk digital verwalten: Anlegen, zuweisen, tracken und abrechnen. Schluss mit Papierkram. Jetzt 14 Tage kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/auftraege-digital-verwalten-handwerk' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/auftraege-digital-verwalten-handwerk' },
 };
 
 const data: LandingPageData = {

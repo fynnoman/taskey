@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Einsatzplanung Monteure | Taskey',
   description: 'Einsatzplanung für Monteure: Aufträge zuweisen, Routen planen, Einsätze koordinieren. Digital & mobil. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/einsatzplanung-monteure' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/einsatzplanung-monteure' },
 };
 
 const data: LandingPageData = {

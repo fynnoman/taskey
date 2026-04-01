@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Bautagebuch digital führen | Taskey',
   description: 'Digitales Bautagebuch: Wetter, Fortschritt, Fotos, Material und Mängel täglich dokumentieren. Rechtssicher & DSGVO-konform. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/bautagebuch-digital' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/bautagebuch-digital' },
 };
 
 const data: LandingPageData = {

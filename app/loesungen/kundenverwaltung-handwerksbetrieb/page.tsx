@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kundenverwaltung Handwerksbetrieb | Taskey',
   description: 'Kundenverwaltung für Handwerksbetriebe: Kontaktdaten, Auftragshistorie, Notizen – alles an einem Ort. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/kundenverwaltung-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/kundenverwaltung-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Schichtplanung Reinigungsunternehmen | Taskey',
   description: 'Schichtplanung für Reinigungsunternehmen: Objekte zuweisen, Schichten planen, Vertretungen managen. Digital & einfach. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/schichtplanung-reinigungsunternehmen' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/schichtplanung-reinigungsunternehmen' },
 };
 
 const data: LandingPageData = {

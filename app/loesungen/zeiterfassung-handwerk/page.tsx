@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Zeiterfassung Handwerk – Automatisch & digital | Taskey',
   description: 'Zeiterfassung für Handwerksbetriebe: Automatisch per GPS, NFC oder App. Stundennachweise digital, DSGVO-konform. Jetzt 14 Tage kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/zeiterfassung-handwerk' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/zeiterfassung-handwerk' },
 };
 
 const data: LandingPageData = {

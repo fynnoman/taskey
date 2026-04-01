@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Papierloses Büro Handwerk | Taskey',
   description: 'Papierloses Büro im Handwerk: Alle Dokumente digital, alle Prozesse papierlos. Aufträge, Rechnungen, Stundenzettel – alles in einer App.',
-  alternates: { canonical: 'https://taskey.de/loesungen/papierloses-buero-handwerk' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/papierloses-buero-handwerk' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Baudokumentation Software | Taskey',
   description: 'Baudokumentation Software: Fotos, Berichte, Mängel und Abnahmen digital dokumentieren. Rechtssicher, GPS-gestützt. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/baudokumentation-software' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/baudokumentation-software' },
 };
 
 const data: LandingPageData = {

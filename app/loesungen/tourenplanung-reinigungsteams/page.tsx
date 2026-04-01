@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Tourenplanung Reinigungsteams | Taskey',
   description: 'Tourenplanung für Reinigungsteams: Objekte nach Route planen, Fahrzeiten minimieren, Teams effizient einsetzen. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/tourenplanung-reinigungsteams' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/tourenplanung-reinigungsteams' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Leistungsnachweis Gebäudereinigung | Taskey',
   description: 'Digitale Leistungsnachweise für Gebäudereinigung: NFC-Anwesenheit, Checklisten, Fotodokumentation. Qualität nachweisbar. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/leistungsnachweis-gebaeudereinigung' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/leistungsnachweis-gebaeudereinigung' },
 };
 
 const data: LandingPageData = {

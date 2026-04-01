@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Angebote schreiben Handwerk – Schnell & professionell | Taskey',
   description: 'Angebote für Handwerksbetriebe schnell erstellen: Vorlagen, Kalkulation, PDF-Export. Professionell und in Minuten. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/angebote-schreiben-handwerk' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/angebote-schreiben-handwerk' },
 };
 
 const data: LandingPageData = {

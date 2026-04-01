@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Überstunden verwalten Handwerksbetrieb | Taskey',
   description: 'Überstunden im Handwerksbetrieb automatisch verwalten: Echtzeitkonten, gesetzeskonforme Berechnung, transparente Übersichten. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/ueberstunden-verwalten-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/ueberstunden-verwalten-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

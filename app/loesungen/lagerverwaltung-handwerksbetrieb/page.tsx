@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Lagerverwaltung Handwerksbetrieb | Taskey',
   description: 'Lagerverwaltung für Handwerksbetriebe: Bestände digital führen, Ein- und Ausgänge tracken. Mit NFC-Tags. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/lagerverwaltung-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/lagerverwaltung-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

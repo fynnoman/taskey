@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Digitalisierung Handwerksbetrieb | Taskey',
   description: 'Handwerksbetrieb digitalisieren: Aufträge, Zeiten, Dokumente und Rechnungen in einer App. Schluss mit Zettelwirtschaft. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/digitalisierung-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/digitalisierung-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

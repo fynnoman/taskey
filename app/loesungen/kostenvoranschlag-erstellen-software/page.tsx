@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kostenvoranschlag erstellen Software | Taskey',
   description: 'Kostenvoranschläge erstellen mit Software: Positionen kalkulieren, PDF generieren, direkt versenden. Für Handwerk & Bau. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/kostenvoranschlag-erstellen-software' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/kostenvoranschlag-erstellen-software' },
 };
 
 const data: LandingPageData = {

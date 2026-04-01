@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Stundennachweise digital erstellen – Handwerk & Bau | Taskey',
   description: 'Digitale Stundennachweise für Handwerk und Bau. Automatisch, rechtssicher, DSGVO-konform. Schluss mit Papier-Stundenzetteln. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/stundennachweise-digital' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/stundennachweise-digital' },
 };
 
 const data: LandingPageData = {

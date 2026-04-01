@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Bauprojekte planen Software | Taskey',
   description: 'Software zur Planung von Bauprojekten: Aufträge, Mitarbeiter, Material und Zeitpläne digital managen. Für kleine und mittlere Baufirmen. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/bauprojekte-planen-software' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/bauprojekte-planen-software' },
 };
 
 const data: LandingPageData = {

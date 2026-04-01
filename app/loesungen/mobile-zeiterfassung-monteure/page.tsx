@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Mobile Zeiterfassung für Monteure | Taskey',
   description: 'Mobile Zeiterfassung für Monteure und Techniker im Außendienst. GPS-basiert, offline-fähig, NFC-Tags. Jetzt 14 Tage kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/mobile-zeiterfassung-monteure' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/mobile-zeiterfassung-monteure' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Aufträge organisieren Malerbetrieb | Taskey',
   description: 'Aufträge im Malerbetrieb organisieren: Kunden, Termine, Material und Abrechnung – alles digital in einer App. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/auftraege-organisieren-malerbetrieb' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/auftraege-organisieren-malerbetrieb' },
 };
 
 const data: LandingPageData = {

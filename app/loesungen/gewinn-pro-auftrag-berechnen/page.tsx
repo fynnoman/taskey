@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Gewinn pro Auftrag berechnen Handwerk | Taskey',
   description: 'Gewinn pro Auftrag im Handwerk berechnen: Live-Marge, Stunden, Material – automatisch. Nie mehr raten. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/gewinn-pro-auftrag-berechnen' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/gewinn-pro-auftrag-berechnen' },
 };
 
 const data: LandingPageData = {

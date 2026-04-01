@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Digitale Unterschrift Bauabnahme | Taskey',
   description: 'Digitale Unterschrift bei der Bauabnahme: Kunde unterschreibt auf dem Handy. Rechtssicher, sofort als PDF. Jetzt testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/digitale-unterschrift-bauabnahme' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/digitale-unterschrift-bauabnahme' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Subunternehmer verwalten Bau | Taskey',
   description: 'Subunternehmer am Bau verwalten: Einsätze koordinieren, Leistungen dokumentieren, Abrechnungen vorbereiten. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/subunternehmer-verwalten-bau' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/subunternehmer-verwalten-bau' },
 };
 
 const data: LandingPageData = {

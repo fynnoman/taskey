@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Projektmanagement kleine Baufirma | Taskey',
   description: 'Projektmanagement für kleine Baufirmen: Aufträge, Personal und Kosten im Griff. Einfach, digital, bezahlbar. Jetzt 14 Tage kostenlos testen!',
-  alternates: { canonical: 'https://taskey.de/loesungen/projektmanagement-kleine-baufirma' },
+  alternates: { canonical: 'https://www.taskey.de/loesungen/projektmanagement-kleine-baufirma' },
 };
 
 const data: LandingPageData = {
