@@ -24,7 +24,7 @@ export default function ImpressumPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Kontakt</h2>
           <p>
             Telefon: +49 151 68488999<br />
-            E-Mail: fynn@vars-development.com
+            E-Mail: fynn@taskeyapp.com
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Umsatzsteuer-ID</h2>

@@ -160,7 +160,7 @@ export default function Footer() {
                   {t("footer.link.supportContact")}
                 </a>
               </li>
-              <li>fynn@vars-development.com</li>
+              <li>fynn@taskeyapp.com</li>
               <li>+49 151 68488999</li>
               <li>In der Acht 44</li>
               <li>66333 Völklingen</li>

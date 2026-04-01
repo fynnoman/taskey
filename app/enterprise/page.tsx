@@ -294,7 +294,7 @@ export default function EnterprisePage() {
                 {t("enterprise.cta.apply")}
               </button>
               <a
-                href="mailto:fynn@vars-development.com?subject=Enterprise-Anfrage%20Taskey"
+                href="mailto:fynn@taskeyapp.com?subject=Enterprise-Anfrage%20Taskey"
                 className="px-8 py-4 text-white border-2 border-white/50 font-bold rounded-lg hover:bg-white/10 hover:border-white transition-all hover:scale-105 text-lg backdrop-blur-sm"
               >
                 {t("enterprise.cta.demo")}
