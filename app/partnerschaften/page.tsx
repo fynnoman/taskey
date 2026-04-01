@@ -413,7 +413,7 @@ export default function PartnerschaftenPage() {
                 )}
               </button>
               <p className="text-center text-gray-500 text-sm">
-                Oder schreiben Sie uns direkt: <a href="mailto:fynn@vars-development.de" className="text-blue-900 hover:underline font-medium">fynn@vars-development.de</a>
+                Oder schreiben Sie uns direkt: <a href="mailto:fynn@taskeyapp.de" className="text-blue-900 hover:underline font-medium">fynn@taskeyapp.de</a>
               </p>
             </form>
           )}

@@ -149,7 +149,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 mb-2">{t("about.contact.email")}</h4>
-                <a href="mailto:fynn@vars-development.de" className="text-blue-900 hover:underline">fynn@vars-development.de</a>
+                <a href="mailto:fynn@taskeyapp.de" className="text-blue-900 hover:underline">fynn@taskeyapp.de</a>
               </div>
               <div>
                 <h4 className="font-bold text-gray-900 mb-2">{t("about.contact.address")}</h4>
