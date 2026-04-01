@@ -2,7 +2,6 @@ import Hero from "@/components/home/Hero";
 import NFCSection from "@/components/home/NFCSection";
 import FeaturePreview from "@/components/home/FeaturePreview";
 import LiveMargen from "@/components/home/LiveMargen";
-import TaskeyKickOff from "@/components/home/TaskeyKickOff";
 import TaskeyShare from "@/components/home/TaskeyShare";
 import Testimonials from "@/components/home/Testimonials";
 import IOSAppSection from "@/components/home/iOSAppSection";
@@ -91,7 +90,6 @@ export default function Home() {
         {/* Hero Feature Sections */}
         <LiveMargen />
         <SectionDivider from="#111827" to="white" variant="wave" />
-        <TaskeyKickOff />
         <SectionDivider from="white" to="#f9fafb" variant="curve" />
         <TaskeyShare />
 

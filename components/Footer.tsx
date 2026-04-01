@@ -82,6 +82,11 @@ export default function Footer() {
                   Live Demo
                 </Link>
               </li>
+              <li>
+                <Link href="/loesungen" className="text-gray-300 hover:text-white transition">
+                  Alle Lösungen
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -70,6 +70,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    // Lösungen Übersichtsseite
+    {
+      url: `${baseUrl}/loesungen`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
     // SEO Landing Pages - Lösungen
     ...[
       'zeiterfassung-handwerk',
