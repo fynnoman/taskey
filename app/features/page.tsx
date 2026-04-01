@@ -961,16 +961,7 @@ export default function FeaturesPage() {
             </a>
           </div>
 
-          {/* Link to Was ist Taskey */}
-          <div className="mt-12 text-center">
-            <a
-              href="/was-ist-taskey"
-              className="inline-flex items-center gap-2 text-blue-900 hover:text-blue-700 transition-colors text-lg font-semibold"
-            >
-              <span>Unsere Vision</span>
-              <span className="text-2xl">→</span>
-            </a>
-          </div>
+
         </div>
       </div>
 

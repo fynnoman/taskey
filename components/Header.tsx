@@ -32,12 +32,6 @@ export default function Header() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
             <Link
-              href="/was-ist-taskey"
-              className="text-gray-600 hover:text-gray-900 transition font-medium"
-            >
-              {t("nav.whatIsTaskey")}
-            </Link>
-            <Link
               href="/features"
               className="text-gray-600 hover:text-gray-900 transition font-medium"
             >
@@ -60,6 +54,12 @@ export default function Header() {
               className="text-gray-600 hover:text-gray-900 transition font-medium"
             >
               News
+            </Link>
+            <Link
+              href="/partnerschaften"
+              className="text-gray-600 hover:text-gray-900 transition font-medium"
+            >
+              Partner werden
             </Link>
             <Link
               href="/about"
@@ -125,13 +125,6 @@ export default function Header() {
           <div className="lg:hidden border-t border-gray-200/50 py-4 bg-white/90 backdrop-blur-xl">
             <div className="flex flex-col space-y-1">
               <Link
-                href="/was-ist-taskey"
-                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("nav.whatIsTaskey")}
-              </Link>
-              <Link
                 href="/features"
                 className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
                 onClick={() => setMobileMenuOpen(false)}
@@ -158,6 +151,13 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 News
+              </Link>
+              <Link
+                href="/partnerschaften"
+                className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partner werden
               </Link>
               <Link
                 href="/about"

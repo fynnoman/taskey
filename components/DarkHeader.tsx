@@ -30,12 +30,6 @@ export default function DarkHeader() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-10">
             <Link
-              href="/was-ist-taskey"
-              className="text-gray-300 hover:text-white transition font-medium"
-            >
-              Was ist Taskey?
-            </Link>
-            <Link
               href="/features"
               className="text-gray-300 hover:text-white transition font-medium"
             >
@@ -58,6 +52,12 @@ export default function DarkHeader() {
               className="text-gray-300 hover:text-white transition font-medium"
             >
               News
+            </Link>
+            <Link
+              href="/partnerschaften"
+              className="text-gray-300 hover:text-white transition font-medium"
+            >
+              Partner werden
             </Link>
             <a
               href="https://taskey.vars-development.com/support"
@@ -117,13 +117,6 @@ export default function DarkHeader() {
           <div className="lg:hidden border-t border-gray-800 py-4">
             <div className="flex flex-col space-y-1">
               <Link
-                href="/was-ist-taskey"
-                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Was ist Taskey?
-              </Link>
-              <Link
                 href="/features"
                 className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
                 onClick={() => setMobileMenuOpen(false)}
@@ -150,6 +143,13 @@ export default function DarkHeader() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 News
+              </Link>
+              <Link
+                href="/partnerschaften"
+                className="px-4 py-3 text-gray-300 hover:bg-gray-900 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Partner werden
               </Link>
               <a
                 href="https://taskey.vars-development.com/support"

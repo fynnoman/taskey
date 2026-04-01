@@ -176,8 +176,6 @@ export default function DemoPage() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-400 mt-8">
-            <Link href="/was-ist-taskey" className="hover:text-blue-600 transition-colors">{t('demo.links.what')}</Link>
-            <span className="hidden sm:inline text-gray-300">•</span>
             <Link href="/features" className="hover:text-blue-600 transition-colors">{t('demo.links.features')}</Link>
             <span className="hidden sm:inline text-gray-300">•</span>
             <Link href="/pricing" className="hover:text-blue-600 transition-colors">{t('demo.links.pricing')}</Link>
