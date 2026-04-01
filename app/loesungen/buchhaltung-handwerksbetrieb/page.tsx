@@ -25,13 +25,13 @@ const data: LandingPageData = {
   solutionSteps: [
     { icon: '📊', title: 'Automatisch erfasst', description: 'Rechnungen, Stunden und Materialkosten werden automatisch dokumentiert.' },
     { icon: '💰', title: 'Gewinn pro Auftrag', description: 'Sieh in Echtzeit, welche Aufträge profitabel sind.' },
-    { icon: '📤', title: 'Steuerberater-Export', description: 'DATEV-kompatible Exporte mit einem Klick – kein Abtippen mehr.' },
+    { icon: '📤', title: 'Steuerberater-Export', description: 'Kompatible Exporte mit einem Klick – kein Abtippen mehr.' },
   ],
   ctaText: 'Buchhaltung vereinfachen',
   featureHighlights: [
     { icon: '📊', title: 'Einnahmen/Ausgaben', description: 'Automatische Übersicht aller Einnahmen und Ausgaben.' },
     { icon: '💰', title: 'Gewinn pro Auftrag', description: 'Echtzeit-Marge für jeden einzelnen Auftrag.' },
-    { icon: '📤', title: 'DATEV-Export', description: 'Daten direkt für den Steuerberater exportieren.' },
+    { icon: '📤', title: 'Steuerberater-Export', description: 'Daten direkt für den Steuerberater exportieren.' },
     { icon: '📄', title: 'Rechnungsarchiv', description: 'Alle Rechnungen revisionssicher gespeichert.' },
     { icon: '📈', title: 'Umsatzübersicht', description: 'Monatliche und jährliche Umsatzentwicklung.' },
     { icon: '🔒', title: 'GoBD-konform', description: 'Alle Belege nach deutschen Standards archiviert.' },

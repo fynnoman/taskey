@@ -34,7 +34,7 @@ const data: LandingPageData = {
     { icon: '⏱️', title: 'Automatische Pausenberechnung', description: 'Gesetzliche Pausen werden automatisch berücksichtigt und korrekt abgezogen.' },
     { icon: '📊', title: 'Überstunden-Übersicht', description: 'Alle Überstunden auf einen Blick – pro Mitarbeiter, pro Woche, pro Monat.' },
     { icon: '🔒', title: 'DSGVO-konform', description: 'Alle Daten auf deutschen Servern. Datenschutz nach höchsten Standards.' },
-    { icon: '💼', title: 'Steuerberater-Export', description: 'Fertige Reports für DATEV & Co. Kein manuelles Abtippen mehr.' },
+    { icon: '💼', title: 'Steuerberater-Export', description: 'Fertige Reports für Ihren Steuerberater. Kein manuelles Abtippen mehr.' },
   ],
   closingHeadline: 'Nie wieder Stundenzettel sortieren.',
   closingText: 'Starte jetzt mit digitaler Zeiterfassung – in 5 Minuten eingerichtet, sofort einsatzbereit.',

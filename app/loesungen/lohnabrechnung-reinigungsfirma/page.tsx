@@ -25,7 +25,7 @@ const data: LandingPageData = {
   solutionSteps: [
     { icon: '⏱️', title: 'Zeiten erfassen', description: 'Mitarbeiter stempeln per App – alle Arbeitszeiten werden automatisch erfasst.' },
     { icon: '🔢', title: 'Automatisch berechnen', description: 'Zuschläge, Überstunden und Abwesenheiten werden automatisch berechnet.' },
-    { icon: '📤', title: 'Exportieren', description: 'Lohndaten als CSV, PDF oder DATEV-Format an die Buchhaltung senden.' },
+    { icon: '📤', title: 'Exportieren', description: 'Lohndaten als CSV oder PDF an die Buchhaltung senden.' },
   ],
   ctaText: 'Jetzt Lohnvorbereitung vereinfachen',
   featureHighlights: [
@@ -33,7 +33,7 @@ const data: LandingPageData = {
     { icon: '💰', title: 'Zuschlagsberechnung', description: 'Nacht-, Wochenend- und Feiertagszuschläge automatisch berechnet.' },
     { icon: '📊', title: 'Überstundenübersicht', description: 'Überstunden pro Mitarbeiter und Monat auf einen Blick.' },
     { icon: '📅', title: 'Abwesenheiten', description: 'Urlaub, Krankheit und Fehlzeiten korrekt berücksichtigt.' },
-    { icon: '📤', title: 'DATEV-Export', description: 'Lohndaten im DATEV-Format für den Steuerberater exportieren.' },
+    { icon: '📤', title: 'Steuerberater-Export', description: 'Lohndaten im passenden Format für den Steuerberater exportieren.' },
     { icon: '✅', title: 'Plausibilitätsprüfung', description: 'Automatische Prüfung auf Unstimmigkeiten vor dem Export.' },
   ],
   closingHeadline: 'Lohnvorbereitung in Minuten – nicht Stunden.',

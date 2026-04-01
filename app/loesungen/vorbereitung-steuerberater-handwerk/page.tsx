@@ -25,11 +25,11 @@ const data: LandingPageData = {
   solutionSteps: [
     { icon: '📊', title: 'Daten sammeln', description: 'Taskey sammelt alle steuerrelevanten Daten automatisch im Hintergrund.' },
     { icon: '📤', title: 'Export erstellen', description: 'Mit einem Klick einen vollständigen Export für den Steuerberater generieren.' },
-    { icon: '📧', title: 'Direkt senden', description: 'Export per E-Mail oder DATEV-Schnittstelle an den Steuerberater übermitteln.' },
+    { icon: '📧', title: 'Direkt senden', description: 'Export per E-Mail direkt an den Steuerberater übermitteln.' },
   ],
   ctaText: 'Jetzt Steuerberater-Vorbereitung vereinfachen',
   featureHighlights: [
-    { icon: '📊', title: 'DATEV-kompatibel', description: 'Export im DATEV-Format für reibungslose Übernahme.' },
+    { icon: '📊', title: 'Export-Format', description: 'Export im passenden Format für reibungslose Übernahme.' },
     { icon: '📋', title: 'Komplette Unterlagen', description: 'Stundennachweise, Rechnungen und Belege in einem Export.' },
     { icon: '📅', title: 'Periodengerecht', description: 'Daten nach Monaten, Quartalen oder Jahren exportieren.' },
     { icon: '📸', title: 'Belegerfassung', description: 'Alle Belege digital erfasst und dem Export beigefügt.' },
