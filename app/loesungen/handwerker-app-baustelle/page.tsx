@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Die App, die Handwerker lieben.',
   closingText: 'Teste Taskey 14 Tage kostenlos – auf deinem Handy.',
+  relatedLinks: [
+      {
+          href: '/loesungen/app-fuer-handwerker-aussendienst',
+          label: 'App für Außendienst',
+          description: 'Die Handwerker-App auch außerhalb der Baustelle nutzen.'
+      },
+      {
+          href: '/loesungen/zeiterfassung-baustelle',
+          label: 'Zeiterfassung Baustelle',
+          description: 'Zeiten direkt auf der Baustelle per App erfassen.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Baustellenfotos direkt aus der App dokumentieren.'
+      }
+  ],
 };
 
 export default function Page() {

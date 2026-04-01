@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Koordination statt Chaos.',
   closingText: 'Teste Taskey und koordiniere deine Baustellen zentral.',
+  relatedLinks: [
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung Baufirma',
+          description: 'Mitarbeiter auf Baustellen verteilen und Kapazitäten optimal nutzen.'
+      },
+      {
+          href: '/loesungen/mitarbeiter-auf-baustellen-einteilen',
+          label: 'Mitarbeiter einteilen',
+          description: 'Teams flexibel auf verschiedene Baustellen einteilen.'
+      },
+      {
+          href: '/loesungen/zeiterfassung-baustelle',
+          label: 'Zeiterfassung Baustelle',
+          description: 'Arbeitszeiten pro Baustelle automatisch erfassen und zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

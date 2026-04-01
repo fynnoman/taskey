@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Digitalisierung startet hier.',
   closingText: 'Starte jetzt und mach deinen Handwerksbetrieb fit für die Zukunft.',
+  relatedLinks: [
+      {
+          href: '/loesungen/papierloses-buero-handwerk',
+          label: 'Papierloses Büro',
+          description: 'Der erste Schritt der Digitalisierung: Papier abschaffen.'
+      },
+      {
+          href: '/loesungen/zettelwirtschaft-abschaffen-handwerk',
+          label: 'Zettelwirtschaft abschaffen',
+          description: 'Schluss mit Zetteln – alles digital an einem Ort.'
+      },
+      {
+          href: '/loesungen/alles-in-einer-app-handwerksbetrieb',
+          label: 'Alles in einer App',
+          description: 'Alle Prozesse Ihres Betriebs in einer einzigen App vereinen.'
+      }
+  ],
 };
 
 export default function Page() {

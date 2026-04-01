@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Schlussrechnungen ohne Stress.',
   closingText: 'Taskey verrechnet alles automatisch – Sie prüfen nur noch und versenden.',
+  relatedLinks: [
+      {
+          href: '/loesungen/abschlagsrechnung-erstellen-handwerk',
+          label: 'Abschlagsrechnungen',
+          description: 'Abschlagsrechnungen erstellen und bei der Schlussrechnung verrechnen.'
+      },
+      {
+          href: '/loesungen/bauabrechnung-software',
+          label: 'Bauabrechnung',
+          description: 'Die gesamte Bauabrechnung digital managen.'
+      },
+      {
+          href: '/loesungen/aufmass-erstellen-digital',
+          label: 'Aufmaß digital',
+          description: 'Das digitale Aufmaß als Grundlage für die korrekte Schlussrechnung.'
+      }
+  ],
 };
 
 export default function Page() {

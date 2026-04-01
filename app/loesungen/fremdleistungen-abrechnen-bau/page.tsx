@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Fremdleistungen – transparent abgerechnet.',
   closingText: 'Taskey gibt Ihnen die Kontrolle über alle Fremdleistungskosten auf Ihren Baustellen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/subunternehmer-verwalten-bau',
+          label: 'Subunternehmer verwalten',
+          description: 'Subunternehmer und deren Leistungen zentral koordinieren.'
+      },
+      {
+          href: '/loesungen/nachunternehmer-dokumentation',
+          label: 'Nachunternehmer-Dokumentation',
+          description: 'Leistungen von Nachunternehmern lückenlos dokumentieren.'
+      },
+      {
+          href: '/loesungen/bauabrechnung-software',
+          label: 'Bauabrechnung',
+          description: 'Fremdleistungen nahtlos in die Gesamtabrechnung integrieren.'
+      }
+  ],
 };
 
 export default function Page() {

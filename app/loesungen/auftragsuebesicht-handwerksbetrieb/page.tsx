@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jeder Auftrag im Blick.',
   closingText: 'Teste Taskey und erlebe die Übersicht, die dein Betrieb verdient.',
+  relatedLinks: [
+      {
+          href: '/loesungen/auftragsverwaltung-handwerk',
+          label: 'Auftragsverwaltung',
+          description: 'Aufträge nicht nur sehen, sondern komplett digital verwalten.'
+      },
+      {
+          href: '/loesungen/auftraege-digital-verwalten-handwerk',
+          label: 'Aufträge digital verwalten',
+          description: 'Von der Auftragsanlage bis zur Abrechnung – alles in einer App.'
+      },
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung',
+          description: 'Offene Aufträge direkt terminieren und Teams zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

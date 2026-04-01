@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Werkzeug? Gefunden.',
   closingText: 'Starte jetzt und verliere nie wieder Werkzeug auf der Baustelle.',
+  relatedLinks: [
+      {
+          href: '/loesungen/lagerverwaltung-handwerksbetrieb',
+          label: 'Lagerverwaltung',
+          description: 'Werkzeuge und Material gemeinsam am selben Ort verwalten.'
+      },
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Nicht nur Werkzeuge – auch Verbrauchsmaterial im Griff behalten.'
+      },
+      {
+          href: '/loesungen/fahrzeugplanung-handwerksbetrieb',
+          label: 'Fahrzeugplanung',
+          description: 'Werkzeuge, Fahrzeuge und Geräte gemeinsam disponieren.'
+      }
+  ],
 };
 
 export default function Page() {

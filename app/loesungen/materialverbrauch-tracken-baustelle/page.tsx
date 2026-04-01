@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jedes Material zählt.',
   closingText: 'Taskey macht Ihren Materialverbrauch transparent – für weniger Verschwendung und bessere Kalkulationen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Material zentral verwalten und Verbräuche pro Baustelle auswerten.'
+      },
+      {
+          href: '/loesungen/materialliste-baustelle-erstellen',
+          label: 'Materiallisten erstellen',
+          description: 'Vor Baubeginn die benötigten Materialien planen und listen.'
+      },
+      {
+          href: '/loesungen/nachkalkulation-handwerk',
+          label: 'Nachkalkulation',
+          description: 'Materialkosten pro Auftrag auswerten – für bessere Kalkulationen.'
+      }
+  ],
 };
 
 export default function Page() {

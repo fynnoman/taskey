@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Dokumentiert. Gefunden. Bewiesen.',
   closingText: 'Starte jetzt und dokumentiere deine Baustellen lückenlos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/bautagebuch-digital',
+          label: 'Bautagebuch digital',
+          description: 'Tägliche Fortschritte als Teil der Baudokumentation festhalten.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Baustellenfotos als wichtiger Teil jeder Baudokumentation.'
+      },
+      {
+          href: '/loesungen/protokolle-baustelle-erstellen',
+          label: 'Protokolle erstellen',
+          description: 'Baustellenprotokolle als Teil der vollständigen Dokumentation.'
+      }
+  ],
 };
 
 export default function Page() {

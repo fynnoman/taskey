@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Bautagebuch in 5 Minuten.',
   closingText: 'Starte jetzt und dokumentiere deine Baustellen digital.',
+  relatedLinks: [
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Das Bautagebuch als Kern einer vollständigen Baudokumentation.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Tägliche Fotos direkt ins Bautagebuch einfügen.'
+      },
+      {
+          href: '/loesungen/protokolle-baustelle-erstellen',
+          label: 'Protokolle erstellen',
+          description: 'Bauprotokolle ergänzend zum Bautagebuch führen.'
+      }
+  ],
 };
 
 export default function Page() {

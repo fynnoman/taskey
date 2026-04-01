@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Der letzte Zettel ist geschrieben.',
   closingText: 'Taskey macht Ihren Betrieb papierlos – einfach, schnell und endgültig.',
+  relatedLinks: [
+      {
+          href: '/loesungen/papierloses-buero-handwerk',
+          label: 'Papierloses Büro',
+          description: 'Vom Zettel zum papierlosen Büro – der nächste Schritt.'
+      },
+      {
+          href: '/loesungen/digitalisierung-handwerksbetrieb',
+          label: 'Digitalisierung Handwerk',
+          description: 'Zettelwirtschaft abschaffen ist der erste Schritt zur Digitalisierung.'
+      },
+      {
+          href: '/loesungen/rapportzettel-digital-handwerk',
+          label: 'Rapportzettel digital',
+          description: 'Auch Rapportzettel – digital statt auf Papier.'
+      }
+  ],
 };
 
 export default function Page() {

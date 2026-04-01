@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Klein, aber digital.',
   closingText: 'Starte jetzt und manage deine Projekte wie die Großen – ohne deren Kosten.',
+  relatedLinks: [
+      {
+          href: '/loesungen/bauprojekte-planen-software',
+          label: 'Bauprojekte planen',
+          description: 'Projekte strukturieren, Meilensteine setzen und Fortschritte tracken.'
+      },
+      {
+          href: '/loesungen/bautagebuch-digital',
+          label: 'Bautagebuch digital',
+          description: 'Tägliche Baufortschritte digital dokumentieren – mit Fotos und Notizen.'
+      },
+      {
+          href: '/loesungen/baustellen-koordinieren-tool',
+          label: 'Baustellen koordinieren',
+          description: 'Mehrere Baustellen gleichzeitig im Griff – mit einem Tool.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Außendienst ohne Papierkram.',
   closingText: 'Starte jetzt und erlebe, wie einfach Außendienst-Zeiterfassung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/mobile-zeiterfassung-monteure',
+          label: 'Mobile Zeiterfassung Monteure',
+          description: 'Speziell für Monteure: Zeiten beim Kunden per App oder NFC erfassen.'
+      },
+      {
+          href: '/loesungen/app-fuer-handwerker-aussendienst',
+          label: 'App für Handwerker Außendienst',
+          description: 'Die All-in-One-App für Handwerker unterwegs – Aufträge, Zeiten, Dokumentation.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Automatische Stundennachweise aus den unterwegs erfassten Arbeitszeiten.'
+      }
+  ],
 };
 
 export default function Page() {

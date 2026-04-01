@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Unterschrieben. Gespeichert. Bewiesen.',
   closingText: 'Starte jetzt und hol digitale Unterschriften direkt vor Ort.',
+  relatedLinks: [
+      {
+          href: '/loesungen/abnahmeprotokoll-digital',
+          label: 'Abnahmeprotokoll digital',
+          description: 'Abnahmeprotokolle erstellen und direkt digital unterschreiben.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Auch Stundennachweise mit digitaler Unterschrift versehen.'
+      },
+      {
+          href: '/loesungen/uebergabeprotokoll-reinigung',
+          label: 'Übergabeprotokoll Reinigung',
+          description: 'Auch Übergabeprotokolle digital unterschreiben lassen.'
+      }
+  ],
 };
 
 export default function Page() {

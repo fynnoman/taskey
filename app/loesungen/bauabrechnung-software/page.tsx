@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Bauabrechnung – so einfach wie noch nie.',
   closingText: 'Taskey macht Ihre Bauabrechnung automatisch, fehlerfrei und schnell.',
+  relatedLinks: [
+      {
+          href: '/loesungen/abschlagsrechnung-erstellen-handwerk',
+          label: 'Abschlagsrechnungen',
+          description: 'Abschlagsrechnungen nach Baufortschritt automatisch erstellen.'
+      },
+      {
+          href: '/loesungen/schlussrechnung-software-bau',
+          label: 'Schlussrechnung',
+          description: 'Die finale Abrechnung nach Projektabschluss.'
+      },
+      {
+          href: '/loesungen/aufmass-erstellen-digital',
+          label: 'Aufmaß digital',
+          description: 'Aufmaße vor Ort digital erstellen – als Basis für die Abrechnung.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Finanzielle Sicherheit für Ihre Baufirma.',
   closingText: 'Taskey gibt Ihnen den Überblick über Ihre Liquidität – für sorgenfreies Wirtschaften.',
+  relatedLinks: [
+      {
+          href: '/loesungen/einnahmen-ausgaben-handwerker',
+          label: 'Einnahmen & Ausgaben',
+          description: 'Die Basis jeder Liquiditätsplanung – alle Geldströme im Blick.'
+      },
+      {
+          href: '/loesungen/buchhaltung-handwerksbetrieb',
+          label: 'Buchhaltung Handwerk',
+          description: 'Alle Finanzdaten an einem Ort – für bessere Planung.'
+      },
+      {
+          href: '/loesungen/rechnungen-nachverfolgen-handwerksbetrieb',
+          label: 'Rechnungen nachverfolgen',
+          description: 'Offene Rechnungen tracken und Zahlungseingänge planen.'
+      }
+  ],
 };
 
 export default function Page() {

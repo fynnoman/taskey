@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Schluss mit Bauchgefühl-Kalkulationen.',
   closingText: 'Mit Taskey kalkulieren Sie Angebote auf Basis echter Daten – für mehr Aufträge und bessere Margen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kostenvoranschlag-erstellen-software',
+          label: 'Kostenvoranschlag erstellen',
+          description: 'Vom kalkulierten Angebot zum fertigen Kostenvoranschlag.'
+      },
+      {
+          href: '/loesungen/nachkalkulation-handwerk',
+          label: 'Nachkalkulation',
+          description: 'Nach dem Auftrag prüfen: Wurde das Angebot profitabel kalkuliert?'
+      },
+      {
+          href: '/loesungen/stundensaetze-kalkulieren-handwerk',
+          label: 'Stundensätze kalkulieren',
+          description: 'Realistische Stundensätze als Basis für jede Kalkulation.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Alle Kunden. Ein System.',
   closingText: 'Taskey ist die zentrale Kundendatenbank, die Ihre Reinigungsfirma verdient.',
+  relatedLinks: [
+      {
+          href: '/loesungen/stammkunden-verwalten-gebaeudereinigung',
+          label: 'Stammkunden verwalten',
+          description: 'Stammkunden mit Objekten, Verträgen und Kontaktdaten pflegen.'
+      },
+      {
+          href: '/loesungen/rechnung-schreiben-reinigungsfirma',
+          label: 'Rechnungen schreiben',
+          description: 'Aus der Kundendatenbank direkt Rechnungen erstellen.'
+      },
+      {
+          href: '/loesungen/sla-tracking-reinigungsfirma',
+          label: 'SLA-Tracking',
+          description: 'Service Level Agreements pro Kunde verwalten und einhalten.'
+      }
+  ],
 };
 
 export default function Page() {

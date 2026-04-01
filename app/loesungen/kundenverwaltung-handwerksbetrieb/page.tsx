@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kunden kennen. Aufträge gewinnen.',
   closingText: 'Starte jetzt und hab alle Kundeninformationen immer parat.',
+  relatedLinks: [
+      {
+          href: '/loesungen/crm-fuer-handwerker',
+          label: 'CRM für Handwerker',
+          description: 'Kundenbeziehungen professionell pflegen und ausbauen.'
+      },
+      {
+          href: '/loesungen/kundenhistorie-verwalten-handwerk',
+          label: 'Kundenhistorie verwalten',
+          description: 'Alle bisherigen Aufträge und Kontakte zu jedem Kunden einsehen.'
+      },
+      {
+          href: '/loesungen/angebote-schreiben-handwerk',
+          label: 'Angebote schreiben',
+          description: 'Aus Kundendaten direkt professionelle Angebote erstellen.'
+      }
+  ],
 };
 
 export default function Page() {

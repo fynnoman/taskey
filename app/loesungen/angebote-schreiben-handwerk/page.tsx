@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Angebote, die überzeugen.',
   closingText: 'Starte jetzt und schreibe dein erstes Angebot in unter 5 Minuten.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kostenvoranschlag-erstellen-software',
+          label: 'Kostenvoranschlag erstellen',
+          description: 'Professionelle Kostenvoranschläge in Minuten statt Stunden.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Angebot angenommen? Direkt zur Rechnung – ohne Daten erneut einzugeben.'
+      },
+      {
+          href: '/loesungen/auftragsverwaltung-handwerk',
+          label: 'Auftragsverwaltung',
+          description: 'Vom Angebot zum Auftrag – alles in einem System.'
+      }
+  ],
 };
 
 export default function Page() {

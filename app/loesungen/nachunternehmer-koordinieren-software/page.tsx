@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nachunternehmer – endlich im Griff.',
   closingText: 'Taskey macht die Koordination Ihrer Nachunternehmer einfach und transparent.',
+  relatedLinks: [
+      {
+          href: '/loesungen/subunternehmer-einsatzplanung',
+          label: 'Einsatzplanung',
+          description: 'Nachunternehmer gezielt auf Projekte einplanen.'
+      },
+      {
+          href: '/loesungen/nachunternehmer-dokumentation',
+          label: 'Dokumentation',
+          description: 'Alle Nachunternehmerleistungen lückenlos dokumentieren.'
+      },
+      {
+          href: '/loesungen/baustellen-koordinieren-tool',
+          label: 'Baustellen koordinieren',
+          description: 'Nachunternehmer nahtlos in die Baustellenkoordination einbinden.'
+      }
+  ],
 };
 
 export default function Page() {

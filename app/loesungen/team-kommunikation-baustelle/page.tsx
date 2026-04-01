@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Info raus. Angekommen.',
   closingText: 'Starte jetzt und kommuniziere strukturiert mit deinem Team.',
+  relatedLinks: [
+      {
+          href: '/loesungen/chat-app-handwerksbetrieb',
+          label: 'Chat-App Handwerk',
+          description: 'Die komplette Chat-Lösung für den gesamten Betrieb.'
+      },
+      {
+          href: '/loesungen/baustelleninfos-teilen-app',
+          label: 'Baustelleninfos teilen',
+          description: 'Pläne, Fotos und Updates direkt auf der Baustelle teilen.'
+      },
+      {
+          href: '/loesungen/infos-an-monteure-senden',
+          label: 'Infos an Monteure',
+          description: 'Monteure unterwegs mit wichtigen Informationen versorgen.'
+      }
+  ],
 };
 
 export default function Page() {

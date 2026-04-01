@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Übergaben – professionell dokumentiert.',
   closingText: 'Taskey macht Ihre Übergabeprotokolle rechtssicher und professionell.',
+  relatedLinks: [
+      {
+          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          label: 'Reinigungspläne digital',
+          description: 'Übergabeprotokolle basieren auf den vereinbarten Reinigungsplänen.'
+      },
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Übergabeprotokolle als Teil der Qualitätssicherung.'
+      },
+      {
+          href: '/loesungen/digitale-unterschrift-bauabnahme',
+          label: 'Digitale Unterschrift',
+          description: 'Übergabeprotokolle digital unterschreiben lassen.'
+      }
+  ],
 };
 
 export default function Page() {

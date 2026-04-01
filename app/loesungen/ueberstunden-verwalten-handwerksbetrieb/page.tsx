@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Überstunden? Automatisch im Griff.',
   closingText: 'Starte jetzt und beende den Überstunden-Streit in deinem Betrieb.',
+  relatedLinks: [
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung im Handwerk',
+          description: 'Die Basis: Erst Zeiten erfassen, dann Überstunden automatisch berechnen.'
+      },
+      {
+          href: '/loesungen/lohnabrechnung-reinigungsfirma',
+          label: 'Lohnabrechnung',
+          description: 'Überstunden direkt in die Lohnvorbereitung übernehmen.'
+      },
+      {
+          href: '/loesungen/mitarbeiter-stunden-tracken-handwerk',
+          label: 'Mitarbeiter-Stunden tracken',
+          description: 'Alle Stunden pro Mitarbeiter im Überblick – inklusive Überstundenkonten.'
+      }
+  ],
 };
 
 export default function Page() {

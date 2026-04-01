@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder Rechnungen vergessen.',
   closingText: 'Mit Taskey haben Sie alle offenen Posten im Blick – für eine gesunde Liquidität.',
+  relatedLinks: [
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Rechnungen erstellen und direkt den Zahlungsstatus tracken.'
+      },
+      {
+          href: '/loesungen/mahnwesen-handwerk',
+          label: 'Mahnwesen Handwerk',
+          description: 'Offene Rechnungen? Automatische Zahlungserinnerungen versenden.'
+      },
+      {
+          href: '/loesungen/einnahmen-ausgaben-handwerker',
+          label: 'Einnahmen & Ausgaben',
+          description: 'Den finanziellen Gesamtüberblick immer im Blick behalten.'
+      }
+  ],
 };
 
 export default function Page() {

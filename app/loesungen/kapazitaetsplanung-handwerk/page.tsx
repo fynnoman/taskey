@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder über- oder unterbelastet.',
   closingText: 'Taskey gibt Ihnen den Überblick über Ihre Kapazitäten – für bessere Entscheidungen und zufriedenere Teams.',
+  relatedLinks: [
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung',
+          description: 'Personalkapazitäten als Kernstück der Gesamtplanung.'
+      },
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition',
+          description: 'Kapazitäten in die tägliche Disposition einfließen lassen.'
+      },
+      {
+          href: '/loesungen/ressourcenplanung-baufirma',
+          label: 'Ressourcenplanung',
+          description: 'Nicht nur Personal – auch Material und Maschinen einplanen.'
+      }
+  ],
 };
 
 export default function Page() {

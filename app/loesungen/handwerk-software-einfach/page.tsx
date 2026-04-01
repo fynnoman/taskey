@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Einfach. Digital. Handwerk.',
   closingText: 'Starte jetzt und erlebe, wie einfach Software sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/alles-in-einer-app-handwerksbetrieb',
+          label: 'Alles in einer App',
+          description: 'Eine App für alles – keine komplizierte Software-Landschaft.'
+      },
+      {
+          href: '/loesungen/digitalisierung-handwerksbetrieb',
+          label: 'Digitalisierung Handwerk',
+          description: 'Einfache Software als Schlüssel zur erfolgreichen Digitalisierung.'
+      },
+      {
+          href: '/loesungen/app-fuer-handwerker-aussendienst',
+          label: 'App für Außendienst',
+          description: 'Einfach auch unterwegs – die App für Handwerker im Außendienst.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Eine App. Alles drin.',
   closingText: 'Taskey ist die eine App, die Ihr Handwerksbetrieb wirklich braucht.',
+  relatedLinks: [
+      {
+          href: '/loesungen/handwerk-software-einfach',
+          label: 'Einfache Handwerk-Software',
+          description: 'Eine App, die so einfach ist, dass jeder sie sofort versteht.'
+      },
+      {
+          href: '/loesungen/digitalisierung-handwerksbetrieb',
+          label: 'Digitalisierung Handwerk',
+          description: 'Mit einer App den gesamten Betrieb digitalisieren.'
+      },
+      {
+          href: '/loesungen/bueroarbeit-reduzieren-handwerk',
+          label: 'Büroarbeit reduzieren',
+          description: 'Eine App für alles bedeutet: deutlich weniger Büroarbeit.'
+      }
+  ],
 };
 
 export default function Page() {

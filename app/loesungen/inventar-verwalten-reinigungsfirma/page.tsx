@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Ihr Inventar – immer im Blick.',
   closingText: 'Taskey verhindert verlorenes Equipment und leere Vorräte – für reibungslosen Betrieb.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Reinigungsmittel und Material als Inventar effizient verwalten.'
+      },
+      {
+          href: '/loesungen/lagerverwaltung-handwerksbetrieb',
+          label: 'Lagerverwaltung',
+          description: 'Inventar im Lager organisieren und Bestände überwachen.'
+      },
+      {
+          href: '/loesungen/bestellwesen-handwerksbetrieb',
+          label: 'Bestellwesen',
+          description: 'Bei niedrigem Inventar automatisch nachbestellen.'
+      }
+  ],
 };
 
 export default function Page() {

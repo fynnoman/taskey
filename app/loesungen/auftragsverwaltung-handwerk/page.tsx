@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kein Auftrag geht mehr unter.',
   closingText: 'Starte jetzt und erlebe, wie einfach Auftragsverwaltung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/auftraege-digital-verwalten-handwerk',
+          label: 'Aufträge digital verwalten',
+          description: 'Alle Aufträge an einem Ort – vom Angebot bis zur Rechnung.'
+      },
+      {
+          href: '/loesungen/auftragsuebesicht-handwerksbetrieb',
+          label: 'Auftragsübersicht Handwerk',
+          description: 'Auf einen Blick sehen, welche Aufträge laufen, welche offen sind und was ansteht.'
+      },
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung Handwerker',
+          description: 'Aufträge terminieren und Mitarbeiter automatisch zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

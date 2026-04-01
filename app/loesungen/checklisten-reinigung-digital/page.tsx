@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Qualität nachweisen. Digital.',
   closingText: 'Starte jetzt und mach Reinigungsqualität sichtbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          label: 'Reinigungspläne digital',
+          description: 'Checklisten als Teil umfassender Reinigungspläne.'
+      },
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Checklisten als Werkzeug für die Qualitätskontrolle nutzen.'
+      },
+      {
+          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          label: 'Leistungsnachweise',
+          description: 'Abgehakte Checklisten als Leistungsnachweis verwenden.'
+      }
+  ],
 };
 
 export default function Page() {

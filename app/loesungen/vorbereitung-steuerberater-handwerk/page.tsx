@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Schluss mit Steuerberater-Panik.',
   closingText: 'Taskey hat Ihre Unterlagen immer bereit – für stressfreie Steuerberater-Termine.',
+  relatedLinks: [
+      {
+          href: '/loesungen/buchhaltung-handwerksbetrieb',
+          label: 'Buchhaltung Handwerk',
+          description: 'Alle Buchungsdaten digital erfassen – der Steuerberater dankt es Ihnen.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Fertige Stundennachweise als Export für die Lohnbuchhaltung.'
+      },
+      {
+          href: '/loesungen/rechnungen-nachverfolgen-handwerksbetrieb',
+          label: 'Rechnungen nachverfolgen',
+          description: 'Offene Posten im Blick – wichtig für die Steuerberater-Übergabe.'
+      }
+  ],
 };
 
 export default function Page() {

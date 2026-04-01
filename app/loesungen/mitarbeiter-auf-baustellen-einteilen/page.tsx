@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder Baustellenchaos.',
   closingText: 'Taskey bringt die richtigen Leute zur richtigen Zeit auf die richtige Baustelle.',
+  relatedLinks: [
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung Bau',
+          description: 'Personalkapazitäten planen und optimal auf Baustellen verteilen.'
+      },
+      {
+          href: '/loesungen/kolonnenplanung-bau',
+          label: 'Kolonnenplanung',
+          description: 'Kolonnen zusammenstellen und auf Baustellen verteilen.'
+      },
+      {
+          href: '/loesungen/baustellen-koordinieren-tool',
+          label: 'Baustellen koordinieren',
+          description: 'Mehrere Baustellen gleichzeitig managen und koordinieren.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Disposition ohne Anrufe.',
   closingText: 'Teste Taskey und erlebe, wie entspannt Disposition sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung',
+          description: 'Disponierte Aufträge terminieren und Teams zuordnen.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-monteure',
+          label: 'Einsatzplanung Monteure',
+          description: 'Monteure gezielt auf Einsätze disponieren.'
+      },
+      {
+          href: '/loesungen/wochenplan-handwerker-erstellen',
+          label: 'Wochenplan erstellen',
+          description: 'Aus der Disposition fertige Wochenpläne generieren.'
+      }
+  ],
 };
 
 export default function Page() {

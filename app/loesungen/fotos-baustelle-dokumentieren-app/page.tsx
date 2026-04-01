@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jedes Foto. Jeder Beweis.',
   closingText: 'Starte jetzt und dokumentiere deine Baustellen lückenlos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Fotos als Teil einer umfassenden digitalen Baudokumentation.'
+      },
+      {
+          href: '/loesungen/maengeldokumentation-bau',
+          label: 'Mängeldokumentation',
+          description: 'Mängel mit Fotos dokumentieren – eindeutig und nachvollziehbar.'
+      },
+      {
+          href: '/loesungen/bautagebuch-digital',
+          label: 'Bautagebuch digital',
+          description: 'Fotos direkt ins digitale Bautagebuch einfügen.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Digital. Übersichtlich. Einfach.',
   closingText: 'Starte jetzt und mach deinen Betrieb papierlos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/auftragsverwaltung-handwerk',
+          label: 'Auftragsverwaltung Handwerk',
+          description: 'Der komplette Überblick über alle Aufträge in Ihrem Betrieb.'
+      },
+      {
+          href: '/loesungen/angebote-schreiben-handwerk',
+          label: 'Angebote schreiben',
+          description: 'Vom Angebot zum Auftrag – nahtlos und digital.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Aus digitalen Aufträgen direkt Rechnungen erstellen.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -13,6 +13,12 @@ export interface SolutionStep {
   description: string;
 }
 
+export interface RelatedLink {
+  href: string;
+  label: string;
+  description: string;
+}
+
 export interface LandingPageData {
   badge: string;
   headline: string;
@@ -27,6 +33,7 @@ export interface LandingPageData {
   featureHighlights: { title: string; description: string; icon: string }[];
   closingHeadline: string;
   closingText: string;
+  relatedLinks?: RelatedLink[];
 }
 
 export default function LandingPageTemplate({ data }: { data: LandingPageData }) {
@@ -154,6 +161,38 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
           </div>
         </div>
       </section>
+
+      {/* Related Links */}
+      {data.relatedLinks && data.relatedLinks.length > 0 && (
+        <section className="py-16 md:py-20 bg-gray-50">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <p className="text-sm font-black text-gray-500 uppercase tracking-widest mb-3">Das könnte Sie auch interessieren</p>
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight">
+                Verwandte Themen
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {data.relatedLinks.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={link.href}
+                  className="group bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                  <h3 className="text-lg font-black text-gray-900 group-hover:text-blue-900 transition-colors mb-2">
+                    {link.label}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">{link.description}</p>
+                  <span className="text-blue-600 text-sm font-bold group-hover:text-blue-800 transition-colors inline-flex items-center gap-1">
+                    Mehr erfahren
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Social Proof Bar */}
       <section className="py-10 bg-gray-950">

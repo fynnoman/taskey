@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kein Mangel geht mehr unter.',
   closingText: 'Starte jetzt und dokumentiere Mängel lückenlos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Mängel mit Fotos klar und eindeutig dokumentieren.'
+      },
+      {
+          href: '/loesungen/abnahmeprotokoll-digital',
+          label: 'Abnahmeprotokoll',
+          description: 'Mängel direkt im Abnahmeprotokoll festhalten.'
+      },
+      {
+          href: '/loesungen/reklamationen-verwalten-handwerk',
+          label: 'Reklamationen verwalten',
+          description: 'Aus dokumentierten Mängeln Reklamationen ableiten und bearbeiten.'
+      }
+  ],
 };
 
 export default function Page() {

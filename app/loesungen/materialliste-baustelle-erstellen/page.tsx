@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Immer das richtige Material zur richtigen Zeit.',
   closingText: 'Taskey macht Ihre Materialplanung fehlerfrei und effizient.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverbrauch-tracken-baustelle',
+          label: 'Materialverbrauch tracken',
+          description: 'Geplantes Material vs. tatsächlichen Verbrauch vergleichen.'
+      },
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Alle Materialien zentral verwalten und Beständen zuordnen.'
+      },
+      {
+          href: '/loesungen/bestellwesen-handwerksbetrieb',
+          label: 'Bestellwesen',
+          description: 'Aus der Materialliste direkt Bestellungen generieren.'
+      }
+  ],
 };
 
 export default function Page() {

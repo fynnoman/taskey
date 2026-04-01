@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Lieferscheine – digital, professionell, verknüpft.',
   closingText: 'Taskey macht Ihre Lieferscheine zum effizienten Teil Ihres digitalen Workflows.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Geliefertes Material direkt ins System übernehmen.'
+      },
+      {
+          href: '/loesungen/bestellwesen-handwerksbetrieb',
+          label: 'Bestellwesen',
+          description: 'Lieferscheine mit Bestellungen abgleichen.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Aus Lieferscheinen und Leistungen Rechnungen erstellen.'
+      }
+  ],
 };
 
 export default function Page() {

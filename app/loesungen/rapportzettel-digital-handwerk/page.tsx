@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Rapport. Digital. Unterschrieben.',
   closingText: 'Starte jetzt und verabschiede dich vom Papier-Rapportzettel.',
+  relatedLinks: [
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Nicht nur Rapporte – auch Stundennachweise automatisch generieren.'
+      },
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung Handwerk',
+          description: 'Arbeitszeiten als Teil des digitalen Rapports automatisch erfassen.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Rapportzettel mit Fotos ergänzen – direkt aus der App.'
+      }
+  ],
 };
 
 export default function Page() {

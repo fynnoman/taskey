@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Abschlagsrechnungen ohne Kopfschmerzen.',
   closingText: 'Taskey übernimmt die Verwaltung Ihrer Teilzahlungen – damit Sie sich auf die Arbeit konzentrieren können.',
+  relatedLinks: [
+      {
+          href: '/loesungen/schlussrechnung-software-bau',
+          label: 'Schlussrechnung Bau',
+          description: 'Nach den Abschlägen folgt die Schlussrechnung – ebenso einfach erstellt.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Alle Rechnungsarten in einem System – Abschlag, Teilrechnung, Schlussrechnung.'
+      },
+      {
+          href: '/loesungen/bauabrechnung-software',
+          label: 'Bauabrechnung',
+          description: 'Die komplette Bauabrechnung digital – vom Aufmaß bis zur Rechnung.'
+      }
+  ],
 };
 
 export default function Page() {

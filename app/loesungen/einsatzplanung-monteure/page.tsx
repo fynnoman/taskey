@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Monteure planen. Ohne Chaos.',
   closingText: 'Starte jetzt und erlebe, wie einfach Einsatzplanung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition Handwerk',
+          description: 'Monteure und Aufträge effizient disponieren.'
+      },
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung',
+          description: 'Termine koordinieren und Monteure passend zuordnen.'
+      },
+      {
+          href: '/loesungen/mobile-zeiterfassung-monteure',
+          label: 'Mobile Zeiterfassung',
+          description: 'Eingesetzte Monteure erfassen ihre Zeiten direkt mobil.'
+      }
+  ],
 };
 
 export default function Page() {

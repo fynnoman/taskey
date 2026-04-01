@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Gewinn? Oder Verlust? Jetzt wissen.',
   closingText: 'Starte jetzt und sieh den Gewinn jedes Auftrags in Echtzeit.',
+  relatedLinks: [
+      {
+          href: '/loesungen/nachkalkulation-handwerk',
+          label: 'Nachkalkulation',
+          description: 'Detaillierte Nachkalkulation: Wo ist Geld geblieben, wo wurde gespart?'
+      },
+      {
+          href: '/loesungen/einnahmen-ausgaben-handwerker',
+          label: 'Einnahmen & Ausgaben',
+          description: 'Den finanziellen Überblick über den gesamten Betrieb behalten.'
+      },
+      {
+          href: '/loesungen/stundensaetze-kalkulieren-handwerk',
+          label: 'Stundensätze kalkulieren',
+          description: 'Profitable Stundensätze auf Basis Ihrer echten Auftragsdaten berechnen.'
+      }
+  ],
 };
 
 export default function Page() {

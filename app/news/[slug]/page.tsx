@@ -15,9 +15,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
+
+  const url = `https://www.taskey.de/news/${slug}`;
+  const title = post.metaTitle ?? post.title;
+  const description = post.metaDescription ?? post.summary;
+
   return {
-    title: post.title,
-    description: post.summary,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Taskey",
+      type: "article",
+      ...(post.isoDate && { publishedTime: post.isoDate }),
+      locale: "de_DE",
+    },
   };
 }
 
@@ -27,7 +42,24 @@ const categoryStyle: Record<PostCategory, { bg: string; text: string }> = {
   Release:     { bg: "bg-green-100",  text: "text-green-900" },
   Unternehmen: { bg: "bg-gray-100",   text: "text-gray-800" },
   Geplant:     { bg: "bg-amber-100",  text: "text-amber-800" },
+  Blog:        { bg: "bg-emerald-100", text: "text-emerald-900" },
 };
+
+/** Render markdown-style **bold** within a text string */
+function renderFormattedText(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="font-bold text-gray-900">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
+/** Check if a paragraph is a heading (starts with ## ) */
+function isHeading(text: string) {
+  return text.startsWith("## ");
+}
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
@@ -45,6 +77,36 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <main className="bg-white min-h-screen">
+
+      {/* ── JSON-LD BlogPosting Schema ── */}
+      {post.isoDate && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.metaTitle ?? post.title,
+              description: post.metaDescription ?? post.summary,
+              datePublished: post.isoDate,
+              author: {
+                "@type": "Organization",
+                name: "Taskey",
+                url: "https://www.taskey.de",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Taskey",
+                url: "https://www.taskey.de",
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `https://www.taskey.de/news/${slug}`,
+              },
+            }),
+          }}
+        />
+      )}
 
       {/* ── BACK ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-0">
@@ -80,11 +142,20 @@ export default async function PostPage({ params }: Props) {
 
         {/* Body */}
         <div className="space-y-7">
-          {paragraphs.map((para, i) => (
-            <p key={i} className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-              {para}
-            </p>
-          ))}
+          {paragraphs.map((para, i) =>
+            isHeading(para) ? (
+              <h2
+                key={i}
+                className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight mt-10 mb-2"
+              >
+                {renderFormattedText(para.replace(/^## /, ""))}
+              </h2>
+            ) : (
+              <p key={i} className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                {renderFormattedText(para)}
+              </p>
+            )
+          )}
         </div>
 
         {/* ── PREV / NEXT ── */}

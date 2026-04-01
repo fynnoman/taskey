@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { posts } from './news/posts'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taskey.de'
@@ -186,5 +187,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
+    // News & Blog Artikel
+    {
+      url: `${baseUrl}/news`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    ...posts
+      .filter((p) => !p.planned)
+      .map((post) => ({
+        url: `${baseUrl}/news/${post.slug}`,
+        lastModified: post.isoDate ? new Date(post.isoDate) : new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      })),
   ]
 }

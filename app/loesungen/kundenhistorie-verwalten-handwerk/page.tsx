@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Vergessen Sie nie wieder einen Kundenauftrag.',
   closingText: 'Taskey merkt sich alles – damit Sie den Kopf frei haben für gute Arbeit.',
+  relatedLinks: [
+      {
+          href: '/loesungen/crm-fuer-handwerker',
+          label: 'CRM für Handwerker',
+          description: 'Kundenhistorie ist Teil eines ganzheitlichen CRM-Systems.'
+      },
+      {
+          href: '/loesungen/kundenverwaltung-handwerksbetrieb',
+          label: 'Kundenverwaltung',
+          description: 'Alle Kundendaten und deren Historie zentral verwalten.'
+      },
+      {
+          href: '/loesungen/reklamationen-verwalten-handwerk',
+          label: 'Reklamationen verwalten',
+          description: 'Reklamationen in der Kundenhistorie dokumentieren und nachverfolgen.'
+      }
+  ],
 };
 
 export default function Page() {

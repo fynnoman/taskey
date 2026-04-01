@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Gereinigt. Nachgewiesen. Bezahlt.',
   closingText: 'Starte jetzt und liefere Ihren Kunden automatische Leistungsnachweise.',
+  relatedLinks: [
+      {
+          href: '/loesungen/rechnung-schreiben-reinigungsfirma',
+          label: 'Rechnungen Reinigung',
+          description: 'Leistungsnachweise als Basis für korrekte Rechnungsstellung.'
+      },
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Leistungsnachweise zur Qualitätssicherung heranziehen.'
+      },
+      {
+          href: '/loesungen/sla-tracking-reinigungsfirma',
+          label: 'SLA-Tracking',
+          description: 'Erbrachte Leistungen gegen vereinbarte SLAs abgleichen.'
+      }
+  ],
 };
 
 export default function Page() {

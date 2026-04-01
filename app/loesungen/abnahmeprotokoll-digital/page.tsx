@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Abnahme. Unterschrieben. Archiviert.',
   closingText: 'Starte jetzt und erstelle digitale Abnahmeprotokolle.',
+  relatedLinks: [
+      {
+          href: '/loesungen/digitale-unterschrift-bauabnahme',
+          label: 'Digitale Unterschrift',
+          description: 'Abnahmeprotokolle digital unterschreiben – rechtssicher und sofort.'
+      },
+      {
+          href: '/loesungen/maengeldokumentation-bau',
+          label: 'Mängeldokumentation',
+          description: 'Bei der Abnahme festgestellte Mängel direkt dokumentieren.'
+      },
+      {
+          href: '/loesungen/protokolle-baustelle-erstellen',
+          label: 'Baustellenprotokolle',
+          description: 'Nicht nur Abnahmen – auch alle anderen Baustellenprotokolle digital.'
+      }
+  ],
 };
 
 export default function Page() {

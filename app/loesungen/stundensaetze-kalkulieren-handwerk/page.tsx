@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Der richtige Preis für Ihre Arbeit.',
   closingText: 'Taskey hilft Ihnen, profitabel zu kalkulieren – damit sich Ihre Arbeit auch lohnt.',
+  relatedLinks: [
+      {
+          href: '/loesungen/angebotskalkulation-bau',
+          label: 'Angebotskalkulation',
+          description: 'Mit exakten Stundensätzen bessere Angebote kalkulieren.'
+      },
+      {
+          href: '/loesungen/nachkalkulation-handwerk',
+          label: 'Nachkalkulation',
+          description: 'Kalkulierte vs. tatsächliche Stundensätze vergleichen.'
+      },
+      {
+          href: '/loesungen/gewinn-pro-auftrag-berechnen',
+          label: 'Gewinn pro Auftrag',
+          description: 'Herausfinden, welche Aufträge sich wirklich lohnen.'
+      }
+  ],
 };
 
 export default function Page() {

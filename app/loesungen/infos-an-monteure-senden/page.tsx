@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jede Info kommt an.',
   closingText: 'Taskey macht Ihre Monteur-Kommunikation schnell, zuverlässig und nachweisbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/chat-app-handwerksbetrieb',
+          label: 'Chat-App Handwerk',
+          description: 'Die Chat-Zentrale für die gesamte Teamkommunikation.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-monteure',
+          label: 'Einsatzplanung Monteure',
+          description: 'Monteure nicht nur informieren, sondern auch effizient einplanen.'
+      },
+      {
+          href: '/loesungen/app-fuer-handwerker-aussendienst',
+          label: 'App für Außendienst',
+          description: 'Alle Infos, Aufträge und Nachrichten in einer App – unterwegs.'
+      }
+  ],
 };
 
 export default function Page() {

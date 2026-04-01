@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Malerbetrieb im Griff. Digital.',
   closingText: 'Starte jetzt und organisiere deinen Malerbetrieb mit Taskey.',
+  relatedLinks: [
+      {
+          href: '/loesungen/auftragsverwaltung-handwerk',
+          label: 'Auftragsverwaltung im Handwerk',
+          description: 'Aufträge digital verwalten – vom ersten Kontakt bis zur Schlussrechnung.'
+      },
+      {
+          href: '/loesungen/angebote-schreiben-handwerk',
+          label: 'Angebote schreiben',
+          description: 'Professionelle Angebote direkt aus der App erstellen und versenden.'
+      },
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung',
+          description: 'Aufträge terminieren und Teams effizient einteilen.'
+      }
+  ],
 };
 
 export default function Page() {

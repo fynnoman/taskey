@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Bauprojekte. Geplant. Gesteuert.',
   closingText: 'Teste Taskey 14 Tage kostenlos und bring Ordnung in deine Bauprojekte.',
+  relatedLinks: [
+      {
+          href: '/loesungen/projektmanagement-kleine-baufirma',
+          label: 'Projektmanagement Baufirma',
+          description: 'Bauprojekte von Anfang bis Ende planen, steuern und dokumentieren.'
+      },
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Alles dokumentieren: Fotos, Protokolle, Mängel – digital und zentral.'
+      },
+      {
+          href: '/loesungen/ressourcenplanung-baufirma',
+          label: 'Ressourcenplanung',
+          description: 'Material, Maschinen und Mitarbeiter optimal einsetzen.'
+      }
+  ],
 };
 
 export default function Page() {

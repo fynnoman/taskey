@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Klare Pläne. Konstante Qualität.',
   closingText: 'Taskey macht Ihre Reinigungspläne zum Qualitätsgaranten.',
+  relatedLinks: [
+      {
+          href: '/loesungen/checklisten-reinigung-digital',
+          label: 'Checklisten Reinigung',
+          description: 'Reinigungspläne mit Checklisten für jeden Raum und jedes Objekt.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung',
+          description: 'Reinigungspläne direkt mit der Einsatzplanung verknüpfen.'
+      },
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Reinigungspläne als Basis für systematische Qualitätskontrollen.'
+      }
+  ],
 };
 
 export default function Page() {

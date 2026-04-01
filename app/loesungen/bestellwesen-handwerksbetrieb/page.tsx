@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Bestellungen – kontrolliert und effizient.',
   closingText: 'Taskey macht Ihr Bestellwesen transparent und spart Materialkosten.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Bestellungen basierend auf aktuellem Lagerbestand optimieren.'
+      },
+      {
+          href: '/loesungen/lagerverwaltung-handwerksbetrieb',
+          label: 'Lagerverwaltung',
+          description: 'Bestellte Materialien direkt ins Lager einbuchen.'
+      },
+      {
+          href: '/loesungen/lieferscheine-digital-erstellen-handwerk',
+          label: 'Lieferscheine digital',
+          description: 'Digitale Lieferscheine für eingehende Bestellungen erstellen.'
+      }
+  ],
 };
 
 export default function Page() {

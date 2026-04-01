@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Lohnvorbereitung in Minuten – nicht Stunden.',
   closingText: 'Taskey macht die Lohnvorbereitung für Ihre Reinigungsfirma einfach und fehlerfrei.',
+  relatedLinks: [
+      {
+          href: '/loesungen/arbeitszeiterfassung-reinigungsfirma',
+          label: 'Arbeitszeiterfassung Reinigung',
+          description: 'Erfasste Zeiten als Basis für die korrekte Lohnabrechnung.'
+      },
+      {
+          href: '/loesungen/schichtplanung-reinigungsunternehmen',
+          label: 'Schichtplanung Reinigung',
+          description: 'Schichten planen und Zuschläge automatisch berechnen.'
+      },
+      {
+          href: '/loesungen/ueberstunden-verwalten-handwerksbetrieb',
+          label: 'Überstunden verwalten',
+          description: 'Überstunden korrekt erfassen und in die Lohnabrechnung übernehmen.'
+      }
+  ],
 };
 
 export default function Page() {

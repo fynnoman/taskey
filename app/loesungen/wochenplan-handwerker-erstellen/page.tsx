@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Die ganze Woche – perfekt geplant.',
   closingText: 'Taskey macht Ihre Wochenplanung schneller, flexibler und transparenter.',
+  relatedLinks: [
+      {
+          href: '/loesungen/terminplanung-handwerker',
+          label: 'Terminplanung',
+          description: 'Termine als Grundlage für den perfekten Wochenplan.'
+      },
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition',
+          description: 'Disponierte Aufträge automatisch in den Wochenplan übernehmen.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-monteure',
+          label: 'Einsatzplanung',
+          description: 'Monteure im Wochenplan den richtigen Einsätzen zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

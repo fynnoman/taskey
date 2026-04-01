@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Unterwegs arbeiten. Automatisch erfassen.',
   closingText: 'Starte jetzt mit mobiler Zeiterfassung für dein Montageteam.',
+  relatedLinks: [
+      {
+          href: '/loesungen/zeiterfassung-app-aussendienst',
+          label: 'Zeiterfassung App Außendienst',
+          description: 'Die perfekte App für Außendienstmitarbeiter – Zeiten mobil erfassen, egal wo.'
+      },
+      {
+          href: '/loesungen/app-fuer-handwerker-aussendienst',
+          label: 'App für Handwerker im Außendienst',
+          description: 'Alles in einer App: Zeiten, Aufträge, Materialien – unterwegs immer dabei.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Aus mobil erfassten Zeiten werden automatisch fertige Stundennachweise.'
+      }
+  ],
 };
 
 export default function Page() {

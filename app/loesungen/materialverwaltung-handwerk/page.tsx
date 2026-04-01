@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Material? Im Griff.',
   closingText: 'Starte jetzt und behalte dein Material im Überblick.',
+  relatedLinks: [
+      {
+          href: '/loesungen/lagerverwaltung-handwerksbetrieb',
+          label: 'Lagerverwaltung',
+          description: 'Lagerbestände digital verwalten und Materialentnahmen tracken.'
+      },
+      {
+          href: '/loesungen/materialverbrauch-tracken-baustelle',
+          label: 'Materialverbrauch tracken',
+          description: 'Den Materialverbrauch pro Baustelle exakt dokumentieren.'
+      },
+      {
+          href: '/loesungen/bestellwesen-handwerksbetrieb',
+          label: 'Bestellwesen',
+          description: 'Material rechtzeitig nachbestellen – bevor es auf der Baustelle fehlt.'
+      }
+  ],
 };
 
 export default function Page() {

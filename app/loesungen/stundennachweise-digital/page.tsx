@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Stundenzettel? Nie wieder.',
   closingText: 'Starte jetzt und erstelle digitale Stundennachweise – automatisch, rechtssicher und in Sekunden.',
+  relatedLinks: [
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung im Handwerk',
+          description: 'Die Basis für automatische Stundennachweise – digitale Zeiterfassung per App.'
+      },
+      {
+          href: '/loesungen/rapportzettel-digital-handwerk',
+          label: 'Rapportzettel digital',
+          description: 'Nicht nur Zeiten, auch Leistungen und Material direkt digital dokumentieren.'
+      },
+      {
+          href: '/loesungen/vorbereitung-steuerberater-handwerk',
+          label: 'Vorbereitung für den Steuerberater',
+          description: 'Stundennachweise und Reports direkt exportfertig für Ihren Steuerberater.'
+      }
+  ],
 };
 
 export default function Page() {

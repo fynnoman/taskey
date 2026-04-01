@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Krankmeldung – digital statt Telefonkette.',
   closingText: 'Taskey macht Krankmeldungen einfach und startet die Ersatzplanung automatisch.',
+  relatedLinks: [
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung',
+          description: 'Bei Krankmeldungen sofort die Personalplanung anpassen.'
+      },
+      {
+          href: '/loesungen/schichtplanung-reinigungsunternehmen',
+          label: 'Schichtplanung',
+          description: 'Krankmeldungen direkt in der Schichtplanung berücksichtigen.'
+      },
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition',
+          description: 'Ausfälle in der Disposition sofort kompensieren.'
+      }
+  ],
 };
 
 export default function Page() {

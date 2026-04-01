@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder Stundenzettel sortieren.',
   closingText: 'Starte jetzt mit digitaler Zeiterfassung – in 5 Minuten eingerichtet, sofort einsatzbereit.',
+  relatedLinks: [
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Aus erfassten Zeiten werden automatisch rechtssichere Stundennachweise – ohne Abtippen.'
+      },
+      {
+          href: '/loesungen/mobile-zeiterfassung-monteure',
+          label: 'Mobile Zeiterfassung für Monteure',
+          description: 'Auch unterwegs Zeiten erfassen – per App, GPS oder NFC-Tag beim Kunden.'
+      },
+      {
+          href: '/loesungen/ueberstunden-verwalten-handwerksbetrieb',
+          label: 'Überstunden verwalten',
+          description: 'Überstunden automatisch berechnen, auswerten und fair abrechnen.'
+      }
+  ],
 };
 
 export default function Page() {

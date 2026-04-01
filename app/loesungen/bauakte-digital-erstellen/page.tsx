@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Die Bauakte, die sich selbst füllt.',
   closingText: 'Taskey dokumentiert Ihre Projekte automatisch – lückenlos und jederzeit abrufbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Die Bauakte als Sammlung der gesamten Baudokumentation.'
+      },
+      {
+          href: '/loesungen/bautagebuch-digital',
+          label: 'Bautagebuch',
+          description: 'Das Bautagebuch als wichtiger Bestandteil jeder Bauakte.'
+      },
+      {
+          href: '/loesungen/abnahmeprotokoll-digital',
+          label: 'Abnahmeprotokoll',
+          description: 'Abnahmeprotokolle gehören in jede vollständige Bauakte.'
+      }
+  ],
 };
 
 export default function Page() {

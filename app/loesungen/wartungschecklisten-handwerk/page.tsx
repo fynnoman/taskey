@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Wartung ohne Vergessen.',
   closingText: 'Taskey macht Ihre Wartungsprozesse standardisiert und nachweisbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/sicherheitschecklisten-baustelle',
+          label: 'Sicherheitschecklisten',
+          description: 'Neben Wartung auch Sicherheitsprüfungen mit Checklisten abdecken.'
+      },
+      {
+          href: '/loesungen/checklisten-reinigung-digital',
+          label: 'Checklisten Reinigung',
+          description: 'Digitale Checklisten auch für Reinigungsprozesse nutzen.'
+      },
+      {
+          href: '/loesungen/werkzeugverwaltung-handwerk',
+          label: 'Werkzeugverwaltung',
+          description: 'Wartungstermine für Werkzeuge und Geräte im Blick behalten.'
+      }
+  ],
 };
 
 export default function Page() {

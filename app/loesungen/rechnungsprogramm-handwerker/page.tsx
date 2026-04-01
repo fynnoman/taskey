@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Rechnung raus. Geld rein.',
   closingText: 'Starte jetzt und erstelle deine erste Rechnung in unter einer Minute.',
+  relatedLinks: [
+      {
+          href: '/loesungen/angebote-schreiben-handwerk',
+          label: 'Angebote schreiben',
+          description: 'Vom Angebot zur Rechnung – ein nahtloser digitaler Prozess.'
+      },
+      {
+          href: '/loesungen/rechnungen-nachverfolgen-handwerksbetrieb',
+          label: 'Rechnungen nachverfolgen',
+          description: 'Offene Rechnungen im Blick behalten und Zahlungseingänge tracken.'
+      },
+      {
+          href: '/loesungen/abschlagsrechnung-erstellen-handwerk',
+          label: 'Abschlagsrechnung erstellen',
+          description: 'Abschlagsrechnungen nach Baufortschritt automatisch generieren.'
+      }
+  ],
 };
 
 export default function Page() {

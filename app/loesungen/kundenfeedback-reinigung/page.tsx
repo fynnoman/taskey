@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Zufriedene Kunden bleiben.',
   closingText: 'Taskey hilft Ihnen, die Kundenzufriedenheit zu messen und kontinuierlich zu verbessern.',
+  relatedLinks: [
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Feedback als Grundlage für systematische Qualitätskontrollen nutzen.'
+      },
+      {
+          href: '/loesungen/stammkunden-verwalten-gebaeudereinigung',
+          label: 'Stammkunden verwalten',
+          description: 'Kundenfeedback direkt in der Kundenakte dokumentieren.'
+      },
+      {
+          href: '/loesungen/reklamationen-verwalten-handwerk',
+          label: 'Reklamationen verwalten',
+          description: 'Aus negativem Feedback systematisch Reklamationen ableiten und lösen.'
+      }
+  ],
 };
 
 export default function Page() {

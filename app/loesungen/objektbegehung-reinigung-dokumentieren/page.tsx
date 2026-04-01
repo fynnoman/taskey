@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Qualität, die man sehen kann.',
   closingText: 'Taskey macht Ihre Objektbegehungen zum Qualitätsinstrument – standardisiert und nachweisbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'Objektbegehungen als Instrument der Qualitätssicherung.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Begehungen mit Fotos ergänzen und Mängel dokumentieren.'
+      },
+      {
+          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          label: 'Leistungsnachweise',
+          description: 'Begehungsergebnisse als Grundlage für Leistungsnachweise.'
+      }
+  ],
 };
 
 export default function Page() {

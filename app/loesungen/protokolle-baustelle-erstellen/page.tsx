@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder wichtige Absprachen vergessen.',
   closingText: 'Taskey dokumentiert Ihre Baubesprechungen professionell – direkt vor Ort, sofort verteilt.',
+  relatedLinks: [
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Protokolle als Teil einer umfassenden Baudokumentation.'
+      },
+      {
+          href: '/loesungen/abnahmeprotokoll-digital',
+          label: 'Abnahmeprotokoll digital',
+          description: 'Speziell für Bauabnahmen: Digitale Abnahmeprotokolle erstellen.'
+      },
+      {
+          href: '/loesungen/bautagebuch-digital',
+          label: 'Bautagebuch digital',
+          description: 'Tägliche Protokollierung im digitalen Bautagebuch.'
+      }
+  ],
 };
 
 export default function Page() {

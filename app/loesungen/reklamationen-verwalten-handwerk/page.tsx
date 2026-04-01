@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Aus Reklamationen lernen.',
   closingText: 'Taskey macht Reklamationen zum Qualitätstreiber – für zufriedenere Kunden und bessere Arbeit.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kundenhistorie-verwalten-handwerk',
+          label: 'Kundenhistorie',
+          description: 'Reklamationen als Teil der vollständigen Kundenhistorie dokumentieren.'
+      },
+      {
+          href: '/loesungen/kundenkommunikation-baufirma',
+          label: 'Kundenkommunikation',
+          description: 'Bei Reklamationen professionell und transparent kommunizieren.'
+      },
+      {
+          href: '/loesungen/maengeldokumentation-bau',
+          label: 'Mängeldokumentation',
+          description: 'Mängel als Ursache von Reklamationen systematisch dokumentieren.'
+      }
+  ],
 };
 
 export default function Page() {

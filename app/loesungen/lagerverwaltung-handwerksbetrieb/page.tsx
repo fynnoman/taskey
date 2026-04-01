@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Lager? Unter Kontrolle.',
   closingText: 'Starte jetzt und behalte dein Lager digital im Griff.',
+  relatedLinks: [
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Material nicht nur lagern, sondern aktiv verwalten und zuordnen.'
+      },
+      {
+          href: '/loesungen/bestellwesen-handwerksbetrieb',
+          label: 'Bestellwesen',
+          description: 'Bei niedrigem Bestand automatisch nachbestellen.'
+      },
+      {
+          href: '/loesungen/werkzeugverwaltung-handwerk',
+          label: 'Werkzeugverwaltung',
+          description: 'Nicht nur Material – auch Werkzeuge digital verwalten.'
+      }
+  ],
 };
 
 export default function Page() {

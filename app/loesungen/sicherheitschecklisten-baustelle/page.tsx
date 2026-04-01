@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Sicherheit – digital nachgewiesen.',
   closingText: 'Taskey sorgt für lückenlose Sicherheitsdokumentation auf Ihren Baustellen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/wartungschecklisten-handwerk',
+          label: 'Wartungschecklisten',
+          description: 'Nicht nur Sicherheit – auch Wartung mit digitalen Checklisten abdecken.'
+      },
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Sicherheitschecks als Teil der vollständigen Baudokumentation.'
+      },
+      {
+          href: '/loesungen/protokolle-baustelle-erstellen',
+          label: 'Baustellenprotokolle',
+          description: 'Sicherheitsprüfungen in Baustellenprotokollen dokumentieren.'
+      }
+  ],
 };
 
 export default function Page() {

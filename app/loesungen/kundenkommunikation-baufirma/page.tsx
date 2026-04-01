@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Zufriedene Kunden durch Transparenz.',
   closingText: 'Taskey macht Ihre Kundenkommunikation professionell – für mehr Vertrauen und Weiterempfehlungen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/crm-fuer-handwerker',
+          label: 'CRM für Handwerker',
+          description: 'Kundenkommunikation als Teil eines professionellen CRM-Systems.'
+      },
+      {
+          href: '/loesungen/chat-app-handwerksbetrieb',
+          label: 'Chat-App Handwerk',
+          description: 'Nicht nur mit Kunden – auch intern effizient kommunizieren.'
+      },
+      {
+          href: '/loesungen/baustelleninfos-teilen-app',
+          label: 'Baustelleninfos teilen',
+          description: 'Kunden und Teams über Baustellenstatus informieren.'
+      }
+  ],
 };
 
 export default function Page() {

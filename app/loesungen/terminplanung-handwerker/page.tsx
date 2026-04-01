@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Termine im Griff. Kunden zufrieden.',
   closingText: 'Starte jetzt und plane deine Termine digital.',
+  relatedLinks: [
+      {
+          href: '/loesungen/wochenplan-handwerker-erstellen',
+          label: 'Wochenplan erstellen',
+          description: 'Termine zu Wochenplänen zusammenfassen und ans Team verteilen.'
+      },
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition im Handwerk',
+          description: 'Aufträge, Termine und Mitarbeiter effizient disponieren.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-monteure',
+          label: 'Einsatzplanung Monteure',
+          description: 'Monteure termingenau auf Aufträge und Baustellen einplanen.'
+      }
+  ],
 };
 
 export default function Page() {

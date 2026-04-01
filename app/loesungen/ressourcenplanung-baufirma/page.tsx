@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder Ressourcenchaos.',
   closingText: 'Taskey optimiert Ihre Ressourcenplanung – für pünktliche Projekte und zufriedene Kunden.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kapazitaetsplanung-handwerk',
+          label: 'Kapazitätsplanung',
+          description: 'Kapazitäten als Teil der umfassenden Ressourcenplanung.'
+      },
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung',
+          description: 'Personal als wichtigste Ressource professionell planen.'
+      },
+      {
+          href: '/loesungen/materialverwaltung-handwerk',
+          label: 'Materialverwaltung',
+          description: 'Material als Ressource verwalten und Baustellen zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

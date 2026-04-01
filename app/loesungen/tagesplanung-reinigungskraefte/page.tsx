@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jeden Tag perfekt organisiert.',
   closingText: 'Taskey macht Ihre Tagesplanung effizient – für zufriedene Kunden und motivierte Teams.',
+  relatedLinks: [
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung Reinigung',
+          description: 'Von der Tagesplanung zur langfristigen Einsatzplanung.'
+      },
+      {
+          href: '/loesungen/schichtplanung-reinigungsunternehmen',
+          label: 'Schichtplanung',
+          description: 'Tagespläne in Schichtmodelle integrieren.'
+      },
+      {
+          href: '/loesungen/arbeitszeiterfassung-reinigungsfirma',
+          label: 'Arbeitszeiterfassung',
+          description: 'Geplante vs. tatsächliche Arbeitszeiten vergleichen.'
+      }
+  ],
 };
 
 export default function Page() {

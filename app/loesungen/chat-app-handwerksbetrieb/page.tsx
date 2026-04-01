@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kommunikation – sicher und projektbezogen.',
   closingText: 'Taskey gibt Ihrem Team den Chat, den WhatsApp nicht bieten kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/team-kommunikation-baustelle',
+          label: 'Team-Kommunikation Baustelle',
+          description: 'Speziell für Baustellen: Chat, Infos und Updates ans Team.'
+      },
+      {
+          href: '/loesungen/infos-an-monteure-senden',
+          label: 'Infos an Monteure senden',
+          description: 'Wichtige Informationen gezielt an einzelne Monteure senden.'
+      },
+      {
+          href: '/loesungen/baustelleninfos-teilen-app',
+          label: 'Baustelleninfos teilen',
+          description: 'Fotos, Pläne und Updates zur Baustelle mit dem Team teilen.'
+      }
+  ],
 };
 
 export default function Page() {

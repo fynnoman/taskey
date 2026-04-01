@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kürzere Wege. Mehr Umsatz.',
   closingText: 'Teste Taskey und optimiere die Touren deiner Reinigungsteams.',
+  relatedLinks: [
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung Reinigung',
+          description: 'Touren als Teil der gesamten Einsatzplanung für Reinigungsteams.'
+      },
+      {
+          href: '/loesungen/tagesplanung-reinigungskraefte',
+          label: 'Tagesplanung',
+          description: 'Touren in den täglichen Einsatzplan integrieren.'
+      },
+      {
+          href: '/loesungen/fahrzeugplanung-handwerksbetrieb',
+          label: 'Fahrzeugplanung',
+          description: 'Fahrzeuge für die Touren effizient einplanen.'
+      }
+  ],
 };
 
 export default function Page() {

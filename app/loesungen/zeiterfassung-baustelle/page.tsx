@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Baustelle im Griff. Zeiten im System.',
   closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Baustellenzeiterfassung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung im Handwerk',
+          description: 'Digitale Arbeitszeiterfassung für den gesamten Handwerksbetrieb – nicht nur auf der Baustelle.'
+      },
+      {
+          href: '/loesungen/baustellen-koordinieren-tool',
+          label: 'Baustellen koordinieren',
+          description: 'Mehrere Baustellen gleichzeitig managen – mit klarer Übersicht über Teams und Einsätze.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Automatische Stundennachweise pro Baustelle – für Auftraggeber und Steuerberater.'
+      }
+  ],
 };
 
 export default function Page() {

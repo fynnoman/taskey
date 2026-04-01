@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Immer prüfungsbereit.',
   closingText: 'Taskey sorgt dafür, dass alle Nachunternehmer-Unterlagen vollständig und aktuell sind.',
+  relatedLinks: [
+      {
+          href: '/loesungen/subunternehmer-verwalten-bau',
+          label: 'Subunternehmer verwalten',
+          description: 'Nachunternehmer zentral verwalten und ihre Leistungen dokumentieren.'
+      },
+      {
+          href: '/loesungen/nachunternehmer-koordinieren-software',
+          label: 'Nachunternehmer koordinieren',
+          description: 'Mehrere Nachunternehmer gleichzeitig koordinieren.'
+      },
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Nachunternehmerleistungen als Teil der Baudokumentation.'
+      }
+  ],
 };
 
 export default function Page() {

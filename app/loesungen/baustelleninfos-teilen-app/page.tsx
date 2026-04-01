@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Alle auf dem gleichen Stand.',
   closingText: 'Taskey stellt sicher, dass jeder auf der Baustelle mit aktuellen Informationen arbeitet.',
+  relatedLinks: [
+      {
+          href: '/loesungen/team-kommunikation-baustelle',
+          label: 'Team-Kommunikation',
+          description: 'Nicht nur Infos teilen, sondern aktiv im Team kommunizieren.'
+      },
+      {
+          href: '/loesungen/fotos-baustelle-dokumentieren-app',
+          label: 'Fotos dokumentieren',
+          description: 'Baustellenfotos als Teil der geteilten Informationen.'
+      },
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Geteilte Infos als Teil der vollständigen Baudokumentation.'
+      }
+  ],
 };
 
 export default function Page() {

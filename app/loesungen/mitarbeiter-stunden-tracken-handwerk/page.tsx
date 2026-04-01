@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Jede Stunde zählt. Jetzt auch bei dir.',
   closingText: 'Starte jetzt mit automatischem Stunden-Tracking – für deinen gesamten Betrieb.',
+  relatedLinks: [
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung im Handwerk',
+          description: 'Alle Arbeitszeiten digital erfassen – automatisch, per App oder NFC.'
+      },
+      {
+          href: '/loesungen/ueberstunden-verwalten-handwerksbetrieb',
+          label: 'Überstunden verwalten',
+          description: 'Überstunden im Blick behalten und automatisch berechnen lassen.'
+      },
+      {
+          href: '/loesungen/stundensaetze-kalkulieren-handwerk',
+          label: 'Stundensätze kalkulieren',
+          description: 'Exakte Stundensätze berechnen – auf Basis realer, erfasster Arbeitszeiten.'
+      }
+  ],
 };
 
 export default function Page() {

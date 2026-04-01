@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Buchhaltung? Erledigt.',
   closingText: 'Starte jetzt und spar dir den Buchhaltungs-Albtraum.',
+  relatedLinks: [
+      {
+          href: '/loesungen/einnahmen-ausgaben-handwerker',
+          label: 'Einnahmen & Ausgaben',
+          description: 'Alle Einnahmen und Ausgaben Ihres Betriebs digital im Blick.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Rechnungen schreiben und direkt in die Buchhaltung übernehmen.'
+      },
+      {
+          href: '/loesungen/vorbereitung-steuerberater-handwerk',
+          label: 'Steuerberater-Vorbereitung',
+          description: 'Alle Unterlagen fertig aufbereitet für Ihren Steuerberater.'
+      }
+  ],
 };
 
 export default function Page() {

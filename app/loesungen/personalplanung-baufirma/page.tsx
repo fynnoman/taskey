@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Morgens kein Chaos mehr.',
   closingText: 'Teste Taskey und erlebe, wie einfach Personalplanung am Bau sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/mitarbeiter-auf-baustellen-einteilen',
+          label: 'Mitarbeiter auf Baustellen einteilen',
+          description: 'Kolonnen zusammenstellen und Mitarbeiter gezielt Baustellen zuordnen.'
+      },
+      {
+          href: '/loesungen/kapazitaetsplanung-handwerk',
+          label: 'Kapazitätsplanung Handwerk',
+          description: 'Kapazitäten planen, Engpässe erkennen und Teams optimal auslasten.'
+      },
+      {
+          href: '/loesungen/kolonnenplanung-bau',
+          label: 'Kolonnenplanung Bau',
+          description: 'Kolonnen für verschiedene Baustellen effizient zusammenstellen.'
+      }
+  ],
 };
 
 export default function Page() {

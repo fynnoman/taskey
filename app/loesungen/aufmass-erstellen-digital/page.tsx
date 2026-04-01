@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Aufmaße – digital, präzise, sofort.',
   closingText: 'Taskey macht Ihre Aufmaß-Erfassung einfacher als je zuvor. Probieren Sie es aus.',
+  relatedLinks: [
+      {
+          href: '/loesungen/bauabrechnung-software',
+          label: 'Bauabrechnung',
+          description: 'Das digitale Aufmaß als Basis für die korrekte Abrechnung.'
+      },
+      {
+          href: '/loesungen/schlussrechnung-software-bau',
+          label: 'Schlussrechnung',
+          description: 'Aufmaße direkt in die Schlussrechnung übernehmen.'
+      },
+      {
+          href: '/loesungen/baudokumentation-software',
+          label: 'Baudokumentation',
+          description: 'Aufmaße als Teil der vollständigen Projektdokumentation.'
+      }
+  ],
 };
 
 export default function Page() {

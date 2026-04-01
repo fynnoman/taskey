@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Ihr Fuhrpark – endlich organisiert.',
   closingText: 'Taskey macht Fahrzeugplanung einfach und verhindert teure Ausfälle.',
+  relatedLinks: [
+      {
+          href: '/loesungen/ressourcenplanung-baufirma',
+          label: 'Ressourcenplanung',
+          description: 'Fahrzeuge als Teil der gesamten Ressourcenplanung.'
+      },
+      {
+          href: '/loesungen/werkzeugverwaltung-handwerk',
+          label: 'Werkzeugverwaltung',
+          description: 'Nicht nur Fahrzeuge – auch Werkzeuge und Geräte verwalten.'
+      },
+      {
+          href: '/loesungen/disposition-handwerk-software',
+          label: 'Disposition',
+          description: 'Fahrzeuge zusammen mit Teams und Aufträgen disponieren.'
+      }
+  ],
 };
 
 export default function Page() {

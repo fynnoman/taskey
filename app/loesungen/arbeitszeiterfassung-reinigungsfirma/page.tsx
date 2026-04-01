@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Reinigung. Dokumentiert. Abgerechnet.',
   closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Zeiterfassung in der Reinigung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/schichtplanung-reinigungsunternehmen',
+          label: 'Schichtplanung Reinigung',
+          description: 'Schichten planen und Arbeitszeiten direkt pro Schicht erfassen.'
+      },
+      {
+          href: '/loesungen/lohnabrechnung-reinigungsfirma',
+          label: 'Lohnabrechnung Reinigung',
+          description: 'Erfasste Zeiten direkt in die Lohnabrechnung übernehmen – ohne Medienbruch.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung Gebäudereinigung',
+          description: 'Wer reinigt wann welches Objekt? Einsätze planen und Zeiten automatisch zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Gewinn oder Verlust? Sofort wissen.',
   closingText: 'Starte jetzt und hab deine Margen im Griff.',
+  relatedLinks: [
+      {
+          href: '/loesungen/gewinn-pro-auftrag-berechnen',
+          label: 'Gewinn pro Auftrag berechnen',
+          description: 'Was hat der Auftrag wirklich gebracht? Gewinn auf Knopfdruck.'
+      },
+      {
+          href: '/loesungen/angebotskalkulation-bau',
+          label: 'Angebotskalkulation',
+          description: 'Nächstes Mal besser kalkulieren – mit Daten aus der Nachkalkulation.'
+      },
+      {
+          href: '/loesungen/stundensaetze-kalkulieren-handwerk',
+          label: 'Stundensätze kalkulieren',
+          description: 'Stundensätze auf Basis realer Projektdaten optimieren.'
+      }
+  ],
 };
 
 export default function Page() {

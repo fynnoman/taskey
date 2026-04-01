@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Professionell kalkuliert. Schnell versendet.',
   closingText: 'Starte jetzt und erstelle deinen ersten Kostenvoranschlag in Minuten.',
+  relatedLinks: [
+      {
+          href: '/loesungen/angebote-schreiben-handwerk',
+          label: 'Angebote schreiben',
+          description: 'Aus dem Kostenvoranschlag wird das fertige Angebot – mit einem Klick.'
+      },
+      {
+          href: '/loesungen/angebotskalkulation-bau',
+          label: 'Angebotskalkulation Bau',
+          description: 'Material, Stunden und Gewinn exakt kalkulieren.'
+      },
+      {
+          href: '/loesungen/stundensaetze-kalkulieren-handwerk',
+          label: 'Stundensätze kalkulieren',
+          description: 'Die richtigen Stundensätze für profitable Angebote berechnen.'
+      }
+  ],
 };
 
 export default function Page() {

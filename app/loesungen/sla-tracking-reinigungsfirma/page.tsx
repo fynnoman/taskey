@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'SLAs – eingehalten und nachgewiesen.',
   closingText: 'Taskey hilft Ihnen, vertragliche Leistungen zuverlässig zu erbringen und nachzuweisen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          label: 'Leistungsnachweise',
+          description: 'SLA-Einhaltung durch Leistungsnachweise dokumentieren.'
+      },
+      {
+          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          label: 'Qualitätskontrolle',
+          description: 'SLA-Tracking und Qualitätskontrolle gehen Hand in Hand.'
+      },
+      {
+          href: '/loesungen/kundendatenbank-reinigungsfirma',
+          label: 'Kundendatenbank',
+          description: 'SLAs pro Kunde verwalten und nachverfolgen.'
+      }
+  ],
 };
 
 export default function Page() {

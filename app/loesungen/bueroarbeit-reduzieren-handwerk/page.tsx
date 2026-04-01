@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Weniger Büro. Mehr Handwerk.',
   closingText: 'Taskey gibt Ihnen die Abende zurück – durch automatisierte Verwaltung.',
+  relatedLinks: [
+      {
+          href: '/loesungen/papierloses-buero-handwerk',
+          label: 'Papierloses Büro',
+          description: 'Büroarbeit reduzieren beginnt mit dem papierlosen Büro.'
+      },
+      {
+          href: '/loesungen/alles-in-einer-app-handwerksbetrieb',
+          label: 'Alles in einer App',
+          description: 'Weniger Tools, weniger Büroarbeit – alles in einer App.'
+      },
+      {
+          href: '/loesungen/zeiterfassung-handwerk',
+          label: 'Zeiterfassung Handwerk',
+          description: 'Automatische Zeiterfassung spart Stunden an Büroarbeit pro Woche.'
+      }
+  ],
 };
 
 export default function Page() {

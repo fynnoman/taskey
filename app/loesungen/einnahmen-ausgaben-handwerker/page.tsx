@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Ihre Finanzen – endlich durchblicken.',
   closingText: 'Taskey macht Einnahmen-Ausgaben-Verwaltung so einfach, dass Sie es tatsächlich tun.',
+  relatedLinks: [
+      {
+          href: '/loesungen/buchhaltung-handwerksbetrieb',
+          label: 'Buchhaltung Handwerk',
+          description: 'Die komplette Buchhaltung für Ihren Handwerksbetrieb – digital und einfach.'
+      },
+      {
+          href: '/loesungen/gewinn-pro-auftrag-berechnen',
+          label: 'Gewinn pro Auftrag',
+          description: 'Nicht nur Gesamtzahlen: Erfahren Sie den Gewinn pro einzelnem Auftrag.'
+      },
+      {
+          href: '/loesungen/liquiditaetsplanung-baufirma',
+          label: 'Liquiditätsplanung',
+          description: 'Zahlungsströme planen und Liquiditätsengpässe frühzeitig erkennen.'
+      }
+  ],
 };
 
 export default function Page() {

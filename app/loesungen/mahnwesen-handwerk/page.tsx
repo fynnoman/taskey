@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Schluss mit Zahlungsausfällen.',
   closingText: 'Taskey sorgt dafür, dass Ihre Rechnungen bezahlt werden – professionell und automatisch.',
+  relatedLinks: [
+      {
+          href: '/loesungen/rechnungen-nachverfolgen-handwerksbetrieb',
+          label: 'Rechnungen nachverfolgen',
+          description: 'Alle offenen Rechnungen im Blick – vor der Mahnung kommt die Übersicht.'
+      },
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Rechnungen erstellen und Zahlungseingänge tracken.'
+      },
+      {
+          href: '/loesungen/liquiditaetsplanung-baufirma',
+          label: 'Liquiditätsplanung',
+          description: 'Offene Forderungen in die Liquiditätsplanung einbeziehen.'
+      }
+  ],
 };
 
 export default function Page() {

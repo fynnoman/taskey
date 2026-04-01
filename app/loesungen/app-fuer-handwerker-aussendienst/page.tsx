@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Das Büro – immer in der Hosentasche.',
   closingText: 'Taskey gibt Ihren Außendienstlern alles, was sie brauchen – direkt auf dem Smartphone.',
+  relatedLinks: [
+      {
+          href: '/loesungen/mobile-zeiterfassung-monteure',
+          label: 'Mobile Zeiterfassung',
+          description: 'Zeiten unterwegs erfassen – ein Kernfeature der Außendienst-App.'
+      },
+      {
+          href: '/loesungen/handwerker-app-baustelle',
+          label: 'App für die Baustelle',
+          description: 'Die gleiche App auch auf der Baustelle nutzen.'
+      },
+      {
+          href: '/loesungen/infos-an-monteure-senden',
+          label: 'Infos an Monteure',
+          description: 'Monteure unterwegs mit allen nötigen Infos versorgen.'
+      }
+  ],
 };
 
 export default function Page() {

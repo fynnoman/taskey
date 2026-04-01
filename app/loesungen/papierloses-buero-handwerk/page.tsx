@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Papier? Nie wieder.',
   closingText: 'Starte jetzt und mach dein Büro papierlos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/digitalisierung-handwerksbetrieb',
+          label: 'Digitalisierung Handwerk',
+          description: 'Der Weg zum papierlosen Büro ist Teil der gesamten Digitalisierung.'
+      },
+      {
+          href: '/loesungen/zettelwirtschaft-abschaffen-handwerk',
+          label: 'Zettelwirtschaft abschaffen',
+          description: 'Nicht nur im Büro – auch auf der Baustelle papierlos arbeiten.'
+      },
+      {
+          href: '/loesungen/stundennachweise-digital',
+          label: 'Stundennachweise digital',
+          description: 'Stundennachweise digital statt auf Papier – ein großer Schritt.'
+      }
+  ],
 };
 
 export default function Page() {

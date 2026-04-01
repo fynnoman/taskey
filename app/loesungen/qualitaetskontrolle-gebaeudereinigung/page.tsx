@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Qualität steuern. Digital.',
   closingText: 'Starte jetzt und mach Reinigungsqualität messbar.',
+  relatedLinks: [
+      {
+          href: '/loesungen/checklisten-reinigung-digital',
+          label: 'Checklisten Reinigung',
+          description: 'Digitale Checklisten als Basis für jede Qualitätskontrolle.'
+      },
+      {
+          href: '/loesungen/objektbegehung-reinigung-dokumentieren',
+          label: 'Objektbegehung dokumentieren',
+          description: 'Begehungen als Teil der Qualitätssicherung dokumentieren.'
+      },
+      {
+          href: '/loesungen/kundenfeedback-reinigung',
+          label: 'Kundenfeedback',
+          description: 'Qualitätskontrolle durch Feedback Ihrer Kunden ergänzen.'
+      }
+  ],
 };
 
 export default function Page() {

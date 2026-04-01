@@ -37,6 +37,11 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Nie wieder Rechnungschaos',
   closingText: 'Taskey macht Ihre Rechnungsstellung so einfach wie nie. Mehr Umsatz, weniger Büroarbeit.',
+  relatedLinks: [
+    { href: '/loesungen/leistungsnachweis-gebaeudereinigung', label: 'Leistungsnachweise', description: 'Erbrachte Reinigungsleistungen dokumentieren – als Basis für die Rechnung.' },
+    { href: '/loesungen/kundendatenbank-reinigungsfirma', label: 'Kundendatenbank Reinigung', description: 'Alle Kundendaten und Vertragsinformationen für schnelle Rechnungserstellung.' },
+    { href: '/loesungen/sla-tracking-reinigungsfirma', label: 'SLA-Tracking', description: 'Service Level Agreements tracken und leistungsgerecht abrechnen.' },
+  ],
 }
 
 export default function Page() {

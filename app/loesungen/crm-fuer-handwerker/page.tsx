@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Kundenpflege – einfach gemacht.',
   closingText: 'Mit Taskey behalten Sie alle Kunden im Blick und verpassen keine Chance mehr.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kundenverwaltung-handwerksbetrieb',
+          label: 'Kundenverwaltung',
+          description: 'Alle Kundendaten zentral verwalten und immer griffbereit haben.'
+      },
+      {
+          href: '/loesungen/kundenhistorie-verwalten-handwerk',
+          label: 'Kundenhistorie',
+          description: 'Jeden Kundenkontakt, jeden Auftrag, jede Rechnung nachverfolgen.'
+      },
+      {
+          href: '/loesungen/kundenkommunikation-baufirma',
+          label: 'Kundenkommunikation',
+          description: 'Professionell mit Kunden kommunizieren – alles dokumentiert.'
+      }
+  ],
 };
 
 export default function Page() {

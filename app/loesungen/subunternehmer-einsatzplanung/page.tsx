@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Perfekte Koordination – auch mit Subs.',
   closingText: 'Taskey macht die Einsatzplanung Ihrer Subunternehmer reibungslos.',
+  relatedLinks: [
+      {
+          href: '/loesungen/subunternehmer-verwalten-bau',
+          label: 'Subunternehmer verwalten',
+          description: 'Alle Subunternehmer zentral verwalten und koordinieren.'
+      },
+      {
+          href: '/loesungen/nachunternehmer-koordinieren-software',
+          label: 'Nachunternehmer koordinieren',
+          description: 'Mehrere Nachunternehmer effizient auf Projekten koordinieren.'
+      },
+      {
+          href: '/loesungen/fremdleistungen-abrechnen-bau',
+          label: 'Fremdleistungen abrechnen',
+          description: 'Eingeplante Subunternehmerleistungen korrekt abrechnen.'
+      }
+  ],
 };
 
 export default function Page() {

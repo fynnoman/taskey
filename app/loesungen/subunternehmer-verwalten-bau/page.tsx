@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Subunternehmer? Im Griff.',
   closingText: 'Teste Taskey und manage deine Subunternehmer professionell.',
+  relatedLinks: [
+      {
+          href: '/loesungen/subunternehmer-einsatzplanung',
+          label: 'Subunternehmer-Einsatzplanung',
+          description: 'Subunternehmer gezielt auf Baustellen und Projekte einplanen.'
+      },
+      {
+          href: '/loesungen/nachunternehmer-dokumentation',
+          label: 'Nachunternehmer-Dokumentation',
+          description: 'Leistungen und Qualität von Subunternehmern dokumentieren.'
+      },
+      {
+          href: '/loesungen/fremdleistungen-abrechnen-bau',
+          label: 'Fremdleistungen abrechnen',
+          description: 'Subunternehmerleistungen sauber abrechnen.'
+      }
+  ],
 };
 
 export default function Page() {

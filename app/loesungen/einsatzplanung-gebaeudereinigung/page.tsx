@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Einsatzplanung, die funktioniert.',
   closingText: 'Starte jetzt und spare täglich 2 Stunden bei der Einsatzplanung.',
+  relatedLinks: [
+      {
+          href: '/loesungen/schichtplanung-reinigungsunternehmen',
+          label: 'Schichtplanung Reinigung',
+          description: 'Einsätze in Schichtpläne überführen und Teams einteilen.'
+      },
+      {
+          href: '/loesungen/tagesplanung-reinigungskraefte',
+          label: 'Tagesplanung Reinigung',
+          description: 'Den täglichen Einsatz Ihrer Reinigungskräfte optimal planen.'
+      },
+      {
+          href: '/loesungen/tourenplanung-reinigungsteams',
+          label: 'Tourenplanung',
+          description: 'Reinigungsteams auf effiziente Touren zwischen Objekten schicken.'
+      }
+  ],
 };
 
 export default function Page() {

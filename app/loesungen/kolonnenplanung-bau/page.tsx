@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Die richtige Kolonne. Die richtige Baustelle.',
   closingText: 'Taskey macht Ihre Kolonnenplanung effizienter – für mehr Produktivität auf jeder Baustelle.',
+  relatedLinks: [
+      {
+          href: '/loesungen/mitarbeiter-auf-baustellen-einteilen',
+          label: 'Mitarbeiter einteilen',
+          description: 'Einzelne Mitarbeiter flexibel zwischen Kolonnen und Baustellen verschieben.'
+      },
+      {
+          href: '/loesungen/personalplanung-baufirma',
+          label: 'Personalplanung',
+          description: 'Die übergeordnete Personalplanung für alle Kolonnen.'
+      },
+      {
+          href: '/loesungen/kapazitaetsplanung-handwerk',
+          label: 'Kapazitätsplanung',
+          description: 'Kolonnenkapazitäten planen und Engpässe vermeiden.'
+      }
+  ],
 };
 
 export default function Page() {

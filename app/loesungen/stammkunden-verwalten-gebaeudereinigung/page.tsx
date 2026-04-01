@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Ihre besten Kunden verdienen die beste Betreuung.',
   closingText: 'Taskey macht Stammkundenpflege einfach – für langfristige, profitable Kundenbeziehungen.',
+  relatedLinks: [
+      {
+          href: '/loesungen/kundendatenbank-reinigungsfirma',
+          label: 'Kundendatenbank Reinigung',
+          description: 'Alle Kundendaten – auch Neukunden – zentral verwalten.'
+      },
+      {
+          href: '/loesungen/kundenfeedback-reinigung',
+          label: 'Kundenfeedback',
+          description: 'Feedback von Stammkunden einholen und Qualität sichern.'
+      },
+      {
+          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          label: 'Reinigungspläne digital',
+          description: 'Individuelle Reinigungspläne für jeden Stammkunden erstellen.'
+      }
+  ],
 };
 
 export default function Page() {

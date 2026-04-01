@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Reinigung planen. Ohne Chaos.',
   closingText: 'Starte jetzt und erlebe, wie einfach Auftragsplanung für Reinigungsfirmen sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung Gebäudereinigung',
+          description: 'Teams Objekten zuordnen und Einsatzpläne automatisch erstellen.'
+      },
+      {
+          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          label: 'Reinigungspläne digital',
+          description: 'Reinigungspläne erstellen, teilen und Fortschritte live verfolgen.'
+      },
+      {
+          href: '/loesungen/kundendatenbank-reinigungsfirma',
+          label: 'Kundendatenbank Reinigung',
+          description: 'Alle Kundendaten, Objekte und Verträge zentral verwalten.'
+      }
+  ],
 };
 
 export default function Page() {

@@ -38,6 +38,23 @@ const data: LandingPageData = {
   ],
   closingHeadline: 'Schichtplanung ohne Stress.',
   closingText: 'Teste Taskey und erlebe, wie einfach Schichtplanung sein kann.',
+  relatedLinks: [
+      {
+          href: '/loesungen/arbeitszeiterfassung-reinigungsfirma',
+          label: 'Arbeitszeiterfassung Reinigung',
+          description: 'Zeiten pro Schicht automatisch erfassen – lückenlos und korrekt.'
+      },
+      {
+          href: '/loesungen/tagesplanung-reinigungskraefte',
+          label: 'Tagesplanung Reinigungskräfte',
+          description: 'Den täglichen Einsatz Ihrer Reinigungskräfte effizient planen.'
+      },
+      {
+          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          label: 'Einsatzplanung Gebäudereinigung',
+          description: 'Mitarbeiter den richtigen Objekten und Schichten zuordnen.'
+      }
+  ],
 };
 
 export default function Page() {
