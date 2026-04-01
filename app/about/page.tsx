@@ -134,17 +134,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{t("about.team.team")}</h3>
-            <div className="flex justify-center">
-              <div className="text-center">
-                <div className="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden relative">
-                  <Image src="/yukiobild.jpeg" alt="Yukio Jonas Sato" fill className="object-cover" sizes="160px" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-1">Yukio Jonas Sato</h3>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
