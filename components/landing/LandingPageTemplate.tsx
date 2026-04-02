@@ -3,12 +3,10 @@
 import Link from 'next/link';
 
 export interface PainPoint {
-  icon: string;
   text: string;
 }
 
 export interface SolutionStep {
-  icon: string;
   title: string;
   description: string;
 }
@@ -30,7 +28,7 @@ export interface LandingPageData {
   solutionDescription: string;
   solutionSteps: SolutionStep[];
   ctaText: string;
-  featureHighlights: { title: string; description: string; icon: string }[];
+  featureHighlights: { title: string; description: string }[];
   closingHeadline: string;
   closingText: string;
   relatedLinks?: RelatedLink[];
