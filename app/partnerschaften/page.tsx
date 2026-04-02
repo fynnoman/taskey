@@ -133,30 +133,20 @@ export default function PartnerschaftenPage() {
     <main className="bg-white">
       {/* Hero */}
       <section className="relative bg-gray-950 pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        {/* Hintergrundbild */}
-        <div className="absolute inset-0">
-          <Image
-            src="/hand.png"
-            alt="Partnerschaft – gemeinsam wachsen"
-            fill
-            className="object-cover object-center opacity-70"
-            priority
-          />
-        </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-600/10 border border-blue-600/30 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               Partnerprogramm
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-950 leading-[1.05] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
               Gemeinsam<br />
-              <span className="text-blue-600">wachsen.</span>
+              <span className="text-blue-400">wachsen.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-900 font-bold mb-4 max-w-3xl">
+            <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
               Empfehlen Sie Taskey – und profitieren Sie dauerhaft von jeder erfolgreichen Vermittlung.
             </p>
-            <p className="text-gray-700 text-lg max-w-2xl mb-10 leading-relaxed">
+            <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
               Ob Berater, Systemhaus oder Branchenverband: Werden Sie Teil unseres Partnernetzwerks und verdienen Sie mit, während Sie Betrieben helfen, digital durchzustarten.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -169,7 +159,7 @@ export default function PartnerschaftenPage() {
               </a>
               <a
                 href="#modelle"
-                className="inline-flex items-center justify-center gap-2 bg-gray-900/10 hover:bg-gray-900/20 text-gray-900 font-bold px-8 py-4 rounded-xl transition-all border border-gray-900/20 text-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
               >
                 Partnermodelle ansehen
               </a>
