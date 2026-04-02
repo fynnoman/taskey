@@ -129,52 +129,49 @@ export default function PartnerschaftenPage() {
     <main className="bg-white">
       {/* Hero */}
       <section className="relative bg-gray-950 pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        {/* Hintergrundbild */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hand.png"
+            alt="Partnerschaft – gemeinsam wachsen"
+            fill
+            className="object-cover object-center opacity-20"
+            priority
+          />
+        </div>
+        {/* Gradient-Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-gray-950/70" />
         <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 70% 20%, #1e40af 0%, transparent 50%), radial-gradient(circle at 30% 80%, #1e3a8a 0%, transparent 40%)' }} />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                Partnerprogramm
-              </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
-                Gemeinsam<br />
-                <span className="text-blue-400">wachsen.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
-                Empfehlen Sie Taskey – und profitieren Sie dauerhaft von jeder erfolgreichen Vermittlung.
-              </p>
-              <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
-                Ob Berater, Systemhaus oder Branchenverband: Werden Sie Teil unseres Partnernetzwerks und verdienen Sie mit, während Sie Betrieben helfen, digital durchzustarten.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#kontakt"
-                  className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-600/25 text-lg"
-                >
-                  Jetzt Partner werden
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </a>
-                <a
-                  href="#modelle"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
-                >
-                  Partnermodelle ansehen
-                </a>
-              </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+              Partnerprogramm
             </div>
-            <div className="hidden lg:flex justify-center">
-              <div className="relative w-full max-w-md">
-                <div className="absolute -inset-4 bg-blue-500/10 rounded-3xl blur-2xl" />
-                <Image
-                  src="/hand.png"
-                  alt="Partnerschaft – gemeinsam wachsen"
-                  width={500}
-                  height={500}
-                  className="relative rounded-2xl object-contain w-full h-auto"
-                  priority
-                />
-              </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
+              Gemeinsam<br />
+              <span className="text-blue-400">wachsen.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
+              Empfehlen Sie Taskey – und profitieren Sie dauerhaft von jeder erfolgreichen Vermittlung.
+            </p>
+            <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
+              Ob Berater, Systemhaus oder Branchenverband: Werden Sie Teil unseres Partnernetzwerks und verdienen Sie mit, während Sie Betrieben helfen, digital durchzustarten.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#kontakt"
+                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-600/25 text-lg"
+              >
+                Jetzt Partner werden
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <a
+                href="#modelle"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
+              >
+                Partnermodelle ansehen
+              </a>
             </div>
           </div>
         </div>
