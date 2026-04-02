@@ -2299,14 +2299,20 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("de");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("taskey-language") as Language | null;
-    if (saved && ["de", "en", "fr"].includes(saved)) {
-      setLanguageState(saved);
+  const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("taskey-language") as Language | null;
+      if (saved && ["de", "en", "fr"].includes(saved)) {
+        return saved;
+      }
     }
-  }, []);
+    return "de";
+  });
+
+  // Update html lang attribute when language changes
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

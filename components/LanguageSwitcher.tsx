@@ -53,6 +53,7 @@ export default function LanguageSwitcher() {
               onClick={() => {
                 setLanguage(lang.code);
                 setOpen(false);
+                window.location.reload();
               }}
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                 language === lang.code
