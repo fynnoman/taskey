@@ -30,6 +30,17 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cta.demo": "Demo buchen",
     "hero.cta.trial": "14 Tage kostenlos testen",
 
+    // Home Hero
+    "homeHero.title1": "Dein Betrieb.",
+    "homeHero.title2": "Endlich",
+    "homeHero.title3": "im Griff.",
+    "homeHero.features": "Aufträge. Zeiten. Maschinen. Abrechnung. GPS. NFC.",
+    "homeHero.tagline": "Endlich alles zusammen.",
+    "homeHero.cta.trial": "14 Tage kostenlos testen →",
+    "homeHero.cta.demo": "Live Demo ansehen",
+    "homeHero.trust": "Keine Kreditkarte. Kein Risiko. Sofort loslegen.",
+    "homeHero.solutions": "Alle Lösungen im Überblick",
+
     // FeaturePreview
     "features.badge": "Kernfunktionen",
     "features.title": "Die Grundpfeiler von Taskey",
@@ -790,6 +801,17 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.cta.demo": "Book a demo",
     "hero.cta.trial": "Try free for 14 days",
 
+    // Home Hero
+    "homeHero.title1": "Your business.",
+    "homeHero.title2": "Finally",
+    "homeHero.title3": "under control.",
+    "homeHero.features": "Jobs. Time. Machines. Billing. GPS. NFC.",
+    "homeHero.tagline": "Finally all in one place.",
+    "homeHero.cta.trial": "Try free for 14 days →",
+    "homeHero.cta.demo": "Watch live demo",
+    "homeHero.trust": "No credit card. No risk. Get started right away.",
+    "homeHero.solutions": "View all solutions",
+
     // FeaturePreview
     "features.badge": "Core Features",
     "features.title": "The pillars of Taskey",
@@ -1549,6 +1571,17 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.subtitle.highlight": "25–30 h par mois",
     "hero.cta.demo": "Réserver une démo",
     "hero.cta.trial": "Essai gratuit 14 jours",
+
+    // Home Hero
+    "homeHero.title1": "Votre entreprise.",
+    "homeHero.title2": "Enfin",
+    "homeHero.title3": "sous contrôle.",
+    "homeHero.features": "Missions. Temps. Machines. Facturation. GPS. NFC.",
+    "homeHero.tagline": "Enfin tout réuni.",
+    "homeHero.cta.trial": "Essai gratuit 14 jours →",
+    "homeHero.cta.demo": "Voir la démo en direct",
+    "homeHero.trust": "Pas de carte bancaire. Aucun risque. Démarrez immédiatement.",
+    "homeHero.solutions": "Toutes les solutions en un coup d'œil",
 
     // FeaturePreview
     "features.badge": "Fonctionnalités clés",

@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <>
       <section className="relative bg-white pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
@@ -17,14 +20,14 @@ export default function Hero() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 
           <h1 className="text-[clamp(4rem,12vw,9rem)] font-black text-gray-900 leading-[0.9] tracking-tight mb-10">
-                Dein Betrieb.<br />
-                <span className="text-blue-900">Endlich<br className="sm:hidden" /> im Griff.</span>
+                {t("homeHero.title1")}<br />
+                <span className="text-blue-900">{t("homeHero.title2")}<br className="sm:hidden" /> {t("homeHero.title3")}</span>
               </h1>
 
               <p className="text-2xl sm:text-3xl text-gray-500 font-medium mb-4">
-                Aufträge. Zeiten. Maschinen. Abrechnung. GPS. NFC.
+                {t("homeHero.features")}
               </p>
-              <p className="text-2xl sm:text-3xl font-black text-gray-900 mb-12">Endlich alles zusammen.</p>
+              <p className="text-2xl sm:text-3xl font-black text-gray-900 mb-12">{t("homeHero.tagline")}</p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-start">
                 <Link
@@ -33,24 +36,24 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="px-10 py-5 bg-blue-900 text-white text-xl font-black rounded-2xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02]"
                 >
-                  14 Tage kostenlos testen →
+                  {t("homeHero.cta.trial")}
                 </Link>
                 <Link
                   href="/demo"
                   className="px-10 py-5 text-gray-900 border-2 border-gray-200 text-xl font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all"
                 >
-                  Live Demo ansehen
+                  {t("homeHero.cta.demo")}
                 </Link>
               </div>
 
-              <p className="mt-5 text-base text-gray-500">Keine Kreditkarte. Kein Risiko. Sofort loslegen.</p>
+              <p className="mt-5 text-base text-gray-500">{t("homeHero.trust")}</p>
 
               <div className="mt-8 flex items-center gap-2">
                 <Link
                   href="/loesungen"
                   className="text-blue-900 hover:text-blue-700 font-bold text-base transition-colors inline-flex items-center gap-1.5"
                 >
-                  Alle Lösungen im Überblick
+                  {t("homeHero.solutions")}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
               </div>
