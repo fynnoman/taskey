@@ -253,31 +253,33 @@ export default function PartnerschaftenPage() {
       </section>
 
       {/* Unsere Partner */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 md:py-32 bg-white overflow-hidden">
+        {/* Blauer diagonaler Cut links */}
+        <div className="absolute top-0 left-0 w-1/2 h-full bg-blue-900 -skew-x-6 -translate-x-20 hidden lg:block" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Linke Seite: Text + Partner-Karten */}
-            <div>
-              <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.partners.badge')}</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-5">
+            <div className="lg:text-white">
+              <p className="text-sm font-black text-blue-400 lg:text-blue-300 uppercase tracking-widest mb-3">{t('partner.partners.badge')}</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-white leading-tight mb-5">
                 {t('partner.partners.title')}
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-10">
+              <p className="text-lg text-gray-600 lg:text-blue-100 leading-relaxed mb-10">
                 {t('partner.partners.note')}
               </p>
               <div className="flex flex-wrap gap-6">
-                <div className="flex flex-col items-center gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-10 py-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div className="flex flex-col items-center gap-4 bg-white/10 lg:bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 px-10 py-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <Image
                     src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
                     alt="MG Gebäudeservice"
                     width={160}
                     height={60}
-                    className="object-contain"
+                    className="object-contain brightness-0 invert lg:brightness-0 lg:invert"
                   />
-                  <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
+                  <p className="text-gray-900 lg:text-white font-bold text-lg">MG Gebäudeservice</p>
                   <Link
                     href="/news/mg-gebaeudeservice-duesseldorf-case-study"
-                    className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors"
+                    className="text-blue-600 lg:text-blue-300 hover:text-blue-800 lg:hover:text-white text-sm font-semibold inline-flex items-center gap-1 transition-colors"
                   >
                     Case Study lesen
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -285,12 +287,15 @@ export default function PartnerschaftenPage() {
                 </div>
               </div>
             </div>
-            {/* Rechte Seite: Platzhalter für großes Bild */}
-            <div className="relative w-full aspect-[4/3] bg-gray-100 rounded-3xl border-2 border-dashed border-gray-300 flex items-center justify-center overflow-hidden">
-              <div className="text-center text-gray-400">
-                <svg className="w-16 h-16 mx-auto mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                <p className="text-sm font-medium">Bild kommt hier hin</p>
-              </div>
+            {/* Rechte Seite: Großes Bild */}
+            <div className="relative w-full aspect-[3/4] md:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
+                alt="Taskey Partner – MG Gebäudeservice"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
