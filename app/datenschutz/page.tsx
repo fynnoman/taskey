@@ -45,7 +45,7 @@ export default function DatenschutzPage() {
               Schulz & Stosse GbR<br />
               In der Acht 44<br />
               66333 Völklingen<br />
-              E-Mail: fynnschulzonline@gmail.com<br />
+              E-Mail: fynn@taskeyapp.com<br />
               Telefon: 015168488999
             </p>
           </section>

@@ -127,7 +127,7 @@ export default function AGBPage() {
             <div>
               <p className="text-sm text-gray-700 font-semibold mb-1">Schulz &amp; Stosse GbR</p>
               <p className="text-sm text-gray-600">In der Acht 44, 66333 Völklingen, Deutschland</p>
-              <p className="text-sm text-gray-500 mt-2">Bei Fragen zu unseren Geschäftsbedingungen erreichen Sie uns unter <a href="mailto:info@taskeyapp.com" className="text-blue-700 hover:underline font-medium">info@taskeyapp.com</a></p>
+              <p className="text-sm text-gray-500 mt-2">Bei Fragen zu unseren Geschäftsbedingungen erreichen Sie uns unter <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:underline font-medium">fynn@taskeyapp.com</a></p>
             </div>
           </div>
         </div>
