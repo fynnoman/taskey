@@ -145,9 +145,9 @@ export default function PartnerschaftenPage() {
               <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
               Partnerprogramm
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-950 leading-[1.05] mb-6">
               Gemeinsam<br />
-              <span className="text-blue-400">wachsen.</span>
+              <span className="text-blue-600">wachsen.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
               Empfehlen Sie Taskey – und profitieren Sie dauerhaft von jeder erfolgreichen Vermittlung.
