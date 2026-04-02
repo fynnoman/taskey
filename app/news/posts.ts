@@ -11,6 +11,7 @@ export interface Post {
   planned?: boolean; // true = "Geplant" badge, greyed out
   metaTitle?: string; // custom SEO title
   metaDescription?: string; // custom SEO description
+  heroImage?: string; // optional hero image path (e.g. "/images/blog/xyz.jpg")
 }
 
 // ─────────────────────────────────────────────────────────────

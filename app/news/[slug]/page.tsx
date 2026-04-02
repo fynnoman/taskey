@@ -185,30 +185,53 @@ export default async function PostPage({ params }: Props) {
           {post.summary}
         </p>
 
+        {/* Hero Image Placeholder */}
+        {post.heroImage ? (
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 border border-gray-200">
+            <img src={post.heroImage} alt={post.title} className="w-full h-full object-cover" />
+          </div>
+        ) : post.category === "Blog" && (
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 flex items-center justify-center">
+            <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 30% 40%, #1e40af 0%, transparent 50%), radial-gradient(circle at 70% 60%, #1e3a8a 0%, transparent 40%)' }} />
+            <div className="relative z-10 text-center px-8">
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                Case Study
+              </div>
+              <p className="text-white/60 text-sm font-medium max-w-md">Platz für ein Hero-Bild — Bild hier als heroImage in posts.ts hinterlegen</p>
+            </div>
+          </div>
+        )}
+
         {/* Body */}
-        <div className="space-y-7">
+        <div className="space-y-8">
           {paragraphs.map((para, i) =>
             isHeading(para) ? (
-              <h2
-                key={i}
-                className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight mt-10 mb-2"
-              >
-                {renderFormattedText(para.replace(/^## /, ""))}
-              </h2>
+              <div key={i} className="pt-10 pb-2 border-t border-gray-100 mt-12 first:mt-0 first:border-t-0 first:pt-0">
+                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">
+                  {renderFormattedText(para.replace(/^## /, ""))}
+                </h2>
+              </div>
             ) : isBlockquote(para) ? (
               <blockquote
                 key={i}
-                className="relative bg-gray-50 border-l-4 border-blue-900 rounded-r-2xl px-8 py-8 my-10"
+                className="relative bg-gray-50 border-l-4 border-blue-900 rounded-r-2xl px-8 py-10 my-14"
               >
-                <svg className="absolute top-4 right-6 w-10 h-10 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute top-5 right-6 w-12 h-12 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
                 </svg>
-                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
+                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic pr-12">
                   {renderFormattedText(para.replace(/^> /, ""))}
                 </p>
               </blockquote>
             ) : isTable(para) ? (
-              <div key={i}>{renderTable(para)}</div>
+              <div key={i} className="my-12">{renderTable(para)}</div>
+            ) : para.startsWith("\u201E") || para.startsWith("„") ? (
+              <div key={i} className="bg-blue-50/50 border border-blue-100 rounded-2xl px-7 py-6 my-6">
+                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
+                  {renderFormattedText(para)}
+                </p>
+              </div>
             ) : (
               <p key={i} className="text-lg sm:text-xl text-gray-700 leading-relaxed">
                 {renderFormattedText(para)}
