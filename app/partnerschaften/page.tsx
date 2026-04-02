@@ -135,7 +135,7 @@ export default function PartnerschaftenPage() {
             src="/hand.png"
             alt="Partnerschaft – gemeinsam wachsen"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center opacity-70"
             priority
           />
         </div>
