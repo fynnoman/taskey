@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function NFCLandingPage() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,9 +30,9 @@ export default function NFCLandingPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-4xl font-black text-gray-900 mb-4">Läuft. 🚀</h2>
+          <h2 className="text-4xl font-black text-gray-900 mb-4">{t("nfcPage.success.title")}</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Dein Account ist in <span className="font-bold text-gray-900">2 Minuten</span> live. Schau in dein Postfach.
+            {t("nfcPage.success.text")}
           </p>
           <Link
             href="https://signup.vars-development.com"
@@ -38,7 +40,7 @@ export default function NFCLandingPage() {
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-blue-900 text-white font-black text-lg rounded-2xl hover:bg-blue-800 transition-colors shadow-lg"
           >
-            Direkt starten →
+            {t("nfcPage.success.cta")}
           </Link>
         </div>
       ) : (
@@ -48,14 +50,14 @@ export default function NFCLandingPage() {
           {/* Hook */}
           <div className="mb-10">
             <p className="text-sm font-black uppercase tracking-widest text-blue-900 mb-4">
-              Taskey · NFC-Werkzeugverwaltung
+              {t("nfcPage.hook")}
             </p>
             <h1 className="text-6xl sm:text-7xl font-black text-gray-900 leading-[0.95] tracking-tight mb-6">
-              Geil, oder?
+              {t("nfcPage.hero.title")}
             </h1>
             <p className="text-2xl sm:text-3xl text-gray-700 leading-snug">
-              Genau so schnell checken deine Jungs auf der Baustelle{" "}
-              <span className="font-black text-gray-900">Werkzeug ein und aus.</span>
+              {t("nfcPage.hero.subtitle.before")}{" "}
+              <span className="font-black text-gray-900">{t("nfcPage.hero.subtitle.bold")}</span>
             </p>
           </div>
 
@@ -68,7 +70,7 @@ export default function NFCLandingPage() {
                 </svg>
               </div>
               <p className="text-gray-700 text-lg leading-snug pt-1">
-                Handy ans Werkzeug → sofort Name, Standort, Zustand, Verantwortlicher. Kein Tippen. Keine App öffnen.
+                {t("nfcPage.proof1")}
               </p>
             </div>
             <div className="flex items-start gap-4 mb-5">
@@ -78,7 +80,7 @@ export default function NFCLandingPage() {
                 </svg>
               </div>
               <p className="text-gray-700 text-lg leading-snug pt-1">
-                Kein Schwund mehr. Jede Maschine weiß, wer sie wann wo hatte – für immer.
+                {t("nfcPage.proof2")}
               </p>
             </div>
             <div className="flex items-start gap-4">
@@ -88,7 +90,7 @@ export default function NFCLandingPage() {
                 </svg>
               </div>
               <p className="text-gray-700 text-lg leading-snug pt-1">
-                Einrichten dauert 2 Minuten. Kein IT-Aufwand. Läuft auf jedem Handy.
+                {t("nfcPage.proof3")}
               </p>
             </div>
           </div>
@@ -96,10 +98,10 @@ export default function NFCLandingPage() {
           {/* CTA Form */}
           <div className="bg-blue-900 rounded-3xl p-8 sm:p-10">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">
-              Trag deine E-Mail ein.
+              {t("nfcPage.cta.title")}
             </h2>
             <p className="text-blue-200 text-lg mb-8">
-              Dein Account ist in <span className="text-white font-bold">2 Minuten live</span>. Die ersten 14 Tage gehen auf uns.
+              {t("nfcPage.cta.subtitle")}
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -108,7 +110,7 @@ export default function NFCLandingPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="deine@email.de"
+                placeholder={t("nfcPage.cta.placeholder")}
                 className="flex-1 px-5 py-4 rounded-xl text-gray-900 text-lg font-medium placeholder-gray-400 outline-none focus:ring-2 focus:ring-blue-300"
               />
               <button
@@ -116,12 +118,12 @@ export default function NFCLandingPage() {
                 disabled={loading}
                 className="px-8 py-4 bg-white text-blue-900 font-black text-lg rounded-xl hover:bg-gray-100 transition-colors shadow-lg disabled:opacity-70 whitespace-nowrap"
               >
-                {loading ? "Moment…" : "Jetzt starten →"}
+                {loading ? t("nfcPage.cta.loading") : t("nfcPage.cta.button")}
               </button>
             </form>
 
             <p className="mt-4 text-blue-300 text-sm">
-              Keine Kreditkarte. Kein Risiko. Kündigung jederzeit.
+              {t("nfcPage.cta.note")}
             </p>
           </div>
 

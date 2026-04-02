@@ -3,99 +3,64 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
-const partnerModels = [
-  {
-    id: 'empfehlung',
-    title: 'Empfehlungspartner',
-    subtitle: 'Ideal für Berater, Branchenkenner & Netzwerker',
-    description: 'Sie empfehlen Taskey an Betriebe in Ihrem Netzwerk und erhalten eine attraktive Umsatzbeteiligung – dauerhaft, solange der Kunde bei Taskey bleibt.',
-    highlights: ['Prozentuale Umsatzbeteiligung', 'Kein technisches Know-how nötig', 'Persönlicher Partnerlink & Dashboard'],
-  },
-  {
-    id: 'integration',
-    title: 'Integrationspartner',
-    subtitle: 'Ideal für Softwareanbieter & Systemhäuser',
-    description: 'Sie integrieren Taskey in Ihre bestehende Lösung oder bieten es als Ergänzung an. Gemeinsam schaffen wir einen Mehrwert für Ihre Kunden.',
-    highlights: ['API-Zugang & technischer Support', 'Co-Marketing Möglichkeiten', 'Gemeinsame Kundenbetreuung'],
-  },
-  {
-    id: 'vertrieb',
-    title: 'Vertriebspartner',
-    subtitle: 'Ideal für Branchenverbände & Vertriebsorganisationen',
-    description: 'Sie vertreiben Taskey aktiv in Ihrer Region oder Branche. Wir unterstützen Sie mit Schulungen, Material und einem exklusiven Provisionsmodell.',
-    highlights: ['Exklusive Gebiets- oder Branchenrechte', 'Vertriebsschulungen & Materialien', 'Attraktives Provisionsmodell'],
-  },
-];
-
-const benefits = [
-  {
-    title: 'Dauerhafte Einnahmen',
-    description: 'Für jeden vermittelten Kunden erhalten Sie eine prozentuale Beteiligung – nicht einmalig, sondern dauerhaft.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Starkes Produkt',
-    description: 'Taskey überzeugt mit 600+ Branchen, DSGVO-Konformität und Made-in-Germany-Qualität. Empfehlungen fallen leicht.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Persönlicher Ansprechpartner',
-    description: 'Sie bekommen einen festen Ansprechpartner im Taskey-Team, der Sie bei allem unterstützt.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Transparentes Dashboard',
-    description: 'Verfolgen Sie Ihre Empfehlungen, Conversions und Einnahmen in Echtzeit über Ihr Partner-Dashboard.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Marketing-Unterstützung',
-    description: 'Wir stellen Ihnen Vertriebsmaterial, Landingpages und Co-Branding-Optionen zur Verfügung.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Kein Risiko',
-    description: 'Keine Kosten, keine Verpflichtungen. Sie verdienen nur, wenn Ihre Empfehlung erfolgreich ist.',
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-      </svg>
-    ),
-  },
-];
-
-const steps = [
-  { step: '01', title: 'Anfrage senden', description: 'Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden.' },
-  { step: '02', title: 'Kennenlernen', description: 'Wir besprechen gemeinsam, welches Partnermodell am besten zu Ihnen passt.' },
-  { step: '03', title: 'Loslegen', description: 'Sie erhalten Ihren Partnerlink, Zugang zum Dashboard und können sofort starten.' },
-  { step: '04', title: 'Verdienen', description: 'Für jeden vermittelten Kunden erhalten Sie Ihre Beteiligung – dauerhaft.' },
+// SVG icon paths for benefits (static, no translation needed)
+const benefitIcons = [
+  <svg key="b1" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+  <svg key="b2" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+  <svg key="b3" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
+  <svg key="b4" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+  <svg key="b5" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>,
+  <svg key="b6" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>,
 ];
 
 export default function PartnerschaftenPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const partnerModels = [
+    {
+      id: 'empfehlung',
+      title: t('partner.model1.title'),
+      subtitle: t('partner.model1.subtitle'),
+      description: t('partner.model1.desc'),
+      highlights: [t('partner.model1.h1'), t('partner.model1.h2'), t('partner.model1.h3')],
+    },
+    {
+      id: 'integration',
+      title: t('partner.model2.title'),
+      subtitle: t('partner.model2.subtitle'),
+      description: t('partner.model2.desc'),
+      highlights: [t('partner.model2.h1'), t('partner.model2.h2'), t('partner.model2.h3')],
+    },
+    {
+      id: 'vertrieb',
+      title: t('partner.model3.title'),
+      subtitle: t('partner.model3.subtitle'),
+      description: t('partner.model3.desc'),
+      highlights: [t('partner.model3.h1'), t('partner.model3.h2'), t('partner.model3.h3')],
+    },
+  ];
+
+  const steps = [
+    { step: '01', title: t('partner.step1.title'), description: t('partner.step1.desc') },
+    { step: '02', title: t('partner.step2.title'), description: t('partner.step2.desc') },
+    { step: '03', title: t('partner.step3.title'), description: t('partner.step3.desc') },
+    { step: '04', title: t('partner.step4.title'), description: t('partner.step4.desc') },
+  ];
+
+  const benefits = [
+    { title: t('partner.benefit1.title'), description: t('partner.benefit1.desc'), icon: benefitIcons[0] },
+    { title: t('partner.benefit2.title'), description: t('partner.benefit2.desc'), icon: benefitIcons[1] },
+    { title: t('partner.benefit3.title'), description: t('partner.benefit3.desc'), icon: benefitIcons[2] },
+    { title: t('partner.benefit4.title'), description: t('partner.benefit4.desc'), icon: benefitIcons[3] },
+    { title: t('partner.benefit5.title'), description: t('partner.benefit5.desc'), icon: benefitIcons[4] },
+    { title: t('partner.benefit6.title'), description: t('partner.benefit6.desc'), icon: benefitIcons[5] },
+  ];
 
   const [formData, setFormData] = useState({
     name: '',
@@ -140,14 +105,14 @@ export default function PartnerschaftenPage() {
               Partnerprogramm
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
-              Gemeinsam<br />
-              <span className="text-blue-400">wachsen.</span>
+              {t('partner.hero.title')}<br />
+              <span className="text-blue-400">{t('partner.hero.title.highlight')}</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
-              Empfehlen Sie Taskey – und profitieren Sie dauerhaft von jeder erfolgreichen Vermittlung.
+              {t('partner.hero.subtitle')}
             </p>
             <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
-              Ob Berater, Systemhaus oder Branchenverband: Werden Sie Teil unseres Partnernetzwerks und verdienen Sie mit, während Sie Betrieben helfen, digital durchzustarten.
+              {t('partner.hero.desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -161,7 +126,7 @@ export default function PartnerschaftenPage() {
                 href="#modelle"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
               >
-                Partnermodelle ansehen
+                {t('partner.hero.cta2')}
               </a>
             </div>
           </div>
@@ -175,11 +140,10 @@ export default function PartnerschaftenPage() {
             <Image src="/logoblue.png" alt="Taskey Logo" width={80} height={80} className="mx-auto" sizes="80px" />
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-6">
-            Warum Betriebe Taskey empfehlen
+            {t('partner.trust.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Taskey wird bereits von Handwerkern, Baufirmen und Reinigungsunternehmen in ganz Deutschland eingesetzt. 
-            Ein Produkt, das funktioniert – und sich einfach weiterempfehlen lässt.
+            {t('partner.trust.desc')}
           </p>
         </div>
       </section>
@@ -188,9 +152,9 @@ export default function PartnerschaftenPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">Ihre Vorteile</p>
+            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.benefits.badge')}</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-              Das bekommen Sie als Partner
+              {t('partner.benefits.title')}
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -211,12 +175,12 @@ export default function PartnerschaftenPage() {
       <section id="modelle" className="py-16 md:py-24 bg-white scroll-mt-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-black text-emerald-600 uppercase tracking-widest mb-3">Partnermodelle</p>
+            <p className="text-sm font-black text-emerald-600 uppercase tracking-widest mb-3">{t('partner.models.badge')}</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-4">
-              Finden Sie das passende Modell
+              {t('partner.models.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Drei Wege, mit Taskey zusammenzuarbeiten – wählen Sie den, der am besten zu Ihnen passt.
+              {t('partner.models.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -245,9 +209,9 @@ export default function PartnerschaftenPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">In 4 Schritten</p>
+            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.steps.badge')}</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
-              So einfach werden Sie Partner
+              {t('partner.steps.title')}
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -270,19 +234,19 @@ export default function PartnerschaftenPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-3xl font-black text-white">600+</p>
-              <p className="text-gray-500 text-sm mt-1">Branchen</p>
+              <p className="text-gray-500 text-sm mt-1">{t('partner.social.industries')}</p>
             </div>
             <div>
               <p className="text-3xl font-black text-white">DSGVO</p>
-              <p className="text-gray-500 text-sm mt-1">Konform</p>
+              <p className="text-gray-500 text-sm mt-1">{t('partner.social.compliant')}</p>
             </div>
             <div>
               <p className="text-3xl font-black text-white">100%</p>
               <p className="text-gray-500 text-sm mt-1">Made in Germany</p>
             </div>
             <div>
-              <p className="text-3xl font-black text-white">Dauerhaft</p>
-              <p className="text-gray-500 text-sm mt-1">Umsatzbeteiligung</p>
+              <p className="text-3xl font-black text-white">{t('partner.social.permanent')}</p>
+              <p className="text-gray-500 text-sm mt-1">{t('partner.social.revenue')}</p>
             </div>
           </div>
         </div>
@@ -292,12 +256,12 @@ export default function PartnerschaftenPage() {
       <section id="kontakt" className="py-20 md:py-28 bg-white scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">Kontakt</p>
+            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.contact.badge')}</p>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-4">
-              Jetzt Partnerschaft anfragen
+              {t('partner.contact.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-xl mx-auto">
-              Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.
+              {t('partner.contact.subtitle')}
             </p>
           </div>
 
@@ -308,14 +272,14 @@ export default function PartnerschaftenPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-black text-gray-900 mb-2">Anfrage gesendet!</h3>
-              <p className="text-gray-600">Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+              <h3 className="text-2xl font-black text-gray-900 mb-2">{t('partner.contact.success.title')}</h3>
+              <p className="text-gray-600">{t('partner.contact.success.desc')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1.5">Name *</label>
+                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.name')}</label>
                   <input
                     id="name"
                     type="text"
@@ -323,24 +287,24 @@ export default function PartnerschaftenPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-gray-900"
-                    placeholder="Ihr vollständiger Name"
+                    placeholder={t('partner.contact.name.placeholder')}
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-bold text-gray-700 mb-1.5">Unternehmen</label>
+                  <label htmlFor="company" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.company')}</label>
                   <input
                     id="company"
                     type="text"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-gray-900"
-                    placeholder="Ihr Unternehmen (optional)"
+                    placeholder={t('partner.contact.company.placeholder')}
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1.5">E-Mail *</label>
+                  <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.email')}</label>
                   <input
                     id="email"
                     type="email"
@@ -348,11 +312,11 @@ export default function PartnerschaftenPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-gray-900"
-                    placeholder="ihre@email.de"
+                    placeholder={t('partner.contact.email.placeholder')}
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1.5">Telefon *</label>
+                  <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.phone')}</label>
                   <input
                     id="phone"
                     type="tel"
@@ -365,35 +329,35 @@ export default function PartnerschaftenPage() {
                 </div>
               </div>
               <div>
-                <label htmlFor="partnerType" className="block text-sm font-bold text-gray-700 mb-1.5">Partnerschaftsmodell</label>
+                <label htmlFor="partnerType" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.model')}</label>
                 <select
                   id="partnerType"
                   value={formData.partnerType}
                   onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-gray-900 bg-white"
                 >
-                  <option value="">Bitte wählen (optional)</option>
-                  <option value="Empfehlungspartner">Empfehlungspartner</option>
-                  <option value="Integrationspartner">Integrationspartner</option>
-                  <option value="Vertriebspartner">Vertriebspartner</option>
-                  <option value="Noch unsicher">Noch unsicher – bitte beraten</option>
+                  <option value="">{t('partner.contact.model.placeholder')}</option>
+                  <option value="Empfehlungspartner">{t('partner.contact.model.empfehlung')}</option>
+                  <option value="Integrationspartner">{t('partner.contact.model.integration')}</option>
+                  <option value="Vertriebspartner">{t('partner.contact.model.vertrieb')}</option>
+                  <option value="Noch unsicher">{t('partner.contact.model.unsicher')}</option>
                 </select>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-1.5">Ihre Nachricht</label>
+                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-1.5">{t('partner.contact.message')}</label>
                 <textarea
                   id="message"
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-gray-900 resize-none"
-                  placeholder="Erzählen Sie uns kurz, wie Sie sich eine Zusammenarbeit vorstellen..."
+                  placeholder={t('partner.contact.message.placeholder')}
                 />
               </div>
 
               {status === 'error' && (
                 <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm font-medium">
-                  Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.
+                  {t('partner.contact.error')}
                 </div>
               )}
 
@@ -412,13 +376,13 @@ export default function PartnerschaftenPage() {
                   </>
                 ) : (
                   <>
-                    Partnerschaft anfragen
+                    {t('partner.contact.submit')}
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </>
                 )}
               </button>
               <p className="text-center text-gray-500 text-sm">
-                Oder schreiben Sie uns direkt: <a href="mailto:fynn@taskeyapp.com" className="text-blue-900 hover:underline font-medium">fynn@taskeyapp.com</a>
+                {t('partner.contact.emailDirect')} <a href="mailto:fynn@taskeyapp.com" className="text-blue-900 hover:underline font-medium">fynn@taskeyapp.com</a>
               </p>
             </form>
           )}

@@ -384,11 +384,11 @@ export default function FeaturesPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-              Was kann <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Taskey?</span>
+              {t('featuresPage.hero.title')} <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{t('featuresPage.hero.title.highlight')}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Alle Funktionen für Ihren effizienten Betrieb – von NFC-Tags bis Zeiterfassung
+              {t('featuresPage.hero.subtitle')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
@@ -396,19 +396,19 @@ export default function FeaturesPage() {
                 <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">40+ Features</span>
+                <span className="text-sm font-medium">{t('featuresPage.hero.stat1')}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">11 Kategorien</span>
+                <span className="text-sm font-medium">{t('featuresPage.hero.stat2')}</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">Für alle Gewerke</span>
+                <span className="text-sm font-medium">{t('featuresPage.hero.stat3')}</span>
               </div>
             </div>
 
@@ -427,12 +427,12 @@ export default function FeaturesPage() {
                 className="group bg-gradient-to-br from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-600/40"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-slate-50">Alle Preise</h3>
+                  <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.prices')}</h3>
                   <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-                <p className="text-slate-200 text-sm">Entdecken Sie alle Taskey-Pakete</p>
+                <p className="text-slate-200 text-sm">{t('featuresPage.nav.prices.desc')}</p>
               </a>
 
               <a
@@ -440,12 +440,12 @@ export default function FeaturesPage() {
                 className="group bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-sky-400/40"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-white">NFC-Tags Preise</h3>
+                  <h3 className="text-lg font-bold text-white">{t('featuresPage.nav.nfc')}</h3>
                   <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-sky-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-                <p className="text-sky-50 text-sm">Starter Kit ab 9€</p>
+                <p className="text-sky-50 text-sm">{t('featuresPage.nav.nfc.desc')}</p>
               </a>
 
               <a
@@ -453,12 +453,12 @@ export default function FeaturesPage() {
                 className="group bg-gradient-to-br from-slate-600 to-blue-700 hover:from-slate-500 hover:to-blue-600 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-500/40"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-slate-50">Manager Preise</h3>
+                  <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.manager')}</h3>
                   <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-                <p className="text-slate-100 text-sm">Persönlicher Premium-Service</p>
+                <p className="text-slate-100 text-sm">{t('featuresPage.nav.manager.desc')}</p>
               </a>
             </div>
           </div>
@@ -476,11 +476,11 @@ export default function FeaturesPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Wichtiger Hinweis: Zwei verschiedene Anwendungen
+                    {t('featuresPage.noteBox.title')}
                   </h3>
                   <div className="space-y-3 text-gray-700">
                     <p className="leading-relaxed">
-                      Taskey besteht aus <strong>zwei unterschiedlichen Anwendungen</strong>, die perfekt aufeinander abgestimmt sind:
+                      {t('featuresPage.noteBox.intro')}
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                       <div className="bg-white rounded-lg p-4 border border-blue-100">
@@ -488,10 +488,10 @@ export default function FeaturesPage() {
                           <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          <h4 className="font-bold text-blue-900">Dashboard (Browser)</h4>
+                          <h4 className="font-bold text-blue-900">{t('featuresPage.noteBox.dashboard')}</h4>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Für Chefs und Verwaltung: Vollständige Kontrolle über Projekte, Mitarbeiter, Auswertungen und alle administrativen Funktionen
+                          {t('featuresPage.noteBox.dashboard.desc')}
                         </p>
                       </div>
                       <div className="bg-white rounded-lg p-4 border border-cyan-100">
@@ -499,10 +499,10 @@ export default function FeaturesPage() {
                           <svg className="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
-                          <h4 className="font-bold text-cyan-600">Mobile App</h4>
+                          <h4 className="font-bold text-cyan-600">{t('featuresPage.noteBox.app')}</h4>
                         </div>
                         <p className="text-sm text-gray-600">
-                          Für Mitarbeiter: Zeiterfassung, Auftragsannahme, Navigation, Fotodokumentation und Abschlussberichte direkt vor Ort
+                          {t('featuresPage.noteBox.app.desc')}
                         </p>
                       </div>
                     </div>
@@ -548,8 +548,8 @@ export default function FeaturesPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-50 text-lg">Alle Features</h3>
-                      <p className="text-slate-300 text-sm">{currentCategory?.features.length} Funktionen</p>
+                      <h3 className="font-bold text-slate-50 text-lg">{t('featuresPage.sidebar.allFeatures')}</h3>
+                      <p className="text-slate-300 text-sm">{currentCategory?.features.length} {t('featuresPage.sidebar.functions')}</p>
                     </div>
                   </div>
                   <div className="h-px bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
@@ -591,7 +591,7 @@ export default function FeaturesPage() {
                           {activeFeature === feature.id && (
                             <div className="flex items-center gap-2 mt-2">
                               <div className="h-1 flex-1 bg-gradient-to-r from-slate-500 via-slate-400 to-transparent rounded-full"></div>
-                              <span className="text-xs text-slate-300 font-semibold">Aktiv</span>
+                              <span className="text-xs text-slate-300 font-semibold">{t('featuresPage.sidebar.active')}</span>
                             </div>
                           )}
                           
@@ -599,7 +599,7 @@ export default function FeaturesPage() {
                           {activeFeature !== feature.id && (
                             <div className="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
                               <span className="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                Mehr erfahren
+                                {t('featuresPage.sidebar.learnMore')}
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -647,9 +647,9 @@ export default function FeaturesPage() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                            So funktioniert's
+                            {t('featuresPage.detail.howItWorks')}
                             <span className="inline-flex items-center px-4 py-1.5 bg-slate-700/40 backdrop-blur-xl border border-slate-600/40 rounded-full text-sm font-semibold text-slate-300 shadow-lg">
-                              Details
+                              {t('featuresPage.detail.details')}
                             </span>
                           </h3>
                           <div className="prose prose-invert prose-lg max-w-none">
@@ -674,10 +674,9 @@ export default function FeaturesPage() {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-slate-900 mb-3 text-xl">Gut zu wissen</h4>
+                          <h4 className="font-bold text-slate-900 mb-3 text-xl">{t('featuresPage.detail.goodToKnow')}</h4>
                           <p className="text-slate-700 leading-relaxed text-lg">
-                            Diese Funktion arbeitet automatisch im Hintergrund und erfordert keine zusätzliche Einrichtung. 
-                            Alle Daten werden DSGVO-konform auf deutschen Servern gespeichert.
+                            {t('featuresPage.detail.goodToKnow.desc')}
                           </p>
                         </div>
                       </div>
@@ -699,25 +698,25 @@ export default function FeaturesPage() {
                 Done-for-You Onboarding
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-white mb-3">
-                Wir richten alles für Sie ein. <span className="text-cyan-400">Komplett.</span>
+                {t('featuresPage.onboarding.title')} <span className="text-cyan-400">{t('featuresPage.onboarding.title.highlight')}</span>
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
-                Mitarbeiterlisten importieren, Maschinen anlegen, Prozesse konfigurieren — das erledigt unser Team. Sie bekommen ein schlüsselfertiges System und müssen nichts selbst einrichten.
+                {t('featuresPage.onboarding.desc')}
               </p>
               <div className="flex flex-wrap gap-4 mt-5">
-                {['Mitarbeiterimport', 'Systemkonfiguration', 'Live-Einführung', 'Nachbetreuung'].map((tag, i) => (
+                {[t('featuresPage.onboarding.tag1'), t('featuresPage.onboarding.tag2'), t('featuresPage.onboarding.tag3'), t('featuresPage.onboarding.tag4')].map((tag, i) => (
                   <span key={i} className="text-xs text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">{tag}</span>
                 ))}
               </div>
             </div>
             <div className="flex-shrink-0 text-center">
-              <p className="text-gray-500 text-xs mb-3">Einmalige Setup-Pauschale</p>
-              <p className="text-gray-300 text-sm font-semibold mb-4">Für GROW &amp; SCALE Kunden</p>
+              <p className="text-gray-500 text-xs mb-3">{t('featuresPage.onboarding.setupFee')}</p>
+              <p className="text-gray-300 text-sm font-semibold mb-4">{t('featuresPage.onboarding.forCustomers')}</p>
               <a
                 href="/pricing#onboarding"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 font-black px-8 py-4 rounded-xl hover:scale-105 transition-all shadow-lg text-sm"
               >
-                Preise ansehen
+                {t('featuresPage.onboarding.viewPrices')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
             </div>
@@ -763,15 +762,14 @@ export default function FeaturesPage() {
 
               {/* Main Headline */}
               <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-                Bereit für die
+                {t('featuresPage.cta.title')}
                 <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Zukunft?
+                  {t('featuresPage.cta.title.highlight')}
                 </span>
               </h2>
 
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Erleben Sie Taskey live in Aktion! Unsere Experten zeigen Ihnen persönlich, 
-                wie Sie <span className="text-cyan-400 font-bold">30-40% Zeit sparen</span> und Ihren Betrieb digitalisieren.
+                {t('featuresPage.cta.desc')}
               </p>
 
               {/* Features Grid - New Design */}
@@ -813,7 +811,7 @@ export default function FeaturesPage() {
                   className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-lg px-10 py-5 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">Jetzt kostenlos testen</span>
+                  <span className="relative z-10">{t('featuresPage.cta.button')}</span>
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -826,7 +824,7 @@ export default function FeaturesPage() {
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Oder direkt anrufen
+                  {t('featuresPage.cta.call')}
                 </a>
               </div>
 
@@ -836,19 +834,19 @@ export default function FeaturesPage() {
                   <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Keine Kreditkarte nötig</span>
+                  <span>{t('featuresPage.cta.noCard')}</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
                   <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>14 Tage kostenlos</span>
+                  <span>{t('featuresPage.cta.freeTrial')}</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
                   <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Jederzeit kündbar</span>
+                  <span>{t('featuresPage.cta.cancelAnytime')}</span>
                 </div>
               </div>
             </div>
@@ -859,10 +857,10 @@ export default function FeaturesPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Häufige Fragen
+              {t('featuresPage.faq.title')}
             </h2>
             <p className="text-xl text-gray-600">
-              Antworten auf die wichtigsten Fragen zu Taskey
+              {t('featuresPage.faq.subtitle')}
             </p>
           </div>
 
@@ -930,13 +928,13 @@ export default function FeaturesPage() {
           {/* CTA at the end */}
           <div className="mt-12 text-center">
             <p className="text-lg text-gray-600 mb-6">
-              Haben Sie weitere Fragen? Wir helfen Ihnen gerne weiter!
+              {t('featuresPage.faq.moreQuestions')}
             </p>
             <a 
               href="mailto:info@taskey.de" 
               className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-all"
             >
-              Kontakt aufnehmen
+              {t('featuresPage.faq.contact')}
             </a>
           </div>
 

@@ -72,7 +72,7 @@ export default function PricingPage() {
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4">
             {t("pricing.hero.subtitle")}
           </p>
-          <p className="text-sm text-gray-400">Alle Preise zzgl. MwSt.</p>
+          <p className="text-sm text-gray-400">{t("pricingPage.allPricesVat")}</p>
         </div>
       </section>
 
@@ -105,20 +105,20 @@ export default function PricingPage() {
                 <div className="mb-5 flex items-center gap-2 bg-white/15 border border-white/25 rounded-xl px-4 py-3">
                   <svg className="w-5 h-5 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                   <div>
-                    <span className="text-base font-black text-white">Für den Einstieg</span>
-                    <span className="block text-xs text-slate-400 font-normal mt-0.5">Empfohlen bis ~5 Mitarbeiter</span>
+                    <span className="text-base font-black text-white">{t("pricingPage.start.rec")}</span>
+                    <span className="block text-xs text-slate-400 font-normal mt-0.5">{t("pricingPage.start.recSub")}</span>
                   </div>
                 </div>
 
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wide">Kündigungsfrist</label>
+                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t("pricingPage.cancellation")}</label>
                     <div className="grid grid-cols-2 gap-2">
                       {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setStartCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${startCancellation === opt ? 'bg-white text-slate-900 shadow-md' : 'bg-white/10 text-slate-300 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? t("pricingPage.monthly") : t("pricingPage.yearly")}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? t("pricingPage.flexible") : '-13%'}</div>
                         </button>
                       ))}
                     </div>
@@ -127,23 +127,23 @@ export default function PricingPage() {
                     <span className="text-5xl font-black text-white">{prices.start}</span>
                     <span className="text-2xl font-bold text-slate-300 mb-1">€</span>
                   </div>
-                  <p className="text-sm text-slate-300">pro Mitarbeiter / Monat</p>
+                  <p className="text-sm text-slate-300">{t("pricingPage.perEmployee")}</p>
                 </div>
 
                 <ul className="space-y-2.5 mb-8">
                   {[
                     { text: 'GPS + Mobile App', dim: false },
-                    { text: 'Routenoptimierung (automatisch)', dim: false },
-                    { text: '3 NFC-Tags inklusive', dim: false },
-                    { text: 'Standard Auftrags- & Projektplanung', dim: false },
-                    { text: 'Mitarbeiter-Stammdaten', dim: false },
-                    { text: '50 GB Speicher', dim: false },
-                    { text: '12 Monate Historie (GoBD)', dim: false },
-                    { text: 'Keine Besorgungsfahrten', dim: true },
-                    { text: 'Keine Fotogalerie', dim: true },
-                    { text: 'Nur PDF-Rechnungen (kein Export)', dim: true },
-                    { text: 'Keine Rentabilitätsanalyse', dim: true },
-                    { text: 'E-Mail Support (48h)', dim: false },
+                    { text: t("pricingPage.start.f2"), dim: false },
+                    { text: t("pricingPage.start.f3"), dim: false },
+                    { text: t("pricingPage.start.f4"), dim: false },
+                    { text: t("pricingPage.start.f5"), dim: false },
+                    { text: t("pricingPage.start.f6"), dim: false },
+                    { text: t("pricingPage.start.f7"), dim: false },
+                    { text: t("pricingPage.start.f8"), dim: true },
+                    { text: t("pricingPage.start.f9"), dim: true },
+                    { text: t("pricingPage.start.f10"), dim: true },
+                    { text: t("pricingPage.start.f11"), dim: true },
+                    { text: t("pricingPage.start.f12"), dim: false },
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       {item.dim ? (
@@ -158,18 +158,18 @@ export default function PricingPage() {
 
                 <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
                   className="block w-full py-4 rounded-xl font-bold text-slate-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
-                  Jetzt starten
+                  {t("pricingPage.startNow")}
                 </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-slate-400/30 bg-white/5 backdrop-blur-sm">
                   <div className="px-4 py-3 flex items-center gap-2 border-b border-slate-400/20 bg-slate-400/10">
                     <svg className="w-4 h-4 text-slate-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                    <span className="text-xs font-black text-slate-300 uppercase tracking-wide">Empfohlen: Done-for-You Setup</span>
+                    <span className="text-xs font-black text-slate-300 uppercase tracking-wide">{t("pricingPage.onboarding.rec")}</span>
                   </div>
                   <div className="px-4 py-3">
-                    <p className="text-xs text-slate-300 leading-relaxed">Wir richten alles ein — <span className="text-white font-bold">schlüsselfertig ab Tag 1</span>.</p>
-                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-slate-300 hover:text-white">Mehr erfahren ↓</a>
+                    <p className="text-xs text-slate-300 leading-relaxed">{t("pricingPage.onboarding.desc")} <span className="text-white font-bold">{t("pricingPage.onboarding.desc.bold")}</span>.</p>
+                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-slate-300 hover:text-white">{t("pricingPage.onboarding.more")}</a>
                   </div>
                 </div>
               </div>
@@ -197,20 +197,20 @@ export default function PricingPage() {
                 <div className="mb-5 flex items-center gap-2 bg-white/15 border border-white/25 rounded-xl px-4 py-3">
                   <svg className="w-5 h-5 text-cyan-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                   <div>
-                    <span className="text-base font-black text-white">Beliebteste Wahl</span>
-                    <span className="block text-xs text-blue-200 font-normal mt-0.5">Empfohlen für 6–20 Mitarbeiter</span>
+                    <span className="text-base font-black text-white">{t("pricingPage.grow.rec")}</span>
+                    <span className="block text-xs text-blue-200 font-normal mt-0.5">{t("pricingPage.grow.recSub")}</span>
                   </div>
                 </div>
 
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
-                    <label className="text-xs font-bold text-blue-200 uppercase tracking-wide">Kündigungsfrist</label>
+                    <label className="text-xs font-bold text-blue-200 uppercase tracking-wide">{t("pricingPage.cancellation")}</label>
                     <div className="grid grid-cols-2 gap-2">
                       {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setGrowCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${growCancellation === opt ? 'bg-white text-blue-900 shadow-md' : 'bg-white/10 text-blue-200 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? t("pricingPage.monthly") : t("pricingPage.yearly")}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? t("pricingPage.flexible") : '-13%'}</div>
                         </button>
                       ))}
                     </div>
@@ -219,21 +219,21 @@ export default function PricingPage() {
                     <span className="text-5xl font-black text-white">{prices.grow}</span>
                     <span className="text-2xl font-bold text-blue-200 mb-1">€</span>
                   </div>
-                  <p className="text-sm text-blue-100">pro Mitarbeiter / Monat</p>
+                  <p className="text-sm text-blue-100">{t("pricingPage.perEmployee")}</p>
                 </div>
 
                 <ul className="space-y-2.5 mb-6">
                   {[
-                    { text: 'Alles aus START', dim: false },
-                    { text: 'Besorgungsfahrten', dim: false },
-                    { text: '15 NFC-Tags inklusive', dim: false },
-                    { text: 'Fotogalerie für Projekte & Aufträge', dim: false },
-                    { text: 'Erweiterte Planung + Qualifikationen', dim: false },
-                    { text: 'Routenoptimierung (automatisch)', dim: false },
-                    { text: '250 GB Speicher', dim: false },
-                    { text: '24 Monate Historie (GoBD)', dim: false },
-                    { text: 'Keine Echtzeit-Rentabilität', dim: true },
-                    { text: 'Chat & E-Mail Support (24h)', dim: false },
+                    { text: t("pricingPage.grow.f1"), dim: false },
+                    { text: t("pricingPage.grow.f2"), dim: false },
+                    { text: t("pricingPage.grow.f3"), dim: false },
+                    { text: t("pricingPage.grow.f4"), dim: false },
+                    { text: t("pricingPage.grow.f5"), dim: false },
+                    { text: t("pricingPage.grow.f6"), dim: false },
+                    { text: t("pricingPage.grow.f7"), dim: false },
+                    { text: t("pricingPage.grow.f8"), dim: false },
+                    { text: t("pricingPage.grow.f9"), dim: true },
+                    { text: t("pricingPage.grow.f10"), dim: false },
                   ].map((item, i) => (
                     <li key={i} className="group/item relative flex items-center gap-3">
                       {item.dim ? (
@@ -248,18 +248,18 @@ export default function PricingPage() {
 
                 <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
                   className="block w-full py-4 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
-                  Jetzt GROW buchen
+                  {t("pricingPage.bookGrow")}
                 </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-cyan-300/40 bg-gradient-to-br from-cyan-900/60 to-blue-900/60 backdrop-blur-sm">
                   <div className="px-4 py-3 flex items-center gap-2 border-b border-cyan-300/20 bg-cyan-400/10">
                     <svg className="w-4 h-4 text-cyan-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                    <span className="text-xs font-black text-cyan-300 uppercase tracking-wide">Empfohlen: Done-for-You Setup</span>
+                    <span className="text-xs font-black text-cyan-300 uppercase tracking-wide">{t("pricingPage.onboarding.rec")}</span>
                   </div>
                   <div className="px-4 py-3">
-                    <p className="text-xs text-blue-100 leading-relaxed">Wir richten alles ein — <span className="text-white font-bold">schlüsselfertig ab Tag 1</span>.</p>
-                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 hover:text-cyan-200">Mehr erfahren ↓</a>
+                    <p className="text-xs text-blue-100 leading-relaxed">{t("pricingPage.onboarding.desc")} <span className="text-white font-bold">{t("pricingPage.onboarding.desc.bold")}</span>.</p>
+                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 hover:text-cyan-200">{t("pricingPage.onboarding.more")}</a>
                   </div>
                 </div>
               </div>
@@ -289,20 +289,20 @@ export default function PricingPage() {
                 <div className="mb-5 flex items-center gap-2 bg-white/15 border border-white/25 rounded-xl px-4 py-3">
                   <svg className="w-5 h-5 text-purple-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                   <div>
-                    <span className="text-base font-black text-white">Für Skalierung</span>
-                    <span className="block text-xs text-purple-200 font-normal mt-0.5">Empfohlen ab 21+ Mitarbeiter</span>
+                    <span className="text-base font-black text-white">{t("pricingPage.scale.rec")}</span>
+                    <span className="block text-xs text-purple-200 font-normal mt-0.5">{t("pricingPage.scale.recSub")}</span>
                   </div>
                 </div>
 
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
-                    <label className="text-xs font-bold text-purple-200 uppercase tracking-wide">Kündigungsfrist</label>
+                    <label className="text-xs font-bold text-purple-200 uppercase tracking-wide">{t("pricingPage.cancellation")}</label>
                     <div className="grid grid-cols-2 gap-2">
                       {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setScaleCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${scaleCancellation === opt ? 'bg-white text-purple-900 shadow-md' : 'bg-white/10 text-purple-200 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? t("pricingPage.monthly") : t("pricingPage.yearly")}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? t("pricingPage.flexible") : '-13%'}</div>
                         </button>
                       ))}
                     </div>
@@ -311,21 +311,21 @@ export default function PricingPage() {
                     <span className="text-5xl font-black text-white">{prices.scale}</span>
                     <span className="text-2xl font-bold text-purple-200 mb-1">€</span>
                   </div>
-                  <p className="text-sm text-purple-100">pro Mitarbeiter / Monat</p>
+                  <p className="text-sm text-purple-100">{t("pricingPage.perEmployee")}</p>
                 </div>
 
                 <ul className="space-y-2.5 mb-6">
                   {[
-                    { text: 'Alles aus GROW', dim: false },
-                    { text: 'Besorgungsfahrten', dim: false },
-                    { text: '45 NFC-Tags inklusive', dim: false },
-                    { text: 'Fotogalerie für Projekte & Aufträge', dim: false },
-                    { text: 'Karten-Übersicht (letzter Auftragseinsatzort)', dim: false },
-                    { text: 'Routenoptimierung + Auftragskarte', dim: false },
-                    { text: '1 TB Speicher', dim: false },
-                    { text: 'Unbegrenzte Historie (GoBD)', dim: false },
-                    { text: 'Echtzeit-Rentabilität pro Projekt', dim: false },
-                    { text: 'Priority Support', dim: false },
+                    { text: t("pricingPage.scale.f1"), dim: false },
+                    { text: t("pricingPage.scale.f2"), dim: false },
+                    { text: t("pricingPage.scale.f3"), dim: false },
+                    { text: t("pricingPage.scale.f4"), dim: false },
+                    { text: t("pricingPage.scale.f5"), dim: false },
+                    { text: t("pricingPage.scale.f6"), dim: false },
+                    { text: t("pricingPage.scale.f7"), dim: false },
+                    { text: t("pricingPage.scale.f8"), dim: false },
+                    { text: t("pricingPage.scale.f9"), dim: false },
+                    { text: t("pricingPage.scale.f10"), dim: false },
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <svg className="w-4 h-4 text-purple-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
@@ -336,18 +336,18 @@ export default function PricingPage() {
 
                 <Link href="https://signup.vars-development.com" target="_blank" rel="noopener noreferrer"
                   className="block w-full py-4 rounded-xl font-bold text-purple-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105 mb-4 text-center">
-                  Jetzt SCALE buchen
+                  {t("pricingPage.bookScale")}
                 </Link>
 
                 {/* Onboarding Teaser */}
                 <div className="rounded-xl overflow-hidden border border-purple-300/30 bg-white/5 backdrop-blur-sm">
                   <div className="px-4 py-3 flex items-center gap-2 border-b border-purple-300/20 bg-purple-400/10">
                     <svg className="w-4 h-4 text-purple-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                    <span className="text-xs font-black text-purple-300 uppercase tracking-wide">Empfohlen: Done-for-You Setup</span>
+                    <span className="text-xs font-black text-purple-300 uppercase tracking-wide">{t("pricingPage.onboarding.rec")}</span>
                   </div>
                   <div className="px-4 py-3">
-                    <p className="text-xs text-purple-100 leading-relaxed">Wir richten alles ein — <span className="text-white font-bold">schlüsselfertig ab Tag 1</span>.</p>
-                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-purple-300 hover:text-purple-200">Mehr erfahren ↓</a>
+                    <p className="text-xs text-purple-100 leading-relaxed">{t("pricingPage.onboarding.desc")} <span className="text-white font-bold">{t("pricingPage.onboarding.desc.bold")}</span>.</p>
+                    <a href="#onboarding" className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-purple-300 hover:text-purple-200">{t("pricingPage.onboarding.more")}</a>
                   </div>
                 </div>
               </div>
@@ -361,24 +361,24 @@ export default function PricingPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">In jedem Paket enthalten</h2>
-            <p className="text-gray-600 text-lg">Diese Kernfunktionen sind in START, GROW und SCALE inklusive</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">{t("pricingPage.allIncluded.title")}</h2>
+            <p className="text-gray-600 text-lg">{t("pricingPage.allIncluded.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
             {[
-              'Routenoptimierung (automatisch)',
-              'NFC-Tag-Verwaltung',
-              'GPS & Mobile App (iOS & Android)',
-              'Zeit-, Pausen- & Fahrterfassung',
-              'Aufträge, Projekte, Fotos & Dokumente',
-              'Digitale Anlagenakten',
-              'Abschlussberichte (PDF + Signatur)',
-              'Abwesenheiten & Urlaubsplanung',
-              'Dashboards & Auswertungen',
-              'Rollen- & Rechteverwaltung',
-              'Kundenverwaltung',
-              'Karten-Übersicht (letzter Auftragseinsatzort)',
+              t("pricingPage.allIncluded.f1"),
+              t("pricingPage.allIncluded.f2"),
+              t("pricingPage.allIncluded.f3"),
+              t("pricingPage.allIncluded.f4"),
+              t("pricingPage.allIncluded.f5"),
+              t("pricingPage.allIncluded.f6"),
+              t("pricingPage.allIncluded.f7"),
+              t("pricingPage.allIncluded.f8"),
+              t("pricingPage.allIncluded.f9"),
+              t("pricingPage.allIncluded.f10"),
+              t("pricingPage.allIncluded.f11"),
+              t("pricingPage.allIncluded.f12"),
             ].map((text, i) => (
               <div key={i} className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 border border-gray-100 shadow-sm">
                 <svg className="w-4 h-4 text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
@@ -390,14 +390,14 @@ export default function PricingPage() {
           {/* Differentiator comparison */}
           <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
             <div className="px-6 py-4 bg-gray-900 text-white">
-              <h3 className="text-lg font-black">Was unterscheidet die Pakete?</h3>
-              <p className="text-sm text-gray-400 mt-0.5">Diese Features variieren je nach gewähltem Tarif</p>
+              <h3 className="text-lg font-black">{t("pricingPage.comparison.title")}</h3>
+              <p className="text-sm text-gray-400 mt-0.5">{t("pricingPage.comparison.subtitle")}</p>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-gray-100">
-                    <th className="text-left px-6 py-3 text-gray-500 font-semibold w-1/3">Feature</th>
+                    <th className="text-left px-6 py-3 text-gray-500 font-semibold w-1/3">{t("pricingPage.comparison.feature")}</th>
                     <th className="text-center px-4 py-3 text-gray-700 font-black">START</th>
                     <th className="text-center px-4 py-3 text-blue-700 font-black">GROW</th>
                     <th className="text-center px-4 py-3 text-purple-700 font-black">SCALE</th>
@@ -405,15 +405,15 @@ export default function PricingPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-50">
                   {[
-                    { label: 'NFC-Tags inklusive', start: '3 Tags', grow: '15 Tags', scale: '45 Tags' },
-                    { label: 'Speicher', start: '50 GB', grow: '250 GB', scale: '1 TB' },
-                    { label: 'Daten-Historie (GoBD)', start: '12 Monate', grow: '24 Monate', scale: 'Unbegrenzt' },
-                    { label: 'Auftrags-/Projektplanung', start: 'Standard', grow: 'Erweitert', scale: 'Erweitert' },
-                    { label: 'Besorgungsfahrten', start: '—', grow: 'Inklusive', scale: 'Inklusive' },
-                    { label: 'Fotogalerie', start: '—', grow: 'Inklusive', scale: 'Inklusive' },
-                    { label: 'Mitarbeitermanagement', start: 'Stammdaten', grow: '+ Qualifikationen', scale: '+ Qualifikationen' },
-                    { label: 'Echtzeit-Rentabilität', start: '—', grow: '—', scale: 'Live-Margen pro Projekt' },
-                    { label: 'Support', start: 'E-Mail (48h)', grow: 'Chat & E-Mail (24h)', scale: 'Priority Support' },
+                    { label: t("pricingPage.comparison.nfc"), start: t("pricingPage.comparison.nfc.start"), grow: t("pricingPage.comparison.nfc.grow"), scale: t("pricingPage.comparison.nfc.scale") },
+                    { label: t("pricingPage.comparison.storage"), start: '50 GB', grow: '250 GB', scale: '1 TB' },
+                    { label: t("pricingPage.comparison.history"), start: t("pricingPage.comparison.history.start"), grow: t("pricingPage.comparison.history.grow"), scale: t("pricingPage.comparison.history.scale") },
+                    { label: t("pricingPage.comparison.planning"), start: t("pricingPage.comparison.planning.start"), grow: t("pricingPage.comparison.planning.grow"), scale: t("pricingPage.comparison.planning.scale") },
+                    { label: t("pricingPage.comparison.errands"), start: '—', grow: t("pricingPage.comparison.included"), scale: t("pricingPage.comparison.included") },
+                    { label: t("pricingPage.comparison.gallery"), start: '—', grow: t("pricingPage.comparison.included"), scale: t("pricingPage.comparison.included") },
+                    { label: t("pricingPage.comparison.employees"), start: t("pricingPage.comparison.employees.start"), grow: t("pricingPage.comparison.employees.grow"), scale: t("pricingPage.comparison.employees.scale") },
+                    { label: t("pricingPage.comparison.profitability"), start: '—', grow: '—', scale: t("pricingPage.comparison.profitability.scale") },
+                    { label: t("pricingPage.comparison.support"), start: t("pricingPage.comparison.support.start"), grow: t("pricingPage.comparison.support.grow"), scale: t("pricingPage.comparison.support.scale") },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-gray-50/50">
                       <td className="px-6 py-3 font-medium text-gray-700">{row.label}</td>
@@ -434,8 +434,8 @@ export default function PricingPage() {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
               <p className="text-sm text-gray-700">
-                <strong className="font-bold">Was bedeutet Historie?</strong><br />
-                Die Historie bestimmt, wie lange Sie auf alte Zeiterfassungen, Aufträge, Berichte und Dokumente zugreifen können. Bei "12 Monate Historie" sehen Sie alle Daten der letzten 12 Monate. "Unbegrenzte Historie" bedeutet: Alle Daten bleiben für immer abrufbar.
+                <strong className="font-bold">{t("pricingPage.history.title")}</strong><br />
+                {t("pricingPage.history.desc")}
               </p>
             </div>
           </div>
@@ -468,41 +468,41 @@ export default function PricingPage() {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
                   </svg>
-                  FÜR GROSSBETRIEBE & INDIVIDUELLE ANFORDERUNGEN
+                  {t("pricingPage.enterprise.badge")}
                 </div>
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">ENTERPRISE</h3>
-                <p className="text-xl text-gray-300 mb-6 leading-relaxed">Empfohlen ab 50 Mitarbeitern – oder wenn du Features brauchst, die kein Standardpaket abdeckt.</p>
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">{t("pricingPage.enterprise.title")}</h3>
+                <p className="text-xl text-gray-300 mb-6 leading-relaxed">{t("pricingPage.enterprise.subtitle")}</p>
                 <div className="flex flex-col gap-3 mb-6">
                   <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3">
                     <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    <span className="text-gray-300 text-sm">Empfohlen für <span className="text-white font-bold">50+ Mitarbeiter</span></span>
+                    <span className="text-gray-300 text-sm">{t("pricingPage.enterprise.rec50.pre")} <span className="text-white font-bold">{t("pricingPage.enterprise.rec50")}</span></span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3">
                     <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    <span className="text-gray-300 text-sm">Du brauchst <span className="text-white font-bold">individuelle Features</span> oder Integrationen</span>
+                    <span className="text-gray-300 text-sm">{t("pricingPage.enterprise.customFeatures.pre")} <span className="text-white font-bold">{t("pricingPage.enterprise.customFeatures")}</span> {t("pricingPage.enterprise.customFeatures.post")}</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3">
                     <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    <span className="text-gray-300 text-sm">Du willst eine <span className="text-white font-bold">maßgeschneiderte Lösung</span> statt einem Standardpaket</span>
+                    <span className="text-gray-300 text-sm">{t("pricingPage.enterprise.customSolution.pre")} <span className="text-white font-bold">{t("pricingPage.enterprise.customSolution")}</span> {t("pricingPage.enterprise.customSolution.post")}</span>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/enterprise" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 font-bold px-8 py-4 rounded-xl hover:scale-105 transition-all shadow-lg">
-                    Mehr erfahren
+                    {t("pricingPage.enterprise.cta1")}
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </Link>
                   <button onClick={() => setEnterpriseModalOpen(true)} className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-xl border border-white/20 hover:bg-white/20 transition-all">
-                    Enterprise anfragen
+                    {t("pricingPage.enterprise.cta2")}
                   </button>
                 </div>
               </div>
               {/* Right Features */}
               <div className="space-y-4">
                 {[
-                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, title: 'Voller Funktionsumfang', desc: 'Alle Features ohne Limits' },
-                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>, title: 'Individuelle Speicherlösungen', desc: 'Skalierbar nach Bedarf' },
-                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>, title: 'Dedizierter Account‑Manager', desc: 'Persönlicher Ansprechpartner' },
-                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>, title: 'Security & Custom‑Features', desc: 'Maßgeschneiderte Lösungen' },
+                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, title: t("pricingPage.enterprise.f1.title"), desc: t("pricingPage.enterprise.f1.desc") },
+                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>, title: t("pricingPage.enterprise.f2.title"), desc: t("pricingPage.enterprise.f2.desc") },
+                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>, title: t("pricingPage.enterprise.f3.title"), desc: t("pricingPage.enterprise.f3.desc") },
+                  { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>, title: t("pricingPage.enterprise.f4.title"), desc: t("pricingPage.enterprise.f4.desc") },
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-all group">
                     <div className="text-cyan-400 flex-shrink-0">{feature.icon}</div>
@@ -526,13 +526,13 @@ export default function PricingPage() {
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
               </svg>
-              NEU: TASKEY NFC-TAGS
+              {t("pricingPage.nfc.badge")}
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
-              Das digitale Gedächtnis für deinen Betrieb
+              {t("pricingPage.nfc.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Kleben. Scannen. Wissen. Gib jeder Maschine, jeder Anlage ihr eigenes digitales Gedächtnis.
+              {t("pricingPage.nfc.subtitle")}
             </p>
           </div>
 
@@ -564,10 +564,10 @@ export default function PricingPage() {
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
-                    <span className="text-lg font-bold text-gray-900">Ihr Preis</span>
+                    <span className="text-lg font-bold text-gray-900">{t("pricingPage.nfc.yourPrice")}</span>
                     <span className="text-4xl font-black text-blue-900">6.30€</span>
                   </div>
-                  <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
+                  <p className="text-sm text-gray-600">{t("pricingPage.nfc.shipping")}</p>
                 </div>
                 
                 <Link
@@ -576,7 +576,7 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className="block w-full py-3 rounded-xl font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 transition-all text-sm text-center"
                 >
-                  Jetzt bestellen
+                  {t("pricingPage.nfc.order")}
                 </Link>
               </div>
 
@@ -584,7 +584,7 @@ export default function PricingPage() {
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl text-white transform scale-105 relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <div className="bg-cyan-400 text-gray-900 px-4 py-1 rounded-full text-xs font-black">
-                    EMPFOHLEN
+                    {t("pricingPage.nfc.recommended")}
                   </div>
                 </div>
                 
@@ -598,10 +598,10 @@ export default function PricingPage() {
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
-                    <span className="text-lg font-bold">Ihr Preis</span>
+                    <span className="text-lg font-bold">{t("pricingPage.nfc.yourPrice")}</span>
                     <span className="text-4xl font-black text-cyan-300">16.10€</span>
                   </div>
-                  <p className="text-sm text-blue-100">Inkl. Versand • Lieferung in 2-3 Tagen</p>
+                  <p className="text-sm text-blue-100">{t("pricingPage.nfc.shipping")}</p>
                 </div>
                 
                 <Link
@@ -610,11 +610,11 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className="block w-full py-3 rounded-xl font-bold text-blue-900 bg-white hover:bg-gray-50 transition-all text-sm shadow-lg text-center"
                 >
-                  Jetzt bestellen
+                  {t("pricingPage.nfc.order")}
                 </Link>
                 
                 <div className="mt-4 bg-white/10 rounded-xl p-3 text-xs text-center">
-                  Inkl. Video-Onboarding für die ersten 5 Tags
+                  {t("pricingPage.nfc.videoOnboarding")}
                 </div>
               </div>
 
@@ -630,10 +630,10 @@ export default function PricingPage() {
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between items-baseline py-4">
-                    <span className="text-lg font-bold text-gray-900">Ihr Preis</span>
+                    <span className="text-lg font-bold text-gray-900">{t("pricingPage.nfc.yourPrice")}</span>
                     <span className="text-4xl font-black text-blue-900">30.80€</span>
                   </div>
-                  <p className="text-sm text-gray-600">Inkl. Versand • Lieferung in 2-3 Tagen</p>
+                  <p className="text-sm text-gray-600">{t("pricingPage.nfc.shipping")}</p>
                 </div>
                 
                 <Link
@@ -642,7 +642,7 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className="block w-full py-3 rounded-xl font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all text-sm text-center"
                 >
-                  Jetzt bestellen
+                  {t("pricingPage.nfc.order")}
                 </Link>
               </div>
             </div>
@@ -655,9 +655,9 @@ export default function PricingPage() {
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-2">Kostenloser Ersatz bei Beschädigung</h4>
+                  <h4 className="font-bold text-gray-900 mb-2">{t("pricingPage.nfc.replacement.title")}</h4>
                   <p className="text-sm text-gray-600">
-                    Wenn ein NFC-Tag abfällt oder kaputtgeht, ersetzen wir ihn kostenlos. Einfach melden und innerhalb von 2-3 Tagen erhältst du einen neuen Tag per Post.
+                    {t("pricingPage.nfc.replacement.desc")}
                   </p>
                 </div>
               </div>
@@ -683,14 +683,14 @@ export default function PricingPage() {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-2 bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 px-5 py-2 rounded-full text-xs font-black mb-5 backdrop-blur-sm uppercase tracking-widest">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                  Für GROW &amp; SCALE — Nur einmalig
+                  {t("pricingPage.onboarding.sectionBadge")}
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">
-                  Schlüsselfertig.<br />
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Done for You.</span>
+                  {t("pricingPage.onboarding.sectionTitle")}<br />
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">{t("pricingPage.onboarding.sectionTitle.highlight")}</span>
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Sie haben keine Zeit, alles selbst einzurichten. Wir übernehmen das vollständig — damit Ihr Betrieb von Tag 1 an läuft.
+                  {t("pricingPage.onboarding.sectionSubtitle")}
                 </p>
               </div>
 
@@ -698,12 +698,12 @@ export default function PricingPage() {
               <div className="grid md:grid-cols-2 gap-8 mb-10">
                 {/* Left: What we do */}
                 <div className="space-y-4">
-                  <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Was wir für Sie erledigen</h3>
+                  <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">{t("pricingPage.onboarding.whatWeDo")}</h3>
                   {[
-                    { title: 'Import Ihrer Mitarbeiterdaten', desc: 'Wir übernehmen Ihre Excel-Listen, importieren alle Mitarbeiter und richten Rollen & Rechte ein.' },
-                    { title: 'Konfiguration nach Ihren Prozessen', desc: 'Maschinen, Fahrzeuge, Kostenstellen, Projekte — alles wird genau nach Ihren Abläufen eingerichtet.' },
-                    { title: 'NFC-Tags einrichten & testen', desc: 'Auf Wunsch beschriften und konfigurieren wir einige Ihrer NFC-Tags als Demonstration — damit Sie sofort sehen, wie der Workflow in Ihrem Betrieb funktioniert.' },
-                    { title: 'Live-Einführung für Ihr Team', desc: 'Eine Video-Einführungssession für Ihr Team — Ihre Mitarbeiter wissen vom ersten Tag, was sie tun.' },
+                    { title: t("pricingPage.onboarding.item1.title"), desc: t("pricingPage.onboarding.item1.desc") },
+                    { title: t("pricingPage.onboarding.item2.title"), desc: t("pricingPage.onboarding.item2.desc") },
+                    { title: t("pricingPage.onboarding.item3.title"), desc: t("pricingPage.onboarding.item3.desc") },
+                    { title: t("pricingPage.onboarding.item4.title"), desc: t("pricingPage.onboarding.item4.desc") },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4 bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:bg-white/10 transition-all">
                       <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -722,16 +722,16 @@ export default function PricingPage() {
                   {/* GROW Onboarding */}
                   <div className="relative bg-gradient-to-br from-blue-600/30 to-cyan-600/20 rounded-2xl p-7 border border-cyan-400/30 backdrop-blur-sm">
                     <div className="absolute -top-3 left-6">
-                      <span className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 text-xs font-black px-4 py-1 rounded-full">FÜR GROW</span>
+                      <span className="bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 text-xs font-black px-4 py-1 rounded-full">{t("pricingPage.onboarding.forGrow")}</span>
                     </div>
                     <div className="mt-2">
                       <div className="flex items-baseline gap-2 mb-1">
                         <span className="text-5xl font-black text-white">990<span className="text-3xl">€</span></span>
-                        <span className="text-gray-400 text-sm">einmalig</span>
+                        <span className="text-gray-400 text-sm">{t("pricingPage.onboarding.single")}</span>
                       </div>
-                      <p className="text-gray-400 text-xs mb-5">zzgl. MwSt. · Einmalzahlung · Kein Abo</p>
+                      <p className="text-gray-400 text-xs mb-5">{t("pricingPage.onboarding.singleNote")}</p>
                       <div className="space-y-2 mb-6">
-                        {['Mitarbeiterimport & Rollenvergabe', 'Systemkonfiguration', 'Live-Einführungssession', '30 Tage Nachbetreuung'].map((f, i) => (
+                        {[t("pricingPage.onboarding.growF1"), t("pricingPage.onboarding.growF2"), t("pricingPage.onboarding.growF3"), t("pricingPage.onboarding.growF4")].map((f, i) => (
                           <div key={i} className="flex items-center gap-2 text-xs text-gray-300">
                             <svg className="w-4 h-4 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                             {f}
@@ -744,7 +744,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         className="block w-full py-3.5 rounded-xl font-bold text-gray-900 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 transition-all text-sm shadow-lg hover:scale-105 text-center"
                       >
-                        GROW Setup buchen
+                        {t("pricingPage.onboarding.growSetup")}
                       </Link>
                     </div>
                   </div>
@@ -752,16 +752,16 @@ export default function PricingPage() {
                   {/* SCALE Onboarding */}
                   <div className="relative bg-gradient-to-br from-purple-600/30 to-indigo-600/20 rounded-2xl p-7 border border-purple-400/30 backdrop-blur-sm">
                     <div className="absolute -top-3 left-6">
-                      <span className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-black px-4 py-1 rounded-full">FÜR SCALE</span>
+                      <span className="bg-gradient-to-r from-purple-400 to-purple-500 text-white text-xs font-black px-4 py-1 rounded-full">{t("pricingPage.onboarding.forScale")}</span>
                     </div>
                     <div className="mt-2">
                       <div className="flex items-baseline gap-2 mb-1">
                         <span className="text-5xl font-black text-white">2.490<span className="text-3xl">€</span></span>
-                        <span className="text-gray-400 text-sm">einmalig</span>
+                        <span className="text-gray-400 text-sm">{t("pricingPage.onboarding.single")}</span>
                       </div>
-                      <p className="text-gray-400 text-xs mb-5">zzgl. MwSt. · Einmalzahlung · Kein Abo</p>
+                      <p className="text-gray-400 text-xs mb-5">{t("pricingPage.onboarding.singleNote")}</p>
                       <div className="space-y-2 mb-6">
-                        {['Alles aus GROW Setup', 'NFC-Tags einrichten & Demo-Konfiguration', 'Prozessanalyse & Optimierung', '60 Tage Nachbetreuung'].map((f, i) => (
+                        {[t("pricingPage.onboarding.scaleF1"), t("pricingPage.onboarding.scaleF2"), t("pricingPage.onboarding.scaleF3"), t("pricingPage.onboarding.scaleF4")].map((f, i) => (
                           <div key={i} className="flex items-center gap-2 text-xs text-gray-300">
                             <svg className="w-4 h-4 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                             {f}
@@ -774,7 +774,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         className="block w-full py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 transition-all text-sm shadow-lg hover:scale-105 text-center"
                       >
-                        SCALE Setup buchen
+                        {t("pricingPage.onboarding.scaleSetup")}
                       </Link>
                     </div>
                   </div>
@@ -784,10 +784,10 @@ export default function PricingPage() {
               {/* Bottom trust bar */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: 'Betrieb läuft in 48h', sub: 'Keine wochenlangen Einrichtungen' },
-                  { label: 'Ihre Daten bleiben Ihre Daten', sub: 'Sicher, verschlüsselt, DSGVO-konform' },
-                  { label: 'Optionale Erweiterung jederzeit', sub: 'Wir sind immer erreichbar' },
-                  { label: 'Keine Verpflichtung', sub: 'Völlig optional zubuchbar' },
+                  { label: t("pricingPage.onboarding.trust1"), sub: t("pricingPage.onboarding.trust1.sub") },
+                  { label: t("pricingPage.onboarding.trust2"), sub: t("pricingPage.onboarding.trust2.sub") },
+                  { label: t("pricingPage.onboarding.trust3"), sub: t("pricingPage.onboarding.trust3.sub") },
+                  { label: t("pricingPage.onboarding.trust4"), sub: t("pricingPage.onboarding.trust4.sub") },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 text-center">
                     <div className="text-white text-xs font-bold mb-1">{item.label}</div>
@@ -812,23 +812,23 @@ export default function PricingPage() {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                   </svg>
-                  PREMIUM SERVICE
+                  {t("pricingPage.manager.premiumService")}
                 </div>
 
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
-                  Taskey Premium Manager
+                  {t("pricingPage.manager.title")}
                 </h3>
                 <p className="text-blue-100 text-lg mb-6 leading-relaxed">
-                  Ein dedizierter Experte, der sich zu 100% um Ihr Unternehmen kümmert
+                  {t("pricingPage.manager.subtitle")}
                 </p>
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    'Exklusiver Direktkontakt',
-                    '24/7 Priority Support',
-                    'Proaktive Optimierung',
-                    'Persönliche Schulungen',
-                    'Vor-Ort Service'
+                    t("pricingPage.manager.f1"),
+                    t("pricingPage.manager.f2"),
+                    t("pricingPage.manager.f3"),
+                    t("pricingPage.manager.f4"),
+                    t("pricingPage.manager.f5")
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-blue-50">
                       <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -842,9 +842,9 @@ export default function PricingPage() {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="text-5xl font-black text-white">239€</span>
-                    <span className="text-blue-200 text-xl">/ Woche</span>
+                    <span className="text-blue-200 text-xl">{t("pricingPage.manager.perWeek")}</span>
                   </div>
-                  <p className="text-blue-200 text-sm">zzgl. MwSt. • Jederzeit kündbar • Zubuchbar zu jedem Paket</p>
+                  <p className="text-blue-200 text-sm">{t("pricingPage.manager.note")}</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -852,7 +852,7 @@ export default function PricingPage() {
                     href="/premium-manager"
                     className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 font-bold px-8 py-4 rounded-xl hover:scale-105 transition-all shadow-lg"
                   >
-                    Mehr erfahren
+                    {t("pricingPage.manager.cta1")}
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -861,7 +861,7 @@ export default function PricingPage() {
                     onClick={() => setManagerModalOpen(true)}
                     className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-xl border border-white/20 hover:bg-white/20 transition-all"
                   >
-                    Jetzt anfragen
+                    {t("pricingPage.manager.cta2")}
                   </button>
                 </div>
               </div>
@@ -881,9 +881,9 @@ export default function PricingPage() {
                 {/* Text Content Layer on top */}
                 <div className="relative z-10 space-y-6">
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Ihr persönlicher Experte</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{t("pricingPage.manager.expert.title")}</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Ein Taskey Manager ist Ihre persönliche Kontaktperson – ein Experte, der sich ausschließlich um Ihr Unternehmen kümmert und als verlängerter Arm Ihrer Organisation agiert.
+                      {t("pricingPage.manager.expert.desc")}
                     </p>
                   </div>
 
@@ -891,23 +891,23 @@ export default function PricingPage() {
                     {[
                       { 
                         icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
-                        title: 'Exklusiv für Sie', 
-                        desc: 'Betreut nur Ihr Unternehmen' 
+                        title: t("pricingPage.manager.right.f1.title"), 
+                        desc: t("pricingPage.manager.right.f1.desc") 
                       },
                       { 
                         icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-                        title: 'Sofortige Reaktion', 
-                        desc: 'Direkter Draht ohne Warteschlangen' 
+                        title: t("pricingPage.manager.right.f2.title"), 
+                        desc: t("pricingPage.manager.right.f2.desc") 
                       },
                       { 
                         icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>,
-                        title: 'Proaktive Optimierung', 
-                        desc: 'Kontinuierliche Verbesserungen' 
+                        title: t("pricingPage.manager.right.f3.title"), 
+                        desc: t("pricingPage.manager.right.f3.desc") 
                       },
                       { 
                         icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
-                        title: 'Vor-Ort Service', 
-                        desc: 'Persönliche Besuche bei Bedarf' 
+                        title: t("pricingPage.manager.right.f4.title"), 
+                        desc: t("pricingPage.manager.right.f4.desc") 
                       }
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 bg-white rounded-lg p-3 border border-gray-100">
@@ -926,8 +926,8 @@ export default function PricingPage() {
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                       </svg>
                       <div>
-                        <p className="text-sm text-gray-700 font-medium mb-1">Durchschnittliche Zeitersparnis: 50 Stunden/Monat</p>
-                        <p className="text-xs text-gray-600">Ideal für wachstumsorientierte Betriebe</p>
+                        <p className="text-sm text-gray-700 font-medium mb-1">{t("pricingPage.manager.timeSaving")}</p>
+                        <p className="text-xs text-gray-600">{t("pricingPage.manager.timeSaving.sub")}</p>
                       </div>
                     </div>
                   </div>
@@ -942,16 +942,16 @@ export default function PricingPage() {
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Brauchen Sie mehr Speicher?</h2>
-            <p className="text-gray-600 mb-4">Flexibel zubuchbar — jederzeit kündbar</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">{t("pricingPage.storage.title")}</h2>
+            <p className="text-gray-600 mb-4">{t("pricingPage.storage.subtitle")}</p>
             <div className="max-w-2xl mx-auto bg-blue-50 rounded-xl p-4 border border-blue-100">
               <div className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <p className="text-sm text-gray-700 text-left">
-                  <strong className="font-bold">Wofür wird Speicher genutzt?</strong><br />
-                  Fotos von Baustellen, hochgeladene Dokumente, unterschriebene Berichte (PDFs), Rechnungen und andere Dateien, die Ihre Mitarbeiter in Taskey hochladen, werden im Cloud-Speicher abgelegt.
+                  <strong className="font-bold">{t("pricingPage.storage.infoTitle")}</strong><br />
+                  {t("pricingPage.storage.info")}
                 </p>
               </div>
             </div>
@@ -959,15 +959,15 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { amount: '+100 GB', price: '8,37', desc: 'Ideal für kleine Teams' },
-              { amount: '+500 GB', price: '38,11', desc: 'Für wachsende Betriebe' },
-              { amount: '+1 TB', price: '68,27', desc: 'Maximale Kapazität' },
+              { amount: t("pricingPage.storage.addon1.amount"), price: '8,37', desc: t("pricingPage.storage.addon1.desc") },
+              { amount: t("pricingPage.storage.addon2.amount"), price: '38,11', desc: t("pricingPage.storage.addon2.desc") },
+              { amount: t("pricingPage.storage.addon3.amount"), price: '68,27', desc: t("pricingPage.storage.addon3.desc") },
             ].map((addon, i) => (
               <div key={i} className="relative bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 text-center group">
                 <div className="text-3xl font-black text-gray-900 mb-1">{addon.amount}</div>
                 <div className="flex items-baseline justify-center gap-1 mb-2">
                   <span className="text-2xl font-bold text-blue-900">{addon.price}€</span>
-                  <span className="text-sm text-gray-500">/ Monat</span>
+                  <span className="text-sm text-gray-500">{t("pricingPage.storage.perMonth")}</span>
                 </div>
                 <p className="text-sm text-gray-500">{addon.desc}</p>
               </div>
@@ -980,16 +980,16 @@ export default function PricingPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Häufige Fragen zu unseren Preisen</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">{t("pricingPage.faq.title")}</h2>
           </div>
 
           <div className="space-y-4">
             {[
-              { q: 'Gibt es eine kostenlose Testphase?', a: 'Ja! Testen Sie Taskey 14 Tage lang kostenlos und unverbindlich. Keine Kreditkarte nötig.' },
-              { q: 'Was passiert nach der Testphase?', a: 'Nach 14 Tagen wählen Sie einfach das passende Paket. Ihre Daten bleiben erhalten.' },
-              { q: 'Kann ich jederzeit das Paket wechseln?', a: 'Ja, ein Upgrade oder Downgrade ist jederzeit möglich. Die Abrechnung passt sich automatisch an.' },
-              { q: 'Wie funktioniert die Abrechnung?', a: 'Die Abrechnung erfolgt monatlich pro Mitarbeiter. Sie zahlen nur für aktive Nutzer.' },
-              { q: 'Was unterscheidet die Pakete?', a: 'Alle Pakete enthalten den vollen Funktionsumfang. Die Unterschiede liegen bei Speicherplatz, Historie‑Dauer und Support‑Level.' },
+              { q: t("pricingPage.faq.q1"), a: t("pricingPage.faq.a1") },
+              { q: t("pricingPage.faq.q2"), a: t("pricingPage.faq.a2") },
+              { q: t("pricingPage.faq.q3"), a: t("pricingPage.faq.a3") },
+              { q: t("pricingPage.faq.q4"), a: t("pricingPage.faq.a4") },
+              { q: t("pricingPage.faq.q5"), a: t("pricingPage.faq.a5") },
             ].map((faq, i) => (
               <details key={i} className="bg-white rounded-xl shadow-sm border border-gray-100 group">
                 <summary className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 rounded-xl transition font-bold text-gray-900">
@@ -1007,10 +1007,10 @@ export default function PricingPage() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
-            Bereit, Ihren Betrieb zu digitalisieren?
+            {t("pricingPage.finalCta.title")}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Starten Sie jetzt kostenlos — in unter 5 Minuten einsatzbereit.
+            {t("pricingPage.finalCta.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -1019,28 +1019,28 @@ export default function PricingPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-blue-900 hover:bg-blue-800 text-white font-bold text-lg px-10 py-5 rounded-xl transition-all hover:scale-105 shadow-lg"
             >
-              Kostenlos testen
+              {t("pricingPage.finalCta.trial")}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
             <a
               href="mailto:info@taskey.de"
               className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-900 font-bold text-lg px-10 py-5 rounded-xl border-2 border-gray-200 transition-all"
             >
-              Fragen? Schreiben Sie uns
+              {t("pricingPage.finalCta.contact")}
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-500">
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-              Keine Kreditkarte nötig
+              {t("pricingPage.finalCta.noCc")}
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-              14 Tage kostenlos
+              {t("pricingPage.finalCta.freeTrial")}
             </span>
             <span className="flex items-center gap-2">
               <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-              Jederzeit kündbar
+              {t("pricingPage.finalCta.cancelAnytime")}
             </span>
           </div>
         </div>
