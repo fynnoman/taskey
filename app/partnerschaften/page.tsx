@@ -252,6 +252,33 @@ export default function PartnerschaftenPage() {
         </div>
       </section>
 
+      {/* Unsere Partner */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.partners.badge')}</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-4">
+              {t('partner.partners.title')}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              {t('partner.partners.note')}
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-10">
+            <div className="flex flex-col items-center gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-10 py-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <Image
+                src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
+                alt="MG Gebäudeservice"
+                width={160}
+                height={60}
+                className="object-contain"
+              />
+              <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Kontaktformular */}
       <section id="kontakt" className="py-20 md:py-28 bg-white scroll-mt-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
