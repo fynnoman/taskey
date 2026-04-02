@@ -81,6 +81,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
           </div>
 
           <p className="text-gray-600 text-sm mt-5">Keine Kreditkarte · 14 Tage kostenlos · Sofort startklar</p>
+          <p className="text-gray-500 text-xs mt-2">Flexible Abrechnung: Monatlich kündbar oder jährlich mit 13% Rabatt</p>
         </div>
       </section>
 

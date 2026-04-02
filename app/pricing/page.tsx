@@ -20,9 +20,9 @@ export default function PricingPage() {
   const { t } = useLanguage();
   
   // Kündigungsfristen
-  const [startCancellation, setStartCancellation] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
-  const [growCancellation, setGrowCancellation] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
-  const [scaleCancellation, setScaleCancellation] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
+  const [startCancellation, setStartCancellation] = useState<'monthly' | 'yearly'>('monthly');
+  const [growCancellation, setGrowCancellation] = useState<'monthly' | 'yearly'>('monthly');
+  const [scaleCancellation, setScaleCancellation] = useState<'monthly' | 'yearly'>('monthly');
   
   // Basispreise
   const basePrice = {
@@ -32,8 +32,7 @@ export default function PricingPage() {
   };
   
   // Preisberechnung basierend auf Kündigungsfrist
-  const calculatePrice = (base: number, cancellation: 'monthly' | 'quarterly' | 'yearly') => {
-    if (cancellation === 'quarterly') return (base * 0.93).toFixed(2); // -7%
+  const calculatePrice = (base: number, cancellation: 'monthly' | 'yearly') => {
     if (cancellation === 'yearly') return (base * 0.87).toFixed(2); // -13%
     return base.toFixed(2);
   };
@@ -114,12 +113,12 @@ export default function PricingPage() {
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-wide">Kündigungsfrist</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {(['monthly', 'quarterly', 'yearly'] as const).map((opt) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setStartCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${startCancellation === opt ? 'bg-white text-slate-900 shadow-md' : 'bg-white/10 text-slate-300 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : opt === 'quarterly' ? 'Quartal' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : opt === 'quarterly' ? '-7%' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
                         </button>
                       ))}
                     </div>
@@ -206,12 +205,12 @@ export default function PricingPage() {
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
                     <label className="text-xs font-bold text-blue-200 uppercase tracking-wide">Kündigungsfrist</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {(['monthly', 'quarterly', 'yearly'] as const).map((opt) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setGrowCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${growCancellation === opt ? 'bg-white text-blue-900 shadow-md' : 'bg-white/10 text-blue-200 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : opt === 'quarterly' ? 'Quartal' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : opt === 'quarterly' ? '-7%' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
                         </button>
                       ))}
                     </div>
@@ -298,12 +297,12 @@ export default function PricingPage() {
                 <div className="mb-8 pb-8 border-b border-white/20">
                   <div className="mb-6 space-y-3">
                     <label className="text-xs font-bold text-purple-200 uppercase tracking-wide">Kündigungsfrist</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {(['monthly', 'quarterly', 'yearly'] as const).map((opt) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {(['monthly', 'yearly'] as const).map((opt) => (
                         <button key={opt} onClick={() => setScaleCancellation(opt)}
                           className={`px-3 py-2.5 rounded-lg text-xs font-bold transition-all ${scaleCancellation === opt ? 'bg-white text-purple-900 shadow-md' : 'bg-white/10 text-purple-200 hover:bg-white/20 border border-white/10'}`}>
-                          <div>{opt === 'monthly' ? 'Monatlich' : opt === 'quarterly' ? 'Quartal' : 'Jährlich'}</div>
-                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : opt === 'quarterly' ? '-7%' : '-13%'}</div>
+                          <div>{opt === 'monthly' ? 'Monatlich' : 'Jährlich'}</div>
+                          <div className="text-[10px] opacity-70 font-normal">{opt === 'monthly' ? 'flexibel' : '-13%'}</div>
                         </button>
                       ))}
                     </div>
