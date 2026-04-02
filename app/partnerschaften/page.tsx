@@ -135,12 +135,10 @@ export default function PartnerschaftenPage() {
             src="/hand.png"
             alt="Partnerschaft – gemeinsam wachsen"
             fill
-            className="object-cover object-center opacity-20"
+            className="object-cover object-center"
             priority
           />
         </div>
-        {/* Dunkles Overlay für Lesbarkeit */}
-        <div className="absolute inset-0 bg-gray-950/60" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
