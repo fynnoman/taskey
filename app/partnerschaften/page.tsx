@@ -97,34 +97,34 @@ export default function PartnerschaftenPage() {
   return (
     <main className="bg-white">
       {/* Hero */}
-      <section className="relative bg-gray-950 pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative bg-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
               Partnerprogramm
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.05] mb-6">
               {t('partner.hero.title')}<br />
-              <span className="text-blue-400">{t('partner.hero.title.highlight')}</span>
+              <span className="text-blue-600">{t('partner.hero.title.highlight')}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-bold mb-4 max-w-3xl">
+            <p className="text-xl md:text-2xl text-gray-700 font-bold mb-4 max-w-3xl">
               {t('partner.hero.subtitle')}
             </p>
-            <p className="text-gray-400 text-lg max-w-2xl mb-10 leading-relaxed">
+            <p className="text-gray-500 text-lg max-w-2xl mb-10 leading-relaxed">
               {t('partner.hero.desc')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#kontakt"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-600/25 text-lg"
+                className="inline-flex items-center justify-center gap-3 bg-blue-900 hover:bg-blue-800 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-900/25 text-lg"
               >
                 Jetzt Partner werden
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
               <a
                 href="#modelle"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
+                className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 font-bold px-8 py-4 rounded-xl transition-all border border-gray-200 text-lg"
               >
                 {t('partner.hero.cta2')}
               </a>
@@ -229,23 +229,23 @@ export default function PartnerschaftenPage() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-10 bg-gray-950">
+      <section className="py-10 bg-white border-y border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-3xl font-black text-white">600+</p>
+              <p className="text-3xl font-black text-gray-900">600+</p>
               <p className="text-gray-500 text-sm mt-1">{t('partner.social.industries')}</p>
             </div>
             <div>
-              <p className="text-3xl font-black text-white">DSGVO</p>
+              <p className="text-3xl font-black text-gray-900">DSGVO</p>
               <p className="text-gray-500 text-sm mt-1">{t('partner.social.compliant')}</p>
             </div>
             <div>
-              <p className="text-3xl font-black text-white">100%</p>
+              <p className="text-3xl font-black text-gray-900">100%</p>
               <p className="text-gray-500 text-sm mt-1">Made in Germany</p>
             </div>
             <div>
-              <p className="text-3xl font-black text-white">{t('partner.social.permanent')}</p>
+              <p className="text-3xl font-black text-gray-900">{t('partner.social.permanent')}</p>
               <p className="text-gray-500 text-sm mt-1">{t('partner.social.revenue')}</p>
             </div>
           </div>
@@ -253,36 +253,17 @@ export default function PartnerschaftenPage() {
       </section>
 
       {/* Unsere Partner */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 md:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-black text-blue-600 uppercase tracking-widest mb-3">{t('partner.partners.badge')}</p>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-4">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
               {t('partner.partners.title')}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              {t('partner.partners.note')}
-            </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col items-center gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-10 py-8 hover:shadow-lg transition-all duration-300 mx-auto w-full max-w-sm">
-              <Image
-                src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
-                alt="MG Gebäudeservice"
-                width={160}
-                height={60}
-                className="object-contain"
-              />
-              <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
-              <Link
-                href="/news/mg-gebaeudeservice-duesseldorf-case-study"
-                className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors"
-              >
-                Case Study lesen
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-              </Link>
-            </div>
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Links: Bild */}
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
                 alt="Taskey Partner – MG Gebäudeservice"
@@ -291,6 +272,30 @@ export default function PartnerschaftenPage() {
                 className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+            </div>
+            {/* Rechts: Text + Logo */}
+            <div className="flex flex-col">
+              <p className="text-lg text-gray-500 leading-relaxed mb-8">
+                {t('partner.partners.note')}
+              </p>
+              <a href="https://mg-gebaeudeservice.de" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-8 py-6 mb-8 max-w-sm hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
+                  alt="MG Gebäudeservice"
+                  width={140}
+                  height={50}
+                  className="object-contain"
+                />
+                <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
+                <p className="text-gray-500 text-sm leading-relaxed">Gebäudeservice aus Düsseldorf mit 30 Mitarbeitern – digitalisiert Zeiterfassung, Einsatzplanung und Dokumentation mit Taskey.</p>
+              </a>
+              <Link
+                href="/news/mg-gebaeudeservice-duesseldorf-case-study"
+                className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3.5 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-sm max-w-fit"
+              >
+                Case Study lesen
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+              </Link>
             </div>
           </div>
         </div>
