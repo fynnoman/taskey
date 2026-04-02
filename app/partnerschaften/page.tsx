@@ -282,12 +282,13 @@ export default function PartnerschaftenPage() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </Link>
             </div>
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
                 alt="Taskey Partner – MG Gebäudeservice"
-                fill
-                className="object-cover"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
