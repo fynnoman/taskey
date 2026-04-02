@@ -61,6 +61,51 @@ function isHeading(text: string) {
   return text.startsWith("## ");
 }
 
+/** Check if a paragraph is a blockquote (starts with > ) */
+function isBlockquote(text: string) {
+  return text.startsWith("> ");
+}
+
+/** Check if a paragraph is a table (starts with |||) */
+function isTable(text: string) {
+  return text.startsWith("|||");
+}
+
+/** Render a markdown-style table */
+function renderTable(text: string) {
+  const lines = text.split("\n").filter(l => l.startsWith("|"));
+  // Skip the header marker line (|||)
+  const dataLines = lines.filter(l => l !== "|||");
+  
+  return (
+    <div className="overflow-x-auto my-8 rounded-2xl border border-gray-200">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-gray-950 text-white">
+            <th className="text-left px-5 py-3.5 font-bold text-sm">Bereich</th>
+            <th className="text-left px-5 py-3.5 font-bold text-sm">Vorher</th>
+            <th className="text-left px-5 py-3.5 font-bold text-sm">Mit Taskey</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataLines.map((line, i) => {
+            const cells = line.split("|").filter(Boolean);
+            return (
+              <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                {cells.map((cell, j) => (
+                  <td key={j} className={`px-5 py-3 ${j === 0 ? "font-semibold text-gray-900" : j === 2 ? "text-emerald-700 font-bold" : "text-gray-500"}`}>
+                    {cell.trim()}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
@@ -150,6 +195,20 @@ export default async function PostPage({ params }: Props) {
               >
                 {renderFormattedText(para.replace(/^## /, ""))}
               </h2>
+            ) : isBlockquote(para) ? (
+              <blockquote
+                key={i}
+                className="relative bg-gray-50 border-l-4 border-blue-900 rounded-r-2xl px-8 py-8 my-10"
+              >
+                <svg className="absolute top-4 right-6 w-10 h-10 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+                </svg>
+                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
+                  {renderFormattedText(para.replace(/^> /, ""))}
+                </p>
+              </blockquote>
+            ) : isTable(para) ? (
+              <div key={i}>{renderTable(para)}</div>
             ) : (
               <p key={i} className="text-lg sm:text-xl text-gray-700 leading-relaxed">
                 {renderFormattedText(para)}
