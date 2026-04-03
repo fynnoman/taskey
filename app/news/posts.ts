@@ -28,6 +28,7 @@ export const posts: Post[] = [
     metaDescription: "Wie MG Gebäudeservice aus Düsseldorf mit 30 Mitarbeitern die Zeiterfassung, Einsatzplanung und Dokumentation mit Taskey digitalisiert hat. Echte Ergebnisse nach zwei Wochen.",
     summary:
       "30 Mitarbeiter, Stundenzettel auf Papier, Einsatzplanung per WhatsApp — MG Gebäudeservice aus Düsseldorf hat den Schritt vom analogen Betrieb zum datengetriebenen Unternehmen gemacht. Eine Case Study über NFC-Zeiterfassung, Echtzeit-Überblick und messbare Ergebnisse.",
+    heroImage: "/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png",
     body: `MG Gebäudeservice gehört zu den etablierten Gebäudereinigern in Düsseldorf. 30 Mitarbeiter, ein breit aufgestelltes Objektportfolio — von Bürokomplexen über Arztpraxen bis hin zu Produktionshallen. Der Betrieb läuft, die Kunden sind zufrieden, das Team ist eingespielt.
 
 Aber wie in vielen gewachsenen Unternehmen der Branche steckten auch bei MG Gebäudeservice viele Abläufe noch in analogen Strukturen. Stundenzettel auf Papier, Einsatzkoordination über Messenger-Gruppen, Auswertungen per Excel. Nicht weil es an Professionalität fehlte — sondern weil es jahrelang funktioniert hat.
