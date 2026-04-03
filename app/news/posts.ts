@@ -47,7 +47,7 @@ Auf dem Papier lief bei MG Gebäudeservice alles rund. In der Praxis kosteten dr
 
 Angebot von vor drei Monaten? Irgendwo in den E-Mails. Reinigungsprotokoll vom letzten Freitag? Vielleicht im Messenger-Verlauf, vielleicht in der Cloud, vielleicht ausgedruckt im Ordner. Wer in einem wachsenden Betrieb Informationen über fünf verschiedene Kanäle verteilt hat, kennt das: Man weiß, dass das Dokument existiert — man weiß nur nicht mehr wo.
 
-„Wenn ein Kunde angerufen hat und eine Rechnung oder ein Angebot brauchte, habe ich teilweise 15 Minuten gesucht. Nicht weil wir unorganisiert sind, sondern weil alles in verschiedenen Systemen lag", sagt Gian Luca.
+„Wenn ein Kunde angerufen hat und eine Rechnung oder ein Angebot brauchte, habe ich teilweise 15 Minuten gesucht. Nicht weil wir unorganisiert sind, sondern weil alles in verschiedenen Systemen lag", sagt Gianluca.
 
 Mit Taskey liegt jetzt alles an einem Ort. Angebote, Rechnungen, Objektdaten, Einsatzhistorie — ein Klick im Dashboard, fertig. Kein Scrollen durch E-Mail-Verläufe, kein Durchwühlen von Ordnern.
 
@@ -79,7 +79,7 @@ Kein Zettel, kein Anruf, keine App-Eingabe. Handy dranhalten — das wars.
 
 Für MG Gebäudeservice hat das zwei Dinge auf einmal gelöst. Erstens: Die Zeiterfassung läuft automatisch, sekundengenau und manipulationssicher. Zweitens — und das war der eigentliche Mehrwert — entsteht eine lückenlose Dokumentation auf Raum-Ebene. Nicht nur „Objekt Citypark wurde gereinigt", sondern „Empfangsbereich fertig um 19:47, Großraumbüro 2. OG fertig um 20:23, Sanitäranlagen fertig um 20:41."
 
-„Wenn ein Kunde fragt, ob ein bestimmter Bereich gereinigt wurde, muss ich nicht mehr meinen Mitarbeiter anrufen. Ich schaue ins Dashboard und habe die Antwort in drei Sekunden", sagt Gian Luca.
+„Wenn ein Kunde fragt, ob ein bestimmter Bereich gereinigt wurde, muss ich nicht mehr meinen Mitarbeiter anrufen. Ich schaue ins Dashboard und habe die Antwort in drei Sekunden", sagt Gianluca.
 
 **Auftragsplanung? Erledigt sich von selbst**
 
@@ -126,7 +126,7 @@ MG Gebäudeservice ist kein Betrieb, der vorher schlecht aufgestellt war. Im Geg
 
 Zwei Wochen mit Taskey haben gereicht, um die täglichen Reibungsverluste spürbar zu reduzieren. Keine verlorenen Stundenzettel mehr, keine WhatsApp-Koordination, keine Sucherei nach Dokumenten. Stattdessen: ein System, das dem Chef in Echtzeit zeigt, wo der Betrieb steht — und das die Mitarbeiter draußen in zwei Minuten verstanden haben.
 
-Gian Luca von MG Gebäudeservice bringt es auf den Punkt:
+Gianluca von MG Gebäudeservice bringt es auf den Punkt:
 
 > „Taskey hat unsere internen Abläufe grundlegend verändert — von der Zeiterfassung über die Einsatzplanung bis hin zur Dokumentation. Aber was mich persönlich am meisten überzeugt hat, ist die Wirkung nach außen. Unsere Kunden sehen, dass wir professionell arbeiten. Wenn ein Auftraggeber eine Frage hat, können wir innerhalb von Sekunden eine lückenlose Dokumentation vorlegen. Das schafft Vertrauen auf einem ganz anderen Niveau. Taskey gibt uns die Möglichkeit, unseren Kunden ein umfassendes Qualitätsmanagement zu bieten — und genau das unterscheidet uns heute von vielen Mitbewerbern. Ich kann Taskey jedem Betrieb empfehlen, der nicht nur intern besser werden will, sondern auch nach außen zeigen möchte, was er leistet."`,
   },
