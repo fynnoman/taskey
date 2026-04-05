@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Chat App Handwerksbetrieb – Taskey',
   description: 'Chat App für Handwerksbetriebe. Taskey bietet einen sicheren Team-Chat für die Kommunikation zwischen Büro, Baustelle und Werkstatt.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/chat-app-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/chat-app-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

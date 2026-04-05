@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Lieferscheine digital erstellen Handwerk – Taskey',
   description: 'Lieferscheine im Handwerk digital erstellen. Taskey generiert professionelle Lieferscheine und verknüpft sie mit Aufträgen und Rechnungen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/lieferscheine-digital-erstellen-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/lieferscheine-digital-erstellen-handwerk' },
 };
 
 const data: LandingPageData = {

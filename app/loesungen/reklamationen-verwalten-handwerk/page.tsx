@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Reklamationen verwalten Handwerk – Taskey',
   description: 'Reklamationen im Handwerksbetrieb professionell verwalten. Taskey dokumentiert, priorisiert und verfolgt alle Reklamationen digital.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/reklamationen-verwalten-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/reklamationen-verwalten-handwerk' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Auftragsübersicht Handwerksbetrieb | Taskey',
   description: 'Auftragsübersicht für Handwerksbetriebe: Alle Aufträge, Status und Termine auf einen Blick. Digital, übersichtlich, in Echtzeit. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/auftragsuebesicht-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/auftragsuebesicht-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

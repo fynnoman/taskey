@@ -5,7 +5,7 @@
 Die Taskey-Website verfügt über zwei Sitemap-Varianten:
 
 ### 1. XML Sitemap (für Suchmaschinen)
-**URL:** `https://www.taskey.de/sitemap.xml`
+**URL:** `https://www.taskeyapp.com/sitemap.xml`
 
 - Automatisch generiert durch Next.js `app/sitemap.ts`
 - Wird von Google, Bing und anderen Suchmaschinen gecrawlt
@@ -18,7 +18,7 @@ Die Taskey-Website verfügt über zwei Sitemap-Varianten:
 - Keine manuelle Wartung erforderlich
 
 ### 2. HTML Sitemap (für Besucher)
-**URL:** `https://www.taskey.de/sitemap-view`
+**URL:** `https://www.taskeyapp.com/sitemap-view`
 
 - Menschenfreundliche Übersicht aller Seiten
 - Schönes Design mit Beschreibungen

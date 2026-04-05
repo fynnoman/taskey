@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Wochenplan Handwerker erstellen – Taskey',
   description: 'Wochenpläne für Handwerker digital erstellen und verteilen. Taskey plant Aufträge, Termine und Teams für die gesamte Woche.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/wochenplan-handwerker-erstellen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/wochenplan-handwerker-erstellen' },
 };
 
 const data: LandingPageData = {

@@ -931,7 +931,7 @@ export default function FeaturesPage() {
               {t('featuresPage.faq.moreQuestions')}
             </p>
             <a 
-              href="mailto:info@taskey.de" 
+              href="mailto:info@taskeyapp.com" 
               className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-all"
             >
               {t('featuresPage.faq.contact')}

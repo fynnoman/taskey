@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Mängeldokumentation Bau | Taskey',
   description: 'Mängeldokumentation am Bau: Mängel erfassen, Fotos anhängen, Verantwortliche zuweisen, Status tracken. Digital & rechtssicher. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/maengeldokumentation-bau' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/maengeldokumentation-bau' },
 };
 
 const data: LandingPageData = {

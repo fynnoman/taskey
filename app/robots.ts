@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://www.taskey.de/sitemap.xml',
+    sitemap: 'https://www.taskeyapp.com/sitemap.xml',
   }
 }

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Auftragsverwaltung Handwerk – Digital & übersichtlich | Taskey',
   description: 'Auftragsverwaltung für Handwerksbetriebe: Aufträge anlegen, zuweisen, tracken und abrechnen – alles in einer App. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/auftragsverwaltung-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/auftragsverwaltung-handwerk' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Krankmeldung digital Handwerk – Taskey',
   description: 'Krankmeldungen im Handwerk digital verwalten. Taskey ermöglicht digitale Krankmeldungen und hilft bei der schnellen Ersatzplanung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/krankmeldung-digital-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/krankmeldung-digital-handwerk' },
 };
 
 const data: LandingPageData = {

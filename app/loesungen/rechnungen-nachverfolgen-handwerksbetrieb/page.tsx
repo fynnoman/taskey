@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Rechnungen nachverfolgen Handwerksbetrieb – Taskey',
   description: 'Offene Rechnungen im Handwerksbetrieb nachverfolgen. Taskey zeigt sofort, welche Rechnungen bezahlt, offen oder überfällig sind.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/rechnungen-nachverfolgen-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/rechnungen-nachverfolgen-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

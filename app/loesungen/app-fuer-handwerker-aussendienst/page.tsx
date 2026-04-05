@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'App für Handwerker Außendienst – Taskey',
   description: 'Die App für Handwerker im Außendienst. Taskey gibt Ihren Monteuren alle Infos auf das Smartphone – Aufträge, Zeiten, Dokumente.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/app-fuer-handwerker-aussendienst' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/app-fuer-handwerker-aussendienst' },
 };
 
 const data: LandingPageData = {

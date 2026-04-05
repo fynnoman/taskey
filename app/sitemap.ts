@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { posts } from './news/posts'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.taskey.de'
+  const baseUrl = 'https://www.taskeyapp.com'
   
   return [
     {
@@ -36,12 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/rollen`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/enterprise`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -70,6 +64,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
+    },
+    // Lösungen Übersichtsseite
+    {
+      url: `${baseUrl}/ios`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/nfc`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/premium-manager`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     // Lösungen Übersichtsseite
     {

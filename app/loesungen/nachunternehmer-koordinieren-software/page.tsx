@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Nachunternehmer koordinieren Software – Taskey',
   description: 'Nachunternehmer auf Baustellen koordinieren. Taskey gibt Ihnen den Überblick über alle Subunternehmer und ihre Leistungen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/nachunternehmer-koordinieren-software' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/nachunternehmer-koordinieren-software' },
 };
 
 const data: LandingPageData = {

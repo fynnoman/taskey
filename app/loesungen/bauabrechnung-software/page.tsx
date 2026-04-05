@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Bauabrechnung Software – Taskey',
   description: 'Bauabrechnung Software für Baufirmen. Taskey erstellt Abschläge, Nachträge und Schlussrechnungen automatisch aus Ihren Projektdaten.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/bauabrechnung-software' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/bauabrechnung-software' },
 };
 
 const data: LandingPageData = {

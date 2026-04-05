@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
 
-  const url = `https://www.taskey.de/news/${slug}`;
+  const url = `https://www.taskeyapp.com/news/${slug}`;
   const title = post.metaTitle ?? post.title;
   const description = post.metaDescription ?? post.summary;
 
@@ -137,16 +137,16 @@ export default async function PostPage({ params }: Props) {
               author: {
                 "@type": "Organization",
                 name: "Taskey",
-                url: "https://www.taskey.de",
+                url: "https://www.taskeyapp.com",
               },
               publisher: {
                 "@type": "Organization",
                 name: "Taskey",
-                url: "https://www.taskey.de",
+                url: "https://www.taskeyapp.com",
               },
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `https://www.taskey.de/news/${slug}`,
+                "@id": `https://www.taskeyapp.com/news/${slug}`,
               },
             }),
           }}

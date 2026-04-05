@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Werkzeugverwaltung Handwerk | Taskey',
   description: 'Werkzeugverwaltung für Handwerksbetriebe: Werkzeuge mit NFC-Tags tracken, Standorte sehen, Wartungen planen. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/werkzeugverwaltung-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/werkzeugverwaltung-handwerk' },
 };
 
 const data: LandingPageData = {

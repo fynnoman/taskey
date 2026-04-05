@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Rapportzettel digital Handwerk | Taskey',
   description: 'Digitale Rapportzettel für Handwerksbetriebe: Arbeitszeiten, Material und Leistungen mobil erfassen. Mit Unterschrift. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/rapportzettel-digital-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/rapportzettel-digital-handwerk' },
 };
 
 const data: LandingPageData = {

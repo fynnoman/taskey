@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Materialliste Baustelle erstellen – Taskey',
   description: 'Materiallisten für die Baustelle digital erstellen. Taskey berechnet Bedarfe, vermeidet Fehlbestellungen und spart Materialkosten.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/materialliste-baustelle-erstellen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/materialliste-baustelle-erstellen' },
 };
 
 const data: LandingPageData = {

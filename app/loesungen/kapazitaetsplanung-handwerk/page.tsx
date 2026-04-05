@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kapazitätsplanung Handwerk – Taskey',
   description: 'Kapazitätsplanung im Handwerk digitalisieren. Taskey zeigt freie Kapazitäten und verhindert Über- oder Unterlastung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kapazitaetsplanung-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kapazitaetsplanung-handwerk' },
 };
 
 const data: LandingPageData = {

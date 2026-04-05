@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Einnahmen Ausgaben Handwerker – Taskey',
   description: 'Einnahmen und Ausgaben als Handwerker einfach verwalten. Taskey gibt Ihnen den finanziellen Überblick – ohne BWL-Studium.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/einnahmen-ausgaben-handwerker' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/einnahmen-ausgaben-handwerker' },
 };
 
 const data: LandingPageData = {

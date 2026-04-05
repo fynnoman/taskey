@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Baustelleninfos teilen App – Taskey',
   description: 'Baustelleninformationen einfach per App teilen. Taskey verteilt Pläne, Fotos und Updates an alle Beteiligten auf der Baustelle.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/baustelleninfos-teilen-app' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/baustelleninfos-teilen-app' },
 };
 
 const data: LandingPageData = {

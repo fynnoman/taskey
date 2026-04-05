@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Einsatzplanung Gebäudereinigung | Taskey',
   description: 'Einsatzplanung für Gebäudereinigung: Teams auf Objekte verteilen, Einsätze planen, Qualität dokumentieren. Digital & einfach. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/einsatzplanung-gebaeudereinigung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/einsatzplanung-gebaeudereinigung' },
 };
 
 const data: LandingPageData = {

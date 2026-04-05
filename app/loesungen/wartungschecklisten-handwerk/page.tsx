@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Wartungschecklisten Handwerk – Taskey',
   description: 'Wartungschecklisten für Handwerksbetriebe digital erstellen. Taskey stellt sicher, dass keine Wartungsschritte vergessen werden.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/wartungschecklisten-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/wartungschecklisten-handwerk' },
 };
 
 const data: LandingPageData = {

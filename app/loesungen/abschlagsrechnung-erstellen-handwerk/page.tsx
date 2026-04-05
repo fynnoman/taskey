@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Abschlagsrechnung erstellen Handwerk – Taskey',
   description: 'Abschlagsrechnungen für Handwerksprojekte einfach erstellen. Taskey unterstützt Teilrechnungen, Schlussrechnungen und behält den Überblick.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/abschlagsrechnung-erstellen-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/abschlagsrechnung-erstellen-handwerk' },
 };
 
 const data: LandingPageData = {

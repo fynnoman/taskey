@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kundenhistorie verwalten Handwerk – Taskey',
   description: 'Kundenhistorie im Handwerksbetrieb digital verwalten. Taskey dokumentiert alle Aufträge, Kontakte und Angebote pro Kunde.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kundenhistorie-verwalten-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kundenhistorie-verwalten-handwerk' },
 };
 
 const data: LandingPageData = {

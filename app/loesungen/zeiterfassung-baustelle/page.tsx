@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Zeiterfassung Baustelle – GPS & NFC für den Bau | Taskey',
   description: 'Digitale Zeiterfassung auf der Baustelle: GPS-gestützt, NFC-Tags, automatische Stundennachweise. Für Baufirmen & Subunternehmer. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/zeiterfassung-baustelle' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/zeiterfassung-baustelle' },
 };
 
 const data: LandingPageData = {

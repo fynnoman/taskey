@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'SLA Tracking Reinigungsfirma – Taskey',
   description: 'SLA Tracking für Reinigungsfirmen. Taskey überwacht Service Level Agreements und stellt sicher, dass Sie Ihre Vertragspflichten einhalten.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/sla-tracking-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/sla-tracking-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

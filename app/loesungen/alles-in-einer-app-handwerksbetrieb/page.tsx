@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Alles in einer App Handwerksbetrieb – Taskey',
   description: 'Alles in einer App für Ihren Handwerksbetrieb. Taskey vereint Zeiterfassung, Aufträge, Dokumentation und Abrechnung in einer einzigen Plattform.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/alles-in-einer-app-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/alles-in-einer-app-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

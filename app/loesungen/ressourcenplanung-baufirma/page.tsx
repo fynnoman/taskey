@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Ressourcenplanung Baufirma – Taskey',
   description: 'Ressourcenplanung für Baufirmen digitalisieren. Taskey optimiert die Verteilung von Personal, Maschinen und Material auf Ihre Bauprojekte.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/ressourcenplanung-baufirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/ressourcenplanung-baufirma' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kundenfeedback Reinigung – Taskey',
   description: 'Kundenfeedback für Reinigungsfirmen digital erfassen. Taskey sammelt Bewertungen, erkennt Verbesserungspotenzial und steigert die Kundenzufriedenheit.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kundenfeedback-reinigung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kundenfeedback-reinigung' },
 };
 
 const data: LandingPageData = {

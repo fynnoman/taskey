@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Vorbereitung Steuerberater Handwerk – Taskey',
   description: 'Unterlagen für den Steuerberater im Handwerk vorbereiten. Taskey exportiert alle relevanten Daten – Stunden, Rechnungen, Belege – auf Knopfdruck.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/vorbereitung-steuerberater-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/vorbereitung-steuerberater-handwerk' },
 };
 
 const data: LandingPageData = {

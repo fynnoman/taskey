@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Materialverwaltung Handwerk | Taskey',
   description: 'Materialverwaltung für Handwerksbetriebe: Bestände, Verbrauch und Bestellungen digital managen. Kein Material mehr vergessen. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/materialverwaltung-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/materialverwaltung-handwerk' },
 };
 
 const data: LandingPageData = {

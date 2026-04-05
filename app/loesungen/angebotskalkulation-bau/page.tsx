@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Angebotskalkulation Bau – Taskey',
   description: 'Angebote für Bauprojekte präzise kalkulieren. Taskey unterstützt Sie bei der Kalkulation von Material, Arbeitsstunden und Margen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/angebotskalkulation-bau' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/angebotskalkulation-bau' },
 };
 
 const data: LandingPageData = {

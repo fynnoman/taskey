@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Aufmaß erstellen digital – Taskey',
   description: 'Aufmaße digital erstellen und dokumentieren. Taskey macht Aufmaß-Erfassung auf der Baustelle einfach, schnell und fehlerfrei.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/aufmass-erstellen-digital' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/aufmass-erstellen-digital' },
 };
 
 const data: LandingPageData = {

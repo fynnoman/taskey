@@ -134,10 +134,10 @@ export default function FAQDiagonal() {
                 +49 (0) 800 123 4567
               </a>
               <a
-                href="mailto:kontakt@taskey.de"
+                href="mailto:kontakt@taskeyapp.com"
                 className="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors"
               >
-                kontakt@taskey.de
+                kontakt@taskeyapp.com
               </a>
             </div>
           </div>

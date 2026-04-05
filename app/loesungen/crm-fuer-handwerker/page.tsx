@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'CRM für Handwerker – Taskey',
   description: 'CRM speziell für Handwerksbetriebe. Taskey verwaltet Ihre Kunden, Aufträge und Kommunikation an einem Ort – einfach und übersichtlich.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/crm-fuer-handwerker' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/crm-fuer-handwerker' },
 };
 
 const data: LandingPageData = {

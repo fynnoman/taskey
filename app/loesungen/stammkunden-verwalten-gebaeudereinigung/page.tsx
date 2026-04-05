@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Stammkunden verwalten Gebäudereinigung – Taskey',
   description: 'Stammkunden in der Gebäudereinigung optimal betreuen. Taskey verwaltet Verträge, Leistungen und Kommunikation für langfristige Kundenbeziehungen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/stammkunden-verwalten-gebaeudereinigung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/stammkunden-verwalten-gebaeudereinigung' },
 };
 
 const data: LandingPageData = {

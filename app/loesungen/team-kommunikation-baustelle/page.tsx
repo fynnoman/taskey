@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Team Kommunikation Baustelle App | Taskey',
   description: 'Team-Kommunikation auf der Baustelle: Aufträge, Infos und Änderungen direkt per App an dein Team. Kein WhatsApp-Chaos mehr. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/team-kommunikation-baustelle' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/team-kommunikation-baustelle' },
 };
 
 const data: LandingPageData = {

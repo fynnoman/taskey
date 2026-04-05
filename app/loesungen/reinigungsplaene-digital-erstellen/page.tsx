@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Reinigungspläne digital erstellen – Taskey',
   description: 'Reinigungspläne digital erstellen und verteilen. Taskey definiert Leistungsverzeichnisse pro Objekt – klar, messbar und nachvollziehbar.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/reinigungsplaene-digital-erstellen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/reinigungsplaene-digital-erstellen' },
 };
 
 const data: LandingPageData = {

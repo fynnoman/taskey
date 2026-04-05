@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Tagesplanung Reinigungskräfte – Taskey',
   description: 'Tagesplanung für Reinigungskräfte digital erstellen. Taskey verteilt Aufträge, plant Routen und informiert Ihre Teams automatisch.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/tagesplanung-reinigungskraefte' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/tagesplanung-reinigungskraefte' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Mahnwesen Handwerk – Taskey',
   description: 'Mahnwesen für Handwerksbetriebe einfach digitalisieren. Taskey erinnert automatisch an überfällige Rechnungen und erstellt Mahnungen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/mahnwesen-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/mahnwesen-handwerk' },
 };
 
 const data: LandingPageData = {

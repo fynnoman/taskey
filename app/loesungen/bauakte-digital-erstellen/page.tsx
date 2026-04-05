@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Bauakte digital erstellen – Taskey',
   description: 'Bauakten digital erstellen und verwalten. Taskey bündelt alle Projektdokumente, Fotos und Protokolle in einer digitalen Bauakte.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/bauakte-digital-erstellen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/bauakte-digital-erstellen' },
 };
 
 const data: LandingPageData = {

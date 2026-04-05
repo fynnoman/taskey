@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Qualitätskontrolle Gebäudereinigung App | Taskey',
   description: 'Qualitätskontrolle für Gebäudereinigung per App: Checklisten, Fotodokumentation, Bewertungen. Objektbegehungen digital. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/qualitaetskontrolle-gebaeudereinigung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/qualitaetskontrolle-gebaeudereinigung' },
 };
 
 const data: LandingPageData = {

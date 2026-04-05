@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Objektbegehung Reinigung dokumentieren – Taskey',
   description: 'Objektbegehungen in der Gebäudereinigung digital dokumentieren. Taskey erfasst Mängel, Verbesserungspotenzial und Kundenwünsche.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/objektbegehung-reinigung-dokumentieren' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/objektbegehung-reinigung-dokumentieren' },
 };
 
 const data: LandingPageData = {

@@ -4,7 +4,7 @@ import LandingPageTemplate, { LandingPageData } from '@/components/landing/Landi
 export const metadata: Metadata = {
   title: 'Rechnung schreiben Reinigungsfirma – Taskey',
   description: 'Rechnungen für Reinigungsaufträge schnell und professionell erstellen. Taskey automatisiert Ihre Abrechnung – von Leistungsnachweis bis Rechnung in Sekunden.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/rechnung-schreiben-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/rechnung-schreiben-reinigungsfirma' },
 }
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Schlussrechnung Software Bau – Taskey',
   description: 'Schlussrechnungen für Bauprojekte automatisch erstellen. Taskey verrechnet alle Abschläge und generiert die finale Rechnung in Sekunden.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/schlussrechnung-software-bau' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/schlussrechnung-software-bau' },
 };
 
 const data: LandingPageData = {

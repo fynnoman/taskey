@@ -5,17 +5,17 @@
 ### ✅ SEO-Optimierungen
 
 1. **robots.txt korrigiert**
-   - URL auf `https://www.taskey.de/sitemap.xml` aktualisiert
+   - URL auf `https://www.taskeyapp.com/sitemap.xml` aktualisiert
    - `/admin/` Disallow entfernt (nicht vorhanden)
 
 2. **Sitemap URLs korrigiert**
-   - Alle URLs auf `https://www.taskey.de` aktualisiert
+   - Alle URLs auf `https://www.taskeyapp.com` aktualisiert
    - Konsistente Domain-Verwendung
 
 3. **Metadata optimiert**
    - `metadataBase` hinzugefügt für korrekte URL-Generierung
    - Alle OpenGraph und Canonical URLs aktualisiert
-   - Konsistente Verwendung von `www.taskey.de`
+   - Konsistente Verwendung von `www.taskeyapp.com`
 
 ### ✅ Performance-Optimierungen
 
@@ -85,7 +85,7 @@
 
 - [ ] Änderungen committen und pushen
 - [ ] Auf Vercel deployen
-- [ ] DNS auf `www.taskey.de` als primäre Domain setzen
+- [ ] DNS auf `www.taskeyapp.com` als primäre Domain setzen
 - [ ] PageSpeed Insights erneut testen (nach 24h für Cache)
 - [ ] Google Search Console Sitemap neu einreichen
 

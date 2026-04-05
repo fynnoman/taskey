@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Buchhaltung Handwerksbetrieb einfach | Taskey',
   description: 'Einfache Buchhaltungsvorbereitung für Handwerksbetriebe: Einnahmen, Ausgaben, Steuerberater-Export. Kein Abtippen mehr. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/buchhaltung-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/buchhaltung-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Rechnungsprogramm Handwerker | Taskey',
   description: 'Rechnungsprogramm für Handwerker: Rechnungen aus Aufträgen erstellen, Zahlungen tracken, Mahnwesen. GoBD-konform. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/rechnungsprogramm-handwerker' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/rechnungsprogramm-handwerker' },
 };
 
 const data: LandingPageData = {

@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Abnahmeprotokoll digital erstellen | Taskey',
   description: 'Digitale Abnahmeprotokolle: Mängel erfassen, Fotos anhängen, digital unterschreiben. Rechtssicher & automatisch. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/abnahmeprotokoll-digital' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/abnahmeprotokoll-digital' },
 };
 
 const data: LandingPageData = {

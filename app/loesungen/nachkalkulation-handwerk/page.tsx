@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Nachkalkulation Handwerk | Taskey',
   description: 'Nachkalkulation für Handwerksbetriebe: Geplante vs. tatsächliche Kosten vergleichen. Gewinn pro Auftrag in Echtzeit. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/nachkalkulation-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/nachkalkulation-handwerk' },
 };
 
 const data: LandingPageData = {

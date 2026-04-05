@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Nachunternehmer Dokumentation – Taskey',
   description: 'Nachunternehmer-Dokumentation digital verwalten. Taskey speichert Verträge, Zertifikate, Versicherungen und Leistungsnachweise zentral.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/nachunternehmer-dokumentation' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/nachunternehmer-dokumentation' },
 };
 
 const data: LandingPageData = {

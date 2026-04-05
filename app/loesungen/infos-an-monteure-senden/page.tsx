@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Infos an Monteure senden – Taskey',
   description: 'Infos an Monteure schnell und zuverlässig senden. Taskey verteilt Auftragsinfos, Änderungen und Dokumente direkt auf das Smartphone.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/infos-an-monteure-senden' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/infos-an-monteure-senden' },
 };
 
 const data: LandingPageData = {

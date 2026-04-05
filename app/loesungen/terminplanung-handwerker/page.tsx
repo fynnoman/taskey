@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Terminplanung Handwerker – Digital & einfach | Taskey',
   description: 'Terminplanung für Handwerker: Kundentermine, Baustelleneinsätze und Mitarbeiter digital planen. Keine Doppelbuchungen mehr. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/terminplanung-handwerker' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/terminplanung-handwerker' },
 };
 
 const data: LandingPageData = {

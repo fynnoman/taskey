@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Fahrzeugplanung Handwerksbetrieb – Taskey',
   description: 'Fahrzeugplanung für Handwerksbetriebe digitalisieren. Taskey verwaltet Ihren Fuhrpark und optimiert die Fahrzeugverteilung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/fahrzeugplanung-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/fahrzeugplanung-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

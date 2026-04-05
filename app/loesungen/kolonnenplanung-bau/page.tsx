@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kolonnenplanung Bau – Taskey',
   description: 'Kolonnenplanung im Bau digitalisieren. Taskey hilft bei der optimalen Zusammenstellung und Einteilung Ihrer Baukolonnen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kolonnenplanung-bau' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kolonnenplanung-bau' },
 };
 
 const data: LandingPageData = {

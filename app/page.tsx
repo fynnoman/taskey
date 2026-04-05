@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Taskey - Dienstleistungssoftware für über 600 Branchen | Zeiterfassung & Auftragsplanung",
   description: "Taskey - Die führende Dienstleistungssoftware aus Deutschland. Automatische Zeiterfassung, intelligente Auftragsplanung, digitale Rechnungsstellung. Für Handwerk, Facility Management, technische Services uvm. DSGVO-konform. Jetzt kostenlos testen!",
   alternates: {
-    canonical: "https://taskey.de",
+    canonical: "https://taskeyapp.com",
   },
 };
 
@@ -45,7 +45,7 @@ export default function Home() {
     "author": {
       "@type": "Organization",
       "name": "Taskey",
-      "url": "https://taskey.de"
+      "url": "https://taskeyapp.com"
     }
   };
 
@@ -53,8 +53,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Taskey",
-    "url": "https://taskey.de",
-    "logo": "https://taskey.de/logobittt.png",
+    "url": "https://taskeyapp.com",
+    "logo": "https://taskeyapp.com/logobittt.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+49-800-123-4567",

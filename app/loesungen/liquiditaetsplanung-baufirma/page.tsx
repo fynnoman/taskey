@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Liquiditätsplanung Baufirma – Taskey',
   description: 'Liquiditätsplanung für Baufirmen digitalisieren. Taskey zeigt erwartete Zahlungseingänge und -ausgänge für eine sichere Finanzplanung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/liquiditaetsplanung-baufirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/liquiditaetsplanung-baufirma' },
 };
 
 const data: LandingPageData = {

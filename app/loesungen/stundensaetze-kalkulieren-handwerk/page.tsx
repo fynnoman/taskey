@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Stundensätze kalkulieren Handwerk – Taskey',
   description: 'Stundensätze im Handwerk richtig kalkulieren. Taskey hilft Ihnen, kostendeckende Stundensätze zu berechnen und profitabel zu arbeiten.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/stundensaetze-kalkulieren-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/stundensaetze-kalkulieren-handwerk' },
 };
 
 const data: LandingPageData = {

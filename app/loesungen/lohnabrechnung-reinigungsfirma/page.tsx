@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Lohnabrechnung Reinigungsfirma – Taskey',
   description: 'Lohnabrechnung für Reinigungsfirmen vorbereiten. Taskey erfasst Arbeitszeiten und exportiert alle Daten für die Lohnbuchhaltung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/lohnabrechnung-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/lohnabrechnung-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

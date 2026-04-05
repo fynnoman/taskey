@@ -59,7 +59,7 @@ Value: [Your Gmail App Password - 16 characters]
 ### 2. Add Custom Domain (Optional)
 1. Go to your project in Vercel
 2. Click "Settings" → "Domains"
-3. Add your domain (e.g., taskey.de)
+3. Add your domain (e.g., taskeyapp.com)
 4. Follow DNS configuration instructions
 
 ### 3. Environment Variables Management

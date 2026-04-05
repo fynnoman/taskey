@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Personalplanung Baufirma – Digital & übersichtlich | Taskey',
   description: 'Personalplanung für Baufirmen: Mitarbeiter auf Baustellen einteilen, Kolonnen planen, Kapazitäten überblicken. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/personalplanung-baufirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/personalplanung-baufirma' },
 };
 
 const data: LandingPageData = {

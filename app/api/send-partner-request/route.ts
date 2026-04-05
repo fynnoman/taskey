@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
     persistPartnerForm({ name, email, phone, company, partnerType, message });
 
-    const emailSubject = '🤝 PARTNERSCHAFT – Neue Anfrage über taskey.de';
+    const emailSubject = '🤝 PARTNERSCHAFT – Neue Anfrage über taskeyapp.com';
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

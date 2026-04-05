@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Arbeitszeiterfassung Reinigungsfirma – Digital & DSGVO-konform | Taskey',
   description: 'Arbeitszeiterfassung für Reinigungsfirmen: GPS-basiert, NFC-Tags an Objekten, automatische Stundennachweise. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/arbeitszeiterfassung-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/arbeitszeiterfassung-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

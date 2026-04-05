@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Disposition Handwerk Software | Taskey',
   description: 'Dispositions-Software für Handwerksbetriebe: Mitarbeiter, Fahrzeuge und Werkzeuge optimal einteilen. Digital, übersichtlich, in Echtzeit.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/disposition-handwerk-software' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/disposition-handwerk-software' },
 };
 
 const data: LandingPageData = {

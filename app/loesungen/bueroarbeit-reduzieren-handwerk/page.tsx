@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Büroarbeit reduzieren Handwerk – Taskey',
   description: 'Büroarbeit im Handwerk reduzieren. Taskey automatisiert Verwaltungsaufgaben und gibt Ihnen mehr Zeit für produktive Arbeit.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/bueroarbeit-reduzieren-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/bueroarbeit-reduzieren-handwerk' },
 };
 
 const data: LandingPageData = {

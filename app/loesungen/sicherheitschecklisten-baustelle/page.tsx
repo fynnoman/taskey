@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Sicherheitschecklisten Baustelle – Taskey',
   description: 'Sicherheitschecklisten für Baustellen digital führen. Taskey dokumentiert Sicherheitsprüfungen und hilft bei der Einhaltung von Arbeitsschutz.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/sicherheitschecklisten-baustelle' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/sicherheitschecklisten-baustelle' },
 };
 
 const data: LandingPageData = {

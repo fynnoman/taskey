@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Checklisten Reinigung digital | Taskey',
   description: 'Digitale Reinigungschecklisten: Aufgaben abhaken, Fotos machen, Qualität dokumentieren. Für Gebäudereinigungsfirmen. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/checklisten-reinigung-digital' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/checklisten-reinigung-digital' },
 };
 
 const data: LandingPageData = {

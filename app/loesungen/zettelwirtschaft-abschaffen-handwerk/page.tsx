@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Zettelwirtschaft abschaffen Handwerk – Taskey',
   description: 'Zettelwirtschaft im Handwerk abschaffen. Taskey digitalisiert Stundenzettel, Auftragszettel und Rapportzettel – alles in einer App.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/zettelwirtschaft-abschaffen-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/zettelwirtschaft-abschaffen-handwerk' },
 };
 
 const data: LandingPageData = {

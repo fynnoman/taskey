@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kundenkommunikation Baufirma – Taskey',
   description: 'Kundenkommunikation in der Baufirma professionalisieren. Taskey zentralisiert alle Nachrichten, Statusupdates und Dokumente.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kundenkommunikation-baufirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kundenkommunikation-baufirma' },
 };
 
 const data: LandingPageData = {

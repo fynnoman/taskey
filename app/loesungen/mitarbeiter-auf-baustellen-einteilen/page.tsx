@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Mitarbeiter auf Baustellen einteilen – Taskey',
   description: 'Mitarbeiter effizient auf Baustellen einteilen. Taskey zeigt Verfügbarkeiten, Qualifikationen und optimiert die Personaleinteilung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/mitarbeiter-auf-baustellen-einteilen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/mitarbeiter-auf-baustellen-einteilen' },
 };
 
 const data: LandingPageData = {

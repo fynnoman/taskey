@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Kundendatenbank Reinigungsfirma – Taskey',
   description: 'Kundendatenbank für Reinigungsfirmen. Taskey verwaltet alle Objekte, Ansprechpartner und Verträge zentral und übersichtlich.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/kundendatenbank-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/kundendatenbank-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

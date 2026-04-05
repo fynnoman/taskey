@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Protokolle Baustelle erstellen – Taskey',
   description: 'Baustellenprotokolle digital erstellen. Taskey dokumentiert Baubesprechungen, Abnahmen und Zwischenstände – alles an einem Ort.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/protokolle-baustelle-erstellen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/protokolle-baustelle-erstellen' },
 };
 
 const data: LandingPageData = {

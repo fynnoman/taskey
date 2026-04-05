@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Baustellen koordinieren Tool | Taskey',
   description: 'Tool zur Koordination von Baustellen: Personal, Material und Termine über mehrere Baustellen hinweg steuern. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/baustellen-koordinieren-tool' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/baustellen-koordinieren-tool' },
 };
 
 const data: LandingPageData = {

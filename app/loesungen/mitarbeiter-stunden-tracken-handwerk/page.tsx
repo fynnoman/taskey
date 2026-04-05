@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Mitarbeiter Stunden tracken im Handwerk | Taskey',
   description: 'Mitarbeiter-Stunden im Handwerk tracken: Per App, GPS und NFC. Automatische Stundenübersichten, Überstundenberechnung. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/mitarbeiter-stunden-tracken-handwerk' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/mitarbeiter-stunden-tracken-handwerk' },
 };
 
 const data: LandingPageData = {

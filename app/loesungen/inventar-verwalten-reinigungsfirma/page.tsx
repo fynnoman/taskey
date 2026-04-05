@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Inventar verwalten Reinigungsfirma – Taskey',
   description: 'Inventar für Reinigungsfirmen digital verwalten. Taskey erfasst Geräte, Reinigungsmittel und Zubehör – mit Standort und Zustandsdokumentation.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/inventar-verwalten-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/inventar-verwalten-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

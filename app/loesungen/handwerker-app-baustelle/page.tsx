@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Handwerker App für Baustelle | Taskey',
   description: 'Die Handwerker App für die Baustelle: Aufträge, Zeiten, Fotos, Material – alles mobil auf dem Smartphone. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/handwerker-app-baustelle' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/handwerker-app-baustelle' },
 };
 
 const data: LandingPageData = {

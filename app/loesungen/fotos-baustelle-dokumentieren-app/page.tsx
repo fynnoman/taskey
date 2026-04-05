@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Fotos Baustelle dokumentieren App | Taskey',
   description: 'Baustellenfotos dokumentieren per App: GPS-Stempel, Zeitstempel, Projektzuordnung. Rechtssicher und lückenlos. Jetzt testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/fotos-baustelle-dokumentieren-app' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/fotos-baustelle-dokumentieren-app' },
 };
 
 const data: LandingPageData = {

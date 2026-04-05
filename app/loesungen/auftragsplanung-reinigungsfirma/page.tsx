@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Auftragsplanung Reinigungsfirma | Taskey',
   description: 'Auftragsplanung für Reinigungsfirmen: Objekte, Teams und Einsätze digital planen und steuern. Jetzt kostenlos testen!',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/auftragsplanung-reinigungsfirma' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/auftragsplanung-reinigungsfirma' },
 };
 
 const data: LandingPageData = {

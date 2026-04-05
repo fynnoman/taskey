@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Fremdleistungen abrechnen Bau – Taskey',
   description: 'Fremdleistungen im Bau korrekt abrechnen. Taskey dokumentiert Leistungen von Subunternehmern und erstellt Abrechnungen automatisch.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/fremdleistungen-abrechnen-bau' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/fremdleistungen-abrechnen-bau' },
 };
 
 const data: LandingPageData = {

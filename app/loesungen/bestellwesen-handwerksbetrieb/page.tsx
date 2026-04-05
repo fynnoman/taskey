@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Bestellwesen Handwerksbetrieb – Taskey',
   description: 'Bestellwesen im Handwerksbetrieb digitalisieren. Taskey optimiert Ihre Bestellprozesse – von der Anforderung bis zur Lieferung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/bestellwesen-handwerksbetrieb' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/bestellwesen-handwerksbetrieb' },
 };
 
 const data: LandingPageData = {

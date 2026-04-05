@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Subunternehmer Einsatzplanung – Taskey',
   description: 'Einsatzplanung für Subunternehmer digitalisieren. Taskey koordiniert die Einsätze aller Nachunternehmer auf Ihren Baustellen.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/subunternehmer-einsatzplanung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/subunternehmer-einsatzplanung' },
 };
 
 const data: LandingPageData = {

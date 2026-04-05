@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Materialverbrauch tracken Baustelle – Taskey',
   description: 'Materialverbrauch auf der Baustelle digital tracken. Taskey erfasst Verbräuche, erkennt Abweichungen und optimiert Ihre Materialplanung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/materialverbrauch-tracken-baustelle' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/materialverbrauch-tracken-baustelle' },
 };
 
 const data: LandingPageData = {

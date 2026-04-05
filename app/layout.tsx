@@ -7,7 +7,7 @@ import { WebVitals } from "./web-vitals";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.taskey.de'),
+  metadataBase: new URL('https://www.taskeyapp.com'),
   title: {
     default: "Taskey - Dienstleistungssoftware für über 600 Branchen | Made in Germany",
     template: "%s | Taskey"
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://www.taskey.de",
+    url: "https://www.taskeyapp.com",
     siteName: "Taskey",
     title: "Taskey - Dienstleistungssoftware für über 600 Branchen",
     description: "Automatische Zeiterfassung, intelligente Auftragsplanung & digitale Rechnungsstellung für Dienstleistungsbetriebe. Made in Germany, DSGVO-konform.",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     images: ["/logobittt.png"],
   },
   alternates: {
-    canonical: "https://www.taskey.de",
+    canonical: "https://www.taskeyapp.com",
   },
   verification: {
     google: "your-google-verification-code-here",

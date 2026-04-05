@@ -5,7 +5,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 export const metadata: Metadata = {
   title: 'Übergabeprotokoll Reinigung – Taskey',
   description: 'Übergabeprotokolle für die Gebäudereinigung digital erstellen. Taskey dokumentiert Zustand, Mängel und Vereinbarungen bei der Objektübergabe.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen/uebergabeprotokoll-reinigung' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/uebergabeprotokoll-reinigung' },
 };
 
 const data: LandingPageData = {

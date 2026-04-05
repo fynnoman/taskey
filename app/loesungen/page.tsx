@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Alle Lösungen – Taskey für Handwerk, Bau & Reinigung',
   description: 'Entdecken Sie alle Taskey-Lösungen: Zeiterfassung, Auftragsverwaltung, Dokumentation, Buchhaltung, CRM und mehr – speziell für Handwerk, Bau und Gebäudereinigung.',
-  alternates: { canonical: 'https://www.taskey.de/loesungen' },
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen' },
 };
 
 const categories = [
