@@ -187,21 +187,6 @@ export default function Footer() {
             <span className="text-gray-600">{t("footer.madeIn")}</span>
           </div>
         </div>
-
-        {/* Designed by fylu */}
-        <div className="border-t border-white/5 py-6 text-center">
-          <p className="text-gray-600 text-xs tracking-wide">
-            designed by <span className="font-semibold text-gray-500">fylu</span> · marketing{" "}
-            <a
-              href="https://fylumarketing.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-gray-500 hover:text-white transition-colors"
-            >
-              fylumarketing.de
-            </a>
-          </p>
-        </div>
       </div>
     </footer>
   );
