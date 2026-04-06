@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
@@ -10,9 +11,14 @@ export default function Hero() {
     <>
       <section className="relative bg-white pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/Gemini_Generated_Image_u0ytjru0ytjru0yt.png')" }}
+        <Image
+          src="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp"
+          alt=""
+          fill
+          priority
+          quality={80}
+          className="object-cover object-center"
+          sizes="100vw"
         />
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-white/80" />

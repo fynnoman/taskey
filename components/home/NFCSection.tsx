@@ -52,7 +52,7 @@ export default function NFCSection() {
           <div className="relative px-4 sm:px-0">
             <div className="relative inline-block">
               <Image 
-                src="/1E4C3B2F-0E0B-4440-992F-8312AFE578AF.png"
+                src="/1E4C3B2F-0E0B-4440-992F-8312AFE578AF.webp"
                 alt="Taskey NFC Tag"
                 width={600}
                 height={600}
@@ -92,7 +92,7 @@ export default function NFCSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <span className="text-sm font-semibold text-gray-300 mb-2">01</span>
+              <span className="text-sm font-semibold text-gray-400 mb-2">01</span>
               <h3 className="text-gray-900 font-bold text-lg leading-snug mb-3">{t("nfc.1.title")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 {t("nfc.1.desc")}
@@ -106,7 +106,7 @@ export default function NFCSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <span className="text-sm font-semibold text-gray-300 mb-2">02</span>
+              <span className="text-sm font-semibold text-gray-400 mb-2">02</span>
               <h3 className="text-gray-900 font-bold text-lg leading-snug mb-3">{t("nfc.2.title")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 {t("nfc.2.desc")}
@@ -119,7 +119,7 @@ export default function NFCSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <span className="text-sm font-semibold text-gray-300 mb-2">03</span>
+              <span className="text-sm font-semibold text-gray-400 mb-2">03</span>
               <h3 className="text-gray-900 font-bold text-lg leading-snug mb-3">{t("nfc.3.title")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 {t("nfc.3.desc")}
@@ -132,7 +132,7 @@ export default function NFCSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <span className="text-sm font-semibold text-gray-300 mb-2">04</span>
+              <span className="text-sm font-semibold text-gray-400 mb-2">04</span>
               <h3 className="text-gray-900 font-bold text-lg leading-snug mb-3">{t("nfc.4.title")}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 {t("nfc.4.desc")}

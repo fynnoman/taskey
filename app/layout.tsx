@@ -71,6 +71,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
+        <link rel="preload" href="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp" as="image" type="image/webp" />
         <link rel="preconnect" href="https://signup.vars-development.com" />
         <link rel="preconnect" href="https://taskey.vars-development.com" />
         <link rel="dns-prefetch" href="https://signup.vars-development.com" />

@@ -142,6 +142,7 @@ body {
 
 .animate-nfc-border {
   animation: nfc-border-travel 5s linear infinite;
+  will-change: stroke-dashoffset;
 }
 
 @keyframes footer-flicker {

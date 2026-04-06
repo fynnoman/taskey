@@ -61,6 +61,8 @@ export default function Testimonials() {
                         <img 
                           src={testimonial.image} 
                           alt={testimonial.name}
+                          width={128}
+                          height={128}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -81,7 +83,7 @@ export default function Testimonials() {
                   </p>
                   
                   <div className="text-center">
-                    <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                    <h3 className="font-bold text-gray-900 text-lg">{testimonial.name}</h3>
                     <p className="text-sm text-gray-500">{testimonial.business}</p>
                   </div>
                 </div>

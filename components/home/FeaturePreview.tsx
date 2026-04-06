@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function FeaturePreview() {
@@ -9,17 +10,17 @@ export default function FeaturePreview() {
     {
       title: t("features.1.title"),
       description: t("features.1.desc"),
-      image: "/BA2B10E7-7DE2-41AD-B48D-EE39BC2E52E6.png",
+      image: "/BA2B10E7-7DE2-41AD-B48D-EE39BC2E52E6.webp",
     },
     {
       title: t("features.2.title"),
       description: t("features.2.desc"),
-      image: "/B899021B-1AAA-40FD-9668-5DBB4E23D5D2.png",
+      image: "/B899021B-1AAA-40FD-9668-5DBB4E23D5D2.webp",
     },
     {
       title: t("features.3.title"),
       description: t("features.3.desc"),
-      image: "/54F369FF-6D74-4695-B8D3-44E54D16098B.png",
+      image: "/54F369FF-6D74-4695-B8D3-44E54D16098B.webp",
     },
   ];
 
@@ -47,16 +48,19 @@ export default function FeaturePreview() {
               className="group flex flex-col"
             >
               {/* Image */}
-              <div className="w-full aspect-[4/3] mb-6 rounded-2xl overflow-hidden">
-                <img
+              <div className="w-full aspect-[4/3] mb-6 rounded-2xl overflow-hidden relative">
+                <Image
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  loading="lazy"
                 />
               </div>
 
               {/* Number */}
-              <span className="text-sm font-semibold text-gray-300 mb-2">
+              <span className="text-sm font-semibold text-gray-400 mb-2">
                 0{index + 1}
               </span>
 

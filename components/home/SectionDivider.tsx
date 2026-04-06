@@ -1,5 +1,3 @@
-"use client";
-
 interface SectionDividerProps {
   from?: string;
   to?: string;

@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 const POINTS: [number, number][] = [
@@ -40,9 +41,9 @@ export default function BusinessSize() {
   const { t } = useLanguage();
 
   const cards = [
-    { id: 1, label: t("biz.card1.label"), image: "/26473062-6363-4095-A9BD-AD2B2B404909.png", text: t("biz.card1.text") },
-    { id: 2, label: t("biz.card2.label"), image: "/629F1A67-7DB2-4895-B898-337BCB2EAE07.png", text: t("biz.card2.text") },
-    { id: 3, label: t("biz.card3.label"), image: "/A723E4B1-276B-4AC7-9BAB-63AEAF16EC1D.png", text: t("biz.card3.text") },
+    { id: 1, label: t("biz.card1.label"), image: "/26473062-6363-4095-A9BD-AD2B2B404909.webp", text: t("biz.card1.text") },
+    { id: 2, label: t("biz.card2.label"), image: "/629F1A67-7DB2-4895-B898-337BCB2EAE07.webp", text: t("biz.card2.text") },
+    { id: 3, label: t("biz.card3.label"), image: "/A723E4B1-276B-4AC7-9BAB-63AEAF16EC1D.webp", text: t("biz.card3.text") },
   ];  const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -83,7 +84,7 @@ export default function BusinessSize() {
       {/* ── Mobile: Einfache gestackte Karten, keine Scroll-Animation ── */}
       <section className="lg:hidden bg-white py-12 px-5">
         <div className="text-center mb-8">
-          <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.25em] mb-2">{t("biz.badge")}</p>
+          <p className="text-gray-500 text-xs font-semibold uppercase tracking-[0.25em] mb-2">{t("biz.badge")}</p>
           <h2 className="text-gray-900 text-2xl font-bold">
             {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
           </h2>
@@ -92,11 +93,16 @@ export default function BusinessSize() {
         <div className="space-y-6 max-w-lg mx-auto">
           {cards.map((card) => (
             <div key={card.id} className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
-              <img
+              <div className="relative w-full h-44">
+              <Image
                 src={card.image}
                 alt=""
-                className="w-full h-44 object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 448px"
+                loading="lazy"
               />
+              </div>
               <div className="p-4">
                 <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">{card.label}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-3">{card.text}</p>
@@ -123,7 +129,7 @@ export default function BusinessSize() {
 
           {/* Überschrift oben */}
           <div className="absolute top-24 left-0 right-0 flex flex-col items-center gap-2 px-8">
-            <p className="text-gray-400 text-xs font-semibold uppercase tracking-[0.25em]">{t("biz.badge")}</p>
+            <p className="text-gray-500 text-xs font-semibold uppercase tracking-[0.25em]">{t("biz.badge")}</p>
             <h2 className="text-gray-900 text-4xl md:text-5xl font-bold text-center">
               {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
             </h2>
@@ -142,11 +148,14 @@ export default function BusinessSize() {
                   className="w-full max-w-3xl flex flex-col gap-6"
                 >
                   {/* Card image */}
-                  <div className="rounded-2xl overflow-hidden shadow-2xl">
-                    <img
+                  <div className="rounded-2xl overflow-hidden shadow-2xl relative h-80">
+                    <Image
                       src={cards[activeCard - 1].image}
                       alt=""
-                      className="w-full h-80 object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      loading="lazy"
                     />
                   </div>
                   {/* Text + Button */}

@@ -28,6 +28,8 @@ export default function FAQ() {
             <img 
               src="/D69772A5-9DCA-4D89-8EA3-9009CB69634A_1_105_c.jpeg" 
               alt="Taskey Logo" 
+              width={64}
+              height={64}
               className="h-16 w-auto mx-auto"
             />
           </div>

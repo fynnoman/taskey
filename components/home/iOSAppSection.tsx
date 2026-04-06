@@ -111,7 +111,7 @@ export default function IOSAppSection() {
                 <div className="w-8 h-8 rounded-full bg-blue-600 border-2 border-white"></div>
                 <div className="w-8 h-8 rounded-full bg-gray-700 border-2 border-white"></div>
               </div>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-500">
                 {t("ios.socialProof").replace("{count}", "600")}
               </p>
             </div>

@@ -67,7 +67,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 mb-1 font-medium uppercase tracking-wide">{item.label}</p>
+                  <p className="text-xs text-gray-500 mb-1 font-medium uppercase tracking-wide">{item.label}</p>
                   {item.href ? (
                     <a href={item.href} className="text-base font-semibold text-gray-900 hover:text-blue-600 transition-colors">
                       {item.value}
