@@ -11,13 +11,14 @@ export default function Footer() {
       {/* Background PNG */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
-          src="/7F026185-998A-42EF-845A-EAC748373476.png"
+          src="/7F026185-998A-42EF-845A-EAC748373476.webp"
           alt=""
           fill
           className="object-cover"
           style={{ opacity: 0.1 }}
           loading="lazy"
           quality={75}
+          sizes="100vw"
         />
       </div>
 

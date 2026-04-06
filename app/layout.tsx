@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-import { WebVitals } from "./web-vitals";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
@@ -71,14 +70,15 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        <link rel="preload" href="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preconnect" href="https://mission-control.vars-development.com" />
         <link rel="preconnect" href="https://signup.vars-development.com" />
         <link rel="preconnect" href="https://taskey.vars-development.com" />
+        <link rel="dns-prefetch" href="https://mission-control.vars-development.com" />
         <link rel="dns-prefetch" href="https://signup.vars-development.com" />
         <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
       </head>
       <body className="antialiased">
-        <WebVitals />
         <script defer src="https://mission-control.vars-development.com/umami/script.js" data-website-id="15a75075-86a0-4e36-8cd2-7cd83d860d5c"></script>
         <LanguageProvider>
           <Header />

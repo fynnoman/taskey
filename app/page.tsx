@@ -1,17 +1,19 @@
 import Hero from "@/components/home/Hero";
 import NFCSection from "@/components/home/NFCSection";
 import FeaturePreview from "@/components/home/FeaturePreview";
-import LiveMargen from "@/components/home/LiveMargen";
-import TaskeyShare from "@/components/home/TaskeyShare";
-import Testimonials from "@/components/home/Testimonials";
-import IOSAppSection from "@/components/home/iOSAppSection";
-import BusinessSize from "@/components/home/BusinessSize";
-import Branchen from "@/components/home/Branchen";
-import FAQ from "@/components/home/FAQ";
-import Contact from "@/components/home/Contact";
 import SectionDivider from "@/components/home/SectionDivider";
-import ScrollLine from "@/components/home/ScrollLine";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
+const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
+const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
+const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
+const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
+const Branchen = dynamic(() => import("@/components/home/Branchen"));
+const FAQ = dynamic(() => import("@/components/home/FAQ"));
+const Contact = dynamic(() => import("@/components/home/Contact"));
+const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
   title: "Taskey - Dienstleistungssoftware für über 600 Branchen | Zeiterfassung & Auftragsplanung",
