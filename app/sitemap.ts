@@ -1,9 +1,23 @@
-import { MetadataRoute } from 'next'
-import { posts } from './news/posts'
- 
+import { MetadataRoute } from 'next';
+import { posts } from './news/posts';
+import fs from 'fs';
+import path from 'path';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.taskeyapp.com'
-  
+  const baseUrl = 'https://www.taskeyapp.com';
+
+  // Dynamically fetch all directories in the app folder
+  const appDir = path.join(process.cwd(), 'app');
+  const staticPages = fs
+    .readdirSync(appDir, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory() && !dirent.name.startsWith('('))
+    .map((dirent) => ({
+      url: `${baseUrl}/${dirent.name}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }));
+
   return [
     {
       url: baseUrl,
@@ -215,5 +229,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.7,
       })),
-  ]
+  ];
 }
