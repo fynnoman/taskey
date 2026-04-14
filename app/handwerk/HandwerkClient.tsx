@@ -49,10 +49,10 @@ export default function HandwerkClient() {
             FUER HANDWERK &amp; BAU IM DACH-RAUM
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Schluss mit Zettelwirtschaft<br className="hidden sm:block" /> auf der Baustelle.
+            Schluss mit Zettel.<br className="hidden sm:block" /> Schluss mit Suchen.<br className="hidden sm:block" /> Schluss mit Streit.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Taskey bringt Ordnung in Arbeitszeiten, Aufträge, Werkzeug und Abrechnung. Direkt vom Handy. Für Handwerksbetriebe in Deutschland, Österreich und der Schweiz.
+            Taskey ist die App, die Ihren Handwerksbetrieb endlich in den Griff bekommt. Zeiten, Werkzeug, Baustellen, Abrechnung &ndash; alles vom Handy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
@@ -62,7 +62,7 @@ export default function HandwerkClient() {
               14 Tage kostenlos testen
             </a>
           </div>
-          <p className="text-sm text-gray-400">Keine Kreditkarte. Kein Risiko. Sofort loslegen.</p>
+          <p className="text-sm text-gray-400">Keine Kreditkarte. Sofort loslegen.</p>
         </div>
       </section>
 
@@ -75,10 +75,10 @@ export default function HandwerkClient() {
             <NfcIcon /> NFC-WERKZEUG-ERFASSUNG
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Nie wieder Werkzeug auf der Baustelle suchen.
+            Nie wieder Werkzeug suchen.
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-            Kleben Sie einen NFC-Aufkleber an Ihre Bohrmaschine, Ihre Leiter, Ihren Anhaenger oder Ihre Werkzeugkiste. Ihr Geselle haelt das Handy kurz dran &ndash; und Taskey speichert automatisch, wo sich das Werkzeug zuletzt befand. Kein Suchen mehr. Kein Zoff, wer was mitgenommen hat.
+            Aufkleber drauf. Handy dranhalten. Fertig. Taskey merkt sich, wo jede Maschine zuletzt war &ndash; und wer sie hatte. Ende vom Suchen. Ende vom Streit.
           </p>
         </div>
 
@@ -86,28 +86,28 @@ export default function HandwerkClient() {
           {[
             {
               title: "Werkzeug wiederfinden",
-              desc: "Die Karte zeigt den letzten Standort jedes Werkzeugs. Sofort sehen, wo die Flex geblieben ist.",
+              desc: "Karte auf, Flex gefunden. So einfach.",
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               ),
             },
             {
-              title: "Maschinen-Historie am Objekt",
-              desc: "Wartungen, Prüftermine, Reparaturen &ndash; alles per Scan abrufbar. Direkt am Geraet.",
+              title: "Alles am Gerät",
+              desc: "Wartung, Prüftermin, Reparaturen. Ein Scan &ndash; alle Infos.",
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
               ),
             },
             {
-              title: "Rechtssicherer Einsatz-Nachweis",
-              desc: "Jeder Scan mit Uhrzeit und GPS &ndash; perfekt für Versicherung und Gewährleistung.",
+              title: "Beweis bei Streitfällen",
+              desc: "Jeder Scan mit Zeit und Ort. Versicherung und Bauherr sehen: Sie waren da.",
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               ),
             },
             {
-              title: "Wissen bleibt im Betrieb",
-              desc: "Ihr bester Geselle geht in Rente? Sein Wissen bleibt am Werkzeug und am Objekt &ndash; nicht in seinem Kopf.",
+              title: "Wissen bleibt da",
+              desc: "Geselle geht in Rente? Sein Wissen bleibt am Werkzeug.",
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
               ),
@@ -132,33 +132,30 @@ export default function HandwerkClient() {
       <Section className="bg-gray-50">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Drei Funktionen, die Ihren Alltag verändern
+            Drei Dinge, die jede Woche Stunden sparen.
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Weniger Verwaltung, mehr Überblick, zufriedenere Kunden.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {[
             {
               badge: "ZEITERFASSUNG",
-              title: "Automatische Zeiterfassung",
-              desc: "Keine Stundenzettel mehr. Ihre Mitarbeiter starten den Auftrag, Taskey erfasst Zeit, Pausen und Fahrt automatisch. Am Monatsende stehen fertige Zahlen für die Lohnabrechnung bereit.",
+              title: "Zeiterfassung, die sich selbst macht",
+              desc: "Ihr Mitarbeiter tippt auf Start. Taskey erfasst Arbeitszeit, Pause, Fahrt. Am Monatsende: fertige Zahlen für die Lohnabrechnung. Kein Zettel, kein Nachfragen.",
               color: "bg-green-100 text-green-800",
               iconPath: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z",
             },
             {
               badge: "LIVE-MARGEN",
-              title: "Live-Übersicht der Margen",
-              desc: "Sehen Sie sofort, ob eine Baustelle Gewinn macht. Personalkosten, Material und Sondereinsätze werden automatisch gegen Ihren Angebotspreis gerechnet. Sie sehen, wenn eine Baustelle kippt, bevor es zu spaet ist.",
+              title: "Sie sehen jede Baustelle in Echtzeit",
+              desc: "Personal, Material, Sondereinsätze &ndash; alles wird live gegen Ihren Angebotspreis gerechnet. Sie merken sofort, wenn eine Baustelle kippt. Nicht erst beim Steuerberater.",
               color: "bg-blue-100 text-blue-800",
               iconPath: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z",
             },
             {
               badge: "AUFTRAGGEBER-PORTAL",
-              title: "Auftraggeber-Portal",
-              desc: "Ihr Bauherr ruft dreimal täglich an und fragt nach dem Stand? Damit ist Schluss. Ein Link &ndash; er sieht selbst Fotos, Fortschritt, Kosten. Unsere Kunden sparen damit 45 Minuten pro Tag pro Bauleiter.",
+              title: "Ihr Bauherr hört auf anzurufen",
+              desc: "Ein Link. Der Bauherr sieht selbst: Fotos, Fortschritt, Kosten. Kein Telefonat mehr. Kein Statusupdate. Sie arbeiten einfach weiter.",
               color: "bg-purple-100 text-purple-800",
               iconPath: "M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.813a4.5 4.5 0 00-6.364-6.364L4.5 8.25",
             },
@@ -187,11 +184,11 @@ export default function HandwerkClient() {
           <div>
             <span className="inline-block px-3 py-1 text-xs font-bold bg-red-500/20 text-red-300 rounded-full mb-4">ECHTZEIT-RENTABILITAET</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
-              Sie erfahren erst beim Steuerberater, dass die Baustelle Verlust war?
+              Wussten Sie schon beim Steuerberater, dass Sie draufgezahlt haben?
             </h2>
             <p className="text-xl text-gray-300 mb-4">Damit ist Schluss.</p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Jede laufende Baustelle hat eine Live-Übersicht: Materialkosten, Stunden, Nachtraege &ndash; alles gegen Ihre Angebotssumme gerechnet. Sie sehen sofort, wenn eine Baustelle kippt, und können gegensteuern. Kein Warten auf den Monatsabschluss, keine boesen Ueberraschungen.
+              Taskey rechnet jede Baustelle live gegen Ihren Angebotspreis. Sie sehen sofort, wenn etwas kippt &ndash; und können reagieren, bevor es zu spät ist.
             </p>
             <a href="https://app.taskey.de/register" className="inline-block px-6 py-3 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-sm">
               Jetzt kostenlos testen
@@ -275,11 +272,11 @@ export default function HandwerkClient() {
           <div className="order-1 lg:order-2">
             <span className="inline-block px-3 py-1 text-xs font-bold bg-purple-100 text-purple-800 rounded-full mb-4">TASKEY SHARE</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
-              Der Bauherr ruft 15-mal am Tag: &bdquo;Wie weit seid ihr?&ldquo;
+              &bdquo;Wie weit seid ihr?&ldquo; &ndash; 15 Mal am Tag.
             </h2>
-            <p className="text-xl text-gray-700 mb-4">Ein Link. Er sieht alles selbst. Und ruft nie wieder an.</p>
+            <p className="text-xl text-gray-700 mb-4">Damit ist Schluss.</p>
             <p className="text-gray-600 leading-relaxed">
-              Sie schicken Ihrem Bauherrn einmal einen Link. Darin sieht er jederzeit: aktuelle Baustellenfotos, Fortschritt in Prozent, Restbudget, geplante nächste Schritte. Ihr Team arbeitet weiter, statt Statusupdates am Telefon durchzugeben.
+              Sie schicken Ihrem Bauherrn einmal einen Link. Darin sieht er: Fotos, Fortschritt, Restbudget, nächste Schritte. Ihr Team arbeitet weiter, statt am Telefon den Stand durchzugeben.
             </p>
           </div>
         </div>
@@ -292,32 +289,32 @@ export default function HandwerkClient() {
         <div className="text-center mb-14">
           <span className="inline-block px-3 py-1 text-xs font-bold bg-green-100 text-green-800 rounded-full mb-4">MOBILE APP</span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Die Handy-App für Ihre Mitarbeiter
+            Die App, die Ihr Team sofort kann.
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            So einfach wie WhatsApp. Auch für Mitarbeiter ohne perfekte Deutschkenntnisse.
+            Kein Handbuch. Keine Schulung. Öffnen, tippen, fertig.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              title: "Kinderleichte Bedienung",
-              desc: "Keine Schulung noetig. Ihre Mitarbeiter können sofort loslegen.",
+              title: "So einfach wie WhatsApp",
+              desc: "Keine Schulung nötig. Auch für Mitarbeiter ohne perfekte Deutschkenntnisse.",
               iconPath: "M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3",
             },
             {
-              title: "Offline-faehig",
-              desc: "Funktioniert auch im Rohbau ohne Empfang. Daten werden später synchronisiert.",
+              title: "Funktioniert ohne Netz",
+              desc: "Im Rohbau kein Empfang? Kein Problem. Alles wird gespeichert und später synchronisiert.",
               iconPath: "M3 3l8.735 8.735m0 0a.374.374 0 11.53.53m-.53-.53l.53.53m0 0L21 21M14.652 9.348a3.75 3.75 0 010 5.304m2.121-7.425a6.75 6.75 0 010 9.546m2.122-11.667a9.75 9.75 0 010 13.788",
             },
             {
-              title: "Sofort-Nachrichten",
-              desc: "Bei neuen Aufträgen und Änderungen erhaelt Ihr Team sofort eine Benachrichtigung.",
+              title: "Sofort Bescheid",
+              desc: "Neuer Auftrag? Änderung? Ihr Team bekommt sofort eine Nachricht aufs Handy.",
               iconPath: "M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0",
             },
             {
-              title: "Anmelden per Fingerabdruck",
-              desc: "Oder per Gesichtserkennung. Kein Passwort-Chaos auf der Baustelle.",
+              title: "Finger drauf, drin",
+              desc: "Anmelden per Fingerabdruck oder Gesicht. Kein Passwort-Chaos auf der Baustelle.",
               iconPath: "M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33",
             },
           ].map((item, i) => (
@@ -340,30 +337,30 @@ export default function HandwerkClient() {
       <Section className="bg-gray-50">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Für jeden Handwerksbetrieb die richtige Lösung
+            Für jeden Betrieb die richtige Lösung
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
               size: "1 - 5 Mitarbeiter",
-              title: "Einstieg & Aufbau",
-              desc: "Sie sind gerade dabei, Ihren Betrieb aufzubauen, oder arbeiten als kleiner Handwerksbetrieb? Taskey bringt Struktur ab Tag 1.",
+              title: "Klein, aber organisiert",
+              desc: "Sie bauen gerade auf oder arbeiten im kleinen Team? Taskey bringt Struktur ab Tag 1.",
               tier: "START",
               price: "11,79",
             },
             {
               size: "6 - 20 Mitarbeiter",
-              title: "Wachstum & Kontrolle",
-              desc: "Ihr Betrieb waechst, mehrere Baustellen gleichzeitig, immer mehr Verwaltung? Taskey gibt Ihnen die Übersicht über alle Teams und Projekte.",
+              title: "Wachsen ohne Chaos",
+              desc: "Mehrere Baustellen, mehrere Teams? Taskey gibt Ihnen die Übersicht, die Sie brauchen.",
               tier: "GROW",
               price: "21,78",
               highlight: true,
             },
             {
               size: "21+ Mitarbeiter",
-              title: "Skalierung & Effizienz",
-              desc: "Sie leiten einen grossen Handwerksbetrieb mit mehreren Teams und komplexen Baustellen? Taskey waechst mit Ihnen.",
+              title: "Gross und trotzdem einfach",
+              desc: "Komplexe Baustellen, viele Gewerke? Taskey wächst mit. Ohne zusätzliche IT.",
               tier: "SCALE",
               price: "29,77",
             },
@@ -387,7 +384,7 @@ export default function HandwerkClient() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-gray-400 mt-6">Alle Preise zzgl. MwSt. &middot; Täglich kuendbar &middot; 14 Tage kostenlos testen</p>
+        <p className="text-center text-xs text-gray-400 mt-6">Alle Preise zzgl. MwSt. &middot; Täglich kündbar &middot; 14 Tage kostenlos testen</p>
       </Section>
 
       {/* ────────────────────────────────────────────────────────────
@@ -396,10 +393,10 @@ export default function HandwerkClient() {
       <Section className="bg-white">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
-            Für alle Gewerke im Handwerk
+            Egal welches Gewerk &ndash; Taskey passt.
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Taskey passt sich an Ihren Betrieb an &ndash; egal ob Elektro, SHK oder Garten- und Landschaftsbau.
+            Elektro, SHK, Dach, Boden, Garten &ndash; die App passt sich an Ihren Betrieb an.
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
@@ -440,7 +437,7 @@ export default function HandwerkClient() {
           {[
             {
               q: "Wie funktioniert die automatische Zeiterfassung auf der Baustelle?",
-              a: "Ihre Mitarbeiter oeffnen die Taskey-App und starten den Auftrag mit einem Tipp. Die App erfasst automatisch Arbeitszeit, Pausen und Fahrtzeiten. Am Monatsende exportieren Sie die fertigen Daten für Ihre Lohnabrechnung.",
+              a: "Ihre Mitarbeiter öffnen die Taskey-App und starten den Auftrag mit einem Tipp. Die App erfasst automatisch Arbeitszeit, Pausen und Fahrtzeiten. Am Monatsende exportieren Sie die fertigen Daten für Ihre Lohnabrechnung.",
             },
             {
               q: "Funktioniert Taskey auch ohne Internet im Rohbau?",
@@ -448,27 +445,27 @@ export default function HandwerkClient() {
             },
             {
               q: "Erfasst Taskey auch Fahrtzeiten zwischen Baustellen?",
-              a: "Ja. Ihre Mitarbeiter können Fahrtzeiten separat erfassen. So sehen Sie genau, wie viel Zeit auf der Strasse und wie viel auf der Baustelle verbracht wird.",
+              a: "Ja. Ihre Mitarbeiter können Fahrtzeiten separat erfassen. So sehen Sie genau, wie viel Zeit auf der Straße und wie viel auf der Baustelle verbracht wird.",
             },
             {
               q: "Kann ich das Werkzeug meines Betriebs mit NFC erfassen?",
               a: "Ja. Kleben Sie einen NFC-Aufkleber an jedes Werkzeug oder jede Maschine. Per Handy-Scan wird der Standort, die letzte Nutzung und die Wartungshistorie gespeichert.",
             },
             {
-              q: "Wie dokumentiere ich Nachtraege und Zusatzleistungen?",
-              a: "Direkt in der App. Ihr Mitarbeiter fotografiert die Zusatzarbeit, traegt Material und Stunden ein. Sie haben sofort den Nachweis für Ihren Kunden oder Auftraggeber.",
+              q: "Wie dokumentiere ich Nachträge und Zusatzleistungen?",
+              a: "Direkt in der App. Ihr Mitarbeiter fotografiert die Zusatzarbeit, trägt Material und Stunden ein. Sie haben sofort den Nachweis für Ihren Kunden oder Auftraggeber.",
             },
             {
               q: "Gibt es eine Verbindung zu LexOffice, Sage oder DATEV?",
-              a: "Ja, ab dem GROW-Paket bieten wir Anbindungen an gaengige Buchhaltungssoftware. Zeitdaten und Abrechnungen fliessen automatisch in Ihr System.",
+              a: "Ja, ab dem GROW-Paket bieten wir Anbindungen an gängige Buchhaltungssoftware. Zeitdaten und Abrechnungen fließen automatisch in Ihr System.",
             },
             {
               q: "Was kostet Taskey für meinen Handwerksbetrieb?",
-              a: "Ab 11,79 Euro pro Mitarbeiter und Monat (START). Das beliebteste Paket GROW kostet 21,78 Euro. Alle Preise sind täglich kuendbar, und Sie können 14 Tage lang kostenlos testen.",
+              a: "Ab 11,79 Euro pro Mitarbeiter und Monat (START). Das beliebteste Paket GROW kostet 21,78 Euro. Alle Preise sind täglich kündbar, und Sie können 14 Tage lang kostenlos testen.",
             },
             {
               q: "Wie schnell kann ich starten?",
-              a: "In unter 5 Minuten. Konto anlegen, Mitarbeiter einladen, loslegen. Optional richten wir alles für Sie ein - schluesselfertig.",
+              a: "In unter 5 Minuten. Konto anlegen, Mitarbeiter einladen, loslegen. Optional richten wir alles für Sie ein - schlüsselfertig.",
             },
           ].map((item, i) => (
             <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden">
@@ -504,16 +501,16 @@ export default function HandwerkClient() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
-              Fragen zu Taskey für Ihren Handwerksbetrieb?
+              Fragen? Melden Sie sich.
             </h2>
-            <p className="text-gray-600">Fynn Schulz &ndash; Gründer und persoenlicher Ansprechpartner</p>
+            <p className="text-gray-600">Fynn Schulz &ndash; Gründer und persönlicher Ansprechpartner</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               {[
                 { label: "Telefon", value: "+49 151 68488999", href: "tel:+4915168488999", iconPath: "M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" },
                 { label: "E-Mail", value: "fynn@taskeyapp.com", href: "mailto:fynn@taskeyapp.com", iconPath: "M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" },
-                { label: "Adresse", value: "In der Acht 44, 66333 Voelklingen", href: null, iconPath: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
+                { label: "Adresse", value: "In der Acht 44, 66333 Völklingen", href: null, iconPath: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -552,29 +549,29 @@ export default function HandwerkClient() {
       <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            Bereit, Ihren Handwerksbetrieb zu vereinfachen?
+            Bereit?
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            14 Tage kostenlos testen &ndash; keine Kreditkarte, keine Verpflichtung.
+            14 Tage kostenlos. Keine Kreditkarte. Kein Risiko.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
               href="https://app.taskey.de/register"
               className="px-8 py-4 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-base shadow-lg"
             >
-              Jetzt kostenlos starten
+              Jetzt starten
             </a>
             <Link
               href="/pricing?model=handwerk"
               className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-base"
             >
-              Alle Preise ansehen
+              Preise ansehen
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <span>Keine Kreditkarte</span>
             <span>14 Tage kostenlos</span>
-            <span>Täglich kuendbar</span>
+            <span>Täglich kündbar</span>
           </div>
         </div>
       </section>
