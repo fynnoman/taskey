@@ -73,7 +73,6 @@ export default function ScrollLine() {
     const iosEl = document.querySelector<HTMLElement>('[data-scrollline-ios]');
     const bizEl = document.querySelector<HTMLElement>('[data-scrollline-biz]');
     const ctaEl = document.querySelector<HTMLElement>('[data-scrollline-cta]');
-    const faqEl = document.querySelector<HTMLElement>('[data-scrollline-faq]');
 
     if (!iosEl || !bizEl) {
       console.warn('[ScrollLine] Missing elements:', { ios: !!iosEl, biz: !!bizEl });
@@ -93,21 +92,19 @@ export default function ScrollLine() {
 
     boundsRef.current = {
       top: ios.top,
-      bottom: faqEl ? pr(faqEl).bottom : biz.bottom + 1000,
+      bottom: ctaEl ? pr(ctaEl).bottom + 40 : biz.bottom + 1000,
     };
 
-    const lx = 40, cx = vw / 2, R = 50;
+    const lx = 40, R = 50;
     const rx = vw - 60; // right side of the line
 
     const startY = ios.top + 60;
     const bendY = ios.bottom - 40;
     const bizBottomY = biz.bottom;
 
-    let bly = bizBottomY + 800;
-    if (ctaEl) bly = pr(ctaEl).bottom + 60;
-
-    let endY = boundsRef.current.bottom;
-    if (faqEl) { const f = pr(faqEl); endY = f.top + f.h / 2 - 130; }
+    // End the line just below the Branchen CTA box (on the right side)
+    let endY = bizBottomY + 800;
+    if (ctaEl) { endY = pr(ctaEl).bottom + 40; }
 
     const d = [
       // Phase 1: vertical down left side of iOS section
@@ -117,18 +114,11 @@ export default function ScrollLine() {
       `Q ${lx} ${bendY} ${lx + R} ${bendY}`,
       `L ${rx - R} ${bendY}`,
       `Q ${rx} ${bendY} ${rx} ${bendY + R}`,
-      // Phase 3: straight down through BusinessSize (no zigzag)
-      `L ${rx} ${bizBottomY}`,
-      // Phase 4: continue down past Branchen CTA, then bend left to center
-      `L ${rx} ${bly - R}`,
-      `Q ${rx} ${bly} ${rx - R} ${bly}`,
-      `L ${cx + R} ${bly}`,
-      `Q ${cx} ${bly} ${cx} ${bly + R}`,
-      // Phase 5: down to FAQ heading
-      `L ${cx} ${endY}`,
+      // Phase 3: straight down through BusinessSize + Branchen
+      `L ${rx} ${endY}`,
     ].join(' ');
 
-    setEndPoint({ x: cx, y: endY });
+    setEndPoint({ x: rx, y: endY });
 
     // Store Y positions for accurate scroll→progress mapping
     // Key points along the path with their (x, y) coordinates
@@ -138,12 +128,7 @@ export default function ScrollLine() {
       { x: lx + R, y: bendY },        // after bend (start horizontal)
       { x: rx - R, y: bendY },        // end horizontal (before bend down)
       { x: rx, y: bendY + R },        // after bend (start vertical)
-      { x: rx, y: bizBottomY },       // end of BusinessSize vertical
-      { x: rx, y: bly - R },          // before bend left
-      { x: rx - R, y: bly },          // after bend (start horizontal left)
-      { x: cx + R, y: bly },          // end horizontal (before bend down)
-      { x: cx, y: bly + R },          // after bend (start vertical)
-      { x: cx, y: endY },             // end (FAQ)
+      { x: rx, y: endY },             // end (below Branchen CTA)
     ];
 
     // Compute segment lengths with horizontal speed boost (30% faster = 0.7 weight)

@@ -261,7 +261,7 @@ export default function Branchen() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gray-50 border border-gray-200 rounded-xl sm:rounded-3xl p-6 sm:p-12 text-left">
+        <div data-scrollline-cta className="bg-gray-50 border border-gray-200 rounded-xl sm:rounded-3xl p-6 sm:p-12 text-left">
           <h3 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-gray-900">
             Ihre Reinigungsart ist dabei?
           </h3>
@@ -276,12 +276,6 @@ export default function Branchen() {
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-lg font-semibold rounded-xl text-center"
             >
               {t("hero.cta.trial")}
-            </Link>
-            <Link
-              href="/demo"
-              className="px-6 sm:px-8 py-3 sm:py-4 border border-gray-300 text-gray-700 text-sm sm:text-lg font-semibold rounded-xl text-center"
-            >
-              Live Demo ansehen
             </Link>
           </div>
         </div>

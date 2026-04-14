@@ -38,12 +38,6 @@ export default function DarkHeader() {
               Features
             </Link>
             <Link
-              href="/demo"
-              className={`transition font-medium ${pathname === '/demo' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
-            >
-              Live Demo
-            </Link>
-            <Link
               href="/pricing"
               className={`transition font-medium ${pathname === '/pricing' ? 'text-blue-400 font-bold' : 'text-gray-300 hover:text-white'}`}
             >
@@ -124,13 +118,6 @@ export default function DarkHeader() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Features
-              </Link>
-              <Link
-                href="/demo"
-                className={`px-4 py-3 rounded-lg transition ${pathname === '/demo' ? 'text-blue-400 bg-blue-900/30 font-bold' : 'text-gray-300 hover:bg-gray-900'}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Live Demo
               </Link>
               <Link
                 href="/pricing"

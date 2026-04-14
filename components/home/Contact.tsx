@@ -91,16 +91,10 @@ export default function Contact() {
               </p>
               <div className="space-y-3">
                 <Link
-                  href="/demo"
-                  className="block w-full px-5 py-3 bg-gray-900 text-white text-center font-bold rounded-xl hover:bg-gray-800 transition-colors text-sm"
-                >
-                  Live Demo ansehen
-                </Link>
-                <Link
                   href="https://signup.vars-development.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block px-5 py-3 bg-transparent border border-gray-300 text-gray-700 text-center font-bold rounded-xl hover:bg-gray-100 transition-colors text-sm"
+                  className="block w-full px-5 py-3 bg-gray-900 text-white text-center font-bold rounded-xl hover:bg-gray-800 transition-colors text-sm"
                 >
                   {t("contact.cta.trial")}
                 </Link>

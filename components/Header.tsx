@@ -40,12 +40,6 @@ export default function Header() {
               {t("nav.features")}
             </Link>
             <Link
-              href="/demo"
-              className={`transition font-medium ${pathname === '/demo' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
-            >
-              {t("nav.liveDemo")}
-            </Link>
-            <Link
               href="/pricing"
               className={`transition font-medium ${pathname === '/pricing' ? 'text-blue-900 font-bold' : 'text-gray-600 hover:text-gray-900'}`}
             >
@@ -132,13 +126,6 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.features")}
-              </Link>
-              <Link
-                href="/demo"
-                className={`px-4 py-3 rounded-lg transition ${pathname === '/demo' ? 'text-blue-900 bg-blue-50 font-bold' : 'text-gray-700 hover:bg-gray-50'}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t("nav.liveDemo")}
               </Link>
               <Link
                 href="/pricing"

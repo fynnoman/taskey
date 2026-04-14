@@ -79,11 +79,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/demo" className="text-gray-300 hover:text-white transition">
-                  Live Demo
-                </Link>
-              </li>
-              <li>
                 <Link href="/loesungen" className="text-gray-300 hover:text-white transition">
                   Alle Lösungen
                 </Link>

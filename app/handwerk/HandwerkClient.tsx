@@ -62,12 +62,6 @@ export default function HandwerkClient() {
             >
               14 Tage kostenlos testen
             </a>
-            <Link
-              href="/demo"
-              className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-colors text-base"
-            >
-              Live-Demo ansehen
-            </Link>
           </div>
           <p className="text-sm text-gray-400">Keine Kreditkarte. Kein Risiko. Sofort loslegen.</p>
         </div>
@@ -540,19 +534,13 @@ export default function HandwerkClient() {
               ))}
             </div>
             <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 text-center">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Persoenliche Demo vereinbaren</h3>
-              <p className="text-sm text-gray-600 mb-6">Wir zeigen Ihnen Taskey live in 15 Minuten &ndash; zugeschnitten auf Ihren Betrieb.</p>
-              <Link
-                href="/demo"
-                className="block w-full py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors text-sm mb-3"
-              >
-                Demo buchen
-              </Link>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Jetzt kostenlos starten</h3>
+              <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 14 Tage lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
               <a
                 href="https://app.taskey.de/register"
-                className="block w-full py-3 border border-gray-300 text-gray-700 font-semibold rounded-xl hover:bg-gray-100 transition-colors text-sm"
+                className="block w-full py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors text-sm"
               >
-                Oder: Direkt kostenlos starten
+                Kostenlos testen
               </a>
             </div>
           </div>

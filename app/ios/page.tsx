@@ -300,12 +300,6 @@ export default function IOSPage() {
               >
                 {t("iosPage.branchen.cta.trial")}
               </Link>
-              <Link
-                href="/demo"
-                className="flex items-center justify-center px-6 py-3.5 text-white border-2 border-gray-600 text-sm font-bold rounded-xl"
-              >
-                {t("iosPage.branchen.cta.demo")}
-              </Link>
             </div>
 
             {/* Desktop CTAs */}
@@ -317,12 +311,6 @@ export default function IOSPage() {
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-white text-lg font-bold rounded-2xl hover:bg-blue-800 transition-colors shadow-lg"
               >
                 {t("iosPage.branchen.cta.trial")}
-              </Link>
-              <Link
-                href="/demo"
-                className="inline-flex items-center justify-center px-8 py-4 text-white border-2 border-gray-600 text-lg font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-800 transition-colors"
-              >
-                {t("iosPage.branchen.cta.demo")}
               </Link>
             </div>
           </div>

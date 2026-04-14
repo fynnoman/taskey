@@ -88,9 +88,6 @@ function PricingPageInner() {
           <a href="https://app.taskey.de/register" className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors">
             {t("pricing.hero.cta.trial")}
           </a>
-          <a href="/demo" className="px-8 py-3.5 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 transition-colors">
-            {t("pricing.hero.cta.demo")}
-          </a>
         </div>
       </div>
     </section>

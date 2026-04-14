@@ -70,12 +70,6 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
               {data.ctaText}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/10 text-lg"
-            >
-              Demo ansehen
-            </Link>
           </div>
 
           <p className="text-gray-600 text-sm mt-5">Keine Kreditkarte · 14 Tage kostenlos · Sofort startklar</p>

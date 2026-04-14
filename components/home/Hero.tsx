@@ -44,12 +44,6 @@ export default function Hero() {
                 >
                   {t("homeHero.cta.trial")}
                 </Link>
-                <Link
-                  href="/demo"
-                  className="px-10 py-5 text-gray-900 border-2 border-gray-200 text-xl font-bold rounded-2xl hover:border-gray-400 hover:bg-gray-50 transition-all"
-                >
-                  {t("homeHero.cta.demo")}
-                </Link>
               </div>
 
               <p className="mt-5 text-base text-gray-500">{t("homeHero.trust")}</p>
