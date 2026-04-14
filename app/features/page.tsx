@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
@@ -28,7 +27,6 @@ interface Category {
 export default function FeaturesPage() {
   const [activeCategory, setActiveCategory] = useState('nfc');
   const [activeFeature, setActiveFeature] = useState('digitale-anlagenakte');
-  const [expandedDetails, setExpandedDetails] = useState<string | null>(null);
   const { t } = useLanguage();
 
   const categories: Category[] = [

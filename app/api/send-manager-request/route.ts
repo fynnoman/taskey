@@ -12,7 +12,7 @@ function persistManagerRequest(payload: object) {
       body: JSON.stringify(payload),
       signal: AbortSignal.timeout(5000),
     }).catch(() => { }); // intentionally swallowed
-  } catch (_) { }
+  } catch { }
 }
 
 export async function POST(request: NextRequest) {
@@ -115,12 +115,13 @@ Zeitstempel: ${new Date().toLocaleString('de-DE')}
       { status: 200 }
     );
 
-  } catch (error: any) {
-    console.error('❌ Error sending manager request email:', error);
+  } catch (error: unknown) {
+    const err = error as Error & { code?: string; command?: string };
+    console.error('❌ Error sending manager request email:', err);
     console.error('Error details:', {
-      message: error.message,
-      code: error.code,
-      command: error.command,
+      message: err.message,
+      code: err.code,
+      command: err.command,
     });
     console.error('SMTP Config:', {
       user: 'finolino9@gmail.com',
@@ -130,7 +131,7 @@ Zeitstempel: ${new Date().toLocaleString('de-DE')}
     return NextResponse.json(
       {
         error: 'Fehler beim Senden der Anfrage. Bitte versuchen Sie es später erneut.',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        details: process.env.NODE_ENV === 'development' ? err.message : undefined
       },
       { status: 500 }
     );

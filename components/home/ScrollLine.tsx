@@ -170,7 +170,7 @@ export default function ScrollLine() {
   }, []);
 
   useEffect(() => {
-    recalc();
+    recalc(); // eslint-disable-line react-hooks/set-state-in-effect -- DOM layout measurement requires setState
     const timers = [100, 300, 800, 2000, 4000].map((ms) => setTimeout(recalc, ms));
     window.addEventListener('resize', recalc);
     window.addEventListener('load', recalc);

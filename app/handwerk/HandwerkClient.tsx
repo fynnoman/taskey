@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 // ─── Icons ─────────────────────────────────────────────────────────
 function CheckIcon({ className = "w-5 h-5 text-green-500" }: { className?: string }) {

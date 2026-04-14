@@ -8,7 +8,6 @@ import ReferralSection from "@/components/home/ReferralSection";
 
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
-const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
 const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));

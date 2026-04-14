@@ -190,7 +190,7 @@ export default function DatenschutzPage() {
 
             <p className="mt-4 bg-blue-50 p-4 rounded-lg">
               <strong>Cookie-Einstellungen verwalten:</strong><br />
-              Sie können Ihre Cookie-Einwilligung jederzeit über den Link "Cookie-Einstellungen" in der Fußzeile unserer Website ändern oder widerrufen.
+              Sie können Ihre Cookie-Einwilligung jederzeit über den Link &ldquo;Cookie-Einstellungen&rdquo; in der Fußzeile unserer Website ändern oder widerrufen.
             </p>
           </section>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 type CookiePreferences = {
   necessary: boolean;
@@ -11,7 +11,10 @@ type CookiePreferences = {
 };
 
 export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !localStorage.getItem('taskey-cookie-consent');
+  });
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
@@ -20,13 +23,6 @@ export default function CookieBanner() {
     marketing: false,
     external: false,
   });
-
-  useEffect(() => {
-    const consent = localStorage.getItem('taskey-cookie-consent');
-    if (!consent) {
-      setShowBanner(true);
-    }
-  }, []);
 
   const savePreferences = (prefs: CookiePreferences) => {
     localStorage.setItem('taskey-cookie-consent', JSON.stringify(prefs));
@@ -305,7 +301,7 @@ export default function CookieBanner() {
                 <p className="font-semibold mb-2">Widerruf & Änderung der Einwilligung</p>
                 <p>
                   Sie können Ihre Cookie-Einwilligung jederzeit mit Wirkung für die Zukunft ändern oder widerrufen.
-                  Hierfür steht Ihnen der Link „Cookie-Einstellungen" auf unserer Website dauerhaft zur Verfügung.
+                  Hierfür steht Ihnen der Link &ldquo;Cookie-Einstellungen&rdquo; auf unserer Website dauerhaft zur Verfügung.
                   Ein Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.
                 </p>
               </div>

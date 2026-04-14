@@ -16,7 +16,7 @@ export default function TaskeyShare() {
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-gray-900 leading-[1.1] mb-6">
               Ihr Telefon klingelt 15x am Tag:{' '}
-              <span className="text-blue-700">'Wie sieht es im Objekt aus?'</span>
+              <span className="text-blue-700">&apos;Wie sieht es im Objekt aus?&apos;</span>
             </h2>
 
             <h3 className="text-xl md:text-2xl font-bold text-gray-600 mb-6">
@@ -46,7 +46,7 @@ export default function TaskeyShare() {
                   <span key={i}>{star}</span>
                 ))}
               </div>
-              <span>'Seit dem Auftraggeber-Portal ruft kein Kunde mehr an. Allein das spart mir 1 Stunde am Tag.'</span>
+              <span>&apos;Seit dem Auftraggeber-Portal ruft kein Kunde mehr an. Allein das spart mir 1 Stunde am Tag.&apos;</span>
             </div>
           </div>
 

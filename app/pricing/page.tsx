@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, lazy, Suspense, useEffect } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -46,20 +46,13 @@ function PricingPageInner() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
 
-  const [activeModel, setActiveModel] = useState<"reinigung" | "handwerk">("reinigung");
+  const initialModel = searchParams.get("model");
+  const [activeModel, setActiveModel] = useState<"reinigung" | "handwerk">(
+    initialModel === "handwerk" ? "handwerk" : "reinigung"
+  );
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
   const [managerModalOpen, setManagerModalOpen] = useState(false);
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
-
-  // Read ?model=handwerk from URL to pre-select the correct toggle
-  useEffect(() => {
-    const model = searchParams.get("model");
-    if (model === "handwerk") {
-      setActiveModel("handwerk");
-    } else if (model === "reinigung") {
-      setActiveModel("reinigung");
-    }
-  }, [searchParams]);
 
   // Handwerk prices
   const handwerkPrices = {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from "@/context/LanguageContext";
 

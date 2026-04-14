@@ -1,14 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import ManagerRequestModal from "@/components/ManagerRequestModal";
 import DarkHeader from "@/components/DarkHeader";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PremiumManagerPage() {
   const [isManagerModalOpen, setIsManagerModalOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const { t } = useLanguage();
   const containerRef = React.useRef<HTMLDivElement>(null);
   const headingRef = React.useRef<HTMLHeadingElement>(null);

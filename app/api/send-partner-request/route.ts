@@ -11,7 +11,7 @@ function persistPartnerForm(payload: object) {
       body: JSON.stringify(payload),
       signal: AbortSignal.timeout(5000),
     }).catch(() => {});
-  } catch (_) {}
+  } catch {}
 }
 
 export async function POST(request: NextRequest) {
@@ -93,7 +93,7 @@ Zeitstempel: ${new Date().toLocaleString('de-DE')}
       { success: true, message: 'Partnerschaftsanfrage erfolgreich gesendet!' },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('❌ Error sending partner email:', error);
     return NextResponse.json(
       { error: 'Fehler beim Senden. Bitte versuchen Sie es später erneut.' },
