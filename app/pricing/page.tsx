@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { useLanguage } from "../../context/LanguageContext";
 
 const ManagerRequestModal = lazy(() => import("../../components/ManagerRequestModal"));
 const EnterpriseApplicationModal = lazy(() => import("../../components/EnterpriseApplicationModal"));
+
+// Wrap page in Suspense for useSearchParams
+export default function PricingPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <PricingPageInner />
+    </Suspense>
+  );
+}
 
 // ─── Helpers ───────────────────────────────────────────────────────
 function CheckIcon() {
@@ -32,13 +42,24 @@ function StarIcon() {
 }
 
 // ─── Main Page ─────────────────────────────────────────────────────
-export default function PricingPage() {
+function PricingPageInner() {
   const { t } = useLanguage();
+  const searchParams = useSearchParams();
 
   const [activeModel, setActiveModel] = useState<"reinigung" | "handwerk">("reinigung");
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
   const [managerModalOpen, setManagerModalOpen] = useState(false);
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
+
+  // Read ?model=handwerk from URL to pre-select the correct toggle
+  useEffect(() => {
+    const model = searchParams.get("model");
+    if (model === "handwerk") {
+      setActiveModel("handwerk");
+    } else if (model === "reinigung") {
+      setActiveModel("reinigung");
+    }
+  }, [searchParams]);
 
   // Handwerk prices
   const handwerkPrices = {

@@ -128,6 +128,16 @@ export default function Home() {
         </div>
         <SectionDivider from="white" to="#f9fafb" variant="dot-fade" />
         <Contact />
+
+        {/* Cross-link to Handwerk */}
+        <div className="bg-gray-100 border-t border-gray-200">
+          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center gap-2 text-sm text-gray-500">
+            <span>Sie kommen aus Handwerk oder Bau?</span>
+            <a href="/handwerk" className="text-blue-900 font-semibold hover:underline">
+              Zur Version fuer Handwerksbetriebe &rarr;
+            </a>
+          </div>
+        </div>
       </main>
     </>
   );

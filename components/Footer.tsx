@@ -88,6 +88,11 @@ export default function Footer() {
                   Alle Lösungen
                 </Link>
               </li>
+              <li>
+                <Link href="/handwerk" className="text-gray-300 hover:text-white transition">
+                  Fuer Handwerksbetriebe
+                </Link>
+              </li>
             </ul>
           </div>
 
