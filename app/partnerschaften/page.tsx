@@ -5,14 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 
-// SVG icon paths for benefits (static, no translation needed)
+// SVG icon paths for benefits (5 benefits now)
 const benefitIcons = [
   <svg key="b1" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
   <svg key="b2" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
   <svg key="b3" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
   <svg key="b4" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
-  <svg key="b5" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>,
-  <svg key="b6" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>,
+  <svg key="b5" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>,
 ];
 
 export default function PartnerschaftenPage() {
@@ -59,7 +58,6 @@ export default function PartnerschaftenPage() {
     { title: t('partner.benefit3.title'), description: t('partner.benefit3.desc'), icon: benefitIcons[2] },
     { title: t('partner.benefit4.title'), description: t('partner.benefit4.desc'), icon: benefitIcons[3] },
     { title: t('partner.benefit5.title'), description: t('partner.benefit5.desc'), icon: benefitIcons[4] },
-    { title: t('partner.benefit6.title'), description: t('partner.benefit6.desc'), icon: benefitIcons[5] },
   ];
 
   const [formData, setFormData] = useState({
@@ -102,7 +100,7 @@ export default function PartnerschaftenPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
-              Partnerprogramm
+              {t('partner.hero.badge')}
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[1.05] mb-6">
               {t('partner.hero.title')}<br />
@@ -119,7 +117,7 @@ export default function PartnerschaftenPage() {
                 href="#kontakt"
                 className="inline-flex items-center justify-center gap-3 bg-blue-900 hover:bg-blue-800 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-900/25 text-lg"
               >
-                Jetzt Partner werden
+                {t('partner.hero.cta1')}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
               <a
@@ -133,7 +131,7 @@ export default function PartnerschaftenPage() {
         </div>
       </section>
 
-      {/* Vertrauens-Statement */}
+      {/* Warum Taskey */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
@@ -148,7 +146,7 @@ export default function PartnerschaftenPage() {
         </div>
       </section>
 
-      {/* Benefits Grid */}
+      {/* Benefits Grid – 5 Vorteile */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -159,7 +157,7 @@ export default function PartnerschaftenPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div key={idx} className={`bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300${idx === 4 ? ' sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none' : ''}`}>
                 <div className="w-12 h-12 rounded-xl bg-blue-900 flex items-center justify-center mb-4 text-white">
                   {benefit.icon}
                 </div>
@@ -205,7 +203,7 @@ export default function PartnerschaftenPage() {
         </div>
       </section>
 
-      {/* So funktioniert's */}
+      {/* So funktioniert es */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -228,31 +226,7 @@ export default function PartnerschaftenPage() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-10 bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-3xl font-black text-gray-900">600+</p>
-              <p className="text-gray-500 text-sm mt-1">{t('partner.social.industries')}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-black text-gray-900">DSGVO</p>
-              <p className="text-gray-500 text-sm mt-1">{t('partner.social.compliant')}</p>
-            </div>
-            <div>
-              <p className="text-3xl font-black text-gray-900">100%</p>
-              <p className="text-gray-500 text-sm mt-1">Made in Germany</p>
-            </div>
-            <div>
-              <p className="text-3xl font-black text-gray-900">{t('partner.social.permanent')}</p>
-              <p className="text-gray-500 text-sm mt-1">{t('partner.social.revenue')}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Unsere Partner */}
+      {/* Kundenreferenz */}
       <section className="py-20 md:py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
@@ -266,7 +240,7 @@ export default function PartnerschaftenPage() {
             <div className="relative w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
-                alt="Taskey Partner – MG Gebäudeservice"
+                alt="Taskey Partner – MG Gebaeudeservice"
                 width={1200}
                 height={800}
                 className="w-full h-auto"
@@ -281,19 +255,19 @@ export default function PartnerschaftenPage() {
               <a href="https://mg-gebaeudeservice.de" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-8 py-6 mb-8 max-w-sm hover:shadow-lg transition-all duration-300">
                 <Image
                   src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
-                  alt="MG Gebäudeservice"
+                  alt="MG Gebaeudeservice"
                   width={140}
                   height={50}
                   className="object-contain"
                 />
-                <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
-                <p className="text-gray-500 text-sm leading-relaxed">Gebäudeservice aus Düsseldorf mit 30 Mitarbeitern – digitalisiert Zeiterfassung, Einsatzplanung und Dokumentation mit Taskey.</p>
+                <p className="text-gray-900 font-bold text-lg">MG Gebaeudeservice</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
               </a>
               <Link
                 href="/news/mg-gebaeudeservice-duesseldorf-case-study"
                 className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3.5 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-sm max-w-fit"
               >
-                Case Study lesen
+                {t('partner.partners.caseStudy')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
               </Link>
             </div>
@@ -421,7 +395,7 @@ export default function PartnerschaftenPage() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
-                    Wird gesendet...
+                    {t('partner.contact.sending')}
                   </>
                 ) : (
                   <>
