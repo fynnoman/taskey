@@ -50,9 +50,9 @@ const data: LandingPageData = {
           description: 'Kundenfeedback direkt in der Kundenakte dokumentieren.'
       },
       {
-          href: '/loesungen/reklamationen-verwalten-handwerk',
-          label: 'Reklamationen verwalten',
-          description: 'Aus negativem Feedback systematisch Reklamationen ableiten und lösen.'
+          href: '/loesungen/kundendatenbank-reinigungsfirma',
+          label: 'Kundendatenbank',
+          description: 'Aus negativem Feedback systematisch Reklamationen ableiten und loesen.'
       }
   ],
 };

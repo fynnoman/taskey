@@ -243,14 +243,14 @@ export default function IOSPage() {
           {/* ── Mobile Branchen (bis lg): Kompakte 2-Spalten ── */}
           <div className="lg:hidden grid grid-cols-2 gap-2.5 mb-8">
             {[
-              { icon: "🔧", name: "Handwerk" },
-              { icon: "🏢", name: "Facility Mgmt." },
-              { icon: "⚡", name: "Elektrotechnik" },
-              { icon: "🔩", name: "Sanitär & Heizung" },
-              { icon: "🏗️", name: "Baugewerbe" },
-              { icon: "🌿", name: "Gartenbau" },
-              { icon: "🧹", name: "Reinigung" },
-              { icon: "🚗", name: "KFZ-Service" },
+              { icon: "🧹", name: "Unterhaltsreinigung" },
+              { icon: "🏢", name: "Buero & Gewerbe" },
+              { icon: "🏨", name: "Hotelreinigung" },
+              { icon: "🏥", name: "Klinik & Praxis" },
+              { icon: "🏗️", name: "Baureinigung" },
+              { icon: "🪟", name: "Glasreinigung" },
+              { icon: "🏫", name: "Schulreinigung" },
+              { icon: "🏭", name: "Industriereinigung" },
             ].map((b) => (
               <div key={b.name} className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100">
                 <span className="text-xl block mb-1">{b.icon}</span>
@@ -262,14 +262,14 @@ export default function IOSPage() {
           {/* ── Desktop Branchen (ab lg): 4-Spalten Grid ── */}
           <div className="hidden lg:grid grid-cols-4 gap-4 mb-16">
             {[
-              { icon: "🔧", name: "Handwerk" },
-              { icon: "🏢", name: "Facility Management" },
-              { icon: "⚡", name: "Elektrotechnik" },
-              { icon: "🔩", name: "Sanitär & Heizung" },
-              { icon: "🏗️", name: "Baugewerbe" },
-              { icon: "🌿", name: "Garten- & Landschaftsbau" },
-              { icon: "🧹", name: "Reinigungsdienste" },
-              { icon: "🚗", name: "KFZ-Service" },
+              { icon: "🧹", name: "Unterhaltsreinigung" },
+              { icon: "🏢", name: "Buero- & Gewerbereinigung" },
+              { icon: "🏨", name: "Hotelreinigung" },
+              { icon: "🏥", name: "Klinik- & Praxisreinigung" },
+              { icon: "🏗️", name: "Baureinigung" },
+              { icon: "🪟", name: "Glas- & Fassadenreinigung" },
+              { icon: "🏫", name: "Schulreinigung" },
+              { icon: "🏭", name: "Industriereinigung" },
             ].map((b) => (
               <div
                 key={b.name}

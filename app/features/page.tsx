@@ -46,9 +46,9 @@ export default function FeaturesPage() {
         {
           id: 'werkzeug-tracking',
           name: 'Werkzeug & Maschinen-Tracking',
-          description: 'Nie wieder Werkzeug auf der Großbaustelle vergessen. Jeder Scan wird mit GPS-Standort protokolliert.',
+          description: 'Nie wieder Reinigungsgeraete im Objekt vergessen. Jeder Scan wird mit GPS-Standort protokolliert.',
           image: '/Unbenanntes_Projekt 5.png',
-          detailedInfo: '• NFC-Tags an Werkzeug und Equipment\n• Wer hat das Gerät gescannt? Wann? Wo?\n• Karte zeigt letzten bekannten Aufenthaltsort\n• Ende der Diskussionen und Suchaktionen\n• Wertvoll für Bau und verteilte Baustellen',
+          detailedInfo: '• NFC-Tags an Werkzeug und Equipment\n• Wer hat das Geraet gescannt? Wann? Wo?\n• Karte zeigt letzten bekannten Aufenthaltsort\n• Ende der Diskussionen und Suchaktionen\n• Wertvoll fuer verteilte Reinigungsobjekte',
         },
         {
           id: 'rechtssicher',
@@ -380,7 +380,7 @@ export default function FeaturesPage() {
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
               </svg>
-              Vollständiger Funktionsüberblick
+              {t('featuresPage.hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
@@ -416,7 +416,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <div className="py-20">
+      <div className="py-10 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Quick Navigation Buttons - Silber-Blau-Spektrum */}
@@ -424,20 +424,20 @@ export default function FeaturesPage() {
             <div className="grid md:grid-cols-3 gap-4">
               <a
                 href="/pricing"
-                className="group bg-gradient-to-br from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-600/40"
+                className="group bg-gradient-to-br from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white rounded-xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-600/40"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.prices')}</h3>
+                  <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.pricing')}</h3>
                   <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
-                <p className="text-slate-200 text-sm">{t('featuresPage.nav.prices.desc')}</p>
+                <p className="text-slate-200 text-sm">{t('featuresPage.nav.pricing.desc')}</p>
               </a>
 
               <a
                 href="/pricing#nfc-tags"
-                className="group bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-sky-400/40"
+                className="group bg-gradient-to-br from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-sky-400/40"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold text-white">{t('featuresPage.nav.nfc')}</h3>
@@ -450,7 +450,7 @@ export default function FeaturesPage() {
 
               <a
                 href="/premium-manager"
-                className="group bg-gradient-to-br from-slate-600 to-blue-700 hover:from-slate-500 hover:to-blue-600 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-500/40"
+                className="group bg-gradient-to-br from-slate-600 to-blue-700 hover:from-slate-500 hover:to-blue-600 text-white rounded-xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-500/40"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.manager')}</h3>
@@ -465,8 +465,8 @@ export default function FeaturesPage() {
 
           {/* Important Note Box */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl p-6 shadow-lg">
-              <div className="flex items-start gap-4">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl p-4 sm:p-6 shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -476,11 +476,11 @@ export default function FeaturesPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {t('featuresPage.noteBox.title')}
+                    {t('featuresPage.note.title')}
                   </h3>
                   <div className="space-y-3 text-gray-700">
                     <p className="leading-relaxed">
-                      {t('featuresPage.noteBox.intro')}
+                      {t('featuresPage.note.intro')}
                     </p>
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
                       <div className="bg-white rounded-lg p-4 border border-blue-100">
@@ -488,10 +488,10 @@ export default function FeaturesPage() {
                           <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          <h4 className="font-bold text-blue-900">{t('featuresPage.noteBox.dashboard')}</h4>
+                          <h4 className="font-bold text-blue-900">{t('featuresPage.note.dashboard.title')}</h4>
                         </div>
                         <p className="text-sm text-gray-600">
-                          {t('featuresPage.noteBox.dashboard.desc')}
+                          {t('featuresPage.note.dashboard.desc')}
                         </p>
                       </div>
                       <div className="bg-white rounded-lg p-4 border border-cyan-100">
@@ -499,10 +499,10 @@ export default function FeaturesPage() {
                           <svg className="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
-                          <h4 className="font-bold text-cyan-600">{t('featuresPage.noteBox.app')}</h4>
+                          <h4 className="font-bold text-cyan-600">{t('featuresPage.note.app.title')}</h4>
                         </div>
                         <p className="text-sm text-gray-600">
-                          {t('featuresPage.noteBox.app.desc')}
+                          {t('featuresPage.note.app.desc')}
                         </p>
                       </div>
                     </div>
@@ -513,7 +513,7 @@ export default function FeaturesPage() {
           </div>
 
           {/* Category Tabs - Silber-Blau-Spektrum */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12 border-b border-slate-200 pb-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 border-b border-slate-200 pb-4 overflow-x-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
@@ -521,7 +521,7 @@ export default function FeaturesPage() {
                   setActiveCategory(category.id);
                   setActiveFeature(category.features[0].id);
                 }}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold transition-all text-sm sm:text-base whitespace-nowrap ${
                   activeCategory === category.id
                     ? category.id === 'nfc' 
                       ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-xl'
@@ -540,7 +540,7 @@ export default function FeaturesPage() {
             <div className="md:col-span-4">
               <div className="sticky top-24 space-y-3">
                 {/* Sidebar Header - Dunkelste Grautöne (slate-800/900) */}
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 mb-4 shadow-xl border border-slate-700/50">
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-4 sm:p-6 mb-4 shadow-xl border border-slate-700/50">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-slate-700/60 backdrop-blur-xl rounded-xl flex items-center justify-center border border-slate-600/40 shadow-lg">
                       <svg className="w-5 h-5 text-slate-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -548,8 +548,8 @@ export default function FeaturesPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-50 text-lg">{t('featuresPage.sidebar.allFeatures')}</h3>
-                      <p className="text-slate-300 text-sm">{currentCategory?.features.length} {t('featuresPage.sidebar.functions')}</p>
+                      <h3 className="font-bold text-slate-50 text-lg">{t('featuresPage.sidebar.title')}</h3>
+                      <p className="text-slate-300 text-sm">{currentCategory?.features.length} {t('featuresPage.sidebar.count')}</p>
                     </div>
                   </div>
                   <div className="h-px bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
@@ -599,7 +599,7 @@ export default function FeaturesPage() {
                           {activeFeature !== feature.id && (
                             <div className="opacity-0 group-hover:opacity-100 transition-opacity mt-2">
                               <span className="text-xs text-gray-600 font-semibold flex items-center gap-1">
-                                {t('featuresPage.sidebar.learnMore')}
+                                {t('featuresPage.sidebar.more')}
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
@@ -619,12 +619,12 @@ export default function FeaturesPage() {
               {currentFeature && (
                 <div className="space-y-6">
                   {/* Main Feature Card */}
-                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-200/60">
+                  <div className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 border border-slate-200/60">
                     <div className="mb-8">
-                      <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
+                      <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
                         {currentFeature.name}
                       </h2>
-                      <p className="text-xl text-slate-600 leading-relaxed">
+                      <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
                         {currentFeature.description}
                       </p>
                     </div>
@@ -636,9 +636,9 @@ export default function FeaturesPage() {
                     <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-slate-600/10 rounded-full blur-[120px]"></div>
                     <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-slate-500/10 rounded-full blur-[120px]"></div>
                     
-                    <div className="relative p-8 md:p-12">
-                      <div className="flex items-start gap-6">
-                        <div className="flex-shrink-0">
+                    <div className="relative p-5 sm:p-8 md:p-12">
+                      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                        <div className="flex-shrink-0 hidden sm:block">
                           <div className="w-14 h-14 bg-slate-700/40 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-slate-600/30 shadow-lg">
                             <svg className="w-7 h-7 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -646,10 +646,10 @@ export default function FeaturesPage() {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 flex flex-wrap items-center gap-3">
                             {t('featuresPage.detail.howItWorks')}
                             <span className="inline-flex items-center px-4 py-1.5 bg-slate-700/40 backdrop-blur-xl border border-slate-600/40 rounded-full text-sm font-semibold text-slate-300 shadow-lg">
-                              {t('featuresPage.detail.details')}
+                              {t('featuresPage.detail.label')}
                             </span>
                           </h3>
                           <div className="prose prose-invert prose-lg max-w-none">
@@ -664,8 +664,8 @@ export default function FeaturesPage() {
 
                   {/* Additional Tips Section - Elegant Gray */}
                   {'detailedInfo' in currentFeature && currentFeature.detailedInfo && (
-                    <div className="bg-gradient-to-br from-slate-100 to-gray-100 rounded-3xl border border-slate-300/50 p-8 shadow-xl">
-                      <div className="flex items-start gap-5">
+                    <div className="bg-gradient-to-br from-slate-100 to-gray-100 rounded-3xl border border-slate-300/50 p-5 sm:p-8 shadow-xl">
+                      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
                         <div className="flex-shrink-0">
                           <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl flex items-center justify-center shadow-lg">
                             <svg className="w-6 h-6 text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -676,7 +676,7 @@ export default function FeaturesPage() {
                         <div className="flex-1">
                           <h4 className="font-bold text-slate-900 mb-3 text-xl">{t('featuresPage.detail.goodToKnow')}</h4>
                           <p className="text-slate-700 leading-relaxed text-lg">
-                            {t('featuresPage.detail.goodToKnow.desc')}
+                            {t('featuresPage.detail.goodToKnow.text')}
                           </p>
                         </div>
                       </div>
@@ -691,32 +691,32 @@ export default function FeaturesPage() {
         {/* Onboarding Teaser */}
         <div className="relative mt-16 mb-12 mx-4 sm:mx-6 lg:mx-8 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-blue-950 border border-white/10">
           <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"></div>
-          <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+          <div className="p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-cyan-400/10 border border-cyan-400/20 text-cyan-300 px-4 py-1.5 rounded-full text-xs font-black mb-4 uppercase tracking-wide">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 Done-for-You Onboarding
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-3">
                 {t('featuresPage.onboarding.title')} <span className="text-cyan-400">{t('featuresPage.onboarding.title.highlight')}</span>
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
                 {t('featuresPage.onboarding.desc')}
               </p>
               <div className="flex flex-wrap gap-4 mt-5">
-                {[t('featuresPage.onboarding.tag1'), t('featuresPage.onboarding.tag2'), t('featuresPage.onboarding.tag3'), t('featuresPage.onboarding.tag4')].map((tag, i) => (
+                {['Mitarbeiter importieren', 'Objekte anlegen', 'Prozesse konfigurieren', 'Schulung inklusive'].map((tag, i) => (
                   <span key={i} className="text-xs text-gray-300 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">{tag}</span>
                 ))}
               </div>
             </div>
             <div className="flex-shrink-0 text-center">
-              <p className="text-gray-500 text-xs mb-3">{t('featuresPage.onboarding.setupFee')}</p>
+              <p className="text-gray-500 text-xs mb-3">{t('featuresPage.onboarding.priceNote')}</p>
               <p className="text-gray-300 text-sm font-semibold mb-4">{t('featuresPage.onboarding.forCustomers')}</p>
               <a
                 href="/pricing#onboarding"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 font-black px-8 py-4 rounded-xl hover:scale-105 transition-all shadow-lg text-sm"
               >
-                {t('featuresPage.onboarding.viewPrices')}
+                {t('featuresPage.onboarding.cta')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
             </div>
@@ -735,7 +735,7 @@ export default function FeaturesPage() {
             <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[120px]"></div>
           </div>
 
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 md:py-28">
             <div className="text-center">
               {/* Logo with Glow Effect */}
               <div className="mb-12 relative">
@@ -761,7 +761,7 @@ export default function FeaturesPage() {
               </div>
 
               {/* Main Headline */}
-              <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
                 {t('featuresPage.cta.title')}
                 <span className="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                   {t('featuresPage.cta.title.highlight')}
@@ -769,7 +769,7 @@ export default function FeaturesPage() {
               </h2>
 
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                {t('featuresPage.cta.desc')}
+                {t('featuresPage.cta.subtitle')}
               </p>
 
               {/* Features Grid - New Design */}
@@ -791,7 +791,7 @@ export default function FeaturesPage() {
                     subtext: "Ohne Verpflichtung" 
                   }
                 ].map((feature, index) => (
-                  <div key={index} className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/10 hover:border-cyan-400/30 transition-all hover:scale-105">
+                  <div key={index} className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/10 hover:bg-white/10 hover:border-cyan-400/30 transition-all hover:scale-105">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="relative z-10">
                       <div className="text-cyan-400 mb-3 flex justify-center">{feature.icon}</div>
@@ -808,10 +808,10 @@ export default function FeaturesPage() {
                   href="https://signup.vars-development.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-lg px-10 py-5 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden w-full sm:w-auto"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative z-10">{t('featuresPage.cta.button')}</span>
+                  <span className="relative z-10">{t('featuresPage.cta.trial')}</span>
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -819,7 +819,7 @@ export default function FeaturesPage() {
 
                 <a 
                   href="tel:+4915168488999" 
-                  className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold text-lg px-10 py-5 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:scale-105 w-full sm:w-auto"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -829,12 +829,12 @@ export default function FeaturesPage() {
               </div>
 
               {/* Trust indicators - New Style */}
-              <div className="flex flex-wrap justify-center items-center gap-8 text-gray-300 text-sm">
+              <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-8 text-gray-300 text-xs sm:text-sm">
                 <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
                   <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>{t('featuresPage.cta.noCard')}</span>
+                  <span>{t('featuresPage.cta.noCreditCard')}</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
                   <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
@@ -854,9 +854,9 @@ export default function FeaturesPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-20 pb-12 sm:pb-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {t('featuresPage.faq.title')}
             </h2>
             <p className="text-xl text-gray-600">
@@ -903,8 +903,8 @@ export default function FeaturesPage() {
                 key={index} 
                 className="bg-white rounded-lg shadow-md group"
               >
-                <summary className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition">
-                  <h3 className="font-bold text-gray-900 text-lg pr-4">
+                <summary className="flex justify-between items-center p-4 sm:p-6 cursor-pointer hover:bg-gray-50 rounded-lg transition">
+                  <h3 className="font-bold text-gray-900 text-base sm:text-lg pr-4">
                     {faq.question}
                   </h3>
                   <svg 
@@ -916,7 +916,7 @@ export default function FeaturesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <div className="px-6 pb-6 pt-2">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-2">
                   <p className="text-gray-600 leading-relaxed">
                     {faq.answer}
                   </p>
@@ -928,7 +928,7 @@ export default function FeaturesPage() {
           {/* CTA at the end */}
           <div className="mt-12 text-center">
             <p className="text-lg text-gray-600 mb-6">
-              {t('featuresPage.faq.moreQuestions')}
+              {t('featuresPage.faq.contact')}
             </p>
             <a 
               href="mailto:info@taskeyapp.com" 

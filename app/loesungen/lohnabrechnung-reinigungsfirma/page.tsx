@@ -50,9 +50,9 @@ const data: LandingPageData = {
           description: 'Schichten planen und Zuschläge automatisch berechnen.'
       },
       {
-          href: '/loesungen/ueberstunden-verwalten-handwerksbetrieb',
-          label: 'Überstunden verwalten',
-          description: 'Überstunden korrekt erfassen und in die Lohnabrechnung übernehmen.'
+          href: '/loesungen/digitale-stundenzettel-reinigung',
+          label: 'Digitale Stundenzettel',
+          description: 'Ueberstunden korrekt erfassen und in die Lohnabrechnung uebernehmen.'
       }
   ],
 };

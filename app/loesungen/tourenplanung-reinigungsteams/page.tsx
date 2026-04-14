@@ -50,9 +50,9 @@ const data: LandingPageData = {
           description: 'Touren in den täglichen Einsatzplan integrieren.'
       },
       {
-          href: '/loesungen/fahrzeugplanung-handwerksbetrieb',
-          label: 'Fahrzeugplanung',
-          description: 'Fahrzeuge für die Touren effizient einplanen.'
+          href: '/loesungen/personalplanung-reinigung',
+          label: 'Personalplanung',
+          description: 'Personal und Fahrzeuge fuer die Touren effizient einplanen.'
       }
   ],
 };

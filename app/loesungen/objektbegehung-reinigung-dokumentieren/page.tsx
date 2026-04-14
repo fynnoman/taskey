@@ -45,9 +45,9 @@ const data: LandingPageData = {
           description: 'Objektbegehungen als Instrument der Qualitätssicherung.'
       },
       {
-          href: '/loesungen/fotos-baustelle-dokumentieren-app',
-          label: 'Fotos dokumentieren',
-          description: 'Begehungen mit Fotos ergänzen und Mängel dokumentieren.'
+          href: '/loesungen/digitale-reinigungsakte',
+          label: 'Digitale Reinigungsakte',
+          description: 'Begehungen mit Fotos ergaenzen und Maengel dokumentieren.'
       },
       {
           href: '/loesungen/leistungsnachweis-gebaeudereinigung',

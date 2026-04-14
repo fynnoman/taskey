@@ -40,19 +40,19 @@ const data: LandingPageData = {
   closingText: 'Taskey verhindert verlorenes Equipment und leere Vorräte – für reibungslosen Betrieb.',
   relatedLinks: [
       {
-          href: '/loesungen/materialverwaltung-handwerk',
-          label: 'Materialverwaltung',
+          href: '/loesungen/reinigungsmittel-verwaltung',
+          label: 'Reinigungsmittel-Verwaltung',
           description: 'Reinigungsmittel und Material als Inventar effizient verwalten.'
       },
       {
-          href: '/loesungen/lagerverwaltung-handwerksbetrieb',
-          label: 'Lagerverwaltung',
-          description: 'Inventar im Lager organisieren und Bestände überwachen.'
+          href: '/loesungen/objektverwaltung-gebaeudereinigung',
+          label: 'Objektverwaltung',
+          description: 'Inventar pro Reinigungsobjekt organisieren und Bestaende ueberwachen.'
       },
       {
-          href: '/loesungen/bestellwesen-handwerksbetrieb',
-          label: 'Bestellwesen',
-          description: 'Bei niedrigem Inventar automatisch nachbestellen.'
+          href: '/loesungen/nachkalkulation-reinigungsauftraege',
+          label: 'Nachkalkulation',
+          description: 'Materialkosten in die Auftragsnachkalkulation einbeziehen.'
       }
   ],
 };
