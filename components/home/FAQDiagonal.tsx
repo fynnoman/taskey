@@ -27,9 +27,9 @@ export default function FAQDiagonal() {
         "Ja! Sie können Taskey 14 Tage komplett kostenlos und unverbindlich testen. Keine Kreditkarte erforderlich.",
     },
     {
-      question: "Fuer welche Reinigungsunternehmen ist Taskey geeignet?",
+      question: "Für welche Reinigungsunternehmen ist Taskey geeignet?",
       answer:
-        "Taskey ist speziell fuer die Gebaeudereinigung im DACH-Raum entwickelt – egal ob Unterhaltsreinigung, Glasreinigung, Industriereinigung, Klinik- und Hygienereinigung oder Sonderreinigung. Ueberall dort, wo mobile Reinigungsteams effizient koordiniert werden muessen.",
+        "Taskey ist speziell für die Gebäudereinigung im DACH-Raum entwickelt – egal ob Unterhaltsreinigung, Glasreinigung, Industriereinigung, Klinik- und Hygienereinigung oder Sonderreinigung. Ueberall dort, wo mobile Reinigungsteams effizient koordiniert werden müssen.",
     },
     {
       question: "Gibt es eine App für Mitarbeiter?",

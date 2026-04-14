@@ -40,17 +40,17 @@ const data: LandingPageData = {
   closingText: 'Starte jetzt und mach Reinigungsqualität sichtbar.',
   relatedLinks: [
       {
-          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          href: '/loesungen/reinigungspläne-digital-erstellen',
           label: 'Reinigungspläne digital',
           description: 'Checklisten als Teil umfassender Reinigungspläne.'
       },
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'Checklisten als Werkzeug für die Qualitätskontrolle nutzen.'
       },
       {
-          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          href: '/loesungen/leistungsnachweis-gebäudereinigung',
           label: 'Leistungsnachweise',
           description: 'Abgehakte Checklisten als Leistungsnachweis verwenden.'
       }

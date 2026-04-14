@@ -4,7 +4,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 
 export const metadata: Metadata = {
   title: 'Reinigung Buchhaltung LexOffice – Nahtlose Integration | Taskey',
-  description: 'Taskey + LexOffice: Rechnungen, Stundenzettel und Lohndaten automatisch in die Buchhaltung. Fuer Reinigungsunternehmen im DACH-Raum.',
+  description: 'Taskey + LexOffice: Rechnungen, Stundenzettel und Lohndaten automatisch in die Buchhaltung. Für Reinigungsunternehmen im DACH-Raum.',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen/reinigung-buchhaltung-lexoffice' },
 };
 
@@ -16,9 +16,9 @@ const data: LandingPageData = {
   heroDescription: 'Doppelte Datenerfassung kostet dich Stunden pro Woche. Taskey synchronisiert Rechnungen, Arbeitszeiten und Lohndaten nahtlos mit LexOffice – dein Steuerberater freut sich.',
   painPoints: [
     { text: 'Rechnungen werden in Taskey erstellt und nochmal in die Buchhaltung eingetippt.' },
-    { text: 'Stundenzettel muessen manuell in die Lohnbuchhaltung uebertragen werden.' },
-    { text: 'Fehler bei der manuellen Uebertragung kosten Zeit und Geld.' },
-    { text: 'Der Steuerberater bekommt Unterlagen zu spaet oder unvollstaendig.' },
+    { text: 'Stundenzettel müssen manuell in die Lohnbuchhaltung übertragen werden.' },
+    { text: 'Fehler bei der manuellen Übertragung kosten Zeit und Geld.' },
+    { text: 'Der Steuerberater bekommt Unterlagen zu spaet oder unvollständig.' },
   ],
   solutionTitle: 'Taskey + LexOffice. Automatisch synchron.',
   solutionDescription: 'Verbinde Taskey mit LexOffice und automatisiere deine gesamte Buchhaltungs-Pipeline.',
@@ -29,12 +29,12 @@ const data: LandingPageData = {
   ],
   ctaText: 'LexOffice-Integration testen',
   featureHighlights: [
-    { title: 'Rechnungs-Sync', description: 'Rechnungen automatisch in LexOffice uebertragen.' },
-    { title: 'Lohnexport', description: 'Stundenzettel und Zuschlaege fuer die Lohnbuchhaltung.' },
+    { title: 'Rechnungs-Sync', description: 'Rechnungen automatisch in LexOffice übertragen.' },
+    { title: 'Lohnexport', description: 'Stundenzettel und Zuschlaege für die Lohnbuchhaltung.' },
     { title: 'Keine Doppelerfassung', description: 'Daten nur einmal eingeben – den Rest erledigt Taskey.' },
     { title: 'Belegarchiv', description: 'Alle Belege revisionssicher in LexOffice.' },
     { title: 'Steuerberater-Zugang', description: 'Dein Steuerberater greift direkt auf LexOffice zu.' },
-    { title: 'Sage-Alternative', description: 'Auch Sage-Export verfuegbar als Alternative.' },
+    { title: 'Sage-Alternative', description: 'Auch Sage-Export verfügbar als Alternative.' },
   ],
   closingHeadline: 'Buchhaltung. Automatisch. Fehlerfrei. In LexOffice.',
   closingText: 'Teste Taskey 14 Tage kostenlos und verbinde deine Reinigungssoftware mit LexOffice.',

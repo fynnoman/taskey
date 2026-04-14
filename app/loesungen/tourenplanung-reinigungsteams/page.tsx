@@ -40,19 +40,19 @@ const data: LandingPageData = {
   closingText: 'Teste Taskey und optimiere die Touren deiner Reinigungsteams.',
   relatedLinks: [
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung Reinigung',
           description: 'Touren als Teil der gesamten Einsatzplanung für Reinigungsteams.'
       },
       {
-          href: '/loesungen/tagesplanung-reinigungskraefte',
+          href: '/loesungen/tagesplanung-reinigungskräfte',
           label: 'Tagesplanung',
           description: 'Touren in den täglichen Einsatzplan integrieren.'
       },
       {
           href: '/loesungen/personalplanung-reinigung',
           label: 'Personalplanung',
-          description: 'Personal und Fahrzeuge fuer die Touren effizient einplanen.'
+          description: 'Personal und Fahrzeuge für die Touren effizient einplanen.'
       }
   ],
 };

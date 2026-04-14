@@ -52,7 +52,7 @@ const data: LandingPageData = {
       {
           href: '/loesungen/digitale-stundenzettel-reinigung',
           label: 'Digitale Stundenzettel',
-          description: 'Ueberstunden korrekt erfassen und in die Lohnabrechnung uebernehmen.'
+          description: 'Ueberstunden korrekt erfassen und in die Lohnabrechnung übernehmen.'
       }
   ],
 };

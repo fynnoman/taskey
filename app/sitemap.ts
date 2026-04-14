@@ -94,12 +94,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.85,
     },
-    // SEO Landing Pages - Loesungen (dynamisch aus Dateisystem)
+    // SEO Landing Pages - Lösungen (dynamisch aus Dateisystem)
     ...(() => {
-      const loesungenDir = path.join(appDir, 'loesungen');
+      const lösungenDir = path.join(appDir, 'lösungen');
       try {
         return fs
-          .readdirSync(loesungenDir, { withFileTypes: true })
+          .readdirSync(lösungenDir, { withFileTypes: true })
           .filter((dirent) => dirent.isDirectory())
           .map((dirent) => ({
             url: `${baseUrl}/loesungen/${dirent.name}`,

@@ -40,7 +40,7 @@ const data: LandingPageData = {
   closingText: 'Taskey ist die zentrale Kundendatenbank, die Ihre Reinigungsfirma verdient.',
   relatedLinks: [
       {
-          href: '/loesungen/stammkunden-verwalten-gebaeudereinigung',
+          href: '/loesungen/stammkunden-verwalten-gebäudereinigung',
           label: 'Stammkunden verwalten',
           description: 'Stammkunden mit Objekten, Verträgen und Kontaktdaten pflegen.'
       },

@@ -50,7 +50,7 @@ const data: LandingPageData = {
           description: 'Erfasste Zeiten direkt in die Lohnabrechnung übernehmen – ohne Medienbruch.'
       },
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung Gebäudereinigung',
           description: 'Wer reinigt wann welches Objekt? Einsätze planen und Zeiten automatisch zuordnen.'
       }

@@ -40,12 +40,12 @@ const data: LandingPageData = {
   closingText: 'Taskey hilft Ihnen, vertragliche Leistungen zuverlässig zu erbringen und nachzuweisen.',
   relatedLinks: [
       {
-          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          href: '/loesungen/leistungsnachweis-gebäudereinigung',
           label: 'Leistungsnachweise',
           description: 'SLA-Einhaltung durch Leistungsnachweise dokumentieren.'
       },
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'SLA-Tracking und Qualitätskontrolle gehen Hand in Hand.'
       },

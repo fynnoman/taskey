@@ -40,7 +40,7 @@ const data: LandingPageData = {
   closingText: 'Taskey macht Ihre Tagesplanung effizient – für zufriedene Kunden und motivierte Teams.',
   relatedLinks: [
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung Reinigung',
           description: 'Von der Tagesplanung zur langfristigen Einsatzplanung.'
       },

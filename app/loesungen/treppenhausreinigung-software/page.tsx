@@ -4,7 +4,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 
 export const metadata: Metadata = {
   title: 'Treppenhausreinigung Software – Planen, Nachweisen, Abrechnen | Taskey',
-  description: 'Software fuer Treppenhausreinigung: Hausverwaltungen zufriedenstellen mit digitalen Leistungsnachweisen und automatischer Tourenplanung. Jetzt testen!',
+  description: 'Software für Treppenhausreinigung: Hausverwaltungen zufriedenstellen mit digitalen Leistungsnachweisen und automatischer Tourenplanung. Jetzt testen!',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen/treppenhausreinigung-software' },
 };
 
@@ -18,7 +18,7 @@ const data: LandingPageData = {
     { text: 'Hausverwaltungen bezweifeln die Reinigung – du hast keinen Nachweis.' },
     { text: 'Viele Objekte mit unterschiedlichen Intervallen sind schwer zu koordinieren.' },
     { text: 'Mieter beschweren sich – du kannst die Reinigung nicht belegen.' },
-    { text: 'Tourenplanung fuer verteilte Objekte kostet zu viel Zeit.' },
+    { text: 'Tourenplanung für verteilte Objekte kostet zu viel Zeit.' },
   ],
   solutionTitle: 'NFC-Scan im Treppenhaus. Nachweis beim Verwalter.',
   solutionDescription: 'Ein NFC-Tag pro Treppenhaus – dein Team scannt, der Verwalter sieht es.',
@@ -37,11 +37,11 @@ const data: LandingPageData = {
     { title: 'Winterdienst-Addon', description: 'Winterdienst im gleichen System planen und nachweisen.' },
   ],
   closingHeadline: 'Treppenhausreinigung. Nachgewiesen. Keine Diskussion.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und ueberzeuge Hausverwaltungen mit digitalen Nachweisen.',
+  closingText: 'Teste Taskey 14 Tage kostenlos und überzeuge Hausverwaltungen mit digitalen Nachweisen.',
   relatedLinks: [
-    { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'NFC-basierte Nachweise fuer jedes Objekt.' },
-    { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung', description: 'Optimale Touren fuer verteilte Objekte.' },
-    { href: '/loesungen/stammkunden-verwalten-gebaeudereinigung', label: 'Stammkunden verwalten', description: 'Hausverwaltungen als Stammkunden betreuen.' },
+    { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'NFC-basierte Nachweise für jedes Objekt.' },
+    { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung', description: 'Optimale Touren für verteilte Objekte.' },
+    { href: '/loesungen/stammkunden-verwalten-gebäudereinigung', label: 'Stammkunden verwalten', description: 'Hausverwaltungen als Stammkunden betreuen.' },
   ],
 };
 

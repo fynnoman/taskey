@@ -45,7 +45,7 @@ const data: LandingPageData = {
           description: 'Einsätze in Schichtpläne überführen und Teams einteilen.'
       },
       {
-          href: '/loesungen/tagesplanung-reinigungskraefte',
+          href: '/loesungen/tagesplanung-reinigungskräfte',
           label: 'Tagesplanung Reinigung',
           description: 'Den täglichen Einsatz Ihrer Reinigungskräfte optimal planen.'
       },

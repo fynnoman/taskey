@@ -40,12 +40,12 @@ const data: LandingPageData = {
   closingText: 'Taskey macht Ihre Übergabeprotokolle rechtssicher und professionell.',
   relatedLinks: [
       {
-          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          href: '/loesungen/reinigungspläne-digital-erstellen',
           label: 'Reinigungspläne digital',
           description: 'Übergabeprotokolle basieren auf den vereinbarten Reinigungsplänen.'
       },
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'Übergabeprotokolle als Teil der Qualitätssicherung.'
       },

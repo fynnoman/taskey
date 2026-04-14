@@ -8,7 +8,7 @@ const ReferralSection = () => {
           Empfehlen Sie Taskey weiter – und sparen Sie <span className="text-yellow-300">3 Monate Beitrag.</span>
         </h2>
         <p className="text-lg mb-8">
-          Kennen Sie einen anderen Reinigungsbetrieb, dem Taskey helfen koennte? Fuer jede erfolgreiche Empfehlung bekommen Sie 3 Monate gratis.
+          Kennen Sie einen anderen Reinigungsbetrieb, dem Taskey helfen könnte? Für jede erfolgreiche Empfehlung bekommen Sie 3 Monate gratis.
         </p>
         <a
           href="/referral"

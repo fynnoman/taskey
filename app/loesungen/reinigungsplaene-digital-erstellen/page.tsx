@@ -45,12 +45,12 @@ const data: LandingPageData = {
           description: 'Reinigungspläne mit Checklisten für jeden Raum und jedes Objekt.'
       },
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung',
           description: 'Reinigungspläne direkt mit der Einsatzplanung verknüpfen.'
       },
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'Reinigungspläne als Basis für systematische Qualitätskontrollen.'
       }

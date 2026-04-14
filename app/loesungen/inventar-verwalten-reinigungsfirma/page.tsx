@@ -45,12 +45,12 @@ const data: LandingPageData = {
           description: 'Reinigungsmittel und Material als Inventar effizient verwalten.'
       },
       {
-          href: '/loesungen/objektverwaltung-gebaeudereinigung',
+          href: '/loesungen/objektverwaltung-gebäudereinigung',
           label: 'Objektverwaltung',
-          description: 'Inventar pro Reinigungsobjekt organisieren und Bestaende ueberwachen.'
+          description: 'Inventar pro Reinigungsobjekt organisieren und Bestaende überwachen.'
       },
       {
-          href: '/loesungen/nachkalkulation-reinigungsauftraege',
+          href: '/loesungen/nachkalkulation-reinigungsaufträge',
           label: 'Nachkalkulation',
           description: 'Materialkosten in die Auftragsnachkalkulation einbeziehen.'
       }

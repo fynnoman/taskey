@@ -4,7 +4,7 @@ import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 
 export const metadata: Metadata = {
   title: 'NFC Leistungsnachweis Reinigung – Automatisch & Faelschungssicher | Taskey',
-  description: 'NFC-basierte Leistungsnachweise fuer Gebaeudereiniger: Mitarbeiter scannt NFC-Tag am Objekt, Nachweis wird automatisch erstellt. DSGVO-konform. Jetzt testen!',
+  description: 'NFC-basierte Leistungsnachweise für Gebäudereiniger: Mitarbeiter scannt NFC-Tag am Objekt, Nachweis wird automatisch erstellt. DSGVO-konform. Jetzt testen!',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen/nfc-leistungsnachweis-reinigung' },
 };
 
@@ -16,7 +16,7 @@ const data: LandingPageData = {
   heroDescription: 'Klebe einen NFC-Tag an jedes Reinigungsobjekt. Deine Mitarbeiter scannen beim Kommen und Gehen – der Leistungsnachweis erstellt sich automatisch.',
   painPoints: [
     { text: 'Auftraggeber bezweifeln, dass gereinigt wurde – du hast keinen Beweis.' },
-    { text: 'Papier-Leistungsnachweise gehen verloren oder werden falsch ausgefuellt.' },
+    { text: 'Papier-Leistungsnachweise gehen verloren oder werden falsch ausgefüllt.' },
     { text: 'Nachweispflicht gegenueber Kunden kostet Stunden an Bueroarbeit.' },
     { text: 'Bei Reklamationen stehst du ohne Dokumentation da.' },
   ],
@@ -25,22 +25,22 @@ const data: LandingPageData = {
   solutionSteps: [
     { title: 'NFC-Tag am Objekt anbringen', description: 'Ein kleiner Aufkleber am Eingang oder in der Putzschleuse – einmal kleben, dauerhaft nutzen.' },
     { title: 'Mitarbeiter scannt mit dem Handy', description: 'Beim Kommen und Gehen einfach das Handy an den Tag halten – Zeitstempel + GPS werden erfasst.' },
-    { title: 'Nachweis wird automatisch erstellt', description: 'Taskey generiert den Leistungsnachweis mit Uhrzeit, Standort und optional Foto – bereit fuer den Kunden.' },
+    { title: 'Nachweis wird automatisch erstellt', description: 'Taskey generiert den Leistungsnachweis mit Uhrzeit, Standort und optional Foto – bereit für den Kunden.' },
   ],
   ctaText: 'NFC-Nachweise starten',
   featureHighlights: [
     { title: 'GPS-Verifizierung', description: 'Jeder NFC-Scan wird mit GPS-Position dokumentiert.' },
-    { title: 'Fotodokumentation', description: 'Vorher/Nachher-Fotos mit Zeitstempel als Qualitaetsnachweis.' },
-    { title: 'PDF-Export', description: 'Leistungsnachweise als PDF fuer Auftraggeber exportieren.' },
+    { title: 'Fotodokumentation', description: 'Vorher/Nachher-Fotos mit Zeitstempel als Qualitätsnachweis.' },
+    { title: 'PDF-Export', description: 'Leistungsnachweise als PDF für Auftraggeber exportieren.' },
     { title: 'Echtzeit-Dashboard', description: 'Sieh live, welche Objekte bereits gereinigt wurden.' },
-    { title: 'Manipulationssicher', description: 'NFC-Tags koennen nicht kopiert oder gefaelscht werden.' },
-    { title: 'Mehrsprachig', description: 'Die App funktioniert in 3 Sprachen – perfekt fuer internationale Teams.' },
+    { title: 'Manipulationssicher', description: 'NFC-Tags können nicht kopiert oder gefaelscht werden.' },
+    { title: 'Mehrsprachig', description: 'Die App funktioniert in 3 Sprachen – perfekt für internationale Teams.' },
   ],
   closingHeadline: 'NFC scannen. Nachweis fertig. Kunde zufrieden.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Leistungsnachweise in der Reinigung sein koennen.',
+  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Leistungsnachweise in der Reinigung sein können.',
   relatedLinks: [
-    { href: '/loesungen/leistungsnachweis-gebaeudereinigung', label: 'Leistungsnachweis Gebaeudereinigung', description: 'Alle Leistungsnachweise digital an einem Ort.' },
-    { href: '/loesungen/qualitaetskontrolle-gebaeudereinigung', label: 'Qualitaetskontrolle Reinigung', description: 'Qualitaet pruefen und dokumentieren – direkt nach der Reinigung.' },
+    { href: '/loesungen/leistungsnachweis-gebäudereinigung', label: 'Leistungsnachweis Gebäudereinigung', description: 'Alle Leistungsnachweise digital an einem Ort.' },
+    { href: '/loesungen/qualitaetskontrolle-gebäudereinigung', label: 'Qualitätskontrolle Reinigung', description: 'Qualität prüfen und dokumentieren – direkt nach der Reinigung.' },
     { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung Reinigung', description: 'Arbeitszeiten automatisch mit NFC-Tags erfassen.' },
   ],
 };

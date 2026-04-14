@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 // Metadata will be set via head tags
 if (typeof window !== 'undefined') {
-  document.title = "Alle Funktionen im Ueberblick | Taskey Reinigungssoftware";
+  document.title = "Alle Funktionen im Überblick | Taskey Reinigungssoftware";
 }
 
 interface Feature {
@@ -39,46 +39,46 @@ export default function FeaturesPage() {
           name: 'Digitale Objektakte',
           description: 'Einmal kleben. Immer wissen, was zu tun ist. Sie kleben einen kleinen NFC-Aufkleber am Eingang jedes Reinigungsobjekts auf. Ihr Team haelt beim Ankommen kurz das Handy dran – und sieht sofort, was heute zu tun ist.',
           image: '/Unbenanntes_Projekt 3.png',
-          detailedInfo: '• NFC-Aufkleber am Objekt anbringen (wetterfest, haelt 5+ Jahre)\n• Reinigungskraft scannt beim Ankommen mit dem Handy\n• Sie sieht sofort: heutige Aufgaben, Sonderwuensche, letzte Reinigung, wichtige Fotos\n• Alle Infos bleiben am Objekt – auch wenn die Reinigungskraft wechselt\n• Speziell entwickelt fuer Gebaeudereiniger',
+          detailedInfo: '• NFC-Aufkleber am Objekt anbringen (wetterfest, haelt 5+ Jahre)\n• Reinigungskraft scannt beim Ankommen mit dem Handy\n• Sie sieht sofort: heutige Aufgaben, Sonderwuensche, letzte Reinigung, wichtige Fotos\n• Alle Infos bleiben am Objekt – auch wenn die Reinigungskraft wechselt\n• Speziell entwickelt für Gebäudereiniger',
         },
         {
           id: 'leistungsnachweis',
           name: 'Leistungsnachweis per Scan',
           description: 'Jeder Scan wird mit Uhrzeit und Standort gespeichert. Wenn ein Auftraggeber fragt, ob Ihr Team da war – haben Sie die Antwort schwarz auf weiss.',
           image: '/Unbenanntes_Projekt 5.png',
-          detailedInfo: '• Zeitstempel + GPS-Standort bei jedem Scan\n• Nachweis, den kein Auftraggeber anzweifeln kann\n• Beispiel: "Unser Team war am 14.04. um 06:14 Uhr am Eingang Ihres Gebaeudes."\n• Perfekt fuer Versicherungsfaelle und Haftungsfragen\n• Lueckenlose Dokumentation ohne Papier',
+          detailedInfo: '• Zeitstempel + GPS-Standort bei jedem Scan\n• Nachweis, den kein Auftraggeber anzweifeln kann\n• Beispiel: "Unser Team war am 14.04. um 06:14 Uhr am Eingang Ihres Gebäudes."\n• Perfekt für Versicherungsfaelle und Haftungsfragen\n• Lückenlose Dokumentation ohne Papier',
         },
         {
           id: 'rundgang-kontrolle',
-          name: 'Rundgang-Kontrolle fuer grosse Objekte',
+          name: 'Rundgang-Kontrolle für grosse Objekte',
           description: 'Mehrere Etagen, verschiedene Bereiche? Ihre Reinigungskraft scannt sich in jedem Bereich ein und aus. So wissen Sie genau, was erledigt ist.',
           image: '/Unbenanntes_Projekt 6.png',
-          detailedInfo: '• NFC-Aufkleber an jedem Bereich oder jeder Etage\n• Automatisches Protokoll: wer, wann, wo?\n• Lueckenloser Nachweis fuer Mehretagen-Gebaeude\n• Keine vergessenen Bereiche mehr\n• Perfekt fuer Buerogebaeude, Kliniken, Hotels',
+          detailedInfo: '• NFC-Aufkleber an jedem Bereich oder jeder Etage\n• Automatisches Protokoll: wer, wann, wo?\n• Lückenloser Nachweis für Mehretagen-Gebäude\n• Keine vergessenen Bereiche mehr\n• Perfekt für Buerogebäude, Kliniken, Hotels',
         },
         {
           id: 'materialverwaltung',
           name: 'Material- und Lagerverwaltung',
           description: 'Kleben Sie einen NFC-Aufkleber an den Putzwagen oder ins Lager. Ihr Team scannt und meldet: Reinigungsmittel fast leer oder Saugmaschine defekt.',
           image: '/Unbenanntes_Projekt 3.png',
-          detailedInfo: '• NFC-Aufkleber am Lager oder Putzwagen\n• Bestand per Scan dokumentieren\n• Benachrichtigung bei knappem Material\n• Keine Notfall-Bestellungen mehr\n• Sie koennen sofort reagieren',
+          detailedInfo: '• NFC-Aufkleber am Lager oder Putzwagen\n• Bestand per Scan dokumentieren\n• Benachrichtigung bei knappem Material\n• Keine Notfall-Bestellungen mehr\n• Sie können sofort reagieren',
         },
         {
           id: 'wartungsmanagement',
           name: 'Wartung von Reinigungsmaschinen',
           description: 'Jede Nutzung Ihrer Scheuersaugmaschine oder Ihres Hochdruckreinigers wird erfasst. Bei faelligem Service bekommen Sie automatisch einen Hinweis.',
           image: '/Unbenanntes_Projekt 5.png',
-          detailedInfo: '• NFC-Aufkleber auf der Maschine\n• Automatische Zaehlung der Einsaetze\n• Benachrichtigung bei faelliger Wartung\n• Vermeidung teurer Ausfaelle\n• Verlaengerte Lebensdauer Ihrer Geraete',
+          detailedInfo: '• NFC-Aufkleber auf der Maschine\n• Automatische Zaehlung der Einsätze\n• Benachrichtigung bei faelliger Wartung\n• Vermeidung teurer Ausfaelle\n• Verlängerte Lebensdauer Ihrer Geräte',
         },
         {
           id: 'schluesselverwaltung',
           name: 'Schluesselverwaltung',
-          description: 'Welcher Schluessel gehoert zu welchem Objekt? Wer hat ihn zuletzt? Bei Verlust wissen Sie sofort Bescheid.',
+          description: 'Welcher Schluessel gehört zu welchem Objekt? Wer hat ihn zuletzt? Bei Verlust wissen Sie sofort Bescheid.',
           image: '/Unbenanntes_Projekt 5.png',
           detailedInfo: '• Digitaler Schluessel-Eintrag pro Objekt\n• Wer hat den Schluessel zuletzt gehabt?\n• Wo ist er hinterlegt?\n• Bei Verlust sofort nachvollziehbar\n• Keine Excel-Listen oder Zettel mehr',
         },
         {
-          id: 'qualitaetspruefung',
-          name: 'Qualitaetspruefung an Ort und Stelle',
+          id: 'qualitätspruefung',
+          name: 'Qualitätspruefung an Ort und Stelle',
           description: 'Nach der Reinigung: Foto machen, Bericht abschicken, Unterschrift einholen. Alles direkt am Objekt, alles gespeichert.',
           image: '/Unbenanntes_Projekt 6.png',
           detailedInfo: '• Fotos nach der Reinigung direkt hochladen\n• Abschlussbericht mit einem Klick erstellen\n• Digitale Unterschrift vom Kunden einholen\n• Alles automatisch dem Objekt zugeordnet\n• Bei Reklamationen haben Sie die Belege',
@@ -213,7 +213,7 @@ export default function FeaturesPage() {
           detailedInfo: '• Gescannte Belege sofort im Projekt\n• Alle Ausgaben klar strukturiert\n• Kategorien, Beträge, Upload-Zeitpunkte\n• Optional: Direktübertragung zur Buchhaltung\n• Keine verlorenen Quittungen mehr',
         },
         {
-          id: 'auftraege',
+          id: 'aufträge',
           name: 'Aufträge',
           description: 'Verwalten Sie alle Aufträge innerhalb eines Projekts. Strukturiert und übersichtlich.',
           image: '/Unbenanntes_Projekt 6.png',
@@ -222,7 +222,7 @@ export default function FeaturesPage() {
       ],
     },
     {
-      id: 'auftraege',
+      id: 'aufträge',
       name: 'Aufträge',
       features: [
         {
@@ -869,40 +869,40 @@ export default function FeaturesPage() {
                 answer: "Ihr Mitarbeiter scannt beim Ankommen am Objekt den NFC-Aufkleber – Taskey startet automatisch die Zeiterfassung. Beim Verlassen scannt er nochmal, und die Zeit wird gestoppt. Pausen werden automatisch abgezogen. Keine Stundenzettel mehr, keine Korrekturen am Monatsende."
               },
               {
-                question: "Funktioniert die App auch fuer Mitarbeiter ohne Deutschkenntnisse?",
-                answer: "Ja. Die App ist auf Tuerkisch, Russisch, Polnisch und mehreren weiteren Sprachen verfuegbar. Ihre Mitarbeiter stellen einmal ihre Sprache ein – und die gesamte App zeigt alles in ihrer Muttersprache an."
+                question: "Funktioniert die App auch für Mitarbeiter ohne Deutschkenntnisse?",
+                answer: "Ja. Die App ist auf Tuerkisch, Russisch, Polnisch und mehreren weiteren Sprachen verfügbar. Ihre Mitarbeiter stellen einmal ihre Sprache ein – und die gesamte App zeigt alles in ihrer Muttersprache an."
               },
               {
                 question: "Wie weise ich gegenueber meinem Auftraggeber nach, dass wir da waren?",
-                answer: "Jeder NFC-Scan wird automatisch mit Uhrzeit und genauem Standort gespeichert. Bei Diskussionen haben Sie den Beleg schwarz auf weiss: 'Unser Team war am 14.04. um 06:14 Uhr am Eingang Ihres Gebaeudes.' Das nimmt jedem Streit die Grundlage."
+                answer: "Jeder NFC-Scan wird automatisch mit Uhrzeit und genauem Standort gespeichert. Bei Diskussionen haben Sie den Beleg schwarz auf weiss: 'Unser Team war am 14.04. um 06:14 Uhr am Eingang Ihres Gebäudes.' Das nimmt jedem Streit die Grundlage."
               },
               {
-                question: "Erfuellt Taskey die gesetzliche Mindestlohn-Dokumentation?",
-                answer: "Ja. Taskey dokumentiert automatisch Beginn, Ende und Dauer jeder Arbeitszeit – genau so, wie es das Mindestlohngesetz vorschreibt. Sie koennen die Daten jederzeit als PDF exportieren, falls der Zoll prueft."
+                question: "Erfüllt Taskey die gesetzliche Mindestlohn-Dokumentation?",
+                answer: "Ja. Taskey dokumentiert automatisch Beginn, Ende und Dauer jeder Arbeitszeit – genau so, wie es das Mindestlohngesetz vorschreibt. Sie können die Daten jederzeit als PDF exportieren, falls der Zoll prüft."
               },
               {
-                question: "Was mache ich mit Schluesseln fuer Objekte?",
-                answer: "Sie legen jedem Objekt einen digitalen Schluessel-Eintrag an. Ihr Team sieht in der App, welcher Schluessel zu welchem Objekt gehoert, wer ihn zuletzt hatte und wo er hinterlegt ist. Bei Verlust wissen Sie sofort, wer zuletzt damit unterwegs war."
+                question: "Was mache ich mit Schluesseln für Objekte?",
+                answer: "Sie legen jedem Objekt einen digitalen Schluessel-Eintrag an. Ihr Team sieht in der App, welcher Schluessel zu welchem Objekt gehört, wer ihn zuletzt hatte und wo er hinterlegt ist. Bei Verlust wissen Sie sofort, wer zuletzt damit unterwegs war."
               },
               {
                 question: "Funktioniert die App auch ohne Internet, z.B. in Tiefgaragen?",
-                answer: "Ja. Die App speichert alles auf dem Handy und schickt die Daten automatisch, sobald wieder Empfang da ist. Ihr Team kann also auch im Keller eines Gebaeudes ganz normal arbeiten."
+                answer: "Ja. Die App speichert alles auf dem Handy und schickt die Daten automatisch, sobald wieder Empfang da ist. Ihr Team kann also auch im Keller eines Gebäudes ganz normal arbeiten."
               },
               {
-                question: "Kann ich meine bestehenden Objekte und Mitarbeiter uebernehmen?",
-                answer: "Ja. Wir importieren Ihre Excel-Listen oder andere Dateien komplett fuer Sie. Sie muessen nichts selbst eintippen. Das ist Teil unseres kostenlosen Einrichtungs-Service."
+                question: "Kann ich meine bestehenden Objekte und Mitarbeiter übernehmen?",
+                answer: "Ja. Wir importieren Ihre Excel-Listen oder andere Dateien komplett für Sie. Sie müssen nichts selbst eintippen. Das ist Teil unseres kostenlosen Einrichtungs-Service."
               },
               {
-                question: "Gibt es eine Verbindung zu LexOffice oder Sage fuer die Buchhaltung?",
+                question: "Gibt es eine Verbindung zu LexOffice oder Sage für die Buchhaltung?",
                 answer: "Ja. Taskey schickt Arbeitszeiten, Rechnungen und Belege automatisch an LexOffice, Sage oder DATEV. Ihr Steuerberater freut sich, weil er saubere Daten bekommt."
               },
               {
                 question: "Wie schnell kann ich loslegen?",
-                answer: "In den meisten Faellen laeuft alles in 2-5 Tagen. Wir importieren Ihre Daten, richten die NFC-Aufkleber vor und schulen Ihr Team per Video-Session. Danach koennen Sie direkt starten."
+                answer: "In den meisten Faellen läuft alles in 2-5 Tagen. Wir importieren Ihre Daten, richten die NFC-Aufkleber vor und schulen Ihr Team per Video-Session. Danach können Sie direkt starten."
               },
               {
                 question: "Was kostet Taskey?",
-                answer: "Drei Pakete – Professional, Business und Enterprise. Sie zahlen eine Grundgebuehr plus einen kleinen Preis pro Objekt. Mitarbeiter sind unbegrenzt, egal wie viele Sie beschaeftigen. Alle Preise sehen Sie auf unserer Preise-Seite."
+                answer: "Drei Pakete – Professional, Business und Enterprise. Sie zahlen eine Grundgebühr plus einen kleinen Preis pro Objekt. Mitarbeiter sind unbegrenzt, egal wie viele Sie beschaeftigen. Alle Preise sehen Sie auf unserer Preise-Seite."
               }
             ].map((faq, index) => (
               <details 

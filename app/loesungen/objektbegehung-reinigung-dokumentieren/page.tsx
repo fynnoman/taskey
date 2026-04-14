@@ -40,7 +40,7 @@ const data: LandingPageData = {
   closingText: 'Taskey macht Ihre Objektbegehungen zum Qualitätsinstrument – standardisiert und nachweisbar.',
   relatedLinks: [
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'Objektbegehungen als Instrument der Qualitätssicherung.'
       },
@@ -50,7 +50,7 @@ const data: LandingPageData = {
           description: 'Begehungen mit Fotos ergaenzen und Maengel dokumentieren.'
       },
       {
-          href: '/loesungen/leistungsnachweis-gebaeudereinigung',
+          href: '/loesungen/leistungsnachweis-gebäudereinigung',
           label: 'Leistungsnachweise',
           description: 'Begehungsergebnisse als Grundlage für Leistungsnachweise.'
       }

@@ -45,7 +45,7 @@ const data: LandingPageData = {
           description: 'Leistungsnachweise als Basis für korrekte Rechnungsstellung.'
       },
       {
-          href: '/loesungen/qualitaetskontrolle-gebaeudereinigung',
+          href: '/loesungen/qualitaetskontrolle-gebäudereinigung',
           label: 'Qualitätskontrolle',
           description: 'Leistungsnachweise zur Qualitätssicherung heranziehen.'
       },

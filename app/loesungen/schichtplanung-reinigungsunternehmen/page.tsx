@@ -45,12 +45,12 @@ const data: LandingPageData = {
           description: 'Zeiten pro Schicht automatisch erfassen – lückenlos und korrekt.'
       },
       {
-          href: '/loesungen/tagesplanung-reinigungskraefte',
+          href: '/loesungen/tagesplanung-reinigungskräfte',
           label: 'Tagesplanung Reinigungskräfte',
           description: 'Den täglichen Einsatz Ihrer Reinigungskräfte effizient planen.'
       },
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung Gebäudereinigung',
           description: 'Mitarbeiter den richtigen Objekten und Schichten zuordnen.'
       }

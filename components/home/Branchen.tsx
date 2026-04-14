@@ -12,9 +12,9 @@ export default function Branchen() {
     {
       title: "Unterhaltsreinigung",
       icon: "🏢",
-      description: "Taegliche und regelmaessige Reinigung von Buerogebaeuden, Verwaltungen und Gewerbeimmobilien.",
+      description: "Tägliche und regelmäßige Reinigung von Buerogebäuden, Verwaltungen und Gewerbeimmobilien.",
       services: [
-        "Buerogebaeude-Reinigung",
+        "Buerogebäude-Reinigung",
         "Treppenhausreinigung",
         "Sanitaerreinigung",
         "Empfangs- & Foyerreinigung",
@@ -25,7 +25,7 @@ export default function Branchen() {
     {
       title: "Glasreinigung",
       icon: "🪟",
-      description: "Professionelle Glas- und Fassadenreinigung fuer Gebaeude jeder Groesse.",
+      description: "Professionelle Glas- und Fassadenreinigung für Gebäude jeder Größe.",
       services: [
         "Aussenglasreinigung",
         "Innenglasreinigung",
@@ -38,7 +38,7 @@ export default function Branchen() {
     {
       title: "Industriereinigung",
       icon: "🏭",
-      description: "Spezialreinigung fuer Produktionshallen, Lager und industrielle Anlagen.",
+      description: "Spezialreinigung für Produktionshallen, Lager und industrielle Anlagen.",
       services: [
         "Hallenreinigung",
         "Maschinenreinigung",
@@ -51,7 +51,7 @@ export default function Branchen() {
     {
       title: "Klinik- & Hygienereinigung",
       icon: "🏥",
-      description: "Hoechste Hygienestandards fuer Krankenhaeuser, Praxen und Pflegeeinrichtungen.",
+      description: "Höchste Hygienestandards für Krankenhaeuser, Praxen und Pflegeeinrichtungen.",
       services: [
         "OP-Reinigung",
         "Stationsreinigung",
@@ -90,7 +90,7 @@ export default function Branchen() {
     {
       title: "Sonderreinigung",
       icon: "⚡",
-      description: "Spezialreinigungen fuer besondere Anforderungen und Situationen.",
+      description: "Spezialreinigungen für besondere Anforderungen und Situationen.",
       services: [
         "Tatortreinigung",
         "Brandsanierung",
@@ -103,7 +103,7 @@ export default function Branchen() {
     {
       title: "Teppich- & Polsterreinigung",
       icon: "🛋️",
-      description: "Professionelle Textilreinigung fuer Teppiche, Polster und Vorhaenge.",
+      description: "Professionelle Textilreinigung für Teppiche, Polster und Vorhaenge.",
       services: [
         "Teppichreinigung",
         "Polstermoebelreinigung",
@@ -116,7 +116,7 @@ export default function Branchen() {
     {
       title: "Fassadenreinigung",
       icon: "🧱",
-      description: "Professionelle Reinigung und Pflege von Gebaeude-Aussenfassaden.",
+      description: "Professionelle Reinigung und Pflege von Gebäude-Aussenfassaden.",
       services: [
         "Klinkerfassaden",
         "Natursteinfassaden",
@@ -129,14 +129,14 @@ export default function Branchen() {
     {
       title: "Hotelreinigung",
       icon: "🏨",
-      description: "Housekeeping und Reinigungsservice fuer Hotels und Gastgewerbe.",
+      description: "Housekeeping und Reinigungsservice für Hotels und Gastgewerbe.",
       services: [
         "Zimmerreinigung",
         "Lobby-Reinigung",
         "Konferenzraum-Reinigung",
         "Kuechenreinigung",
         "Wellnessbereich-Reinigung",
-        "Waesche-Management",
+        "Wäsche-Management",
       ],
     },
     {
@@ -177,7 +177,7 @@ export default function Branchen() {
             Jede <span className="text-blue-600">Reinigungsart</span> – eine Software
           </h2>
           <p className="text-sm sm:text-xl text-gray-500 max-w-3xl">
-            Taskey ist speziell fuer die Gebaeudereinigung im DACH-Raum entwickelt. Egal welchen Bereich Sie abdecken.
+            Taskey ist speziell für die Gebäudereinigung im DACH-Raum entwickelt. Egal welchen Bereich Sie abdecken.
           </p>
         </div>
 
@@ -234,7 +234,7 @@ export default function Branchen() {
             <div className="mt-6 bg-blue-50 rounded-xl p-4">
               <p className="text-gray-700 flex items-start gap-2">
                 <span className="text-xl">💡</span>
-                <span className="font-medium text-sm sm:text-base">Taskey bildet alle Prozesse fuer {selectedCategory} digital ab – von der Einsatzplanung ueber NFC-Leistungsnachweise bis zur Abrechnung.</span>
+                <span className="font-medium text-sm sm:text-base">Taskey bildet alle Prozesse für {selectedCategory} digital ab – von der Einsatzplanung über NFC-Leistungsnachweise bis zur Abrechnung.</span>
               </p>
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function Branchen() {
           </div>
           <div className="text-center p-4 sm:p-6">
             <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">DACH</div>
-            <div className="text-xs sm:text-sm text-gray-500">Deutschland, Oesterreich, Schweiz</div>
+            <div className="text-xs sm:text-sm text-gray-500">Deutschland, Österreich, Schweiz</div>
           </div>
           <div className="text-center p-4 sm:p-6">
             <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">100%</div>

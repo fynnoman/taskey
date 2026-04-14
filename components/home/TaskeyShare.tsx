@@ -24,7 +24,7 @@ export default function TaskeyShare() {
             </h3>
 
             <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
-              Sie erstellen fuer Ihren Auftraggeber einen Zugang. Dort sieht er: Reinigungsfortschritt, aktuelle Fotos, Nachweise – alles auf einer uebersichtlichen Seite, die sich von selbst aktualisiert. Ihr Team reinigt weiter, statt Statusupdates am Telefon durchzugeben.
+              Sie erstellen für Ihren Auftraggeber einen Zugang. Dort sieht er: Reinigungsfortschritt, aktuelle Fotos, Nachweise – alles auf einer übersichtlichen Seite, die sich von selbst aktualisiert. Ihr Team reinigt weiter, statt Statusupdates am Telefon durchzugeben.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -65,7 +65,7 @@ export default function TaskeyShare() {
                   <div className="bg-blue-700 px-6 pt-8 pb-4">
                     <p className="text-white/60 text-[10px] font-medium mb-1">Auftraggeber-Portal</p>
                     <p className="text-white font-black text-lg">Ihr Reinigungsobjekt</p>
-                    <p className="text-blue-200 text-xs">Buerogebaeude · Hausverwaltung Krause</p>
+                    <p className="text-blue-200 text-xs">Buerogebäude · Hausverwaltung Krause</p>
                   </div>
 
                   {/* Content */}
@@ -79,7 +79,7 @@ export default function TaskeyShare() {
                       <div className="w-full bg-gray-200 rounded-full h-2.5">
                         <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2.5 rounded-full" style={{ width: '67%' }} />
                       </div>
-                      <p className="text-[10px] text-gray-500 mt-1.5">Naechste Reinigung: Mo, 28. Maerz</p>
+                      <p className="text-[10px] text-gray-500 mt-1.5">Nächste Reinigung: Mo, 28. Maerz</p>
                     </div>
 
                     {/* Photos */}

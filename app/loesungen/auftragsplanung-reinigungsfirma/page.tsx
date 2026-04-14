@@ -40,12 +40,12 @@ const data: LandingPageData = {
   closingText: 'Starte jetzt und erlebe, wie einfach Auftragsplanung für Reinigungsfirmen sein kann.',
   relatedLinks: [
       {
-          href: '/loesungen/einsatzplanung-gebaeudereinigung',
+          href: '/loesungen/einsatzplanung-gebäudereinigung',
           label: 'Einsatzplanung Gebäudereinigung',
           description: 'Teams Objekten zuordnen und Einsatzpläne automatisch erstellen.'
       },
       {
-          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          href: '/loesungen/reinigungspläne-digital-erstellen',
           label: 'Reinigungspläne digital',
           description: 'Reinigungspläne erstellen, teilen und Fortschritte live verfolgen.'
       },

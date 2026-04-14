@@ -3,8 +3,8 @@ import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
 import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Glasreinigung Software – Auftraege, Touren & Nachweise | Taskey',
-  description: 'Software fuer Glasreinigung: Touren planen, Auftraege verwalten, Leistungsnachweise erstellen. Speziell fuer Glasreiniger im DACH-Raum. Jetzt testen!',
+  title: 'Glasreinigung Software – Aufträge, Touren & Nachweise | Taskey',
+  description: 'Software für Glasreinigung: Touren planen, Aufträge verwalten, Leistungsnachweise erstellen. Speziell für Glasreiniger im DACH-Raum. Jetzt testen!',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen/glasreinigung-software' },
 };
 
@@ -13,9 +13,9 @@ const data: LandingPageData = {
   headline: 'Glasreinigung –',
   headlineHighlight: 'perfekt geplant, sauber dokumentiert.',
   subheadline: 'Fensterfronten, Fassaden, Schaufenster – jeder Auftrag nachvollziehbar.',
-  heroDescription: 'Taskey plant deine Glasreinigungs-Touren, dokumentiert jeden Einsatz mit Fotos und erstellt automatisch Leistungsnachweise fuer deine Kunden.',
+  heroDescription: 'Taskey plant deine Glasreinigungs-Touren, dokumentiert jeden Einsatz mit Fotos und erstellt automatisch Leistungsnachweise für deine Kunden.',
   painPoints: [
-    { text: 'Tourenplanung fuer verschiedene Objekte ist komplex und fehleranfaellig.' },
+    { text: 'Tourenplanung für verschiedene Objekte ist komplex und fehleranfaellig.' },
     { text: 'Kunden reklamieren, dass Fenster nicht gereinigt wurden – kein Beweis.' },
     { text: 'Saisonale Schwankungen machen die Personalplanung schwierig.' },
     { text: 'Rechnungsstellung nach verschiedenen Intervallen ist muehsam.' },
@@ -30,16 +30,16 @@ const data: LandingPageData = {
   ctaText: 'Glasreinigung digitalisieren',
   featureHighlights: [
     { title: 'Intervallplanung', description: 'Woechentlich, monatlich, quartalsweise – Taskey erinnert automatisch.' },
-    { title: 'Tourenoptimierung', description: 'Objekte nach Route sortieren fuer effiziente Touren.' },
+    { title: 'Tourenoptimierung', description: 'Objekte nach Route sortieren für effiziente Touren.' },
     { title: 'Wetterdaten', description: 'Regenwarnung im Dashboard – Glasreinigung bei Bedarf verschieben.' },
-    { title: 'Fotodokumentation', description: 'Vorher/Nachher-Fotos als Qualitaetsnachweis.' },
-    { title: 'Kundenportal', description: 'Auftraggeber sehen den naechsten Reinigungstermin live.' },
+    { title: 'Fotodokumentation', description: 'Vorher/Nachher-Fotos als Qualitätsnachweis.' },
+    { title: 'Kundenportal', description: 'Auftraggeber sehen den nächsten Reinigungstermin live.' },
     { title: 'Flexible Abrechnung', description: 'Pro Quadratmeter, pauschal oder nach Aufwand abrechnen.' },
   ],
   closingHeadline: 'Glasreinigung. Geplant. Dokumentiert. Abgerechnet.',
   closingText: 'Teste Taskey 14 Tage kostenlos und optimiere deine Glasreinigung.',
   relatedLinks: [
-    { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung Reinigung', description: 'Optimale Touren fuer deine Reinigungsteams planen.' },
+    { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung Reinigung', description: 'Optimale Touren für deine Reinigungsteams planen.' },
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'Jeden Einsatz per NFC-Scan nachweisen.' },
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnung Reinigung', description: 'Rechnungen direkt aus den Einsatzdaten erstellen.' },
   ],

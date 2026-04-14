@@ -29,10 +29,10 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
       id: 'industry_type',
       question: 'In welchem Sektor ist Ihr Unternehmen tätig?',
       options: [
-        'Gebaeudereinigung & Unterhaltsreinigung',
+        'Gebäudereinigung & Unterhaltsreinigung',
         'Facility Management & Infrastruktur',
         'Industriereinigung & Sonderreinigung',
-        'Oeffentlicher Sektor / Behoerden',
+        'Öffentlicher Sektor / Behörden',
         'Andere Reinigungsbereiche',
       ],
     },

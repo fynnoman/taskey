@@ -22,7 +22,7 @@ export default function Testimonials() {
     },
     {
       name: "Thomas Schneider",
-      business: "Schneider Gebaeudereinigung",
+      business: "Schneider Gebäudereinigung",
       text: t("testimonials.3.text"),
       rating: 5,
       image: "/ceo.png",

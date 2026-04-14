@@ -50,7 +50,7 @@ const data: LandingPageData = {
           description: 'Feedback von Stammkunden einholen und Qualität sichern.'
       },
       {
-          href: '/loesungen/reinigungsplaene-digital-erstellen',
+          href: '/loesungen/reinigungspläne-digital-erstellen',
           label: 'Reinigungspläne digital',
           description: 'Individuelle Reinigungspläne für jeden Stammkunden erstellen.'
       }

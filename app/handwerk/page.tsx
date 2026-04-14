@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HandwerkClient from "./HandwerkClient";
 
 export const metadata: Metadata = {
-  title: "Taskey - Die App fuer Handwerksbetriebe in DACH | Zeiterfassung, NFC-Werkzeug-Tracking & Live-Margen",
+  title: "Taskey - Die App für Handwerksbetriebe in DACH | Zeiterfassung, NFC-Werkzeug-Tracking & Live-Margen",
   description:
-    "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen fuer Handwerksbetriebe. Elektriker, SHK, Dachdecker, Maler, Tischler, Bauunternehmen. Made in Germany. 14 Tage kostenlos testen.",
+    "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Elektriker, SHK, Dachdecker, Maler, Tischler, Bauunternehmen. Made in Germany. 14 Tage kostenlos testen.",
   keywords: [
     "Handwerkersoftware",
     "Handwerker App",
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     canonical: "https://www.taskeyapp.com/handwerk",
   },
   openGraph: {
-    title: "Taskey - Die App fuer Handwerksbetriebe in DACH",
+    title: "Taskey - Die App für Handwerksbetriebe in DACH",
     description:
-      "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen fuer Handwerksbetriebe. Made in Germany. 14 Tage kostenlos testen.",
+      "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Made in Germany. 14 Tage kostenlos testen.",
     url: "https://www.taskeyapp.com/handwerk",
     siteName: "Taskey",
     locale: "de_DE",
     type: "website",
-    images: [{ url: "/logobittt.png", width: 1200, height: 630, alt: "Taskey fuer Handwerksbetriebe" }],
+    images: [{ url: "/logobittt.png", width: 1200, height: 630, alt: "Taskey für Handwerksbetriebe" }],
   },
 };
 
@@ -38,7 +38,7 @@ export default function HandwerkPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Taskey fuer Handwerk",
+    name: "Taskey für Handwerk",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, iOS, Android",
     offers: {
@@ -48,7 +48,7 @@ export default function HandwerkPage() {
       description: "Ab 11,79 Euro pro Mitarbeiter / Monat. 14 Tage kostenlos testen.",
     },
     description:
-      "Handwerkersoftware fuer automatische Zeiterfassung, NFC-Werkzeug-Tracking, Auftragsplanung und Live-Margen. Fuer Elektriker, SHK, Dachdecker, Maler, Tischler und Bauunternehmen im DACH-Raum.",
+      "Handwerkersoftware für automatische Zeiterfassung, NFC-Werkzeug-Tracking, Auftragsplanung und Live-Margen. Für Elektriker, SHK, Dachdecker, Maler, Tischler und Bauunternehmen im DACH-Raum.",
     author: { "@type": "Organization", name: "Taskey", url: "https://taskeyapp.com" },
   };
 

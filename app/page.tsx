@@ -16,8 +16,8 @@ const Contact = dynamic(() => import("@/components/home/Contact"));
 const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
-  title: "Taskey - Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum | Zeiterfassung & Einsatzplanung",
-  description: "Taskey - Die fuehrende Reinigungssoftware fuer Gebaeudereiniger in Deutschland, Oesterreich und der Schweiz. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung und Qualitaetskontrolle. DSGVO-konform. Jetzt kostenlos testen!",
+  title: "Taskey - Reinigungssoftware für Gebäudereiniger im DACH-Raum | Zeiterfassung & Einsatzplanung",
+  description: "Taskey - Die führende Reinigungssoftware für Gebäudereiniger in Deutschland, Österreich und der Schweiz. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung und Qualitätskontrolle. DSGVO-konform. Jetzt kostenlos testen!",
   alternates: {
     canonical: "https://taskeyapp.com",
   },
@@ -42,7 +42,7 @@ export default function Home() {
       "ratingValue": "4.8",
       "ratingCount": "250"
     },
-    "description": "Reinigungssoftware fuer NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitaetskontrolle in der Gebaeudereinigung",
+    "description": "Reinigungssoftware für NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitätskontrolle in der Gebäudereinigung",
     "softwareVersion": "2.0",
     "author": {
       "@type": "Organization",
@@ -133,7 +133,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center gap-2 text-sm text-gray-500">
             <span>Sie kommen aus Handwerk oder Bau?</span>
             <a href="/handwerk" className="text-blue-900 font-semibold hover:underline">
-              Zur Version fuer Handwerksbetriebe &rarr;
+              Zur Version für Handwerksbetriebe &rarr;
             </a>
           </div>
         </div>

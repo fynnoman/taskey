@@ -240,7 +240,7 @@ export default function PartnerschaftenPage() {
             <div className="relative w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
-                alt="Taskey Partner – MG Gebaeudeservice"
+                alt="Taskey Partner – MG Gebäudeservice"
                 width={1200}
                 height={800}
                 className="w-full h-auto"
@@ -255,12 +255,12 @@ export default function PartnerschaftenPage() {
               <a href="https://mg-gebaeudeservice.de" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-8 py-6 mb-8 max-w-sm hover:shadow-lg transition-all duration-300">
                 <Image
                   src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
-                  alt="MG Gebaeudeservice"
+                  alt="MG Gebäudeservice"
                   width={140}
                   height={50}
                   className="object-contain"
                 />
-                <p className="text-gray-900 font-bold text-lg">MG Gebaeudeservice</p>
+                <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
               </a>
               <Link

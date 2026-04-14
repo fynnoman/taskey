@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Alle Loesungen – Taskey fuer Gebaeudereinigung im DACH-Raum',
-  description: 'Entdecken Sie alle Taskey-Loesungen fuer Gebaeudereiniger: NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung, Qualitaetskontrolle, Objektverwaltung und mehr.',
+  title: 'Alle Lösungen – Taskey für Gebäudereinigung im DACH-Raum',
+  description: 'Entdecken Sie alle Taskey-Lösungen für Gebäudereiniger: NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung, Qualitätskontrolle, Objektverwaltung und mehr.',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen' },
 };
 
@@ -17,17 +17,17 @@ const categories = [
       { href: '/loesungen/schichtplanung-reinigungsunternehmen', label: 'Schichtplanung Reinigung' },
       { href: '/loesungen/personalplanung-reinigung', label: 'Personalplanung Reinigung' },
       { href: '/loesungen/krankmeldung-reinigung-digital', label: 'Krankmeldung digital' },
-      { href: '/loesungen/tagesplanung-reinigungskraefte', label: 'Tagesplanung Reinigungskraefte' },
+      { href: '/loesungen/tagesplanung-reinigungskräfte', label: 'Tagesplanung Reinigungskräfte' },
     ],
   },
   {
-    title: 'Einsatzplanung & Auftraege',
-    description: 'Auftraege planen, Teams koordinieren und Touren optimieren.',
+    title: 'Einsatzplanung & Aufträge',
+    description: 'Aufträge planen, Teams koordinieren und Touren optimieren.',
     links: [
       { href: '/loesungen/auftragsplanung-reinigungsfirma', label: 'Auftragsplanung Reinigung' },
-      { href: '/loesungen/einsatzplanung-gebaeudereinigung', label: 'Einsatzplanung Reinigung' },
+      { href: '/loesungen/einsatzplanung-gebäudereinigung', label: 'Einsatzplanung Reinigung' },
       { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung Reinigungsteams' },
-      { href: '/loesungen/objektverwaltung-gebaeudereinigung', label: 'Objektverwaltung' },
+      { href: '/loesungen/objektverwaltung-gebäudereinigung', label: 'Objektverwaltung' },
       { href: '/loesungen/vertragsverwaltung-reinigung', label: 'Vertragsverwaltung Reinigung' },
     ],
   },
@@ -36,29 +36,29 @@ const categories = [
     description: 'NFC-basierte Nachweise, Protokolle und digitale Reinigungsakten.',
     links: [
       { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC-Leistungsnachweis' },
-      { href: '/loesungen/leistungsnachweis-gebaeudereinigung', label: 'Leistungsnachweis Reinigung' },
+      { href: '/loesungen/leistungsnachweis-gebäudereinigung', label: 'Leistungsnachweis Reinigung' },
       { href: '/loesungen/digitale-reinigungsakte', label: 'Digitale Reinigungsakte' },
-      { href: '/loesungen/uebergabeprotokoll-reinigung', label: 'Uebergabeprotokoll Reinigung' },
+      { href: '/loesungen/uebergabeprotokoll-reinigung', label: 'Übergabeprotokoll Reinigung' },
       { href: '/loesungen/objektbegehung-reinigung-dokumentieren', label: 'Objektbegehung dokumentieren' },
     ],
   },
   {
-    title: 'Checklisten & Qualitaet',
-    description: 'Reinigungsplaene erstellen, Qualitaet sichern und SLAs ueberwachen.',
+    title: 'Checklisten & Qualität',
+    description: 'Reinigungspläne erstellen, Qualität sichern und SLAs überwachen.',
     links: [
       { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung' },
-      { href: '/loesungen/reinigungsplaene-digital-erstellen', label: 'Reinigungsplaene digital' },
-      { href: '/loesungen/qualitaetskontrolle-gebaeudereinigung', label: 'Qualitaetskontrolle' },
+      { href: '/loesungen/reinigungspläne-digital-erstellen', label: 'Reinigungspläne digital' },
+      { href: '/loesungen/qualitaetskontrolle-gebäudereinigung', label: 'Qualitätskontrolle' },
       { href: '/loesungen/sla-tracking-reinigungsfirma', label: 'SLA-Tracking Reinigung' },
     ],
   },
   {
     title: 'Finanzen & Buchhaltung',
-    description: 'Rechnungen, Lohnabrechnungen und Nachkalkulationen fuer Reinigungsbetriebe.',
+    description: 'Rechnungen, Lohnabrechnungen und Nachkalkulationen für Reinigungsbetriebe.',
     links: [
       { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnungen Reinigung' },
       { href: '/loesungen/lohnabrechnung-reinigungsfirma', label: 'Lohnabrechnung Reinigung' },
-      { href: '/loesungen/nachkalkulation-reinigungsauftraege', label: 'Nachkalkulation Reinigung' },
+      { href: '/loesungen/nachkalkulation-reinigungsaufträge', label: 'Nachkalkulation Reinigung' },
       { href: '/loesungen/reinigung-buchhaltung-lexoffice', label: 'Buchhaltung mit LexOffice' },
     ],
   },
@@ -68,29 +68,29 @@ const categories = [
     links: [
       { href: '/loesungen/kundendatenbank-reinigungsfirma', label: 'Kundendatenbank Reinigung' },
       { href: '/loesungen/kundenfeedback-reinigung', label: 'Kundenfeedback Reinigung' },
-      { href: '/loesungen/stammkunden-verwalten-gebaeudereinigung', label: 'Stammkunden verwalten' },
+      { href: '/loesungen/stammkunden-verwalten-gebäudereinigung', label: 'Stammkunden verwalten' },
       { href: '/loesungen/auftraggeber-portal-reinigung', label: 'Auftraggeber-Portal' },
     ],
   },
   {
     title: 'Material & Inventar',
-    description: 'Reinigungsmittel, Geraete und Lagerbestaende effizient verwalten.',
+    description: 'Reinigungsmittel, Geräte und Lagerbestaende effizient verwalten.',
     links: [
       { href: '/loesungen/reinigungsmittel-verwaltung', label: 'Reinigungsmittel-Verwaltung' },
       { href: '/loesungen/inventar-verwalten-reinigungsfirma', label: 'Inventar Reinigung' },
     ],
   },
   {
-    title: 'Branchenloesungen Reinigung',
-    description: 'Spezialisierte Software fuer verschiedene Reinigungsbereiche.',
+    title: 'Branchenlösungen Reinigung',
+    description: 'Spezialisierte Software für verschiedene Reinigungsbereiche.',
     links: [
-      { href: '/loesungen/gebaeudereinigung-app', label: 'Gebaeudereinigung App' },
+      { href: '/loesungen/gebäudereinigung-app', label: 'Gebäudereinigung App' },
       { href: '/loesungen/reinigungssoftware-dach', label: 'Reinigungssoftware DACH' },
-      { href: '/loesungen/reinigungskraefte-app', label: 'Reinigungskraefte App' },
-      { href: '/loesungen/reinigungsfirma-gruenden-software', label: 'Reinigungsfirma gruenden' },
+      { href: '/loesungen/reinigungskräfte-app', label: 'Reinigungskräfte App' },
+      { href: '/loesungen/reinigungsfirma-gründen-software', label: 'Reinigungsfirma gründen' },
       { href: '/loesungen/unterhaltsreinigung-software', label: 'Unterhaltsreinigung' },
       { href: '/loesungen/grundreinigung-software', label: 'Grundreinigung' },
-      { href: '/loesungen/bueroreinigung-software', label: 'Bueroreinigung' },
+      { href: '/loesungen/büroreinigung-software', label: 'Büroreinigung' },
       { href: '/loesungen/glasreinigung-software', label: 'Glasreinigung' },
       { href: '/loesungen/fassadenreinigung-software', label: 'Fassadenreinigung' },
       { href: '/loesungen/industriereinigung-software', label: 'Industriereinigung' },
@@ -109,7 +109,7 @@ const categories = [
   },
 ];
 
-export default function LoesungenPage() {
+export default function LösungenPage() {
   return (
     <main className="bg-white">
       {/* Hero */}
@@ -124,7 +124,7 @@ export default function LoesungenPage() {
             Alle Lösungen <span className="text-blue-400">im Überblick.</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-            Von Zeiterfassung ueber Einsatzplanung bis zur Qualitaetskontrolle – finden Sie die passende Loesung fuer Ihren Reinigungsbetrieb.
+            Von Zeiterfassung über Einsatzplanung bis zur Qualitätskontrolle – finden Sie die passende Lösung für Ihren Reinigungsbetrieb.
           </p>
         </div>
       </section>

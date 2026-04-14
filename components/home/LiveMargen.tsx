@@ -14,7 +14,7 @@ export default function LiveMargen() {
           <div>
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              Live-Uebersicht
+              Live-Übersicht
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-white leading-[1.1] mb-6">
@@ -23,11 +23,11 @@ export default function LiveMargen() {
             </h2>
 
             <h3 className="text-xl md:text-2xl font-bold text-gray-300 mb-6">
-              Die Live-Uebersicht zeigt Ihnen sofort, welche Objekte sich lohnen – und wo Sie draufzahlen.
+              Die Live-Übersicht zeigt Ihnen sofort, welche Objekte sich lohnen – und wo Sie draufzahlen.
             </h3>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
-              Fuer jeden Reinigungsvertrag sehen Sie auf einen Blick: Was haben Sie eingenommen, was hat es gekostet, was bleibt uebrig? Personalkosten, Materialverbrauch, Sondereinsaetze – alles zusammengerechnet. Wenn ein Objekt ins Minus rutscht, merken Sie es sofort. Nicht erst beim Steuerberater.
+              Für jeden Reinigungsvertrag sehen Sie auf einen Blick: Was haben Sie eingenommen, was hat es gekostet, was bleibt uebrig? Personalkosten, Materialverbrauch, Sondereinsätze – alles zusammengerechnet. Wenn ein Objekt ins Minus rutscht, merken Sie es sofort. Nicht erst beim Steuerberater.
             </p>
 
             <Link
@@ -60,7 +60,7 @@ export default function LiveMargen() {
               <div className="bg-gray-900/60 rounded-xl p-4 mb-3 border border-white/5">
                 <div className="flex items-center justify-between mb-3">
                   <div>
-                    <p className="text-white font-bold text-sm">Buerogebaeude Mueller GmbH</p>
+                    <p className="text-white font-bold text-sm">Buerogebäude Mueller GmbH</p>
                     <p className="text-gray-500 text-xs">Vertragssumme: 38.500 EUR</p>
                   </div>
                   <div className="text-right">
@@ -120,7 +120,7 @@ export default function LiveMargen() {
                 </div>
                 <div className="mt-3 flex items-center gap-2 text-red-400 text-xs font-bold">
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
-                  Achtung: Personalkosten 18% ueber Plan
+                  Achtung: Personalkosten 18% über Plan
                 </div>
               </div>
             </div>

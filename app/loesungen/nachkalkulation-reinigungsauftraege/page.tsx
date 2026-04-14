@@ -3,19 +3,19 @@ import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
 import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Nachkalkulation Reinigungsauftraege – Kosten & Margen im Blick | Taskey',
-  description: 'Nachkalkulation fuer Reinigungsauftraege: Soll-Ist-Vergleich, Stunden- und Materialkosten, Margenanalyse. Fuer Gebaeudereiniger im DACH-Raum.',
+  title: 'Nachkalkulation Reinigungsaufträge – Kosten & Margen im Blick | Taskey',
+  description: 'Nachkalkulation für Reinigungsaufträge: Soll-Ist-Vergleich, Stunden- und Materialkosten, Margenanalyse. Für Gebäudereiniger im DACH-Raum.',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen/nachkalkulation-reinigungsauftraege' },
 };
 
 const data: LandingPageData = {
   badge: 'Nachkalkulation',
   headline: 'Nachkalkulation –',
-  headlineHighlight: 'weisst du, was ein Auftrag wirklich kostet?',
-  subheadline: 'Soll-Ist-Vergleich fuer jeden Auftrag. Erfahre, wo du Geld verdienst – und wo du draufzahlst.',
+  headlineHighlight: 'weißt du, was ein Auftrag wirklich kostet?',
+  subheadline: 'Soll-Ist-Vergleich für jeden Auftrag. Erfahre, wo du Geld verdienst – und wo du draufzahlst.',
   heroDescription: 'Viele Reinigungsunternehmen wissen nicht, ob ein Auftrag profitabel ist. Taskey vergleicht kalkulierte mit tatsaechlichen Kosten und zeigt dir deine wahren Margen.',
   painPoints: [
-    { text: 'Du weisst nicht, welche Objekte profitabel sind und welche nicht.' },
+    { text: 'Du weißt nicht, welche Objekte profitabel sind und welche nicht.' },
     { text: 'Mehraufwand durch Sonderreinigungen wird nicht erfasst.' },
     { text: 'Materialkosten werden nicht pro Auftrag zugeordnet.' },
     { text: 'Fehlende Nachkalkulation fuehrt zu systematisch falschen Angeboten.' },
@@ -33,14 +33,14 @@ const data: LandingPageData = {
     { title: 'Margenanalyse', description: 'Marge pro Objekt, Team oder Zeitraum.' },
     { title: 'Stunden-Tracking', description: 'Tatsaechliche Arbeitsstunden automatisch aus NFC-Scans.' },
     { title: 'Materialkosten', description: 'Verbrauchte Materialien pro Objekt zugeordnet.' },
-    { title: 'Trend-Analyse', description: 'Kostentwicklung ueber Monate hinweg verfolgen.' },
-    { title: 'Export fuer Angebote', description: 'Reale Kosten als Basis fuer zukuenftige Kalkulationen.' },
+    { title: 'Trend-Analyse', description: 'Kostentwicklung über Monate hinweg verfolgen.' },
+    { title: 'Export für Angebote', description: 'Reale Kosten als Basis für zukuenftige Kalkulationen.' },
   ],
   closingHeadline: 'Nachkalkulation. Ehrlich. Automatisch. Profitabel.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erfahre, was deine Auftraege wirklich kosten.',
+  closingText: 'Teste Taskey 14 Tage kostenlos und erfahre, was deine Aufträge wirklich kosten.',
   relatedLinks: [
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnungen', description: 'Rechnungen auf Basis realer Kosten.' },
-    { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung', description: 'Arbeitszeiten als Basis fuer Kalkulation.' },
+    { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung', description: 'Arbeitszeiten als Basis für Kalkulation.' },
     { href: '/loesungen/reinigungsmittel-verwaltung', label: 'Materialverwaltung', description: 'Materialkosten pro Objekt tracken.' },
   ],
 };
