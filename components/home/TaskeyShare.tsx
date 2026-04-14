@@ -11,20 +11,20 @@ export default function TaskeyShare() {
           <div>
             <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
-              Taskey Share
+              Auftraggeber-Portal
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-gray-900 leading-[1.1] mb-6">
-              Dein Telefon klingelt 15x am Tag:{' '}
-              <span className="text-blue-700">&bdquo;Wie sieht es im Objekt aus?&ldquo;</span>
+              Ihr Telefon klingelt 15x am Tag:{' '}
+              <span className="text-blue-700">'Wie sieht es im Objekt aus?'</span>
             </h2>
 
             <h3 className="text-xl md:text-2xl font-bold text-gray-600 mb-6">
-              Ein Klick. Ein Link. Der Auftraggeber sieht alles selbst – und ruft nie wieder an.
+              Ein Klick – und Ihr Auftraggeber sieht alles selbst. Ohne Sie anzurufen.
             </h3>
 
             <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
-              Taskey Share generiert einen Live-Link fuer deinen Auftraggeber. Reinigungsfortschritt, aktuelle Fotos, Leistungsnachweise – alles auf einer sauberen Seite, die sich automatisch aktualisiert. Dein Team reinigt weiter, statt Statusupdates am Telefon durchzugeben. Das spart im Schnitt 45 Minuten pro Tag pro Objektleiter.
+              Sie erstellen fuer Ihren Auftraggeber einen Zugang. Dort sieht er: Reinigungsfortschritt, aktuelle Fotos, Nachweise – alles auf einer uebersichtlichen Seite, die sich von selbst aktualisiert. Ihr Team reinigt weiter, statt Statusupdates am Telefon durchzugeben.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -34,7 +34,7 @@ export default function TaskeyShare() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-700/25 text-base"
               >
-                Share aktivieren
+                Jetzt kostenlos testen
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
             </div>
@@ -46,7 +46,7 @@ export default function TaskeyShare() {
                   <span key={i}>{star}</span>
                 ))}
               </div>
-              <span>&bdquo;Seit Taskey Share ruft kein Auftraggeber mehr an. Allein das spart mir 1 Stunde am Tag.&ldquo;</span>
+              <span>'Seit dem Auftraggeber-Portal ruft kein Kunde mehr an. Allein das spart mir 1 Stunde am Tag.'</span>
             </div>
           </div>
 
@@ -119,7 +119,7 @@ export default function TaskeyShare() {
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
               <div className="flex items-center gap-2 text-xs text-gray-400 font-medium">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                So sieht es dein Kunde
+                So sieht es Ihr Auftraggeber
               </div>
             </div>
 

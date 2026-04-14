@@ -164,14 +164,14 @@ export default function NFCSection() {
               href="/features#nfc-tags"
               className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-colors text-sm md:text-base"
             >
-              Mehr über NFC-Tags erfahren
+              Mehr ueber NFC-Aufkleber erfahren
               <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
           <p className="text-gray-400 text-xs md:text-sm mt-4">
-            ✓ Kostenlose Starter-Tags für Neukunden  •  ✓ Ersatz bei Beschädigung garantiert
+            ✓ Kostenlose Starter-Aufkleber fuer Neukunden  •  ✓ Ersatz bei Beschaedigung garantiert
           </p>
         </div>
       </div>

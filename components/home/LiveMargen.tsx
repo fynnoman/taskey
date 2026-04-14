@@ -14,20 +14,20 @@ export default function LiveMargen() {
           <div>
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              Live-Margen
+              Live-Uebersicht
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-white leading-[1.1] mb-6">
-              Du erfaehrst erst beim Steuerberater, dass der Auftrag ein{' '}
+              Sie erfahren erst beim Steuerberater, dass ein Auftrag ein{' '}
               <span className="text-red-400">Verlust</span> war?
             </h2>
 
             <h3 className="text-xl md:text-2xl font-bold text-gray-300 mb-6">
-              Live-Margen zeigt dir in Echtzeit, ob du Geld verdienst – oder verbrennst.
+              Die Live-Uebersicht zeigt Ihnen sofort, welche Objekte sich lohnen – und wo Sie draufzahlen.
             </h3>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
-              Jeder laufende Reinigungsvertrag hat ein Live-Dashboard: Personalkosten, Materialverbrauch, Sondereinsaetze – alles gegen die Vertragssumme gerechnet. Du siehst sofort, wenn ein Objekt kippt, und kannst gegensteuern, bevor es zu spaet ist. Kein Warten auf Monatsabschluesse, kein boeses Erwachen beim Steuerberater.
+              Fuer jeden Reinigungsvertrag sehen Sie auf einen Blick: Was haben Sie eingenommen, was hat es gekostet, was bleibt uebrig? Personalkosten, Materialverbrauch, Sondereinsaetze – alles zusammengerechnet. Wenn ein Objekt ins Minus rutscht, merken Sie es sofort. Nicht erst beim Steuerberater.
             </p>
 
             <Link
@@ -36,7 +36,7 @@ export default function LiveMargen() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-500/25 text-base"
             >
-              Margen in Echtzeit sehen
+              Jetzt kostenlos testen
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
@@ -47,7 +47,7 @@ export default function LiveMargen() {
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Live-Margen Dashboard</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Ihre Objekte auf einen Blick</p>
                   <p className="text-sm text-gray-400 mt-1">3 aktive Vertraege</p>
                 </div>
                 <div className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-bold">
