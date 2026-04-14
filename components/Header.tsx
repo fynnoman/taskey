@@ -21,7 +21,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
             <Image 
               src="/logobittt.png" 
-              alt="Taskey Logo - Dienstleistungssoftware" 
+              alt="Taskey Logo - Reinigungssoftware" 
               width={40}
               height={40}
               className="h-9 w-9"

@@ -27,9 +27,9 @@ export default function FAQDiagonal() {
         "Ja! Sie können Taskey 14 Tage komplett kostenlos und unverbindlich testen. Keine Kreditkarte erforderlich.",
     },
     {
-      question: "Für welche Branchen ist Taskey geeignet?",
+      question: "Fuer welche Reinigungsunternehmen ist Taskey geeignet?",
       answer:
-        "Taskey funktioniert für über 600 Branchen – von Handwerk über Facility Management bis zu technischen Services. Überall dort, wo mobile Arbeit organisiert werden muss.",
+        "Taskey ist speziell fuer die Gebaeudereinigung im DACH-Raum entwickelt – egal ob Unterhaltsreinigung, Glasreinigung, Industriereinigung, Klinik- und Hygienereinigung oder Sonderreinigung. Ueberall dort, wo mobile Reinigungsteams effizient koordiniert werden muessen.",
     },
     {
       question: "Gibt es eine App für Mitarbeiter?",

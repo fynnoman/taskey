@@ -16,15 +16,15 @@ export default function TaskeyShare() {
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-gray-900 leading-[1.1] mb-6">
               Dein Telefon klingelt 15x am Tag:{' '}
-              <span className="text-blue-700">&bdquo;Wie weit seid ihr?&ldquo;</span>
+              <span className="text-blue-700">&bdquo;Wie sieht es im Objekt aus?&ldquo;</span>
             </h2>
 
             <h3 className="text-xl md:text-2xl font-bold text-gray-600 mb-6">
-              Ein Klick. Ein Link. Der Bauherr sieht alles selbst – und ruft nie wieder an.
+              Ein Klick. Ein Link. Der Auftraggeber sieht alles selbst – und ruft nie wieder an.
             </h3>
 
             <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
-              Taskey Share generiert einen Live-Link für deinen Endkunden. Baufortschritt, aktuelle Fotos, Restbudget – alles auf einer sauberen Seite, die sich automatisch aktualisiert. Dein Team arbeitet weiter, statt Statusupdates am Telefon durchzugeben. Das spart im Schnitt 45 Minuten pro Tag pro Bauleiter.
+              Taskey Share generiert einen Live-Link fuer deinen Auftraggeber. Reinigungsfortschritt, aktuelle Fotos, Leistungsnachweise – alles auf einer sauberen Seite, die sich automatisch aktualisiert. Dein Team reinigt weiter, statt Statusupdates am Telefon durchzugeben. Das spart im Schnitt 45 Minuten pro Tag pro Objektleiter.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -46,7 +46,7 @@ export default function TaskeyShare() {
                   <span key={i}>{star}</span>
                 ))}
               </div>
-              <span>&bdquo;Seit Taskey Share ruft kein Bauherr mehr an. Allein das spart mir 1 Stunde am Tag.&ldquo;</span>
+              <span>&bdquo;Seit Taskey Share ruft kein Auftraggeber mehr an. Allein das spart mir 1 Stunde am Tag.&ldquo;</span>
             </div>
           </div>
 
@@ -63,9 +63,9 @@ export default function TaskeyShare() {
                 <div className="bg-white rounded-[2.25rem] overflow-hidden">
                   {/* Status Bar */}
                   <div className="bg-blue-700 px-6 pt-8 pb-4">
-                    <p className="text-white/60 text-[10px] font-medium mb-1">Bauherren-Portal</p>
-                    <p className="text-white font-black text-lg">Ihr Bauprojekt</p>
-                    <p className="text-blue-200 text-xs">Dachsanierung · Familie Schmidt</p>
+                    <p className="text-white/60 text-[10px] font-medium mb-1">Auftraggeber-Portal</p>
+                    <p className="text-white font-black text-lg">Ihr Reinigungsobjekt</p>
+                    <p className="text-blue-200 text-xs">Buerogebaeude · Hausverwaltung Krause</p>
                   </div>
 
                   {/* Content */}
@@ -79,12 +79,12 @@ export default function TaskeyShare() {
                       <div className="w-full bg-gray-200 rounded-full h-2.5">
                         <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2.5 rounded-full" style={{ width: '67%' }} />
                       </div>
-                      <p className="text-[10px] text-gray-500 mt-1.5">Voraussichtliche Fertigstellung: 28. März</p>
+                      <p className="text-[10px] text-gray-500 mt-1.5">Naechste Reinigung: Mo, 28. Maerz</p>
                     </div>
 
                     {/* Photos */}
                     <div className="bg-gray-50 rounded-xl p-3">
-                      <p className="text-xs font-bold text-gray-900 mb-2">Aktuelle Fotos</p>
+                      <p className="text-xs font-bold text-gray-900 mb-2">Leistungsnachweise</p>
                       <div className="grid grid-cols-3 gap-1.5">
                         <div className="aspect-square bg-gray-300 rounded-lg flex items-center justify-center">
                           <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
@@ -101,10 +101,10 @@ export default function TaskeyShare() {
 
                     {/* Budget */}
                     <div className="bg-gray-50 rounded-xl p-3">
-                      <p className="text-xs font-bold text-gray-900 mb-2">Restbudget</p>
+                      <p className="text-xs font-bold text-gray-900 mb-2">Monatsvertrag</p>
                       <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-black text-gray-900">4.200 €</span>
-                        <span className="text-xs text-gray-500">von 38.000 €</span>
+                        <span className="text-2xl font-black text-gray-900">4.200 EUR</span>
+                        <span className="text-xs text-gray-500">von 4.800 EUR</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
                         <div className="bg-emerald-500 h-1.5 rounded-full" style={{ width: '89%' }} />

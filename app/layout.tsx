@@ -8,11 +8,11 @@ import { LanguageProvider } from "@/context/LanguageContext";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.taskeyapp.com'),
   title: {
-    default: "Taskey - Dienstleistungssoftware für über 600 Branchen | Made in Germany",
+    default: "Taskey - Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum | Made in Germany",
     template: "%s | Taskey"
   },
-  description: "Taskey ist die führende Dienstleistungssoftware aus Deutschland für über 600 Branchen. Automatische Zeiterfassung, intelligente Auftragsplanung & digitale Rechnungsstellung. DSGVO-konform. Jetzt 14 Tage kostenlos testen!",
-  keywords: ["Dienstleistungssoftware", "Handwerkersoftware", "Zeiterfassung", "Auftragsplanung", "Rechnungssoftware", "Facility Management Software", "Mobile Einsatzplanung", "DSGVO-konforme Software", "Software für Handwerker", "Betriebssoftware Deutschland"],
+  description: "Taskey ist die fuehrende Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung & Qualitaetskontrolle. DSGVO-konform. Jetzt 14 Tage kostenlos testen!",
+  keywords: ["Reinigungssoftware", "Gebaeudereinigung Software", "Zeiterfassung Reinigung", "Einsatzplanung Gebaeudereinigung", "NFC Leistungsnachweis", "Qualitaetskontrolle Reinigung", "Reinigungssoftware DACH", "DSGVO-konforme Software", "Software fuer Gebaeudereiniger", "Unterhaltsreinigung Software"],
   authors: [{ name: "Taskey" }],
   creator: "Taskey",
   publisher: "Taskey",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://www.taskeyapp.com",
     siteName: "Taskey",
-    title: "Taskey - Dienstleistungssoftware für über 600 Branchen",
-    description: "Automatische Zeiterfassung, intelligente Auftragsplanung & digitale Rechnungsstellung für Dienstleistungsbetriebe. Made in Germany, DSGVO-konform.",
+    title: "Taskey - Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum",
+    description: "NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung & Qualitaetskontrolle fuer Gebaeudereiniger. Made in Germany, DSGVO-konform.",
     images: [
       {
         url: "/logobittt.png",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Taskey - Dienstleistungssoftware für über 600 Branchen",
-    description: "Automatische Zeiterfassung, intelligente Auftragsplanung & digitale Rechnungsstellung. Made in Germany, DSGVO-konform.",
+    title: "Taskey - Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum",
+    description: "NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung & Qualitaetskontrolle. Made in Germany, DSGVO-konform.",
     images: ["/logobittt.png"],
   },
   alternates: {

@@ -4,6 +4,7 @@ import FeaturePreview from "@/components/home/FeaturePreview";
 import SectionDivider from "@/components/home/SectionDivider";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import ReferralSection from "@/components/home/ReferralSection";
 
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
@@ -16,8 +17,8 @@ const Contact = dynamic(() => import("@/components/home/Contact"));
 const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
-  title: "Taskey - Dienstleistungssoftware für über 600 Branchen | Zeiterfassung & Auftragsplanung",
-  description: "Taskey - Die führende Dienstleistungssoftware aus Deutschland. Automatische Zeiterfassung, intelligente Auftragsplanung, digitale Rechnungsstellung. Für Handwerk, Facility Management, technische Services uvm. DSGVO-konform. Jetzt kostenlos testen!",
+  title: "Taskey - Reinigungssoftware fuer Gebaeudereiniger im DACH-Raum | Zeiterfassung & Einsatzplanung",
+  description: "Taskey - Die fuehrende Reinigungssoftware fuer Gebaeudereiniger in Deutschland, Oesterreich und der Schweiz. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung und Qualitaetskontrolle. DSGVO-konform. Jetzt kostenlos testen!",
   alternates: {
     canonical: "https://taskeyapp.com",
   },
@@ -42,7 +43,7 @@ export default function Home() {
       "ratingValue": "4.8",
       "ratingCount": "250"
     },
-    "description": "Dienstleistungssoftware für automatische Zeiterfassung, Auftragsplanung und Rechnungsstellung",
+    "description": "Reinigungssoftware fuer NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitaetskontrolle in der Gebaeudereinigung",
     "softwareVersion": "2.0",
     "author": {
       "@type": "Organization",
@@ -61,8 +62,8 @@ export default function Home() {
       "@type": "ContactPoint",
       "telephone": "+49-800-123-4567",
       "contactType": "customer service",
-      "areaServed": "DE",
-      "availableLanguage": ["German"]
+      "areaServed": ["DE", "AT", "CH"],
+      "availableLanguage": ["German", "English", "French"]
     },
     "sameAs": [
       "https://www.linkedin.com/company/taskey",
@@ -82,6 +83,7 @@ export default function Home() {
       />
       <main>
         <Hero />
+        <ReferralSection />
         <NFCSection />
         <SectionDivider from="#f9fafb" to="white" variant="wave" />
 

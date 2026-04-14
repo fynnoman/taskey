@@ -8,24 +8,24 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Michael Weber",
-      business: "Weber Elektrotechnik GmbH",
+      business: "Reinigungsservice Weber GmbH",
       text: t("testimonials.1.text"),
       rating: 5,
       image: "/ceo.png",
     },
     {
       name: "Sandra Müller",
-      business: "Müller Sanitär & Heizung",
+      business: "Mueller Facility Clean GmbH",
       text: t("testimonials.2.text"),
       rating: 5,
       image: "/frau.png",
     },
     {
       name: "Thomas Schneider",
-      business: "Schneider Malerbetrieb",
+      business: "Schneider Gebaeudereinigung",
       text: t("testimonials.3.text"),
       rating: 5,
-      image: "/handwerker.png",
+      image: "/ceo.png",
     },
   ];
 
