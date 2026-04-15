@@ -270,7 +270,7 @@ export default function Branchen() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link
-              href="https://signup.vars-development.com"
+              href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-lg font-semibold rounded-xl text-center"

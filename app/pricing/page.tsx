@@ -78,7 +78,7 @@ function PricingPageInner() {
           {t("pricing.hero.subtitle")}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://signup.vars-development.com" className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors">
+          <a href="https://signup.taskeyapp.com" className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors">
             {t("pricing.hero.cta.trial")}
           </a>
         </div>
@@ -189,7 +189,7 @@ function PricingPageInner() {
               <span className="text-gray-500 text-sm"> / {t("pricing.reinigung.month")}</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">+ 25 &euro; / {t("pricing.reinigung.perObject")}</p>
-            <a href="https://signup.vars-development.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
               {t("pricing.reinigung.cta.trial")}
             </a>
             <ul className="space-y-3 flex-1">
@@ -214,7 +214,7 @@ function PricingPageInner() {
               <span className="text-gray-500 text-sm"> / {t("pricing.reinigung.month")}</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">+ 22 &euro; / {t("pricing.reinigung.perObject")}</p>
-            <a href="https://signup.vars-development.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
               {t("pricing.reinigung.cta.trial")}
             </a>
             <ul className="space-y-3 flex-1">
@@ -332,7 +332,7 @@ function PricingPageInner() {
               <span className="text-4xl font-bold text-gray-900">{getHandwerkPrice("start").toFixed(2).replace(".", ",")} &euro;</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.vars-development.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
               {t("pricingPage.startNow")}
             </a>
             <ul className="space-y-3 flex-1">
@@ -364,7 +364,7 @@ function PricingPageInner() {
               <span className="text-4xl font-bold text-blue-900">{getHandwerkPrice("grow").toFixed(2).replace(".", ",")} &euro;</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.vars-development.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
               {t("pricingPage.bookGrow")}
             </a>
             <ul className="space-y-3 flex-1">
@@ -393,7 +393,7 @@ function PricingPageInner() {
               <span className="text-4xl font-bold text-gray-900">{getHandwerkPrice("scale").toFixed(2).replace(".", ",")} &euro;</span>
             </div>
             <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.vars-development.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
               {t("pricingPage.bookScale")}
             </a>
             <ul className="space-y-3 flex-1">
@@ -723,7 +723,7 @@ function PricingPageInner() {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t("pricingPage.finalCta.title")}</h2>
         <p className="text-gray-600 mb-8">{t("pricingPage.finalCta.subtitle")}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <a href="https://signup.vars-development.com" className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors">
+          <a href="https://signup.taskeyapp.com" className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors">
             {t("pricingPage.finalCta.trial")}
           </a>
           <a href="mailto:kontakt@taskey.de" className="px-8 py-3.5 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 transition-colors">

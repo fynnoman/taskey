@@ -37,7 +37,7 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-start">
                 <Link
-                  href="https://signup.vars-development.com"
+                  href="https://signup.taskeyapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-10 py-5 bg-blue-900 text-white text-xl font-black rounded-2xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-2xl hover:scale-[1.02]"

@@ -154,7 +154,7 @@ export default function NewsPage() {
             </p>
           </div>
           <Link
-            href="https://signup.vars-development.com"
+            href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 px-10 py-5 bg-white text-blue-900 text-xl font-black rounded-2xl hover:bg-blue-50 transition-all shadow-xl hover:scale-[1.02]"

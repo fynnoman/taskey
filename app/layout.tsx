@@ -72,10 +72,10 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp" as="image" type="image/webp" fetchPriority="high" />
         <link rel="preconnect" href="https://mission-control.vars-development.com" />
-        <link rel="preconnect" href="https://signup.vars-development.com" />
+        <link rel="preconnect" href="https://signup.taskeyapp.com" />
         <link rel="preconnect" href="https://taskey.vars-development.com" />
         <link rel="dns-prefetch" href="https://mission-control.vars-development.com" />
-        <link rel="dns-prefetch" href="https://signup.vars-development.com" />
+        <link rel="dns-prefetch" href="https://signup.taskeyapp.com" />
         <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
       </head>
       <body className="antialiased">

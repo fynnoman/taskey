@@ -76,7 +76,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-3">
             <LanguageSwitcher />
             <Link
-              href="https://signup.vars-development.com"
+              href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium shadow-sm"
@@ -169,7 +169,7 @@ export default function Header() {
                   <LanguageSwitcher />
                 </div>
                 <Link
-                  href="https://signup.vars-development.com"
+                  href="https://signup.taskeyapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full px-4 py-3 text-center bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium"

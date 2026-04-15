@@ -31,7 +31,7 @@ export default function LiveMargen() {
             </p>
 
             <Link
-              href="https://signup.vars-development.com"
+              href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-gray-900 font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-emerald-500/25 text-base"

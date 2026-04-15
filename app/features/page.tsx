@@ -803,7 +803,7 @@ export default function FeaturesPage() {
               {/* CTA Buttons - Improved */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
                 <Link 
-                  href="https://signup.vars-development.com"
+                  href="https://signup.taskeyapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl shadow-xl overflow-hidden w-full sm:w-auto"

@@ -35,7 +35,7 @@ export default function NFCLandingPage() {
             {t("nfcPage.success.text")}
           </p>
           <Link
-            href="https://signup.vars-development.com"
+            href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-blue-900 text-white font-black text-lg rounded-2xl hover:bg-blue-800 transition-colors shadow-lg"

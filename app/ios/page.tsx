@@ -293,7 +293,7 @@ export default function IOSPage() {
             {/* Mobile CTAs */}
             <div className="lg:hidden flex flex-col gap-3">
               <Link
-                href="https://signup.vars-development.com"
+                href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-6 py-3.5 bg-blue-900 text-white text-sm font-bold rounded-xl"
@@ -305,7 +305,7 @@ export default function IOSPage() {
             {/* Desktop CTAs */}
             <div className="hidden lg:flex flex-row gap-4 justify-center">
               <Link
-                href="https://signup.vars-development.com"
+                href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-white text-lg font-bold rounded-2xl hover:bg-blue-800 transition-colors shadow-lg"

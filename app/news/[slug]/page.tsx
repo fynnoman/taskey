@@ -279,7 +279,7 @@ export default async function PostPage({ params }: Props) {
             <p className="text-blue-300 text-lg">14 Tage kostenlos. Kein Risiko.</p>
           </div>
           <Link
-            href="https://signup.vars-development.com"
+            href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 px-8 py-4 bg-white text-blue-900 text-lg font-black rounded-2xl hover:bg-blue-50 transition-all shadow-xl hover:scale-[1.02]"

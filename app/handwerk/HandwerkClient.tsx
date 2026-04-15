@@ -56,7 +56,7 @@ export default function HandwerkClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
-              href="https://signup.vars-development.com"
+              href="https://signup.taskeyapp.com"
               className="px-8 py-4 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-base shadow-lg"
             >
               14 Tage kostenlos testen
@@ -190,7 +190,7 @@ export default function HandwerkClient() {
             <p className="text-gray-400 leading-relaxed mb-8">
               Taskey rechnet jede Baustelle live gegen Ihren Angebotspreis. Sie sehen sofort, wenn etwas kippt &ndash; und können reagieren, bevor es zu spät ist.
             </p>
-            <a href="https://signup.vars-development.com" className="inline-block px-6 py-3 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-sm">
+            <a href="https://signup.taskeyapp.com" className="inline-block px-6 py-3 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-sm">
               Jetzt kostenlos testen
             </a>
           </div>
@@ -533,7 +533,7 @@ export default function HandwerkClient() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">Jetzt kostenlos starten</h3>
               <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 14 Tage lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
               <a
-                href="https://signup.vars-development.com"
+                href="https://signup.taskeyapp.com"
                 className="block w-full py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors text-sm"
               >
                 Kostenlos testen
@@ -556,7 +556,7 @@ export default function HandwerkClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
-              href="https://signup.vars-development.com"
+              href="https://signup.taskeyapp.com"
               className="px-8 py-4 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-base shadow-lg"
             >
               Jetzt starten

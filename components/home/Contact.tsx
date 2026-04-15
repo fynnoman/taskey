@@ -91,7 +91,7 @@ export default function Contact() {
               </p>
               <div className="space-y-3">
                 <Link
-                  href="https://signup.vars-development.com"
+                  href="https://signup.taskeyapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full px-5 py-3 bg-gray-900 text-white text-center font-bold rounded-xl hover:bg-gray-800 transition-colors text-sm"

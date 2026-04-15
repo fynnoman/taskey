@@ -29,7 +29,7 @@ export default function TaskeyShare() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="https://signup.vars-development.com"
+                href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-700/25 text-base"
