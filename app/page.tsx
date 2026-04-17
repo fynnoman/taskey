@@ -16,8 +16,8 @@ const Contact = dynamic(() => import("@/components/home/Contact"));
 const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
-  title: "Taskey - Reinigungssoftware für Gebäudereiniger im DACH-Raum | Zeiterfassung & Einsatzplanung",
-  description: "Taskey - Die führende Reinigungssoftware für Gebäudereiniger in Deutschland, Österreich und der Schweiz. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung und Qualitätskontrolle. DSGVO-konform. Jetzt kostenlos testen!",
+  title: "Taskey - Betriebssoftware für Handwerk, Reinigung & Facility Management | Zeiterfassung, NFC & Einsatzplanung",
+  description: "Taskey ist die einfachste Betriebssoftware im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – für Handwerker, Gebäudereiniger und Facility Manager. DSGVO-konform. 14 Tage kostenlos testen!",
   alternates: {
     canonical: "https://taskeyapp.com",
   },
@@ -42,7 +42,7 @@ export default function Home() {
       "ratingValue": "4.8",
       "ratingCount": "250"
     },
-    "description": "Reinigungssoftware für NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitätskontrolle in der Gebäudereinigung",
+    "description": "Betriebssoftware für Handwerk, Gebäudereinigung und Facility Management. Zeiterfassung, NFC-Nachweise, Einsatzplanung und Live-Margen in einer App.",
     "softwareVersion": "2.0",
     "author": {
       "@type": "Organization",
@@ -128,13 +128,22 @@ export default function Home() {
         <SectionDivider from="white" to="#f9fafb" variant="dot-fade" />
         <Contact />
 
-        {/* Cross-link to Handwerk */}
+        {/* Cross-links to specialized pages */}
         <div className="bg-gray-100 border-t border-gray-200">
-          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-            <span>Sie kommen aus Handwerk oder Bau?</span>
-            <a href="/handwerk" className="text-blue-900 font-semibold hover:underline">
-              Zur Version für Handwerksbetriebe &rarr;
-            </a>
+          <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-500">
+            <span className="flex items-center gap-2">
+              <span>Speziell für Handwerk & Bau?</span>
+              <a href="/handwerk" className="text-blue-900 font-semibold hover:underline">
+                Handwerker-Version &rarr;
+              </a>
+            </span>
+            <span className="hidden sm:inline text-gray-300">|</span>
+            <span className="flex items-center gap-2">
+              <span>Speziell für Gebäudereinigung?</span>
+              <a href="/gebaeudereinigung" className="text-blue-900 font-semibold hover:underline">
+                Reiniger-Version &rarr;
+              </a>
+            </span>
           </div>
         </div>
       </main>

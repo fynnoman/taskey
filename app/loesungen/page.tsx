@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Alle Lösungen – Taskey für Gebäudereinigung im DACH-Raum',
-  description: 'Entdecken Sie alle Taskey-Lösungen für Gebäudereiniger: NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung, Qualitätskontrolle, Objektverwaltung und mehr.',
+  title: 'Alle Lösungen – Taskey für Gebäudereinigung, Handwerk & Facility Management',
+  description: 'Entdecken Sie alle Taskey-Lösungen: NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung, Qualitätskontrolle, Objektverwaltung, Live-Margen und mehr. Für Gebäudereiniger, Handwerker und Facility Manager.',
   alternates: { canonical: 'https://www.taskeyapp.com/loesungen' },
 };
 

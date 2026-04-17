@@ -582,7 +582,7 @@ export default function HandwerkClient() {
       <div className="bg-gray-100 border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-center gap-2 text-sm text-gray-500">
           <span>Sie sind ein Reinigungsbetrieb?</span>
-          <Link href="/" className="text-blue-900 font-semibold hover:underline">
+          <Link href="/gebaeudereinigung" className="text-blue-900 font-semibold hover:underline">
             Zur Version für Gebäudereiniger &rarr;
           </Link>
         </div>

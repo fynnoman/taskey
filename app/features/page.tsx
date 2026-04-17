@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 // Metadata will be set via head tags
 if (typeof window !== 'undefined') {
-  document.title = "Alle Funktionen im Überblick | Taskey Reinigungssoftware";
+  document.title = "Alle Funktionen im Überblick | Taskey Betriebssoftware";
 }
 
 interface Feature {
