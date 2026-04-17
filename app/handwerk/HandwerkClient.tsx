@@ -124,6 +124,18 @@ export default function HandwerkClient() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="/Taskey_Mitarbeiter_Anleitung.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gray-900 text-white font-bold px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors text-sm"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
+            NFC-Anleitung herunterladen (PDF)
+          </a>
+        </div>
       </Section>
 
       {/* ────────────────────────────────────────────────────────────

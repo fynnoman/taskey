@@ -169,6 +169,15 @@ export default function NFCSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
+            <a
+              href="/Taskey_Mitarbeiter_Anleitung.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border-2 border-gray-300 hover:border-gray-400 text-gray-700 font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-colors text-sm md:text-base"
+            >
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" /></svg>
+              NFC-Anleitung (PDF)
+            </a>
           </div>
           <p className="text-gray-400 text-xs md:text-sm mt-4">
             ✓ Kostenlose Starter-Aufkleber für Neukunden  •  ✓ Ersatz bei Beschädigung garantiert
