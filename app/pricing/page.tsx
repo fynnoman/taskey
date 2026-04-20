@@ -139,7 +139,7 @@ function PricingPageInner() {
           <div className="rounded-3xl border border-gray-200 bg-white p-8 flex flex-col hover:shadow-xl transition-shadow">
             <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">PROFESSIONAL</span>
             <div className="mb-1">
-              <span className="text-5xl font-black text-gray-900">199</span>
+              <span className="text-5xl font-black text-gray-900">119</span>
               <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
             <p className="text-sm text-blue-600 font-semibold mb-6">+ 6,90 &euro; pro Objekt</p>
@@ -163,7 +163,7 @@ function PricingPageInner() {
             </div>
             <span className="text-xs font-bold tracking-widest text-blue-900 mb-4">BUSINESS</span>
             <div className="mb-1">
-              <span className="text-5xl font-black text-blue-900">399</span>
+              <span className="text-5xl font-black text-blue-900">229</span>
               <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
             <p className="text-sm text-blue-600 font-semibold mb-6">+ 5,90 &euro; pro Objekt</p>
@@ -184,7 +184,7 @@ function PricingPageInner() {
           <div className="rounded-3xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col hover:shadow-xl transition-shadow">
             <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">ENTERPRISE</span>
             <div className="mb-1">
-              <span className="text-5xl font-black text-gray-900">699</span>
+              <span className="text-5xl font-black text-gray-900">489</span>
               <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
             <p className="text-sm text-blue-600 font-semibold mb-6">+ 4,90 &euro; pro Objekt</p>
