@@ -893,8 +893,8 @@ export default function FeaturesPage() {
                 answer: "Ja. Wir importieren Ihre Excel-Listen oder andere Dateien komplett für Sie. Sie müssen nichts selbst eintippen. Das ist Teil unseres kostenlosen Einrichtungs-Service."
               },
               {
-                question: "Gibt es eine Verbindung zu LexOffice oder Sage für die Buchhaltung?",
-                answer: "Ja. Taskey schickt Arbeitszeiten, Rechnungen und Belege automatisch an LexOffice, Sage oder DATEV. Ihr Steuerberater freut sich, weil er saubere Daten bekommt."
+                question: "Kann ich Daten exportieren?",
+                answer: "Ja. Taskey exportiert Arbeitszeiten, Rechnungen und Belege als PDF, CSV oder Excel. Ihr Steuerberater freut sich, weil er saubere Daten bekommt."
               },
               {
                 question: "Wie schnell kann ich loslegen?",

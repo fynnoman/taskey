@@ -127,50 +127,6 @@ function PricingPageInner() {
     </div>
   );
 
-  const reinigungProfessionalFeatures = [
-    t("pricing.reinigung.prof.f1"),
-    t("pricing.reinigung.prof.f2"),
-    t("pricing.reinigung.prof.f3"),
-    t("pricing.reinigung.prof.f4"),
-    t("pricing.reinigung.prof.f5"),
-    t("pricing.reinigung.prof.f6"),
-    t("pricing.reinigung.prof.f7"),
-    t("pricing.reinigung.prof.f8"),
-    t("pricing.reinigung.prof.f9"),
-    t("pricing.reinigung.prof.f10"),
-    t("pricing.reinigung.prof.f11"),
-    t("pricing.reinigung.prof.f12"),
-    t("pricing.reinigung.prof.f13"),
-  ];
-
-  const reinigungBusinessFeatures = [
-    t("pricing.reinigung.biz.f1"),
-    t("pricing.reinigung.biz.f2"),
-    t("pricing.reinigung.biz.f3"),
-    t("pricing.reinigung.biz.f4"),
-    t("pricing.reinigung.biz.f5"),
-    t("pricing.reinigung.biz.f6"),
-    t("pricing.reinigung.biz.f7"),
-    t("pricing.reinigung.biz.f8"),
-    t("pricing.reinigung.biz.f9"),
-    t("pricing.reinigung.biz.f10"),
-    t("pricing.reinigung.biz.f11"),
-  ];
-
-  const reinigungEnterpriseFeatures = [
-    t("pricing.reinigung.ent.f1"),
-    t("pricing.reinigung.ent.f2"),
-    t("pricing.reinigung.ent.f3"),
-    t("pricing.reinigung.ent.f4"),
-    t("pricing.reinigung.ent.f5"),
-    t("pricing.reinigung.ent.f6"),
-    t("pricing.reinigung.ent.f7"),
-    t("pricing.reinigung.ent.f8"),
-    t("pricing.reinigung.ent.f9"),
-    t("pricing.reinigung.ent.f10"),
-    t("pricing.reinigung.ent.f11"),
-  ];
-
   const reinigungCards = (
     <section className="pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -178,76 +134,75 @@ function PricingPageInner() {
 
         <p className="text-center text-xs text-gray-400 mb-10">{t("pricingPage.allPricesVat")}</p>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {/* PROFESSIONAL */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 mb-2">PROFESSIONAL</span>
-            <h3 className="text-xl font-bold text-gray-900 mb-1">{t("pricing.reinigung.prof.tagline")}</h3>
-            <p className="text-sm text-gray-500 mb-6">{t("pricing.reinigung.prof.desc")}</p>
-            <div className="mb-2">
-              <span className="text-4xl font-bold text-gray-900">199 &euro;</span>
-              <span className="text-gray-500 text-sm"> / {t("pricing.reinigung.month")}</span>
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 flex flex-col hover:shadow-xl transition-shadow">
+            <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">PROFESSIONAL</span>
+            <div className="mb-1">
+              <span className="text-5xl font-black text-gray-900">199</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">+ 25 &euro; / {t("pricing.reinigung.perObject")}</p>
-            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              {t("pricing.reinigung.cta.trial")}
+            <p className="text-sm text-blue-600 font-semibold mb-6">+ 6,90 &euro; pro Objekt</p>
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+              14 Tage kostenlos
             </a>
-            <ul className="space-y-3 flex-1">
-              {reinigungProfessionalFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Unbegrenzte Mitarbeiter</li>
+              <li className="flex items-center gap-2"><CheckIcon /> NFC-Leistungsnachweis</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Automatische Zeiterfassung</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Einsatzplanung</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Bis 30 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> E-Mail-Support</li>
             </ul>
           </div>
 
           {/* BUSINESS (highlighted) */}
-          <div className="rounded-2xl border-2 border-blue-900 bg-white p-8 flex flex-col relative shadow-lg">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1 px-4 py-1 bg-blue-900 text-white text-xs font-semibold rounded-full">
-              <StarIcon /> {t("pricing.reinigung.biz.badge")}
+          <div className="rounded-3xl border-2 border-blue-900 bg-white p-8 flex flex-col relative shadow-xl scale-[1.02]">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-blue-900 text-white text-xs font-bold rounded-full">
+              Beliebteste Wahl
             </div>
-            <span className="text-xs font-semibold tracking-widest text-blue-900 mb-2">BUSINESS</span>
-            <h3 className="text-xl font-bold text-gray-900 mb-1">{t("pricing.reinigung.biz.tagline")}</h3>
-            <p className="text-sm text-gray-500 mb-6">{t("pricing.reinigung.biz.desc")}</p>
-            <div className="mb-2">
-              <span className="text-4xl font-bold text-blue-900">399 &euro;</span>
-              <span className="text-gray-500 text-sm"> / {t("pricing.reinigung.month")}</span>
+            <span className="text-xs font-bold tracking-widest text-blue-900 mb-4">BUSINESS</span>
+            <div className="mb-1">
+              <span className="text-5xl font-black text-blue-900">399</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">+ 22 &euro; / {t("pricing.reinigung.perObject")}</p>
-            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
-              {t("pricing.reinigung.cta.trial")}
+            <p className="text-sm text-blue-600 font-semibold mb-6">+ 5,90 &euro; pro Objekt</p>
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-blue-900 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors mb-8">
+              14 Tage kostenlos
             </a>
-            <ul className="space-y-3 flex-1">
-              {reinigungBusinessFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Alles aus Professional</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Bis 75 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Routenoptimierung</li>
+              <li className="flex items-center gap-2"><CheckIcon /> PDF-, CSV- &amp; Excel-Export</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Chat-Support (24h)</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Kostenloses Setup</li>
             </ul>
           </div>
 
           {/* ENTERPRISE */}
-          <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 mb-2">ENTERPRISE</span>
-            <h3 className="text-xl font-bold text-gray-900 mb-1">{t("pricing.reinigung.ent.tagline")}</h3>
-            <p className="text-sm text-gray-500 mb-6">{t("pricing.reinigung.ent.desc")}</p>
-            <div className="mb-2">
-              <span className="text-4xl font-bold text-gray-900">699 &euro;</span>
-              <span className="text-gray-500 text-sm"> / {t("pricing.reinigung.month")}</span>
+          <div className="rounded-3xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col hover:shadow-xl transition-shadow">
+            <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">ENTERPRISE</span>
+            <div className="mb-1">
+              <span className="text-5xl font-black text-gray-900">699</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;/mtl.</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">+ 19 &euro; / {t("pricing.reinigung.perObject")}</p>
-            <button onClick={() => setEnterpriseModalOpen(true)} className="block w-full text-center py-3 px-6 border-2 border-gray-900 text-gray-900 font-semibold rounded-xl hover:bg-gray-900 hover:text-white transition-colors mb-8">
-              {t("pricing.reinigung.cta.contact")}
+            <p className="text-sm text-blue-600 font-semibold mb-6">+ 4,90 &euro; pro Objekt</p>
+            <button onClick={() => setEnterpriseModalOpen(true)} className="block w-full text-center py-3.5 border-2 border-gray-900 text-gray-900 font-bold rounded-xl hover:bg-gray-900 hover:text-white transition-colors mb-8">
+              Kontakt aufnehmen
             </button>
-            <ul className="space-y-3 flex-1">
-              {reinigungEnterpriseFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Alles aus Business</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Bis 200 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Priority-Support &amp; SLA</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Individuelle Anpassungen</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Dedizierter Ansprechpartner</li>
+              <li className="flex items-center gap-2"><CheckIcon /> API-Zugang</li>
             </ul>
           </div>
         </div>
+
+        <p className="text-center text-sm text-gray-400 mt-8">Alle Pakete: Unbegrenzte Mitarbeiter &middot; T&auml;glich k&uuml;ndbar &middot; Keine versteckten Kosten</p>
       </div>
     </section>
   );
@@ -273,48 +228,6 @@ function PricingPageInner() {
     </div>
   );
 
-  const handwerkStartFeatures = [
-    t("pricingPage.start.f2"),
-    t("pricingPage.start.f3"),
-    t("pricingPage.start.f4"),
-    t("pricingPage.start.f5"),
-    t("pricingPage.start.f6"),
-    t("pricingPage.start.f7"),
-  ];
-  const handwerkStartDisabled = [
-    t("pricingPage.start.f8"),
-    t("pricingPage.start.f9"),
-    t("pricingPage.start.f10"),
-    t("pricingPage.start.f11"),
-  ];
-
-  const handwerkGrowFeatures = [
-    t("pricingPage.grow.f1"),
-    t("pricingPage.grow.f2"),
-    t("pricingPage.grow.f3"),
-    t("pricingPage.grow.f4"),
-    t("pricingPage.grow.f5"),
-    t("pricingPage.grow.f6"),
-    t("pricingPage.grow.f7"),
-    t("pricingPage.grow.f8"),
-  ];
-  const handwerkGrowDisabled = [
-    t("pricingPage.grow.f9"),
-  ];
-
-  const handwerkScaleFeatures = [
-    t("pricingPage.scale.f1"),
-    t("pricingPage.scale.f2"),
-    t("pricingPage.scale.f3"),
-    t("pricingPage.scale.f4"),
-    t("pricingPage.scale.f5"),
-    t("pricingPage.scale.f6"),
-    t("pricingPage.scale.f7"),
-    t("pricingPage.scale.f8"),
-    t("pricingPage.scale.f9"),
-    t("pricingPage.scale.f10"),
-  ];
-
   const handwerkCards = (
     <section className="pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -322,112 +235,88 @@ function PricingPageInner() {
 
         {handwerkBillingToggle}
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           {/* START */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 mb-1">{t("pricingPage.start.rec")}</span>
-            <p className="text-xs text-gray-400 mb-4">{t("pricingPage.start.recSub")}</p>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">START</h3>
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 flex flex-col hover:shadow-xl transition-shadow">
+            <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">START</span>
             <div className="mb-1">
-              <span className="text-4xl font-bold text-gray-900">{getHandwerkPrice("start").toFixed(2).replace(".", ",")} &euro;</span>
+              <span className="text-5xl font-black text-gray-900">{getHandwerkPrice("start").toFixed(2).replace(".", ",")}</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              {t("pricingPage.startNow")}
+            <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+              14 Tage kostenlos
             </a>
-            <ul className="space-y-3 flex-1">
-              {handwerkStartFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
-              {handwerkStartDisabled.map((f, i) => (
-                <li key={`d-${i}`} className="flex items-start gap-3 text-sm text-gray-400 line-through">
-                  <CrossIcon /> {f}
-                </li>
-              ))}
-              <li className="flex items-start gap-3 text-sm text-gray-700">
-                <CheckIcon /> {t("pricingPage.start.f12")}
-              </li>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Zeiterfassung</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Auftragsplanung</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 3 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 50 GB Speicher</li>
+              <li className="flex items-center gap-2"><CheckIcon /> E-Mail-Support</li>
             </ul>
           </div>
 
           {/* GROW (highlighted) */}
-          <div className="rounded-2xl border-2 border-blue-900 bg-white p-8 flex flex-col relative shadow-lg">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1 px-4 py-1 bg-blue-900 text-white text-xs font-semibold rounded-full">
-              <StarIcon /> {t("pricingPage.grow.rec")}
+          <div className="rounded-3xl border-2 border-blue-900 bg-white p-8 flex flex-col relative shadow-xl scale-[1.02]">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-blue-900 text-white text-xs font-bold rounded-full">
+              Beliebteste Wahl
             </div>
-            <span className="text-xs font-semibold tracking-widest text-blue-900 mb-1">{t("pricingPage.grow.rec")}</span>
-            <p className="text-xs text-gray-400 mb-4">{t("pricingPage.grow.recSub")}</p>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">GROW</h3>
+            <span className="text-xs font-bold tracking-widest text-blue-900 mb-4">GROW</span>
             <div className="mb-1">
-              <span className="text-4xl font-bold text-blue-900">{getHandwerkPrice("grow").toFixed(2).replace(".", ",")} &euro;</span>
+              <span className="text-5xl font-black text-blue-900">{getHandwerkPrice("grow").toFixed(2).replace(".", ",")}</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors mb-8">
-              {t("pricingPage.bookGrow")}
+            <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-blue-900 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors mb-8">
+              14 Tage kostenlos
             </a>
-            <ul className="space-y-3 flex-1">
-              {handwerkGrowFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
-              {handwerkGrowDisabled.map((f, i) => (
-                <li key={`d-${i}`} className="flex items-start gap-3 text-sm text-gray-400 line-through">
-                  <CrossIcon /> {f}
-                </li>
-              ))}
-              <li className="flex items-start gap-3 text-sm text-gray-700">
-                <CheckIcon /> {t("pricingPage.grow.f10")}
-              </li>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Alles aus Start</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 15 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 250 GB Speicher</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Margen-Rechner</li>
+              <li className="flex items-center gap-2"><CheckIcon /> PDF- &amp; Excel-Export</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Chat-Support</li>
             </ul>
           </div>
 
           {/* SCALE */}
-          <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 mb-1">{t("pricingPage.scale.rec")}</span>
-            <p className="text-xs text-gray-400 mb-4">{t("pricingPage.scale.recSub")}</p>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">SCALE</h3>
+          <div className="rounded-3xl border border-gray-200 bg-gradient-to-b from-gray-50 to-white p-8 flex flex-col hover:shadow-xl transition-shadow">
+            <span className="text-xs font-bold tracking-widest text-gray-400 mb-4">SCALE</span>
             <div className="mb-1">
-              <span className="text-4xl font-bold text-gray-900">{getHandwerkPrice("scale").toFixed(2).replace(".", ",")} &euro;</span>
+              <span className="text-5xl font-black text-gray-900">{getHandwerkPrice("scale").toFixed(2).replace(".", ",")}</span>
+              <span className="text-lg font-bold text-gray-400"> &euro;</span>
             </div>
-            <p className="text-sm text-gray-500 mb-6">{t("pricingPage.perEmployee")}</p>
-            <a href="https://signup.taskeyapp.com" className="block text-center py-3 px-6 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              {t("pricingPage.bookScale")}
+            <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
+            <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
+              14 Tage kostenlos
             </a>
-            <ul className="space-y-3 flex-1">
-              {handwerkScaleFeatures.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <CheckIcon /> {f}
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-center gap-2"><CheckIcon /> Alles aus Grow</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 45 NFC-Tags</li>
+              <li className="flex items-center gap-2"><CheckIcon /> 1 TB Speicher</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Taskey Share</li>
+              <li className="flex items-center gap-2"><CheckIcon /> Priority-Support</li>
+              <li className="flex items-center gap-2"><CheckIcon /> API-Zugang</li>
             </ul>
           </div>
         </div>
 
+        <p className="text-center text-sm text-gray-400">T&auml;glich k&uuml;ndbar &middot; Keine versteckten Kosten &middot; Unbegrenztes Datenvolumen</p>
+
         {/* ENTERPRISE (Handwerk) */}
-        <div className="max-w-4xl mx-auto rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-900 to-gray-800 p-10 text-white text-center">
-          <span className="inline-block px-4 py-1 text-xs font-semibold tracking-widest bg-white/10 rounded-full mb-4">
-            {t("pricingPage.enterprise.badge")}
+        <div className="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-gray-900 to-gray-800 p-10 text-white text-center mt-12">
+          <span className="inline-block px-4 py-1 text-xs font-bold tracking-widest bg-white/10 rounded-full mb-4">
+            F&Uuml;R GROSSE TEAMS
           </span>
-          <h3 className="text-3xl font-bold mb-2">ENTERPRISE</h3>
-          <p className="text-gray-300 mb-2">{t("pricingPage.enterprise.subtitle")}</p>
-          <p className="text-gray-400 text-sm mb-8">{t("pricing.enterprise.desc")}</p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[1, 2, 3, 4].map((n) => (
-              <div key={n} className="bg-white/10 rounded-xl p-4 text-left">
-                <h4 className="font-semibold text-sm mb-1">{t(`pricingPage.enterprise.f${n}.title`)}</h4>
-                <p className="text-xs text-gray-400">{t(`pricingPage.enterprise.f${n}.desc`)}</p>
-              </div>
-            ))}
-          </div>
+          <h3 className="text-3xl font-black mb-3">ENTERPRISE</h3>
+          <p className="text-gray-300 mb-8 max-w-lg mx-auto">{t("pricing.enterprise.desc")}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/enterprise" className="px-8 py-3 border border-white/30 rounded-xl font-semibold hover:bg-white/10 transition-colors">
-              {t("pricingPage.enterprise.cta1")}
+            <a href="/enterprise" className="px-8 py-3.5 border border-white/30 rounded-xl font-bold hover:bg-white/10 transition-colors">
+              Mehr erfahren
             </a>
-            <button onClick={() => setEnterpriseModalOpen(true)} className="px-8 py-3 bg-blue-600 rounded-xl font-semibold hover:bg-blue-500 transition-colors">
-              {t("pricingPage.enterprise.cta2")}
+            <button onClick={() => setEnterpriseModalOpen(true)} className="px-8 py-3.5 bg-blue-600 rounded-xl font-bold hover:bg-blue-500 transition-colors">
+              Enterprise anfragen
             </button>
           </div>
         </div>

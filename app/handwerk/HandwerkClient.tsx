@@ -468,8 +468,8 @@ export default function HandwerkClient() {
               a: "Direkt in der App. Ihr Mitarbeiter fotografiert die Zusatzarbeit, trägt Material und Stunden ein. Sie haben sofort den Nachweis für Ihren Kunden oder Auftraggeber.",
             },
             {
-              q: "Gibt es eine Verbindung zu LexOffice, Sage oder DATEV?",
-              a: "Ja, ab dem GROW-Paket bieten wir Anbindungen an gängige Buchhaltungssoftware. Zeitdaten und Abrechnungen fließen automatisch in Ihr System.",
+              q: "Kann ich Daten exportieren?",
+              a: "Ja, ab dem GROW-Paket bieten wir umfangreiche Export-Funktionen. Zeitdaten und Abrechnungen können als PDF, CSV oder Excel exportiert werden.",
             },
             {
               q: "Was kostet Taskey für meinen Handwerksbetrieb?",

@@ -539,8 +539,8 @@ export default function ReinigungClient() {
               a: "Ja. Wir unterstuetzen Excel-, CSV- und gaengige Formate. Optional richten wir alles fuer Sie ein &ndash; schluesselfertig.",
             },
             {
-              q: "Gibt es eine Anbindung an LexOffice, Sage oder DATEV?",
-              a: "Ja, ab dem BUSINESS-Paket. Zeitdaten und Abrechnungen fliessen automatisch in Ihre Buchhaltung.",
+              q: "Kann ich Daten exportieren?",
+              a: "Ja, ab dem BUSINESS-Paket. Zeitdaten und Abrechnungen koennen als PDF, CSV oder Excel exportiert werden.",
             },
             {
               q: "Was kostet Taskey fuer meinen Reinigungsbetrieb?",

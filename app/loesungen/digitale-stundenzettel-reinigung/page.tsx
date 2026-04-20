@@ -31,7 +31,7 @@ const data: LandingPageData = {
   featureHighlights: [
     { title: 'Automatische Berechnung', description: 'Arbeitszeit, Pausen, Ueberstunden – alles automatisch berechnet.' },
     { title: 'PDF-Export', description: 'Stundenzettel als PDF für Mitarbeiter oder Steuerberater.' },
-    { title: 'Lohnbuchhaltungs-Export', description: 'Direkt in LexOffice, Sage oder DATEV exportieren.' },
+    { title: 'Lohnbuchhaltungs-Export', description: 'Als PDF, CSV oder Excel exportieren.' },
     { title: 'Objekt-Zuordnung', description: 'Stunden werden automatisch dem richtigen Objekt zugeordnet.' },
     { title: 'Genehmigungsworkflow', description: 'Objektleiter prüft und genehmigt Stundenzettel digital.' },
     { title: 'Archivierung', description: 'Alle Stundenzettel revisionssicher archiviert.' },
