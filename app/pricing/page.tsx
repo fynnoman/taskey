@@ -153,6 +153,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> Einsatzplanung</li>
               <li className="flex items-center gap-2"><CheckIcon /> Bis 30 NFC-Tags</li>
               <li className="flex items-center gap-2"><CheckIcon /> E-Mail-Support</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
 
@@ -177,6 +178,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> PDF-, CSV- &amp; Excel-Export</li>
               <li className="flex items-center gap-2"><CheckIcon /> Chat-Support (24h)</li>
               <li className="flex items-center gap-2"><CheckIcon /> Kostenloses Setup</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
 
@@ -198,6 +200,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> Individuelle Anpassungen</li>
               <li className="flex items-center gap-2"><CheckIcon /> Dedizierter Ansprechpartner</li>
               <li className="flex items-center gap-2"><CheckIcon /> API-Zugang</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
         </div>
@@ -253,6 +256,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> 3 NFC-Tags</li>
               <li className="flex items-center gap-2"><CheckIcon /> 50 GB Speicher</li>
               <li className="flex items-center gap-2"><CheckIcon /> E-Mail-Support</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
 
@@ -277,6 +281,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> Margen-Rechner</li>
               <li className="flex items-center gap-2"><CheckIcon /> PDF- &amp; Excel-Export</li>
               <li className="flex items-center gap-2"><CheckIcon /> Chat-Support</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
 
@@ -298,6 +303,7 @@ function PricingPageInner() {
               <li className="flex items-center gap-2"><CheckIcon /> Taskey Share</li>
               <li className="flex items-center gap-2"><CheckIcon /> Priority-Support</li>
               <li className="flex items-center gap-2"><CheckIcon /> API-Zugang</li>
+              <li className="flex items-center gap-2"><CheckIcon /> DATEV-Export</li>
             </ul>
           </div>
         </div>
