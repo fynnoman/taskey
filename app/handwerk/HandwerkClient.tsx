@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import CommunicationUSP from "@/components/CommunicationUSP";
 
 // ─── Icons ─────────────────────────────────────────────────────────
 function CheckIcon({ className = "w-5 h-5 text-green-500" }: { className?: string }) {
@@ -51,8 +52,12 @@ export default function HandwerkClient() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
             Schluss mit Zettel.<br className="hidden sm:block" /> Schluss mit Suchen.<br className="hidden sm:block" /> Schluss mit Streit.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
             Taskey ist die App, die Ihren Handwerksbetrieb endlich in den Griff bekommt. Zeiten, Werkzeug, Baustellen, Abrechnung &ndash; alles vom Handy.
+          </p>
+          <p className="text-sm sm:text-base text-cyan-300 font-semibold max-w-2xl mx-auto mb-10">
+            <span className="inline-block align-middle mr-1">⚡</span>
+            Beste Kommunikation zwischen Baustelle und Büro &ndash; in Echtzeit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
@@ -65,6 +70,9 @@ export default function HandwerkClient() {
           <p className="text-sm text-gray-400">Keine Kreditkarte. Sofort loslegen.</p>
         </div>
       </section>
+
+      {/* USP: Echtzeit-Kommunikation zwischen Baustelle und Büro */}
+      <CommunicationUSP variant="full" />
 
       {/* ────────────────────────────────────────────────────────────
           2. NFC-AUFKLEBER (Herzstück)

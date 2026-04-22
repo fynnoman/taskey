@@ -2,6 +2,7 @@ import Hero from "@/components/home/Hero";
 import NFCSection from "@/components/home/NFCSection";
 import FeaturePreview from "@/components/home/FeaturePreview";
 import SectionDivider from "@/components/home/SectionDivider";
+import CommunicationUSP from "@/components/CommunicationUSP";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import ReferralSection from "@/components/home/ReferralSection";
@@ -83,6 +84,7 @@ export default function Home() {
       <main>
         <Hero />
         <ReferralSection />
+        <CommunicationUSP variant="full" />
         <NFCSection />
         <SectionDivider from="#f9fafb" to="white" variant="wave" />
 

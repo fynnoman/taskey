@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import CommunicationUSP from '@/components/CommunicationUSP';
 
 export const metadata: Metadata = {
   title: 'Alle Lösungen – Taskey für Gebäudereinigung, Handwerk & Facility Management',
@@ -128,6 +129,8 @@ export default function LösungenPage() {
           </p>
         </div>
       </section>
+
+      <CommunicationUSP variant="compact" />
 
       {/* Categories */}
       <section className="py-16 md:py-24">

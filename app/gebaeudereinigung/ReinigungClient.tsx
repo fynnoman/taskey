@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import CommunicationUSP from "@/components/CommunicationUSP";
 
 // ─── Icons ─────────────────────────────────────────────────────────
 function CheckIcon({ className = "w-5 h-5 text-cyan-500" }: { className?: string }) {
@@ -61,9 +62,14 @@ export default function ReinigungClient() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed font-light">
             NFC-Leistungsnachweis. Automatische Zeiterfassung. Einsatzplanung.
             <span className="text-white font-medium"> Alles in einer App, die jede Reinigungskraft sofort versteht.</span>
+          </p>
+
+          <p className="text-base sm:text-lg text-cyan-300 font-semibold max-w-3xl mx-auto mb-12">
+            <span className="inline-block align-middle mr-1">⚡</span>
+            Beste Kommunikation zwischen Objekt und Büro &ndash; in Echtzeit.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -100,6 +106,9 @@ export default function ReinigungClient() {
           </div>
         </div>
       </section>
+
+      {/* USP: Echtzeit-Kommunikation zwischen Objekt und Büro */}
+      <CommunicationUSP variant="dark" />
 
       {/* ────────────────────────────────────────────────────────────
           2. PROBLEM / PAIN POINTS – Emotional & direkt

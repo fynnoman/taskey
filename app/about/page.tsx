@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import CommunicationUSP from "@/components/CommunicationUSP";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -19,6 +20,8 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <CommunicationUSP variant="compact" />
 
       {/* Mission Section */}
       <section className="py-20 bg-white">

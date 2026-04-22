@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+import CommunicationUSP from '@/components/CommunicationUSP';
 
 // Metadata will be set via head tags
 if (typeof window !== 'undefined') {
@@ -413,6 +414,8 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
+
+      <CommunicationUSP variant="compact" />
 
       <div className="py-10 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

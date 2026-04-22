@@ -25,6 +25,16 @@ export default function Hero() {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/10 border border-blue-900/20 mb-6">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600" />
+            </span>
+            <span className="text-[11px] sm:text-xs font-black tracking-[0.2em] text-blue-900 uppercase">
+              Echtzeit-Kommunikation · Feld &harr; Büro
+            </span>
+          </div>
+
           <h1 className="text-[clamp(4rem,12vw,9rem)] font-black text-gray-900 leading-[0.9] tracking-tight mb-10">
                 {t("homeHero.title1")}<br />
                 <span className="text-blue-900">{t("homeHero.title2")}<br className="sm:hidden" /> {t("homeHero.title3")}</span>

@@ -3,6 +3,7 @@
 import React, { useState, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "../../context/LanguageContext";
+import CommunicationUSP from "../../components/CommunicationUSP";
 
 const ManagerRequestModal = lazy(() => import("../../components/ManagerRequestModal"));
 const EnterpriseApplicationModal = lazy(() => import("../../components/EnterpriseApplicationModal"));
@@ -638,6 +639,7 @@ function PricingPageInner() {
   return (
     <main className="min-h-screen bg-white">
       {heroSection}
+      <CommunicationUSP variant="compact" />
       {toggleSection}
       {activeModel === "reinigung" ? reinigungCards : handwerkCards}
       {nfcSection}
