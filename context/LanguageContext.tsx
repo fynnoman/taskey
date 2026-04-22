@@ -870,12 +870,17 @@ const translations: Record<Language, Record<string, string>> = {
     "homeHero.title1": "The software",
     "homeHero.title2": "for your",
     "homeHero.title3": "business.",
+    "homeHero.title1": "The software",
+    "homeHero.title2": "for your",
+    "homeHero.title3": "business.",
     "homeHero.features": "No more arguments with clients about whether your team was on site. No more timesheet chaos at month-end. No more calls asking when someone is coming.",
     "homeHero.tagline": "Taskey takes care of it for you – right from your phone.",
-    "homeHero.cta.trial": "Try free for 14 days →",
-    "homeHero.cta.demo": "Watch live demo",
-    "homeHero.trust": "No credit card. No risk. Get started right away.",
-    "homeHero.solutions": "View all features",
+    // Communication USP
+    "usp.communication.title": "Seamless communication between field and office",
+    "usp.communication.subtitle": "Taskey ensures that all information from the field flows automatically to the office — photos, times, reports, status updates. Decision-makers see immediately what is happening on-site.",
+    "usp.communication.bullet1": "Employees collect all important information on-site via app",
+    "usp.communication.bullet2": "Taskey automatically transmits the data to the office",
+    "usp.communication.bullet3": "Transparency: Everyone in the office sees live what is happening on-site",
 
     // FeaturePreview
     "features.badge": "What Taskey does for your business",
@@ -888,12 +893,7 @@ const translations: Record<Language, Record<string, string>> = {
     "features.2.desc": "Working hours are automatically recorded when scanning in and out. At month-end everything is ready – no paper, no follow-up questions.",
     "features.3.title": "When a client complains, you have the evidence",
     "features.3.desc": "Photos after cleaning, completion reports, digital signatures – all saved. When complaints come in, you can immediately show what was done.",
-
-    // NFC Section
-    "nfc.badge": "OUR NFC STICKERS",
-    "nfc.title": "Arrive. Hold phone up. Proof done.",
-    "nfc.subtitle": "A small NFC sticker sits at each of your sites. When your employee arrives, they simply hold their phone against it – and Taskey automatically saves: who, when, where. You and your client always have proof that work was done.",
-    "nfc.1.title": "Everything important at the property",
+    "features.communication.title": "Real communication between field and office",
     "nfc.1.desc": "Cleaning schedule, special tasks, supply list, last cleaning – your team sees what needs to be done right after scanning. No calls, no questions.",
     "nfc.2.title": "Proof nobody can argue away",
     "nfc.2.desc": "Every scan is saved with time and location. When a client asks 'Were you there?' – you have the answer in black and white.",

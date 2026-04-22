@@ -263,6 +263,28 @@ export default function PartnerschaftenPage() {
                 <p className="text-gray-900 font-bold text-lg">MG Gebäudeservice</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
               </a>
+
+              {/* Neuer Partner: PAVAN GmbH */}
+              <a href="https://pavan-gmbh.de" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start gap-4 bg-gray-50 rounded-2xl border border-gray-100 px-8 py-6 mb-8 max-w-sm hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="/logos/pavan-logo.png"
+                  alt="PAVAN GmbH"
+                  width={140}
+                  height={50}
+                  className="object-contain"
+                />
+                <p className="text-gray-900 font-bold text-lg">PAVAN GmbH</p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Die PAVAN GmbH ist spezialisiert auf die Verwaltung und hochwertige Aufwertung von Immobilien. Mit einem klaren Fokus auf Effizienzsteigerung, Werterhalt und nachhaltige Modernisierung betreut PAVAN Wohn- und Gewerbeobjekte in allen Phasen – von der regelmäßigen Bewirtschaftung über Renovierungsprojekte bis zur langfristigen Portfolio-Strategie. Wir unterstützen PAVAN dabei, operative Abläufe zu digitalisieren und betrieblich zu skalieren: Taskey ermöglicht automatisierte Nachweise per NFC, saubere Zeiterfassung, transparente Einsatzplanung und eine durchgängige Dokumentation von Leistungen und Qualitätskontrollen.
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Durch die enge Zusammenarbeit konnten Prozesse beschleunigt, Kommunikationswege verkürzt und die Qualität der Dienstleistung messbar erhöht werden. PAVAN nutzt Taskey, um Mitarbeiterkapazitäten besser zu steuern, Einsätze effizienter zu planen und Instandhaltungsarbeiten zielgerichtet nachzuverfolgen. Das Ergebnis ist eine spürbare Kostenreduktion pro Objekt, höhere Kundenzufriedenheit und eine bessere Planbarkeit von Projekten – ideale Voraussetzungen, um das Geschäft nachhaltig zu vergrößern.
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Wir arbeiten kontinuierlich mit PAVAN an neuen Automatisierungen, Integrationen und Reporting-Lösungen, damit Skalierung nicht nur möglich, sondern planbar wird. Wenn Sie an einer Partnerschaft mit PAVAN interessiert sind oder mehr über die gemeinsame Lösung erfahren möchten, sprechen Sie uns an – wir verbinden Sie direkt.
+                </p>
+              </a>
+
               <Link
                 href="/news/mg-gebaeudeservice-duesseldorf-case-study"
                 className="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3.5 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-sm max-w-fit"
