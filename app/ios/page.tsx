@@ -243,14 +243,14 @@ export default function IOSPage() {
           {/* ── Mobile Branchen (bis lg): Kompakte 2-Spalten ── */}
           <div className="lg:hidden grid grid-cols-2 gap-2.5 mb-8">
             {[
-              { icon: "🧹", name: "Unterhaltsreinigung" },
-              { icon: "🏢", name: "Buero & Gewerbe" },
-              { icon: "🏨", name: "Hotelreinigung" },
-              { icon: "🏥", name: "Klinik & Praxis" },
-              { icon: "🏗️", name: "Baureinigung" },
-              { icon: "🪟", name: "Glasreinigung" },
-              { icon: "🏫", name: "Schulreinigung" },
-              { icon: "🏭", name: "Industriereinigung" },
+              { icon: "🔧", name: "Handwerk & SHK" },
+              { icon: "⚡", name: "Elektrotechnik" },
+              { icon: "�", name: "Dach & Ausbau" },
+              { icon: "🧹", name: "Gebäudereinigung" },
+              { icon: "�", name: "Facility Management" },
+              { icon: "🌳", name: "GaLaBau" },
+              { icon: "🛡️", name: "Sicherheitsdienste" },
+              { icon: "🏭", name: "Industrie-Dienstleister" },
             ].map((b) => (
               <div key={b.name} className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100">
                 <span className="text-xl block mb-1">{b.icon}</span>
@@ -262,14 +262,14 @@ export default function IOSPage() {
           {/* ── Desktop Branchen (ab lg): 4-Spalten Grid ── */}
           <div className="hidden lg:grid grid-cols-4 gap-4 mb-16">
             {[
-              { icon: "🧹", name: "Unterhaltsreinigung" },
-              { icon: "🏢", name: "Buero- & Gewerbereinigung" },
-              { icon: "🏨", name: "Hotelreinigung" },
-              { icon: "🏥", name: "Klinik- & Praxisreinigung" },
-              { icon: "🏗️", name: "Baureinigung" },
-              { icon: "🪟", name: "Glas- & Fassadenreinigung" },
-              { icon: "🏫", name: "Schulreinigung" },
-              { icon: "🏭", name: "Industriereinigung" },
+              { icon: "🔧", name: "Handwerk & SHK" },
+              { icon: "⚡", name: "Elektrotechnik & Haustechnik" },
+              { icon: "�", name: "Dachdecker, Maler & Ausbau" },
+              { icon: "�️", name: "Bauunternehmen" },
+              { icon: "🧹", name: "Gebäudereinigung" },
+              { icon: "🏢", name: "Facility Management" },
+              { icon: "�", name: "GaLaBau & Winterdienst" },
+              { icon: "🛡️", name: "Sicherheits- & Industrie-Dienstleister" },
             ].map((b) => (
               <div
                 key={b.name}

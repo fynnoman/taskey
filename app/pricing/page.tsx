@@ -52,19 +52,18 @@ function PricingPageInner() {
   const [activeModel, setActiveModel] = useState<"reinigung" | "handwerk">(
     initialModel === "handwerk" ? "handwerk" : "reinigung"
   );
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
   const [managerModalOpen, setManagerModalOpen] = useState(false);
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
 
-  // Handwerk prices
+  // Handwerk prices (nur monatlich)
   const handwerkPrices = {
-    start: { monthly: 11.79, yearly: +(11.79 * 0.87).toFixed(2) },
-    grow: { monthly: 21.78, yearly: +(21.78 * 0.87).toFixed(2) },
-    scale: { monthly: 29.77, yearly: +(29.77 * 0.87).toFixed(2) },
+    start: 11.79,
+    grow: 21.78,
+    scale: 29.77,
   };
 
   const getHandwerkPrice = (tier: "start" | "grow" | "scale") =>
-    billingCycle === "yearly" ? handwerkPrices[tier].yearly : handwerkPrices[tier].monthly;
+    handwerkPrices[tier];
 
   // ─── HERO SECTION ──────────────────────────────────────────────
   const heroSection = (
@@ -213,32 +212,12 @@ function PricingPageInner() {
   );
 
   // ═══════════════════════════════════════════════════════════════
-  //  HANDWERK MODEL (per-employee)
+  //  HANDWERK MODEL (per-employee, nur monatlich)
   // ═══════════════════════════════════════════════════════════════
-  const handwerkBillingToggle = (
-    <div className="flex items-center justify-center gap-4 mb-10">
-      <span className={`text-sm font-medium ${billingCycle === "monthly" ? "text-gray-900" : "text-gray-400"}`}>
-        {t("pricingPage.monthly")}
-      </span>
-      <button
-        onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
-        className="relative w-14 h-7 rounded-full bg-gray-200 transition-colors"
-        aria-label="Toggle billing cycle"
-      >
-        <span className={`absolute top-0.5 w-6 h-6 rounded-full bg-blue-900 transition-transform ${billingCycle === "yearly" ? "translate-x-7" : "translate-x-0.5"}`} />
-      </button>
-      <span className={`text-sm font-medium ${billingCycle === "yearly" ? "text-gray-900" : "text-gray-400"}`}>
-        {t("pricingPage.yearly")} <span className="text-green-600 font-semibold">{t("pricingPage.discount13")}</span>
-      </span>
-    </div>
-  );
-
   const handwerkCards = (
     <section className="pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <p className="text-center text-xs text-gray-400 mb-6">{t("pricingPage.allPricesVat")}</p>
-
-        {handwerkBillingToggle}
+        <p className="text-center text-xs text-gray-400 mb-10">{t("pricingPage.allPricesVat")}</p>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           {/* START */}
