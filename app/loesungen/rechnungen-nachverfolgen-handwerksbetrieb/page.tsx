@@ -1,0 +1,62 @@
+import type { Metadata } from 'next';
+import LandingPageTemplate from '@/components/landing/LandingPageTemplate';
+import type { LandingPageData } from '@/components/landing/LandingPageTemplate';
+
+export const metadata: Metadata = {
+  title: 'Rechnungen nachverfolgen Handwerksbetrieb – Taskey',
+  description: 'Offene Rechnungen im Handwerksbetrieb nachverfolgen. Taskey zeigt sofort, welche Rechnungen bezahlt, offen oder überfällig sind.',
+  alternates: { canonical: 'https://www.taskeyapp.com/loesungen/rechnungen-nachverfolgen-handwerksbetrieb' },
+};
+
+const data: LandingPageData = {
+  badge: 'Rechnungsverfolgung',
+  headline: 'Rechnungen',
+  headlineHighlight: 'nachverfolgen',
+  subheadline: 'Immer wissen, welche Rechnungen offen sind.',
+  heroDescription: 'Nie wieder Rechnungen vergessen oder Zahlungseingänge übersehen. Taskey gibt Ihnen den kompletten Überblick über alle offenen, bezahlten und überfälligen Rechnungen.',
+  painPoints: [
+    { text: 'Keine Ahnung, welche Rechnungen noch offen sind.' },
+    { text: 'Zahlungseingänge werden nicht zeitnah geprüft.' },
+    { text: 'Peinliche Nachfragen bei Kunden, die schon bezahlt haben.' },
+    { text: 'Liquiditätsengpässe wegen überfälliger Rechnungen.' },
+  ],
+  solutionTitle: 'Alle Rechnungen auf einen Blick',
+  solutionDescription: 'Taskey zeigt Ihnen den Status jeder Rechnung in Echtzeit.',
+  solutionSteps: [
+    { title: 'Dashboard öffnen', description: 'Alle Rechnungen mit Status übersichtlich im Dashboard sehen.' },
+    { title: 'Erinnerungen erhalten', description: 'Automatische Benachrichtigung bei überfälligen Rechnungen.' },
+    { title: 'Mahnungen versenden', description: 'Zahlungserinnerungen direkt aus Taskey an den Kunden senden.' },
+  ],
+  ctaText: 'Jetzt Rechnungen im Blick behalten',
+  featureHighlights: [
+    { title: 'Ampel-Status', description: 'Grün, Gelb, Rot – sofort erkennen, welche Rechnungen Aufmerksamkeit brauchen.' },
+    { title: 'Automatische Erinnerungen', description: 'Nie wieder eine überfällige Rechnung übersehen.' },
+    { title: 'Umsatzübersicht', description: 'Fakturierter und eingegangener Umsatz auf einen Blick.' },
+    { title: 'Zahlungserinnerungen', description: 'Freundliche Zahlungserinnerungen per E-Mail versenden.' },
+    { title: 'Liquiditätsplanung', description: 'Erwartete Zahlungseingänge für bessere Planung.' },
+    { title: 'Rechnungsarchiv', description: 'Alle Rechnungen digital archiviert und jederzeit abrufbar.' },
+  ],
+  closingHeadline: 'Nie wieder Rechnungen vergessen.',
+  closingText: 'Mit Taskey haben Sie alle offenen Posten im Blick – für eine gesunde Liquidität.',
+  relatedLinks: [
+      {
+          href: '/loesungen/rechnungsprogramm-handwerker',
+          label: 'Rechnungsprogramm',
+          description: 'Rechnungen erstellen und direkt den Zahlungsstatus tracken.'
+      },
+      {
+          href: '/loesungen/mahnwesen-handwerk',
+          label: 'Mahnwesen Handwerk',
+          description: 'Offene Rechnungen? Automatische Zahlungserinnerungen versenden.'
+      },
+      {
+          href: '/loesungen/einnahmen-ausgaben-handwerker',
+          label: 'Einnahmen & Ausgaben',
+          description: 'Den finanziellen Gesamtüberblick immer im Blick behalten.'
+      }
+  ],
+};
+
+export default function Page() {
+  return <LandingPageTemplate data={data} />;
+}

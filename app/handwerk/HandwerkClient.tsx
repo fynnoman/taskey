@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import CommunicationUSP from "@/components/CommunicationUSP";
 
@@ -42,6 +43,18 @@ export default function HandwerkClient() {
           1. HERO
       ──────────────────────────────────────────────────────────── */}
       <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-br from-gray-900 via-gray-800 to-blue-950 text-white overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/geminihandwerk.png"
+            alt="Handwerker auf der Baustelle"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-900/75 to-blue-950/85" />
+        </div>
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
 
