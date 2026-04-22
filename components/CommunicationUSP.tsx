@@ -194,8 +194,8 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
             {[
               {
-                label: "Erfassung vor Ort",
-                items: "NFC-Scan, GPS- & Zeitstempel, Foto-Dokumentation, Defekt- und Materialmeldung",
+                label: "Erfassung vor Ort – mit NFC",
+                items: "Physische NFC-Aufkleber an Objekten, Maschinen und Werkzeug — ein Handy-Tap genügt für Anwesenheit, Zeit, Ort und Zustand. In dieser Tiefe im DACH-Markt einmalig.",
               },
               {
                 label: "Synchronisation",
@@ -227,8 +227,9 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
           </div>
           <div className={`mt-6 pt-5 border-t ${isDark ? "border-white/10" : "border-gray-100"} flex flex-col sm:flex-row sm:items-center gap-3`}>
             <p className={`text-sm ${muted} flex-1`}>
-              Jeder Baustein einzeln ist Standard. Die Kombination als durchgängiger Info-Fluss zwischen
-              Feld und Büro ist es, die Taskey von klassischer Planungssoftware unterscheidet.
+              Entscheidend ist nicht ein einzelnes Feature, sondern die Verbindung: NFC als physischer Erfassungspunkt
+              vor Ort plus der durchgängige Info-Fluss ins Büro – in dieser Kombination hebt sich Taskey von
+              klassischer Planungs- und Zeiterfassungssoftware ab.
             </p>
             <Link
               href="/features"
