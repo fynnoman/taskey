@@ -14,7 +14,29 @@ export default function Header() {
 
   return (
     <>
-      
+      {/* Global USP Top-Strip — auf jeder Seite sichtbar */}
+      <div className="bg-gradient-to-r from-blue-950 via-blue-900 to-gray-900 text-white text-xs sm:text-sm relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 sm:h-9 flex items-center justify-center gap-2 sm:gap-3">
+          <span className="relative flex h-2 w-2 flex-shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+          </span>
+          <span className="font-bold text-center leading-tight">
+            <span className="hidden sm:inline text-[10px] sm:text-[11px] tracking-[0.2em] text-cyan-300 uppercase mr-2">Taskey-USP</span>
+            Beste Echtzeit-Kommunikation zwischen{" "}
+            <span className="text-cyan-300">Einsatzort</span> und{" "}
+            <span className="text-cyan-300">Büro</span>
+          </span>
+          <Link
+            href="/#echtzeit-kommunikation"
+            className="hidden md:inline-flex items-center gap-1 text-cyan-300 hover:text-cyan-200 font-semibold ml-2"
+          >
+            Mehr
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+          </Link>
+        </div>
+      </div>
+
       <header className="bg-white/70 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
         <div className="flex justify-between items-center h-16 sm:h-20">

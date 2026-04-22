@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import CommunicationUSP from '@/components/CommunicationUSP';
 
 export interface PainPoint {
   text: string;
@@ -76,6 +77,8 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
           <p className="text-gray-500 text-xs mt-2">Flexible Abrechnung: Monatlich kündbar oder jährlich mit 13% Rabatt</p>
         </div>
       </section>
+
+      <CommunicationUSP variant="compact" />
 
       {/* Pain Points */}
       <section className="py-16 md:py-24 bg-white">

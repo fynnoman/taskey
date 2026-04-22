@@ -43,6 +43,29 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* USP Hero im Footer */}
+        <div className="pt-16 sm:pt-20 pb-10 border-b border-white/10">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
+            </span>
+            <span className="text-[11px] font-black tracking-[0.25em] text-cyan-300 uppercase">
+              Taskey-USP
+            </span>
+          </div>
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
+            Die beste Kommunikation zwischen{" "}
+            <span className="text-cyan-300">Einsatzort</span> und{" "}
+            <span className="text-cyan-300">Büro</span>.
+          </h3>
+          <p className="text-gray-400 text-base sm:text-lg max-w-3xl leading-relaxed">
+            Taskey ist nicht nur eine Software — Taskey ist der Vermittler für Infos, die Ihr Team
+            vor Ort sammelt. Defekte, Einsatzstunden, Probleme, Material. Das Büro bekommt alles in
+            Echtzeit und kann sofort entscheiden.
+          </p>
+        </div>
+
         {/* Top section — big branding */}
         <div className="pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 border-b border-white/10">
           <div className="flex items-center gap-4 mb-8">
