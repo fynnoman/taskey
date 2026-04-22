@@ -151,7 +151,7 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
         </div>
 
         {/* 4 Pillars */}
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-14">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
           {pillars.map((p, i) => (
             <div
               key={i}
@@ -176,6 +176,72 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
               </div>
             </div>
           ))}
+        </div>
+
+        {/* So funktioniert's — Feature-Mapping */}
+        <div className={`mb-14 rounded-3xl p-7 md:p-9 border ${
+          isDark ? "bg-white/[0.03] border-white/10" : "bg-white border-gray-200 shadow-sm"
+        }`}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className={`text-[11px] font-black tracking-[0.25em] uppercase ${accent}`}>
+              So funktioniert's
+            </span>
+            <span className={`flex-1 h-px ${isDark ? "bg-white/10" : "bg-gray-200"}`} />
+          </div>
+          <p className={`text-base md:text-lg leading-relaxed mb-6 ${muted}`}>
+            Der USP entsteht durch das Zusammenspiel von vier Funktionsbereichen in Taskey:
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+            {[
+              {
+                label: "Erfassung vor Ort",
+                items: "NFC-Scan, GPS- & Zeitstempel, Foto-Dokumentation, Defekt- und Materialmeldung",
+              },
+              {
+                label: "Synchronisation",
+                items: "Offline-fähige Mobile-App, automatische Sync nach Verbindung, Push-Benachrichtigungen ans Büro",
+              },
+              {
+                label: "Büro-Sicht",
+                items: "Live-Dashboard mit aktiven Einsätzen, Statusübersicht, Nachkalkulation, zentrale Objekt- & Auftragsakte",
+              },
+              {
+                label: "Transparenz nach außen",
+                items: "Auftraggeber-Portal, digitale Leistungsnachweise, exportierbare Protokolle (PDF/CSV) inkl. DATEV-Export",
+              },
+            ].map((row, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black ${
+                  isDark ? "bg-cyan-400/10 text-cyan-300 border border-cyan-400/20" : "bg-blue-100 text-blue-900"
+                }`}>
+                  {i + 1}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-white" : "text-gray-900"}`}>
+                    {row.label}
+                  </p>
+                  <p className={`text-sm leading-relaxed ${muted}`}>{row.items}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={`mt-6 pt-5 border-t ${isDark ? "border-white/10" : "border-gray-100"} flex flex-col sm:flex-row sm:items-center gap-3`}>
+            <p className={`text-sm ${muted} flex-1`}>
+              Jeder Baustein einzeln ist Standard. Die Kombination als durchgängiger Info-Fluss zwischen
+              Feld und Büro ist es, die Taskey von klassischer Planungssoftware unterscheidet.
+            </p>
+            <Link
+              href="/features"
+              className={`inline-flex items-center gap-1.5 text-sm font-bold whitespace-nowrap ${
+                isDark ? "text-cyan-300 hover:text-cyan-200" : "text-blue-900 hover:text-blue-700"
+              }`}
+            >
+              Alle Funktionen ansehen
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
 
         {/* Flow visualization */}
