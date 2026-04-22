@@ -276,7 +276,7 @@ export default async function PostPage({ params }: Props) {
             <h2 className="text-3xl sm:text-5xl font-black leading-tight mb-3">
               Selbst ausprobieren.
             </h2>
-            <p className="text-blue-300 text-lg">14 Tage kostenlos. Kein Risiko.</p>
+            <p className="text-blue-300 text-lg">3 Monate kostenlos. Kein Risiko.</p>
           </div>
           <Link
             href="https://signup.taskeyapp.com"

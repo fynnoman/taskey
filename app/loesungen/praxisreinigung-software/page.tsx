@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Praxis-Portal', description: 'Aerzte sehen Reinigungsstatus in Echtzeit.' },
   ],
   closingHeadline: 'Praxisreinigung. Sauber. Sicher. Nachgewiesen.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und überzeuge deine Praxis-Kunden mit digitaler Hygiene-Dokumentation.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und überzeuge deine Praxis-Kunden mit digitaler Hygiene-Dokumentation.',
   relatedLinks: [
     { href: '/loesungen/klinik-reinigung-software', label: 'Klinikreinigung', description: 'Hygienische Reinigung im klinischen Umfeld.' },
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten', description: 'Digitale Reinigungschecklisten.' },

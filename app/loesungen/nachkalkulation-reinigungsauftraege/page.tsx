@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Export für Angebote', description: 'Reale Kosten als Basis für zukuenftige Kalkulationen.' },
   ],
   closingHeadline: 'Nachkalkulation. Ehrlich. Automatisch. Profitabel.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erfahre, was deine Aufträge wirklich kosten.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und erfahre, was deine Aufträge wirklich kosten.',
   relatedLinks: [
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnungen', description: 'Rechnungen auf Basis realer Kosten.' },
     { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung', description: 'Arbeitszeiten als Basis für Kalkulation.' },

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Sonderreinigungen', description: 'Events, Feste, Bauarbeiten – Sonderreinigungen schnell planen.' },
   ],
   closingHeadline: 'Schulreinigung. Professionell. Zuverlässig. Digital.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und manage deine Schulreinigung effizient.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und manage deine Schulreinigung effizient.',
   relatedLinks: [
     { href: '/loesungen/unterhaltsreinigung-software', label: 'Unterhaltsreinigung', description: 'Regelmäßige Reinigung planen.' },
     { href: '/loesungen/grundreinigung-software', label: 'Grundreinigung', description: 'Grundreinigungen in Ferien planen.' },

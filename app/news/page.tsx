@@ -150,7 +150,7 @@ export default function NewsPage() {
               Selbst ausprobieren.
             </h2>
             <p className="text-blue-300 text-lg sm:text-xl max-w-lg">
-              14 Tage kostenlos – kein Risiko, keine Kreditkarte.
+              3 Monate kostenlos – kein Risiko, keine Kreditkarte.
             </p>
           </div>
           <Link

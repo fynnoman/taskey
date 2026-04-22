@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'LexOffice-Anbindung', description: 'Buchhaltung direkt mit LexOffice verbunden.' },
   ],
   closingHeadline: 'Gründen. Wachsen. Professionell wirken.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und starte dein Reinigungsunternehmen mit der richtigen Software.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und starte dein Reinigungsunternehmen mit der richtigen Software.',
   relatedLinks: [
     { href: '/loesungen/reinigungssoftware-dach', label: 'Reinigungssoftware DACH', description: 'Die führende Software im DACH-Raum.' },
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnungen', description: 'Professionelle Rechnungen schreiben.' },

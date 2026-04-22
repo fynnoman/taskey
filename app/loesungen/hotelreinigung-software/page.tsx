@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Personalplanung', description: 'Schichten nach Auslastung automatisch planen.' },
   ],
   closingHeadline: 'Hotelreinigung. Immer puenktlich. Immer perfekt.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und optimiere dein Housekeeping.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und optimiere dein Housekeeping.',
   relatedLinks: [
     { href: '/loesungen/schichtplanung-reinigungsunternehmen', label: 'Schichtplanung', description: 'Schichten nach Auslastung planen.' },
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung', description: 'Digitale Checklisten für jeden Zimmertyp.' },

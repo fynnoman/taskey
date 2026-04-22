@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Sage-Alternative', description: 'Auch Sage-Export verfügbar als Alternative.' },
   ],
   closingHeadline: 'Buchhaltung. Automatisch. Fehlerfrei. In LexOffice.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und verbinde deine Reinigungssoftware mit LexOffice.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und verbinde deine Reinigungssoftware mit LexOffice.',
   relatedLinks: [
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnungen', description: 'Rechnungen in Taskey erstellen.' },
     { href: '/loesungen/lohnabrechnung-reinigungsfirma', label: 'Lohnabrechnung', description: 'Lohndaten automatisch aufbereiten.' },

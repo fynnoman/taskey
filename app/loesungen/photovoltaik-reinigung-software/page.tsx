@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Rechnung pro Anlage', description: 'Automatische Rechnungsstellung pro PV-Anlage.' },
   ],
   closingHeadline: 'PV-Reinigung. Professionell. Dokumentiert. Digital.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und manage deine PV-Reinigungsaufträge effizient.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und manage deine PV-Reinigungsaufträge effizient.',
   relatedLinks: [
     { href: '/loesungen/fassadenreinigung-software', label: 'Fassadenreinigung', description: 'Spezielle Reinigungsarten digital verwalten.' },
     { href: '/loesungen/qualitaetskontrolle-gebäudereinigung', label: 'Qualitätskontrolle', description: 'Reinigungsqualität prüfen und dokumentieren.' },

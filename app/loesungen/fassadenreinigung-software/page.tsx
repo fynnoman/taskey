@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Geräteplanung', description: 'Hubbuehnen und Spezialgeräte Aufträgen zuweisen.' },
   ],
   closingHeadline: 'Fassadenreinigung. Professionell. Nachweisbar.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und plane deine Fassadenreinigung digital.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und plane deine Fassadenreinigung digital.',
   relatedLinks: [
     { href: '/loesungen/glasreinigung-software', label: 'Glasreinigung', description: 'Fenster und Glasfassaden professionell reinigen.' },
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'Jeden Einsatz per NFC nachweisen.' },

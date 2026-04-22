@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Bautraeger-Berichte', description: 'Professionelle Berichte für Bautraeger generieren.' },
   ],
   closingHeadline: 'Baureinigung. Termingerecht. Maengelfrei.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und koordiniere deine Baureinigung perfekt.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und koordiniere deine Baureinigung perfekt.',
   relatedLinks: [
     { href: '/loesungen/uebergabeprotokoll-reinigung', label: 'Übergabeprotokoll', description: 'Digitale Abnahme mit Unterschrift und Fotodokumentation.' },
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung', description: 'Digitale Checklisten für jede Reinigungsphase.' },

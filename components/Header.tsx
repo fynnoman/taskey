@@ -14,27 +14,47 @@ export default function Header() {
 
   return (
     <>
-      {/* Global USP Top-Strip — auf jeder Seite sichtbar */}
+      {/* Global USP Top-Strip — auf jeder Seite sichtbar, rotiert zwischen 2 Messages */}
       <div className="bg-gradient-to-r from-blue-950 via-blue-900 to-gray-900 text-white text-xs sm:text-sm relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-8 sm:h-9 flex items-center justify-center gap-2 sm:gap-3">
           <span className="relative flex h-2 w-2 flex-shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
           </span>
-          <span className="font-bold text-center leading-tight">
-            <span className="hidden sm:inline text-[10px] sm:text-[11px] tracking-[0.2em] text-cyan-300 uppercase mr-2">Taskey-USP</span>
-            Beste Echtzeit-Kommunikation zwischen{" "}
-            <span className="text-cyan-300">Einsatzort</span> und{" "}
-            <span className="text-cyan-300">Büro</span>
+          <span className="hidden sm:inline text-[10px] sm:text-[11px] tracking-[0.2em] text-cyan-300 uppercase">Taskey-USP</span>
+          <span className="usp-rotator relative inline-block h-5 overflow-hidden flex-1 max-w-[640px] text-center">
+            <span className="usp-msg usp-msg-1 absolute inset-0 font-bold leading-5 whitespace-nowrap overflow-hidden text-ellipsis px-2">
+              Beste Echtzeit-Kommunikation zwischen{" "}
+              <span className="text-cyan-300">Einsatzort</span> und{" "}
+              <span className="text-cyan-300">Büro</span>
+            </span>
+            <span className="usp-msg usp-msg-2 absolute inset-0 font-bold leading-5 whitespace-nowrap overflow-hidden text-ellipsis px-2">
+              Eine Software <span className="text-emerald-300">statt 5 Abos</span> —{" "}
+              <span className="text-emerald-300">alles in einem System</span>
+            </span>
           </span>
           <Link
             href="/#echtzeit-kommunikation"
-            className="hidden md:inline-flex items-center gap-1 text-cyan-300 hover:text-cyan-200 font-semibold ml-2"
+            className="hidden md:inline-flex items-center gap-1 text-cyan-300 hover:text-cyan-200 font-semibold"
           >
             Mehr
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
           </Link>
         </div>
+        <style jsx>{`
+          .usp-msg-1 { animation: uspFade1 10s infinite ease-in-out; }
+          .usp-msg-2 { animation: uspFade2 10s infinite ease-in-out; }
+          @keyframes uspFade1 {
+            0%, 45% { opacity: 1; transform: translateY(0); }
+            50%, 95% { opacity: 0; transform: translateY(-8px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes uspFade2 {
+            0%, 45% { opacity: 0; transform: translateY(8px); }
+            50%, 95% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(8px); }
+          }
+        `}</style>
       </div>
 
       <header className="bg-white/70 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">

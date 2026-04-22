@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import CommunicationUSP from '@/components/CommunicationUSP';
+import AllInOneUSP from '@/components/AllInOneUSP';
 
 export interface PainPoint {
   text: string;
@@ -73,12 +74,13 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
             </Link>
           </div>
 
-          <p className="text-gray-600 text-sm mt-5">Keine Kreditkarte · 14 Tage kostenlos · Sofort startklar</p>
+          <p className="text-gray-600 text-sm mt-5">Keine Kreditkarte · 3 Monate kostenlos · Sofort startklar</p>
           <p className="text-gray-500 text-xs mt-2">Flexible Abrechnung: Monatlich kündbar oder jährlich mit 13% Rabatt</p>
         </div>
       </section>
 
       <CommunicationUSP variant="compact" />
+      <AllInOneUSP variant="compact" />
 
       {/* Pain Points */}
       <section className="py-16 md:py-24 bg-white">
@@ -207,7 +209,7 @@ export default function LandingPageTemplate({ data }: { data: LandingPageData })
               <p className="text-gray-500 text-sm mt-1">Made in Germany</p>
             </div>
             <div>
-              <p className="text-3xl font-black text-white">14 Tage</p>
+              <p className="text-3xl font-black text-white">3 Monate</p>
               <p className="text-gray-500 text-sm mt-1">Kostenlos testen</p>
             </div>
           </div>

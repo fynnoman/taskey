@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Push-Nachrichten', description: 'Änderungen und neue Einsätze sofort erfahren.' },
   ],
   closingHeadline: 'Die App für Reinigungskräfte. Einfach. Fertig.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und gib deinem Team eine App, die wirklich funktioniert.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und gib deinem Team eine App, die wirklich funktioniert.',
   relatedLinks: [
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'NFC-Scans direkt aus der App.' },
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten', description: 'Digitale Checklisten in der Mitarbeiter-App.' },

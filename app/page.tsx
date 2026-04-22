@@ -3,6 +3,8 @@ import NFCSection from "@/components/home/NFCSection";
 import FeaturePreview from "@/components/home/FeaturePreview";
 import SectionDivider from "@/components/home/SectionDivider";
 import CommunicationUSP from "@/components/CommunicationUSP";
+import AllInOneUSP from "@/components/AllInOneUSP";
+import TargetAudiences from "@/components/TargetAudiences";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import ReferralSection from "@/components/home/ReferralSection";
@@ -17,8 +19,22 @@ const Contact = dynamic(() => import("@/components/home/Contact"));
 const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
-  title: "Taskey - Betriebssoftware für Handwerk, Reinigung & Facility Management | Zeiterfassung, NFC & Einsatzplanung",
-  description: "Taskey ist die einfachste Betriebssoftware im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – für Handwerker, Gebäudereiniger und Facility Manager. DSGVO-konform. 14 Tage kostenlos testen!",
+  title: "Taskey – Handwerkersoftware, Reinigungssoftware & Facility Management Software | All-in-One",
+  description: "Die All-in-One Software für Handwerk, Gebäudereinigung, Facility Management, GaLaBau, Sicherheitsdienste und Industriereinigung. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Angebote, Rechnungen & DATEV – in einem System statt 5 Abos. DSGVO, Made in Germany. 3 Monate kostenlos.",
+  keywords: [
+    "Handwerkersoftware", "Software Handwerk", "Software Gebäudereinigung",
+    "Reinigungssoftware", "Facility Management Software", "All-in-One Software Handwerk",
+    "Komplettlösung Handwerksbetrieb", "Elektriker Software", "SHK Software",
+    "Maler Software", "Dachdecker Software", "GaLaBau Software",
+    "Hausmeisterservice Software", "Software Sicherheitsdienst",
+    "NFC Zeiterfassung", "Zeiterfassung Handwerk", "Zeiterfassung Gebäudereinigung",
+    "Einsatzplanung Handwerk", "Tourenplanung Handwerk", "Monteur Einsatzplanung",
+    "Nachkalkulation Handwerk", "DATEV Export Handwerk",
+    "Alternative zu Craftnote", "Alternative zu openHandwerk",
+    "Alternative zu ToolTime", "Handwerkersoftware Vergleich",
+    "Handwerk digitalisieren", "Reinigungsfirma digitalisieren",
+    "Made in Germany", "DSGVO-konforme Software"
+  ],
   alternates: {
     canonical: "https://taskeyapp.com",
   },
@@ -36,7 +52,7 @@ export default function Home() {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "EUR",
-      "description": "14 Tage kostenlos testen"
+      "description": "3 Monate kostenlos testen"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -85,6 +101,8 @@ export default function Home() {
         <Hero />
         <ReferralSection />
         <CommunicationUSP variant="full" />
+        <AllInOneUSP variant="dark" />
+        <TargetAudiences variant="light" />
         <NFCSection />
         <SectionDivider from="#f9fafb" to="white" variant="wave" />
 

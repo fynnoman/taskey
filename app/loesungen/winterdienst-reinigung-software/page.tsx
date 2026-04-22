@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Wetterintegration', description: 'Einsatzplanung basierend auf Wetterdaten.' },
   ],
   closingHeadline: 'Winterdienst. Reinigung. Alles digital. Alles nachgewiesen.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und manage Winterdienst und Reinigung in einer App.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und manage Winterdienst und Reinigung in einer App.',
   relatedLinks: [
     { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung', description: 'Routen und Touren effizient planen.' },
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Nachweis', description: 'Leistungsnachweise per NFC.' },

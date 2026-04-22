@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Winterdienst-Addon', description: 'Winterdienst im gleichen System planen und nachweisen.' },
   ],
   closingHeadline: 'Treppenhausreinigung. Nachgewiesen. Keine Diskussion.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und überzeuge Hausverwaltungen mit digitalen Nachweisen.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und überzeuge Hausverwaltungen mit digitalen Nachweisen.',
   relatedLinks: [
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'NFC-basierte Nachweise für jedes Objekt.' },
     { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung', description: 'Optimale Touren für verteilte Objekte.' },

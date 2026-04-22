@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import CommunicationUSP from '@/components/CommunicationUSP';
+import AllInOneUSP from '@/components/AllInOneUSP';
+import TargetAudiences from '@/components/TargetAudiences';
 
 // Metadata will be set via head tags
 if (typeof window !== 'undefined') {
@@ -416,6 +418,8 @@ export default function FeaturesPage() {
       </section>
 
       <CommunicationUSP variant="compact" />
+      <AllInOneUSP variant="full" />
+      <TargetAudiences variant="light" />
 
       <div className="py-10 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -758,7 +762,7 @@ export default function FeaturesPage() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                14 TAGE KOSTENLOS TESTEN
+                3 MONATE KOSTENLOS TESTEN
               </div>
 
               {/* Main Headline */}

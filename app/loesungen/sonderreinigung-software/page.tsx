@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Fotodokumentation', description: 'Chronologische Fotodokumentation des gesamten Einsatzes.' },
   ],
   closingHeadline: 'Sonderreinigung. Professionell. Lückenlos dokumentiert.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und manage deine Sonderreinigungen digital.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und manage deine Sonderreinigungen digital.',
   relatedLinks: [
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung', description: 'Spezialchecklisten für jeden Reinigungstyp.' },
     { href: '/loesungen/inventar-verwalten-reinigungsfirma', label: 'Inventar Reinigung', description: 'Spezialgeräte und Reinigungsmittel verwalten.' },

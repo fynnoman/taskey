@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Objekthistorie', description: 'Alle Einsätze, Reklamationen und Änderungen chronologisch.' },
   ],
   closingHeadline: 'Objektverwaltung. Zentral. Vollständig.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und verwalte alle Objekte an einem Ort.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und verwalte alle Objekte an einem Ort.',
   relatedLinks: [
     { href: '/loesungen/einsatzplanung-gebäudereinigung', label: 'Einsatzplanung', description: 'Teams auf Objekte verteilen.' },
     { href: '/loesungen/reinigungspläne-digital-erstellen', label: 'Reinigungspläne', description: 'Reinigungspläne pro Objekt erstellen.' },

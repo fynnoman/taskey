@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Dokumenten-Archiv', description: 'Vertraege, SLAs und Nachweise zentral abgelegt.' },
   ],
   closingHeadline: 'Auftraggeber. Zufrieden. Informiert. Gebunden.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und begeistere deine Auftraggeber mit einem professionellen Portal.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und begeistere deine Auftraggeber mit einem professionellen Portal.',
   relatedLinks: [
     { href: '/loesungen/kundenfeedback-reinigung', label: 'Kundenfeedback', description: 'Feedback von Auftraggebern einholen.' },
     { href: '/loesungen/sla-tracking-reinigungsfirma', label: 'SLA-Tracking', description: 'Service-Level-Agreements überwachen.' },

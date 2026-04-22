@@ -11,8 +11,60 @@ export const metadata: Metadata = {
     default: "Taskey - Die Betriebssoftware für Handwerk, Reinigung & Facility Management | Made in Germany",
     template: "%s | Taskey"
   },
-  description: "Taskey ist die einfachste Betriebssoftware für Handwerk, Gebäudereinigung und Facility Management im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – alles in einer App. DSGVO-konform. 14 Tage kostenlos testen!",
-  keywords: ["Betriebssoftware", "Handwerkersoftware", "Reinigungssoftware", "Gebäudereinigung Software", "Zeiterfassung Handwerk", "Zeiterfassung Reinigung", "Einsatzplanung", "NFC Leistungsnachweis", "Facility Management Software", "Software für Handwerker", "Software für Gebäudereiniger", "Baustellenmanagement", "DSGVO-konforme Software", "Betriebsführung App"],
+  description: "Taskey ist die einfachste Betriebssoftware für Handwerk, Gebäudereinigung und Facility Management im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – alles in einer App. DSGVO-konform. 3 Monate kostenlos testen!",
+  keywords: [
+    // Kern-USPs
+    "Betriebssoftware", "All-in-One Software Handwerk", "Komplettlösung Handwerksbetrieb",
+    "Komplettsoftware Gebäudereinigung", "eine Software für alles Handwerk",
+    // Handwerk
+    "Handwerkersoftware", "Software Handwerksbetrieb", "Software für Handwerker",
+    "Elektriker Software", "SHK Software", "Sanitär Heizung Klima Software",
+    "Heizungsbauer Software", "Maler Software", "Malerbetrieb Software",
+    "Dachdecker Software", "Trockenbau Software", "Tischlerei Software",
+    "Schreinerei Software", "Zimmerei Software", "Fliesenleger Software",
+    "Bauunternehmen Software", "Bauhandwerk Software",
+    // Gebäudereinigung
+    "Reinigungssoftware", "Gebäudereinigung Software", "Software Gebäudereinigung",
+    "Software für Reinigungsfirma", "Reinigungsmanagement Software",
+    "Unterhaltsreinigung Software", "Glasreinigung Software",
+    "Industriereinigung Software", "Baureinigung Software",
+    "Fensterreinigung App", "Revierreinigung App",
+    // Zeiterfassung
+    "Zeiterfassung Handwerk", "Zeiterfassung Gebäudereinigung",
+    "Zeiterfassung Baustelle", "Zeiterfassung Reinigungskräfte",
+    "Zeiterfassung Außendienst", "elektronische Zeiterfassung Pflicht",
+    "mobile Zeiterfassung", "NFC Zeiterfassung", "NFC Stempeluhr",
+    "digitale Stempeluhr", "Arbeitszeiterfassung App",
+    // NFC / Nachweis
+    "NFC Leistungsnachweis", "NFC Objektnachweis", "NFC Tags Gebäudereinigung",
+    "Leistungsnachweis Reinigung digital", "Qualitätsnachweis Gebäudereinigung",
+    "Objekt-Check-in NFC",
+    // Planung & Einsatz
+    "Einsatzplanung Handwerk", "Tourenplanung Handwerk",
+    "Dienstplan Gebäudereinigung", "Schichtplan Reinigungsfirma",
+    "Personaleinsatzplanung Handwerk", "Baustellenplanung digital",
+    "Monteur Einsatzplanung", "Auftragsverwaltung Handwerk",
+    "Auftragsmanagement Gebäudereinigung", "Nachkalkulation Handwerk",
+    // Facility / weitere Branchen
+    "Facility Management Software", "Hausmeisterservice Software",
+    "Software Hausmeister", "Software Gartenbau", "GaLaBau Software",
+    "Landschaftspflege Software", "Winterdienst Software",
+    "Software Sicherheitsdienst", "Wächterkontrolle NFC",
+    "Objektschutz Software", "Software Schädlingsbekämpfung",
+    // Kommerz / Alternative
+    "Alternative zu Craftnote", "Alternative zu openHandwerk",
+    "Alternative zu ToolTime", "Alternative zu plancraft",
+    "Alternative zu HERO Software", "Handwerkersoftware Vergleich",
+    "Reinigungssoftware Vergleich", "günstige Handwerkersoftware",
+    // Compliance
+    "DSGVO-konforme Software", "Handwerkersoftware Made in Germany",
+    "Zeiterfassung DSGVO konform", "Handwerkersoftware Österreich",
+    "Handwerkersoftware Schweiz",
+    // Pain-Point
+    "Stundenzettel digital", "WhatsApp Alternative Handwerk",
+    "Handwerk digitalisieren", "Reinigungsfirma digitalisieren",
+    "Angebot Rechnung Handwerk Software", "DATEV Export Handwerk"
+  ],
   authors: [{ name: "Taskey" }],
   creator: "Taskey",
   publisher: "Taskey",

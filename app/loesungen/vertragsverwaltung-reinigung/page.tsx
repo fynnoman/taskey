@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'PDF-Export', description: 'Vertraege als PDF exportieren und teilen.' },
   ],
   closingHeadline: 'Vertraege. Sicher. Transparent. Immer aktuell.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und behalte alle Reinigungsvertraege im Blick.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und behalte alle Reinigungsvertraege im Blick.',
   relatedLinks: [
     { href: '/loesungen/stammkunden-verwalten-gebäudereinigung', label: 'Kundenverwaltung', description: 'Stammkunden und Vertraege verwalten.' },
     { href: '/loesungen/sla-tracking-reinigungsfirma', label: 'SLA-Tracking', description: 'Service-Level-Agreements überwachen.' },

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Zugangsinfos', description: 'Zugangscodes, Oeffnungszeiten, Besonderheiten hinterlegt.' },
   ],
   closingHeadline: 'Reinigungsakte. Digital. Vollständig. Immer griffbereit.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und digitalisiere deine Objekt-Dokumentation.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und digitalisiere deine Objekt-Dokumentation.',
   relatedLinks: [
     { href: '/loesungen/objektverwaltung-gebäudereinigung', label: 'Objektverwaltung', description: 'Reinigungsobjekte zentral verwalten.' },
     { href: '/loesungen/stammkunden-verwalten-gebäudereinigung', label: 'Kundenverwaltung', description: 'Stammkunden und Vertraege verwalten.' },

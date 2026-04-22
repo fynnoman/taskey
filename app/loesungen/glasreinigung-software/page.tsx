@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Flexible Abrechnung', description: 'Pro Quadratmeter, pauschal oder nach Aufwand abrechnen.' },
   ],
   closingHeadline: 'Glasreinigung. Geplant. Dokumentiert. Abgerechnet.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und optimiere deine Glasreinigung.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und optimiere deine Glasreinigung.',
   relatedLinks: [
     { href: '/loesungen/tourenplanung-reinigungsteams', label: 'Tourenplanung Reinigung', description: 'Optimale Touren für deine Reinigungsteams planen.' },
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'Jeden Einsatz per NFC-Scan nachweisen.' },

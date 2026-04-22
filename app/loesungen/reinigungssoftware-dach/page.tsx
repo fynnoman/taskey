@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Deutscher Support', description: 'Deutschsprachiger Support aus Deutschland.' },
   ],
   closingHeadline: 'Die Reinigungssoftware für den DACH-Raum.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe Software, die deinen Markt versteht.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und erlebe Software, die deinen Markt versteht.',
   relatedLinks: [
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'NFC-basierte Nachweise – das Herzstück von Taskey.' },
     { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung Reinigung', description: 'Arbeitszeiten per NFC erfassen.' },

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Wiederkehrende Kunden', description: 'Stammkundenverwaltung mit Auftragshistorie.' },
   ],
   closingHeadline: 'Teppichreinigung. Dokumentiert. Professionell.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und verwalte deine Teppichreinigung digital.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und verwalte deine Teppichreinigung digital.',
   relatedLinks: [
     { href: '/loesungen/kundendatenbank-reinigungsfirma', label: 'Kundendatenbank', description: 'Alle Kunden und Auftragshistorie an einem Ort.' },
     { href: '/loesungen/rechnung-schreiben-reinigungsfirma', label: 'Rechnung Reinigung', description: 'Rechnungen direkt aus Aufträgen erstellen.' },

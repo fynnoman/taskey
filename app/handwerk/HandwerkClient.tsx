@@ -64,7 +64,7 @@ export default function HandwerkClient() {
               href="https://signup.taskeyapp.com"
               className="px-8 py-4 bg-yellow-400 text-gray-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-base shadow-lg"
             >
-              14 Tage kostenlos testen
+              3 Monate kostenlos testen
             </a>
           </div>
           <p className="text-sm text-gray-400">Keine Kreditkarte. Sofort loslegen.</p>
@@ -404,7 +404,7 @@ export default function HandwerkClient() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-gray-400 mt-6">Alle Preise zzgl. MwSt. &middot; Täglich kündbar &middot; 14 Tage kostenlos testen</p>
+        <p className="text-center text-xs text-gray-400 mt-6">Alle Preise zzgl. MwSt. &middot; Täglich kündbar &middot; 3 Monate kostenlos testen</p>
       </Section>
 
       {/* ────────────────────────────────────────────────────────────
@@ -481,7 +481,7 @@ export default function HandwerkClient() {
             },
             {
               q: "Was kostet Taskey für meinen Handwerksbetrieb?",
-              a: "Ab 11,79 Euro pro Mitarbeiter und Monat (START). Das beliebteste Paket GROW kostet 21,78 Euro. Alle Preise sind täglich kündbar, und Sie können 14 Tage lang kostenlos testen.",
+              a: "Ab 11,79 Euro pro Mitarbeiter und Monat (START). Das beliebteste Paket GROW kostet 21,78 Euro. Alle Preise sind täglich kündbar, und Sie können 3 Monate lang kostenlos testen.",
             },
             {
               q: "Wie schnell kann ich starten?",
@@ -551,7 +551,7 @@ export default function HandwerkClient() {
             </div>
             <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 text-center">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Jetzt kostenlos starten</h3>
-              <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 14 Tage lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
+              <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 3 Monate lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
               <a
                 href="https://signup.taskeyapp.com"
                 className="block w-full py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-colors text-sm"
@@ -572,7 +572,7 @@ export default function HandwerkClient() {
             Bereit?
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            14 Tage kostenlos. Keine Kreditkarte. Kein Risiko.
+            3 Monate kostenlos. Keine Kreditkarte. Kein Risiko.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
@@ -590,7 +590,7 @@ export default function HandwerkClient() {
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <span>Keine Kreditkarte</span>
-            <span>14 Tage kostenlos</span>
+            <span>3 Monate kostenlos</span>
             <span>Täglich kündbar</span>
           </div>
         </div>

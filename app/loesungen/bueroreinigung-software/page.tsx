@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Mehrsprachige App', description: 'Reinigungskräfte nutzen die App in ihrer Sprache.' },
   ],
   closingHeadline: 'Büroreinigung. Professionell. Transparent. Digital.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und bringe deine Büroreinigung auf ein neues Level.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und bringe deine Büroreinigung auf ein neues Level.',
   relatedLinks: [
     { href: '/loesungen/unterhaltsreinigung-software', label: 'Unterhaltsreinigung', description: 'Regelmäßige Reinigung digital planen.' },
     { href: '/loesungen/reinigungspläne-digital-erstellen', label: 'Reinigungspläne', description: 'Digitale Reinigungspläne erstellen.' },

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Mehrsprachig', description: 'App in 3 Sprachen – perfekt für multinationale Reinigungsteams.' },
   ],
   closingHeadline: 'Klinikreinigung. Hygienisch. Dokumentiert. Auditfest.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und sichere deine Hygienestandards digital ab.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und sichere deine Hygienestandards digital ab.',
   relatedLinks: [
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung', description: 'Digitale Hygiene-Checklisten pro Raum und Zone.' },
     { href: '/loesungen/reinigungspläne-digital-erstellen', label: 'Reinigungspläne digital', description: 'Reinigungspläne für Kliniken und Pflegeeinrichtungen.' },

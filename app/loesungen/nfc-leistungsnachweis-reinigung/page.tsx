@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Mehrsprachig', description: 'Die App funktioniert in 3 Sprachen – perfekt für internationale Teams.' },
   ],
   closingHeadline: 'NFC scannen. Nachweis fertig. Kunde zufrieden.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Leistungsnachweise in der Reinigung sein können.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und erlebe, wie einfach Leistungsnachweise in der Reinigung sein können.',
   relatedLinks: [
     { href: '/loesungen/leistungsnachweis-gebäudereinigung', label: 'Leistungsnachweis Gebäudereinigung', description: 'Alle Leistungsnachweise digital an einem Ort.' },
     { href: '/loesungen/qualitaetskontrolle-gebäudereinigung', label: 'Qualitätskontrolle Reinigung', description: 'Qualität prüfen und dokumentieren – direkt nach der Reinigung.' },

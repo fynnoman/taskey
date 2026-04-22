@@ -77,7 +77,7 @@ export default function ReinigungClient() {
               href="https://signup.taskeyapp.com"
               className="group px-10 py-5 bg-gradient-to-r from-cyan-400 to-cyan-500 text-gray-900 font-extrabold rounded-2xl hover:from-cyan-300 hover:to-cyan-400 transition-all text-lg shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-400/40 hover:scale-[1.02]"
             >
-              14 Tage kostenlos testen
+              3 Monate kostenlos testen
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
             </a>
             <Link
@@ -513,7 +513,7 @@ export default function ReinigungClient() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-gray-400 mt-6">Unbegrenzte Mitarbeiter &middot; 14 Tage kostenlos &middot; Taeglich kuendbar</p>
+        <p className="text-center text-xs text-gray-400 mt-6">Unbegrenzte Mitarbeiter &middot; 3 Monate kostenlos &middot; Taeglich kuendbar</p>
       </Section>
 
       {/* ────────────────────────────────────────────────────────────
@@ -553,7 +553,7 @@ export default function ReinigungClient() {
             },
             {
               q: "Was kostet Taskey fuer meinen Reinigungsbetrieb?",
-              a: "Ab 12,90 Euro pro Objekt und Monat (PROFESSIONAL). Unbegrenzte Mitarbeiter. 14 Tage kostenlos testen. Taeglich kuendbar.",
+              a: "Ab 12,90 Euro pro Objekt und Monat (PROFESSIONAL). Unbegrenzte Mitarbeiter. 3 Monate kostenlos testen. Taeglich kuendbar.",
             },
             {
               q: "Wie schnell kann ich starten?",
@@ -618,7 +618,7 @@ export default function ReinigungClient() {
             </div>
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 border border-cyan-100 text-center">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Jetzt kostenlos starten</h3>
-              <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 14 Tage lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
+              <p className="text-sm text-gray-600 mb-6">Testen Sie Taskey 3 Monate lang kostenlos &ndash; ohne Risiko, ohne Kreditkarte.</p>
               <a
                 href="https://signup.taskeyapp.com"
                 className="block w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all text-sm shadow-lg"
@@ -642,7 +642,7 @@ export default function ReinigungClient() {
             Bereit?
           </h2>
           <p className="text-xl text-gray-300 mb-10">
-            14 Tage kostenlos. Keine Kreditkarte. Kein Risiko.<br />
+            3 Monate kostenlos. Keine Kreditkarte. Kein Risiko.<br />
             <span className="text-cyan-300 font-semibold">Einfach starten.</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -662,7 +662,7 @@ export default function ReinigungClient() {
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
             <span>Keine Kreditkarte</span>
             <span>&middot;</span>
-            <span>14 Tage kostenlos</span>
+            <span>3 Monate kostenlos</span>
             <span>&middot;</span>
             <span>Taeglich kuendbar</span>
             <span>&middot;</span>

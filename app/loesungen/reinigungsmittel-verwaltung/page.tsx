@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'App-Erfassung', description: 'Reinigungskräfte melden Verbrauch per App.' },
   ],
   closingHeadline: 'Reinigungsmittel. Transparent. Effizient. Digital.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und spare bei deinen Materialkosten.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und spare bei deinen Materialkosten.',
   relatedLinks: [
     { href: '/loesungen/inventar-verwalten-reinigungsfirma', label: 'Inventarverwaltung', description: 'Geräte und Material verwalten.' },
     { href: '/loesungen/nachkalkulation-reinigungsaufträge', label: 'Nachkalkulation', description: 'Aufträge nachkalkulieren.' },

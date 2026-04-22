@@ -4,7 +4,7 @@ import HandwerkClient from "./HandwerkClient";
 export const metadata: Metadata = {
   title: "Taskey - Die App für Handwerksbetriebe in DACH | Zeiterfassung, NFC-Werkzeug-Tracking & Live-Margen",
   description:
-    "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Elektriker, SHK, Dachdecker, Maler, Tischler, Bauunternehmen. Made in Germany. 14 Tage kostenlos testen.",
+    "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Elektriker, SHK, Dachdecker, Maler, Tischler, Bauunternehmen. Made in Germany. 3 Monate kostenlos testen.",
   keywords: [
     "Handwerkersoftware",
     "Handwerker App",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Taskey - Die App für Handwerksbetriebe in DACH",
     description:
-      "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Made in Germany. 14 Tage kostenlos testen.",
+      "Automatische Zeiterfassung, NFC-Werkzeug-Tracking, Live-Margen für Handwerksbetriebe. Made in Germany. 3 Monate kostenlos testen.",
     url: "https://www.taskeyapp.com/handwerk",
     siteName: "Taskey",
     locale: "de_DE",
@@ -45,7 +45,7 @@ export default function HandwerkPage() {
       "@type": "Offer",
       price: "11.79",
       priceCurrency: "EUR",
-      description: "Ab 11,79 Euro pro Mitarbeiter / Monat. 14 Tage kostenlos testen.",
+      description: "Ab 11,79 Euro pro Mitarbeiter / Monat. 3 Monate kostenlos testen.",
     },
     description:
       "Handwerkersoftware für automatische Zeiterfassung, NFC-Werkzeug-Tracking, Auftragsplanung und Live-Margen. Für Elektriker, SHK, Dachdecker, Maler, Tischler und Bauunternehmen im DACH-Raum.",

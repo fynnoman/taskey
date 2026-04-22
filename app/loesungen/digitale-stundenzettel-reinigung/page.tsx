@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Archivierung', description: 'Alle Stundenzettel revisionssicher archiviert.' },
   ],
   closingHeadline: 'Stundenzettel. Digital. Automatisch. Korrekt.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und spare Stunden bei der Lohnvorbereitung.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und spare Stunden bei der Lohnvorbereitung.',
   relatedLinks: [
     { href: '/loesungen/arbeitszeiterfassung-reinigungsfirma', label: 'Zeiterfassung', description: 'Arbeitszeiten per NFC erfassen.' },
     { href: '/loesungen/lohnabrechnung-reinigungsfirma', label: 'Lohnabrechnung', description: 'Stundenzettel direkt in die Lohnabrechnung.' },

@@ -4,6 +4,7 @@ import React, { useState, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLanguage } from "../../context/LanguageContext";
 import CommunicationUSP from "../../components/CommunicationUSP";
+import AllInOneUSP from "../../components/AllInOneUSP";
 
 const ManagerRequestModal = lazy(() => import("../../components/ManagerRequestModal"));
 const EnterpriseApplicationModal = lazy(() => import("../../components/EnterpriseApplicationModal"));
@@ -145,7 +146,7 @@ function PricingPageInner() {
             </div>
             <p className="text-sm text-blue-600 font-semibold mb-6">+ 6,90 &euro; pro Objekt</p>
             <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              14 Tage kostenlos
+              3 Monate kostenlos
             </a>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2"><CheckIcon /> Unbegrenzte Mitarbeiter</li>
@@ -170,7 +171,7 @@ function PricingPageInner() {
             </div>
             <p className="text-sm text-blue-600 font-semibold mb-6">+ 5,90 &euro; pro Objekt</p>
             <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-blue-900 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors mb-8">
-              14 Tage kostenlos
+              3 Monate kostenlos
             </a>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2"><CheckIcon /> Alles aus Professional</li>
@@ -249,7 +250,7 @@ function PricingPageInner() {
             </div>
             <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
             <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              14 Tage kostenlos
+              3 Monate kostenlos
             </a>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2"><CheckIcon /> Zeiterfassung</li>
@@ -273,7 +274,7 @@ function PricingPageInner() {
             </div>
             <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
             <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-blue-900 text-white font-bold rounded-xl hover:bg-blue-800 transition-colors mb-8">
-              14 Tage kostenlos
+              3 Monate kostenlos
             </a>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2"><CheckIcon /> Alles aus Start</li>
@@ -295,7 +296,7 @@ function PricingPageInner() {
             </div>
             <p className="text-sm text-gray-500 mb-6">pro Mitarbeiter / Monat</p>
             <a href="https://signup.taskeyapp.com" className="block text-center py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors mb-8">
-              14 Tage kostenlos
+              3 Monate kostenlos
             </a>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-center gap-2"><CheckIcon /> Alles aus Grow</li>
@@ -640,6 +641,7 @@ function PricingPageInner() {
     <main className="min-h-screen bg-white">
       {heroSection}
       <CommunicationUSP variant="compact" />
+      <AllInOneUSP variant="full" />
       {toggleSection}
       {activeModel === "reinigung" ? reinigungCards : handwerkCards}
       {nfcSection}

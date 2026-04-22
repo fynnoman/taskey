@@ -66,6 +66,28 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Zweiter USP-Block: Alles in einem System */}
+        <div className="pt-10 pb-10 border-b border-white/10">
+          <div className="flex items-center gap-2 mb-5">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
+            </span>
+            <span className="text-[11px] font-black tracking-[0.25em] text-emerald-300 uppercase">
+              Taskey-USP · Alles in einem System
+            </span>
+          </div>
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
+            Eine <span className="text-emerald-300">Software</span> statt{" "}
+            <span className="line-through text-white/40">fünf Abos</span>.
+          </h3>
+          <p className="text-gray-400 text-base sm:text-lg max-w-3xl leading-relaxed">
+            Zeiterfassung, Einsatzplanung, Auftragsverwaltung, Objektdokumentation, Angebote,
+            Rechnungen und DATEV-Export — in einer Plattform. Ein Login, ein Datenmodell, eine
+            Rechnung. Schluss mit dem Tool-Zoo und Excel als Klammer dazwischen.
+          </p>
+        </div>
+
         {/* Top section — big branding */}
         <div className="pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 border-b border-white/10">
           <div className="flex items-center gap-4 mb-8">

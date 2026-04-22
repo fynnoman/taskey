@@ -4,7 +4,7 @@ import ReinigungClient from "./ReinigungClient";
 export const metadata: Metadata = {
   title: "Reinigungssoftware für Gebäudereiniger – NFC-Nachweise, Zeiterfassung & Einsatzplanung | Taskey",
   description:
-    "Taskey ist die führende Reinigungssoftware für Gebäudereiniger im DACH-Raum. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung, Qualitätskontrolle. DSGVO-konform. 14 Tage kostenlos testen!",
+    "Taskey ist die führende Reinigungssoftware für Gebäudereiniger im DACH-Raum. NFC-Leistungsnachweise, automatische Zeiterfassung, Einsatzplanung, Qualitätskontrolle. DSGVO-konform. 3 Monate kostenlos testen!",
   keywords: [
     "Reinigungssoftware",
     "Gebäudereinigung Software",
@@ -44,7 +44,7 @@ export default function GebaeudereinigungPage() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "EUR",
-      description: "14 Tage kostenlos testen",
+      description: "3 Monate kostenlos testen",
     },
     description:
       "Die führende Reinigungssoftware für Gebäudereiniger im DACH-Raum. NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitätskontrolle.",

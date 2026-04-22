@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Qualifikationen', description: 'Mitarbeiter nach Qualifikation den richtigen Objekten zuweisen.' },
   ],
   closingHeadline: 'Personalplanung. Automatisch. Stressfrei.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und plane dein Personal ohne Chaos.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und plane dein Personal ohne Chaos.',
   relatedLinks: [
     { href: '/loesungen/schichtplanung-reinigungsunternehmen', label: 'Schichtplanung', description: 'Schichten planen und Mitarbeiter zuweisen.' },
     { href: '/loesungen/tagesplanung-reinigungskräfte', label: 'Tagesplanung', description: 'Tägliche Einsätze optimal planen.' },

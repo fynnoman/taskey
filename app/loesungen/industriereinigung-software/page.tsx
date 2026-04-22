@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Kundenberichte', description: 'Professionelle Berichte mit Fotos und Protokollen erstellen.' },
   ],
   closingHeadline: 'Industriereinigung. Professionell. Nachweisbar.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und bringe System in deine Industriereinigung.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und bringe System in deine Industriereinigung.',
   relatedLinks: [
     { href: '/loesungen/checklisten-reinigung-digital', label: 'Checklisten Reinigung', description: 'Digitale Checklisten für jeden Reinigungsauftrag.' },
     { href: '/loesungen/qualitaetskontrolle-gebäudereinigung', label: 'Qualitätskontrolle', description: 'Qualität prüfen und dokumentieren.' },

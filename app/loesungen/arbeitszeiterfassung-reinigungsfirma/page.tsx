@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Lohnvorbereitung', description: 'Fertige Stundenübersichten für die Lohnabrechnung.' },
   ],
   closingHeadline: 'Reinigung. Dokumentiert. Abgerechnet.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe, wie einfach Zeiterfassung in der Reinigung sein kann.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und erlebe, wie einfach Zeiterfassung in der Reinigung sein kann.',
   relatedLinks: [
       {
           href: '/loesungen/schichtplanung-reinigungsunternehmen',

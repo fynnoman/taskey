@@ -167,7 +167,7 @@ export default function LösungenPage() {
             Bereit für den nächsten Schritt?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Testen Sie Taskey 14 Tage kostenlos – alle Funktionen, kein Risiko.
+            Testen Sie Taskey 3 Monate kostenlos – alle Funktionen, kein Risiko.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Einfache Bedienung', description: 'So einfach wie WhatsApp – kein Schulungsbedarf.' },
   ],
   closingHeadline: 'Gebäudereinigung. Mobil. Intuitiv. Ueberall.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und erlebe die einfachste App für Gebäudereiniger.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und erlebe die einfachste App für Gebäudereiniger.',
   relatedLinks: [
     { href: '/loesungen/reinigungskräfte-app', label: 'Mitarbeiter-App', description: 'Die App speziell für Reinigungskräfte.' },
     { href: '/loesungen/einsatzplanung-gebäudereinigung', label: 'Einsatzplanung', description: 'Einsätze mobil planen und koordinieren.' },

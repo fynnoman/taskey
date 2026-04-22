@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Outbreak-Management', description: 'Bei Ausbruechen sofort Sonderreinigungen ausloesen und dokumentieren.' },
   ],
   closingHeadline: 'Krankenhausreinigung. Sicher. Dokumentiert. Lückenlos.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und bring deine Klinikreinigung auf Audit-Niveau.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und bring deine Klinikreinigung auf Audit-Niveau.',
   relatedLinks: [
     { href: '/loesungen/klinik-reinigung-software', label: 'Klinikreinigung', description: 'Allgemeine klinische Reinigung.' },
     { href: '/loesungen/praxisreinigung-software', label: 'Praxisreinigung', description: 'Arztpraxen hygienisch reinigen.' },

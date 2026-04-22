@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Lohnabrechnung', description: 'Krankheitstage automatisch in der Lohnvorbereitung.' },
   ],
   closingHeadline: 'Krankmeldung. Sofort. Digital. Geloest.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und manage Ausfaelle stressfrei.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und manage Ausfaelle stressfrei.',
   relatedLinks: [
     { href: '/loesungen/personalplanung-reinigung', label: 'Personalplanung', description: 'Personal effizient einplanen.' },
     { href: '/loesungen/schichtplanung-reinigungsunternehmen', label: 'Schichtplanung', description: 'Schichten und Vertretungen planen.' },

@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Kundenfreigabe', description: 'Digitale Abnahme durch den Auftraggeber.' },
   ],
   closingHeadline: 'Grundreinigung. Praezise. Profitabel.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und kalkuliere deine Grundreinigungen praezise.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und kalkuliere deine Grundreinigungen praezise.',
   relatedLinks: [
     { href: '/loesungen/nfc-leistungsnachweis-reinigung', label: 'NFC Leistungsnachweis', description: 'Jeden Einsatz per NFC nachweisen.' },
     { href: '/loesungen/inventar-verwalten-reinigungsfirma', label: 'Inventar Reinigung', description: 'Reinigungsmittel und Geräte verwalten.' },

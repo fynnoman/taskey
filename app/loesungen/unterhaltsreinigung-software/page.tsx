@@ -37,7 +37,7 @@ const data: LandingPageData = {
     { title: 'Monatsberichte', description: 'Automatische Berichte pro Objekt für die Abrechnung.' },
   ],
   closingHeadline: 'Unterhaltsreinigung. Systematisch. Nachweisbar.',
-  closingText: 'Teste Taskey 14 Tage kostenlos und bringe System in deine tägliche Reinigung.',
+  closingText: 'Teste Taskey 3 Monate kostenlos und bringe System in deine tägliche Reinigung.',
   relatedLinks: [
     { href: '/loesungen/reinigungspläne-digital-erstellen', label: 'Reinigungspläne digital', description: 'Digitale Reinigungspläne für alle Objekte erstellen.' },
     { href: '/loesungen/einsatzplanung-gebäudereinigung', label: 'Einsatzplanung Reinigung', description: 'Teams optimal auf Objekte verteilen.' },
