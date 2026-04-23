@@ -22,7 +22,7 @@ export default function Hero() {
           <source src="/Video_Anfrage_Handy_Fall_mit_Logo.mp4" type="video/mp4" />
         </video>
         {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-white/10" />
+        <div className="absolute inset-0 bg-white/40" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 
