@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
@@ -10,16 +9,18 @@ export default function Hero() {
   return (
     <>
       <section className="relative bg-white pt-24 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
-        {/* Background Image */}
-        <Image
-          src="/Gemini_Generated_Image_u0ytjru0ytjru0yt.webp"
-          alt=""
-          fill
-          priority
-          quality={80}
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        >
+          <source src="/Video_Anfrage_Handy_Fall_mit_Logo.mp4" type="video/mp4" />
+        </video>
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-white/80" />
 
