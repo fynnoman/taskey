@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import CommunicationUSP from "@/components/CommunicationUSP";
 
@@ -42,6 +43,18 @@ export default function ReinigungClient() {
           1. HERO – MEGA PLAKATIV
       ──────────────────────────────────────────────────────────── */}
       <section className="relative pt-28 pb-24 md:pt-40 md:pb-36 bg-gradient-to-br from-cyan-950 via-blue-950 to-indigo-950 text-white overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/reinigunghero.png"
+            alt="Professionelle Gebäudereinigung"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-25"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/85 via-blue-950/80 to-indigo-950/85" />
+        </div>
         {/* Animated glow orbs */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: "1s" }} />
