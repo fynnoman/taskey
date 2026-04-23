@@ -49,7 +49,7 @@ export default function HandwerkPage() {
     },
     description:
       "Handwerkersoftware für automatische Zeiterfassung, NFC-Werkzeug-Tracking, Auftragsplanung und Live-Margen. Für Elektriker, SHK, Dachdecker, Maler, Tischler und Bauunternehmen im DACH-Raum.",
-    author: { "@type": "Organization", name: "Taskey", url: "https://taskeyapp.com" },
+    author: { "@type": "Organization", name: "Taskey", url: "https://www.taskeyapp.com" },
   };
 
   return (

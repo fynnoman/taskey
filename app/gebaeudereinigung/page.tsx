@@ -48,7 +48,7 @@ export default function GebaeudereinigungPage() {
     },
     description:
       "Die führende Reinigungssoftware für Gebäudereiniger im DACH-Raum. NFC-Leistungsnachweise, Zeiterfassung, Einsatzplanung und Qualitätskontrolle.",
-    author: { "@type": "Organization", name: "Taskey", url: "https://taskeyapp.com" },
+    author: { "@type": "Organization", name: "Taskey", url: "https://www.taskeyapp.com" },
   };
 
   return (

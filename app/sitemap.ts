@@ -59,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
-    // Lösungen Übersichtsseite
     {
       url: `${baseUrl}/ios`,
       lastModified: new Date(),

@@ -104,9 +104,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.taskeyapp.com",
   },
-  verification: {
-    google: "your-google-verification-code-here",
-  },
   icons: {
     icon: '/logobittt.png',
     shortcut: '/logobittt.png',

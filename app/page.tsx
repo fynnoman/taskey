@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Made in Germany", "DSGVO-konforme Software"
   ],
   alternates: {
-    canonical: "https://taskeyapp.com",
+    canonical: "https://www.taskeyapp.com",
   },
 };
 
@@ -64,7 +64,7 @@ export default function Home() {
     "author": {
       "@type": "Organization",
       "name": "Taskey",
-      "url": "https://taskeyapp.com"
+      "url": "https://www.taskeyapp.com"
     }
   };
 
@@ -72,11 +72,12 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Taskey",
-    "url": "https://taskeyapp.com",
-    "logo": "https://taskeyapp.com/logobittt.png",
+    "url": "https://www.taskeyapp.com",
+    "logo": "https://www.taskeyapp.com/logobittt.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+49-800-123-4567",
+      "telephone": "+49-151-68488999",
+      "email": "fynn@taskeyapp.com",
       "contactType": "customer service",
       "areaServed": ["DE", "AT", "CH"],
       "availableLanguage": ["German", "English", "French"]
