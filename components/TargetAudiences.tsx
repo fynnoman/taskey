@@ -92,7 +92,7 @@ const audiences: Audience[] = [
       "Störmeldungen, die zwischen Anrufen verloren gehen",
       "Nachweise, die Auftraggeber ständig nachfordern",
     ],
-    href: "/loesungen",
+    href: "/handwerk",
     cta: "Lösung für Facility Services ansehen",
   },
   {
@@ -113,7 +113,7 @@ const audiences: Audience[] = [
       "Wetterabhängige Umplanung im Minutentakt",
       "Einsatzzeiten, die keiner sauber mitschreibt",
     ],
-    href: "/loesungen/gartenbau-software",
+    href: "/handwerk",
     cta: "Lösung für GaLaBau ansehen",
   },
   {
@@ -133,7 +133,7 @@ const audiences: Audience[] = [
       "Einsatzdokumentation auf Papier",
       "Keine revisionssichere Nachweiskette",
     ],
-    href: "/loesungen",
+    href: "/handwerk",
     cta: "Lösung für Sicherheitsdienste ansehen",
   },
   {
@@ -153,7 +153,7 @@ const audiences: Audience[] = [
       "Revisionssichere Nachweise für Audits",
       "Schichtmodelle, die Excel nicht mehr abbildet",
     ],
-    href: "/loesungen",
+    href: "/handwerk",
     cta: "Lösung für Industriereinigung ansehen",
   },
 ];

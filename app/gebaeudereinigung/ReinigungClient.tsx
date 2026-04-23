@@ -465,7 +465,7 @@ export default function ReinigungClient() {
           ))}
         </div>
         <p className="text-center text-sm text-gray-500 mt-8">
-          <Link href="/loesungen" className="text-cyan-700 font-bold hover:underline">Alle 51 Loesungen ansehen &rarr;</Link>
+          Über 50 Funktionen – speziell für die Gebäudereinigung.
         </p>
       </Section>
 

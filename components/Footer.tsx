@@ -124,11 +124,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen" className="text-gray-300 hover:text-white transition">
-                  Alle Lösungen
-                </Link>
-              </li>
-              <li>
                 <Link href="/handwerk" className="text-gray-300 hover:text-white transition">
                   Für Handwerksbetriebe
                 </Link>
