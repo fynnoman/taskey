@@ -452,19 +452,6 @@ export default function FeaturesPage() {
                 </div>
                 <p className="text-sky-50 text-sm">{t('featuresPage.nav.nfc.desc')}</p>
               </a>
-
-              <a
-                href="/premium-manager"
-                className="group bg-gradient-to-br from-slate-600 to-blue-700 hover:from-slate-500 hover:to-blue-600 text-white rounded-xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 border border-slate-500/40"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-slate-50">{t('featuresPage.nav.manager')}</h3>
-                  <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-                <p className="text-slate-100 text-sm">{t('featuresPage.nav.manager.desc')}</p>
-              </a>
             </div>
           </div>
 
