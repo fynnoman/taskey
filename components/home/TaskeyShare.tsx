@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 /**
- * TaskeyShare — Revolut-Style: links Text, rechts horizontal scrollende Karten mit Klick-Nav.
- * Auto-Rotation + Dots + Manuelle Tabs.
+ * TaskeyShare — Revolut-Style:
+ * Linke Spalte: minimaler Text.
+ * Rechte Spalte: "Deck" aus Karten — die aktive (links) ist groß, die anderen stehen
+ * gestaffelt dahinter. Jede ~4.5s rotieren die Positionen automatisch weiter.
  */
 
 type Card = {
@@ -21,7 +23,7 @@ const cards: Card[] = [
     title: "Fortschritt live",
     subtitle: "Ihr Auftraggeber sieht jederzeit, was im Objekt passiert.",
     visual: (
-      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
         <div className="flex items-center justify-between mb-3">
           <p className="text-[11px] font-bold text-white/80">Fortschritt</p>
           <p className="text-[11px] font-black text-cyan-300">67%</p>
@@ -38,7 +40,7 @@ const cards: Card[] = [
     title: "Fotos & Protokolle",
     subtitle: "Bilder vom Einsatz — automatisch geteilt, nie wieder per E-Mail.",
     visual: (
-      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
         <p className="text-[11px] font-bold text-white/80 mb-3">Leistungsnachweise</p>
         <div className="grid grid-cols-3 gap-1.5 mb-2">
           {[...Array(6)].map((_, i) => (
@@ -59,7 +61,7 @@ const cards: Card[] = [
     title: "Volle Transparenz",
     subtitle: "Monatsbudget, offene Posten, gelieferte Leistungen — in Echtzeit.",
     visual: (
-      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
         <p className="text-[11px] font-bold text-white/80 mb-2">Monatsvertrag</p>
         <div className="flex items-baseline gap-1 mb-3">
           <span className="text-2xl font-black text-white">4.200 €</span>
@@ -77,7 +79,7 @@ const cards: Card[] = [
     title: "Ein Klick, keine Anrufe",
     subtitle: "Fragen werden direkt im Portal geklärt. Ihr Telefon bleibt ruhig.",
     visual: (
-      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
         <div className="flex items-start gap-2 mb-3">
           <div className="w-7 h-7 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex-shrink-0" />
           <div className="flex-1">
@@ -97,25 +99,61 @@ const cards: Card[] = [
   },
 ];
 
+// Layout-Slots: 0 = Hero (groß, vorne links), 1-3 = gestaffelt nach rechts-hinten
+const slotStyles = [
+  // Slot 0 — Hero
+  {
+    x: "0%",
+    y: "0%",
+    scale: 1,
+    rotate: 0,
+    z: 40,
+    opacity: 1,
+    width: "clamp(260px, 30vw, 380px)",
+    aspect: "aspect-[4/5]",
+  },
+  // Slot 1 — gestaffelt rechts oben
+  {
+    x: "55%",
+    y: "-6%",
+    scale: 0.82,
+    rotate: 4,
+    z: 30,
+    opacity: 0.75,
+    width: "clamp(220px, 25vw, 320px)",
+    aspect: "aspect-[4/5]",
+  },
+  // Slot 2 — rechts unten
+  {
+    x: "78%",
+    y: "14%",
+    scale: 0.7,
+    rotate: -3,
+    z: 20,
+    opacity: 0.55,
+    width: "clamp(200px, 22vw, 280px)",
+    aspect: "aspect-[4/5]",
+  },
+  // Slot 3 — ganz hinten
+  {
+    x: "100%",
+    y: "4%",
+    scale: 0.58,
+    rotate: 6,
+    z: 10,
+    opacity: 0.35,
+    width: "clamp(180px, 20vw, 240px)",
+    aspect: "aspect-[4/5]",
+  },
+];
+
 export default function TaskeyShare() {
   const [active, setActive] = useState(0);
-  const scrollerRef = useRef<HTMLDivElement>(null);
 
-  // Auto-Rotation
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % cards.length), 4500);
     return () => clearInterval(id);
   }, []);
-
-  // Sync horizontales Scrollen auf aktive Karte
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.children[active] as HTMLElement | undefined;
-    if (card) {
-      el.scrollTo({ left: card.offsetLeft - 16, behavior: "smooth" });
-    }
-  }, [active]);
 
   return (
     <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
@@ -123,8 +161,8 @@ export default function TaskeyShare() {
       <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-center">
-          {/* Linke Spalte: minimaler Text */}
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-center">
+          {/* Linke Spalte */}
           <div>
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
               Auftraggeber-Portal
@@ -162,27 +200,33 @@ export default function TaskeyShare() {
             </div>
           </div>
 
-          {/* Rechte Spalte: horizontal scrollende Karten */}
-          <div className="relative -mr-4 sm:-mr-6 lg:-mr-12">
-            <div
-              ref={scrollerRef}
-              className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 pr-4 sm:pr-6 lg:pr-12 no-scrollbar"
-              style={{ scrollbarWidth: "none" }}
-            >
-              {cards.map((c, i) => {
-                const isActive = i === active;
-                return (
-                  <button
-                    key={c.tag}
-                    onClick={() => setActive(i)}
-                    className={`snap-start flex-shrink-0 w-[280px] sm:w-[340px] aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border overflow-hidden relative text-left transition-all ${
-                      isActive
-                        ? "border-white/20 scale-[1.02] shadow-2xl shadow-cyan-500/10"
-                        : "border-white/5 opacity-70 hover:opacity-90"
-                    }`}
-                  >
+          {/* Rechte Spalte: Kartendeck */}
+          <div className="relative h-[520px] md:h-[560px] hidden lg:block">
+            {cards.map((c, i) => {
+              // Slot berechnen: aktive Karte = Slot 0, dann im Kreis
+              const slotIndex = (i - active + cards.length) % cards.length;
+              const s = slotStyles[slotIndex];
+              const isHero = slotIndex === 0;
+              return (
+                <button
+                  key={c.tag}
+                  onClick={() => setActive(i)}
+                  className={`absolute top-1/2 left-0 rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border overflow-hidden text-left transition-all duration-[900ms] ease-out ${
+                    isHero
+                      ? "border-white/20 shadow-2xl shadow-cyan-500/20"
+                      : "border-white/5 shadow-xl shadow-black/40"
+                  }`}
+                  style={{
+                    width: s.width,
+                    zIndex: s.z,
+                    opacity: s.opacity,
+                    transform: `translate(${s.x}, calc(-50% + ${s.y})) scale(${s.scale}) rotate(${s.rotate}deg)`,
+                    transformOrigin: "left center",
+                  }}
+                >
+                  <div className={`${s.aspect}`}>
                     {/* Progress-Bar nur auf aktiver Karte */}
-                    {isActive && (
+                    {isHero && (
                       <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
                         <div
                           key={`p-${active}`}
@@ -196,15 +240,38 @@ export default function TaskeyShare() {
                       <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-5">
                         {c.tag}
                       </span>
-                      <h3 className="text-2xl font-black text-white leading-tight mb-2">
+                      <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2">
                         {c.title}
                       </h3>
-                      <p className="text-sm text-white/50 mb-6">{c.subtitle}</p>
-                      <div className="flex-1 flex items-end justify-center">{c.visual}</div>
+                      <p className="text-xs md:text-sm text-white/50 mb-6">{c.subtitle}</p>
+                      <div className="flex-1 flex items-end">{c.visual}</div>
                     </div>
-                  </button>
-                );
-              })}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Mobile: nur aktive Karte als einfache Animation */}
+          <div className="relative lg:hidden">
+            <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/20 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-2xl shadow-cyan-500/20">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
+                <div
+                  key={`m-p-${active}`}
+                  className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
+                  style={{ animation: "share-progress 4.5s linear forwards" }}
+                />
+              </div>
+              <div key={`m-${active}`} className="p-6 h-full flex flex-col" style={{ animation: "share-fade 0.6s ease-out" }}>
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-5">
+                  {cards[active].tag}
+                </span>
+                <h3 className="text-2xl font-black text-white leading-tight mb-2">
+                  {cards[active].title}
+                </h3>
+                <p className="text-sm text-white/50 mb-6">{cards[active].subtitle}</p>
+                <div className="flex-1 flex items-end">{cards[active].visual}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -215,7 +282,10 @@ export default function TaskeyShare() {
           from { transform: scaleX(0); }
           to { transform: scaleX(1); }
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        @keyframes share-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
     </section>
   );

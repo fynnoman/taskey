@@ -5,6 +5,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+/**
+ * FeaturePreview — Revolut-Style:
+ * Links Text + Bullet-Navigation.
+ * Rechts: großes Bild, das NICHT als Card gerahmt ist, sondern weich in den
+ * dunklen Section-Hintergrund verblendet (Gradient-Masken rechts/unten/links).
+ */
 export default function FeaturePreview() {
   const { t } = useLanguage();
 
@@ -34,20 +40,56 @@ export default function FeaturePreview() {
 
   const [active, setActive] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setActive((i) => (i + 1) % features.length), 4500);
+    const id = setInterval(() => setActive((i) => (i + 1) % features.length), 5500);
     return () => clearInterval(id);
   }, [features.length]);
   const current = features[active];
 
   return (
     <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
+      {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
+      {/* Großes verblendetes Bild rechts — full-bleed, keine Card */}
+      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none">
+        {features.map((f, i) => (
+          <div
+            key={f.image}
+            className="absolute inset-0 transition-opacity duration-[1200ms] ease-out"
+            style={{ opacity: i === active ? 1 : 0 }}
+          >
+            <Image
+              src={f.image}
+              alt={f.title}
+              fill
+              sizes="62vw"
+              className="object-cover object-center"
+              priority={i === 0}
+            />
+            {/* Blend-Masken: links in den BG, oben/unten, rechts leicht */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right, #0a1628 0%, rgba(10,22,40,0.85) 12%, rgba(10,22,40,0.35) 38%, rgba(10,22,40,0.1) 70%, rgba(10,22,40,0.6) 100%)",
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #0a1628 0%, rgba(10,22,40,0.4) 15%, rgba(10,22,40,0.2) 50%, rgba(10,22,40,0.6) 85%, #0a1628 100%)",
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullet-Liste */}
-          <div>
+          <div className="relative z-10">
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
               {t("features.badge")}
             </p>
@@ -83,6 +125,16 @@ export default function FeaturePreview() {
                     <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
                       {f.label}
                     </span>
+                    {/* Progress on active */}
+                    {i === active && (
+                      <span className="ml-auto h-0.5 w-16 bg-white/10 rounded-full overflow-hidden flex-shrink-0">
+                        <span
+                          key={`prog-${active}`}
+                          className="block h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
+                          style={{ animation: "featurepreview-progress 5.5s linear forwards" }}
+                        />
+                      </span>
+                    )}
                   </button>
                 </li>
               ))}
@@ -106,59 +158,55 @@ export default function FeaturePreview() {
             </div>
           </div>
 
-          {/* Rechte Spalte: große rotierende Karte */}
-          <div className="relative">
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
-                <div
-                  key={active}
-                  className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
-                  style={{ animation: "featurepreview-progress 4.5s linear forwards" }}
-                />
-              </div>
-
-              {/* Bild-Hintergrund */}
-              <div key={`img-${active}`} className="absolute inset-0" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
-                <Image
-                  src={current.image}
-                  alt={current.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover opacity-40"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a2e] via-[#0d1a2e]/60 to-transparent" />
-              </div>
-
-              {/* Content overlay */}
-              <div className="relative z-10 p-8 md:p-10 flex flex-col h-full">
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-6">
-                  {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
-                </span>
-
-                <div key={`txt-${active}`} className="mt-auto" style={{ animation: "featurepreview-fade 0.6s ease-out" }}>
-                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">
-                    {current.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-md">
-                    {current.description}
-                  </p>
+          {/* Rechte Spalte: schwebende Text-Legende zum Bild (kein Card-Rahmen) */}
+          <div className="relative lg:min-h-[520px] flex lg:items-end">
+            {/* Mobile: Bild inline */}
+            <div className="lg:hidden w-full">
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-[#0a1628]">
+                {features.map((f, i) => (
+                  <div
+                    key={f.image}
+                    className="absolute inset-0 transition-opacity duration-[1000ms]"
+                    style={{ opacity: i === active ? 1 : 0 }}
+                  >
+                    <Image src={f.image} alt={f.title} fill sizes="100vw" className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/40 to-transparent" />
+                  </div>
+                ))}
+                <div key={`m-txt-${active}`} className="absolute bottom-0 left-0 right-0 p-6" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
+                  <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-3">
+                    {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-2xl font-black text-white leading-tight mb-2">{current.title}</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">{current.description}</p>
                 </div>
+              </div>
+
+              <div className="flex justify-center gap-2 mt-4">
+                {features.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`h-1.5 rounded-full transition-all ${
+                      i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                    }`}
+                    aria-label={`Feature ${i + 1}`}
+                  />
+                ))}
               </div>
             </div>
 
-            {/* Dots für Mobile */}
-            <div className="flex justify-center gap-2 mt-4 lg:hidden">
-              {features.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
-                  }`}
-                  aria-label={`Feature ${i + 1}`}
-                />
-              ))}
+            {/* Desktop: Text schwebt unten rechts frei über dem Hintergrund-Bild */}
+            <div key={`d-txt-${active}`} className="hidden lg:block ml-auto max-w-md relative z-10" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
+              <span className="inline-flex text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 backdrop-blur-md px-3 py-1 rounded-full mb-5">
+                {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
+              </span>
+              <h3 className="text-3xl xl:text-4xl font-black text-white leading-[1.1] mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.6)]">
+                {current.title}
+              </h3>
+              <p className="text-base xl:text-lg text-white/80 leading-relaxed [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]">
+                {current.description}
+              </p>
             </div>
           </div>
         </div>
