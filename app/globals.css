@@ -161,3 +161,54 @@ html {
 .animate-footer-flicker {
   animation: footer-flicker 6s ease-in-out infinite;
 }
+
+/* ------------------------------------------------------------------
+   Reveal-on-Scroll — Blur-In Animation
+   Nutzt die Klasse `.reveal-blur` (unsichtbar + blurry, leicht nach unten)
+   und `.is-revealed` (scharf, an Ort). Wird vom useRevealOnScroll-Hook
+   per IntersectionObserver geschaltet.
+------------------------------------------------------------------ */
+.reveal-blur {
+  opacity: 0;
+  filter: blur(18px);
+  transform: translate3d(0, 60px, 0) scale(0.985);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, filter, transform;
+}
+
+.reveal-blur.is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Sanftere Variante für kleinere Elemente (Chips, KPIs) */
+.reveal-blur-sm {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, filter, transform;
+}
+
+.reveal-blur-sm.is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-blur,
+  .reveal-blur-sm {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

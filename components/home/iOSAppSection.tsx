@@ -2,6 +2,7 @@
 
 import { FaApple } from 'react-icons/fa';
 import { useLanguage } from "@/context/LanguageContext";
+import RevealBlur from "./RevealBlur";
 
 /**
  * iOSAppSection — Revolut "Take charge"-Style:
@@ -69,6 +70,7 @@ export default function IOSAppSection() {
             <div className="absolute -inset-12 rounded-[4rem] border border-white/5 hidden md:block" />
             <div className="absolute -inset-20 rounded-[5rem] border border-white/[0.03] hidden md:block" />
 
+            <RevealBlur offset={140} blur={26} duration={1400}>
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/60 border border-white/10 bg-black">
               <video
                 autoPlay
@@ -81,6 +83,7 @@ export default function IOSAppSection() {
                 <source src="/Taskey (Neue iOS-App).mov" type="video/mp4" />
               </video>
             </div>
+            </RevealBlur>
           </div>
         </div>
 

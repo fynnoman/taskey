@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import RevealBlur from "./RevealBlur";
 
 /**
  * Hero — Revolut-Style Bühne ohne Video.
@@ -100,6 +101,7 @@ export default function Hero() {
           </div>
 
           {/* Browser-Frame mit Dashboard-Andeutung */}
+          <RevealBlur offset={140} blur={26} duration={1400}>
           <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] shadow-2xl shadow-black/60 backdrop-blur-sm">
             {/* Window Bar */}
             <div className="flex items-center gap-2 px-5 py-3 border-b border-white/5 bg-black/20">
@@ -141,6 +143,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+          </RevealBlur>
 
           {/* Glow unter Mockup */}
           <div className="absolute -inset-8 rounded-[3rem] bg-cyan-500/10 blur-3xl -z-10" />

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import RevealBlur from "./RevealBlur";
 
 /**
  * TaskeyShare — Revolut-Style:
@@ -202,6 +203,7 @@ export default function TaskeyShare() {
 
           {/* Rechte Spalte: Kartendeck */}
           <div className="relative h-[520px] md:h-[560px] hidden lg:block">
+            <RevealBlur offset={120} blur={24} duration={1300} className="absolute inset-0">
             {cards.map((c, i) => {
               // Slot berechnen: aktive Karte = Slot 0, dann im Kreis
               const slotIndex = (i - active + cards.length) % cards.length;
@@ -250,10 +252,12 @@ export default function TaskeyShare() {
                 </button>
               );
             })}
+            </RevealBlur>
           </div>
 
           {/* Mobile: nur aktive Karte als einfache Animation */}
           <div className="relative lg:hidden">
+            <RevealBlur offset={100} blur={22} duration={1200}>
             <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/20 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-2xl shadow-cyan-500/20">
               <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
                 <div
@@ -273,6 +277,7 @@ export default function TaskeyShare() {
                 <div className="flex-1 flex items-end">{cards[active].visual}</div>
               </div>
             </div>
+            </RevealBlur>
           </div>
         </div>
       </div>

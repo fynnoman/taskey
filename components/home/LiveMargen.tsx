@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import RevealBlur from './RevealBlur';
 
 /**
  * LiveMargen — Revolut-Style Bühne:
@@ -47,6 +48,7 @@ export default function LiveMargen() {
           </div>
 
           {/* Dashboard Card */}
+          <RevealBlur offset={120} blur={24} duration={1300}>
           <div className="relative rounded-3xl bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/10 shadow-2xl shadow-black/50 p-6 md:p-8 backdrop-blur-sm">
             {/* Dashboard Header */}
             <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-white/5">
@@ -92,6 +94,7 @@ export default function LiveMargen() {
               />
             </div>
           </div>
+          </RevealBlur>
 
           {/* Shadow / Glow */}
           <div className="absolute -inset-8 rounded-[3rem] bg-emerald-500/5 blur-3xl -z-10" />
