@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 /**
  * TargetAudiences
@@ -185,155 +186,160 @@ export default function TargetAudiences({
     );
   }
 
-  const isDark = variant === "dark";
-  const bg = isDark
-    ? "bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 text-white"
-    : "bg-gradient-to-br from-white via-gray-50 to-blue-50/30 text-gray-900";
-  const cardBg = isDark
-    ? "bg-white/5 border-white/10 hover:border-blue-400/40"
-    : "bg-white border-gray-200 hover:border-blue-700/30 shadow-sm hover:shadow-lg";
-  const muted = isDark ? "text-gray-300" : "text-gray-600";
-  const chipBg = isDark
-    ? "bg-blue-500/10 text-blue-300 border-blue-400/20"
-    : "bg-blue-50 text-blue-800 border-blue-200";
+  // Auto-rotation für Split-Layout
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % audiences.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+  const current = audiences[active];
 
   return (
     <section
       id="zielgruppen"
-      className={`${bg} py-20 sm:py-28 relative overflow-hidden`}
+      className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-      </div>
+      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Badge */}
-        <div className="flex justify-center mb-6">
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${
-              isDark
-                ? "bg-white/5 border-white/20 text-blue-300"
-                : "bg-blue-50 border-blue-200 text-blue-800"
-            }`}
-          >
-            <span className="text-xs font-black tracking-[0.25em] uppercase">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
+          {/* Linke Spalte: große rotierende Karte */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden">
+                <div
+                  key={active}
+                  className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 origin-left"
+                  style={{ animation: "audience-progress 4.5s linear forwards" }}
+                />
+              </div>
+
+              <div className="p-8 md:p-10 flex flex-col h-full">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-6">
+                  Branche · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
+                </span>
+
+                <div key={active} className="flex-1 flex flex-col" style={{ animation: "audience-fade 0.6s ease-out" }}>
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-cyan-300" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d={current.iconPath} />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">
+                    {current.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-white/50 mb-6">{current.subtitle}</p>
+
+                  <div className="mb-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 text-white/40">
+                      Typische Pain-Points
+                    </p>
+                    <ul className="space-y-1.5">
+                      {current.pains.map((p) => (
+                        <li key={p} className="flex items-start gap-2 text-sm text-white/70">
+                          <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                          </svg>
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-auto flex flex-wrap gap-1.5">
+                    {current.keywords.slice(0, 6).map((k) => (
+                      <span
+                        key={k}
+                        className="text-[10px] px-2.5 py-1 rounded-full border font-medium bg-white/5 text-white/60 border-white/10"
+                      >
+                        {k}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Dots für Mobile */}
+            <div className="flex justify-center gap-2 mt-4 lg:hidden">
+              {audiences.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                  }`}
+                  aria-label={`Branche ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Rechte Spalte: Text + klickbare Bullet-Liste */}
+          <div className="order-1 lg:order-2">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
               Für wen ist Taskey gemacht?
-            </span>
+            </p>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+              Gebaut für
+              <br />
+              <span className="text-white/50">Ihren Betrieb.</span>
+            </h2>
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-xl">
+              Keine generische Business-Software. Taskey ist für operative Dienstleister im DACH-Raum gebaut.
+            </p>
+
+            <ul className="space-y-2 mb-10">
+              {audiences.map((a, i) => (
+                <li key={a.title}>
+                  <button
+                    onClick={() => setActive(i)}
+                    className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
+                      i === active
+                        ? "bg-white/10 border-white/20"
+                        : "bg-transparent border-transparent hover:bg-white/5"
+                    }`}
+                  >
+                    <span
+                      className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
+                        i === active ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" : "bg-white/20"
+                      }`}
+                    />
+                    <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                      {a.title}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
+              >
+                Kostenlos starten
+              </Link>
+              <Link
+                href={current.href}
+                className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base text-center"
+              >
+                {current.cta}
+              </Link>
+            </div>
           </div>
         </div>
 
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-center leading-[1.05] mb-6 tracking-tight">
-          Gebaut für <span className="text-blue-500">Ihren Betrieb</span>.
-        </h2>
-        <p
-          className={`text-lg sm:text-xl text-center max-w-2xl mx-auto mb-16 leading-relaxed ${muted}`}
-        >
-          Keine generische Business-Software. Taskey ist für operative Dienstleister im DACH-Raum gebaut.
-        </p>
-
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
-          {audiences.map((a) => (
-            <article
-              key={a.title}
-              className={`${cardBg} border rounded-2xl p-6 sm:p-7 transition-all flex flex-col`}
-            >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${isDark ? "bg-blue-500/10 text-blue-300" : "bg-blue-50 text-blue-700"}`} aria-hidden>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={a.iconPath} />
-                </svg>
-              </div>
-              <h3
-                className={`text-lg sm:text-xl font-black mb-2 leading-tight ${
-                  isDark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                {a.title}
-              </h3>
-              <p className={`text-sm leading-relaxed mb-4 ${muted}`}>
-                {a.subtitle}
-              </p>
-
-              <div className="mb-4">
-                <p
-                  className={`text-[10px] font-black uppercase tracking-[0.2em] mb-2 ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  Typische Pain-Points
-                </p>
-                <ul className={`text-xs space-y-1 ${muted}`}>
-                  {a.pains.map((p) => (
-                    <li key={p} className="flex gap-1.5">
-                      <span className="text-red-400">—</span>
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mb-5">
-                <p
-                  className={`text-[10px] font-black uppercase tracking-[0.2em] mb-2 ${
-                    isDark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  Relevante Suchbegriffe
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {a.keywords.map((k) => (
-                    <span
-                      key={k}
-                      className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${chipBg}`}
-                    >
-                      {k}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href={a.href}
-                className={`mt-auto inline-flex items-center gap-1.5 text-sm font-bold ${
-                  isDark ? "text-cyan-300 hover:text-cyan-200" : "text-blue-700 hover:text-blue-900"
-                }`}
-              >
-                {a.cta}
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2.5}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </article>
-          ))}
-        </div>
-
-        {/* Weitere Gewerke — reine Keyword-Liste für SEO + Klarheit */}
-        <div
-          className={`rounded-2xl border p-6 sm:p-8 ${
-            isDark
-              ? "bg-white/5 border-white/10"
-              : "bg-white border-gray-200 shadow-sm"
-          }`}
-        >
-          <h3
-            className={`text-base sm:text-lg font-black mb-3 ${
-              isDark ? "text-white" : "text-gray-900"
-            }`}
-          >
+        {/* Weitere Gewerke — SEO-Block, Keyword-Liste */}
+        <div className="mt-20 rounded-2xl border bg-white/[0.03] border-white/10 p-6 sm:p-8">
+          <h3 className="text-base sm:text-lg font-black mb-3 text-white">
             Und viele weitere Gewerke &amp; Branchen:
           </h3>
-          <p className={`text-sm leading-relaxed ${muted}`}>
+          <p className="text-sm leading-relaxed text-white/60">
             Taskey wird auch eingesetzt von: Schreinereien, Zimmereien, Fliesenlegern,
             Bodenlegern, Stuckateuren, Gerüstbauern, Klempnerei-Betrieben,
             Kälte-/Klimatechnikern, Lüftungsbauern, Aufzugsservice, Umzugsunternehmen,
@@ -346,6 +352,18 @@ export default function TargetAudiences({
           </p>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes audience-progress {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes audience-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }
+

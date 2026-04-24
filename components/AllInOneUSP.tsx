@@ -1,55 +1,179 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 /**
- * AllInOneUSP
- *
- * Taskeys zweiter Kern-USP: Alles in einem System — Schluss mit 5 parallelen
- * Software-Abos. Zeiterfassung, Einsatzplanung, Auftragsverwaltung, Objekt-
- * dokumentation, Angebote & Rechnungen, DATEV-Export — in einer Plattform.
- *
- * Varianten:
- *  - "full"    : große Sektion mit Vergleich „vorher/nachher" + Kostenrechnung
- *  - "compact" : schlanker Banner-Streifen für Unterseiten
- *  - "dark"    : dunkle Variante für helle Hintergründe
+ * AllInOneUSP — Revolut-Style Split-Layout mit auto-rotierender Karte.
  */
 
 type Variant = "full" | "compact" | "dark";
 
-const replacedTools = [
-  { name: "Zeiterfassungs-App", price: "ab 4 €/Nutzer/Monat" },
-  { name: "Einsatz-/Schichtplanung", price: "ab 6 €/Nutzer/Monat" },
-  { name: "Auftrags- & Objektverwaltung", price: "ab 9 €/Nutzer/Monat" },
-  { name: "Foto-/Nachweis-Dokumentation", price: "ab 5 €/Nutzer/Monat" },
-  { name: "Angebots- & Rechnungstool", price: "ab 15 €/Monat" },
-  { name: "DATEV-Schnittstelle / Export", price: "oft Extra-Modul" },
-];
-
-const pillars = [
+const slides = [
   {
-    title: "Eine Plattform statt fünf Tools",
-    desc: "Zeiterfassung, Einsatzplanung, Aufträge, Nachweise, Rechnungen, DATEV-Export – alles in Taskey.",
-    path: "M4 6h16M4 12h16M4 18h16",
+    label: "Zeiterfassung mit NFC",
+    title: "Zeiterfassung mit NFC",
+    subtitle: "Ein Tap am Objekt genügt. Zeit, Ort, Person – lückenlos belegt.",
+    tag: "Zeiterfassung",
+    visual: (
+      <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-40 h-40">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/30 to-cyan-500/20 blur-2xl" />
+          <div className="absolute inset-6 rounded-full border border-white/15 animate-pulse" />
+          <div className="absolute inset-12 rounded-full border border-white/20" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center">
+              <svg className="w-8 h-8 text-emerald-300" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-6 inset-x-6 rounded-2xl bg-white/5 border border-white/10 px-4 py-3 backdrop-blur-sm">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-emerald-300">NFC-Scan · 08:04</span>
+          </div>
+          <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
+            <div className="h-full w-3/4 bg-emerald-400/60" />
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Ein Abo statt fünf",
-    desc: "Ein klarer Preis. Planbar, ohne Modul-Aufschläge.",
-    path: "M12 8c-2.21 0-4 1.12-4 2.5S9.79 13 12 13s4 1.12 4 2.5S14.21 18 12 18m0-10V6m0 12v2m-8-6a8 8 0 1116 0 8 8 0 01-16 0z",
+    label: "Einsatz- & Schichtplanung",
+    title: "Einsatzplanung per Drag & Drop",
+    subtitle: "Teams, Touren, Objekte – alles im selben Kalender. Statt in drei Tools.",
+    tag: "Planung",
+    visual: (
+      <div className="relative w-full h-full p-6 flex items-center">
+        <div className="w-full rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+          {["Mo", "Di", "Mi", "Do", "Fr"].map((d, i) => (
+            <div key={d} className={`flex items-center gap-2 px-4 py-2 ${i < 4 ? "border-b border-white/5" : ""}`}>
+              <span className="text-[10px] font-black tracking-widest text-white/40 w-6">{d}</span>
+              <div className="flex-1 flex gap-1">
+                {[...Array(i === 2 ? 3 : 2)].map((_, j) => (
+                  <div
+                    key={j}
+                    className={`h-5 rounded-md ${
+                      ["bg-emerald-400/50", "bg-cyan-400/50", "bg-blue-400/50", "bg-purple-400/50"][(i + j) % 4]
+                    }`}
+                    style={{ width: `${25 + ((i + j * 13) % 40)}%` }}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Daten, die automatisch zusammenpassen",
-    desc: "NFC-Zeit → Auftrag → Lohn → Rechnung. Ein Datenmodell, nicht sechs.",
-    path: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
+    label: "Angebote & Rechnungen",
+    title: "Angebote und Rechnungen raus in Minuten",
+    subtitle: "Aus Auftrag wird Angebot wird Rechnung. Ohne Copy-Paste, ohne Excel.",
+    tag: "Abrechnung",
+    visual: (
+      <div className="relative w-full h-full flex items-center justify-center p-6">
+        <div className="relative w-full max-w-[260px]">
+          <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl bg-white/5 border border-white/10" />
+          <div className="absolute -bottom-1.5 -right-1.5 w-full h-full rounded-2xl bg-white/[0.07] border border-white/10" />
+          <div className="relative rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/15 p-5">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[10px] font-black tracking-widest uppercase text-emerald-300">Rechnung 2026-0421</span>
+              <span className="text-[10px] text-white/40">Bezahlt</span>
+            </div>
+            <div className="space-y-2 mb-4">
+              <div className="h-2 rounded-full bg-white/10 w-full" />
+              <div className="h-2 rounded-full bg-white/10 w-4/5" />
+              <div className="h-2 rounded-full bg-white/10 w-3/5" />
+            </div>
+            <div className="flex items-baseline justify-between pt-3 border-t border-white/10">
+              <span className="text-[10px] text-white/40">Gesamt</span>
+              <span className="text-2xl font-black text-white">4.280 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Einführen an einem Nachmittag",
-    desc: "Accounts anlegen, NFC kleben, App ausrollen. Ohne Schulung.",
-    path: "M13 10V3L4 14h7v7l9-11h-7z",
+    label: "DATEV-Export inklusive",
+    title: "DATEV-Export ohne Zusatzmodul",
+    subtitle: "Zeiten, Rechnungen, Stammdaten – direkt zur Steuerkanzlei. Ein Klick.",
+    tag: "Buchhaltung",
+    visual: (
+      <div className="relative w-full h-full flex items-center justify-center p-6">
+        <div className="relative w-full max-w-[280px] rounded-2xl bg-white/5 border border-white/10 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-white">DATEV_April_2026.csv</p>
+              <p className="text-[10px] text-white/40">Bereit zum Download · 124 KB</p>
+            </div>
+          </div>
+          <div className="space-y-2">
+            {[100, 85, 70, 55].map((w, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="h-2 rounded-full bg-white/10 flex-1" style={{ width: `${w}%` }} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    label: "Foto-/Nachweis-Doku",
+    title: "Nachweise, die Kunden überzeugen",
+    subtitle: "Fotos, Protokolle, Unterschriften — alles an Auftrag und Objekt gebunden.",
+    tag: "Dokumentation",
+    visual: (
+      <div className="relative w-full h-full flex items-center justify-center p-6">
+        <div className="relative w-full max-w-[280px]">
+          <div className="grid grid-cols-3 gap-2">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`aspect-square rounded-xl border border-white/10 ${
+                  ["bg-emerald-500/10", "bg-cyan-500/10", "bg-blue-500/10", "bg-purple-500/10", "bg-emerald-500/10", "bg-cyan-500/10"][i]
+                } flex items-center justify-center`}
+              >
+                <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 rounded-xl bg-white/5 border border-white/10 px-3 py-2 flex items-center gap-2">
+            <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-xs font-bold text-white/80">Vom Kunden unterschrieben</span>
+          </div>
+        </div>
+      </div>
+    ),
   },
 ];
 
 export default function AllInOneUSP({ variant = "full" }: { variant?: Variant }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (variant === "compact") return;
+    const id = setInterval(() => {
+      setActive((i) => (i + 1) % slides.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, [variant]);
+
   if (variant === "compact") {
     return (
       <section className="bg-gradient-to-r from-emerald-950 via-emerald-900 to-gray-900 py-8 border-y border-emerald-800/40">
@@ -81,218 +205,125 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
     );
   }
 
-  const isDark = variant === "dark";
-  const bg = isDark
-    ? "bg-gradient-to-br from-gray-950 via-emerald-950 to-gray-900 text-white"
-    : "bg-gradient-to-br from-gray-50 via-white to-emerald-50/40 text-gray-900";
-  const cardBg = isDark
-    ? "bg-white/5 border-white/10 hover:border-emerald-400/40"
-    : "bg-white border-gray-200 hover:border-emerald-700/30 shadow-sm hover:shadow-md";
-  const muted = isDark ? "text-gray-300" : "text-gray-600";
-  const subtleBg = isDark ? "bg-white/5 border-white/10" : "bg-white border-gray-200";
+  const current = slides[active];
 
   return (
-    <section id="alles-in-einem" className={`${bg} py-20 sm:py-28 relative overflow-hidden`}>
-      {/* Background accent */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
-      </div>
+    <section
+      id="alles-in-einem"
+      className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden"
+    >
+      <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Badge */}
-        <div className="flex justify-center mb-6">
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${
-              isDark
-                ? "bg-emerald-500/10 border-emerald-400/30 text-emerald-300"
-                : "bg-emerald-50 border-emerald-200 text-emerald-800"
-            }`}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-xs font-black tracking-[0.25em] uppercase">
-              Kern-USP · Alles in einem System
-            </span>
-          </div>
-        </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+          {/* Linke Spalte: Text + Bullets */}
+          <div>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+              Mehr als nur
+              <br />
+              <span className="text-white/50">das Wesentliche</span>
+            </h2>
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-xl">
+              Vom Tag 1 deckt Taskey alles ab, was ein moderner Betrieb vor Ort und im Büro braucht.
+            </p>
 
-        {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-center leading-[1.05] mb-6 tracking-tight">
-          Eine <span className="text-emerald-500">Software</span>.
-          <br className="hidden sm:block" /> Statt fünf.
-        </h2>
-        <p
-          className={`text-lg sm:text-xl text-center max-w-2xl mx-auto mb-14 leading-relaxed ${muted}`}
-        >
-          Zeiterfassung, Einsatzplanung, Aufträge, Nachweise, Rechnungen, DATEV – in einer Plattform.
-        </p>
-
-        {/* Replaces-stack vs. Taskey */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
-          {/* Vorher */}
-          <div
-            className={`rounded-2xl border p-6 sm:p-7 ${subtleBg} ${
-              isDark ? "" : "bg-white"
-            }`}
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs font-black tracking-[0.25em] uppercase text-red-500">
-                Vorher
-              </span>
-              <span className={`text-xs ${muted}`}>— 5+ Abos jeden Monat</span>
-            </div>
-            <ul className="space-y-2.5">
-              {replacedTools.map((tool) => (
-                <li
-                  key={tool.name}
-                  className={`flex items-center justify-between gap-3 text-sm pb-2.5 border-b ${
-                    isDark ? "border-white/10" : "border-gray-100"
-                  } last:border-b-0`}
-                >
-                  <span className="flex items-center gap-2">
-                    <svg
-                      className="w-4 h-4 text-red-500 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                    <span className={isDark ? "text-gray-200" : "text-gray-800"}>
-                      {tool.name}
-                    </span>
-                  </span>
-                  <span className={`text-xs font-semibold ${muted} whitespace-nowrap`}>
-                    {tool.price}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Nachher */}
-          <div
-            className={`rounded-2xl border-2 p-6 sm:p-7 ${
-              isDark
-                ? "bg-emerald-500/5 border-emerald-400/40"
-                : "bg-emerald-50/40 border-emerald-500"
-            } relative`}
-          >
-            <div className="absolute -top-3 left-6 bg-emerald-500 text-white text-[10px] font-black tracking-[0.25em] uppercase px-3 py-1 rounded-full">
-              Mit Taskey
-            </div>
-            <div className="flex items-center gap-2 mb-4 mt-1">
-              <span className="text-xs font-black tracking-[0.25em] uppercase text-emerald-600 dark:text-emerald-400">
-                Nachher
-              </span>
-              <span className={`text-xs ${muted}`}>— ein System, ein Abo</span>
-            </div>
-            <ul className="space-y-2.5">
-              {[
-                "Zeiterfassung mit NFC",
-                "Einsatz- & Schichtplanung",
-                "Auftrags- & Objektverwaltung",
-                "Foto-/Nachweis-Dokumentation",
-                "Angebote & Rechnungen",
-                "DATEV-Export inklusive",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className={`flex items-center gap-2 text-sm pb-2.5 border-b ${
-                    isDark ? "border-white/10" : "border-emerald-200/60"
-                  } last:border-b-0`}
-                >
-                  <svg
-                    className="w-4 h-4 text-emerald-500 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={3}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span
-                    className={`font-semibold ${
-                      isDark ? "text-white" : "text-gray-900"
+            <ul className="space-y-2 mb-10">
+              {slides.map((s, i) => (
+                <li key={s.label}>
+                  <button
+                    onClick={() => setActive(i)}
+                    className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
+                      i === active
+                        ? "bg-white/10 border-white/20"
+                        : "bg-transparent border-transparent hover:bg-white/5"
                     }`}
                   >
-                    {item}
-                  </span>
+                    <span
+                      className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
+                        i === active ? "bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" : "bg-white/20"
+                      }`}
+                    />
+                    <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                      {s.label}
+                    </span>
+                  </button>
                 </li>
               ))}
             </ul>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
+              >
+                Kostenlos starten
+              </Link>
+              <Link
+                href="/features"
+                className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base text-center"
+              >
+                Alle Funktionen
+              </Link>
+            </div>
+          </div>
+
+          {/* Rechte Spalte: große rotierende Karte */}
+          <div className="relative">
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden">
+                <div
+                  key={active}
+                  className="h-full bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
+                  style={{ animation: "allinone-progress 4.5s linear forwards" }}
+                />
+              </div>
+
+              <div className="p-8 md:p-10 flex flex-col h-full">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-emerald-300 bg-emerald-500/10 border border-emerald-400/20 px-3 py-1 rounded-full mb-6">
+                  {current.tag}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">
+                  {current.title}
+                </h3>
+                <p className="text-sm md:text-base text-white/50 mb-6">{current.subtitle}</p>
+                <div className="flex-1 relative">
+                  <div key={active} className="absolute inset-0" style={{ animation: "allinone-fade 0.6s ease-out" }}>
+                    {current.visual}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Dots für Mobile */}
+            <div className="flex justify-center gap-2 mt-4 lg:hidden">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* 4 Säulen */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14">
-          {pillars.map((p) => (
-            <div
-              key={p.title}
-              className={`${cardBg} border rounded-2xl p-5 sm:p-6 transition-all`}
-            >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${isDark ? "bg-emerald-500/10 text-emerald-300" : "bg-emerald-50 text-emerald-700"}`} aria-hidden>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={p.path} />
-                </svg>
-              </div>
-              <h3
-                className={`text-base sm:text-lg font-bold mb-2 ${
-                  isDark ? "text-white" : "text-gray-900"
-                }`}
-              >
-                {p.title}
-              </h3>
-              <p className={`text-sm leading-relaxed ${muted}`}>{p.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Closing line */}
-        <p className={`text-center text-base sm:text-lg max-w-2xl mx-auto ${muted}`}>
-          Ein Login. Ein Datenmodell. Eine Rechnung.
-        </p>
-
-        {/* CTA */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            href="/features"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold transition-colors"
-          >
-            Alle Funktionen ansehen
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.5}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </Link>
-          <Link
-            href="/pricing"
-            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-colors border ${
-              isDark
-                ? "border-white/20 text-white hover:bg-white/10"
-                : "border-gray-300 text-gray-900 hover:bg-gray-100"
-            }`}
-          >
-            Preis statt 5 Abos sehen
-          </Link>
-        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes allinone-progress {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes allinone-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }
