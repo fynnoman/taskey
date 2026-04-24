@@ -15,7 +15,6 @@ const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 const Contact = dynamic(() => import("@/components/home/Contact"));
-const ScrollLine = dynamic(() => import("@/components/home/ScrollLine"));
 
 export const metadata: Metadata = {
   title: "Taskey – Handwerkersoftware, Reinigungssoftware & Facility Management Software | All-in-One",
@@ -109,16 +108,12 @@ export default function Home() {
 
         {/* Hero Feature Sections */}
         <LiveMargen />
-        <SectionDivider from="#111827" to="white" variant="wave" />
-        <SectionDivider from="white" to="#f9fafb" variant="curve" />
         <TaskeyShare />
+        <BusinessSize />
 
-        <SectionDivider from="#f9fafb" to="#f9fafb" variant="curve" />
         <div className="relative">
-          <ScrollLine />
           <IOSAppSection />
           <SectionDivider from="#f9fafb" to="white" variant="slant" />
-          <BusinessSize />
           <FAQ />
 
           {/* Onboarding Teaser Strip */}

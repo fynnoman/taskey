@@ -1,183 +1,166 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { useScroll, motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
-const POINTS: [number, number][] = [
-  [0.85, 0.01],
-  [0.85, 0.25],
-  [0.10, 0.25],
-  [0.85, 0.52],
-  [0.10, 0.52],
-  [0.85, 0.77],
-  [0.10, 0.77],
-  [0.85, 0.99],
-];
-
-// The 3 bend y-fractions and their corresponding scroll progress thresholds
-// At each bend, the glow segment hits that y. We compute the scroll% when that happens.
-// Bends are at path-fraction positions: bend1 ≈ seg0+seg1 / total, etc.
-// We pre-compute these: segments 0-1 reach bend1, segments 0-3 reach bend2, 0-5 reach bend3
-function getSegmentLengths(points: [number, number][]) {
-  const lens: number[] = [];
-  for (let i = 1; i < points.length; i++) {
-    const dx = points[i][0] - points[i - 1][0];
-    const dy = points[i][1] - points[i - 1][1];
-    lens.push(Math.sqrt(dx * dx + dy * dy));
-  }
-  return lens;
-}
-
-function getTotalLength(segLens: number[]) {
-  return segLens.reduce((a, b) => a + b, 0);
-}
-
+/**
+ * BusinessSize — Revolut-Style Split-Layout mit auto-rotierender Karte.
+ * Kein ScrollLine, keine Scroll-Choreografie – nur 3 klickbare Größen-Tabs.
+ */
 export default function BusinessSize() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
   const { t } = useLanguage();
 
   const cards = [
-    { id: 1, label: t("biz.card1.label"), image: "/26473062-6363-4095-A9BD-AD2B2B404909.webp", text: t("biz.card1.text") },
-    { id: 2, label: t("biz.card2.label"), image: "/629F1A67-7DB2-4895-B898-337BCB2EAE07.webp", text: t("biz.card2.text") },
-    { id: 3, label: t("biz.card3.label"), image: "/A723E4B1-276B-4AC7-9BAB-63AEAF16EC1D.webp", text: t("biz.card3.text") },
-  ];  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+    {
+      id: 1,
+      label: t("biz.card1.label"),
+      headline: "Klein & schlank.",
+      image: "/26473062-6363-4095-A9BD-AD2B2B404909.webp",
+      text: t("biz.card1.text"),
+    },
+    {
+      id: 2,
+      label: t("biz.card2.label"),
+      headline: "Wachsend.",
+      image: "/629F1A67-7DB2-4895-B898-337BCB2EAE07.webp",
+      text: t("biz.card2.text"),
+    },
+    {
+      id: 3,
+      label: t("biz.card3.label"),
+      headline: "Skaliert beliebig.",
+      image: "/A723E4B1-276B-4AC7-9BAB-63AEAF16EC1D.webp",
+      text: t("biz.card3.text"),
+    },
+  ];
 
-  const segLens = getSegmentLengths(POINTS);
-  const totalLen = getTotalLength(segLens);
-
-  // Compute scroll-progress thresholds for each bend
-  // Bend 1 is at POINTS index 2 (after seg 0 + seg 1)
-  // Bend 2 is at POINTS index 4 (after seg 0..3)
-  // Bend 3 is at POINTS index 6 (after seg 0..5)
-  const cumLen = segLens.reduce((acc, l, i) => {
-    acc.push((acc[i] ?? 0) + l);
-    return acc;
-  }, [0] as number[]);
-  const bend1Progress = cumLen[1] / totalLen; // after seg0
-  const bend2Progress = cumLen[3] / totalLen; // after seg0-2
-  const bend3Progress = cumLen[5] / totalLen; // after seg0-4
-
+  const [active, setActive] = useState(0);
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (v) => {
-      if (v < bend1Progress - 0.01) {
-        setActiveCard(null);
-      } else if (v >= bend1Progress - 0.01 && v < bend2Progress - 0.01) {
-        setActiveCard(1);
-      } else if (v >= bend2Progress - 0.01 && v < bend3Progress - 0.01) {
-        setActiveCard(2);
-      } else if (v >= bend3Progress - 0.01) {
-        setActiveCard(3);
-      }
-    });
-    return unsubscribe;
-  }, [scrollYProgress, bend1Progress, bend2Progress, bend3Progress]);
+    const id = setInterval(() => setActive((i) => (i + 1) % cards.length), 5000);
+    return () => clearInterval(id);
+  }, [cards.length]);
+  const current = cards[active];
 
   return (
-    <>
-      {/* ── Mobile: Einfache gestackte Karten, keine Scroll-Animation ── */}
-      <section className="lg:hidden bg-white py-12 px-5">
-        <div className="text-center mb-8">
-          <p className="text-gray-500 text-xs font-semibold uppercase tracking-[0.25em] mb-2">{t("biz.badge")}</p>
-          <h2 className="text-gray-900 text-2xl font-bold">
-            {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
-          </h2>
-        </div>
+    <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="space-y-6 max-w-lg mx-auto">
-          {cards.map((card) => (
-            <div key={card.id} className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm">
-              <div className="relative w-full h-44">
-              <Image
-                src={card.image}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 448px"
-                loading="lazy"
-              />
-              </div>
-              <div className="p-4">
-                <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">{card.label}</p>
-                <p className="text-gray-500 text-sm leading-relaxed mb-3">{card.text}</p>
-                <Link
-                  href="/pricing"
-                  className="inline-block px-5 py-2.5 bg-gray-900 text-white text-xs font-semibold rounded-lg"
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
+          {/* Linke Spalte: viel Weißraum, wenig Text */}
+          <div>
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-6">
+              {t("biz.badge")}
+            </p>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-8 text-white">
+              Taskey wächst
+              <br />
+              <span className="text-white/50">mit Ihnen.</span>
+            </h2>
+
+            <div className="space-y-2 mb-10">
+              {cards.map((c, i) => (
+                <button
+                  key={c.id}
+                  onClick={() => setActive(i)}
+                  className={`w-full text-left flex items-center justify-between gap-4 px-5 py-4 rounded-xl border transition-all ${
+                    i === active
+                      ? "bg-white/10 border-white/20"
+                      : "bg-transparent border-white/5 hover:bg-white/5 hover:border-white/10"
+                  }`}
                 >
-                  {t("biz.cta")}
-                </Link>
+                  <span className="flex items-center gap-3">
+                    <span
+                      className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
+                        i === active ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" : "bg-white/20"
+                      }`}
+                    />
+                    <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                      {c.label}
+                    </span>
+                  </span>
+                  <span className={`text-sm ${i === active ? "text-white/80" : "text-white/30"}`}>
+                    0{i + 1}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base"
+            >
+              {t("biz.cta")}
+            </Link>
+          </div>
+
+          {/* Rechte Spalte: große Bild-Karte */}
+          <div className="relative">
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
+                <div
+                  key={active}
+                  className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
+                  style={{ animation: "biz-progress 5s linear forwards" }}
+                />
+              </div>
+
+              <div key={`img-${active}`} className="absolute inset-0" style={{ animation: "biz-fade 0.7s ease-out" }}>
+                <Image
+                  src={current.image}
+                  alt={current.headline}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover"
+                  priority={active === 0}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a2e] via-[#0d1a2e]/40 to-transparent" />
+              </div>
+
+              <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-10">
+                <div key={`txt-${active}`} style={{ animation: "biz-fade 0.6s ease-out" }}>
+                  <span className="inline-flex items-center gap-2 text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-4">
+                    {current.label}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-black text-white leading-tight mb-3">
+                    {current.headline}
+                  </h3>
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-md">
+                    {current.text}
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* ── Desktop: Scroll-Animation wie bisher ── */}
-      <section
-        ref={sectionRef}
-        data-scrollline-biz
-        className="relative bg-white hidden lg:block"
-        style={{ height: "300vh" }}
-      >
-        <div className="sticky top-0 h-screen overflow-hidden pointer-events-none select-none">
-
-          {/* Überschrift oben */}
-          <div className="absolute top-24 left-0 right-0 flex flex-col items-center gap-2 px-8">
-            <p className="text-gray-500 text-xs font-semibold uppercase tracking-[0.25em]">{t("biz.badge")}</p>
-            <h2 className="text-gray-900 text-4xl md:text-5xl font-bold text-center">
-              {t("biz.title")} <span className="text-blue-600">{t("biz.title.highlight")}</span>
-            </h2>
-          </div>
-
-          {/* Card — zentriert unterhalb der Überschrift */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-12 md:px-20 pointer-events-none" style={{ paddingTop: "180px" }}>
-            <AnimatePresence mode="wait">
-              {activeCard !== null && (
-                <motion.div
-                  key={activeCard}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="w-full max-w-3xl flex flex-col gap-6"
-                >
-                  {/* Card image */}
-                  <div className="rounded-2xl overflow-hidden shadow-2xl relative h-80">
-                    <Image
-                      src={cards[activeCard - 1].image}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 768px"
-                      loading="lazy"
-                    />
-                  </div>
-                  {/* Text + Button */}
-                  <div className="flex flex-col gap-3">
-                    <p className="text-blue-600 text-xs font-semibold uppercase tracking-widest">{cards[activeCard - 1].label}</p>
-                    <p className="text-gray-500 text-xl leading-relaxed">
-                      {cards[activeCard - 1].text}
-                    </p>
-                    <Link
-                      href="/pricing"
-                      className="mt-1 inline-block self-start px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-gray-800 transition-colors pointer-events-auto"
-                    >
-                      {t("biz.cta")}
-                    </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="flex justify-center gap-2 mt-4 lg:hidden">
+              {cards.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                  }`}
+                  aria-label={`Größe ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+
+      <style jsx>{`
+        @keyframes biz-progress {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes biz-fade {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </section>
   );
 }
-

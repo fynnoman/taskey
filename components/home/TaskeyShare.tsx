@@ -1,133 +1,222 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+
+/**
+ * TaskeyShare — Revolut-Style: links Text, rechts horizontal scrollende Karten mit Klick-Nav.
+ * Auto-Rotation + Dots + Manuelle Tabs.
+ */
+
+type Card = {
+  tag: string;
+  title: string;
+  subtitle: string;
+  visual: React.ReactNode;
+};
+
+const cards: Card[] = [
+  {
+    tag: "Live-Status",
+    title: "Fortschritt live",
+    subtitle: "Ihr Auftraggeber sieht jederzeit, was im Objekt passiert.",
+    visual: (
+      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-[11px] font-bold text-white/80">Fortschritt</p>
+          <p className="text-[11px] font-black text-cyan-300">67%</p>
+        </div>
+        <div className="w-full bg-white/10 rounded-full h-2 mb-2 overflow-hidden">
+          <div className="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style={{ width: "67%" }} />
+        </div>
+        <p className="text-[10px] text-white/40">Nächste Reinigung: Mo, 28.</p>
+      </div>
+    ),
+  },
+  {
+    tag: "Nachweise",
+    title: "Fotos & Protokolle",
+    subtitle: "Bilder vom Einsatz — automatisch geteilt, nie wieder per E-Mail.",
+    visual: (
+      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+        <p className="text-[11px] font-bold text-white/80 mb-3">Leistungsnachweise</p>
+        <div className="grid grid-cols-3 gap-1.5 mb-2">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className={`aspect-square rounded-md border border-white/10 ${
+                ["bg-cyan-500/20", "bg-blue-500/15", "bg-emerald-500/15", "bg-purple-500/15", "bg-cyan-500/10", "bg-blue-500/10"][i]
+              }`}
+            />
+          ))}
+        </div>
+        <p className="text-[10px] text-white/40">Heute 14:32 hochgeladen</p>
+      </div>
+    ),
+  },
+  {
+    tag: "Budget",
+    title: "Volle Transparenz",
+    subtitle: "Monatsbudget, offene Posten, gelieferte Leistungen — in Echtzeit.",
+    visual: (
+      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+        <p className="text-[11px] font-bold text-white/80 mb-2">Monatsvertrag</p>
+        <div className="flex items-baseline gap-1 mb-3">
+          <span className="text-2xl font-black text-white">4.200 €</span>
+          <span className="text-[10px] text-white/40">/ 4.800 €</span>
+        </div>
+        <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+          <div className="bg-emerald-400 h-1.5" style={{ width: "89%" }} />
+        </div>
+        <p className="text-[10px] text-emerald-300 mt-2 font-semibold">Im Rahmen</p>
+      </div>
+    ),
+  },
+  {
+    tag: "Kommunikation",
+    title: "Ein Klick, keine Anrufe",
+    subtitle: "Fragen werden direkt im Portal geklärt. Ihr Telefon bleibt ruhig.",
+    visual: (
+      <div className="w-full max-w-[260px] rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+        <div className="flex items-start gap-2 mb-3">
+          <div className="w-7 h-7 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex-shrink-0" />
+          <div className="flex-1">
+            <div className="h-2 rounded-full bg-white/10 w-3/4 mb-1.5" />
+            <div className="h-2 rounded-full bg-white/10 w-1/2" />
+          </div>
+        </div>
+        <div className="flex items-start gap-2 justify-end">
+          <div className="flex-1 max-w-[70%]">
+            <div className="h-2 rounded-full bg-cyan-400/30 w-full mb-1.5 ml-auto" />
+            <div className="h-2 rounded-full bg-cyan-400/30 w-2/3 ml-auto" />
+          </div>
+        </div>
+        <p className="text-[10px] text-white/40 mt-3">Erledigt in 42 Sekunden</p>
+      </div>
+    ),
+  },
+];
 
 export default function TaskeyShare() {
+  const [active, setActive] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  // Auto-Rotation
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % cards.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+
+  // Sync horizontales Scrollen auf aktive Karte
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.children[active] as HTMLElement | undefined;
+    if (card) {
+      el.scrollTo({ left: card.offsetLeft - 16, behavior: "smooth" });
+    }
+  }, [active]);
+
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 via-blue-50/30 to-white overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text */}
+    <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-center">
+          {/* Linke Spalte: minimaler Text */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
               Auftraggeber-Portal
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-gray-900 leading-[1.1] mb-6">
-              Ihr Telefon klingelt 15x am Tag:{' '}
-              <span className="text-blue-700">&apos;Wie sieht es im Objekt aus?&apos;</span>
+            </p>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+              Ein Klick.
+              <br />
+              <span className="text-white/50">Alles sichtbar.</span>
             </h2>
-
-            <h3 className="text-xl md:text-2xl font-bold text-gray-600 mb-6">
-              Ein Klick – und Ihr Auftraggeber sieht alles selbst. Ohne Sie anzurufen.
-            </h3>
-
-            <p className="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
-              Sie erstellen für Ihren Auftraggeber einen Zugang. Dort sieht er: Reinigungsfortschritt, aktuelle Fotos, Nachweise – alles auf einer übersichtlichen Seite, die sich von selbst aktualisiert. Ihr Team reinigt weiter, statt Statusupdates am Telefon durchzugeben.
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-md">
+              Ihr Auftraggeber sieht alles selbst. Sie werden nicht mehr angerufen.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="https://signup.taskeyapp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-black px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-700/25 text-base"
-              >
-                Jetzt kostenlos testen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-            </div>
+            <Link
+              href="https://signup.taskeyapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base"
+            >
+              Kostenlos testen
+            </Link>
 
-            {/* Social Proof Nugget */}
-            <div className="mt-8 flex items-center gap-3 text-sm text-gray-500">
-              <div className="flex items-center gap-1 text-yellow-500">
-                {'★★★★★'.split('').map((star, i) => (
-                  <span key={i}>{star}</span>
-                ))}
-              </div>
-              <span>&apos;Seit dem Auftraggeber-Portal ruft kein Kunde mehr an. Allein das spart mir 1 Stunde am Tag.&apos;</span>
+            {/* Dots */}
+            <div className="flex items-center gap-2 mt-10">
+              {cards.map((c, i) => (
+                <button
+                  key={c.tag}
+                  onClick={() => setActive(i)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === active ? "w-8 bg-white" : "w-1.5 bg-white/20 hover:bg-white/40"
+                  }`}
+                  aria-label={c.tag}
+                />
+              ))}
             </div>
           </div>
 
-          {/* iPhone Mockup */}
-          <div className="relative flex items-center justify-center">
-            {/* Phone Frame */}
-            <div className="relative w-[280px] sm:w-[300px]">
-              {/* Phone outer */}
-              <div className="bg-gray-900 rounded-[3rem] p-3 shadow-2xl shadow-gray-900/30">
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-gray-900 rounded-b-2xl z-20" />
-                
-                {/* Screen */}
-                <div className="bg-white rounded-[2.25rem] overflow-hidden">
-                  {/* Status Bar */}
-                  <div className="bg-blue-700 px-6 pt-8 pb-4">
-                    <p className="text-white/60 text-[10px] font-medium mb-1">Auftraggeber-Portal</p>
-                    <p className="text-white font-black text-lg">Ihr Reinigungsobjekt</p>
-                    <p className="text-blue-200 text-xs">Buerogebäude · Hausverwaltung Krause</p>
-                  </div>
+          {/* Rechte Spalte: horizontal scrollende Karten */}
+          <div className="relative -mr-4 sm:-mr-6 lg:-mr-12">
+            <div
+              ref={scrollerRef}
+              className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 pr-4 sm:pr-6 lg:pr-12 no-scrollbar"
+              style={{ scrollbarWidth: "none" }}
+            >
+              {cards.map((c, i) => {
+                const isActive = i === active;
+                return (
+                  <button
+                    key={c.tag}
+                    onClick={() => setActive(i)}
+                    className={`snap-start flex-shrink-0 w-[280px] sm:w-[340px] aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border overflow-hidden relative text-left transition-all ${
+                      isActive
+                        ? "border-white/20 scale-[1.02] shadow-2xl shadow-cyan-500/10"
+                        : "border-white/5 opacity-70 hover:opacity-90"
+                    }`}
+                  >
+                    {/* Progress-Bar nur auf aktiver Karte */}
+                    {isActive && (
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
+                        <div
+                          key={`p-${active}`}
+                          className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
+                          style={{ animation: "share-progress 4.5s linear forwards" }}
+                        />
+                      </div>
+                    )}
 
-                  {/* Content */}
-                  <div className="px-4 py-4 space-y-3">
-                    {/* Progress */}
-                    <div className="bg-gray-50 rounded-xl p-3">
-                      <div className="flex justify-between items-center mb-2">
-                        <p className="text-xs font-bold text-gray-900">Fortschritt</p>
-                        <p className="text-xs font-black text-blue-700">67%</p>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div className="bg-gradient-to-r from-blue-600 to-blue-500 h-2.5 rounded-full" style={{ width: '67%' }} />
-                      </div>
-                      <p className="text-[10px] text-gray-500 mt-1.5">Nächste Reinigung: Mo, 28. Maerz</p>
+                    <div className="p-6 md:p-7 h-full flex flex-col">
+                      <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-5">
+                        {c.tag}
+                      </span>
+                      <h3 className="text-2xl font-black text-white leading-tight mb-2">
+                        {c.title}
+                      </h3>
+                      <p className="text-sm text-white/50 mb-6">{c.subtitle}</p>
+                      <div className="flex-1 flex items-end justify-center">{c.visual}</div>
                     </div>
-
-                    {/* Photos */}
-                    <div className="bg-gray-50 rounded-xl p-3">
-                      <p className="text-xs font-bold text-gray-900 mb-2">Leistungsnachweise</p>
-                      <div className="grid grid-cols-3 gap-1.5">
-                        <div className="aspect-square bg-gray-300 rounded-lg flex items-center justify-center">
-                          <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
-                        </div>
-                        <div className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
-                          <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
-                        </div>
-                        <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                          <svg className="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>
-                        </div>
-                      </div>
-                      <p className="text-[10px] text-gray-500 mt-1.5">Heute, 14:32 Uhr hochgeladen</p>
-                    </div>
-
-                    {/* Budget */}
-                    <div className="bg-gray-50 rounded-xl p-3">
-                      <p className="text-xs font-bold text-gray-900 mb-2">Monatsvertrag</p>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-black text-gray-900">4.200 EUR</span>
-                        <span className="text-xs text-gray-500">von 4.800 EUR</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
-                        <div className="bg-emerald-500 h-1.5 rounded-full" style={{ width: '89%' }} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  </button>
+                );
+              })}
             </div>
-
-            {/* Label below */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-              <div className="flex items-center gap-2 text-xs text-gray-400 font-medium">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                So sieht es Ihr Auftraggeber
-              </div>
-            </div>
-
-            {/* Glow */}
-            <div className="absolute -inset-8 bg-blue-500/5 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes share-progress {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+      `}</style>
     </section>
   );
 }
