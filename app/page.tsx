@@ -1,6 +1,7 @@
 import Hero from "@/components/home/Hero";
 import CommunicationUSP from "@/components/CommunicationUSP";
 import AllInOneUSP from "@/components/AllInOneUSP";
+import ReferralStrip from "@/components/home/ReferralStrip";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -14,7 +15,6 @@ const Branchen = dynamic(() => import("@/components/home/Branchen"));
 const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
 const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
-const ReferralSection = dynamic(() => import("@/components/home/ReferralSection"));
 
 export const metadata: Metadata = {
   title: "Taskey – Handwerkersoftware, Reinigungssoftware & Facility Management Software | All-in-One",
@@ -97,6 +97,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
       />
       <main>
+        {/* Schmaler Referral-Streifen ganz oben */}
+        <ReferralStrip />
+
         {/* 1. Hook: Hero (Wert-Versprechen + CTA) */}
         <Hero />
 
@@ -129,9 +132,6 @@ export default function Home() {
 
         {/* 11. Einwände abbauen */}
         <FAQ />
-
-        {/* 12. Letzter Push: Referral als Bonus-Anreiz vor CTA */}
-        <ReferralSection />
 
         {/* Cross-links to specialized pages — dunkler Abschluss, passt zu Footer */}
         <div className="bg-gradient-to-b from-gray-950 to-[#0a1628] border-t border-white/5">
