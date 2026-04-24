@@ -51,252 +51,176 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
   }
 
   const isDark = variant === "dark";
-  const bg = isDark
-    ? "bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 text-white"
-    : "bg-gradient-to-br from-gray-50 via-white to-blue-50/40 text-gray-900";
-  const cardBg = isDark
-    ? "bg-white/5 border-white/10 hover:border-cyan-400/40"
-    : "bg-white border-gray-200 hover:border-blue-900/30 shadow-sm hover:shadow-md";
-  const muted = isDark ? "text-gray-300" : "text-gray-600";
-  const accent = isDark ? "text-cyan-300" : "text-blue-900";
 
-  const pillars = [
+  // Revolut-Style Karten: großer Titel + kurzer Einzeiler + visuelle Illustration
+  const cards = [
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-          <circle cx="19" cy="17.25" r="2.25" fill="currentColor" />
-        </svg>
-      ),
       title: "Echtzeit zwischen Feld & Büro",
-      text:
-        "Live-Standorte, aktive Mitarbeitende, Scans, Statusänderungen, Fotos, Berichte und Dokumente — Büro und Einsatzort arbeiten auf demselben Informationsstand. Keine Rückfragen per WhatsApp mehr.",
+      subtitle: "Live-Standorte, Scans und Statusänderungen — ohne WhatsApp-Rückfragen.",
+      visual: (
+        <div className="relative w-full h-full flex items-end justify-center pb-8">
+          <div className="absolute inset-x-8 bottom-10 h-28 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/70">Live · Einsatz aktiv</span>
+            </div>
+            <div className="px-4 py-3 space-y-1.5">
+              <div className="h-2 rounded-full bg-white/20 w-4/5" />
+              <div className="h-2 rounded-full bg-white/10 w-3/5" />
+              <div className="h-2 rounded-full bg-white/10 w-2/3" />
+            </div>
+          </div>
+          <div className="absolute left-6 top-6 w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.644C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .644C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
       title: "Transparenz für den Kunden",
-      text:
-        "Über Auftraggeber-Ansichten und Live-Einblicke sehen Ihre Kunden Leistungen, Protokolle und Audit-Ergebnisse — statt am Ende nur eine Rechnung. Das schafft Vertrauen und reduziert Reklamationen drastisch.",
+      subtitle: "Auftraggeber sehen Leistungen und Protokolle live — statt nur am Monatsende.",
+      visual: (
+        <div className="relative w-full h-full flex items-end justify-center pb-8">
+          <div className="absolute inset-x-6 bottom-8 rounded-2xl bg-white/5 border border-white/10 p-4 space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-xs font-bold text-white/80">Reinigung abgeschlossen</span>
+              </div>
+              <span className="text-[10px] text-white/40">09:34</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" />
+                  </svg>
+                </div>
+                <span className="text-xs font-bold text-white/80">Protokoll geöffnet</span>
+              </div>
+              <span className="text-[10px] text-white/40">10:12</span>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
+      title: "Nachweisbar statt nur geplant",
+      subtitle: "NFC-Scan, Zeit, Ort, Foto — jede Leistung lückenlos belegt.",
+      visual: (
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative w-36 h-36">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 blur-2xl" />
+            <div className="absolute inset-4 rounded-full border border-white/20" />
+            <div className="absolute inset-8 rounded-full border border-white/15" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg className="w-8 h-8 text-cyan-300" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       ),
-      title: "Operative Nachweise statt Organisation",
-      text:
-        "Taskey macht den realen Vor-Ort-Einsatz beweisbar: NFC-Scan, Zeit, Ort, Foto-Dokumentation und Nachkalkulation. Jede Leistung ist lückenlos belegt — vor Gericht, gegenüber Auftraggebern und für Ihre eigene Kalkulation.",
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-        </svg>
+      title: "Einfach im Außendienst",
+      subtitle: "Wenige Taps, große Symbole, Offline-Sync. Jedes Team kommt klar.",
+      visual: (
+        <div className="relative w-full h-full flex items-end justify-center pb-6">
+          <div className="relative w-28 h-56 rounded-[2rem] border-[3px] border-white/20 bg-white/5 overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-5 flex justify-center">
+              <div className="w-14 h-4 rounded-b-xl bg-black/40" />
+            </div>
+            <div className="p-3 pt-8 space-y-2">
+              <div className="grid grid-cols-2 gap-2">
+                <div className="aspect-square rounded-xl bg-blue-500/20 border border-white/10 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-md bg-white/50" />
+                </div>
+                <div className="aspect-square rounded-xl bg-emerald-500/20 border border-white/10 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-md bg-white/50" />
+                </div>
+                <div className="aspect-square rounded-xl bg-cyan-500/20 border border-white/10 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-md bg-white/50" />
+                </div>
+                <div className="aspect-square rounded-xl bg-purple-500/20 border border-white/10 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-md bg-white/50" />
+                </div>
+              </div>
+              <div className="h-8 rounded-xl bg-white/10 border border-white/10" />
+            </div>
+          </div>
+        </div>
       ),
-      title: "Einfachheit im Außendienst",
-      text:
-        "Wenige Taps, große Symbole, Offline-Sync, schnelle Statusmeldungen. Taskey funktioniert auch bei Teams ohne Büro-Disziplin — und genau deshalb kommen die Informationen überhaupt im Büro an.",
     },
   ];
 
+  const bgFull = isDark
+    ? "bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white"
+    : "bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white";
+
   return (
-    <section id="echtzeit-kommunikation" className={`${bg} py-20 md:py-28 relative overflow-hidden`}>
-      {isDark && (
-        <>
-          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-[150px]" />
-        </>
-      )}
+    <section id="echtzeit-kommunikation" className={`${bgFull} py-24 md:py-32 relative overflow-hidden`}>
+      <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span
-            className={`inline-flex items-center gap-2 px-5 py-2 text-xs font-black tracking-[0.25em] uppercase rounded-full mb-6 ${
-              isDark
-                ? "text-cyan-300 bg-cyan-400/10 border border-cyan-400/20"
-                : "text-blue-900 bg-blue-100"
-            }`}
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isDark ? "bg-cyan-400" : "bg-blue-600"} opacity-75`} />
-              <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isDark ? "bg-cyan-400" : "bg-blue-600"}`} />
-            </span>
-            Was Taskey wirklich abhebt
-          </span>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">
-            Die beste Kommunikation zwischen{" "}
-            <span className={accent}>Einsatzort</span> und{" "}
-            <span className={accent}>Büro.</span>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header – Revolut-Style: zentral, groß, knapp */}
+        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+            Feld trifft Büro.
+            <br />
+            <span className="text-white/50">In Echtzeit.</span>
           </h2>
-
-          <p className={`text-lg md:text-xl leading-relaxed ${muted}`}>
-            Taskey ist nicht nur eine Software — Taskey ist der{" "}
-            <span className={isDark ? "text-white font-semibold" : "text-gray-900 font-semibold"}>
-              Vermittler für Infos
-            </span>
-            , die Ihre Mitarbeitenden vor Ort sammeln: Defekte, Einsatzstunden, Probleme mit Kunden,
-            Materialbedarf. Das Büro bekommt diese Informationen{" "}
-            <span className={isDark ? "text-white font-semibold" : "text-gray-900 font-semibold"}>
-              in Echtzeit
-            </span>{" "}
-            — und kann sofort entscheiden, statt abends im Dunkeln zu tappen.
+          <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
+            Infos vom Einsatzort landen sofort im Büro. Entscheiden statt raten.
           </p>
-        </div>
 
-        {/* 4 Pillars */}
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
-          {pillars.map((p, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl border p-7 transition-all ${cardBg}`}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="https://signup.taskeyapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base"
             >
-              <div className="flex items-start gap-4">
-                <div
-                  className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${
-                    isDark
-                      ? "bg-cyan-400/10 text-cyan-300 border border-cyan-400/20"
-                      : "bg-blue-900 text-white"
-                  }`}
-                >
-                  {p.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className={`text-xl font-black mb-2 ${isDark ? "text-white" : "text-gray-900"}`}>
-                    {p.title}
-                  </h3>
-                  <p className={`text-[15px] leading-relaxed ${muted}`}>{p.text}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* So funktioniert's — Feature-Mapping */}
-        <div className={`mb-14 rounded-3xl p-7 md:p-9 border ${
-          isDark ? "bg-white/[0.03] border-white/10" : "bg-white border-gray-200 shadow-sm"
-        }`}>
-          <div className="flex items-center gap-3 mb-6">
-            <span className={`text-[11px] font-black tracking-[0.25em] uppercase ${accent}`}>
-              So funktioniert's
-            </span>
-            <span className={`flex-1 h-px ${isDark ? "bg-white/10" : "bg-gray-200"}`} />
-          </div>
-          <p className={`text-base md:text-lg leading-relaxed mb-6 ${muted}`}>
-            Der USP entsteht durch das Zusammenspiel von vier Funktionsbereichen in Taskey:
-          </p>
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
-            {[
-              {
-                label: "Erfassung vor Ort – mit NFC",
-                items: "Physische NFC-Aufkleber an Objekten, Maschinen und Werkzeug — ein Handy-Tap genügt für Anwesenheit, Zeit, Ort und Zustand. In dieser Tiefe im DACH-Markt einmalig.",
-              },
-              {
-                label: "Synchronisation",
-                items: "Offline-fähige Mobile-App, automatische Sync nach Verbindung, Push-Benachrichtigungen ans Büro",
-              },
-              {
-                label: "Büro-Sicht",
-                items: "Live-Dashboard mit aktiven Einsätzen, Statusübersicht, Nachkalkulation, zentrale Objekt- & Auftragsakte",
-              },
-              {
-                label: "Transparenz nach außen",
-                items: "Auftraggeber-Portal, digitale Leistungsnachweise, exportierbare Protokolle (PDF/CSV) inkl. DATEV-Export",
-              },
-            ].map((row, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black ${
-                  isDark ? "bg-cyan-400/10 text-cyan-300 border border-cyan-400/20" : "bg-blue-100 text-blue-900"
-                }`}>
-                  {i + 1}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className={`text-sm font-bold mb-0.5 ${isDark ? "text-white" : "text-gray-900"}`}>
-                    {row.label}
-                  </p>
-                  <p className={`text-sm leading-relaxed ${muted}`}>{row.items}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className={`mt-6 pt-5 border-t ${isDark ? "border-white/10" : "border-gray-100"} flex flex-col sm:flex-row sm:items-center gap-3`}>
-            <p className={`text-sm ${muted} flex-1`}>
-              Entscheidend ist nicht ein einzelnes Feature, sondern die Verbindung: NFC als physischer Erfassungspunkt
-              vor Ort plus der durchgängige Info-Fluss ins Büro – in dieser Kombination hebt sich Taskey von
-              klassischer Planungs- und Zeiterfassungssoftware ab.
-            </p>
+              Kostenlos starten
+            </Link>
             <Link
               href="/features"
-              className={`inline-flex items-center gap-1.5 text-sm font-bold whitespace-nowrap ${
-                isDark ? "text-cyan-300 hover:text-cyan-200" : "text-blue-900 hover:text-blue-700"
-              }`}
+              className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base"
             >
-              Alle Funktionen ansehen
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              Funktionen ansehen
             </Link>
           </div>
         </div>
 
-        {/* Flow visualization */}
-        <div
-          className={`rounded-3xl p-8 md:p-10 border ${
-            isDark ? "bg-white/5 border-white/10" : "bg-white border-gray-200 shadow-sm"
-          }`}
-        >
-          <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 items-center">
-            {/* Feld */}
-            <div className="text-center md:text-right">
-              <p className={`text-xs font-black tracking-[0.2em] uppercase mb-2 ${accent}`}>Einsatzort</p>
-              <p className={`text-lg font-bold mb-1 ${isDark ? "text-white" : "text-gray-900"}`}>
-                Mitarbeitende vor Ort
-              </p>
-              <p className={`text-sm ${muted}`}>
-                NFC-Scan · Zeiten · Fotos · Defekte · Kundenprobleme · Material
-              </p>
+        {/* Karten-Grid – Revolut-Style */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className="group relative rounded-3xl bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden min-h-[380px] md:min-h-[440px] flex flex-col"
+            >
+              <div className="p-6 md:p-7">
+                <h3 className="text-xl md:text-2xl font-bold text-white leading-tight mb-2">
+                  {c.title}
+                </h3>
+                <p className="text-sm text-white/50 leading-relaxed">
+                  {c.subtitle}
+                </p>
+              </div>
+              <div className="flex-1 relative">
+                {c.visual}
+              </div>
             </div>
-
-            {/* Arrow animation */}
-            <div className="flex md:flex-col items-center justify-center gap-2 md:gap-1 py-2 md:py-0 md:px-4">
-              <svg
-                className={`w-8 h-8 md:w-7 md:h-7 md:rotate-0 ${isDark ? "text-cyan-400" : "text-blue-900"}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2.2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-              <span className={`text-[10px] font-black tracking-[0.2em] uppercase ${accent}`}>Echtzeit</span>
-              <svg
-                className={`w-8 h-8 md:w-7 md:h-7 md:rotate-0 ${isDark ? "text-cyan-400" : "text-blue-900"}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2.2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-              </svg>
-            </div>
-
-            {/* Büro */}
-            <div className="text-center md:text-left">
-              <p className={`text-xs font-black tracking-[0.2em] uppercase mb-2 ${accent}`}>Büro</p>
-              <p className={`text-lg font-bold mb-1 ${isDark ? "text-white" : "text-gray-900"}`}>
-                Entscheider & Disposition
-              </p>
-              <p className={`text-sm ${muted}`}>
-                Live-Dashboard · Benachrichtigungen · Nachkalkulation · Kundenkommunikation
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
