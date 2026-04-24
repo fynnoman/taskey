@@ -102,8 +102,8 @@ export default function Contact() {
               
               {/* Trust badge */}
               <div className="flex justify-center gap-3 mt-6">
-                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center" title="Made in Germany">
-                  <span className="text-xl">🇩🇪</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 rounded-full" title="Made in Germany">
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-600">Made in Germany</span>
                 </div>
               </div>
             </div>

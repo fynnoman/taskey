@@ -11,7 +11,7 @@ export default function Branchen() {
   const branchenCategories = [
     {
       title: "Gebäudereinigung",
-      icon: "🏢",
+      iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
       description: "Unterhaltsreinigung, Glasreinigung, Industriereinigung und alle weiteren Reinigungsarten.",
       services: [
         "Unterhaltsreinigung",
@@ -24,7 +24,7 @@ export default function Branchen() {
     },
     {
       title: "Handwerk & Bau",
-      icon: "🔨",
+      iconPath: "M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z",
       description: "SHK, Elektro, Maler, Schreiner und alle Handwerksbetriebe mit Ausseneinsaetzen.",
       services: [
         "SHK-Betriebe",
@@ -37,7 +37,7 @@ export default function Branchen() {
     },
     {
       title: "Facility Management",
-      icon: "🏗️",
+      iconPath: "M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6",
       description: "Gebaeudebewirtschaftung, Haustechnik und infrastrukturelles Management.",
       services: [
         "Gebaeudetechnik",
@@ -50,7 +50,7 @@ export default function Branchen() {
     },
     {
       title: "Klinik & Hygiene",
-      icon: "🏥",
+      iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
       description: "Hoechste Hygienestandards fuer Krankenhaeuser, Praxen und Pflegeeinrichtungen.",
       services: [
         "OP-Reinigung",
@@ -63,7 +63,7 @@ export default function Branchen() {
     },
     {
       title: "Hotellerie & Gastgewerbe",
-      icon: "🏨",
+      iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
       description: "Housekeeping, Zimmerservice und Reinigung fuer Hotels und Gastronomie.",
       services: [
         "Zimmerreinigung",
@@ -76,7 +76,7 @@ export default function Branchen() {
     },
     {
       title: "Garten- & Landschaftsbau",
-      icon: "🌿",
+      iconPath: "M12 2v20M5 10c3 0 5-2 7-8 2 6 4 8 7 8M5 16c3 0 5-2 7-4 2 2 4 4 7 4",
       description: "Gruenpflege, Landschaftsgestaltung und Aussenanlagen-Management.",
       services: [
         "Gruenpflege",
@@ -89,7 +89,7 @@ export default function Branchen() {
     },
     {
       title: "Photovoltaik & Solar",
-      icon: "☀️",
+      iconPath: "M12 3v2M12 19v2M5 12H3M21 12h-2M7 7L5.5 5.5M18.5 5.5L17 7M7 17l-1.5 1.5M17 17l1.5 1.5M12 8a4 4 0 100 8 4 4 0 000-8z",
       description: "Installation, Wartung und Reinigung von Solar- und PV-Anlagen.",
       services: [
         "PV-Installation",
@@ -102,7 +102,7 @@ export default function Branchen() {
     },
     {
       title: "Sicherheitsdienste",
-      icon: "🛡️",
+      iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
       description: "Objektschutz, Empfangsdienste und Sicherheitsdienstleistungen.",
       services: [
         "Objektschutz",
@@ -122,10 +122,10 @@ export default function Branchen() {
         <div className="text-left mb-8 sm:mb-14 md:mb-20">
           <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3 sm:mb-4">Branchen</p>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-5">
-            Jede <span className="text-blue-600">Branche</span> – eine Software
+            Eine Software. <span className="text-blue-600">Jede Branche.</span>
           </h2>
-          <p className="text-sm sm:text-xl text-gray-500 max-w-3xl">
-            Taskey passt sich Ihrem Betrieb an – egal ob Reinigung, Handwerk, Facility Management oder Dienstleistung.
+          <p className="text-sm sm:text-xl text-gray-500 max-w-2xl">
+            Reinigung, Handwerk, Facility, Dienstleistung – Taskey passt sich an.
           </p>
         </div>
 
@@ -141,7 +141,13 @@ export default function Branchen() {
                   : 'bg-gray-50 border-gray-200 hover:border-blue-200 hover:shadow-md'
               }`}
             >
-              <div className="text-3xl mb-3">{category.icon}</div>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
+                selectedCategory === category.title ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-gray-200'
+              }`}>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={category.iconPath} />
+                </svg>
+              </div>
               <h3 className={`font-bold text-lg mb-2 ${
                 selectedCategory === category.title ? 'text-blue-700' : 'text-gray-900'
               }`}>
@@ -161,8 +167,10 @@ export default function Branchen() {
         {selectedCategory && (
           <div className="mb-8 sm:mb-12 bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 animate-fadeIn">
             <div className="flex items-start gap-4 mb-6">
-              <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0">
-                {branchenCategories.find(c => c.title === selectedCategory)?.icon}
+              <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={branchenCategories.find(c => c.title === selectedCategory)?.iconPath || ''} />
+                </svg>
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedCategory}</h3>
@@ -181,7 +189,9 @@ export default function Branchen() {
             </div>
             <div className="mt-6 bg-blue-50 rounded-xl p-4">
               <p className="text-gray-700 flex items-start gap-2">
-                <span className="text-xl">💡</span>
+                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 <span className="font-medium text-sm sm:text-base">Taskey bildet alle Prozesse fuer {selectedCategory} digital ab – von der Einsatzplanung ueber NFC-Leistungsnachweise bis zur Abrechnung.</span>
               </p>
             </div>

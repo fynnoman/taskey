@@ -180,7 +180,7 @@ export default function NFCSection() {
             </a>
           </div>
           <p className="text-gray-400 text-xs md:text-sm mt-4">
-            ✓ Kostenlose Starter-Aufkleber für Neukunden  •  ✓ Ersatz bei Beschädigung garantiert
+            Kostenlose Starter-Aufkleber für Neukunden  ·  Ersatz bei Beschädigung garantiert
           </p>
         </div>
       </div>

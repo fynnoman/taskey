@@ -14,7 +14,7 @@ import Link from "next/link";
  */
 
 type Audience = {
-  emoji: string;
+  iconPath: string;
   title: string;
   subtitle: string;
   keywords: string[];
@@ -25,10 +25,9 @@ type Audience = {
 
 const audiences: Audience[] = [
   {
-    emoji: "🧹",
-    title: "Gebäudereinigung & Unterhaltsreinigung",
-    subtitle:
-      "Die führende Software für Gebäudereiniger, Reinigungsfirmen und Facility Cleaner im DACH-Raum.",
+    iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
+    title: "Gebäudereinigung",
+    subtitle: "Software für Gebäudereiniger, Unterhaltsreinigung und Facility Cleaner.",
     keywords: [
       "Software Gebäudereinigung",
       "Reinigungsmanagement Software",
@@ -40,18 +39,16 @@ const audiences: Audience[] = [
       "Software Reinigungsfirma",
     ],
     pains: [
-      "Stundenzettel, die nie vollständig sind",
-      "Kunden, die Leistungen bezweifeln",
-      "Objekt-Dokumentation, die im WhatsApp-Chat verschwindet",
+      "Unvollständige Stundenzettel",
+      "Leistungsnachweise im WhatsApp-Chaos",
     ],
     href: "/gebaeudereinigung",
-    cta: "Lösung für Gebäudereiniger ansehen",
+    cta: "Für Gebäudereiniger",
   },
   {
-    emoji: "🔧",
-    title: "Handwerk & Installateurbetriebe",
-    subtitle:
-      "Handwerkersoftware für Elektriker, SHK, Sanitär, Heizung, Klima, Maler, Trockenbauer, Dachdecker, Tischler und Bauunternehmen.",
+    iconPath: "M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z",
+    title: "Handwerk & Bau",
+    subtitle: "Für Elektriker, SHK, Maler, Dachdecker, Tischler, Bauunternehmen.",
     keywords: [
       "Handwerkersoftware",
       "Software Handwerksbetrieb",
@@ -68,17 +65,15 @@ const audiences: Audience[] = [
     ],
     pains: [
       "Angebote, die zu spät rausgehen",
-      "Nachkalkulation nur per Bauchgefühl",
-      "Zeitzettel, die freitags nachmittags fehlen",
+      "Nachkalkulation per Bauchgefühl",
     ],
     href: "/handwerk",
-    cta: "Lösung für Handwerksbetriebe ansehen",
+    cta: "Für Handwerksbetriebe",
   },
   {
-    emoji: "🏢",
-    title: "Facility Management & Hausmeisterservice",
-    subtitle:
-      "Für Facility Manager, Hausmeisterdienste, technische Dienstleister und Objektbetreuer mit mehreren Standorten.",
+    iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
+    title: "Facility Management",
+    subtitle: "Für Hausmeisterdienste, technische Dienstleister, Objektbetreuer.",
     keywords: [
       "Facility Management Software",
       "Hausmeisterservice Software",
@@ -89,17 +84,15 @@ const audiences: Audience[] = [
     ],
     pains: [
       "Dutzende Objekte, kein Live-Überblick",
-      "Störmeldungen, die zwischen Anrufen verloren gehen",
-      "Nachweise, die Auftraggeber ständig nachfordern",
+      "Nachweise, die ständig nachgefordert werden",
     ],
     href: "/handwerk",
-    cta: "Lösung für Facility Services ansehen",
+    cta: "Für Facility Services",
   },
   {
-    emoji: "🌳",
-    title: "Garten- & Landschaftsbau (GaLaBau)",
-    subtitle:
-      "Für GaLaBau-Betriebe, Gartenbau, Landschaftspflege, Baumpflege und Winterdienst.",
+    iconPath: "M12 2v20M5 10c3 0 5-2 7-8 2 6 4 8 7 8M5 16c3 0 5-2 7-4 2 2 4 4 7 4",
+    title: "Garten- & Landschaftsbau",
+    subtitle: "Für GaLaBau, Gartenbau, Baumpflege und Winterdienst.",
     keywords: [
       "GaLaBau Software",
       "Software Gartenbau",
@@ -109,18 +102,16 @@ const audiences: Audience[] = [
       "Grünpflege Management",
     ],
     pains: [
-      "Kolonnen auf verschiedenen Baustellen, kein Status",
-      "Wetterabhängige Umplanung im Minutentakt",
+      "Kolonnen auf mehreren Baustellen, kein Status",
       "Einsatzzeiten, die keiner sauber mitschreibt",
     ],
     href: "/handwerk",
-    cta: "Lösung für GaLaBau ansehen",
+    cta: "Für GaLaBau",
   },
   {
-    emoji: "🛡️",
-    title: "Sicherheits- & Objektschutzdienste",
-    subtitle:
-      "Für Sicherheitsdienste, Werkschutz, Objektschutz und Revier-Streifen mit NFC-Kontrollpunkten.",
+    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+    title: "Sicherheitsdienste",
+    subtitle: "Für Werkschutz, Objektschutz und Streifendienst mit NFC-Kontrolle.",
     keywords: [
       "Software Sicherheitsdienst",
       "Wächterkontrolle NFC",
@@ -129,18 +120,16 @@ const audiences: Audience[] = [
       "Werkschutz App",
     ],
     pains: [
-      "Kontrollpunkte, die manuell protokolliert werden",
-      "Einsatzdokumentation auf Papier",
+      "Kontrollpunkte manuell protokolliert",
       "Keine revisionssichere Nachweiskette",
     ],
     href: "/handwerk",
-    cta: "Lösung für Sicherheitsdienste ansehen",
+    cta: "Für Sicherheitsdienste",
   },
   {
-    emoji: "🏭",
+    iconPath: "M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6",
     title: "Industrie- & Spezialreinigung",
-    subtitle:
-      "Für Industriereinigung, Produktionsreinigung, Baureinigung, Fensterreinigung und Desinfektion.",
+    subtitle: "Für Industrie-, Produktions-, Baureinigung und Desinfektion.",
     keywords: [
       "Industriereinigung Software",
       "Baureinigung Software",
@@ -151,10 +140,9 @@ const audiences: Audience[] = [
     pains: [
       "Hohe Dokumentationspflicht gegenüber Auftraggebern",
       "Revisionssichere Nachweise für Audits",
-      "Schichtmodelle, die Excel nicht mehr abbildet",
     ],
     href: "/handwerk",
-    cta: "Lösung für Industriereinigung ansehen",
+    cta: "Für Industriereinigung",
   },
 ];
 
@@ -202,16 +190,12 @@ export default function TargetAudiences({
         </div>
 
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-center leading-[1.05] mb-6 tracking-tight">
-          Klare Lösungen für{" "}
-          <span className="text-blue-500">klare Zielgruppen</span>.
+          Gebaut für <span className="text-blue-500">Ihren Betrieb</span>.
         </h2>
         <p
-          className={`text-lg sm:text-xl text-center max-w-3xl mx-auto mb-16 leading-relaxed ${muted}`}
+          className={`text-lg sm:text-xl text-center max-w-2xl mx-auto mb-16 leading-relaxed ${muted}`}
         >
-          Taskey ist keine generische „Business-Software". Wir sind gezielt für
-          operative Betriebe im DACH-Raum gebaut — Gebäudereinigung, Handwerk,
-          Facility Management, GaLaBau, Sicherheitsdienste und Industriereinigung.
-          Jede Zielgruppe bekommt die Funktionen, die sie wirklich braucht.
+          Keine generische Business-Software. Taskey ist für operative Dienstleister im DACH-Raum gebaut.
         </p>
 
         {/* Grid */}
@@ -221,8 +205,10 @@ export default function TargetAudiences({
               key={a.title}
               className={`${cardBg} border rounded-2xl p-6 sm:p-7 transition-all flex flex-col`}
             >
-              <div className="text-4xl mb-4" aria-hidden>
-                {a.emoji}
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${isDark ? "bg-blue-500/10 text-blue-300" : "bg-blue-50 text-blue-700"}`} aria-hidden>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={a.iconPath} />
+                </svg>
               </div>
               <h3
                 className={`text-lg sm:text-xl font-black mb-2 leading-tight ${

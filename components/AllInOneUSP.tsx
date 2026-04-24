@@ -28,24 +28,24 @@ const replacedTools = [
 
 const pillars = [
   {
-    icon: "🧩",
     title: "Eine Plattform statt fünf Tools",
-    desc: "Zeiterfassung, Einsatzplanung, Aufträge, Objekte, Nachweise, Angebote, Rechnungen, DATEV-Export — alles in Taskey. Kein Tool-Zoo, keine Brücken aus Excel.",
+    desc: "Zeiterfassung, Einsatzplanung, Aufträge, Nachweise, Rechnungen, DATEV-Export – alles in Taskey.",
+    path: "M4 6h16M4 12h16M4 18h16",
   },
   {
-    icon: "💸",
     title: "Ein Abo statt fünf",
-    desc: "Statt jeden Monat 5 Rechnungen von 5 Anbietern zu bezahlen, zahlst du einen klaren Preis. Planbar, ohne Modul-Aufschläge, ohne Surprise-Billing.",
+    desc: "Ein klarer Preis. Planbar, ohne Modul-Aufschläge.",
+    path: "M12 8c-2.21 0-4 1.12-4 2.5S9.79 13 12 13s4 1.12 4 2.5S14.21 18 12 18m0-10V6m0 12v2m-8-6a8 8 0 1116 0 8 8 0 01-16 0z",
   },
   {
-    icon: "🔗",
     title: "Daten, die automatisch zusammenpassen",
-    desc: "Die Zeit vom NFC-Scan landet ohne Copy-Paste im Auftrag, im Lohnlauf, in der Nachkalkulation und in der Rechnung. Ein Datenmodell — nicht sechs.",
+    desc: "NFC-Zeit → Auftrag → Lohn → Rechnung. Ein Datenmodell, nicht sechs.",
+    path: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
   },
   {
-    icon: "⚡",
     title: "Einführen an einem Nachmittag",
-    desc: "Keine IT-Migration über Monate. Accounts anlegen, NFC-Tags kleben, App ausrollen — das Team ist in unter 5 Minuten onboarded. Ohne Schulung.",
+    desc: "Accounts anlegen, NFC kleben, App ausrollen. Ohne Schulung.",
+    path: "M13 10V3L4 14h7v7l9-11h-7z",
   },
 ];
 
@@ -121,16 +121,13 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
 
         {/* Heading */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-center leading-[1.05] mb-6 tracking-tight">
-          Endlich <span className="text-emerald-500">eine Software</span>,
-          <br className="hidden sm:block" /> die{" "}
-          <span className={isDark ? "text-white" : "text-gray-900"}>wirklich alles</span> abdeckt.
+          Eine <span className="text-emerald-500">Software</span>.
+          <br className="hidden sm:block" /> Statt fünf.
         </h2>
         <p
-          className={`text-lg sm:text-xl text-center max-w-3xl mx-auto mb-14 leading-relaxed ${muted}`}
+          className={`text-lg sm:text-xl text-center max-w-2xl mx-auto mb-14 leading-relaxed ${muted}`}
         >
-          Zeiterfassung hier, Einsatzplanung dort, Rechnungstool woanders, Foto-App für die
-          Doku, Excel als Klammer dazwischen — und jeden Monat fünf Rechnungen. Damit ist
-          Schluss. Taskey ersetzt den ganzen Tool-Zoo und bündelt alles in einer Plattform.
+          Zeiterfassung, Einsatzplanung, Aufträge, Nachweise, Rechnungen, DATEV – in einer Plattform.
         </p>
 
         {/* Replaces-stack vs. Taskey */}
@@ -246,8 +243,10 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
               key={p.title}
               className={`${cardBg} border rounded-2xl p-5 sm:p-6 transition-all`}
             >
-              <div className="text-3xl mb-3" aria-hidden>
-                {p.icon}
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${isDark ? "bg-emerald-500/10 text-emerald-300" : "bg-emerald-50 text-emerald-700"}`} aria-hidden>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={p.path} />
+                </svg>
               </div>
               <h3
                 className={`text-base sm:text-lg font-bold mb-2 ${
@@ -262,16 +261,8 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
         </div>
 
         {/* Closing line */}
-        <p className={`text-center text-base sm:text-lg max-w-3xl mx-auto ${muted}`}>
-          Ein Login. Ein Datenmodell. Eine Rechnung. Taskey ist bewusst als{" "}
-          <span
-            className={`font-semibold ${
-              isDark ? "text-emerald-300" : "text-emerald-700"
-            }`}
-          >
-            Komplettlösung
-          </span>{" "}
-          gebaut — nicht als weiteres Puzzlestück im Tool-Chaos.
+        <p className={`text-center text-base sm:text-lg max-w-2xl mx-auto ${muted}`}>
+          Ein Login. Ein Datenmodell. Eine Rechnung.
         </p>
 
         {/* CTA */}
