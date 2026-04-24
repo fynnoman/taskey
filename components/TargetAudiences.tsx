@@ -149,8 +149,42 @@ const audiences: Audience[] = [
 export default function TargetAudiences({
   variant = "light",
 }: {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "compact";
 }) {
+  if (variant === "compact") {
+    return (
+      <section id="zielgruppen" className="bg-white py-16 sm:py-20 border-y border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 sm:mb-12">
+            <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3">
+              Für wen ist Taskey gemacht?
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.05] tracking-tight">
+              Gebaut für <span className="text-blue-600">Ihren Betrieb</span>.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {audiences.map((a) => (
+              <Link
+                key={a.title}
+                href={a.href}
+                className="group bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-2xl p-4 sm:p-5 transition-all flex flex-col items-start"
+              >
+                <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 group-hover:border-blue-300 text-blue-700 flex items-center justify-center mb-3" aria-hidden>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={a.iconPath} />
+                  </svg>
+                </div>
+                <span className="text-sm font-bold text-gray-900 leading-tight">{a.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const isDark = variant === "dark";
   const bg = isDark
     ? "bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950 text-white"

@@ -418,8 +418,8 @@ export default function FeaturesPage() {
       </section>
 
       <CommunicationUSP variant="compact" />
-      <AllInOneUSP variant="full" />
-      <TargetAudiences variant="light" />
+      <AllInOneUSP variant="compact" />
+      <TargetAudiences variant="compact" />
 
       <div className="py-10 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
