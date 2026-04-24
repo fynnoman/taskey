@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useParallax } from "./useParallax";
 
 /**
  * FeaturePreview — Revolut-Style:
@@ -45,6 +46,8 @@ export default function FeaturePreview() {
   }, [features.length]);
   const current = features[active];
 
+  const parallaxRef = useParallax<HTMLDivElement>(0.15);
+
   return (
     <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
       {/* Ambient glows */}
@@ -52,7 +55,7 @@ export default function FeaturePreview() {
       <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Großes verblendetes Bild rechts — full-bleed, keine Card */}
-      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none">
+      <div ref={parallaxRef} className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none will-change-transform">
         {features.map((f, i) => (
           <div
             key={f.image}
