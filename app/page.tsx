@@ -1,5 +1,4 @@
 import Hero from "@/components/home/Hero";
-import NFCSection from "@/components/home/NFCSection";
 import FeaturePreview from "@/components/home/FeaturePreview";
 import SectionDivider from "@/components/home/SectionDivider";
 import CommunicationUSP from "@/components/CommunicationUSP";
@@ -104,10 +103,8 @@ export default function Home() {
         <CommunicationUSP variant="full" />
         <AllInOneUSP variant="dark" />
         <TargetAudiences variant="light" />
-        <NFCSection />
-        <SectionDivider from="#f9fafb" to="white" variant="wave" />
-
         <FeaturePreview />
+        <Branchen />
         {/* <Testimonials /> */}
 
         {/* Hero Feature Sections */}
@@ -122,7 +119,6 @@ export default function Home() {
           <IOSAppSection />
           <SectionDivider from="#f9fafb" to="white" variant="slant" />
           <BusinessSize />
-          <Branchen />
           <FAQ />
 
           {/* Onboarding Teaser Strip */}

@@ -1,11 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Branchen() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const { t } = useLanguage();
 
   const branchenCategories = [
@@ -116,125 +114,120 @@ export default function Branchen() {
   ];
 
   return (
-    <section className="relative pt-16 sm:pt-32 md:pt-48 pb-14 sm:pb-24 md:pb-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 overflow-hidden">
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-left mb-8 sm:mb-14 md:mb-20">
-          <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3 sm:mb-4">Branchen</p>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-5">
-            Eine Software. <span className="text-blue-600">Jede Branche.</span>
+        <div className="max-w-3xl mb-14 md:mb-20">
+          <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
+            Branchen
+          </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-white">
+            Eine Software.
+            <br />
+            <span className="text-white/50">Jede Branche.</span>
           </h2>
-          <p className="text-sm sm:text-xl text-gray-500 max-w-2xl">
-            Reinigung, Handwerk, Facility, Dienstleistung – Taskey passt sich an.
+          <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl">
+            Reinigung, Handwerk, Facility, Dienstleistung – Taskey passt sich an Ihren Betrieb an.
+            Nicht umgekehrt.
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        {/* Grid — edle dunkle Karten mit Hover-Reveal der Services */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-16">
           {branchenCategories.map((category, index) => (
-            <button
+            <div
               key={index}
-              onClick={() => setSelectedCategory(selectedCategory === category.title ? null : category.title)}
-              className={`text-left p-5 sm:p-6 rounded-2xl border transition-all duration-300 group ${
-                selectedCategory === category.title
-                  ? 'bg-blue-50 border-blue-300 shadow-lg shadow-blue-100'
-                  : 'bg-gray-50 border-gray-200 hover:border-blue-200 hover:shadow-md'
-              }`}
+              className="group relative rounded-2xl bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 p-6 transition-all hover:border-white/20 overflow-hidden"
             >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
-                selectedCategory === category.title ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-gray-200'
-              }`}>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={category.iconPath} />
-                </svg>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+              <div className="relative">
+                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-cyan-300 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/30 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={category.iconPath} />
+                  </svg>
+                </div>
+
+                <h3 className="text-lg font-black text-white leading-tight mb-2">
+                  {category.title}
+                </h3>
+                <p className="text-sm text-white/50 leading-relaxed mb-4 line-clamp-2">
+                  {category.description}
+                </p>
+
+                {/* Services als Chips, sichtbar auf Mobile, beim Hover auf Desktop hervorgehoben */}
+                <div className="flex flex-wrap gap-1.5">
+                  {category.services.slice(0, 4).map((s) => (
+                    <span
+                      key={s}
+                      className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/60 font-medium"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                  {category.services.length > 4 && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/40 font-medium">
+                      +{category.services.length - 4}
+                    </span>
+                  )}
+                </div>
               </div>
-              <h3 className={`font-bold text-lg mb-2 ${
-                selectedCategory === category.title ? 'text-blue-700' : 'text-gray-900'
-              }`}>
-                {category.title}
-              </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{category.description}</p>
-              <div className={`mt-3 text-xs font-semibold ${
-                selectedCategory === category.title ? 'text-blue-600' : 'text-gray-400 group-hover:text-blue-500'
-              }`}>
-                {selectedCategory === category.title ? 'Weniger anzeigen ↑' : 'Details anzeigen →'}
-              </div>
-            </button>
+            </div>
           ))}
         </div>
 
-        {/* Expanded Category Detail */}
-        {selectedCategory && (
-          <div className="mb-8 sm:mb-12 bg-gray-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-200 animate-fadeIn">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={branchenCategories.find(c => c.title === selectedCategory)?.iconPath || ''} />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedCategory}</h3>
-                <p className="text-gray-500">
-                  {branchenCategories.find(c => c.title === selectedCategory)?.description}
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {branchenCategories.find(c => c.title === selectedCategory)?.services.map((service, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white rounded-xl p-3 border border-gray-100">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
-                  <span className="text-sm font-medium text-gray-700">{service}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 bg-blue-50 rounded-xl p-4">
-              <p className="text-gray-700 flex items-start gap-2">
-                <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="font-medium text-sm sm:text-base">Taskey bildet alle Prozesse fuer {selectedCategory} digital ab – von der Einsatzplanung ueber NFC-Leistungsnachweise bis zur Abrechnung.</span>
-              </p>
-            </div>
-          </div>
-        )}
-
         {/* Stats Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-16">
-          <div className="text-center p-4 sm:p-6">
-            <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">8+</div>
-            <div className="text-xs sm:text-sm text-gray-500">Branchen</div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
+          <div className="text-center">
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">8+</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Branchen</div>
           </div>
-          <div className="text-center p-4 sm:p-6">
-            <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">50+</div>
-            <div className="text-xs sm:text-sm text-gray-500">Einsatzbereiche</div>
+          <div className="text-center border-l border-white/10">
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">50+</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Einsatzbereiche</div>
           </div>
-          <div className="text-center p-4 sm:p-6">
-            <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">DACH</div>
-            <div className="text-xs sm:text-sm text-gray-500">Deutschland, Österreich, Schweiz</div>
+          <div className="text-center border-l border-white/10">
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">DACH</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">DE · AT · CH</div>
           </div>
-          <div className="text-center p-4 sm:p-6">
-            <div className="text-2xl sm:text-4xl font-black text-blue-600 mb-1">100%</div>
-            <div className="text-xs sm:text-sm text-gray-500">Branchenflexibel</div>
+          <div className="text-center border-l border-white/10">
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">100%</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Branchenflexibel</div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div data-scrollline-cta className="bg-gray-50 border border-gray-200 rounded-xl sm:rounded-3xl p-6 sm:p-12 text-left">
-          <h3 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-gray-900">
-            Ihre Branche ist dabei?
-          </h3>
-          <p className="text-sm sm:text-xl mb-5 sm:mb-8 text-gray-500">
-            Entdecken Sie, wie Taskey Ihren Betrieb effizienter macht
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link
-              href="https://signup.taskeyapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-lg font-semibold rounded-xl text-center"
-            >
-              {t("hero.cta.trial")}
-            </Link>
+        {/* CTA */}
+        <div
+          data-scrollline-cta
+          className="relative rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 p-8 md:p-12 overflow-hidden"
+        >
+          <div className="absolute -top-16 -right-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative max-w-2xl">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.05] tracking-tight mb-4">
+              Ihre Branche ist dabei?
+            </h3>
+            <p className="text-base sm:text-lg text-white/60 mb-8 leading-relaxed">
+              Entdecken Sie, wie Taskey Ihren Betrieb effizienter macht – ohne Setup-Aufwand.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
+              >
+                {t("hero.cta.trial")}
+              </Link>
+              <Link
+                href="/features"
+                className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base text-center"
+              >
+                Alle Funktionen
+              </Link>
+            </div>
           </div>
         </div>
       </div>
