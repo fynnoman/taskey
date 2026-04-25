@@ -71,9 +71,22 @@ export default function Header() {
         `}</style>
       </div>
 
-      {/* ─── Header (transparent) ─────────────────────────────── */}
-      <header className="bg-transparent sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
+      {/* ─── Header (Hero-Gradient als Hintergrund) ──────────── */}
+      <header className="relative sticky top-0 z-50 bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white overflow-hidden">
+        {/* Ambient glows (matchen den Hero) */}
+        <div className="absolute -top-20 left-1/4 w-[600px] h-[300px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -top-10 right-0 w-[500px] h-[200px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
               <Image
@@ -85,7 +98,7 @@ export default function Header() {
                 priority
                 sizes="64px"
               />
-              <span className="text-xl font-bold text-gray-900">TASKEY</span>
+              <span className="text-xl font-bold text-white">TASKEY</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -96,8 +109,8 @@ export default function Header() {
                   href={link.href}
                   className={`transition font-medium ${
                     isActive(link.href)
-                      ? "text-blue-900 font-bold"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "text-cyan-300 font-bold"
+                      : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -107,7 +120,7 @@ export default function Header() {
                 href="https://taskey.vars-development.com/support"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition font-medium"
+                className="text-white/70 hover:text-white transition font-medium"
               >
                 {t("nav.support")}
               </a>
@@ -119,7 +132,7 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2.5 text-gray-700 hover:text-gray-900 transition font-medium"
+                className="px-4 py-2.5 text-white/80 hover:text-white transition font-medium"
               >
                 Login
               </Link>
@@ -127,7 +140,7 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium shadow-sm"
+                className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
               >
                 {t("nav.tryFree")}
               </Link>
@@ -135,7 +148,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-gray-700"
+              className="lg:hidden text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menü öffnen"
             >
@@ -151,7 +164,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-gray-200/50 py-4 bg-white/90 backdrop-blur-xl">
+            <div className="lg:hidden border-t border-white/10 py-4 bg-gray-950/95 backdrop-blur-xl">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link
@@ -160,8 +173,8 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-3 rounded-lg transition ${
                       isActive(link.href)
-                        ? "text-blue-900 bg-blue-50 font-bold"
-                        : "text-gray-700 hover:bg-gray-50"
+                        ? "text-cyan-300 bg-white/5 font-bold"
+                        : "text-white/80 hover:bg-white/5 hover:text-white"
                     }`}
                   >
                     {link.label}
@@ -171,7 +184,7 @@ export default function Header() {
                   href="https://taskey.vars-development.com/support"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                  className="px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("nav.support")}
@@ -184,7 +197,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 text-center text-gray-700 hover:bg-gray-50 rounded-lg transition font-medium border border-gray-200"
+                    className="block w-full px-4 py-3 text-center text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition font-medium border border-white/15"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Login
@@ -193,7 +206,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 text-center bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium"
+                    className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t("nav.tryFree")}
