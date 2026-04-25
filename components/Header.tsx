@@ -71,21 +71,8 @@ export default function Header() {
         `}</style>
       </div>
 
-      {/* ─── Header (Hero-Gradient als Hintergrund) ──────────── */}
-      <header className="relative sticky top-0 z-50 bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white overflow-hidden">
-        {/* Ambient glows (matchen den Hero) */}
-        <div className="absolute -top-20 left-1/4 w-[600px] h-[300px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute -top-10 right-0 w-[500px] h-[200px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
+      {/* ─── Header (komplett transparent) ───────────────────── */}
+      <header className="relative sticky top-0 z-50 bg-transparent">
         <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
