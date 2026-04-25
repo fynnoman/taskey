@@ -1,7 +1,6 @@
 import Hero from "@/components/home/Hero";
 import CommunicationUSP from "@/components/CommunicationUSP";
 import AllInOneUSP from "@/components/AllInOneUSP";
-import ReferralStrip from "@/components/home/ReferralStrip";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -97,9 +96,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
       />
       <main>
-        {/* Schmaler Referral-Streifen ganz oben */}
-        <ReferralStrip />
-
         {/* 1. Hook: Hero (Wert-Versprechen + CTA) */}
         <Hero />
 

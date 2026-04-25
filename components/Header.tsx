@@ -9,7 +9,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [solid, setSolid] = useState(false);
   const { t } = useLanguage();
   const pathname = usePathname();
 
@@ -23,13 +24,18 @@ export default function Header() {
 
   const isActive = (href: string) => pathname === href;
 
-  // Erkennt ob die Hero-Sektion komplett weggescrollt ist.
-  // Sobald wir IN der nächsten Section sind → Navbar smooth oben einklappen.
+  // Revolut-Business-Verhalten:
+  // 1) Navbar bleibt ganz oben fixed sichtbar während des gesamten Hero
+  // 2) Sobald man weit in den Hero scrollt (≈ "Feld & Büro" – Bereich), gleitet sie smooth nach oben weg
+  // 3) Scrollt man zurück in den Hero, kommt sie wieder.
   useEffect(() => {
     const onScroll = () => {
-      const hero = document.querySelector<HTMLElement>("[data-hero-section]");
-      const triggerY = hero ? hero.offsetTop + hero.offsetHeight - 80 : 600;
-      setScrolledPastHero(window.scrollY > triggerY);
+      const y = window.scrollY;
+      const vh = window.innerHeight || 800;
+      // leicht eingedunkelter Hintergrund nach kurzem Scrollen für Lesbarkeit
+      setSolid(y > 40);
+      // einklappen sobald ~85% der Viewporthöhe gescrollt wurde (≈ Ende Hero)
+      setHidden(y > vh * 0.85);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -37,36 +43,25 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <>
-      {/* ─── Top-Layer Header: über Hero schwebend (absolute, transparent) ─── */}
-      <header className="absolute top-0 left-0 right-0 z-40 bg-transparent text-white">
-        <NavInner
-          navLinks={navLinks}
-          isActive={isActive}
-          t={t}
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          tone="onDark"
-        />
-      </header>
-
-      {/* ─── Sticky Header: klappt smooth ein, sobald past Hero ─── */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-gray-950/85 backdrop-blur-xl border-b border-white/10 text-white transition-transform duration-500 ease-out ${
-          scrolledPastHero ? "translate-y-0" : "-translate-y-full"
-        }`}
-        aria-hidden={!scrolledPastHero}
-      >
-        <NavInner
-          navLinks={navLinks}
-          isActive={isActive}
-          t={t}
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          tone="onDark"
-        />
-      </header>
-    </>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 text-white transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
+        solid
+          ? "bg-gray-950/80 backdrop-blur-xl border-b border-white/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+      aria-hidden={hidden}
+    >
+      <NavInner
+        navLinks={navLinks}
+        isActive={isActive}
+        t={t}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        tone="onDark"
+      />
+    </header>
   );
 }
 
