@@ -71,39 +71,33 @@ export default function Header() {
         `}</style>
       </div>
 
-      {/* ─── Clean Header ─────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/70">
-        <nav
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          aria-label="Hauptnavigation"
-        >
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
+      {/* ─── Header (transparent) ─────────────────────────────── */}
+      <header className="bg-transparent sticky top-0 z-50">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
               <Image
                 src="/logo_transparent.png"
                 alt="Taskey Logo - Reinigungssoftware"
-                width={36}
-                height={36}
+                width={40}
+                height={40}
                 className="h-9 w-9 object-contain"
                 priority
-                sizes="36px"
+                sizes="40px"
               />
-              <span className="text-lg font-bold tracking-tight text-slate-900">
-                Taskey
-              </span>
+              <span className="text-xl font-bold text-gray-900">TASKEY</span>
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center space-x-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                  className={`transition font-medium ${
                     isActive(link.href)
-                      ? "text-slate-900 bg-slate-100"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                      ? "text-blue-900 font-bold"
+                      : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   {link.label}
@@ -113,20 +107,19 @@ export default function Header() {
                 href="https://taskey.vars-development.com/support"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                className="text-gray-600 hover:text-gray-900 transition font-medium"
               >
                 {t("nav.support")}
               </a>
             </div>
 
-            {/* CTA + Sprache */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center space-x-3">
               <LanguageSwitcher />
               <Link
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 rounded-full transition-colors"
+                className="px-4 py-2.5 text-gray-700 hover:text-gray-900 transition font-medium"
               >
                 Login
               </Link>
@@ -134,26 +127,23 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-full shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/40 transition-all"
+                className="px-5 py-2.5 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium shadow-sm"
               >
                 {t("nav.tryFree")}
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
               </Link>
             </div>
 
-            {/* Mobile Toggle */}
+            {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition-colors"
+              className="lg:hidden text-gray-700"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menü öffnen"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h16M4 17h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -161,17 +151,17 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-slate-200 py-3">
-              <div className="flex flex-col gap-1">
+            <div className="lg:hidden border-t border-gray-200/50 py-4 bg-white/90 backdrop-blur-xl">
+              <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-4 py-3 rounded-lg transition ${
                       isActive(link.href)
-                        ? "text-slate-900 bg-slate-100"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                        ? "text-blue-900 bg-blue-50 font-bold"
+                        : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     {link.label}
@@ -181,12 +171,12 @@ export default function Header() {
                   href="https://taskey.vars-development.com/support"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+                  className="px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg transition"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("nav.support")}
                 </a>
-                <div className="pt-3 px-2 space-y-2 border-t border-slate-200 mt-2">
+                <div className="pt-4 px-4 space-y-2">
                   <div className="flex justify-start pb-1">
                     <LanguageSwitcher />
                   </div>
@@ -194,7 +184,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-2.5 text-center text-sm font-semibold text-slate-700 hover:bg-slate-50 rounded-full transition-colors border border-slate-200"
+                    className="block w-full px-4 py-3 text-center text-gray-700 hover:bg-gray-50 rounded-lg transition font-medium border border-gray-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Login
@@ -203,7 +193,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-2.5 text-center text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-full shadow-lg shadow-cyan-500/30 transition-all"
+                    className="block w-full px-4 py-3 text-center bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t("nav.tryFree")}
