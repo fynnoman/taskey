@@ -1,294 +1,439 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { posts, type PostCategory } from "../posts";
 
-interface Props {
-  params: Promise<{ slug: string }>;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return posts.filter((p) => !p.planned).map((p) => ({ slug: p.slug }));
 }
 
-export async function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  if (!post) return {};
-
-  const url = `https://www.taskeyapp.com/news/${slug}`;
-  const title = post.metaTitle ?? post.title;
-  const description = post.metaDescription ?? post.summary;
-
+  if (!post) return { title: "News" };
   return {
-    title,
-    description,
-    alternates: { canonical: url },
+    title: post.metaTitle ?? post.title,
+    description: post.metaDescription ?? post.summary,
     openGraph: {
-      title,
-      description,
-      url,
-      siteName: "Taskey",
+      title: post.metaTitle ?? post.title,
+      description: post.metaDescription ?? post.summary,
       type: "article",
-      ...(post.isoDate && { publishedTime: post.isoDate }),
-      locale: "de_DE",
+      publishedTime: post.isoDate,
+      images: post.heroImage ? [{ url: post.heroImage }] : undefined,
     },
   };
 }
 
-const categoryStyle: Record<PostCategory, { bg: string; text: string }> = {
-  Update:      { bg: "bg-blue-100",   text: "text-blue-900" },
-  Feature:     { bg: "bg-violet-100", text: "text-violet-900" },
-  Release:     { bg: "bg-green-100",  text: "text-green-900" },
-  Unternehmen: { bg: "bg-gray-100",   text: "text-gray-800" },
-  Geplant:     { bg: "bg-amber-100",  text: "text-amber-800" },
-  Blog:        { bg: "bg-emerald-100", text: "text-emerald-900" },
+const categoryStyle: Record<PostCategory, { label: string; tone: string }> = {
+  Update:      { label: "Update",      tone: "bg-cyan-500/10 border-cyan-400/30 text-cyan-300" },
+  Feature:     { label: "Feature",     tone: "bg-violet-500/10 border-violet-400/30 text-violet-300" },
+  Release:     { label: "Release",     tone: "bg-emerald-500/10 border-emerald-400/30 text-emerald-300" },
+  Unternehmen: { label: "Unternehmen", tone: "bg-white/5 border-white/15 text-white/70" },
+  Geplant:     { label: "Geplant",     tone: "bg-amber-500/10 border-amber-400/30 text-amber-300" },
+  Blog:        { label: "Blog",        tone: "bg-emerald-500/10 border-emerald-400/30 text-emerald-300" },
 };
 
-/** Render markdown-style **bold** within a text string */
-function renderFormattedText(text: string) {
+// ──────────────────────────────────────────────────────────────
+// Inline-Formatierung: **bold**, *italic*, deutsche „Anführung"
+// ──────────────────────────────────────────────────────────────
+function renderFormattedText(text: string): React.ReactNode[] {
+  // Replace ASCII " quotes around words with German „..." typographic quotes (only on segments without already-typed)
+  const out: React.ReactNode[] = [];
+  // Split on **bold** first
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={i} className="font-bold text-gray-900">{part.slice(2, -2)}</strong>;
+  parts.forEach((part, i) => {
+    if (/^\*\*[^*]+\*\*$/.test(part)) {
+      out.push(
+        <strong key={`b-${i}`} className="font-bold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    } else {
+      out.push(<span key={`t-${i}`}>{part}</span>);
     }
-    return part;
   });
+  return out;
 }
 
-/** Check if a paragraph is a heading (starts with ## ) */
-function isHeading(text: string) {
-  return text.startsWith("## ");
+function isHeading(line: string) {
+  return /^#{1,3}\s/.test(line);
+}
+function isBlockquote(line: string) {
+  return /^>\s/.test(line);
+}
+function isTableLine(line: string) {
+  return /^\|.+\|$/.test(line.trim());
+}
+function isOrderedListItem(line: string) {
+  return /^\d+\.\s/.test(line);
+}
+function isUnorderedListItem(line: string) {
+  return /^[-*]\s/.test(line);
 }
 
-/** Check if a paragraph is a blockquote (starts with > ) */
-function isBlockquote(text: string) {
-  return text.startsWith("> ");
-}
+function renderTable(lines: string[], keyBase: string) {
+  // lines: each line "| col | col |"
+  const rows = lines.map((l) =>
+    l
+      .trim()
+      .replace(/^\||\|$/g, "")
+      .split("|")
+      .map((c) => c.trim())
+  );
+  // Skip alignment row like | --- | --- |
+  const filtered = rows.filter((r) => !r.every((c) => /^:?-{2,}:?$/.test(c)));
+  if (filtered.length === 0) return null;
+  const [header, ...body] = filtered;
 
-/** Check if a paragraph is a table (starts with |||) */
-function isTable(text: string) {
-  return text.startsWith("|||");
-}
-
-/** Render a markdown-style table */
-function renderTable(text: string) {
-  const lines = text.split("\n").filter(l => l.startsWith("|"));
-  // Skip the header marker line (|||)
-  const dataLines = lines.filter(l => l !== "|||");
-  
   return (
-    <div className="overflow-x-auto my-8 rounded-2xl border border-gray-200">
+    <div key={keyBase} className="my-8 overflow-x-auto rounded-2xl border border-white/10">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-gray-950 text-white">
-            <th className="text-left px-5 py-3.5 font-bold text-sm">Bereich</th>
-            <th className="text-left px-5 py-3.5 font-bold text-sm">Vorher</th>
-            <th className="text-left px-5 py-3.5 font-bold text-sm">Mit Taskey</th>
+          <tr className="bg-cyan-500/10">
+            {header.map((cell, i) => (
+              <th
+                key={i}
+                className="text-left px-4 py-3 font-bold text-cyan-200 border-b border-white/10"
+              >
+                {renderFormattedText(cell)}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {dataLines.map((line, i) => {
-            const cells = line.split("|").filter(Boolean);
-            return (
-              <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                {cells.map((cell, j) => (
-                  <td key={j} className={`px-5 py-3 ${j === 0 ? "font-semibold text-gray-900" : j === 2 ? "text-emerald-700 font-bold" : "text-gray-500"}`}>
-                    {cell.trim()}
-                  </td>
-                ))}
-              </tr>
-            );
-          })}
+          {body.map((row, rIdx) => (
+            <tr
+              key={rIdx}
+              className={rIdx % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"}
+            >
+              {row.map((cell, cIdx) => (
+                <td
+                  key={cIdx}
+                  className="px-4 py-3 text-white/70 border-b border-white/5 align-top"
+                >
+                  {renderFormattedText(cell)}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 }
 
-export default async function PostPage({ params }: Props) {
+function renderBody(body: string) {
+  // Split on blank lines to get logical blocks, but tables span multiple consecutive lines
+  const lines = body.split("\n");
+  const blocks: React.ReactNode[] = [];
+  let i = 0;
+  let key = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+    if (line.trim() === "") {
+      i++;
+      continue;
+    }
+
+    // Table
+    if (isTableLine(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && isTableLine(lines[i])) {
+        tableLines.push(lines[i]);
+        i++;
+      }
+      const t = renderTable(tableLines, `tbl-${key++}`);
+      if (t) blocks.push(t);
+      continue;
+    }
+
+    // Heading
+    if (isHeading(line)) {
+      const m = line.match(/^(#{1,3})\s+(.*)$/);
+      if (m) {
+        const level = m[1].length;
+        const text = m[2];
+        if (level === 1) {
+          blocks.push(
+            <h2 key={`h-${key++}`} className="text-3xl md:text-4xl font-black text-white mt-14 mb-5 leading-tight">
+              {renderFormattedText(text)}
+            </h2>
+          );
+        } else if (level === 2) {
+          blocks.push(
+            <h3 key={`h-${key++}`} className="text-2xl md:text-3xl font-black text-white mt-12 mb-4 leading-tight">
+              {renderFormattedText(text)}
+            </h3>
+          );
+        } else {
+          blocks.push(
+            <h4 key={`h-${key++}`} className="text-xl md:text-2xl font-bold text-cyan-200 mt-10 mb-3">
+              {renderFormattedText(text)}
+            </h4>
+          );
+        }
+      }
+      i++;
+      continue;
+    }
+
+    // Blockquote (consecutive)
+    if (isBlockquote(line)) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && isBlockquote(lines[i])) {
+        quoteLines.push(lines[i].replace(/^>\s?/, ""));
+        i++;
+      }
+      blocks.push(
+        <blockquote
+          key={`q-${key++}`}
+          className="my-8 pl-6 pr-5 py-5 rounded-r-2xl border-l-4 border-cyan-400 bg-white/[0.04] text-white/80 italic text-lg leading-relaxed"
+        >
+          {quoteLines.join(" ")}
+        </blockquote>
+      );
+      continue;
+    }
+
+    // Ordered list (consecutive)
+    if (isOrderedListItem(line)) {
+      const items: string[] = [];
+      while (i < lines.length && isOrderedListItem(lines[i])) {
+        items.push(lines[i].replace(/^\d+\.\s+/, ""));
+        i++;
+      }
+      blocks.push(
+        <ol key={`ol-${key++}`} className="my-6 space-y-2.5 list-decimal list-outside pl-6 text-white/70 text-base md:text-lg leading-relaxed marker:text-cyan-400 marker:font-bold">
+          {items.map((it, idx) => (
+            <li key={idx}>{renderFormattedText(it)}</li>
+          ))}
+        </ol>
+      );
+      continue;
+    }
+
+    // Unordered list
+    if (isUnorderedListItem(line)) {
+      const items: string[] = [];
+      while (i < lines.length && isUnorderedListItem(lines[i])) {
+        items.push(lines[i].replace(/^[-*]\s+/, ""));
+        i++;
+      }
+      blocks.push(
+        <ul key={`ul-${key++}`} className="my-6 space-y-2.5 list-disc list-outside pl-6 text-white/70 text-base md:text-lg leading-relaxed marker:text-cyan-400">
+          {items.map((it, idx) => (
+            <li key={idx}>{renderFormattedText(it)}</li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    // Default: paragraph (collect until blank line / structural)
+    const paraLines: string[] = [line];
+    i++;
+    while (
+      i < lines.length &&
+      lines[i].trim() !== "" &&
+      !isHeading(lines[i]) &&
+      !isBlockquote(lines[i]) &&
+      !isTableLine(lines[i]) &&
+      !isOrderedListItem(lines[i]) &&
+      !isUnorderedListItem(lines[i])
+    ) {
+      paraLines.push(lines[i]);
+      i++;
+    }
+    blocks.push(
+      <p key={`p-${key++}`} className="my-5 text-white/70 text-base md:text-lg leading-[1.75]">
+        {renderFormattedText(paraLines.join(" "))}
+      </p>
+    );
+  }
+
+  return blocks;
+}
+
+export default async function NewsPostPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  if (!post) notFound();
+  if (!post || post.planned) notFound();
+
+  const livePosts = posts.filter((p) => !p.planned);
+  const idx = livePosts.findIndex((p) => p.slug === post.slug);
+  const prev = idx > 0 ? livePosts[idx - 1] : null;
+  const next = idx < livePosts.length - 1 ? livePosts[idx + 1] : null;
 
   const cs = categoryStyle[post.category];
-  const paragraphs = post.body.split("\n\n").filter(Boolean);
 
-  // Find prev/next
-  const liveOnly = posts.filter((p) => !p.planned);
-  const idx = liveOnly.findIndex((p) => p.slug === slug);
-  const prev = liveOnly[idx + 1] ?? null;
-  const next = liveOnly[idx - 1] ?? null;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.summary,
+    datePublished: post.isoDate ?? post.date,
+    author: { "@type": "Organization", name: "Taskey" },
+    publisher: {
+      "@type": "Organization",
+      name: "Taskey",
+      logo: { "@type": "ImageObject", url: "https://www.taskeyapp.com/icon.png" },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.taskeyapp.com/news/${post.slug}`,
+    },
+    image: post.heroImage ? [`https://www.taskeyapp.com${post.heroImage}`] : undefined,
+  };
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-      {/* ── JSON-LD BlogPosting Schema ── */}
-      {post.isoDate && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              headline: post.metaTitle ?? post.title,
-              description: post.metaDescription ?? post.summary,
-              datePublished: post.isoDate,
-              author: {
-                "@type": "Organization",
-                name: "Taskey",
-                url: "https://www.taskeyapp.com",
-              },
-              publisher: {
-                "@type": "Organization",
-                name: "Taskey",
-                url: "https://www.taskeyapp.com",
-              },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": `https://www.taskeyapp.com/news/${slug}`,
-              },
-            }),
-          }}
-        />
-      )}
+      {/* Ambient Glows */}
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
 
-      {/* ── BACK ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-0">
-        <Link
-          href="/news"
-          className="inline-flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-gray-900 transition-colors"
-        >
-          ← Alle Posts
-        </Link>
-      </div>
+      {/* ─── HEADER ────────────────────────────────────── */}
+      <article className="relative pt-28 md:pt-36 pb-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-cyan-300 transition-colors mb-10"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+            Alle News
+          </Link>
 
-      {/* ── HEADER ── */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24">
-        <div className="flex items-center gap-3 mb-10">
-          <span className={`text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full ${cs.bg} ${cs.text}`}>
-            {post.category}
-          </span>
-          <span className="text-gray-400 text-sm">{post.date}</span>
-          {post.planned && (
-            <span className="ml-2 text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
-              Noch nicht verfügbar
+          <div className="flex items-center gap-3 mb-6">
+            <span
+              className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border ${cs.tone}`}
+            >
+              {cs.label}
             </span>
-          )}
+            <span className="text-white/40 text-xs sm:text-sm">{post.date}</span>
+          </div>
+
+          <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-black text-white leading-[1.05] tracking-tight mb-6">
+            {post.title}
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/60 leading-relaxed pb-10 border-b border-white/10">
+            {post.summary}
+          </p>
         </div>
 
-        <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black text-gray-900 leading-[0.9] tracking-tight mb-10">
-          {post.title}
-        </h1>
-
-        <p className="text-xl sm:text-2xl text-gray-500 leading-relaxed mb-14 border-b border-gray-100 pb-14">
-          {post.summary}
-        </p>
-
-        {/* Hero Image Placeholder */}
+        {/* Hero Image */}
         {post.heroImage ? (
-          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 border border-gray-200">
-            <img src={post.heroImage} alt={post.title} className="w-full h-full object-cover" />
-          </div>
-        ) : post.category === "Blog" && (
-          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-16 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 flex items-center justify-center">
-            <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 30% 40%, #1e40af 0%, transparent 50%), radial-gradient(circle at 70% 60%, #1e3a8a 0%, transparent 40%)' }} />
-            <div className="relative z-10 text-center px-8">
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                Case Study
-              </div>
-              <p className="text-white/60 text-sm font-medium max-w-md">Platz für ein Hero-Bild — Bild hier als heroImage in posts.ts hinterlegen</p>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/9]">
+              <Image
+                src={post.heroImage}
+                alt={post.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
             </div>
           </div>
-        )}
+        ) : post.category === "Blog" ? (
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/9] bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a]">
+              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px]" />
+              <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[140px]" />
+            </div>
+          </div>
+        ) : null}
 
         {/* Body */}
-        <div className="space-y-8">
-          {paragraphs.map((para, i) =>
-            isHeading(para) ? (
-              <div key={i} className="pt-10 pb-2 border-t border-gray-100 mt-12 first:mt-0 first:border-t-0 first:pt-0">
-                <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">
-                  {renderFormattedText(para.replace(/^## /, ""))}
-                </h2>
-              </div>
-            ) : isBlockquote(para) ? (
-              <blockquote
-                key={i}
-                className="relative bg-gray-50 border-l-4 border-blue-900 rounded-r-2xl px-8 py-10 my-14"
-              >
-                <svg className="absolute top-5 right-6 w-12 h-12 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
-                </svg>
-                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic pr-12">
-                  {renderFormattedText(para.replace(/^> /, ""))}
-                </p>
-              </blockquote>
-            ) : isTable(para) ? (
-              <div key={i} className="my-12">{renderTable(para)}</div>
-            ) : para.startsWith("\u201E") || para.startsWith("„") ? (
-              <div key={i} className="bg-blue-50/50 border border-blue-100 rounded-2xl px-7 py-6 my-6">
-                <p className="text-lg sm:text-xl text-gray-700 leading-relaxed italic">
-                  {renderFormattedText(para)}
-                </p>
-              </div>
-            ) : (
-              <p key={i} className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                {renderFormattedText(para)}
-              </p>
-            )
-          )}
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-16">
+          {renderBody(post.body)}
         </div>
-
-        {/* ── PREV / NEXT ── */}
-        {(prev || next) && (
-          <div className="mt-20 pt-10 border-t border-gray-100 grid sm:grid-cols-2 gap-6">
-            {prev ? (
-              <Link
-                href={`/news/${prev.slug}`}
-                className="group flex flex-col gap-2 p-6 rounded-2xl border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all"
-              >
-                <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">← Älter</span>
-                <span className="text-lg font-black text-gray-900 group-hover:text-blue-900 transition-colors leading-tight">
-                  {prev.title}
-                </span>
-              </Link>
-            ) : <div />}
-            {next && (
-              <Link
-                href={`/news/${next.slug}`}
-                className="group flex flex-col gap-2 p-6 rounded-2xl border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all sm:text-right"
-              >
-                <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Neuer →</span>
-                <span className="text-lg font-black text-gray-900 group-hover:text-blue-900 transition-colors leading-tight">
-                  {next.title}
-                </span>
-              </Link>
-            )}
-          </div>
-        )}
       </article>
 
-      {/* ── CTA ── */}
-      <section className="bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
-          <div>
-            <h2 className="text-3xl sm:text-5xl font-black leading-tight mb-3">
-              Selbst ausprobieren.
-            </h2>
-            <p className="text-blue-300 text-lg">3 Monate kostenlos. Kein Risiko.</p>
+      {/* ─── PREV / NEXT ───────────────────────────────── */}
+      {(prev || next) && (
+        <section className="relative pb-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {prev ? (
+                <Link
+                  href={`/news/${prev.slug}`}
+                  className="group rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 backdrop-blur-sm p-6 transition-all"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-2 block">
+                    ← Vorheriger Beitrag
+                  </span>
+                  <span className="text-white font-bold group-hover:text-cyan-200 transition-colors leading-snug block">
+                    {prev.title}
+                  </span>
+                </Link>
+              ) : (
+                <div />
+              )}
+              {next ? (
+                <Link
+                  href={`/news/${next.slug}`}
+                  className="group rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 backdrop-blur-sm p-6 transition-all sm:text-right"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-2 block">
+                    Nächster Beitrag →
+                  </span>
+                  <span className="text-white font-bold group-hover:text-cyan-200 transition-colors leading-snug block">
+                    {next.title}
+                  </span>
+                </Link>
+              ) : (
+                <div />
+              )}
+            </div>
           </div>
-          <Link
-            href="https://signup.taskeyapp.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 px-8 py-4 bg-white text-blue-900 text-lg font-black rounded-2xl hover:bg-blue-50 transition-all shadow-xl hover:scale-[1.02]"
-          >
-            Jetzt starten →
-          </Link>
+        </section>
+      )}
+
+      {/* ─── BOTTOM CTA ────────────────────────────────── */}
+      <section className="relative pb-24 md:pb-32">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
+            <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">
+                  Selbst ausprobieren.
+                </h2>
+                <p className="text-white/60 text-base md:text-lg">
+                  3 Monate kostenlos — kein Risiko, keine Kreditkarte.
+                </p>
+              </div>
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 text-base font-bold rounded-full hover:bg-white/90 transition-colors whitespace-nowrap shrink-0"
+              >
+                Jetzt starten
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-
     </main>
   );
 }

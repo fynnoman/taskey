@@ -271,6 +271,93 @@ function PricingPage() {
         </div>
       </section>
 
+      {/* ─── NFC TAGS ───────────────────────────────────────── */}
+      <section className="relative pb-20 md:pb-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-5">
+              NFC-Tags
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-4 text-white">
+              Hardware nachbestellen.
+            </h2>
+            <p className="text-base md:text-lg text-white/60 max-w-xl mx-auto">
+              Mehr Objekte, mehr Räume, mehr Tags. Bestellen Sie jederzeit nach.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
+            {[
+              { name: "Starter",  tags: "10 NFC-Tags",  price: "6,30",  key: "starter" },
+              { name: "Pro",      tags: "50 NFC-Tags",  price: "16,10", key: "pro", recommended: true },
+              { name: "Business", tags: "150 NFC-Tags", price: "30,80", key: "business" },
+            ].map((tier) => {
+              const isRec = tier.recommended;
+              return (
+                <div
+                  key={tier.key}
+                  className={`relative rounded-3xl p-[1.5px] ${
+                    isRec
+                      ? "bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20"
+                      : "bg-white/10"
+                  }`}
+                >
+                  {isRec && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-gray-900 text-[10px] font-black tracking-[0.2em] uppercase rounded-full shadow-lg">
+                        Empfohlen
+                      </span>
+                    </div>
+                  )}
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col text-center">
+                    <span
+                      className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 ${
+                        isRec ? "text-cyan-300" : "text-white/40"
+                      }`}
+                    >
+                      {tier.name}
+                    </span>
+                    <p className="text-sm text-white/50 mb-5">{tier.tags}</p>
+                    <div className="mb-2 flex items-baseline justify-center gap-1.5">
+                      <span className="text-5xl md:text-6xl font-black leading-none text-white">
+                        {tier.price}
+                      </span>
+                      <span className="text-2xl text-white/60 font-bold">€</span>
+                    </div>
+                    <p className="text-xs text-white/40 mb-7">Inkl. Versand · Lieferung in 2–3 Tagen</p>
+
+                    <a
+                      href="mailto:kontakt@taskeyapp.com?subject=NFC-Tag%20Bestellung"
+                      className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-colors mt-auto ${
+                        isRec
+                          ? "bg-white text-gray-900 hover:bg-white/90"
+                          : "bg-white/10 text-white hover:bg-white/15 border border-white/10"
+                      }`}
+                    >
+                      Bestellen
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-white/[0.03] border border-white/10 p-5 flex items-start gap-4">
+            <div className="w-9 h-9 rounded-full bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-bold text-white text-sm mb-1">Verlustersatz inklusive</h4>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Tag verloren oder beschädigt? Wir ersetzen ihn kostenlos — bis zu 5 % der bestellten Menge pro Jahr.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── ENTERPRISE STREIFEN ────────────────────────────── */}
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
