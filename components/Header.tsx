@@ -81,11 +81,11 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
               <Image
-                src="/89294AD1-F642-46F0-8087-782AD98BE2A2_1_105_c.jpeg"
+                src="/logo_transparent.png"
                 alt="Taskey Logo - Reinigungssoftware"
                 width={36}
                 height={36}
-                className="h-8 w-8 rounded-md object-cover"
+                className="h-9 w-9 object-contain"
                 priority
                 sizes="36px"
               />
@@ -126,11 +126,19 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+                className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 rounded-full transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-full shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/40 transition-all"
               >
                 {t("nav.tryFree")}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
             </div>
@@ -186,7 +194,16 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-2.5 text-center text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+                    className="block w-full px-4 py-2.5 text-center text-sm font-semibold text-slate-700 hover:bg-slate-50 rounded-full transition-colors border border-slate-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="https://signup.taskeyapp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full px-4 py-2.5 text-center text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-full shadow-lg shadow-cyan-500/30 transition-all"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t("nav.tryFree")}
