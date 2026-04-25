@@ -71,8 +71,8 @@ export default function Header() {
         `}</style>
       </div>
 
-      {/* ─── Header (dunkel, matcht Hero-Top) ─────────────────── */}
-      <header className="relative sticky top-0 z-50 bg-gray-950 text-white">
+      {/* ─── Header (Cyan→Weiß→Cyan Gradient wie Headline) ──── */}
+      <header className="relative sticky top-0 z-50 bg-gradient-to-r from-cyan-300 via-white to-cyan-300 text-slate-900">
         <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
@@ -85,7 +85,7 @@ export default function Header() {
                 priority
                 sizes="64px"
               />
-              <span className="text-xl font-bold text-white">TASKEY</span>
+              <span className="text-xl font-bold text-slate-900">TASKEY</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -96,8 +96,8 @@ export default function Header() {
                   href={link.href}
                   className={`transition font-medium ${
                     isActive(link.href)
-                      ? "text-cyan-300 font-bold"
-                      : "text-white/70 hover:text-white"
+                      ? "text-blue-900 font-bold"
+                      : "text-slate-700 hover:text-slate-900"
                   }`}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ export default function Header() {
                 href="https://taskey.vars-development.com/support"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition font-medium"
+                className="text-slate-700 hover:text-slate-900 transition font-medium"
               >
                 {t("nav.support")}
               </a>
@@ -119,7 +119,7 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2.5 text-white/80 hover:text-white transition font-medium"
+                className="px-4 py-2.5 text-slate-800 hover:text-slate-900 transition font-medium"
               >
                 Login
               </Link>
@@ -127,7 +127,7 @@ export default function Header() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+                className="px-5 py-2.5 bg-blue-900 hover:bg-blue-800 text-white rounded-lg transition font-semibold shadow-lg shadow-blue-900/20"
               >
                 {t("nav.tryFree")}
               </Link>
@@ -135,7 +135,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-slate-900"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menü öffnen"
             >
@@ -151,7 +151,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/10 py-4 bg-gray-950/95 backdrop-blur-xl">
+            <div className="lg:hidden border-t border-slate-900/10 py-4 bg-white/95 backdrop-blur-xl">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link
@@ -160,8 +160,8 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-3 rounded-lg transition ${
                       isActive(link.href)
-                        ? "text-cyan-300 bg-white/5 font-bold"
-                        : "text-white/80 hover:bg-white/5 hover:text-white"
+                        ? "text-blue-900 bg-blue-50 font-bold"
+                        : "text-slate-700 hover:bg-slate-100"
                     }`}
                   >
                     {link.label}
@@ -171,7 +171,7 @@ export default function Header() {
                   href="https://taskey.vars-development.com/support"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition"
+                  className="px-4 py-3 text-slate-700 hover:bg-slate-100 rounded-lg transition"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("nav.support")}
@@ -184,7 +184,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 text-center text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition font-medium border border-white/15"
+                    className="block w-full px-4 py-3 text-center text-slate-800 hover:bg-slate-100 rounded-lg transition font-medium border border-slate-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Login
@@ -193,7 +193,7 @@ export default function Header() {
                     href="https://signup.taskeyapp.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+                    className="block w-full px-4 py-3 text-center bg-blue-900 hover:bg-blue-800 text-white rounded-lg transition font-semibold shadow-lg shadow-blue-900/20"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t("nav.tryFree")}
