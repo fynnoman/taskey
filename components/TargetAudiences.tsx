@@ -43,7 +43,6 @@ const audiences: Audience[] = [
       "Unvollständige Stundenzettel",
       "Leistungsnachweise im WhatsApp-Chaos",
     ],
-    href: "/gebaeudereinigung",
     cta: "Für Gebäudereiniger",
   },
   {
@@ -68,7 +67,6 @@ const audiences: Audience[] = [
       "Angebote, die zu spät rausgehen",
       "Nachkalkulation per Bauchgefühl",
     ],
-    href: "/handwerk",
     cta: "Für Handwerksbetriebe",
   },
   {
@@ -87,7 +85,6 @@ const audiences: Audience[] = [
       "Dutzende Objekte, kein Live-Überblick",
       "Nachweise, die ständig nachgefordert werden",
     ],
-    href: "/handwerk",
     cta: "Für Facility Services",
   },
   {
@@ -106,7 +103,6 @@ const audiences: Audience[] = [
       "Kolonnen auf mehreren Baustellen, kein Status",
       "Einsatzzeiten, die keiner sauber mitschreibt",
     ],
-    href: "/handwerk",
     cta: "Für GaLaBau",
   },
   {
@@ -124,7 +120,6 @@ const audiences: Audience[] = [
       "Kontrollpunkte manuell protokolliert",
       "Keine revisionssichere Nachweiskette",
     ],
-    href: "/handwerk",
     cta: "Für Sicherheitsdienste",
   },
   {
@@ -142,7 +137,6 @@ const audiences: Audience[] = [
       "Hohe Dokumentationspflicht gegenüber Auftraggebern",
       "Revisionssichere Nachweise für Audits",
     ],
-    href: "/handwerk",
     cta: "Für Industriereinigung",
   },
 ];

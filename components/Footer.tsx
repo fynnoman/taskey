@@ -124,16 +124,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/handwerk" className="text-gray-300 hover:text-white transition">
-                  Für Handwerksbetriebe
-                </Link>
-              </li>
-              <li>
-                <Link href="/gebaeudereinigung" className="text-gray-300 hover:text-white transition">
-                  Für Gebäudereinigung
-                </Link>
-              </li>
-              <li>
                 <Link href="/nfc" className="text-gray-300 hover:text-white transition">
                   NFC Zeiterfassung
                 </Link>
