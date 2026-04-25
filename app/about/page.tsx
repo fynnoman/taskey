@@ -2,11 +2,47 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import CommunicationUSP from "@/components/CommunicationUSP";
 
+const LOGO_SRC = "/89294AD1-F642-46F0-8087-782AD98BE2A2_1_105_c.jpeg";
+
 export default function AboutPage() {
   const { t } = useLanguage();
+
+  // Scroll-Position für den fallenden Logo-Background
+  const [scrollY, setScrollY] = useState(0);
+  const [docHeight, setDocHeight] = useState(1);
+
+  useEffect(() => {
+    const measure = () => {
+      setDocHeight(
+        Math.max(
+          document.documentElement.scrollHeight - window.innerHeight,
+          1
+        )
+      );
+    };
+    const onScroll = () => setScrollY(window.scrollY);
+    measure();
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  // Progress 0 → 1 über die gesamte Seite
+  const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+  // Logo fällt von -40vh über den Screen bis +130vh
+  const logoTranslateY = -40 + progress * 170; // in vh
+  // Sanfte Rotation für 3D-Feel
+  const logoRotate = -8 + progress * 24; // -8° → +16°
+  const logoTilt = -6 + progress * 12; // perspektivische Neigung
+  const logoScale = 0.95 + progress * 0.15; // leichtes Anwachsen
 
   const values = [
     {
@@ -56,6 +92,40 @@ export default function AboutPage() {
         }}
       />
 
+      {/* ─── FALLING 3D LOGO (Hintergrund, scroll-getrieben) ── */}
+      <div
+        aria-hidden="true"
+        className="fixed inset-0 z-0 pointer-events-none flex justify-center overflow-hidden"
+        style={{ perspective: "1400px" }}
+      >
+        <div
+          className="will-change-transform"
+          style={{
+            transform: `translate3d(0, ${logoTranslateY}vh, 0) rotateZ(${logoRotate}deg) rotateY(${logoTilt}deg) scale(${logoScale})`,
+            transformStyle: "preserve-3d",
+            transition: "transform 0.12s linear",
+          }}
+        >
+          <div
+            className="relative opacity-[0.07] mix-blend-screen"
+            style={{
+              filter: "drop-shadow(0 30px 80px rgba(34,211,238,0.25))",
+            }}
+          >
+            <Image
+              src={LOGO_SRC}
+              alt=""
+              width={1100}
+              height={1100}
+              priority={false}
+              sizes="(max-width: 768px) 90vw, 70vw"
+              className="w-[90vw] max-w-[1100px] h-auto rounded-[18%] object-cover select-none"
+              draggable={false}
+            />
+          </div>
+        </div>
+      </div>
+
       {/* ─── HERO ──────────────────────────────────────────── */}
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -103,7 +173,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md mb-6">
-              <Image src="/logoblue.png" alt="Taskey Logo" width={44} height={44} priority sizes="44px" />
+              <Image src={LOGO_SRC} alt="Taskey Logo" width={44} height={44} priority sizes="44px" className="rounded-lg object-cover" />
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
               {t("about.why.title")}

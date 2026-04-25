@@ -93,11 +93,11 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2.5 group" aria-label="Taskey Startseite">
               <div className="relative">
                 <Image
-                  src="/logobittt.png"
+                  src="/89294AD1-F642-46F0-8087-782AD98BE2A2_1_105_c.jpeg"
                   alt="Taskey Logo - Reinigungssoftware"
                   width={40}
                   height={40}
-                  className="h-9 w-9 transition-transform group-hover:scale-105"
+                  className="h-9 w-9 rounded-lg object-cover transition-transform group-hover:scale-105"
                   priority
                   sizes="40px"
                 />
