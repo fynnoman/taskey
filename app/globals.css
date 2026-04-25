@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #030712; /* gray-950 — matcht den Hero-Gradient oben */
   --foreground: #1f2937;
   --accent: #1e3a8a;
 }

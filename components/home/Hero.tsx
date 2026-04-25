@@ -13,7 +13,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white -mt-16 sm:-mt-20 pt-44 md:pt-56 pb-24 md:pb-32 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white pt-28 md:pt-36 pb-24 md:pb-32 overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[180px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[700px] h-[600px] bg-blue-600/15 rounded-full blur-[180px] pointer-events-none" />

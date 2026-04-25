@@ -71,8 +71,8 @@ export default function Header() {
         `}</style>
       </div>
 
-      {/* ─── Header (komplett transparent) ───────────────────── */}
-      <header className="relative sticky top-0 z-50 bg-transparent">
+      {/* ─── Header (dunkel, matcht Hero-Top) ─────────────────── */}
+      <header className="relative sticky top-0 z-50 bg-gray-950 text-white">
         <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
