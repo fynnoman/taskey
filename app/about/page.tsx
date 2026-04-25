@@ -1,21 +1,81 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import CommunicationUSP from "@/components/CommunicationUSP";
 
 export default function AboutPage() {
   const { t } = useLanguage();
 
+  const values = [
+    {
+      title: t("about.values.1.title"),
+      text: t("about.values.1.text"),
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      title: t("about.values.2.title"),
+      text: t("about.values.2.text"),
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+    },
+    {
+      title: t("about.values.3.title"),
+      text: t("about.values.3.text"),
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="py-12 sm:py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            {t("about.hero.title")}
+    <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
+      {/* Ambient Glows */}
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[700px] h-[600px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
+
+      {/* Subtiles Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* ─── HERO ──────────────────────────────────────────── */}
+      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+            </span>
+            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-cyan-300 uppercase">
+              Über Taskey
+            </span>
+          </div>
+
+          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-white">
+            <span className="bg-gradient-to-r from-cyan-300 via-white to-cyan-300 bg-clip-text text-transparent">
+              {t("about.hero.title")}
+            </span>
           </h1>
-          <p className="text-xl text-gray-600">
+
+          <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed">
             {t("about.hero.subtitle")}
           </p>
         </div>
@@ -23,149 +83,225 @@ export default function AboutPage() {
 
       <CommunicationUSP variant="compact" />
 
-      {/* Mission Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-6 text-center">
-              {t("about.mission.p1")}
-            </p>
-            <p className="text-xl text-gray-700 text-center">
-              {t("about.mission.p2")}
-            </p>
-          </div>
+      {/* ─── MISSION ───────────────────────────────────────── */}
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-[10px] sm:text-xs font-black text-cyan-300 uppercase tracking-[0.3em] mb-6">
+            Mission
+          </p>
+          <p className="text-2xl md:text-3xl text-white font-bold leading-snug mb-8 tracking-tight">
+            {t("about.mission.p1")}
+          </p>
+          <p className="text-lg md:text-xl text-white/60 leading-relaxed">
+            {t("about.mission.p2")}
+          </p>
         </div>
       </section>
 
-      {/* Why We Built Taskey */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="mb-8">
-              <Image 
-                src="/logoblue.png" 
-                alt="Taskey Logo" 
-                width={128}
-                height={128}
-                className="mx-auto"
-                priority
-                sizes="128px"
-              />
+      {/* ─── PROBLEM / LÖSUNG ──────────────────────────────── */}
+      <section className="relative py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md mb-6">
+              <Image src="/logoblue.png" alt="Taskey Logo" width={44} height={44} priority sizes="44px" />
             </div>
-            <h2 className="text-4xl font-bold text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
               {t("about.why.title")}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-xl p-8 shadow-md">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+
+          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+            {/* Problem */}
+            <div className="relative rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm p-8 md:p-10">
+              <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-amber-300 bg-amber-500/10 border border-amber-400/20 rounded-full mb-5">
+                Problem
+              </span>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
                 {t("about.why.problem.title")}
               </h3>
-              <p className="text-gray-700 text-center">
+              <p className="text-white/60 text-base md:text-lg leading-relaxed">
                 {t("about.why.problem.text")}
               </p>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-md">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                {t("about.why.solution.title")}
-              </h3>
-              <p className="text-gray-700 text-center">
-                {t("about.why.solution.text")}
-              </p>
+
+            {/* Lösung */}
+            <div className="relative rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20">
+              <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-8 md:p-10 h-full">
+                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-5">
+                  Lösung
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
+                  {t("about.why.solution.title")}
+                </h3>
+                <p className="text-white/70 text-base md:text-lg leading-relaxed">
+                  {t("about.why.solution.text")}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            {t("about.values.title")}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t("about.values.1.title")}</h3>
-              <p className="text-gray-600">{t("about.values.1.text")}</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t("about.values.2.title")}</h3>
-              <p className="text-gray-600">{t("about.values.2.text")}</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{t("about.values.3.title")}</h3>
-              <p className="text-gray-600">{t("about.values.3.text")}</p>
-            </div>
+      {/* ─── VALUES ────────────────────────────────────────── */}
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[10px] sm:text-xs font-black text-cyan-300 uppercase tracking-[0.3em] mb-4">
+              Werte
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+              {t("about.values.title")}
+            </h2>
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="mb-8">
-              <Image src="/logoblue.png" alt="Taskey Logo" width={128} height={128} className="mx-auto" sizes="128px" />
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900">{t("about.team.title")}</h2>
-          </div>
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{t("about.team.founders")}</h3>
-            <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
-              {[1, 2].map((i) => (
-                <div key={i} className="text-center">
-                  <div className="w-48 h-48 rounded-full mx-auto mb-4 overflow-hidden relative">
-                    <Image src={i === 1 ? "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg" : "/Gemini_Generated_Image_e09ae2e09ae2e09a-2.png"} alt={i === 1 ? "Fynn-Luca Schulz" : "Julian Stosse"} fill className="object-cover" sizes="192px" />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-1 text-xl">{i === 1 ? 'Fynn-Luca Schulz' : 'Julian Stosse'}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {values.map((v, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 backdrop-blur-sm p-7 transition-all hover:-translate-y-1"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-400/20 flex items-center justify-center mb-5 text-cyan-300">
+                  {v.icon}
                 </div>
-              ))}
-            </div>
+                <h3 className="text-xl font-black text-white mb-2 leading-tight">{v.title}</h3>
+                <p className="text-white/55 text-sm md:text-base leading-relaxed">{v.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">{t("about.contact.title")}</h2>
-          <div className="bg-gray-50 rounded-xl p-8 mb-8">
-            <div className="grid md:grid-cols-3 gap-6 text-left">
+      {/* ─── TEAM ──────────────────────────────────────────── */}
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[10px] sm:text-xs font-black text-cyan-300 uppercase tracking-[0.3em] mb-4">
+              {t("about.team.founders")}
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+              {t("about.team.title")}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {[
+              { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: "Co-Founder & CEO" },
+              { name: "Julian Stosse",     img: "/Gemini_Generated_Image_e09ae2e09ae2e09a-2.png",      role: "Co-Founder & CTO" },
+            ].map((m) => (
+              <div
+                key={m.name}
+                className="relative rounded-3xl bg-gradient-to-br from-[#13203a] to-[#0d1a2e] border border-white/10 p-8 text-center overflow-hidden"
+              >
+                <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="relative">
+                  <div className="w-40 h-40 rounded-full mx-auto mb-5 overflow-hidden relative ring-2 ring-white/10">
+                    <Image
+                      src={m.img}
+                      alt={m.name}
+                      fill
+                      className="object-cover"
+                      sizes="160px"
+                    />
+                  </div>
+                  <h3 className="text-xl font-black text-white mb-1">{m.name}</h3>
+                  <p className="text-cyan-300 text-sm font-bold tracking-wide">{m.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CONTACT ───────────────────────────────────────── */}
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-[10px] sm:text-xs font-black text-cyan-300 uppercase tracking-[0.3em] mb-4">
+              Kontakt
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+              {t("about.contact.title")}
+            </h2>
+          </div>
+
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-10 overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div>
-                <h4 className="font-bold text-gray-900 mb-2">{t("about.contact.phone")}</h4>
-                <a href="tel:+4915168488999" className="text-blue-900 hover:underline">+49 151 684 88999</a>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-3">
+                  {t("about.contact.phone")}
+                </h4>
+                <a
+                  href="tel:+4915168488999"
+                  className="text-white hover:text-cyan-300 font-bold text-lg transition-colors"
+                >
+                  +49 151 684 88999
+                </a>
               </div>
               <div>
-                <h4 className="font-bold text-gray-900 mb-2">{t("about.contact.email")}</h4>
-                <a href="mailto:fynn@taskeyapp.com" className="text-blue-900 hover:underline">fynn@taskeyapp.com</a>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-3">
+                  {t("about.contact.email")}
+                </h4>
+                <a
+                  href="mailto:fynn@taskeyapp.com"
+                  className="text-white hover:text-cyan-300 font-bold text-lg break-all transition-colors"
+                >
+                  fynn@taskeyapp.com
+                </a>
               </div>
               <div>
-                <h4 className="font-bold text-gray-900 mb-2">{t("about.contact.address")}</h4>
-                <p className="text-gray-700">In der Acht 44<br />66333 Völklingen<br />Deutschland</p>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-3">
+                  {t("about.contact.address")}
+                </h4>
+                <p className="text-white/70 leading-relaxed">
+                  In der Acht 44<br />
+                  66333 Völklingen<br />
+                  Deutschland
+                </p>
               </div>
             </div>
           </div>
-          <p className="text-gray-600">
+
+          <p className="text-white/50 text-sm text-center mt-8">
             {t("about.contact.more")}{" "}
-            <a href="/impressum" className="text-blue-900 hover:underline">{t("about.contact.imprint")}</a>{" "}
+            <Link href="/impressum" className="text-cyan-300 hover:text-cyan-200 font-medium">
+              {t("about.contact.imprint")}
+            </Link>{" "}
             {t("about.contact.and")}{" "}
-            <a href="/datenschutz" className="text-blue-900 hover:underline">{t("about.contact.privacy")}</a>.
+            <Link href="/datenschutz" className="text-cyan-300 hover:text-cyan-200 font-medium">
+              {t("about.contact.privacy")}
+            </Link>
+            .
           </p>
+        </div>
+      </section>
+
+      {/* ─── BOTTOM CTA ────────────────────────────────────── */}
+      <section className="relative pb-24 md:pb-32 pt-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
+            <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">
+                  Selbst ausprobieren.
+                </h2>
+                <p className="text-white/60 text-base md:text-lg">
+                  3 Monate kostenlos — kein Risiko, keine Kreditkarte.
+                </p>
+              </div>
+              <a
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 text-base font-bold rounded-full hover:bg-white/90 transition-colors whitespace-nowrap shrink-0"
+              >
+                Jetzt starten
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
