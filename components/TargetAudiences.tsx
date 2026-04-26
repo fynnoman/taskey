@@ -20,7 +20,6 @@ type Audience = {
   subtitle: string;
   keywords: string[];
   pains: string[];
-  href: string;
   cta: string;
 };
 
@@ -161,18 +160,17 @@ export default function TargetAudiences({
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {audiences.map((a) => (
-              <Link
+              <div
                 key={a.title}
-                href={a.href}
-                className="group bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-2xl p-4 sm:p-5 transition-all flex flex-col items-start"
+                className="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-start"
               >
-                <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 group-hover:border-blue-300 text-blue-700 flex items-center justify-center mb-3" aria-hidden>
+                <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-700 flex items-center justify-center mb-3" aria-hidden>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d={a.iconPath} />
                   </svg>
                 </div>
                 <span className="text-sm font-bold text-gray-900 leading-tight">{a.title}</span>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -317,12 +315,6 @@ export default function TargetAudiences({
                 className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
               >
                 Kostenlos starten
-              </Link>
-              <Link
-                href={current.href}
-                className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base text-center"
-              >
-                {current.cta}
               </Link>
             </div>
           </div>
