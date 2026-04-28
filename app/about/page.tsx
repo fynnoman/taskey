@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import CommunicationUSP from "@/components/CommunicationUSP";
 
 const LOGO_SRC = "/89294AD1-F642-46F0-8087-782AD98BE2A2_1_105_c.jpeg";
 
@@ -92,40 +91,6 @@ export default function AboutPage() {
         }}
       />
 
-      {/* ─── FALLING 3D LOGO (Hintergrund, scroll-getrieben) ── */}
-      <div
-        aria-hidden="true"
-        className="fixed inset-0 z-0 pointer-events-none flex justify-center overflow-hidden"
-        style={{ perspective: "1400px" }}
-      >
-        <div
-          className="will-change-transform"
-          style={{
-            transform: `translate3d(0, ${logoTranslateY}vh, 0) rotateZ(${logoRotate}deg) rotateY(${logoTilt}deg) scale(${logoScale})`,
-            transformStyle: "preserve-3d",
-            transition: "transform 0.12s linear",
-          }}
-        >
-          <div
-            className="relative opacity-[0.07] mix-blend-screen"
-            style={{
-              filter: "drop-shadow(0 30px 80px rgba(34,211,238,0.25))",
-            }}
-          >
-            <Image
-              src={LOGO_SRC}
-              alt=""
-              width={1100}
-              height={1100}
-              priority={false}
-              sizes="(max-width: 768px) 90vw, 70vw"
-              className="w-[90vw] max-w-[1100px] h-auto rounded-[18%] object-cover select-none"
-              draggable={false}
-            />
-          </div>
-        </div>
-      </div>
-
       {/* ─── HERO ──────────────────────────────────────────── */}
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -150,8 +115,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
-      <CommunicationUSP variant="compact" />
 
       {/* ─── MISSION ───────────────────────────────────────── */}
       <section className="relative py-20 md:py-28">

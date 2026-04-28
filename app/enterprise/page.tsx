@@ -210,37 +210,6 @@ export default function EnterprisePage() {
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Perfekt für
-              </h2>
-              <p className="text-xl text-gray-300">
-                Diese Unternehmen profitieren von Enterprise
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: "/kran.png", title: "Große Bauunternehmen", desc: "Mit mehreren Standorten und hunderten Mitarbeitern" },
-                { icon: "/facilty.png", title: "Facility Management", desc: "Komplexe Prozesse und viele Kundenstandorte" },
-                { icon: "/truck.png", title: "Logistik-Konzerne", desc: "Große Flotten und internationale Teams" },
-                { icon: "/fabric.png", title: "Industrie-Betriebe", desc: "Spezielle Anforderungen und Sicherheitsstandards" },
-              ].map((useCase, index) => (
-                <div key={index} className="p-6 text-center">
-                  <div className="flex justify-center mb-3">
-                    <img src={useCase.icon} alt={useCase.title} className="w-20 h-20 opacity-100" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{useCase.title}</h3>
-                  <p className="text-sm text-gray-300">{useCase.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Commitment Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

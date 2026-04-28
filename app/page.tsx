@@ -128,6 +128,25 @@ export default function Home() {
 
         {/* 11. Einwände abbauen */}
         <FAQ />
+
+        {/* Cross-links to specialized pages — dunkler Abschluss, passt zu Footer */}
+        <div className="bg-gradient-to-b from-gray-950 to-[#0a1628] border-t border-white/5">
+          <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-white/50">
+            <span className="flex items-center gap-2">
+              <span>Speziell für Handwerk &amp; Bau?</span>
+              <a href="/handwerk" className="text-cyan-300 font-semibold hover:text-cyan-200 transition-colors">
+                Handwerker-Version →
+              </a>
+            </span>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="flex items-center gap-2">
+              <span>Speziell für Gebäudereinigung?</span>
+              <a href="/gebaeudereinigung" className="text-cyan-300 font-semibold hover:text-cyan-200 transition-colors">
+                Reiniger-Version →
+              </a>
+            </span>
+          </div>
+        </div>
       </main>
     </>
   );

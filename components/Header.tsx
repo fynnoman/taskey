@@ -18,7 +18,7 @@ export default function Header() {
     { href: "/features",        label: t("nav.features") },
     { href: "/pricing",         label: t("nav.pricing") },
     { href: "/news",            label: "News" },
-    { href: "/partnerschaften", label: "Partner werden" },
+    { href: "/partnerschaften", label: "Pr artner werden" },
     { href: "/about",           label: t("nav.about") },
   ];
 
