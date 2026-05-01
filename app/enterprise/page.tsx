@@ -13,7 +13,7 @@ export default function EnterprisePage() {
   return (
     <>
       <Head>
-        <link rel="preload" href="/91A1A855-C7A4-4904-9E46-43FCEC6C5AC5.png" as="image" />
+        <link rel="preload" href="/91A1A855-C7A4-4904-9E46-43FCEC6C5AC5.webp" as="image" />
       </Head>
       <EnterpriseApplicationModal isOpen={enterpriseModalOpen} onClose={() => setEnterpriseModalOpen(false)} />
       
@@ -23,7 +23,7 @@ export default function EnterprisePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/91A1A855-C7A4-4904-9E46-43FCEC6C5AC5.png)',
+            backgroundImage: 'url(/91A1A855-C7A4-4904-9E46-43FCEC6C5AC5.webp)',
           }}
         />
         {/* Dark Overlay */}
@@ -234,7 +234,7 @@ export default function EnterprisePage() {
               <div className="relative backdrop-blur-xl bg-gray-500/20 rounded-3xl p-8 shadow-2xl border border-white/10">
                 <div className="relative">
                   <img 
-                    src="/353E4782-1D75-4428-945C-6C7B500A53D0.png" 
+                    src="/353E4782-1D75-4428-945C-6C7B500A53D0.webp" 
                     alt="Taskey Enterprise Team" 
                     className="w-full h-auto rounded-2xl shadow-xl"
                     loading="lazy"

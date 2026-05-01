@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, lazy, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 const EnterpriseApplicationModal = lazy(() => import("../../components/EnterpriseApplicationModal"));
@@ -46,69 +45,17 @@ type Tier = {
 
 const reinigungTiers: Tier[] = [
   {
-    key: "professional",
-    name: "Professional",
+    key: "beginner",
+    name: "Beginner",
     price: "119",
     unit: "€ / Monat",
-    perObject: "+ 6,90 € pro Objekt",
+    perObject: "+ 4,40 € pro Objekt",
     features: [
       "Unbegrenzte Mitarbeiter",
       "NFC-Leistungsnachweis",
       "Automatische Zeiterfassung",
       "Einsatzplanung",
       "Bis 30 NFC-Tags",
-      "E-Mail-Support",
-      "DATEV-Export",
-    ],
-    cta: { label: "3 Monate kostenlos", href: "https://signup.taskeyapp.com" },
-  },
-  {
-    key: "business",
-    name: "Business",
-    price: "229",
-    unit: "€ / Monat",
-    perObject: "+ 5,90 € pro Objekt",
-    features: [
-      "Alles aus Professional",
-      "Bis 75 NFC-Tags",
-      "Routenoptimierung",
-      "PDF-, CSV- & Excel-Export",
-      "Chat-Support (24h)",
-      "Kostenloses Setup",
-      "DATEV-Export",
-    ],
-    cta: { label: "3 Monate kostenlos", href: "https://signup.taskeyapp.com" },
-    highlighted: true,
-  },
-  {
-    key: "enterprise",
-    name: "Enterprise",
-    price: "489",
-    unit: "€ / Monat",
-    perObject: "+ 4,90 € pro Objekt",
-    features: [
-      "Alles aus Business",
-      "Bis 200 NFC-Tags",
-      "Priority-Support & SLA",
-      "Individuelle Anpassungen",
-      "Dedizierter Ansprechpartner",
-      "API-Zugang",
-      "DATEV-Export",
-    ],
-    cta: { label: "Kontakt aufnehmen", modal: true },
-  },
-];
-
-const handwerkTiers: Tier[] = [
-  {
-    key: "start",
-    name: "Start",
-    price: "11,79",
-    unit: "€ / Mitarbeiter / Monat",
-    features: [
-      "Zeiterfassung",
-      "Auftragsplanung",
-      "3 NFC-Tags",
       "50 GB Speicher",
       "E-Mail-Support",
       "DATEV-Export",
@@ -116,35 +63,37 @@ const handwerkTiers: Tier[] = [
     cta: { label: "3 Monate kostenlos", href: "https://signup.taskeyapp.com" },
   },
   {
-    key: "grow",
-    name: "Grow",
-    price: "21,78",
-    unit: "€ / Mitarbeiter / Monat",
+    key: "professional",
+    name: "Professional",
+    price: "229",
+    unit: "€ / Monat",
+    perObject: "+ 4,80 € pro Objekt",
     features: [
-      "Alles aus Start",
-      "15 NFC-Tags",
+      "Alles aus Beginner",
+      "Bis 75 NFC-Tags",
       "250 GB Speicher",
-      "Margen-Rechner",
-      "PDF- & Excel-Export",
-      "Chat-Support",
-      "DATEV-Export",
+      "Routenoptimierung",
+      "PDF-, CSV- & Excel-Export",
+      "Chat-Support (24h)",
+      "Kostenloses Setup",
     ],
     cta: { label: "3 Monate kostenlos", href: "https://signup.taskeyapp.com" },
     highlighted: true,
   },
   {
-    key: "scale",
-    name: "Scale",
-    price: "29,77",
-    unit: "€ / Mitarbeiter / Monat",
+    key: "business",
+    name: "Business",
+    price: "389",
+    unit: "€ / Monat",
+    perObject: "+ 5,10 € pro Objekt",
     features: [
-      "Alles aus Grow",
-      "45 NFC-Tags",
+      "Alles aus Professional",
+      "Bis 200 NFC-Tags",
       "1 TB Speicher",
-      "Taskey Share",
+      "Erweiterte Auswertungen",
       "Priority-Support",
-      "API-Zugang",
-      "DATEV-Export",
+      "Mehrere Standorte",
+      "Onboarding-Session",
     ],
     cta: { label: "3 Monate kostenlos", href: "https://signup.taskeyapp.com" },
   },
@@ -152,14 +101,9 @@ const handwerkTiers: Tier[] = [
 
 // ───── Page ─────────────────────────────────────────────────────────
 function PricingPage() {
-  const searchParams = useSearchParams();
-  const initialModel = searchParams.get("model");
-  const [activeModel, setActiveModel] = useState<"reinigung" | "handwerk">(
-    initialModel === "handwerk" ? "handwerk" : "reinigung"
-  );
   const [enterpriseModalOpen, setEnterpriseModalOpen] = useState(false);
 
-  const tiers = activeModel === "reinigung" ? reinigungTiers : handwerkTiers;
+  const tiers = reinigungTiers;
 
   return (
     <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
@@ -205,49 +149,13 @@ function PricingPage() {
         </div>
       </section>
 
-      {/* ─── MODEL TOGGLE ───────────────────────────────────── */}
-      <section className="relative pb-8">
-        <div className="max-w-md mx-auto px-4">
-          <p className="text-center text-xs uppercase tracking-[0.3em] font-bold text-white/40 mb-4">
-            Wählen Sie Ihre Branche
-          </p>
-          <div className="flex bg-white/5 border border-white/10 rounded-full p-1 backdrop-blur-md">
-            <button
-              onClick={() => setActiveModel("reinigung")}
-              className={`flex-1 py-3 px-4 rounded-full text-sm font-bold transition-all ${
-                activeModel === "reinigung"
-                  ? "bg-white text-gray-900 shadow-lg"
-                  : "text-white/60 hover:text-white"
-              }`}
-            >
-              Gebäudereinigung
-            </button>
-            <button
-              onClick={() => setActiveModel("handwerk")}
-              className={`flex-1 py-3 px-4 rounded-full text-sm font-bold transition-all ${
-                activeModel === "handwerk"
-                  ? "bg-white text-gray-900 shadow-lg"
-                  : "text-white/60 hover:text-white"
-              }`}
-            >
-              Handwerk
-            </button>
-          </div>
-          <p className="text-center text-[11px] text-white/40 mt-4">
-            {activeModel === "reinigung"
-              ? "Abrechnung pro Objekt — ideal für Reinigungsbetriebe."
-              : "Abrechnung pro Mitarbeiter — ideal für Handwerksbetriebe."}
-          </p>
-        </div>
-      </section>
-
       {/* ─── PRICING CARDS ──────────────────────────────────── */}
-      <section className="relative pb-20 md:pb-28">
+      <section className="relative pt-4 pb-20 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto">
             {tiers.map((tier) => (
               <PricingCard
-                key={`${activeModel}-${tier.key}`}
+                key={tier.key}
                 tier={tier}
                 onEnterpriseClick={() => setEnterpriseModalOpen(true)}
               />
@@ -361,30 +269,61 @@ function PricingPage() {
       {/* ─── ENTERPRISE STREIFEN ────────────────────────────── */}
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full">
+              Zusatzoption
+            </span>
+          </div>
           <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
-            <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
-              <div className="max-w-xl">
+            <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="relative grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-12 items-center">
+              <div>
                 <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-4">
                   Enterprise
                 </span>
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">
                   Für Teams ab 50 Mitarbeitern.
                 </h2>
-                <p className="text-white/60 text-base md:text-lg">
-                  Individuelle Verträge, dedizierter Ansprechpartner, eigenes Onboarding & SLA.
+                <p className="text-white/60 text-base md:text-lg mb-6">
+                  Individuelle Verträge, dedizierter Ansprechpartner, eigenes Onboarding & SLA — plus exklusive Features, die nur Enterprise-Kunden erhalten.
                 </p>
+
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-white/80 mb-8">
+                  {[
+                    "Unbegrenzte NFC-Tags",
+                    "Unbegrenzter Speicher",
+                    "API-Zugang & Webhooks",
+                    "SSO / SAML",
+                    "Custom-Integrationen",
+                    "Dedizierter Account-Manager",
+                    "Priority-Support & SLA",
+                    "Individuelle Anpassungen",
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2.5">
+                      <CheckIcon />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex flex-col sm:flex-row md:flex-col gap-3 flex-shrink-0">
+
+              <div className="flex flex-col gap-3">
+                <div className="rounded-2xl bg-white/[0.04] border border-white/10 p-5">
+                  <p className="text-[10px] font-black tracking-[0.3em] uppercase text-white/40 mb-2">Preis</p>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    Auf Anfrage — individuell auf Ihren Betrieb zugeschnitten.
+                  </p>
+                </div>
                 <Link
                   href="/enterprise"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-colors"
                 >
                   Mehr erfahren
                 </Link>
                 <button
                   onClick={() => setEnterpriseModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-900 text-sm font-bold rounded-full hover:bg-white/90 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-gray-900 text-sm font-bold rounded-full hover:bg-white/90 transition-colors"
                 >
                   Enterprise anfragen
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

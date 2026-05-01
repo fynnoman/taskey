@@ -301,7 +301,7 @@ export default function PartnerschaftenPage() {
             {/* Bild */}
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
               <Image
-                src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.png"
+                src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.webp"
                 alt="Taskey Partner – MG Gebäudeservice"
                 width={1200}
                 height={800}

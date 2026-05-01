@@ -218,7 +218,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: "Co-Founder & CEO" },
-              { name: "Julian Stosse",     img: "/Gemini_Generated_Image_e09ae2e09ae2e09a-2.png",      role: "Co-Founder & CTO" },
+              { name: "Julian Stosse",     img: "/Gemini_Generated_Image_e09ae2e09ae2e09a-2.webp",      role: "Co-Founder & CTO" },
             ].map((m) => (
               <div
                 key={m.name}
