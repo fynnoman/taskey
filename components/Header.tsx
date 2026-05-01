@@ -124,10 +124,10 @@ function NavInner({
         <div className="hidden lg:flex items-center space-x-3">
           <LanguageSwitcher />
           <Link
-            href="https://dashboard.taskeyapp.com/login"
+            href="https://dashboard.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2.5 text-white/80 hover:text-white transition font-medium"
+            className="px-5 py-2.5 border border-white/25 hover:border-white/50 text-white rounded-lg transition font-semibold hover:bg-white/5"
           >
             Login
           </Link>
@@ -189,7 +189,7 @@ function NavInner({
                 <LanguageSwitcher />
               </div>
               <Link
-                href="https://dashboard.taskeyapp.com/login"
+                href="https://dashboard.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full px-4 py-3 text-center text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition font-medium border border-white/15"
