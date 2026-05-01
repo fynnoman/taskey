@@ -83,7 +83,7 @@ const reinigungTiers: Tier[] = [
   {
     key: "business",
     name: "Business",
-    price: "389",
+    price: "469",
     unit: "€ / Monat",
     perObject: "+ 5,10 € pro Objekt",
     features: [
