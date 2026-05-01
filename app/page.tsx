@@ -16,21 +16,19 @@ const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 
 export const metadata: Metadata = {
-  title: "Taskey – Handwerkersoftware, Reinigungssoftware & Facility Management Software | All-in-One",
-  description: "Die All-in-One Software für Handwerk, Gebäudereinigung, Facility Management, GaLaBau, Sicherheitsdienste und Industriereinigung. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Angebote, Rechnungen & DATEV – in einem System statt 5 Abos. DSGVO, Made in Germany. 3 Monate kostenlos.",
+  title: "Taskey – Reinigungssoftware & Software für Gebäudereinigung | All-in-One",
+  description: "Die All-in-One Reinigungssoftware für Gebäudereinigung, Unterhaltsreinigung, Glasreinigung, Industrie- und Klinikreinigung. NFC-Objektnachweise, Zeiterfassung, Einsatzplanung, Angebote, Rechnungen & DATEV – in einem System statt 5 Abos. DSGVO, Made in Germany. 3 Monate kostenlos.",
   keywords: [
-    "Handwerkersoftware", "Software Handwerk", "Software Gebäudereinigung",
-    "Reinigungssoftware", "Facility Management Software", "All-in-One Software Handwerk",
-    "Komplettlösung Handwerksbetrieb", "Elektriker Software", "SHK Software",
-    "Maler Software", "Dachdecker Software", "GaLaBau Software",
-    "Hausmeisterservice Software", "Software Sicherheitsdienst",
-    "NFC Zeiterfassung", "Zeiterfassung Handwerk", "Zeiterfassung Gebäudereinigung",
-    "Einsatzplanung Handwerk", "Tourenplanung Handwerk", "Monteur Einsatzplanung",
-    "Nachkalkulation Handwerk", "DATEV Export Handwerk",
-    "Alternative zu Craftnote", "Alternative zu openHandwerk",
-    "Alternative zu ToolTime", "Handwerkersoftware Vergleich",
-    "Handwerk digitalisieren", "Reinigungsfirma digitalisieren",
-    "Made in Germany", "DSGVO-konforme Software"
+    "Reinigungssoftware", "Software Gebäudereinigung", "Software Reinigungsfirma",
+    "Software Unterhaltsreinigung", "Glasreinigung Software", "Industriereinigung Software",
+    "Software Klinikreinigung", "Hygienereinigung Software", "Software Hotelreinigung",
+    "Housekeeping Software", "Reinigungsmanagement Software", "Tourenplanung Reinigung",
+    "Revierreinigung App", "Schichtplanung Reinigungsfirma", "Einsatzplanung Reinigung",
+    "NFC Zeiterfassung Reinigung", "Objektnachweis NFC", "Qualitätskontrolle Reinigung",
+    "Reinigungsplan digital", "Stundenzettel Reinigung", "Leistungsnachweis Reinigung",
+    "DATEV Export Reinigungsfirma", "Reinigungsfirma digitalisieren",
+    "Alternative zu Clean Manager", "Alternative zu Reinigungssoftware",
+    "Software für Reinigungsbetrieb", "Made in Germany", "DSGVO-konforme Reinigungssoftware"
   ],
   alternates: {
     canonical: "https://www.taskeyapp.com",
@@ -56,7 +54,7 @@ export default function Home() {
       "ratingValue": "4.8",
       "ratingCount": "250"
     },
-    "description": "Betriebssoftware für Handwerk, Gebäudereinigung und Facility Management. Zeiterfassung, NFC-Nachweise, Einsatzplanung und Live-Margen in einer App.",
+    "description": "Reinigungssoftware für Gebäudereinigung, Unterhaltsreinigung, Glas-, Industrie- und Klinikreinigung. NFC-Objektnachweise, Zeiterfassung, Einsatzplanung und Live-Margen in einer App.",
     "softwareVersion": "2.0",
     "author": {
       "@type": "Organization",
@@ -108,7 +106,7 @@ export default function Home() {
         {/* 4. Soziale Validierung: Für wen ist Taskey? */}
         <TargetAudiences variant="dark" />
 
-        {/* 5. Branchen-Breite (SEO + Relevanz) */}
+        {/* 5. Testimonials aus der Reinigungsbranche */}
         <Branchen />
 
         {/* 6. Produkt-Show: konkrete Features im Einsatz */}
@@ -128,25 +126,6 @@ export default function Home() {
 
         {/* 11. Einwände abbauen */}
         <FAQ />
-
-        {/* Cross-links to specialized pages — dunkler Abschluss, passt zu Footer */}
-        <div className="bg-gradient-to-b from-gray-950 to-[#0a1628] border-t border-white/5">
-          <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-white/50">
-            <span className="flex items-center gap-2">
-              <span>Speziell für Handwerk &amp; Bau?</span>
-              <a href="/handwerk" className="text-cyan-300 font-semibold hover:text-cyan-200 transition-colors">
-                Handwerker-Version →
-              </a>
-            </span>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <span className="flex items-center gap-2">
-              <span>Speziell für Gebäudereinigung?</span>
-              <a href="/gebaeudereinigung" className="text-cyan-300 font-semibold hover:text-cyan-200 transition-colors">
-                Reiniger-Version →
-              </a>
-            </span>
-          </div>
-        </div>
       </main>
     </>
   );

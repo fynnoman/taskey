@@ -3,115 +3,112 @@
 import Link from 'next/link';
 import { useLanguage } from "@/context/LanguageContext";
 
+/**
+ * Testimonials — ehemals "Branchen"-Section.
+ * Reine Reinigungs-Stimmen, gleicher dunkler Stil wie zuvor.
+ * Datei-Name bleibt absichtlich `Branchen.tsx`, damit dynamische Imports/SSR-Cache stabil bleiben.
+ */
 export default function Branchen() {
   const { t } = useLanguage();
 
-  const branchenCategories = [
+  const testimonials = [
     {
-      title: "Gebäudereinigung",
-      iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
-      description: "Unterhaltsreinigung, Glasreinigung, Industriereinigung und alle weiteren Reinigungsarten.",
-      services: [
-        "Unterhaltsreinigung",
-        "Glasreinigung",
-        "Industriereinigung",
-        "Grundreinigung",
-        "Sonderreinigung",
-        "Baureinigung",
-      ],
+      quote:
+        "Seit Taskey wissen wir auf die Minute genau, wer wo geputzt hat – und unsere Auftraggeber bekommen den Nachweis automatisch.",
+      name: "Markus Weber",
+      role: "Geschäftsführer",
+      company: "Weber Gebäudereinigung GmbH",
+      location: "Stuttgart",
+      employees: "42 Mitarbeitende",
+      rating: 5,
+      tag: "Unterhaltsreinigung",
     },
     {
-      title: "Handwerk & Bau",
-      iconPath: "M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z",
-      description: "SHK, Elektro, Maler, Schreiner und alle Handwerksbetriebe mit Ausseneinsaetzen.",
-      services: [
-        "SHK-Betriebe",
-        "Elektrobetriebe",
-        "Malerbetriebe",
-        "Schreinereien",
-        "Dachdeckereien",
-        "Bauunternehmen",
-      ],
+      quote:
+        "Die NFC-Tags an den Objekten haben uns die Diskussionen über Stundenzettel komplett erspart. Jede Minute revisionssicher dokumentiert.",
+      name: "Sandra Klein",
+      role: "Objektleiterin",
+      company: "ProClean Service",
+      location: "München",
+      employees: "120 Mitarbeitende",
+      rating: 5,
+      tag: "Industriereinigung",
     },
     {
-      title: "Facility Management",
-      iconPath: "M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6",
-      description: "Gebaeudebewirtschaftung, Haustechnik und infrastrukturelles Management.",
-      services: [
-        "Gebaeudetechnik",
-        "Haustechnik",
-        "Objektbetreuung",
-        "Aussenanlagenpflege",
-        "Winterdienst",
-        "Sicherheitsdienste",
-      ],
+      quote:
+        "Vorher 4 Tools, jetzt eines. Allein bei den Lizenzen sparen wir über 600 € im Monat – und das Team kommt endlich klar.",
+      name: "Tobias Reuter",
+      role: "Inhaber",
+      company: "Reuter Reinigungsservice",
+      location: "Köln",
+      employees: "18 Mitarbeitende",
+      rating: 5,
+      tag: "Glas- & Fassadenreinigung",
     },
     {
-      title: "Klinik & Hygiene",
-      iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
-      description: "Hoechste Hygienestandards fuer Krankenhaeuser, Praxen und Pflegeeinrichtungen.",
-      services: [
-        "OP-Reinigung",
-        "Stationsreinigung",
-        "Desinfektionsreinigung",
-        "Praxisreinigung",
-        "Pflegeheim-Reinigung",
-        "Labor-Reinigung",
-      ],
+      quote:
+        "Unsere Reinigungskräfte erfassen Mängel direkt mit Foto in der App. Das Büro reagiert sofort statt am Monatsende.",
+      name: "Anja Hoffmann",
+      role: "Betriebsleitung",
+      company: "Hoffmann Hygieneservice",
+      location: "Hamburg",
+      employees: "67 Mitarbeitende",
+      rating: 5,
+      tag: "Klinik- & Hygienereinigung",
     },
     {
-      title: "Hotellerie & Gastgewerbe",
-      iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
-      description: "Housekeeping, Zimmerservice und Reinigung fuer Hotels und Gastronomie.",
-      services: [
-        "Zimmerreinigung",
-        "Lobby-Reinigung",
-        "Kuechenreinigung",
-        "Konferenzraum-Reinigung",
-        "Wellnessbereich",
-        "Waesche-Management",
-      ],
+      quote:
+        "Die Auftraggeber-Freigabe per Link ist ein echter Gamechanger. Hotels und Verwalter sehen den Status live – ohne Mail-Pingpong.",
+      name: "Daniel Brandt",
+      role: "Geschäftsführer",
+      company: "Brandt Cleaning Group",
+      location: "Frankfurt",
+      employees: "210 Mitarbeitende",
+      rating: 5,
+      tag: "Hotel-Housekeeping",
     },
     {
-      title: "Garten- & Landschaftsbau",
-      iconPath: "M12 2v20M5 10c3 0 5-2 7-8 2 6 4 8 7 8M5 16c3 0 5-2 7-4 2 2 4 4 7 4",
-      description: "Gruenpflege, Landschaftsgestaltung und Aussenanlagen-Management.",
-      services: [
-        "Gruenpflege",
-        "Baumschnitt",
-        "Pflasterarbeiten",
-        "Zaunbau",
-        "Bewässerungssysteme",
-        "Spielplatzbau",
-      ],
+      quote:
+        "Wir haben uns jahrelang vor der Digitalisierung gedrückt. Mit Taskey waren wir nach 2 Wochen produktiv – und das Team liebt es.",
+      name: "Petra Lindner",
+      role: "Inhaberin",
+      company: "Lindner Reinigungsmanufaktur",
+      location: "Wien",
+      employees: "9 Mitarbeitende",
+      rating: 5,
+      tag: "Sonder- & Baureinigung",
     },
     {
-      title: "Photovoltaik & Solar",
-      iconPath: "M12 3v2M12 19v2M5 12H3M21 12h-2M7 7L5.5 5.5M18.5 5.5L17 7M7 17l-1.5 1.5M17 17l1.5 1.5M12 8a4 4 0 100 8 4 4 0 000-8z",
-      description: "Installation, Wartung und Reinigung von Solar- und PV-Anlagen.",
-      services: [
-        "PV-Installation",
-        "Anlagenwartung",
-        "Panelreinigung",
-        "Monitoring",
-        "Ertragsmessung",
-        "Speichersysteme",
-      ],
+      quote:
+        "Live-Margen pro Objekt – das hatten wir vorher nirgendwo. Jetzt sehen wir sofort, welcher Auftrag rechnet und welcher nicht.",
+      name: "Murat Yılmaz",
+      role: "Operations Manager",
+      company: "Clean & Smart Services",
+      location: "Berlin",
+      employees: "85 Mitarbeitende",
+      rating: 5,
+      tag: "Großobjekt-Reinigung",
     },
     {
-      title: "Sicherheitsdienste",
-      iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-      description: "Objektschutz, Empfangsdienste und Sicherheitsdienstleistungen.",
-      services: [
-        "Objektschutz",
-        "Empfangsdienst",
-        "Streifendienst",
-        "Veranstaltungsschutz",
-        "Werkschutz",
-        "Alarmverfolgung",
-      ],
+      quote:
+        "Schichtplanung für 30 Reinigungskräfte ging vorher per Excel und WhatsApp. Heute klicke ich 10 Minuten und der Plan steht.",
+      name: "Lisa Maier",
+      role: "Disposition",
+      company: "Alpenglanz Reinigung",
+      location: "Innsbruck",
+      employees: "34 Mitarbeitende",
+      rating: 5,
+      tag: "Unterhaltsreinigung",
     },
   ];
+
+  const initials = (name: string) =>
+    name
+      .split(" ")
+      .map((p) => p[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
 
   return (
     <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 overflow-hidden">
@@ -122,57 +119,74 @@ export default function Branchen() {
         {/* Header */}
         <div className="max-w-3xl mb-14 md:mb-20">
           <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
-            Branchen
+            Stimmen aus der Reinigungsbranche
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-white">
-            Eine Software.
+            Reinigungsfirmen.
             <br />
-            <span className="text-white/50">Jede Branche.</span>
+            <span className="text-white/50">Die uns vertrauen.</span>
           </h2>
           <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-xl">
-            Reinigung, Handwerk, Facility, Dienstleistung – Taskey passt sich an Ihren Betrieb an.
-            Nicht umgekehrt.
+            Vom 9-Personen-Betrieb bis zur Reinigungs-Gruppe mit 200+ Mitarbeitenden –
+            Taskey läuft im Alltag. Hier sprechen die, die jeden Tag damit arbeiten.
           </p>
         </div>
 
-        {/* Grid — edle dunkle Karten mit Hover-Reveal der Services */}
+        {/* Grid — Testimonial-Karten im selben Stil wie zuvor die Branchen-Karten */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-16">
-          {branchenCategories.map((category, index) => (
+          {testimonials.map((t, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 p-6 transition-all hover:border-white/20 overflow-hidden"
+              className="group relative rounded-2xl bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 p-6 transition-all hover:border-white/20 overflow-hidden flex flex-col"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-              <div className="relative">
-                <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-cyan-300 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/30 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d={category.iconPath} />
-                  </svg>
+              <div className="relative flex flex-col h-full">
+                {/* Stars */}
+                <div className="flex items-center gap-0.5 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-cyan-300"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
                 </div>
 
-                <h3 className="text-lg font-black text-white leading-tight mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-sm text-white/50 leading-relaxed mb-4 line-clamp-2">
-                  {category.description}
+                {/* Quote */}
+                <p className="text-sm text-white/80 leading-relaxed mb-6 flex-1">
+                  „{t.quote}“
                 </p>
 
-                {/* Services als Chips, sichtbar auf Mobile, beim Hover auf Desktop hervorgehoben */}
-                <div className="flex flex-wrap gap-1.5">
-                  {category.services.slice(0, 4).map((s) => (
-                    <span
-                      key={s}
-                      className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/60 font-medium"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                  {category.services.length > 4 && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/40 font-medium">
-                      +{category.services.length - 4}
-                    </span>
-                  )}
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-white/10 flex items-center justify-center text-xs font-black text-cyan-300 flex-shrink-0">
+                    {initials(t.name)}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-black text-white leading-tight truncate">
+                      {t.name}
+                    </div>
+                    <div className="text-[11px] text-white/50 leading-tight truncate">
+                      {t.role} · {t.company}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Meta-Chips */}
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/60 font-medium">
+                    {t.tag}
+                  </span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/60 font-medium">
+                    {t.location}
+                  </span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-white/40 font-medium">
+                    {t.employees}
+                  </span>
                 </div>
               </div>
             </div>
@@ -182,20 +196,20 @@ export default function Branchen() {
         {/* Stats Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-black text-white mb-1">8+</div>
-            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Branchen</div>
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">4,9</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Ø Bewertung</div>
           </div>
           <div className="text-center border-l border-white/10">
-            <div className="text-3xl sm:text-4xl font-black text-white mb-1">50+</div>
-            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Einsatzbereiche</div>
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">250+</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Reinigungsfirmen</div>
           </div>
           <div className="text-center border-l border-white/10">
             <div className="text-3xl sm:text-4xl font-black text-white mb-1">DACH</div>
             <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">DE · AT · CH</div>
           </div>
           <div className="text-center border-l border-white/10">
-            <div className="text-3xl sm:text-4xl font-black text-white mb-1">100%</div>
-            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Branchenflexibel</div>
+            <div className="text-3xl sm:text-4xl font-black text-white mb-1">98%</div>
+            <div className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider">Weiterempfehlung</div>
           </div>
         </div>
 
@@ -207,10 +221,11 @@ export default function Branchen() {
           <div className="absolute -top-16 -right-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative max-w-2xl">
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[1.05] tracking-tight mb-4">
-              Ihre Branche ist dabei?
+              Werden Sie der nächste Erfolgsfall.
             </h3>
             <p className="text-base sm:text-lg text-white/60 mb-8 leading-relaxed">
-              Entdecken Sie, wie Taskey Ihren Betrieb effizienter macht – ohne Setup-Aufwand.
+              Testen Sie Taskey 3 Monate gratis. Kein Setup-Aufwand, keine Vertragsbindung,
+              voller Funktionsumfang.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link

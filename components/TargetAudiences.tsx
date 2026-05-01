@@ -26,117 +26,110 @@ type Audience = {
 const audiences: Audience[] = [
   {
     iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
-    title: "Gebäudereinigung",
-    subtitle: "Software für Gebäudereiniger, Unterhaltsreinigung und Facility Cleaner.",
+    title: "Unterhaltsreinigung",
+    subtitle: "Für Büro-, Praxis- und Verwaltungsobjekte mit täglichen Reinigungstouren.",
     keywords: [
-      "Software Gebäudereinigung",
+      "Software Unterhaltsreinigung",
       "Reinigungsmanagement Software",
       "NFC Objektnachweis",
-      "Qualitätskontrolle Reinigung",
       "Revierreinigung App",
-      "Glasreinigung Software",
-      "Unterhaltsreinigung digital",
+      "Tourenplanung Reinigung",
+      "Reinigungsplan digital",
+      "Stundenzettel Reinigung",
       "Software Reinigungsfirma",
     ],
     pains: [
       "Unvollständige Stundenzettel",
       "Leistungsnachweise im WhatsApp-Chaos",
     ],
-    cta: "Für Gebäudereiniger",
+    cta: "Für Unterhaltsreinigung",
   },
   {
-    iconPath: "M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z",
-    title: "Handwerk & Bau",
-    subtitle: "Für Elektriker, SHK, Maler, Dachdecker, Tischler, Bauunternehmen.",
+    iconPath: "M3 12h18M3 6h18M3 18h18",
+    title: "Glas- & Fassadenreinigung",
+    subtitle: "Für Glas-, Fenster- und Fassadenreiniger mit Höhen- und Spezialeinsätzen.",
     keywords: [
-      "Handwerkersoftware",
-      "Software Handwerksbetrieb",
-      "Elektriker Software",
-      "SHK Software",
-      "Sanitär Software",
-      "Heizungsbauer Software",
-      "Maler Software",
-      "Dachdecker Software",
-      "Trockenbau Software",
-      "Tischlerei Software",
-      "Bauunternehmen Software",
-      "Monteur Zeiterfassung",
+      "Software Glasreinigung",
+      "Fensterreinigung App",
+      "Fassadenreinigung Software",
+      "Höhenreinigung Doku",
+      "Aufmaß Glasflächen",
+      "Auftragsverwaltung Reinigung",
     ],
     pains: [
-      "Angebote, die zu spät rausgehen",
-      "Nachkalkulation per Bauchgefühl",
+      "Aufmaß und Abrechnung händisch",
+      "Sicherheits- und Einsatznachweise unvollständig",
     ],
-    cta: "Für Handwerksbetriebe",
+    cta: "Für Glasreinigung",
   },
   {
     iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
-    title: "Facility Management",
-    subtitle: "Für Hausmeisterdienste, technische Dienstleister, Objektbetreuer.",
-    keywords: [
-      "Facility Management Software",
-      "Hausmeisterservice Software",
-      "Software Hausmeister",
-      "Objektbetreuung digital",
-      "Technischer Dienst Software",
-      "Multi-Site Management",
-    ],
-    pains: [
-      "Dutzende Objekte, kein Live-Überblick",
-      "Nachweise, die ständig nachgefordert werden",
-    ],
-    cta: "Für Facility Services",
-  },
-  {
-    iconPath: "M12 2v20M5 10c3 0 5-2 7-8 2 6 4 8 7 8M5 16c3 0 5-2 7-4 2 2 4 4 7 4",
-    title: "Garten- & Landschaftsbau",
-    subtitle: "Für GaLaBau, Gartenbau, Baumpflege und Winterdienst.",
-    keywords: [
-      "GaLaBau Software",
-      "Software Gartenbau",
-      "Landschaftspflege Software",
-      "Winterdienst Software",
-      "Baumpflege App",
-      "Grünpflege Management",
-    ],
-    pains: [
-      "Kolonnen auf mehreren Baustellen, kein Status",
-      "Einsatzzeiten, die keiner sauber mitschreibt",
-    ],
-    cta: "Für GaLaBau",
-  },
-  {
-    iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-    title: "Sicherheitsdienste",
-    subtitle: "Für Werkschutz, Objektschutz und Streifendienst mit NFC-Kontrolle.",
-    keywords: [
-      "Software Sicherheitsdienst",
-      "Wächterkontrolle NFC",
-      "Revierkontrolle digital",
-      "Objektschutz Software",
-      "Werkschutz App",
-    ],
-    pains: [
-      "Kontrollpunkte manuell protokolliert",
-      "Keine revisionssichere Nachweiskette",
-    ],
-    cta: "Für Sicherheitsdienste",
-  },
-  {
-    iconPath: "M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6",
-    title: "Industrie- & Spezialreinigung",
-    subtitle: "Für Industrie-, Produktions-, Baureinigung und Desinfektion.",
+    title: "Industrie- & Produktionsreinigung",
+    subtitle: "Für Produktionsreinigung, Maschinenreinigung und Werksreinigung.",
     keywords: [
       "Industriereinigung Software",
-      "Baureinigung Software",
-      "Fensterreinigung App",
-      "Desinfektion Dokumentation",
       "Produktionsreinigung digital",
+      "Maschinenreinigung Doku",
+      "Werksreinigung App",
+      "Schichtreinigung Software",
     ],
     pains: [
-      "Hohe Dokumentationspflicht gegenüber Auftraggebern",
+      "Dokumentationspflicht gegenüber Auftraggebern",
       "Revisionssichere Nachweise für Audits",
     ],
     cta: "Für Industriereinigung",
+  },
+  {
+    iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
+    title: "Klinik- & Hygienereinigung",
+    subtitle: "Für Krankenhäuser, Praxen, Pflegeheime und Reinräume mit höchstem Hygienelevel.",
+    keywords: [
+      "Software Klinikreinigung",
+      "Hygienereinigung Doku",
+      "Desinfektion Dokumentation",
+      "OP-Reinigung Software",
+      "Pflegeheim Reinigung App",
+      "Praxisreinigung Software",
+    ],
+    pains: [
+      "Hygienenachweise auf Papier",
+      "Audit-Vorbereitung kostet Tage",
+    ],
+    cta: "Für Klinikreinigung",
+  },
+  {
+    iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
+    title: "Hotel-Housekeeping",
+    subtitle: "Für Reinigungsfirmen mit Hotel-, Ferienanlagen- und Apartment-Aufträgen.",
+    keywords: [
+      "Housekeeping Software",
+      "Hotelreinigung App",
+      "Zimmerreinigung digital",
+      "Ferienwohnung Reinigung Software",
+      "Reinigungsabrechnung Hotel",
+    ],
+    pains: [
+      "Zimmerstatus telefonisch durchgesagt",
+      "Reklamationen ohne Foto-Nachweis",
+    ],
+    cta: "Für Housekeeping",
+  },
+  {
+    iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+    title: "Sonder- & Baureinigung",
+    subtitle: "Für Bau-, Grund-, Brand- und Wasserschadensanierung sowie Spezialreinigung.",
+    keywords: [
+      "Baureinigung Software",
+      "Grundreinigung App",
+      "Sonderreinigung digital",
+      "Brandschadensanierung Software",
+      "Wasserschadensanierung Doku",
+    ],
+    pains: [
+      "Aufträge schlecht kalkuliert – Marge weg",
+      "Doku für Versicherungen fehlt",
+    ],
+    cta: "Für Sonderreinigung",
   },
 ];
 
@@ -154,7 +147,7 @@ export default function TargetAudiences({
               Für wen ist Taskey gemacht?
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.05] tracking-tight">
-              Gebaut für <span className="text-blue-600">Ihren Betrieb</span>.
+              Gebaut für <span className="text-blue-600">Reinigungsbetriebe</span>.
             </h2>
           </div>
 
@@ -209,7 +202,7 @@ export default function TargetAudiences({
 
               <div className="p-8 md:p-10 flex flex-col h-full">
                 <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-6">
-                  Branche · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
+                  Reinigungsart · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
                 </span>
 
                 <div key={active} className="flex-1 flex flex-col" style={{ animation: "audience-fade 0.6s ease-out" }}>
@@ -263,7 +256,7 @@ export default function TargetAudiences({
                   className={`h-1.5 rounded-full transition-all ${
                     i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
                   }`}
-                  aria-label={`Branche ${i + 1}`}
+                  aria-label={`Reinigungsart ${i + 1}`}
                 />
               ))}
             </div>
@@ -277,10 +270,11 @@ export default function TargetAudiences({
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
               Gebaut für
               <br />
-              <span className="text-white/50">Ihren Betrieb.</span>
+              <span className="text-white/50">Reinigungsfirmen.</span>
             </h2>
             <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-xl">
-              Keine generische Business-Software. Taskey ist für operative Dienstleister im DACH-Raum gebaut.
+              Keine generische Business-Software. Taskey ist 100 % auf den Alltag von
+              Reinigungsbetrieben im DACH-Raum zugeschnitten.
             </p>
 
             <ul className="space-y-2 mb-10">
@@ -320,21 +314,22 @@ export default function TargetAudiences({
           </div>
         </div>
 
-        {/* Weitere Gewerke — SEO-Block, Keyword-Liste */}
+        {/* Weitere Reinigungs-Spezialisierungen — SEO-Block, Keyword-Liste */}
         <div className="mt-20 rounded-2xl border bg-white/[0.03] border-white/10 p-6 sm:p-8">
           <h3 className="text-base sm:text-lg font-black mb-3 text-white">
-            Und viele weitere Gewerke &amp; Branchen:
+            Und viele weitere Reinigungs-Spezialisierungen:
           </h3>
           <p className="text-sm leading-relaxed text-white/60">
-            Taskey wird auch eingesetzt von: Schreinereien, Zimmereien, Fliesenlegern,
-            Bodenlegern, Stuckateuren, Gerüstbauern, Klempnerei-Betrieben,
-            Kälte-/Klimatechnikern, Lüftungsbauern, Aufzugsservice, Umzugsunternehmen,
-            Entrümpelungsdiensten, Schädlingsbekämpfung, Schlüsseldiensten,
-            Reinigungsdiensten im Gesundheitswesen, Spezialreinigern für Brand- und
-            Wasserschadensanierung, Kfz-Werkstätten mit mobilem Service,
-            Gartenpflege-Teams, Baumpflegern, Fassadenreinigern, Solarreinigern,
-            Treppenhausreinigern, Krankenhaus-Servicefirmen und
-            Hotel-Housekeeping-Diensten.
+            Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und
+            Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern,
+            Containerreinigung, Tank- und Behälterreinigung, Reinigern für
+            Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen,
+            Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung,
+            Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung,
+            Reinigern für Banken und öffentliche Gebäude, Apartment- und
+            Ferienwohnungsreinigung, mobile Reinigungsdiensten,
+            Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie
+            Spezialreinigern für Brand- und Wasserschadensanierung.
           </p>
         </div>
       </div>
