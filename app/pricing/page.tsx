@@ -55,7 +55,7 @@ const reinigungTiers: Tier[] = [
       "NFC-Leistungsnachweis",
       "Automatische Zeiterfassung",
       "Einsatzplanung",
-      "Bis 30 NFC-Tags",
+      "30 NFC-Tags inklusive",
       "50 GB Speicher",
       "E-Mail-Support",
       "DATEV-Export",
@@ -70,7 +70,7 @@ const reinigungTiers: Tier[] = [
     perObject: "+ 4,80 € pro Objekt",
     features: [
       "Alles aus Beginner",
-      "Bis 75 NFC-Tags",
+      "75 NFC-Tags inklusive",
       "250 GB Speicher",
       "Routenoptimierung",
       "PDF-, CSV- & Excel-Export",
@@ -88,7 +88,7 @@ const reinigungTiers: Tier[] = [
     perObject: "+ 5,10 € pro Objekt",
     features: [
       "Alles aus Professional",
-      "Bis 200 NFC-Tags",
+      "200 NFC-Tags inklusive",
       "1 TB Speicher",
       "Erweiterte Auswertungen",
       "Priority-Support",

@@ -130,7 +130,7 @@ const slides = [
     ),
   },
   {
-    label: "Foto-/Nachweis-Doku",
+    label: "Dokumentation",
     title: "Nachweise, die Kunden überzeugen",
     subtitle: "Fotos, Protokolle, Unterschriften — alles an Auftrag und Objekt gebunden.",
     tag: "Dokumentation",

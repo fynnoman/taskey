@@ -124,11 +124,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/nfc" className="text-gray-300 hover:text-white transition">
-                  NFC Zeiterfassung
-                </Link>
-              </li>
-              <li>
                 <Link href="/ios" className="text-gray-300 hover:text-white transition">
                   iOS App
                 </Link>
