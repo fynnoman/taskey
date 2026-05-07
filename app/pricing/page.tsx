@@ -108,7 +108,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "399",
+        price: "315",
         unit: "€ / Monat",
         perObject: "+ 4,80 € pro Objekt",
         features: [
@@ -127,7 +127,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "469",
+        price: "429",
         unit: "€ / Monat",
         perObject: "+ 5,10 € pro Objekt",
         features: [
@@ -218,7 +218,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "399",
+        price: "315",
         unit: "€ / month",
         perObject: "+ €4.80 per property",
         features: [
@@ -237,7 +237,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "469",
+        price: "429",
         unit: "€ / month",
         perObject: "+ €5.10 per property",
         features: [
@@ -328,7 +328,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "399",
+        price: "315",
         unit: "€ / mois",
         perObject: "+ 4,80 € par site",
         features: [
@@ -347,7 +347,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "469",
+        price: "429",
         unit: "€ / mois",
         perObject: "+ 5,10 € par site",
         features: [
