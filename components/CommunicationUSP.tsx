@@ -6,7 +6,7 @@ import Link from "next/link";
  * CommunicationUSP
  *
  * Taskeys Kern-USP: Die beste Kommunikation zwischen Einsatzort und Büro.
- * Wird auf allen wichtigen Seiten eingebunden (Home, Handwerk, Gebäudereinigung,
+ * Wird auf allen wichtigen Seiten eingebunden (Home, Gebäudereinigung,
  * Features, Pricing, Lösungen).
  *
  * Varianten:
@@ -168,8 +168,8 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
 
   return (
     <section id="echtzeit-kommunikation" className={`${bgFull} py-24 md:py-32 relative overflow-hidden`}>
-      <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[72px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[64px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header – Revolut-Style: zentral, groß, knapp */}

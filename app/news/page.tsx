@@ -24,8 +24,8 @@ export default function NewsPage() {
   return (
     <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
       {/* Ambient Glows */}
-      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
 
       {/* Subtiles Grid */}
@@ -77,7 +77,7 @@ export default function NewsPage() {
             >
               <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-8 md:p-12 lg:p-16 overflow-hidden relative">
                 {/* deko glow */}
-                <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px] pointer-events-none" />
+                <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[64px] pointer-events-none" />
 
                 <div className="relative grid lg:grid-cols-[1fr_auto] gap-8 items-end">
                   <div>
@@ -200,7 +200,7 @@ export default function NewsPage() {
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">

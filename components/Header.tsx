@@ -8,11 +8,13 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [solid, setSolid] = useState(false);
   const { t } = useLanguage();
   const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [solid, setSolid] = useState(!isHomepage);
 
   const navLinks = [
     { href: "/features",        label: t("nav.features") },
@@ -29,6 +31,11 @@ export default function Header() {
   // 2) Sobald man weit in den Hero scrollt (≈ "Feld & Büro" – Bereich), gleitet sie smooth nach oben weg
   // 3) Scrollt man zurück in den Hero, kommt sie wieder.
   useEffect(() => {
+    if (!isHomepage) {
+      setHidden(false);
+      setSolid(true);
+      return;
+    }
     const onScroll = () => {
       const y = window.scrollY;
       const vh = window.innerHeight || 800;
@@ -40,7 +47,7 @@ export default function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [pathname]);
+  }, [pathname, isHomepage]);
 
   return (
     <header
@@ -51,7 +58,7 @@ export default function Header() {
           ? "bg-gray-950/80 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       }`}
-      aria-hidden={hidden}
+      aria-hidden={isHomepage ? hidden : false}
     >
       <NavInner
         navLinks={navLinks}

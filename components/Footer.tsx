@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Background PNG */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
-          src="/7F026185-998A-42EF-845A-EAC748373476.webp"
+          src="/hero-app-mockup.webp"
           alt=""
           fill
           className="object-cover"
@@ -91,13 +91,12 @@ export default function Footer() {
         {/* Top section — big branding */}
         <div className="pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 border-b border-white/10">
           <div className="flex items-center gap-4 mb-8">
-            <Image 
-              src="/843B6B8E-CED8-4FF8-8C63-B354140A7BC5e5e1f940b1a8d4df34c43ec444a293f3116e09c2a98dcecd8e8882d3099b7c2d.png" 
-              alt="Taskey Logo" 
-              width={48}
-              height={48}
-              className="h-12 w-12"
-              sizes="48px"
+            <Image
+              src="/843B6B8E-CED8-4FF8-8C63-B354140A7BC5e5e1f940b1a8d4df34c43ec444a293f3116e09c2a98dcecd8e8882d3099b7c2d.png"
+              alt="Taskey Logo"
+              width={120}
+              height={40}
+              sizes="120px"
               loading="lazy"
               quality={75}
             />

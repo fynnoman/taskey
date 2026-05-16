@@ -243,7 +243,7 @@ export default function IOSClient() {
           {/* ── Mobile Branchen (bis lg): Kompakte 2-Spalten ── */}
           <div className="lg:hidden grid grid-cols-2 gap-2.5 mb-8">
             {[
-              { icon: "🔧", name: "Handwerk & SHK" },
+              { icon: "🏢", name: "Facility Management" },
               { icon: "⚡", name: "Elektrotechnik" },
               { icon: "�", name: "Dach & Ausbau" },
               { icon: "🧹", name: "Gebäudereinigung" },
@@ -262,7 +262,7 @@ export default function IOSClient() {
           {/* ── Desktop Branchen (ab lg): 4-Spalten Grid ── */}
           <div className="hidden lg:grid grid-cols-4 gap-4 mb-16">
             {[
-              { icon: "🔧", name: "Handwerk & SHK" },
+              { icon: "🏢", name: "Facility Management" },
               { icon: "⚡", name: "Elektrotechnik & Haustechnik" },
               { icon: "�", name: "Dachdecker, Maler & Ausbau" },
               { icon: "�️", name: "Bauunternehmen" },

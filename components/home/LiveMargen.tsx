@@ -12,8 +12,8 @@ export default function LiveMargen() {
   return (
     <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-36 overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[500px] bg-red-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[72px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[500px] bg-red-500/10 rounded-full blur-[72px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header — zentriert */}

@@ -37,6 +37,7 @@ export default function RevealBlur({
 }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -73,17 +74,16 @@ export default function RevealBlur({
         transition: `transform ${duration}ms cubic-bezier(.2,.7,.2,1) ${delay}ms, filter ${duration}ms cubic-bezier(.2,.7,.2,1) ${delay}ms, opacity ${Math.round(
           duration * 0.9
         )}ms ease-out ${delay}ms`,
-        willChange: "transform, filter, opacity",
+        willChange: done ? "auto" : "transform, filter, opacity",
       }
     : {
         transform: `translate3d(0, ${offset}px, 0)`,
         filter: `blur(${blur}px)`,
         opacity: 0,
-        willChange: "transform, filter, opacity",
       };
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={ref} className={className} style={style} onTransitionEnd={() => setDone(true)}>
       {children}
     </div>
   );

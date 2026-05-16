@@ -99,9 +99,9 @@ export default function PartnerschaftenClient() {
   return (
     <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
       {/* Ambient Glows */}
-      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[700px] h-[600px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[700px] h-[600px] bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
 
       {/* Subtiles Grid */}
@@ -403,7 +403,7 @@ export default function PartnerschaftenClient() {
             </div>
           ) : (
             <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-7 md:p-10 overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+              <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[56px] pointer-events-none" />
               <form onSubmit={handleSubmit} className="relative space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>

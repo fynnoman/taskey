@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "NFC Zeiterfassung & Leistungsnachweis – Taskey für Handwerk & Reinigung",
+  title: "NFC Zeiterfassung & Leistungsnachweis – Taskey für Reinigung & Facility Management",
   description:
     "NFC-Tags für Zeiterfassung, Objekt-Check-in und revisionssicheren Leistungsnachweis. Mitarbeiter tappen – Taskey dokumentiert. DSGVO-konform, Made in Germany.",
-  keywords: [
-    "NFC Zeiterfassung",
-    "NFC Leistungsnachweis",
-    "NFC Tags Gebäudereinigung",
-    "NFC Stempeluhr",
-    "Objekt-Check-in NFC",
-    "Wächterkontrolle NFC",
-    "Qualitätsnachweis Reinigung NFC",
-  ],
   alternates: {
     canonical: "https://www.taskeyapp.com/nfc",
   },

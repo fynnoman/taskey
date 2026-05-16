@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import PartnerschaftenClient from "./partnerschaften-client";
 
 export const metadata: Metadata = {
-  title: "Partnerschaften – Taskey Betriebssoftware",
+  title: "Partner werden – Taskey Partnerprogramm",
   description:
-    "Werden Sie Taskey-Partner: Empfehlungsprogramm, Reseller & Integrationspartner für Handwerk, Reinigung & Facility Management.",
+    "Werde Taskey-Partner und verdiene Provision. Für Steuerberater, Softwareanbieter und Branchenverbände im DACH-Raum.",
   alternates: { canonical: "https://www.taskeyapp.com/partnerschaften" },
   openGraph: {
-    title: "Partnerschaften – Taskey Betriebssoftware",
+    title: "Partner werden – Taskey Partnerprogramm",
     description:
-      "Empfehlungsprogramm, Reseller & Integrationspartner – jetzt Partner werden.",
+      "Werde Taskey-Partner und verdiene Provision. Für Steuerberater, Softwareanbieter und Branchenverbände im DACH-Raum.",
     url: "https://www.taskeyapp.com/partnerschaften",
   },
 };

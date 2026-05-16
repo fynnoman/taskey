@@ -34,7 +34,7 @@ export default function FeaturePreview() {
       label: "Belege bei Reklamationen",
       title: t("features.3.title"),
       description: t("features.3.desc"),
-      image: "/54F369FF-6D74-4695-B8D3-44E54D16098B.webp",
+      image: "/feature-zeiterfassung.webp",
       tag: "Dokumentation",
     },
   ];
@@ -51,8 +51,8 @@ export default function FeaturePreview() {
   return (
     <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[64px] pointer-events-none" />
 
       {/* Großes verblendetes Bild rechts — full-bleed, keine Card */}
       <div ref={parallaxRef} className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none will-change-transform">

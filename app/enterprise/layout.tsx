@@ -3,15 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Taskey Enterprise – Betriebssoftware für 100+ Mitarbeiter | Individuell skalierbar",
   description:
-    "Taskey Enterprise für große Handwerks-, Bau- und Reinigungsbetriebe ab 100 Mitarbeitern. Individuelle Konfiguration, dediziertes Onboarding, SLA & API-Zugang.",
-  keywords: [
-    "Enterprise Software Handwerk",
-    "Betriebssoftware große Firmen",
-    "Software Reinigungsfirma 200 Mitarbeiter",
-    "Enterprise Software Bau",
-    "API Handwerkersoftware",
-    "Individuelle Betriebssoftware",
-  ],
+    "Taskey Enterprise für große Reinigungs- und Facility-Management-Betriebe ab 100 Mitarbeitern. Individuelle Konfiguration, dediziertes Onboarding, SLA & API-Zugang.",
   alternates: {
     canonical: "https://www.taskeyapp.com/enterprise",
   },

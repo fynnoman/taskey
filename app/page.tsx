@@ -18,18 +18,6 @@ const FAQ = dynamic(() => import("@/components/home/FAQ"));
 export const metadata: Metadata = {
   title: "Taskey – Reinigungssoftware & Software für Gebäudereinigung | All-in-One",
   description: "Die All-in-One Reinigungssoftware für Gebäudereinigung, Unterhaltsreinigung, Glasreinigung, Industrie- und Klinikreinigung. NFC-Objektnachweise, Zeiterfassung, Einsatzplanung, Angebote, Rechnungen & DATEV – in einem System statt 5 Abos. DSGVO, Made in Germany. 3 Monate kostenlos.",
-  keywords: [
-    "Reinigungssoftware", "Software Gebäudereinigung", "Software Reinigungsfirma",
-    "Software Unterhaltsreinigung", "Glasreinigung Software", "Industriereinigung Software",
-    "Software Klinikreinigung", "Hygienereinigung Software", "Software Hotelreinigung",
-    "Housekeeping Software", "Reinigungsmanagement Software", "Tourenplanung Reinigung",
-    "Revierreinigung App", "Schichtplanung Reinigungsfirma", "Einsatzplanung Reinigung",
-    "NFC Zeiterfassung Reinigung", "Objektnachweis NFC", "Qualitätskontrolle Reinigung",
-    "Reinigungsplan digital", "Stundenzettel Reinigung", "Leistungsnachweis Reinigung",
-    "DATEV Export Reinigungsfirma", "Reinigungsfirma digitalisieren",
-    "Alternative zu Clean Manager", "Alternative zu Reinigungssoftware",
-    "Software für Reinigungsbetrieb", "Made in Germany", "DSGVO-konforme Reinigungssoftware"
-  ],
   alternates: {
     canonical: "https://www.taskeyapp.com",
   },

@@ -26,10 +26,10 @@ export const posts: Post[] = [
     title: "Kommunikation zwischen Einsatzort und Büro: der unterschätzte Erfolgsfaktor",
     metaTitle: "Kommunikation Einsatzort–Büro: der unterschätzte Erfolgsfaktor | Taskey",
     metaDescription:
-      "Warum der Informationsfluss zwischen Feld und Büro in Handwerk, Gebäudereinigung und Facility Services über Marge, Kundenbindung und Mitarbeiterzufriedenheit entscheidet — und wie Betriebe ihn strukturell in den Griff bekommen.",
+      "Warum der Informationsfluss zwischen Feld und Büro in Gebäudereinigung und Facility Services über Marge, Kundenbindung und Mitarbeiterzufriedenheit entscheidet — und wie Betriebe ihn strukturell in den Griff bekommen.",
     summary:
       "Ein ausführlicher Leitfaden für Geschäftsführer:innen, Objektleiter:innen und operative Verantwortliche: Warum die Kommunikation zwischen Einsatzort und Büro der am schlechtesten gemessene Kostenblock vieler Betriebe ist — und wie ein funktionierendes Modell in der Praxis aussieht.",
-    body: `In fast jedem mittelständischen Handwerks- oder Dienstleistungsbetrieb, mit dem wir in den letzten Jahren gesprochen haben, fiel früher oder später derselbe Satz:
+    body: `In fast jedem mittelständischen Reinigungs- oder Dienstleistungsbetrieb, mit dem wir in den letzten Jahren gesprochen haben, fiel früher oder später derselbe Satz:
 
 „Ehrlich gesagt — unser größtes Problem ist nicht, dass wir zu wenig Aufträge haben. Unser größtes Problem ist, dass wir nicht wissen, was draußen gerade wirklich passiert."
 
