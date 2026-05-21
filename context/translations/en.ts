@@ -20,7 +20,7 @@ const translations: Record<string, string> = {
     // Home Hero
     "homeHero.title1": "The software",
     "homeHero.title2": "for your",
-    "homeHero.title3": "business.",
+    "homeHero.title3": "cleaning company.",
     "homeHero.features": "No more arguments with clients about whether your team was on site. No more timesheet chaos at month-end. No more calls asking when someone is coming.",
     "homeHero.tagline": "Taskey takes care of it for you – right from your phone.",
     // Communication USP

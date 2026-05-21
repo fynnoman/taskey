@@ -19,8 +19,8 @@ const translations: Record<string, string> = {
 
     // Home Hero
     "homeHero.title1": "Die Software",
-    "homeHero.title2": "für Ihren",
-    "homeHero.title3": "Betrieb.",
+    "homeHero.title2": "für Ihre",
+    "homeHero.title3": "Gebäudereinigung.",
     "homeHero.features": "Nie wieder Streit, ob Ihr Team vor Ort war. Nie wieder Stundenzettel-Chaos am Monatsende. Nie wieder Anrufe, wann endlich wer kommt.",
     "homeHero.tagline": "Taskey erledigt das für Sie – direkt vom Handy.",
     "homeHero.cta.trial": "3 Monate kostenlos testen →",

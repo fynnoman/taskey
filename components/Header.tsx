@@ -118,14 +118,12 @@ function NavInner({
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://taskey.vars-development.com/support"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/support"
             className="text-white/70 hover:text-white transition font-medium"
           >
             {t("nav.support")}
-          </a>
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-3">
@@ -182,15 +180,13 @@ function NavInner({
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://taskey.vars-development.com/support"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/support"
               className="px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.support")}
-            </a>
+            </Link>
             <div className="pt-4 px-4 space-y-2">
               <div className="flex justify-start pb-1">
                 <LanguageSwitcher />

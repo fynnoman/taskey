@@ -93,7 +93,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 mb-8">
             <Image
               src="/843B6B8E-CED8-4FF8-8C63-B354140A7BC5e5e1f940b1a8d4df34c43ec444a293f3116e09c2a98dcecd8e8882d3099b7c2d.png"
-              alt="Taskey Logo"
+              alt="Taskey – Gebäudereinigungssoftware Made in Germany"
               width={120}
               height={40}
               sizes="120px"
@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 py-16 sm:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 md:gap-8 py-16 sm:py-20">
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-6">{t("footer.col.product")}</h4>
             <ul className="space-y-4 text-sm">
@@ -154,14 +154,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://taskey.vars-development.com/support" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/support"
                   className="text-gray-300 hover:text-white transition"
                 >
                   {t("footer.link.support")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -188,17 +186,87 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-6">Themen</h4>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <Link href="/zeiterfassung-gebaeudereinigung" className="text-gray-300 hover:text-white transition">
+                  Zeiterfassung Gebäudereinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/nfc-zeiterfassung" className="text-gray-300 hover:text-white transition">
+                  NFC Zeiterfassung
+                </Link>
+              </li>
+              <li>
+                <Link href="/einsatzplanung-reinigung" className="text-gray-300 hover:text-white transition">
+                  Einsatzplanung Reinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/leistungsnachweis-gebaeudereinigung" className="text-gray-300 hover:text-white transition">
+                  Leistungsnachweis
+                </Link>
+              </li>
+              <li>
+                <Link href="/software-kleine-reinigungsfirma" className="text-gray-300 hover:text-white transition">
+                  Software für kleine Reinigungsfirmen
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-6">Branchen</h4>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <Link href="/loesungen/unterhaltsreinigung" className="text-gray-300 hover:text-white transition">
+                  Unterhaltsreinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/loesungen/glasreinigung" className="text-gray-300 hover:text-white transition">
+                  Glasreinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/loesungen/industriereinigung" className="text-gray-300 hover:text-white transition">
+                  Industriereinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/loesungen/klinikreinigung" className="text-gray-300 hover:text-white transition">
+                  Klinikreinigung
+                </Link>
+              </li>
+              <li>
+                <Link href="/loesungen/hotel-housekeeping" className="text-gray-300 hover:text-white transition">
+                  Hotel Housekeeping
+                </Link>
+              </li>
+              <li>
+                <Link href="/vergleich/zvoove-alternative" className="text-gray-300 hover:text-white transition">
+                  Zvoove Alternative
+                </Link>
+              </li>
+              <li>
+                <Link href="/vergleich/blink-alternative" className="text-gray-300 hover:text-white transition">
+                  Blink Alternative
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-6">{t("footer.col.contact")}</h4>
             <ul className="space-y-4 text-sm text-gray-300">
               <li>
-                <a 
-                  href="https://taskey.vars-development.com/support" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/support"
                   className="hover:text-white transition"
                 >
                   {t("footer.link.supportContact")}
-                </a>
+                </Link>
               </li>
               <li>fynn@taskeyapp.com</li>
               <li>+49 151 68488999</li>

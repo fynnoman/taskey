@@ -20,7 +20,7 @@ const translations: Record<string, string> = {
     // Home Hero
     "homeHero.title1": "Le logiciel",
     "homeHero.title2": "pour votre",
-    "homeHero.title3": "entreprise.",
+    "homeHero.title3": "entreprise de nettoyage.",
     "homeHero.features": "Plus jamais de disputes avec les clients sur la presence de votre equipe. Plus jamais de chaos de fiches de temps en fin de mois. Plus jamais d'appels pour savoir quand quelqu'un arrive.",
     "homeHero.tagline": "Taskey s'en occupe pour vous – directement depuis le telephone.",
     "homeHero.cta.trial": "Essai gratuit 14 jours →",

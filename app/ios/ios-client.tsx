@@ -36,7 +36,7 @@ export default function IOSClient() {
 
             <div className="flex flex-col gap-3 px-2">
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/app/id6757116248"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 px-6 py-3.5 bg-gray-900 text-white text-base font-bold rounded-xl"
@@ -70,10 +70,10 @@ export default function IOSClient() {
                 <span className="text-sm font-bold text-gray-700">{t("iosPage.badge")}</span>
               </div>
 
-              <h1 className="text-6xl font-black text-gray-900 leading-[0.95] tracking-tight mb-6">
+              <p className="text-6xl font-black text-gray-900 leading-[0.95] tracking-tight mb-6">
                 {t("iosPage.hero.title")}<br />
                 <span className="text-blue-900">{t("iosPage.hero.title.highlight")}</span>
-              </h1>
+              </p>
 
               <p className="text-xl text-gray-500 font-medium mb-10 max-w-lg">
                 {t("iosPage.hero.subtitle")}
@@ -81,7 +81,7 @@ export default function IOSClient() {
 
               <div className="flex flex-row gap-4">
                 <a
-                  href="https://apps.apple.com"
+                  href="https://apps.apple.com/app/id6757116248"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 text-white text-lg font-bold rounded-2xl hover:bg-gray-800 transition-colors shadow-lg"

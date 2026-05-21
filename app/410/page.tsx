@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Seite entfernt | Taskey",
+  description: "Diese Seite ist nicht mehr verfügbar.",
+  robots: { index: false, follow: false, nocache: true },
+  alternates: { canonical: undefined },
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-white text-gray-900">

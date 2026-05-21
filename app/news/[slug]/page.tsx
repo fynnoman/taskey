@@ -280,7 +280,13 @@ export default async function NewsPostPage(
     headline: post.title,
     description: post.summary,
     datePublished: post.isoDate ?? post.date,
-    author: { "@type": "Organization", name: "Taskey" },
+    dateModified: post.isoDate ?? post.date,
+    inLanguage: "de-DE",
+    author: {
+      "@type": "Organization",
+      name: "Taskey",
+      url: "https://www.taskeyapp.com",
+    },
     publisher: {
       "@type": "Organization",
       name: "Taskey",
@@ -290,7 +296,9 @@ export default async function NewsPostPage(
       "@type": "WebPage",
       "@id": `https://www.taskeyapp.com/news/${post.slug}`,
     },
-    image: post.heroImage ? [`https://www.taskeyapp.com${post.heroImage}`] : undefined,
+    image: post.heroImage
+      ? [`https://www.taskeyapp.com${post.heroImage}`]
+      : [`https://www.taskeyapp.com/opengraph-image`],
   };
 
   return (

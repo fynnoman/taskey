@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { WebVitals } from "./web-vitals";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.taskeyapp.com'),
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     description: "Zeiterfassung, NFC-Nachweise, Einsatzplanung & Live-Margen für Gebäudereinigung und Facility Management. Made in Germany, DSGVO-konform.",
     images: [
       {
-        url: "/logobittt.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Taskey Logo",
@@ -47,15 +48,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Taskey - Betriebssoftware für Reinigung & Facility Management",
     description: "Zeiterfassung, NFC-Nachweise, Einsatzplanung & Live-Margen für Gebäudereinigung und Facility Management. Made in Germany, DSGVO-konform.",
-    images: ["/logobittt.png"],
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://www.taskeyapp.com",
   },
   icons: {
-    icon: '/logobittt.png',
-    shortcut: '/logobittt.png',
-    apple: '/logobittt.png',
+    icon: '/opengraph-image',
+    shortcut: '/opengraph-image',
+    apple: '/opengraph-image',
   },
 };
 
@@ -68,9 +69,10 @@ export default function RootLayout({
     <html lang="de">
       <head>
         <link rel="preload" href="/hero-background.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="alternate" hrefLang="de-DE" href="https://www.taskeyapp.com/" />
+        <link rel="alternate" hrefLang="de-AT" href="https://www.taskeyapp.com/" />
+        <link rel="alternate" hrefLang="de-CH" href="https://www.taskeyapp.com/" />
         <link rel="alternate" hrefLang="de" href="https://www.taskeyapp.com/" />
-        <link rel="alternate" hrefLang="en" href="https://www.taskeyapp.com/en/" />
-        <link rel="alternate" hrefLang="fr" href="https://www.taskeyapp.com/fr/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.taskeyapp.com/" />
         <link rel="preconnect" href="https://mission-control.vars-development.com" />
         <link rel="preconnect" href="https://signup.taskeyapp.com" />
@@ -80,6 +82,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
       </head>
       <body className="antialiased">
+        <WebVitals />
         <Script src="https://mission-control.vars-development.com/umami/script.js" data-website-id="15a75075-86a0-4e36-8cd2-7cd83d860d5c" strategy="afterInteractive" />
         <LanguageProvider>
           <Header />

@@ -1,17 +1,25 @@
-import type { Metadata } from "next";
 import IOSClient from "./ios-client";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-export const metadata: Metadata = {
-  title: "iOS App – Taskey für iPhone & iPad",
-  description:
-    "Die Taskey App für iOS: Zeiterfassung, NFC-Scans, Aufgaben und Kommunikation – alles in einer App fürs iPhone.",
-  alternates: { canonical: "https://www.taskeyapp.com/ios" },
-  openGraph: {
-    title: "iOS App – Taskey für iPhone & iPad",
-    description:
-      "Die Taskey App für iOS: Zeiterfassung, NFC-Scans, Aufgaben und Kommunikation – alles in einer App fürs iPhone.",
-    url: "https://www.taskeyapp.com/ios",
+const mobileAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Taskey",
+  "operatingSystem": "iOS",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Cleaning Management",
+  "url": "https://apps.apple.com/app/id6757116248",
+  "description":
+    "Die Taskey iOS App für Reinigungsteams: NFC-Zeiterfassung, Einsatzplan, Objektakte und Offline-Sync auf iPhone und iPad.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Schulz & Stosse GbR",
+    "url": "https://www.taskeyapp.com",
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
   },
 };
 
@@ -22,6 +30,10 @@ export default function IOSPage() {
         { name: "Home", url: "https://www.taskeyapp.com" },
         { name: "iOS App", url: "https://www.taskeyapp.com/ios" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(mobileAppSchema) }}
+      />
       <IOSClient />
     </>
   )

@@ -1,18 +1,35 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Taskey iOS App – Reinigungssoftware & Facility Management fürs iPhone",
+  title: "iOS App für Reinigungsfirmen | NFC Zeiterfassung iPhone | Taskey",
   description:
-    "Die Taskey iOS App für Reinigungskräfte und Facility-Management-Teams: Zeiterfassung, NFC-Nachweise, Aufträge & Team-Chat – direkt auf dem iPhone. Kostenlos im App Store.",
+    "Die Taskey App für iPhone & iPad: NFC-Zeiterfassung, Einsatzplan, Offline-Sync. Kostenlos im App Store. DSGVO-konform, Made in Germany.",
   alternates: {
     canonical: "https://www.taskeyapp.com/ios",
   },
   openGraph: {
-    title: "Taskey iOS App – Reinigungssoftware & Facility Management fürs iPhone",
+    title: "iOS App für Reinigungsfirmen | NFC Zeiterfassung iPhone | Taskey",
     description:
-      "Zeiterfassung, NFC-Nachweise, Aufträge & Team-Chat – direkt auf dem iPhone.",
+      "Die Taskey App für iPhone & iPad: NFC-Zeiterfassung, Einsatzplan, Offline-Sync. Kostenlos im App Store.",
     url: "https://www.taskeyapp.com/ios",
     type: "website",
+    locale: "de_DE",
+    siteName: "Taskey",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Taskey iOS App – NFC Zeiterfassung auf dem iPhone",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iOS App für Reinigungsfirmen | NFC Zeiterfassung iPhone | Taskey",
+    description:
+      "Taskey App für iPhone & iPad: NFC-Zeiterfassung, Einsatzplan, Offline-Sync. Kostenlos im App Store.",
+    images: ["/opengraph-image"],
   },
 };
 

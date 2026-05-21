@@ -3,8 +3,34 @@ import Link from "next/link";
 import { posts, type PostCategory } from "./posts";
 
 export const metadata: Metadata = {
-  title: "News & Updates",
-  description: "Updates, neue Features und Ankündigungen direkt vom Taskey-Team.",
+  title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
+  description:
+    "Aktuelle Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung für Reinigungsbetriebe im DACH-Raum.",
+  alternates: { canonical: "https://www.taskeyapp.com/news" },
+  openGraph: {
+    title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
+    description:
+      "Aktuelle Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung für Reinigungsbetriebe.",
+    url: "https://www.taskeyapp.com/news",
+    type: "website",
+    locale: "de_DE",
+    siteName: "Taskey",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Taskey Blog – Tipps für Reinigungsbetriebe",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
+    description:
+      "Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const categoryStyle: Record<PostCategory, { label: string; tone: string }> = {

@@ -136,7 +136,7 @@ export default function AboutClient() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md mb-6">
-              <Image src={LOGO_SRC} alt="Taskey Logo" width={44} height={44} priority sizes="44px" className="rounded-lg object-cover" />
+              <Image src={LOGO_SRC} alt="Taskey – Reinigungssoftware aus Völklingen" width={44} height={44} priority sizes="44px" className="rounded-lg object-cover" />
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
               {t("about.why.title")}
