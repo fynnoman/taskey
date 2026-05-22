@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Preise Gebäudereinigungssoftware | Ab 119€/Monat | Taskey",
   description:
-    "Transparente Preise für Reinigungssoftware: Beginner ab 119€, Professional ab 315€, Business ab 429€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
+    "Transparente Preise für Reinigungssoftware: Beginner ab 71€, Professional ab 189€, Business ab 257€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
   alternates: { canonical: "https://www.taskeyapp.com/pricing" },
 };
 
@@ -13,30 +13,30 @@ const beginnerProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Beginner",
-  "description": "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise – ab 119 € pro Monat plus 4,40 € pro Objekt.",
+  "description": "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise – ab 71 € pro Monat plus 4,40 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "119", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "119", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "71", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "71", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
 };
 
 const professionalProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Professional",
-  "description": "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports – ab 315 € pro Monat plus 4,80 € pro Objekt.",
+  "description": "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports – ab 189 € pro Monat plus 4,80 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "315", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "315", "priceCurrency": "EUR", "unitText": "MONTH" } },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "189", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "189", "priceCurrency": "EUR", "unitText": "MONTH" } },
 };
 
 const businessProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Business",
-  "description": "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support – ab 429 € pro Monat plus 5,10 € pro Objekt.",
+  "description": "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support – ab 257 € pro Monat plus 5,10 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "429", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "429", "priceCurrency": "EUR", "unitText": "MONTH" } },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "257", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "257", "priceCurrency": "EUR", "unitText": "MONTH" } },
 };
 
 const pricingFaqSchema = {

@@ -89,7 +89,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / Monat",
         perObject: "+ 4,40 € pro Objekt",
         features: [
@@ -108,7 +108,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / Monat",
         perObject: "+ 4,80 € pro Objekt",
         features: [
@@ -127,7 +127,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "429",
+        price: "257",
         unit: "€ / Monat",
         perObject: "+ 5,10 € pro Objekt",
         features: [
@@ -199,7 +199,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / month",
         perObject: "+ €4.40 per property",
         features: [
@@ -218,7 +218,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / month",
         perObject: "+ €4.80 per property",
         features: [
@@ -237,7 +237,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "429",
+        price: "257",
         unit: "€ / month",
         perObject: "+ €5.10 per property",
         features: [
@@ -309,7 +309,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / mois",
         perObject: "+ 4,40 € par site",
         features: [
@@ -328,7 +328,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / mois",
         perObject: "+ 4,80 € par site",
         features: [
@@ -347,7 +347,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "429",
+        price: "257",
         unit: "€ / mois",
         perObject: "+ 5,10 € par site",
         features: [
