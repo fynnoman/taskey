@@ -8,7 +8,7 @@ const organizationSchema = {
   "legalName": "Schulz & Stosse GbR",
   "url": "https://www.taskeyapp.com",
   "logo": "https://www.taskeyapp.com/logobittt.png",
-  "foundingDate": "2024",
+  "foundingDate": "2024", // Gründungsjahr
   "description":
     "Taskey ist eine Reinigungssoftware Made in Germany. Entwickelt für Gebäudereiniger im DACH-Raum: NFC-Zeiterfassung, Einsatzplanung, Live-Margen und DATEV-Export.",
   "address": {
