@@ -72,7 +72,7 @@ export default function Page() {
           eyebrow: "Was im Beginner-Tarif enthalten ist",
           heading: "Ab 119 € pro Monat – ohne Funktions-Kappung.",
           intro:
-            "Taskey ist kein verkrüppelter „Starter-Tarif". Im Beginner-Tarif sind alle Kernfunktionen enthalten, die ein kleiner Reinigungsbetrieb braucht.",
+            "Taskey ist kein verkrüppelter 'Starter-Tarif'. Im Beginner-Tarif sind alle Kernfunktionen enthalten, die ein kleiner Reinigungsbetrieb braucht.",
           bullets: [
             "NFC-Zeiterfassung mit GPS und Offline-Sync",
             "Unbegrenzt viele Mitarbeitende",

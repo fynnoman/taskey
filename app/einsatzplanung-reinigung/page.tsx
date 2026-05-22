@@ -102,7 +102,7 @@ export default function Page() {
           heading: "Weniger Anrufe, höhere Marge, ruhigeres Wochenende.",
           body: [
             "Inhaber, die von Excel auf Taskey wechseln, berichten typischerweise: 60–80 % weniger Telefonate pro Woche, weil Mitarbeitende ihren Einsatzplan auf dem Handy sehen und automatisch Push-Erinnerungen bekommen.",
-            "Zwischen 5 und 15 % höhere Marge pro Objekt, weil Stunden nicht mehr „verschwinden", Pausen korrekt erfasst werden und Über-/Unterbesetzungen sofort sichtbar sind.",
+            `Zwischen 5 und 15 % höhere Marge pro Objekt, weil Stunden nicht mehr \u201Everschwinden\u201C, Pausen korrekt erfasst werden und Über-/Unterbesetzungen sofort sichtbar sind.`,
             "Und – das hört man besonders oft – das Wochenende gehört wieder der Familie statt Stundenzetteln.",
           ],
         },

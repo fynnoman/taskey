@@ -84,7 +84,7 @@ export default function Page() {
           heading: "Ehrliche Worte: wann Zvoove sinnvoller ist.",
           body: [
             "Zvoove ist ein vollwertiges ERP. Wenn Sie ein Großunternehmen mit komplexen Buchhaltungs-Workflows, internationalen Standorten und sehr individuellen Geschäftsprozessen sind, kann Zvoove die richtige Wahl sein – mit dem entsprechenden Preisschild und Schulungsaufwand.",
-            "Taskey ist bewusst fokussiert: All-in-One für die Gebäudereinigung im DACH-Raum. Wenn Sie keine 30-seitige Anforderungsliste haben, sondern einfach „eine Software, die endlich funktioniert", liegen Sie bei uns richtiger.",
+            "Taskey ist bewusst fokussiert: All-in-One für die Gebäudereinigung im DACH-Raum. Wenn Sie keine 30-seitige Anforderungsliste haben, sondern einfach 'eine Software, die endlich funktioniert', liegen Sie bei uns richtiger.",
           ],
         },
         {

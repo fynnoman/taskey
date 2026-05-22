@@ -49,7 +49,7 @@ export default function Page() {
           heading: "Zimmer-Status in Echtzeit.",
           body: [
             "Jedes Zimmer hat in Taskey einen Status: Belegt, Check-out, In Reinigung, Bereit, Defekt. Das Housekeeping-Team aktualisiert den Status durch einen NFC-Tap an der Tür – die Rezeption sieht jede Änderung sofort.",
-            "Das bedeutet: kein Anruf mehr ans Stockwerk, kein „ist Zimmer 412 schon fertig?" über Funk – die Rezeption checkt den Gast direkt ein, sobald das Zimmer den Status „Bereit" hat.",
+            "Das bedeutet: kein Anruf mehr ans Stockwerk, kein 'ist Zimmer 412 schon fertig?' über Funk – die Rezeption checkt den Gast direkt ein, sobald das Zimmer den Status 'Bereit' hat.",
           ],
           bullets: [
             "Live-Status pro Zimmer auf jedem Endgerät",
@@ -86,8 +86,7 @@ export default function Page() {
       faqs={[
         {
           question: "Wie schnell sehe ich, ob ein Zimmer bereit für den nächsten Gast ist?",
-          answer:
-            "In Echtzeit. Sobald der Mitarbeiter den Status „Bereit" setzt, sieht die Rezeption das Zimmer als verfügbar – ohne Telefonat, ohne Funk.",
+          answer: "In Echtzeit. Sobald der Mitarbeiter den Status 'Bereit' setzt, sieht die Rezeption das Zimmer als verfügbar – ohne Telefonat, ohne Funk.",
         },
         {
           question: "Können Defekte oder Wartungsbedarf direkt gemeldet werden?",
@@ -96,8 +95,7 @@ export default function Page() {
         },
         {
           question: "Wie wird mit VIP- oder Stay-Over-Gästen umgegangen?",
-          answer:
-            "Pro Zimmer hinterlegen Sie Sonderwünsche (z.B. „nur ohne Eintreten“ für Stay-Over). Die App zeigt das dem Housekeeping vor dem Klopfen an.",
+          answer: "Pro Zimmer hinterlegen Sie Sonderwünsche (z.B. 'nur ohne Eintreten' für Stay-Over). Die App zeigt das dem Housekeeping vor dem Klopfen an.",
         },
         {
           question: "Lässt sich das mit unserem PMS verbinden?",

@@ -37,7 +37,7 @@ export default function Page() {
       eyebrow="Pillar · Nachweis"
       h1="Leistungsnachweis Gebäudereinigung —"
       h1Accent="digital, manipulationssicher, rechtssicher."
-      lead="„Wir waren da, ehrlich!" reicht nicht. Bei jeder Reklamation, jedem Auftraggeber-Wechsel und jedem Vertragsende entscheidet ein Nachweis darüber, ob Sie bezahlt werden. Taskey dokumentiert jeden Einsatz automatisch: per NFC-Scan, GPS, Foto und – wenn nötig – mit digitaler Unterschrift."
+      lead={`\u201EWir waren da, ehrlich!\u201C reicht nicht. Bei jeder Reklamation, jedem Auftraggeber-Wechsel und jedem Vertragsende entscheidet ein Nachweis darüber, ob Sie bezahlt werden. Taskey dokumentiert jeden Einsatz automatisch: per NFC-Scan, GPS, Foto und \u2013 wenn nötig \u2013 mit digitaler Unterschrift.`}
       breadcrumbs={[
         { name: "Home", url: "https://www.taskeyapp.com" },
         { name: "Leistungsnachweis Gebäudereinigung", url: `https://www.taskeyapp.com${path}` },
