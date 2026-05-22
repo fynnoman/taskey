@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import FeaturesClient from "./features-client";
-import BreadcrumbSchema from "@/components/BreadcrumbSchema"
 
 export const metadata: Metadata = {
   title: "Funktionen | NFC Zeiterfassung, Einsatzplanung & DATEV-Export | Taskey",
   description:
+<<<<<<< HEAD
     "Alle Funktionen von Taskey: NFC-Objektnachweis, automatische Zeiterfassung, Schichtplanung, Auftraggeber-Portal und DATEV-Export. Jetzt kostenlos testen.",
+=======
+    "NFC-Nachweise, Zeiterfassung, Einsatzplanung & mehr – alle Funktionen von Taskey für Handwerk, Reinigung & Facility Management.",
+>>>>>>> 7e326fd (Fix enterprise-client export name)
   alternates: { canonical: "https://www.taskeyapp.com/features" },
   openGraph: {
     title: "Funktionen | NFC Zeiterfassung, Einsatzplanung & DATEV-Export | Taskey",
     description:
+<<<<<<< HEAD
       "Alle Funktionen von Taskey: NFC-Objektnachweis, automatische Zeiterfassung, Schichtplanung, Auftraggeber-Portal und DATEV-Export.",
+=======
+      "NFC-Nachweise, Zeiterfassung, Einsatzplanung & mehr – alle Funktionen von Taskey.",
+>>>>>>> 7e326fd (Fix enterprise-client export name)
     url: "https://www.taskeyapp.com/features",
     type: "website",
     locale: "de_DE",
@@ -95,6 +102,7 @@ const featuresFaqSchema = {
 };
 
 export default function FeaturesPage() {
+<<<<<<< HEAD
   return (
     <>
       <BreadcrumbSchema crumbs={[
@@ -108,4 +116,7 @@ export default function FeaturesPage() {
       <FeaturesClient />
     </>
   )
+=======
+  return <FeaturesClient />;
+>>>>>>> 7e326fd (Fix enterprise-client export name)
 }

@@ -1,4 +1,5 @@
 import EnterpriseClient from "./enterprise-client";
+<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const enterpriseFaqSchema = {
@@ -77,6 +78,11 @@ export default function EnterprisePage() {
       <EnterpriseFaqSection />
     </>
   )
+=======
+
+export default function EnterprisePage() {
+  return <EnterpriseClient />;
+>>>>>>> 7e326fd (Fix enterprise-client export name)
 }
 
 function EnterpriseFaqSection() {

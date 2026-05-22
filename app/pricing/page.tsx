@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import PricingClient from "./pricing-client";
+<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
@@ -176,6 +176,11 @@ export default function PricingPage() {
       <PricingFaqSection />
     </>
   )
+=======
+
+export default function PricingPage() {
+  return <PricingClient />;
+>>>>>>> 7e326fd (Fix enterprise-client export name)
 }
 
 // Sichtbare FAQ-Section am Seitenende — deckungsgleich mit pricingFaqSchema,

@@ -89,7 +89,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / Monat",
         perObject: "+ 4,40 € pro Objekt",
         features: [
@@ -108,7 +108,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / Monat",
         perObject: "+ 4,80 € pro Objekt",
         features: [
@@ -127,7 +127,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "429",
+        price: "257",
         unit: "€ / Monat",
         perObject: "+ 5,10 € pro Objekt",
         features: [
@@ -148,9 +148,9 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title: "Hardware nachbestellen.",
       intro: "Mehr Objekte, mehr Räume, mehr Tags. Bestellen Sie jederzeit nach.",
       offers: [
-        { key: "starter", name: "Starter", tags: "10 NFC-Tags", price: "6,30", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
-        { key: "pro", name: "Pro", tags: "50 NFC-Tags", price: "16,10", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen", recommended: true },
-        { key: "business", name: "Business", tags: "150 NFC-Tags", price: "30,80", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
+        { key: "starter", name: "Starter", tags: "10 NFC-Tags", price: "3,80", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
+        { key: "pro", name: "Pro", tags: "50 NFC-Tags", price: "9,70", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen", recommended: true },
+        { key: "business", name: "Business", tags: "150 NFC-Tags", price: "18,50", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
       ],
       recommended: "Empfohlen",
       lossTitle: "Verlustersatz inklusive",
@@ -199,7 +199,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / month",
         perObject: "+ €4.40 per property",
         features: [
@@ -218,7 +218,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / month",
         perObject: "+ €4.80 per property",
         features: [
@@ -237,7 +237,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "business",
         name: "Business",
-        price: "429",
+        price: "257",
         unit: "€ / month",
         perObject: "+ €5.10 per property",
         features: [
@@ -258,9 +258,9 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title: "Reorder hardware.",
       intro: "More properties, more rooms, more tags. Reorder anytime.",
       offers: [
-        { key: "starter", name: "Starter", tags: "10 NFC tags", price: "6.30", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
-        { key: "pro", name: "Pro", tags: "50 NFC tags", price: "16.10", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order", recommended: true },
-        { key: "business", name: "Business", tags: "150 NFC tags", price: "30.80", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
+        { key: "starter", name: "Starter", tags: "10 NFC tags", price: "3.80", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
+        { key: "pro", name: "Pro", tags: "50 NFC tags", price: "9.70", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order", recommended: true },
+        { key: "business", name: "Business", tags: "150 NFC tags", price: "18.50", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
       ],
       recommended: "Recommended",
       lossTitle: "Loss replacement included",
@@ -309,7 +309,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "beginner",
         name: "Beginner",
-        price: "119",
+        price: "71",
         unit: "€ / mois",
         perObject: "+ 4,40 € par site",
         features: [
@@ -328,7 +328,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       {
         key: "professional",
         name: "Professional",
-        price: "315",
+        price: "189",
         unit: "€ / mois",
         perObject: "+ 4,80 € par site",
         features: [

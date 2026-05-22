@@ -1,4 +1,5 @@
 import AboutClient from "./about-client";
+<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const organizationSchema = {
@@ -101,4 +102,9 @@ export default function AboutPage() {
       <AboutClient />
     </>
   )
+=======
+
+export default function AboutPage() {
+  return <AboutClient />;
+>>>>>>> 7e326fd (Fix enterprise-client export name)
 }

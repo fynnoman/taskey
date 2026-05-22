@@ -1,4 +1,5 @@
 import IOSClient from "./ios-client";
+<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const mobileAppSchema = {
@@ -37,4 +38,9 @@ export default function IOSPage() {
       <IOSClient />
     </>
   )
+=======
+
+export default function IOSPage() {
+  return <IOSClient />;
+>>>>>>> 7e326fd (Fix enterprise-client export name)
 }
