@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import PricingClient from "./pricing-client";
-<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
@@ -13,140 +13,44 @@ const beginnerProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Beginner",
-  "description":
-    "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise – ab 119 € pro Monat plus 4,40 € pro Objekt.",
+  "description": "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise – ab 119 € pro Monat plus 4,40 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.taskeyapp.com/pricing",
-    "price": "119",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "priceSpecification": {
-      "@type": "UnitPriceSpecification",
-      "price": "119",
-      "priceCurrency": "EUR",
-      "unitText": "MONTH",
-      "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" },
-    },
-  },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "119", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "119", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
 };
 
 const professionalProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Professional",
-  "description":
-    "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports – ab 315 € pro Monat plus 4,80 € pro Objekt.",
+  "description": "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports – ab 315 € pro Monat plus 4,80 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.taskeyapp.com/pricing",
-    "price": "315",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "priceSpecification": {
-      "@type": "UnitPriceSpecification",
-      "price": "315",
-      "priceCurrency": "EUR",
-      "unitText": "MONTH",
-    },
-  },
-};
-
-const pricingFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Gibt es eine kostenlose Testphase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Ja. Sie können Taskey 3 Monate lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Kann ich das Paket wechseln?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Was passiert nach der 3-monatigen Testphase?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Nach drei Monaten wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Sind Updates und neue Funktionen inklusive?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Was kosten zusätzliche Objekte?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Pro aktivem Objekt kostet Beginner 4,40 €, Professional 4,80 € und Business 5,10 € im Monat. Inaktive Objekte zählen nicht.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Gibt es Setup- oder Onboarding-Kosten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis.",
-      },
-    },
-    {
-      "@type": "Question",
-      "name": "Ist die Anzahl der Mitarbeitenden begrenzt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text":
-          "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten. Sie zahlen ausschließlich nach aktivem Objekt – nicht pro User.",
-      },
-    },
-  ],
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "315", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "315", "priceCurrency": "EUR", "unitText": "MONTH" } },
 };
 
 const businessProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Taskey Business",
-  "description":
-    "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support – ab 429 € pro Monat plus 5,10 € pro Objekt.",
+  "description": "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support – ab 429 € pro Monat plus 5,10 € pro Objekt.",
   "brand": { "@type": "Brand", "name": "Taskey" },
   "category": "Cleaning Management Software",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.taskeyapp.com/pricing",
-    "price": "429",
-    "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock",
-    "priceSpecification": {
-      "@type": "UnitPriceSpecification",
-      "price": "429",
-      "priceCurrency": "EUR",
-      "unitText": "MONTH",
-    },
-  },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "429", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "429", "priceCurrency": "EUR", "unitText": "MONTH" } },
+};
+
+const pricingFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Gibt es eine kostenlose Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Sie können Taskey 3 Monate lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." } },
+    { "@type": "Question", "name": "Kann ich das Paket wechseln?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." } },
+    { "@type": "Question", "name": "Was passiert nach der 3-monatigen Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Nach drei Monaten wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." } },
+    { "@type": "Question", "name": "Sind Updates und neue Funktionen inklusive?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." } },
+    { "@type": "Question", "name": "Was kosten zusätzliche Objekte?", "acceptedAnswer": { "@type": "Answer", "text": "Pro aktivem Objekt kostet Beginner 4,40 €, Professional 4,80 € und Business 5,10 € im Monat. Inaktive Objekte zählen nicht." } },
+    { "@type": "Question", "name": "Gibt es Setup- oder Onboarding-Kosten?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." } },
+    { "@type": "Question", "name": "Ist die Anzahl der Mitarbeitenden begrenzt?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten. Sie zahlen ausschließlich nach aktivem Objekt – nicht pro User." } },
+  ],
 };
 
 export default function PricingPage() {
@@ -156,35 +60,16 @@ export default function PricingPage() {
         { name: "Home", url: "https://www.taskeyapp.com" },
         { name: "Preise", url: "https://www.taskeyapp.com/pricing" },
       ]} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(beginnerProduct) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalProduct) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessProduct) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(beginnerProduct) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalProduct) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessProduct) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }} />
       <PricingClient />
       <PricingFaqSection />
     </>
-  )
-=======
-
-export default function PricingPage() {
-  return <PricingClient />;
->>>>>>> 7e326fd (Fix enterprise-client export name)
+  );
 }
 
-// Sichtbare FAQ-Section am Seitenende — deckungsgleich mit pricingFaqSchema,
-// damit Google die FAQ als Rich Result einblenden kann.
 function PricingFaqSection() {
   return (
     <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-20 md:py-28">
@@ -198,19 +83,12 @@ function PricingFaqSection() {
         </h2>
         <div className="space-y-4">
           {pricingFaqSchema.mainEntity.map((faq) => (
-            <details
-              key={faq.name}
-              className="group rounded-2xl bg-white/[0.03] border border-white/10 p-6"
-            >
+            <details key={faq.name} className="group rounded-2xl bg-white/[0.03] border border-white/10 p-6">
               <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
                 <span>{faq.name}</span>
-                <span className="text-cyan-300 transition-transform group-open:rotate-45 text-2xl leading-none">
-                  +
-                </span>
+                <span className="text-cyan-300 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
               </summary>
-              <p className="mt-4 text-white/70 leading-relaxed text-sm md:text-base">
-                {faq.acceptedAnswer.text}
-              </p>
+              <p className="mt-4 text-white/70 leading-relaxed text-sm md:text-base">{faq.acceptedAnswer.text}</p>
             </details>
           ))}
         </div>

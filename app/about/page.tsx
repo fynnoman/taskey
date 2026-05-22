@@ -1,5 +1,4 @@
 import AboutClient from "./about-client";
-<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const organizationSchema = {
@@ -37,24 +36,13 @@ const organizationSchema = {
   ],
 };
 
-// Eigenständige Person-Schemas für E-E-A-T (Expertise, Authority, Trust):
-// Google verbindet Founder mit Organization und stärkt das Knowledge-Graph-Profil.
 const founderFynn = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Fynn-Luca Schulz",
   "jobTitle": "CEO & Mitgründer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Taskey",
-    "url": "https://www.taskeyapp.com",
-  },
-  "knowsAbout": [
-    "Gebäudereinigungssoftware",
-    "NFC-Zeiterfassung",
-    "Digitalisierung Reinigungsbranche",
-    "Einsatzplanung",
-  ],
+  "worksFor": { "@type": "Organization", "name": "Taskey", "url": "https://www.taskeyapp.com" },
+  "knowsAbout": ["Gebäudereinigungssoftware", "NFC-Zeiterfassung", "Digitalisierung Reinigungsbranche", "Einsatzplanung"],
   "url": "https://www.taskeyapp.com/about",
   "email": "fynn@taskeyapp.com",
   "nationality": "DE",
@@ -65,17 +53,8 @@ const founderJulian = {
   "@type": "Person",
   "name": "Julian Stosse",
   "jobTitle": "CTO & Mitgründer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Taskey",
-    "url": "https://www.taskeyapp.com",
-  },
-  "knowsAbout": [
-    "Softwarearchitektur",
-    "iOS- & Android-Entwicklung",
-    "DSGVO-konforme Cloud-Infrastruktur",
-    "Reinigungssoftware",
-  ],
+  "worksFor": { "@type": "Organization", "name": "Taskey", "url": "https://www.taskeyapp.com" },
+  "knowsAbout": ["Softwarearchitektur", "iOS- & Android-Entwicklung", "DSGVO-konforme Cloud-Infrastruktur", "Reinigungssoftware"],
   "url": "https://www.taskeyapp.com/about",
   "nationality": "DE",
 };
@@ -87,24 +66,10 @@ export default function AboutPage() {
         { name: "Home", url: "https://www.taskeyapp.com" },
         { name: "Über uns", url: "https://www.taskeyapp.com/about" },
       ]} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderFynn) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderJulian) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(founderFynn) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(founderJulian) }} />
       <AboutClient />
     </>
-  )
-=======
-
-export default function AboutPage() {
-  return <AboutClient />;
->>>>>>> 7e326fd (Fix enterprise-client export name)
+  );
 }

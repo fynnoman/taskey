@@ -1,5 +1,4 @@
 import EnterpriseClient from "./enterprise-client";
-<<<<<<< HEAD
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const enterpriseFaqSchema = {
@@ -77,12 +76,7 @@ export default function EnterprisePage() {
       <EnterpriseClient />
       <EnterpriseFaqSection />
     </>
-  )
-=======
-
-export default function EnterprisePage() {
-  return <EnterpriseClient />;
->>>>>>> 7e326fd (Fix enterprise-client export name)
+  );
 }
 
 function EnterpriseFaqSection() {
@@ -98,19 +92,12 @@ function EnterpriseFaqSection() {
         </h2>
         <div className="space-y-4">
           {enterpriseFaqSchema.mainEntity.map((faq) => (
-            <details
-              key={faq.name}
-              className="group rounded-2xl bg-white/[0.03] border border-white/10 p-6"
-            >
+            <details key={faq.name} className="group rounded-2xl bg-white/[0.03] border border-white/10 p-6">
               <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
                 <span>{faq.name}</span>
-                <span className="text-cyan-300 transition-transform group-open:rotate-45 text-2xl leading-none">
-                  +
-                </span>
+                <span className="text-cyan-300 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
               </summary>
-              <p className="mt-4 text-white/70 leading-relaxed text-sm md:text-base">
-                {faq.acceptedAnswer.text}
-              </p>
+              <p className="mt-4 text-white/70 leading-relaxed text-sm md:text-base">{faq.acceptedAnswer.text}</p>
             </details>
           ))}
         </div>
