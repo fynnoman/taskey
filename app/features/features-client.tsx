@@ -483,40 +483,40 @@ export default function FeaturesClient() {
   }, [language]);
 
   return (
-    <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[700px] h-[600px] bg-blue-600/15 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
+    <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[700px] h-[600px] bg-blue-100 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.06),transparent_60%)] pointer-events-none" />
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+            "linear-gradient(to right, #1e3a8a 1px, transparent 1px), linear-gradient(to bottom, #1e3a8a 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
 
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-cyan-300 uppercase">
+            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
               {c.hero.badge}
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-white">
+          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
             {c.hero.title1}
             <br />
-            <span className="bg-gradient-to-r from-cyan-300 via-white to-cyan-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
               {c.hero.title2}
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">{c.hero.subtitle}</p>
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">{c.hero.subtitle}</p>
         </div>
       </section>
 
@@ -529,8 +529,8 @@ export default function FeaturesClient() {
                 onClick={() => setActive(i)}
                 className={`px-4 md:px-5 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all border ${
                   i === active
-                    ? "bg-white text-gray-900 border-white shadow-lg shadow-cyan-500/10"
-                    : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10 hover:text-white"
+                    ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-cyan-500/10"
+                    : "bg-blue-50 text-slate-600 border-slate-200 hover:bg-blue-100 hover:text-slate-900"
                 }`}
               >
                 {cc.badge}
@@ -544,13 +544,13 @@ export default function FeaturesClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div key={cat.id} className="animate-[features-fade_0.6s_ease-out]">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-5">
+              <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
                 {cat.badge}
               </span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-white">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-slate-900">
                 {cat.headline}
               </h2>
-              <p className="text-base md:text-lg text-white/60">{cat.intro}</p>
+              <p className="text-base md:text-lg text-slate-600">{cat.intro}</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
@@ -560,24 +560,24 @@ export default function FeaturesClient() {
                   className={`relative rounded-3xl p-[1.5px] ${
                     i === 0
                       ? "bg-gradient-to-br from-cyan-400/40 via-blue-500/30 to-purple-500/20"
-                      : "bg-white/10"
+                      : "bg-blue-100"
                   }`}
                 >
                   <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center mb-5">
-                      <span className="text-cyan-300 font-black text-sm">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-300 flex items-center justify-center mb-5">
+                      <span className="text-blue-700 font-black text-sm">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 leading-tight">
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 leading-tight">
                       {f.title}
                     </h3>
-                    <p className="text-sm text-white/60 leading-relaxed mb-5">{f.desc}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-5">{f.desc}</p>
                     <ul className="space-y-2.5 mt-auto">
                       {f.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5 text-sm text-white/80">
+                        <li key={b} className="flex items-start gap-2.5 text-sm text-slate-700">
                           <svg
-                            className="w-4 h-4 text-cyan-300 flex-shrink-0 mt-0.5"
+                            className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -599,28 +599,28 @@ export default function FeaturesClient() {
 
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[56px] pointer-events-none" />
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
-                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-4">
+                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-4">
                   {c.cta.badge}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">
+                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">
                   {c.cta.title}
                 </h2>
-                <p className="text-white/60 text-base md:text-lg">{c.cta.subtitle}</p>
+                <p className="text-slate-600 text-base md:text-lg">{c.cta.subtitle}</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/20 text-white text-sm font-bold rounded-full hover:bg-white/10 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-slate-300 text-slate-900 text-sm font-bold rounded-full hover:bg-blue-100 transition-colors whitespace-nowrap"
                 >
                   {c.cta.pricing}
                 </Link>
                 <a
                   href="https://signup.taskeyapp.com"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-gray-900 text-sm font-bold rounded-full hover:bg-white/90 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
                 >
                   {c.cta.start}
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

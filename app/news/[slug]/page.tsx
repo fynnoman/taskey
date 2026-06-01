@@ -30,12 +30,12 @@ export async function generateMetadata(
 }
 
 const categoryStyle: Record<PostCategory, { label: string; tone: string }> = {
-  Update:      { label: "Update",      tone: "bg-cyan-500/10 border-cyan-400/30 text-cyan-300" },
+  Update:      { label: "Update",      tone: "bg-cyan-50 border-cyan-300 text-blue-700" },
   Feature:     { label: "Feature",     tone: "bg-violet-500/10 border-violet-400/30 text-violet-300" },
-  Release:     { label: "Release",     tone: "bg-emerald-500/10 border-emerald-400/30 text-emerald-300" },
-  Unternehmen: { label: "Unternehmen", tone: "bg-white/5 border-white/15 text-white/70" },
+  Release:     { label: "Release",     tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
+  Unternehmen: { label: "Unternehmen", tone: "bg-blue-50 border-slate-200 text-slate-600" },
   Geplant:     { label: "Geplant",     tone: "bg-amber-500/10 border-amber-400/30 text-amber-300" },
-  Blog:        { label: "Blog",        tone: "bg-emerald-500/10 border-emerald-400/30 text-emerald-300" },
+  Blog:        { label: "Blog",        tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
 };
 
 // ──────────────────────────────────────────────────────────────
@@ -49,7 +49,7 @@ function renderFormattedText(text: string): React.ReactNode[] {
   parts.forEach((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) {
       out.push(
-        <strong key={`b-${i}`} className="font-bold text-white">
+        <strong key={`b-${i}`} className="font-bold text-slate-900">
           {part.slice(2, -2)}
         </strong>
       );
@@ -91,14 +91,14 @@ function renderTable(lines: string[], keyBase: string) {
   const [header, ...body] = filtered;
 
   return (
-    <div key={keyBase} className="my-8 overflow-x-auto rounded-2xl border border-white/10">
+    <div key={keyBase} className="my-8 overflow-x-auto rounded-2xl border border-slate-200">
       <table className="w-full text-sm">
         <thead>
-          <tr className="bg-cyan-500/10">
+          <tr className="bg-cyan-50">
             {header.map((cell, i) => (
               <th
                 key={i}
-                className="text-left px-4 py-3 font-bold text-cyan-200 border-b border-white/10"
+                className="text-left px-4 py-3 font-bold text-blue-700 border-b border-slate-200"
               >
                 {renderFormattedText(cell)}
               </th>
@@ -109,12 +109,12 @@ function renderTable(lines: string[], keyBase: string) {
           {body.map((row, rIdx) => (
             <tr
               key={rIdx}
-              className={rIdx % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"}
+              className={rIdx % 2 === 0 ? "bg-blue-50/60" : "bg-white/[0.04]"}
             >
               {row.map((cell, cIdx) => (
                 <td
                   key={cIdx}
-                  className="px-4 py-3 text-white/70 border-b border-white/5 align-top"
+                  className="px-4 py-3 text-slate-600 border-b border-slate-200/60 align-top"
                 >
                   {renderFormattedText(cell)}
                 </td>
@@ -161,19 +161,19 @@ function renderBody(body: string) {
         const text = m[2];
         if (level === 1) {
           blocks.push(
-            <h2 key={`h-${key++}`} className="text-3xl md:text-4xl font-black text-white mt-14 mb-5 leading-tight">
+            <h2 key={`h-${key++}`} className="text-3xl md:text-4xl font-black text-slate-900 mt-14 mb-5 leading-tight">
               {renderFormattedText(text)}
             </h2>
           );
         } else if (level === 2) {
           blocks.push(
-            <h3 key={`h-${key++}`} className="text-2xl md:text-3xl font-black text-white mt-12 mb-4 leading-tight">
+            <h3 key={`h-${key++}`} className="text-2xl md:text-3xl font-black text-slate-900 mt-12 mb-4 leading-tight">
               {renderFormattedText(text)}
             </h3>
           );
         } else {
           blocks.push(
-            <h4 key={`h-${key++}`} className="text-xl md:text-2xl font-bold text-cyan-200 mt-10 mb-3">
+            <h4 key={`h-${key++}`} className="text-xl md:text-2xl font-bold text-blue-700 mt-10 mb-3">
               {renderFormattedText(text)}
             </h4>
           );
@@ -193,7 +193,7 @@ function renderBody(body: string) {
       blocks.push(
         <blockquote
           key={`q-${key++}`}
-          className="my-8 pl-6 pr-5 py-5 rounded-r-2xl border-l-4 border-cyan-400 bg-white/[0.04] text-white/80 italic text-lg leading-relaxed"
+          className="my-8 pl-6 pr-5 py-5 rounded-r-2xl border-l-4 border-cyan-400 bg-white/[0.04] text-slate-700 italic text-lg leading-relaxed"
         >
           {quoteLines.join(" ")}
         </blockquote>
@@ -209,7 +209,7 @@ function renderBody(body: string) {
         i++;
       }
       blocks.push(
-        <ol key={`ol-${key++}`} className="my-6 space-y-2.5 list-decimal list-outside pl-6 text-white/70 text-base md:text-lg leading-relaxed marker:text-cyan-400 marker:font-bold">
+        <ol key={`ol-${key++}`} className="my-6 space-y-2.5 list-decimal list-outside pl-6 text-slate-600 text-base md:text-lg leading-relaxed marker:text-blue-600 marker:font-bold">
           {items.map((it, idx) => (
             <li key={idx}>{renderFormattedText(it)}</li>
           ))}
@@ -226,7 +226,7 @@ function renderBody(body: string) {
         i++;
       }
       blocks.push(
-        <ul key={`ul-${key++}`} className="my-6 space-y-2.5 list-disc list-outside pl-6 text-white/70 text-base md:text-lg leading-relaxed marker:text-cyan-400">
+        <ul key={`ul-${key++}`} className="my-6 space-y-2.5 list-disc list-outside pl-6 text-slate-600 text-base md:text-lg leading-relaxed marker:text-blue-600">
           {items.map((it, idx) => (
             <li key={idx}>{renderFormattedText(it)}</li>
           ))}
@@ -251,7 +251,7 @@ function renderBody(body: string) {
       i++;
     }
     blocks.push(
-      <p key={`p-${key++}`} className="my-5 text-white/70 text-base md:text-lg leading-[1.75]">
+      <p key={`p-${key++}`} className="my-5 text-slate-600 text-base md:text-lg leading-[1.75]">
         {renderFormattedText(paraLines.join(" "))}
       </p>
     );
@@ -302,23 +302,23 @@ export default async function NewsPostPage(
   };
 
   return (
-    <main className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white min-h-screen overflow-hidden">
+    <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Ambient Glows */}
-      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_60%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.06),transparent_60%)] pointer-events-none" />
 
       {/* ─── HEADER ────────────────────────────────────── */}
       <article className="relative pt-28 md:pt-36 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-cyan-300 transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-blue-700 transition-colors mb-10"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
@@ -332,14 +332,14 @@ export default async function NewsPostPage(
             >
               {cs.label}
             </span>
-            <span className="text-white/40 text-xs sm:text-sm">{post.date}</span>
+            <span className="text-slate-500 text-xs sm:text-sm">{post.date}</span>
           </div>
 
-          <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-black text-white leading-[1.05] tracking-tight mb-6">
+          <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
             {post.title}
           </h1>
 
-          <p className="text-lg md:text-xl text-white/60 leading-relaxed pb-10 border-b border-white/10">
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed pb-10 border-b border-slate-200">
             {post.summary}
           </p>
         </div>
@@ -347,7 +347,7 @@ export default async function NewsPostPage(
         {/* Hero Image */}
         {post.heroImage ? (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/9]">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9]">
               <Image
                 src={post.heroImage}
                 alt={post.title}
@@ -360,8 +360,8 @@ export default async function NewsPostPage(
           </div>
         ) : post.category === "Blog" ? (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[16/9] bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a]">
-              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[64px]" />
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9] bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a]">
+              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-100 rounded-full blur-[64px]" />
               <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[64px]" />
             </div>
           </div>
@@ -381,12 +381,12 @@ export default async function NewsPostPage(
               {prev ? (
                 <Link
                   href={`/news/${prev.slug}`}
-                  className="group rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 backdrop-blur-sm p-6 transition-all"
+                  className="group rounded-2xl bg-blue-50/60 hover:bg-blue-50 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-6 transition-all"
                 >
-                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-2 block">
+                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 mb-2 block">
                     ← Vorheriger Beitrag
                   </span>
-                  <span className="text-white font-bold group-hover:text-cyan-200 transition-colors leading-snug block">
+                  <span className="text-slate-900 font-bold group-hover:text-blue-700 transition-colors leading-snug block">
                     {prev.title}
                   </span>
                 </Link>
@@ -396,12 +396,12 @@ export default async function NewsPostPage(
               {next ? (
                 <Link
                   href={`/news/${next.slug}`}
-                  className="group rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 backdrop-blur-sm p-6 transition-all sm:text-right"
+                  className="group rounded-2xl bg-blue-50/60 hover:bg-blue-50 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-6 transition-all sm:text-right"
                 >
-                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/40 mb-2 block">
+                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 mb-2 block">
                     Nächster Beitrag →
                   </span>
-                  <span className="text-white font-bold group-hover:text-cyan-200 transition-colors leading-snug block">
+                  <span className="text-slate-900 font-bold group-hover:text-blue-700 transition-colors leading-snug block">
                     {next.title}
                   </span>
                 </Link>
@@ -416,14 +416,14 @@ export default async function NewsPostPage(
       {/* ─── BOTTOM CTA ────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-white/10 p-8 md:p-12 overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[56px] pointer-events-none" />
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
-                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-white">
+                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">
                   Selbst ausprobieren.
                 </h2>
-                <p className="text-white/60 text-base md:text-lg">
+                <p className="text-slate-600 text-base md:text-lg">
                   3 Monate kostenlos — kein Risiko, keine Kreditkarte.
                 </p>
               </div>
@@ -431,7 +431,7 @@ export default async function NewsPostPage(
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 text-base font-bold rounded-full hover:bg-white/90 transition-colors whitespace-nowrap shrink-0"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap shrink-0"
               >
                 Jetzt starten
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

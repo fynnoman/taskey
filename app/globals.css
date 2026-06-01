@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030712; /* gray-950 — matcht den Hero-Gradient oben */
-  --foreground: #1f2937;
-  --accent: #1e3a8a;
+  --background: #f8fafc; /* slate-50 — Soft Sky base */
+  --foreground: #0f172a; /* slate-900 */
+  --foreground-muted: #475569; /* slate-600 */
+  --section-alt: #eff6ff; /* blue-50 */
+  --border-soft: #dbeafe; /* blue-100 */
+  --border-strong: #e2e8f0; /* slate-200 */
+  --accent: #1d4ed8; /* blue-700 */
+  --accent-strong: #1e40af; /* blue-800 */
+  --cta: #2563eb; /* blue-600 */
 }
 
 body {
@@ -93,10 +99,10 @@ html {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(30, 64, 175, 0.3);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.18);
   }
   50% {
-    box-shadow: 0 0 20px rgba(30, 64, 175, 0.5);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
   }
 }
 
@@ -146,16 +152,16 @@ html {
 }
 
 @keyframes footer-flicker {
-  0%, 100% { opacity: 0.08; }
-  4% { opacity: 0.15; }
-  6% { opacity: 0.06; }
-  8% { opacity: 0.18; }
-  10% { opacity: 0.08; }
-  50% { opacity: 0.1; }
-  52% { opacity: 0.2; }
-  54% { opacity: 0.07; }
-  56% { opacity: 0.14; }
-  58% { opacity: 0.1; }
+  0%, 100% { opacity: 0.04; }
+  4% { opacity: 0.08; }
+  6% { opacity: 0.03; }
+  8% { opacity: 0.1; }
+  10% { opacity: 0.04; }
+  50% { opacity: 0.05; }
+  52% { opacity: 0.11; }
+  54% { opacity: 0.035; }
+  56% { opacity: 0.08; }
+  58% { opacity: 0.05; }
 }
 
 .animate-footer-flicker {

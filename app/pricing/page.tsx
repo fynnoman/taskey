@@ -72,10 +72,10 @@ export default function PricingPage() {
 
 function PricingFaqSection() {
   return (
-    <section className="relative bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-20 md:py-28">
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[72px] pointer-events-none" />
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-20 md:py-28">
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
+        <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
           Häufige Fragen zu den Preisen
         </p>
         <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tight mb-10">
@@ -83,12 +83,12 @@ function PricingFaqSection() {
         </h2>
         <div className="space-y-4">
           {pricingFaqSchema.mainEntity.map((faq) => (
-            <details key={faq.name} className="group rounded-2xl bg-white/[0.03] border border-white/10 p-6">
+            <details key={faq.name} className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6">
               <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
                 <span>{faq.name}</span>
-                <span className="text-cyan-300 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+                <span className="text-blue-700 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
               </summary>
-              <p className="mt-4 text-white/70 leading-relaxed text-sm md:text-base">{faq.acceptedAnswer.text}</p>
+              <p className="mt-4 text-slate-600 leading-relaxed text-sm md:text-base">{faq.acceptedAnswer.text}</p>
             </details>
           ))}
         </div>

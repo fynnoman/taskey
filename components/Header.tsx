@@ -51,11 +51,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 text-white transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 text-slate-900 transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         solid
-          ? "bg-gray-950/80 backdrop-blur-xl border-b border-white/10"
+          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200"
           : "bg-transparent border-b border-transparent"
       }`}
       aria-hidden={isHomepage ? hidden : false}
@@ -100,7 +100,7 @@ function NavInner({
             priority
             sizes="64px"
           />
-          <span className="text-xl font-bold text-white">TASKEY</span>
+          <span className="text-xl font-bold text-slate-900">TASKEY</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -111,8 +111,8 @@ function NavInner({
               href={link.href}
               className={`transition font-medium ${
                 isActive(link.href)
-                  ? "text-cyan-300 font-bold"
-                  : "text-white/70 hover:text-white"
+                  ? "text-blue-700 font-bold"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {link.label}
@@ -120,7 +120,7 @@ function NavInner({
           ))}
           <Link
             href="/support"
-            className="text-white/70 hover:text-white transition font-medium"
+            className="text-slate-600 hover:text-slate-900 transition font-medium"
           >
             {t("nav.support")}
           </Link>
@@ -132,7 +132,7 @@ function NavInner({
             href="https://dashboard.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-white/25 hover:border-white/50 text-white rounded-lg transition font-semibold hover:bg-white/5"
+            className="px-5 py-2.5 border border-slate-300 hover:border-slate-400 text-slate-900 rounded-lg transition font-semibold hover:bg-blue-50"
           >
             Login
           </Link>
@@ -140,7 +140,7 @@ function NavInner({
             href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+            className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-900 rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
           >
             {t("nav.tryFree")}
           </Link>
@@ -148,7 +148,7 @@ function NavInner({
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-slate-900"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menü öffnen"
         >
@@ -164,7 +164,7 @@ function NavInner({
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 py-4 bg-gray-950/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-slate-200 py-4 bg-white/95 backdrop-blur-xl">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -173,8 +173,8 @@ function NavInner({
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-4 py-3 rounded-lg transition ${
                   isActive(link.href)
-                    ? "text-cyan-300 bg-white/5 font-bold"
-                    : "text-white/80 hover:bg-white/5 hover:text-white"
+                    ? "text-blue-700 bg-blue-50 font-bold"
+                    : "text-slate-700 hover:bg-blue-50 hover:text-slate-900"
                 }`}
               >
                 {link.label}
@@ -182,7 +182,7 @@ function NavInner({
             ))}
             <Link
               href="/support"
-              className="px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition"
+              className="px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.support")}
@@ -195,7 +195,7 @@ function NavInner({
                 href="https://dashboard.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full px-4 py-3 text-center text-white/80 hover:bg-white/5 hover:text-white rounded-lg transition font-medium border border-white/15"
+                className="block w-full px-4 py-3 text-center text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition font-medium border border-slate-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Login
@@ -204,7 +204,7 @@ function NavInner({
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+                className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-900 rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.tryFree")}

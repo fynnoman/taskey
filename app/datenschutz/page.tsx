@@ -9,7 +9,7 @@ export default function DatenschutzPage() {
   return (
     <main className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Datenschutzerklärung</h1>
+        <h1 className="text-4xl font-bold text-slate-900 mb-8">Datenschutzerklärung</h1>
 
         {/* DFSA PDF Download */}
         <div className="mb-10 flex items-center gap-4 p-5 rounded-2xl border-2 border-blue-900/20 bg-blue-50">
@@ -20,8 +20,8 @@ export default function DatenschutzPage() {
           </div>
           <div className="flex-1">
             <p className="text-sm text-blue-800 font-semibold uppercase tracking-wide mb-0.5">Offizielles Dokument</p>
-            <p className="text-gray-900 font-bold text-lg leading-tight">DFSA – Datenschutz-Folgenabschätzung</p>
-            <p className="text-gray-500 text-sm mt-0.5">Vollständiges Dokument als PDF herunterladen</p>
+            <p className="text-slate-900 font-bold text-lg leading-tight">DFSA – Datenschutz-Folgenabschätzung</p>
+            <p className="text-slate-500 text-sm mt-0.5">Vollständiges Dokument als PDF herunterladen</p>
           </div>
           <a
             href="/taskey-datenschutz.pdf"
@@ -36,9 +36,9 @@ export default function DatenschutzPage() {
           </a>
         </div>
 
-        <div className="prose prose-lg max-w-none text-gray-700 space-y-8">
+        <div className="prose prose-lg max-w-none text-slate-700 space-y-8">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Verantwortlicher</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Verantwortlicher</h2>
             <p className="mb-2">Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
             <p className="font-semibold">
               Fynn - Luca Schulz<br />
@@ -51,7 +51,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Allgemeines zur Datenverarbeitung</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Allgemeines zur Datenverarbeitung</h2>
             <p>
               Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Personenbezogene Daten werden 
               auf dieser Website ausschließlich im Rahmen der gesetzlichen Bestimmungen der Datenschutz-Grundverordnung 
@@ -63,7 +63,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Erhebung und Speicherung personenbezogener Daten beim Besuch der Website</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">3. Erhebung und Speicherung personenbezogener Daten beim Besuch der Website</h2>
             <p className="mb-3">
               Beim Aufrufen unserer Website werden durch den Browser automatisch folgende Informationen 
               an unseren Server übermittelt:
@@ -93,7 +93,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Kontaktaufnahme</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">4. Kontaktaufnahme</h2>
             <p>
               Wenn Sie uns per Kontaktformular, E-Mail oder Telefon kontaktieren, werden die von Ihnen 
               übermittelten Daten verarbeitet (z. B. Name, E-Mail-Adresse, Nachricht).
@@ -108,7 +108,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Newsletter / Wartelisten (falls genutzt)</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">5. Newsletter / Wartelisten (falls genutzt)</h2>
             <p>
               Sofern Sie sich für einen Newsletter oder eine Warteliste anmelden, verarbeiten wir Ihre 
               E-Mail-Adresse und ggf. weitere freiwillige Angaben.
@@ -120,17 +120,17 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Cookies und ähnliche Technologien</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Cookies und ähnliche Technologien</h2>
             <p className="mb-3">
               Unsere Website verwendet Cookies und ähnliche Technologien. Cookies sind kleine Textdateien, die auf Ihrem Endgerät 
               gespeichert werden und bestimmte Einstellungen und Daten zum Austausch mit unserem System über Ihren Browser speichern.
             </p>
             
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-4">Cookie-Kategorien</h3>
+            <h3 className="text-xl font-semibold text-slate-900 mb-3 mt-4">Cookie-Kategorien</h3>
             
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Technisch notwendige Cookies</h4>
+                <h4 className="font-semibold text-slate-900 mb-2">Technisch notwendige Cookies</h4>
                 <p className="mb-2">
                   Diese Cookies sind für den Betrieb der Website zwingend erforderlich und können nicht deaktiviert werden.
                 </p>
@@ -142,7 +142,7 @@ export default function DatenschutzPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Funktionale Cookies</h4>
+                <h4 className="font-semibold text-slate-900 mb-2">Funktionale Cookies</h4>
                 <p className="mb-2">
                   Diese Cookies ermöglichen erweiterte Funktionen wie Spracheinstellungen oder regionale Präferenzen.
                 </p>
@@ -154,7 +154,7 @@ export default function DatenschutzPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Analyse- und Statistik-Cookies</h4>
+                <h4 className="font-semibold text-slate-900 mb-2">Analyse- und Statistik-Cookies</h4>
                 <p className="mb-2">
                   Diese Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen. Die Auswertung erfolgt anonym oder pseudonym.
                 </p>
@@ -166,7 +166,7 @@ export default function DatenschutzPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Marketing- und Tracking-Cookies</h4>
+                <h4 className="font-semibold text-slate-900 mb-2">Marketing- und Tracking-Cookies</h4>
                 <p className="mb-2">
                   Diese Cookies werden verwendet, um Besuchern relevante Inhalte anzuzeigen und die Wirksamkeit von Marketingmaßnahmen zu messen.
                 </p>
@@ -177,7 +177,7 @@ export default function DatenschutzPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Externe Inhalte</h4>
+                <h4 className="font-semibold text-slate-900 mb-2">Externe Inhalte</h4>
                 <p className="mb-2">
                   Externe Inhalte von Drittanbietern (z. B. Videos, Karten) können Cookies setzen.
                 </p>
@@ -195,7 +195,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Analyse- und Tracking-Tools</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">7. Analyse- und Tracking-Tools</h2>
             <p className="mb-3">
               Sofern Analyse-Tools (z. B. Google Analytics, Plausible, etc.) eingesetzt werden, erfolgt 
               dies nur nach Ihrer Einwilligung.
@@ -212,7 +212,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Hosting</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">8. Hosting</h2>
             <p>Die Website wird bei einem externen Hosting-Anbieter betrieben.</p>
             <p className="mt-3">
               <strong>Verarbeitete Daten:</strong> alle im Rahmen des Websitebetriebs anfallenden Daten.
@@ -226,7 +226,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Weitergabe von Daten</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">9. Weitergabe von Daten</h2>
             <p className="mb-2">Eine Weitergabe personenbezogener Daten erfolgt nur, wenn:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Sie ausdrücklich eingewilligt haben</li>
@@ -236,7 +236,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Speicherdauer</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">10. Speicherdauer</h2>
             <p>
               Personenbezogene Daten werden nur so lange gespeichert, wie dies für die jeweiligen Zwecke 
               erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen.
@@ -244,7 +244,7 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Rechte der betroffenen Personen</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">11. Rechte der betroffenen Personen</h2>
             <p className="mb-2">Sie haben jederzeit das Recht auf:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Auskunft (Art. 15 DSGVO)</li>
@@ -257,14 +257,14 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Beschwerderecht</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">12. Beschwerderecht</h2>
             <p>
               Sie haben das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Datensicherheit</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">13. Datensicherheit</h2>
             <p>
               Wir setzen geeignete technische und organisatorische Maßnahmen ein, um Ihre Daten gegen 
               Verlust, Missbrauch oder unbefugten Zugriff zu schützen.
@@ -272,11 +272,11 @@ export default function DatenschutzPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Änderungen dieser Datenschutzerklärung</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">14. Änderungen dieser Datenschutzerklärung</h2>
             <p>
               Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.
             </p>
-            <p className="mt-4 text-sm text-gray-600">
+            <p className="mt-4 text-sm text-slate-600">
               Stand: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
           </section>

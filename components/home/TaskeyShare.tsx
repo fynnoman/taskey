@@ -24,15 +24,15 @@ const cards: Card[] = [
     title: "Fortschritt live",
     subtitle: "Ihr Auftraggeber sieht jederzeit, was im Objekt passiert.",
     visual: (
-      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-[11px] font-bold text-white/80">Fortschritt</p>
-          <p className="text-[11px] font-black text-cyan-300">67%</p>
+          <p className="text-[11px] font-bold text-slate-700">Fortschritt</p>
+          <p className="text-[11px] font-black text-blue-700">67%</p>
         </div>
-        <div className="w-full bg-white/10 rounded-full h-2 mb-2 overflow-hidden">
+        <div className="w-full bg-blue-100 rounded-full h-2 mb-2 overflow-hidden">
           <div className="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style={{ width: "67%" }} />
         </div>
-        <p className="text-[10px] text-white/40">Nächste Reinigung: Mo, 28.</p>
+        <p className="text-[10px] text-slate-500">Nächste Reinigung: Mo, 28.</p>
       </div>
     ),
   },
@@ -41,19 +41,19 @@ const cards: Card[] = [
     title: "Fotos & Protokolle",
     subtitle: "Bilder vom Einsatz — automatisch geteilt, nie wieder per E-Mail.",
     visual: (
-      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
-        <p className="text-[11px] font-bold text-white/80 mb-3">Leistungsnachweise</p>
+      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+        <p className="text-[11px] font-bold text-slate-700 mb-3">Leistungsnachweise</p>
         <div className="grid grid-cols-3 gap-1.5 mb-2">
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className={`aspect-square rounded-md border border-white/10 ${
-                ["bg-cyan-500/20", "bg-blue-500/15", "bg-emerald-500/15", "bg-purple-500/15", "bg-cyan-500/10", "bg-blue-500/10"][i]
+              className={`aspect-square rounded-md border border-slate-200 ${
+                ["bg-cyan-100", "bg-blue-100", "bg-emerald-100", "bg-purple-100", "bg-cyan-50", "bg-blue-50"][i]
               }`}
             />
           ))}
         </div>
-        <p className="text-[10px] text-white/40">Heute 14:32 hochgeladen</p>
+        <p className="text-[10px] text-slate-500">Heute 14:32 hochgeladen</p>
       </div>
     ),
   },
@@ -62,16 +62,16 @@ const cards: Card[] = [
     title: "Volle Transparenz",
     subtitle: "Monatsbudget, offene Posten, gelieferte Leistungen — in Echtzeit.",
     visual: (
-      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
-        <p className="text-[11px] font-bold text-white/80 mb-2">Monatsvertrag</p>
+      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+        <p className="text-[11px] font-bold text-slate-700 mb-2">Monatsvertrag</p>
         <div className="flex items-baseline gap-1 mb-3">
-          <span className="text-2xl font-black text-white">4.200 €</span>
-          <span className="text-[10px] text-white/40">/ 4.800 €</span>
+          <span className="text-2xl font-black text-slate-900">4.200 €</span>
+          <span className="text-[10px] text-slate-500">/ 4.800 €</span>
         </div>
-        <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+        <div className="w-full bg-blue-100 rounded-full h-1.5 overflow-hidden">
           <div className="bg-emerald-400 h-1.5" style={{ width: "89%" }} />
         </div>
-        <p className="text-[10px] text-emerald-300 mt-2 font-semibold">Im Rahmen</p>
+        <p className="text-[10px] text-emerald-700 mt-2 font-semibold">Im Rahmen</p>
       </div>
     ),
   },
@@ -80,12 +80,12 @@ const cards: Card[] = [
     title: "Ein Klick, keine Anrufe",
     subtitle: "Fragen werden direkt im Portal geklärt. Ihr Telefon bleibt ruhig.",
     visual: (
-      <div className="w-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur-sm">
+      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
         <div className="flex items-start gap-2 mb-3">
-          <div className="w-7 h-7 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex-shrink-0" />
+          <div className="w-7 h-7 rounded-full bg-cyan-100 border border-cyan-300 flex-shrink-0" />
           <div className="flex-1">
-            <div className="h-2 rounded-full bg-white/10 w-3/4 mb-1.5" />
-            <div className="h-2 rounded-full bg-white/10 w-1/2" />
+            <div className="h-2 rounded-full bg-blue-100 w-3/4 mb-1.5" />
+            <div className="h-2 rounded-full bg-blue-100 w-1/2" />
           </div>
         </div>
         <div className="flex items-start gap-2 justify-end">
@@ -94,7 +94,7 @@ const cards: Card[] = [
             <div className="h-2 rounded-full bg-cyan-400/30 w-2/3 ml-auto" />
           </div>
         </div>
-        <p className="text-[10px] text-white/40 mt-3">Erledigt in 42 Sekunden</p>
+        <p className="text-[10px] text-slate-500 mt-3">Erledigt in 42 Sekunden</p>
       </div>
     ),
   },
@@ -157,23 +157,23 @@ export default function TaskeyShare() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[64px] pointer-events-none" />
+    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-center">
           {/* Linke Spalte */}
           <div>
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
               Auftraggeber-Portal
             </p>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
               Ein Klick.
               <br />
-              <span className="text-white/50">Alles sichtbar.</span>
+              <span className="text-slate-500">Alles sichtbar.</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-md">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-md">
               Ihr Auftraggeber sieht alles selbst. Sie werden nicht mehr angerufen.
             </p>
 
@@ -181,7 +181,7 @@ export default function TaskeyShare() {
               href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base"
             >
               Kostenlos testen
             </Link>
@@ -193,7 +193,7 @@ export default function TaskeyShare() {
                   key={c.tag}
                   onClick={() => setActive(i)}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === active ? "w-8 bg-white" : "w-1.5 bg-white/20 hover:bg-white/40"
+                    i === active ? "w-8 bg-white" : "w-1.5 bg-blue-200/60 hover:bg-blue-200/80"
                   }`}
                   aria-label={c.tag}
                 />
@@ -213,10 +213,10 @@ export default function TaskeyShare() {
                 <button
                   key={c.tag}
                   onClick={() => setActive(i)}
-                  className={`absolute top-1/2 left-0 rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border overflow-hidden text-left transition-all duration-[900ms] ease-out ${
+                  className={`absolute top-1/2 left-0 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border overflow-hidden text-left transition-all duration-[900ms] ease-out ${
                     isHero
-                      ? "border-white/20 shadow-2xl shadow-cyan-500/20"
-                      : "border-white/5 shadow-xl shadow-black/40"
+                      ? "border-slate-300 shadow-2xl shadow-cyan-500/20"
+                      : "border-slate-200/60 shadow-xl shadow-blue-900/15"
                   }`}
                   style={{
                     width: s.width,
@@ -229,7 +229,7 @@ export default function TaskeyShare() {
                   <div className={`${s.aspect}`}>
                     {/* Progress-Bar nur auf aktiver Karte */}
                     {isHero && (
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-blue-50 overflow-hidden z-20">
                         <div
                           key={`p-${active}`}
                           className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
@@ -239,13 +239,13 @@ export default function TaskeyShare() {
                     )}
 
                     <div className="p-6 md:p-7 h-full flex flex-col">
-                      <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-5">
+                      <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-5">
                         {c.tag}
                       </span>
-                      <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2">
+                      <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-2">
                         {c.title}
                       </h3>
-                      <p className="text-xs md:text-sm text-white/50 mb-6">{c.subtitle}</p>
+                      <p className="text-xs md:text-sm text-slate-500 mb-6">{c.subtitle}</p>
                       <div className="flex-1 flex items-end">{c.visual}</div>
                     </div>
                   </div>
@@ -258,8 +258,8 @@ export default function TaskeyShare() {
           {/* Mobile: nur aktive Karte als einfache Animation */}
           <div className="relative lg:hidden">
             <RevealBlur offset={100} blur={22} duration={1200}>
-            <div className="relative rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/20 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-2xl shadow-cyan-500/20">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden z-20">
+            <div className="relative rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-300 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-2xl shadow-cyan-500/20">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-blue-50 overflow-hidden z-20">
                 <div
                   key={`m-p-${active}`}
                   className="h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
@@ -267,13 +267,13 @@ export default function TaskeyShare() {
                 />
               </div>
               <div key={`m-${active}`} className="p-6 h-full flex flex-col" style={{ animation: "share-fade 0.6s ease-out" }}>
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-5">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-5">
                   {cards[active].tag}
                 </span>
-                <h3 className="text-2xl font-black text-white leading-tight mb-2">
+                <h3 className="text-2xl font-black text-slate-900 leading-tight mb-2">
                   {cards[active].title}
                 </h3>
-                <p className="text-sm text-white/50 mb-6">{cards[active].subtitle}</p>
+                <p className="text-sm text-slate-500 mb-6">{cards[active].subtitle}</p>
                 <div className="flex-1 flex items-end">{cards[active].visual}</div>
               </div>
             </div>

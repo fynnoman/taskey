@@ -20,24 +20,24 @@ const quickLinks = [
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[80px] pointer-events-none" />
+    <main className="relative min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-cyan-50 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[80px] pointer-events-none" />
 
       <section className="relative pt-32 md:pt-40 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-5">
+          <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-5">
             Fehler 404
           </p>
           <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6">
             Diese Seite gibt&apos;s nicht.
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto mb-10">
             Vielleicht ein Tippfehler? Oder die Seite wurde verschoben. Wir bringen dich woanders hin:
           </p>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 text-base font-bold rounded-full hover:bg-white/90 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors"
           >
             Zur Startseite
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,12 +53,12 @@ export default function NotFound() {
             <Link
               key={l.href}
               href={l.href}
-              className="group rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 p-6 transition-colors"
+              className="group rounded-2xl bg-blue-50/70 border border-slate-200 hover:border-cyan-400 p-6 transition-colors"
             >
-              <h2 className="text-lg font-bold mb-1.5 group-hover:text-cyan-200 transition-colors">
+              <h2 className="text-lg font-bold mb-1.5 group-hover:text-blue-700 transition-colors">
                 {l.label}
               </h2>
-              <p className="text-white/55 text-sm leading-relaxed">{l.desc}</p>
+              <p className="text-slate-600 text-sm leading-relaxed">{l.desc}</p>
             </Link>
           ))}
         </div>

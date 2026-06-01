@@ -208,7 +208,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                   <h2 className="text-xl sm:text-2xl font-bold text-cyan-900 mb-2 pr-8">
                     Enterprise-Bewerbung
                   </h2>
-                  <p className="text-gray-600 text-xs sm:text-sm">
+                  <p className="text-slate-600 text-xs sm:text-sm">
                     Bewerben Sie sich für Taskey Enterprise. Unser Team prüft Ihre Anfrage individuell.
                   </p>
                 </div>
@@ -226,7 +226,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-gray-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-gray-400 hover:border-cyan-300 shadow-sm"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
                       placeholder="Ihr vollständiger Name"
                     />
                   </div>
@@ -243,7 +243,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-gray-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-gray-400 hover:border-cyan-300 shadow-sm"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
                       placeholder="Ihr Unternehmensname"
                     />
                   </div>
@@ -260,7 +260,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-gray-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-gray-400 hover:border-cyan-300 shadow-sm"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
                       placeholder="ihre.email@unternehmen.de"
                     />
                   </div>
@@ -277,13 +277,13 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-gray-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-gray-400 hover:border-cyan-300 shadow-sm"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
                       placeholder="+49 123 456789"
                     />
                   </div>
 
                   {/* Info text */}
-                  <p className="text-xs text-gray-600 animate-[fadeIn_0.7s_ease-out]">
+                  <p className="text-xs text-slate-600 animate-[fadeIn_0.7s_ease-out]">
                     Ihre Bewerbung wird vom Enterprise-Team geprüft. Wir melden uns bei passender Eignung.
                   </p>
 
@@ -320,7 +320,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                         style={{ animationDelay: `${index * 0.1}s` }}
                         className={`w-full text-left px-4 py-3 rounded-lg border-2 transition-all duration-300 transform hover:scale-[1.02] animate-[slideUp_0.5s_ease-out] relative group overflow-hidden shadow-sm ${currentAnswer === option
                           ? 'border-cyan-600 bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-400 text-white font-bold shadow-lg'
-                          : 'border-cyan-200 bg-white text-gray-900 hover:border-cyan-400 hover:bg-cyan-50'
+                          : 'border-cyan-200 bg-blue-600 text-white hover:border-cyan-400 hover:bg-cyan-50'
                           }`}
                       >
                         {/* Elegant shine effect */}
@@ -350,7 +350,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="px-6 py-2.5 text-sm sm:text-base rounded-lg font-semibold border-2 border-cyan-200 text-gray-700 hover:bg-cyan-50 hover:border-cyan-400 hover:text-cyan-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-sm"
+                    className="px-6 py-2.5 text-sm sm:text-base rounded-lg font-semibold border-2 border-cyan-200 text-slate-700 hover:bg-cyan-50 hover:border-cyan-400 hover:text-cyan-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-sm"
                   >
                     <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

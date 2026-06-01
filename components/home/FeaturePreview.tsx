@@ -49,10 +49,10 @@ export default function FeaturePreview() {
   const parallaxRef = useParallax<HTMLDivElement>(0.15);
 
   return (
-    <section className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
       {/* Großes verblendetes Bild rechts — full-bleed, keine Card */}
       <div ref={parallaxRef} className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none will-change-transform">
@@ -75,14 +75,14 @@ export default function FeaturePreview() {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, #0a1628 0%, rgba(10,22,40,0.85) 12%, rgba(10,22,40,0.35) 38%, rgba(10,22,40,0.1) 70%, rgba(10,22,40,0.6) 100%)",
+                  "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.9) 12%, rgba(255,255,255,0.5) 38%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,0.7) 100%)",
               }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, #0a1628 0%, rgba(10,22,40,0.4) 15%, rgba(10,22,40,0.2) 50%, rgba(10,22,40,0.6) 85%, #0a1628 100%)",
+                  "linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.45) 15%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.7) 85%, #ffffff 100%)",
               }}
             />
           </div>
@@ -93,17 +93,17 @@ export default function FeaturePreview() {
         <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullet-Liste */}
           <div className="relative z-10">
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
               {t("features.badge")}
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-slate-900">
               Sie sparen Zeit,
               <br />
               sparen Ärger –
               <br />
-              <span className="text-white/50">und haben alles schwarz auf weiss.</span>
+              <span className="text-slate-500">und haben alles schwarz auf weiss.</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
               {t("features.subtitle")}
             </p>
 
@@ -114,23 +114,23 @@ export default function FeaturePreview() {
                     onClick={() => setActive(i)}
                     className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
                       i === active
-                        ? "bg-white/10 border-white/20"
-                        : "bg-transparent border-transparent hover:bg-white/5"
+                        ? "bg-blue-100 border-slate-300"
+                        : "bg-transparent border-transparent hover:bg-blue-50"
                     }`}
                   >
                     <span
                       className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
                         i === active
                           ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-                          : "bg-white/20"
+                          : "bg-blue-200/60"
                       }`}
                     />
-                    <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                    <span className={`text-base font-semibold ${i === active ? "text-slate-900" : "text-slate-600"}`}>
                       {f.label}
                     </span>
                     {/* Progress on active */}
                     {i === active && (
-                      <span className="ml-auto h-0.5 w-16 bg-white/10 rounded-full overflow-hidden flex-shrink-0">
+                      <span className="ml-auto h-0.5 w-16 bg-blue-100 rounded-full overflow-hidden flex-shrink-0">
                         <span
                           key={`prog-${active}`}
                           className="block h-full bg-gradient-to-r from-cyan-400 to-blue-400 origin-left"
@@ -148,13 +148,13 @@ export default function FeaturePreview() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
+                className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
               >
                 Kostenlos starten
               </Link>
               <Link
                 href="/features"
-                className="px-8 py-3.5 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-colors text-base text-center"
+                className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base text-center"
               >
                 Alle Funktionen
               </Link>
@@ -165,7 +165,7 @@ export default function FeaturePreview() {
           <div className="relative lg:min-h-[520px] flex lg:items-end">
             {/* Mobile: Bild inline */}
             <div className="lg:hidden w-full">
-              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-[#0a1628]">
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-white">
                 {features.map((f, i) => (
                   <div
                     key={f.image}
@@ -173,15 +173,15 @@ export default function FeaturePreview() {
                     style={{ opacity: i === active ? 1 : 0 }}
                   >
                     <Image src={f.image} alt={f.title} fill sizes="100vw" className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
                   </div>
                 ))}
                 <div key={`m-txt-${active}`} className="absolute bottom-0 left-0 right-0 p-6" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
-                  <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-3">
+                  <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-3">
                     {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
                   </span>
-                  <h3 className="text-2xl font-black text-white leading-tight mb-2">{current.title}</h3>
-                  <p className="text-sm text-white/70 leading-relaxed">{current.description}</p>
+                  <h3 className="text-2xl font-black text-slate-900 leading-tight mb-2">{current.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{current.description}</p>
                 </div>
               </div>
 
@@ -191,7 +191,7 @@ export default function FeaturePreview() {
                     key={i}
                     onClick={() => setActive(i)}
                     className={`h-1.5 rounded-full transition-all ${
-                      i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                      i === active ? "w-6 bg-blue-600" : "w-1.5 bg-blue-200/70"
                     }`}
                     aria-label={`Feature ${i + 1}`}
                   />
@@ -201,13 +201,13 @@ export default function FeaturePreview() {
 
             {/* Desktop: Text schwebt unten rechts frei über dem Hintergrund-Bild */}
             <div key={`d-txt-${active}`} className="hidden lg:block ml-auto max-w-md relative z-10" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
-              <span className="inline-flex text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 backdrop-blur-md px-3 py-1 rounded-full mb-5">
+              <span className="inline-flex text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 backdrop-blur-md px-3 py-1 rounded-full mb-5">
                 {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
               </span>
-              <h3 className="text-3xl xl:text-4xl font-black text-white leading-[1.1] mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.6)]">
+              <h3 className="text-3xl xl:text-4xl font-black text-slate-900 leading-[1.1] mb-4 ">
                 {current.title}
               </h3>
-              <p className="text-base xl:text-lg text-white/80 leading-relaxed [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]">
+              <p className="text-base xl:text-lg text-slate-700 leading-relaxed ">
                 {current.description}
               </p>
             </div>

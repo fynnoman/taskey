@@ -140,13 +140,13 @@ export default function TargetAudiences({
 }) {
   if (variant === "compact") {
     return (
-      <section id="zielgruppen" className="bg-white py-16 sm:py-20 border-y border-gray-100">
+      <section id="zielgruppen" className="bg-white py-16 sm:py-20 border-y border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
             <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3">
               Für wen ist Taskey gemacht?
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.05] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.05] tracking-tight">
               Gebaut für <span className="text-blue-600">Reinigungsbetriebe</span>.
             </h2>
           </div>
@@ -155,14 +155,14 @@ export default function TargetAudiences({
             {audiences.map((a) => (
               <div
                 key={a.title}
-                className="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-start"
+                className="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 flex flex-col items-start"
               >
-                <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 text-blue-700 flex items-center justify-center mb-3" aria-hidden>
+                <div className="w-9 h-9 rounded-lg bg-white border border-slate-200 text-blue-700 flex items-center justify-center mb-3" aria-hidden>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d={a.iconPath} />
                   </svg>
                 </div>
-                <span className="text-sm font-bold text-gray-900 leading-tight">{a.title}</span>
+                <span className="text-sm font-bold text-slate-900 leading-tight">{a.title}</span>
               </div>
             ))}
           </div>
@@ -182,17 +182,17 @@ export default function TargetAudiences({
   return (
     <section
       id="zielgruppen"
-      className="bg-gradient-to-b from-gray-950 via-[#0a1628] to-gray-950 text-white py-24 md:py-32 relative overflow-hidden"
+      className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden"
     >
-      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: große rotierende Karte */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-[#1a2942] to-[#0d1a2e] border border-white/5 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 overflow-hidden">
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-blue-50 overflow-hidden">
                 <div
                   key={active}
                   className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 origin-left"
@@ -201,29 +201,29 @@ export default function TargetAudiences({
               </div>
 
               <div className="p-8 md:p-10 flex flex-col h-full">
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full mb-6">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-6">
                   Reinigungsart · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
                 </span>
 
                 <div key={active} className="flex-1 flex flex-col" style={{ animation: "audience-fade 0.6s ease-out" }}>
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-cyan-300" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                  <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-slate-200 flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d={current.iconPath} />
                     </svg>
                   </div>
 
-                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-3">
+                  <h3 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight mb-3">
                     {current.title}
                   </h3>
-                  <p className="text-sm md:text-base text-white/50 mb-6">{current.subtitle}</p>
+                  <p className="text-sm md:text-base text-slate-500 mb-6">{current.subtitle}</p>
 
                   <div className="mb-5">
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 text-white/40">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 text-slate-500">
                       Typische Pain-Points
                     </p>
                     <ul className="space-y-1.5">
                       {current.pains.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-sm text-white/70">
+                        <li key={p} className="flex items-start gap-2 text-sm text-slate-600">
                           <svg className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
                           </svg>
@@ -237,7 +237,7 @@ export default function TargetAudiences({
                     {current.keywords.slice(0, 6).map((k) => (
                       <span
                         key={k}
-                        className="text-[10px] px-2.5 py-1 rounded-full border font-medium bg-white/5 text-white/60 border-white/10"
+                        className="text-[10px] px-2.5 py-1 rounded-full border font-medium bg-blue-50 text-slate-600 border-slate-200"
                       >
                         {k}
                       </span>
@@ -254,7 +254,7 @@ export default function TargetAudiences({
                   key={i}
                   onClick={() => setActive(i)}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === active ? "w-6 bg-white" : "w-1.5 bg-white/30"
+                    i === active ? "w-6 bg-blue-600" : "w-1.5 bg-blue-200/70"
                   }`}
                   aria-label={`Reinigungsart ${i + 1}`}
                 />
@@ -264,15 +264,15 @@ export default function TargetAudiences({
 
           {/* Rechte Spalte: Text + klickbare Bullet-Liste */}
           <div className="order-1 lg:order-2">
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-cyan-300 mb-4">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
               Für wen ist Taskey gemacht?
             </p>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-white">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
               Gebaut für
               <br />
-              <span className="text-white/50">Reinigungsfirmen.</span>
+              <span className="text-slate-500">Reinigungsfirmen.</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
               Keine generische Business-Software. Taskey ist 100 % auf den Alltag von
               Reinigungsbetrieben im DACH-Raum zugeschnitten.
             </p>
@@ -284,16 +284,16 @@ export default function TargetAudiences({
                     onClick={() => setActive(i)}
                     className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
                       i === active
-                        ? "bg-white/10 border-white/20"
-                        : "bg-transparent border-transparent hover:bg-white/5"
+                        ? "bg-blue-100 border-slate-300"
+                        : "bg-transparent border-transparent hover:bg-blue-50"
                     }`}
                   >
                     <span
                       className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
-                        i === active ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" : "bg-white/20"
+                        i === active ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" : "bg-blue-200/60"
                       }`}
                     />
-                    <span className={`text-base font-semibold ${i === active ? "text-white" : "text-white/60"}`}>
+                    <span className={`text-base font-semibold ${i === active ? "text-slate-900" : "text-slate-600"}`}>
                       {a.title}
                     </span>
                   </button>
@@ -306,7 +306,7 @@ export default function TargetAudiences({
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 bg-white text-gray-900 font-bold rounded-full hover:bg-white/90 transition-colors text-base text-center"
+                className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
               >
                 Kostenlos starten
               </Link>
@@ -315,11 +315,11 @@ export default function TargetAudiences({
         </div>
 
         {/* Weitere Reinigungs-Spezialisierungen — SEO-Block, Keyword-Liste */}
-        <div className="mt-20 rounded-2xl border bg-white/[0.03] border-white/10 p-6 sm:p-8">
-          <h3 className="text-base sm:text-lg font-black mb-3 text-white">
+        <div className="mt-20 rounded-2xl border bg-blue-50/70 border-slate-200 p-6 sm:p-8">
+          <h3 className="text-base sm:text-lg font-black mb-3 text-slate-900">
             Und viele weitere Reinigungs-Spezialisierungen:
           </h3>
-          <p className="text-sm leading-relaxed text-white/60">
+          <p className="text-sm leading-relaxed text-slate-600">
             Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und
             Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern,
             Containerreinigung, Tank- und Behälterreinigung, Reinigern für

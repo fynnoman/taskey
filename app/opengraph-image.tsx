@@ -17,8 +17,8 @@ export default async function Image() {
           justifyContent: "space-between",
           padding: "80px",
           background:
-            "linear-gradient(135deg, #0a1628 0%, #0d1a2e 50%, #13203a 100%)",
-          color: "white",
+            "linear-gradient(135deg, #ffffff 0%, #eff6ff 50%, #f8fafc 100%)",
+          color: "#0f172a",
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
       >
@@ -28,8 +28,8 @@ export default async function Image() {
               width: 14,
               height: 14,
               borderRadius: 999,
-              background: "#22d3ee",
-              boxShadow: "0 0 24px #22d3ee",
+              background: "#2563eb",
+              boxShadow: "0 0 24px rgba(37,99,235,0.45)",
             }}
           />
           <span
@@ -38,7 +38,7 @@ export default async function Image() {
               fontWeight: 900,
               letterSpacing: "0.3em",
               textTransform: "uppercase",
-              color: "#67e8f9",
+              color: "#1d4ed8",
             }}
           >
             Taskey
@@ -61,7 +61,7 @@ export default async function Image() {
           <p
             style={{
               fontSize: 32,
-              color: "rgba(255,255,255,0.7)",
+              color: "#475569",
               margin: 0,
               maxWidth: 900,
               lineHeight: 1.3,
@@ -86,7 +86,7 @@ export default async function Image() {
           <span
             style={{
               fontSize: 22,
-              color: "rgba(255,255,255,0.55)",
+              color: "#64748b",
             }}
           >
             3 Monate kostenlos testen
