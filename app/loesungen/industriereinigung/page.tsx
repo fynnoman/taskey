@@ -121,7 +121,7 @@ export default function Page() {
           description: "Audit-fester Nachweis pro Einsatz.",
         },
         {
-          href: "/enterprise",
+          href: "/pricing#enterprise",
           label: "Enterprise-Tarif",
           description: "Für Industriebetriebe mit 50+ Mitarbeitenden und API-Bedarf.",
         },

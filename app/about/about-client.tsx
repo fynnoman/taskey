@@ -159,7 +159,7 @@ export default function AboutClient() {
 
             {/* Lösung */}
             <div className="relative rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20">
-              <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-8 md:p-10 h-full">
+              <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-8 md:p-10 h-full">
                 <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
                   Lösung
                 </span>
@@ -222,7 +222,7 @@ export default function AboutClient() {
             ].map((m) => (
               <div
                 key={m.name}
-                className="relative rounded-3xl bg-gradient-to-br from-[#13203a] to-[#0d1a2e] border border-slate-200 p-8 text-center overflow-hidden"
+                className="relative rounded-3xl bg-white border border-blue-100 border border-slate-200 p-8 text-center overflow-hidden"
               >
                 <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-cyan-50 rounded-full blur-[48px] pointer-events-none" />
                 <div className="relative">
@@ -256,7 +256,7 @@ export default function AboutClient() {
             </h2>
           </div>
 
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-10 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-10 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div>
@@ -311,7 +311,7 @@ export default function AboutClient() {
       {/* ─── BOTTOM CTA ────────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32 pt-4">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">

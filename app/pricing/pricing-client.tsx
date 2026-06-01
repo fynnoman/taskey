@@ -115,7 +115,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Alles aus Beginner",
           "75 NFC-Tags inklusive",
           "250 GB Speicher",
-          "Routenoptimierung",
           "PDF-, CSV- & Excel-Export",
           "Chat-Support (24h)",
           "Kostenloses Setup",
@@ -158,23 +157,23 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Tag verloren oder beschädigt? Wir ersetzen ihn kostenlos — bis zu 5 % der bestellten Menge pro Jahr.",
     },
     ent: {
-      addon: "Zusatzoption",
+      addon: "Wenn Standard nicht genügt",
       badge: "Enterprise",
-      title: "Für Teams ab 50 Mitarbeitern.",
+      title: "Skalieren mit Features, die nur Sie haben.",
       desc:
-        "Individuelle Verträge, dedizierter Ansprechpartner, eigenes Onboarding & SLA — plus exklusive Features, die nur Enterprise-Kunden erhalten.",
+        "Individuelle Preise. Spezifisch entwickelte, innovative und unabhängige Funktionen — auf Ihren Betrieb zugeschnitten. Für Unternehmen, die mit Standard-Paketen nicht weiterkommen.",
       features: [
-        "Unbegrenzte NFC-Tags",
-        "Unbegrenzter Speicher",
-        "API-Zugang & Webhooks",
-        "SSO / SAML",
-        "Custom-Integrationen",
+        "Custom-Features für Ihren Betrieb",
         "Dedizierter Account-Manager",
         "Priority-Support & SLA",
-        "Individuelle Anpassungen",
+        "Unbegrenzte NFC-Tags & Speicher",
+        "API-Zugang & Webhooks",
+        "SSO / SAML",
+        "Custom-Integrationen (ERP, Lohn, Asset)",
+        "Persönliches Onboarding & Schulungen",
       ],
       priceLabel: "Preis",
-      priceValue: "Auf Anfrage — individuell auf Ihren Betrieb zugeschnitten.",
+      priceValue: "Individuell — angepasst an Größe, Anforderungen und Integrationen.",
       more: "Mehr erfahren",
       apply: "Enterprise anfragen",
     },
@@ -225,7 +224,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Everything in Beginner",
           "75 NFC tags included",
           "250 GB storage",
-          "Route optimisation",
           "PDF, CSV & Excel export",
           "Chat support (24h)",
           "Free setup",
@@ -268,23 +266,23 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Tag lost or damaged? We replace it free of charge — up to 5% of the ordered amount per year.",
     },
     ent: {
-      addon: "Add-on",
+      addon: "When standard isn't enough",
       badge: "Enterprise",
-      title: "For teams of 50+ employees.",
+      title: "Scale with features only you have.",
       desc:
-        "Custom contracts, dedicated contact, personal onboarding & SLA — plus exclusive features only Enterprise customers get.",
+        "Custom pricing. Specifically built, innovative and independent features — tailored to your business. For companies that hit the limits of standard plans.",
       features: [
-        "Unlimited NFC tags",
-        "Unlimited storage",
-        "API access & webhooks",
-        "SSO / SAML",
-        "Custom integrations",
+        "Custom features built for your business",
         "Dedicated account manager",
         "Priority support & SLA",
-        "Custom adjustments",
+        "Unlimited NFC tags & storage",
+        "API access & webhooks",
+        "SSO / SAML",
+        "Custom integrations (ERP, payroll, asset)",
+        "Personal onboarding & training",
       ],
       priceLabel: "Price",
-      priceValue: "On request — individually tailored to your business.",
+      priceValue: "Custom — aligned with size, requirements and integrations.",
       more: "Learn more",
       apply: "Apply for Enterprise",
     },
@@ -335,7 +333,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Tout de Beginner",
           "75 étiquettes NFC incluses",
           "250 Go de stockage",
-          "Optimisation des tournées",
           "Export PDF, CSV & Excel",
           "Support chat (24h)",
           "Mise en place gratuite",
@@ -378,23 +375,23 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Étiquette perdue ou endommagée ? Nous la remplaçons gratuitement — jusqu'à 5 % de la quantité commandée par an.",
     },
     ent: {
-      addon: "Option supplémentaire",
+      addon: "Quand le standard ne suffit pas",
       badge: "Enterprise",
-      title: "Pour les équipes de 50+ employés.",
+      title: "Évoluer avec des fonctionnalités uniques.",
       desc:
-        "Contrats sur mesure, interlocuteur dédié, onboarding personnel & SLA — plus des fonctionnalités exclusives réservées aux clients Enterprise.",
+        "Prix sur mesure. Fonctionnalités spécifiquement développées, innovantes et indépendantes — adaptées à votre entreprise. Pour les sociétés qui dépassent les limites des offres standard.",
       features: [
-        "Étiquettes NFC illimitées",
-        "Stockage illimité",
-        "Accès API & webhooks",
-        "SSO / SAML",
-        "Intégrations sur mesure",
+        "Fonctionnalités sur mesure pour votre entreprise",
         "Account manager dédié",
         "Support prioritaire & SLA",
-        "Adaptations sur mesure",
+        "Étiquettes NFC & stockage illimités",
+        "Accès API & webhooks",
+        "SSO / SAML",
+        "Intégrations sur mesure (ERP, paie, asset)",
+        "Onboarding personnel & formations",
       ],
       priceLabel: "Prix",
-      priceValue: "Sur demande — adapté individuellement à votre entreprise.",
+      priceValue: "Sur mesure — aligné sur la taille, les exigences et les intégrations.",
       more: "En savoir plus",
       apply: "Demander Enterprise",
     },
@@ -497,12 +494,12 @@ function PricingPage() {
                 >
                   {isRec && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 text-[10px] font-black tracking-[0.2em] uppercase rounded-full shadow-lg">
+                      <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[10px] font-black tracking-[0.2em] uppercase rounded-full shadow-lg">
                         {c.nfc.recommended}
                       </span>
                     </div>
                   )}
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col text-center">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col text-center">
                     <span
                       className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 ${
                         isRec ? "text-blue-700" : "text-slate-500"
@@ -549,54 +546,85 @@ function PricingPage() {
         </div>
       </section>
 
-      <section className="relative pb-24 md:pb-32">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full">
+      <section id="enterprise" className="relative pb-24 md:pb-32 scroll-mt-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-12">
+            <span className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full">
               {c.ent.addon}
             </span>
           </div>
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-blue-50 rounded-full blur-[56px] pointer-events-none" />
-            <div className="relative grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-12 items-center">
-              <div>
-                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-4">
-                  {c.ent.badge}
-                </span>
-                <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">{c.ent.title}</h2>
-                <p className="text-slate-600 text-base md:text-lg mb-6">{c.ent.desc}</p>
 
-                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-slate-700 mb-8">
-                  {c.ent.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5">
-                      <CheckIcon />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Outer gradient frame for premium feel */}
+          <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-blue-500/20">
+            <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-br from-white via-blue-50/60 to-white p-8 md:p-14 overflow-hidden">
+              {/* Ambient glows */}
+              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-200/40 rounded-full blur-[72px] pointer-events-none" />
+              <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-[72px] pointer-events-none" />
+              {/* Subtle grid */}
+              <div
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to right, #1e3a8a 1px, transparent 1px), linear-gradient(to bottom, #1e3a8a 1px, transparent 1px)",
+                  backgroundSize: "48px 48px",
+                }}
+              />
 
-              <div className="flex flex-col gap-3">
-                <div className="rounded-2xl bg-white/[0.04] border border-slate-200 p-5">
-                  <p className="text-[10px] font-black tracking-[0.3em] uppercase text-slate-500 mb-2">{c.ent.priceLabel}</p>
-                  <p className="text-slate-700 text-sm leading-relaxed">{c.ent.priceValue}</p>
+              <div className="relative grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-start">
+                {/* Left: Title + features */}
+                <div>
+                  <div className="inline-flex items-center gap-2 mb-5">
+                    <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-full shadow-md">
+                      {c.ent.badge}
+                    </span>
+                  </div>
+
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-slate-900">
+                    <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
+                      {c.ent.title}
+                    </span>
+                  </h2>
+
+                  <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+                    {c.ent.desc}
+                  </p>
+
+                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm md:text-base text-slate-700">
+                    {c.ent.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5">
+                        <CheckIcon />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <Link
-                  href="/enterprise"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-slate-300 text-slate-900 text-sm font-bold rounded-full hover:bg-blue-100 transition-colors"
-                >
-                  {c.ent.more}
-                </Link>
-                <button
-                  onClick={() => setEnterpriseModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-500 transition-colors"
-                >
-                  {c.ent.apply}
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
+
+                {/* Right: Price + CTA */}
+                <div className="flex flex-col gap-4 lg:pt-2">
+                  <div className="rounded-2xl bg-white border border-blue-200 shadow-lg shadow-blue-500/10 p-6">
+                    <p className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 mb-3">
+                      {c.ent.priceLabel}
+                    </p>
+                    <p className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
+                      Individuell
+                    </p>
+                    <p className="text-slate-600 text-sm leading-relaxed">{c.ent.priceValue}</p>
+                  </div>
+
+                  <button
+                    onClick={() => setEnterpriseModalOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-base font-bold rounded-full hover:from-blue-500 hover:to-blue-600 transition-all shadow-2xl shadow-blue-500/30"
+                  >
+                    {c.ent.apply}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+
+                  <p className="text-xs text-slate-500 text-center leading-relaxed">
+                    Selektive Aufnahme · Wir prüfen jeden Antrag persönlich.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -628,13 +656,13 @@ function PricingCard({ tier, popularLabel }: { tier: Tier; popularLabel: string 
     >
       {highlighted && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-          <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 text-[10px] font-black tracking-[0.2em] uppercase rounded-full shadow-lg">
+          <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[10px] font-black tracking-[0.2em] uppercase rounded-full shadow-lg">
             {popularLabel}
           </span>
         </div>
       )}
 
-      <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col">
+      <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
         <span
           className={`text-[10px] font-black tracking-[0.3em] uppercase mb-5 ${
             highlighted ? "text-blue-700" : "text-slate-500"

@@ -318,7 +318,7 @@ export default function LandingPageTemplate({
       {/* ─── Bottom CTA ───────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32 pt-20 md:pt-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">

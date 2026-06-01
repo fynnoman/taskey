@@ -109,7 +109,7 @@ function renderTable(lines: string[], keyBase: string) {
           {body.map((row, rIdx) => (
             <tr
               key={rIdx}
-              className={rIdx % 2 === 0 ? "bg-blue-50/60" : "bg-white/[0.04]"}
+              className={rIdx % 2 === 0 ? "bg-blue-50/60" : "bg-blue-50/60"}
             >
               {row.map((cell, cIdx) => (
                 <td
@@ -193,7 +193,7 @@ function renderBody(body: string) {
       blocks.push(
         <blockquote
           key={`q-${key++}`}
-          className="my-8 pl-6 pr-5 py-5 rounded-r-2xl border-l-4 border-cyan-400 bg-white/[0.04] text-slate-700 italic text-lg leading-relaxed"
+          className="my-8 pl-6 pr-5 py-5 rounded-r-2xl border-l-4 border-cyan-400 bg-blue-50/60 text-slate-700 italic text-lg leading-relaxed"
         >
           {quoteLines.join(" ")}
         </blockquote>
@@ -360,7 +360,7 @@ export default async function NewsPostPage(
           </div>
         ) : post.category === "Blog" ? (
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9] bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a]">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9] bg-gradient-to-br from-white via-blue-50 to-white">
               <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-100 rounded-full blur-[64px]" />
               <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[64px]" />
             </div>
@@ -416,7 +416,7 @@ export default async function NewsPostPage(
       {/* ─── BOTTOM CTA ────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">

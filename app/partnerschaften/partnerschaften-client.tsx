@@ -233,7 +233,7 @@ export default function PartnerschaftenClient() {
                       : 'bg-white/10'
                   }`}
                 >
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
                     <h3 className="text-xl font-black text-slate-900 mb-1 leading-tight">{model.title}</h3>
                     <p className={`text-sm font-bold mb-4 ${isHl ? 'text-blue-700' : 'text-slate-500'}`}>
                       {model.subtitle}
@@ -402,7 +402,7 @@ export default function PartnerschaftenClient() {
               <p className="text-slate-600">{t('partner.contact.success.desc')}</p>
             </div>
           ) : (
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-7 md:p-10 overflow-hidden">
+            <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-7 md:p-10 overflow-hidden">
               <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[56px] pointer-events-none" />
               <form onSubmit={handleSubmit} className="relative space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

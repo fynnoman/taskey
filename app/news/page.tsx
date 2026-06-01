@@ -101,7 +101,7 @@ export default function NewsPage() {
               href={`/news/${hero.slug}`}
               className="group block relative rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400/40 via-blue-500/20 to-purple-500/40 hover:from-cyan-400/70 hover:to-purple-500/70 transition-all"
             >
-              <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-8 md:p-12 lg:p-16 overflow-hidden relative">
+              <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-8 md:p-12 lg:p-16 overflow-hidden relative">
                 {/* deko glow */}
                 <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-100 rounded-full blur-[64px] pointer-events-none" />
 
@@ -225,7 +225,7 @@ export default function NewsPage() {
       {/* ─── BOTTOM CTA ────────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">

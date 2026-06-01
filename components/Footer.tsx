@@ -128,7 +128,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/enterprise" className="text-slate-300 hover:text-slate-900 transition">
+                <Link href="/pricing#enterprise" className="text-slate-300 hover:text-slate-900 transition">
                   Enterprise
                 </Link>
               </li>

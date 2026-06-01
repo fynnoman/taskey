@@ -122,7 +122,7 @@ export default function Page() {
           description: "Ähnliche Anforderungen an Schichtbetrieb und Protokolle.",
         },
         {
-          href: "/enterprise",
+          href: "/pricing#enterprise",
           label: "Enterprise für Kliniken",
           description: "SSO, API-Zugang und SLA für große Klinikverträge.",
         },

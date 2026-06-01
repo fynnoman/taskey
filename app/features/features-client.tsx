@@ -563,7 +563,7 @@ export default function FeaturesClient() {
                       : "bg-blue-100"
                   }`}
                 >
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-gradient-to-br from-[#13203a] to-[#0d1a2e] p-7 md:p-8 h-full flex flex-col">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
                     <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-300 flex items-center justify-center mb-5">
                       <span className="text-blue-700 font-black text-sm">
                         {String(i + 1).padStart(2, "0")}
@@ -599,7 +599,7 @@ export default function FeaturesClient() {
 
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#13203a] via-[#0d1a2e] to-[#13203a] border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">

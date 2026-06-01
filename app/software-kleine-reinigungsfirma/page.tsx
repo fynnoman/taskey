@@ -132,7 +132,7 @@ export default function Page() {
           description: "Beginner ab 119 €, Professional ab 315 €, Business ab 429 € pro Monat.",
         },
         {
-          href: "/enterprise",
+          href: "/pricing#enterprise",
           label: "Enterprise für große Betriebe",
           description: "Wenn Sie wachsen: SSO, API, dedizierter Account-Manager.",
         },
