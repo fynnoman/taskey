@@ -254,6 +254,11 @@ export default function Footer() {
                   Blink Alternative
                 </Link>
               </li>
+              <li>
+                <Link href="/vergleich/plan-d-alternative" className="text-slate-300 hover:text-slate-900 transition">
+                  Plan-D Alternative
+                </Link>
+              </li>
             </ul>
           </div>
 

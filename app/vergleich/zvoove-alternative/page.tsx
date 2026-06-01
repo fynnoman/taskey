@@ -6,7 +6,7 @@ const path = "/vergleich/zvoove-alternative";
 export const metadata: Metadata = {
   title: "Zvoove Alternative | Warum Reinigungsfirmen zu Taskey wechseln | Taskey",
   description:
-    "Zvoove-Alternative für Reinigungsbetriebe: Taskey kombiniert NFC-Zeiterfassung, Einsatzplanung und Live-Margen in einer App – ohne Komplexität, ab 119 €.",
+    "Zvoove-Alternative für Reinigungsbetriebe: Taskey kombiniert NFC-Zeiterfassung, Einsatzplanung und Live-Margen in einer App – ohne Komplexität, ab 71 €.",
   alternates: { canonical: `https://www.taskeyapp.com${path}` },
   openGraph: {
     title: "Zvoove Alternative | Warum Reinigungsfirmen zu Taskey wechseln | Taskey",
@@ -62,7 +62,7 @@ export default function Page() {
             {
               heading: "3. Zu hohe Fixkosten",
               body:
-                "ERP-Systeme der Zvoove-Kategorie haben oft hohe Setup-Kosten, Modulpreise und User-Lizenzen. Taskey startet bei 119 € pro Monat inkl. unbegrenzter Mitarbeiterzahl.",
+                "ERP-Systeme der Zvoove-Kategorie haben oft hohe Setup-Kosten, Modulpreise und User-Lizenzen. Taskey startet bei 71 € pro Monat inkl. unbegrenzter Mitarbeiterzahl.",
             },
           ],
         },
@@ -72,7 +72,7 @@ export default function Page() {
           bullets: [
             "Fokus: Taskey speziell für Gebäudereinigung – Zvoove deckt viele Branchen ab",
             "Einführung: 48 Stunden mit Done-for-You vs. mehrere Monate Customizing",
-            "Preis: ab 119 €/Monat vs. mehrtausend Euro Setup + Modulkosten",
+            "Preis: ab 71 €/Monat vs. mehrtausend Euro Setup + Modulkosten",
             "NFC: nativ integriert vs. optionales Modul oder Eigenbau",
             "Auftraggeber-Portal: in jedem Tarif vs. kostenpflichtige Erweiterung",
             "Mobile App: einfach, mehrsprachig, ohne Schulung – vs. Schulungsbedarf",
@@ -105,7 +105,7 @@ export default function Page() {
         {
           question: "Ist Taskey wirklich günstiger als Zvoove?",
           answer:
-            "In der Regel ja, deutlich. Taskey startet bei 119 € pro Monat ohne Setup-Kosten. Zvoove-Setups liegen oft im fünfstelligen Bereich. Im Detail kommt es auf Ihre Anforderungen an – ein Vergleichsangebot machen wir Ihnen gerne.",
+            "In der Regel ja, deutlich. Taskey startet bei 71 € pro Monat ohne Setup-Kosten. Zvoove-Setups liegen oft im fünfstelligen Bereich. Im Detail kommt es auf Ihre Anforderungen an – ein Vergleichsangebot machen wir Ihnen gerne.",
         },
         {
           question: "Was, wenn Taskey wider Erwarten doch nicht passt?",

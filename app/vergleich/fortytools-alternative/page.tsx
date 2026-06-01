@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Fortytools Alternative | Moderne Lösung für Reinigungsbetriebe | Taskey",
   description:
-    "Fortytools-Alternative für Reinigungsfirmen: Taskey kombiniert NFC-Zeiterfassung, Einsatzplanung und Live-Margen in einer App – ab 119 €/Monat, täglich kündbar.",
+    "Fortytools-Alternative für Reinigungsfirmen: Taskey kombiniert NFC-Zeiterfassung, Einsatzplanung und Live-Margen in einer App – ab 71 €/Monat, täglich kündbar.",
   alternates: { canonical: `https://www.taskeyapp.com${path}` },
   openGraph: {
     title: "Fortytools Alternative | Moderne Lösung für Reinigungsbetriebe | Taskey",
@@ -92,7 +92,7 @@ export default function Page() {
         {
           question: "Was kostet Taskey im Vergleich zu Fortytools?",
           answer:
-            "Taskey startet bei 119 € pro Monat inkl. unbegrenzter Mitarbeiterzahl plus 4,40 € pro aktivem Objekt. Fortytools ist je nach Modulauswahl ähnlich oder teurer. Ein verbindlicher Vergleich hängt von Ihrer Betriebsgröße ab – sprechen Sie uns an.",
+            "Taskey startet bei 71 € pro Monat inkl. unbegrenzter Mitarbeiterzahl plus 4,40 € pro aktivem Objekt. Fortytools ist je nach Modulauswahl ähnlich oder teurer. Ein verbindlicher Vergleich hängt von Ihrer Betriebsgröße ab – sprechen Sie uns an.",
         },
         {
           question: "Kann ich die Migration selbst durchführen?",

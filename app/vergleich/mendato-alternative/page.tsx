@@ -36,7 +36,7 @@ export default function Page() {
       eyebrow="Vergleich · Mendato"
       h1="Mendato Alternative —"
       h1Accent="Taskey im direkten Vergleich."
-      lead="Mendato bietet solide Branchensoftware für die Gebäudereinigung. Taskey verfolgt einen moderneren, fokussierteren Ansatz: All-in-One in einer App, ohne Modul-Aufpreise, mit nativer NFC-Zeiterfassung, Live-Margen und Auftraggeber-Portal – ab 119 € pro Monat."
+      lead="Mendato bietet solide Branchensoftware für die Gebäudereinigung. Taskey verfolgt einen moderneren, fokussierteren Ansatz: All-in-One in einer App, ohne Modul-Aufpreise, mit nativer NFC-Zeiterfassung, Live-Margen und Auftraggeber-Portal – ab 71 € pro Monat."
       breadcrumbs={[
         { name: "Home", url: "https://www.taskeyapp.com" },
         { name: "Vergleich", url: "https://www.taskeyapp.com/vergleich/mendato-alternative" },
@@ -100,7 +100,7 @@ export default function Page() {
         {
           question: "Was kostet ein Wechsel?",
           answer:
-            "Das Done-for-You Setup ist im Tarif enthalten. Sie zahlen nur die Monatsgebühr ab 119 € – keine Setup-Pauschale.",
+            "Das Done-for-You Setup ist im Tarif enthalten. Sie zahlen nur die Monatsgebühr ab 71 € – keine Setup-Pauschale.",
         },
         {
           question: "Habe ich Zugriff auf alte Daten, wenn ich Mendato kündige?",
@@ -127,7 +127,7 @@ export default function Page() {
         {
           href: "/pricing",
           label: "Taskey-Preise",
-          description: "Beginner ab 119 €, Professional ab 315 €, Business ab 429 € pro Monat.",
+          description: "Beginner ab 71 €, Professional ab 189 €, Business ab 257 € pro Monat.",
         },
       ]}
     />
