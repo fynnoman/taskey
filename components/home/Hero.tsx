@@ -118,7 +118,7 @@ export default function Hero() {
               <div className="flex items-center justify-between mb-6 md:mb-8">
                 <div>
                   <p className="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-bold">Heute</p>
-                  <p className="text-slate-900 font-bold text-lg md:text-xl mt-1">Guten Morgen, Fynn 👋</p>
+                  <p className="text-slate-900 font-bold text-lg md:text-xl mt-1">Hi Herr Müller 👋</p>
                 </div>
                 <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
