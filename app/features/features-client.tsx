@@ -22,7 +22,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Alles, was Ihr Betrieb",
       title2: "wirklich braucht.",
       subtitle:
-        "Keine 200 Buttons. Fünf klare Bereiche — jeder löst ein konkretes Problem aus dem Alltag.",
+        "Keine 200 Buttons. Sechs klare Bereiche — jeder löst ein konkretes Problem aus dem Alltag.",
     },
     categories: [
       {
@@ -46,11 +46,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
             title: "Rundgang-Kontrolle",
             desc: "Mehrere Etagen, viele Räume. Pro Bereich ein Tag — lückenloser Beleg, dass alles erledigt wurde.",
             bullets: ["Tag pro Etage / Bereich", "Automatisches Protokoll", "Keine vergessenen Räume"],
-          },
-          {
-            title: "Material- & Schlüsselverwaltung",
-            desc: "Putzwagen oder Schlüsselbund einmal taggen. Bestände, Übergaben und Verluste sind sofort nachvollziehbar.",
-            bullets: ["Bestand per Scan dokumentieren", "Schlüssel-Übergaben mit Signatur", "Benachrichtigung bei knappem Material"],
           },
         ],
       },
@@ -155,6 +150,30 @@ const content: Record<"de" | "en" | "fr", Content> = {
           },
         ],
       },
+      {
+        id: "kalkulationen",
+        badge: "Kalkulationen",
+        headline: "Wissen, was ein Objekt wirklich kostet.",
+        intro:
+          "Fläche, Frequenz und Boden eingeben — Taskey rechnet Zeitaufwand, Lohnkosten und Zielmarge zusammen. So sehen Sie sofort, was Sie verlangen müssen, damit das Objekt auch nach Lohnabrechnung profitabel bleibt.",
+        features: [
+          {
+            title: "Objekt-Daten erfassen",
+            desc: "Fläche in m², Reinigungsfrequenz, Boden- und Oberflächentyp eingeben. Taskey schlägt einen realistischen Zeitaufwand auf Basis branchenüblicher Richtwerte vor.",
+            bullets: ["Quadratmeter pro Bereich", "Frequenz frei wählbar", "Boden- & Oberflächentypen"],
+          },
+          {
+            title: "Aufwand & Lohnkosten",
+            desc: "Stundensätze, Pausen und Nebenkosten hinterlegen — Taskey rechnet automatisch hoch, was ein Einsatz wirklich kostet, bevor Sie ihn anbieten.",
+            bullets: ["Stundensatz pro Mitarbeiter", "Material- & Nebenkosten", "Auto-Berechnung pro Einsatz"],
+          },
+          {
+            title: "Preis & Marge",
+            desc: "Zielmarge setzen — Taskey zeigt den empfohlenen Quadratmeter- oder Monatspreis. Sie sehen schwarz auf weiß, ob der Auftrag profitabel ist, bevor Sie ihn annehmen.",
+            bullets: ["Zielmarge in %", "Empfohlener Monatspreis", "Profitabilität auf einen Blick"],
+          },
+        ],
+      },
     ],
     cta: {
       badge: "3 Monate kostenlos",
@@ -171,7 +190,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Everything your business",
       title2: "actually needs.",
       subtitle:
-        "No 200 buttons. Five clear areas — each one solving a concrete daily problem.",
+        "No 200 buttons. Six clear areas — each one solving a concrete daily problem.",
     },
     categories: [
       {
@@ -304,6 +323,30 @@ const content: Record<"de" | "en" | "fr", Content> = {
           },
         ],
       },
+      {
+        id: "kalkulationen",
+        badge: "Calculations",
+        headline: "Know what a property really costs.",
+        intro:
+          "Enter area, frequency and surface type — Taskey adds up time, wage cost and target margin. You see what you need to charge to keep the property profitable after payroll.",
+        features: [
+          {
+            title: "Capture property data",
+            desc: "Area in m², cleaning frequency, floor and surface type. Taskey suggests a realistic time estimate based on industry benchmarks.",
+            bullets: ["Square metres per area", "Flexible frequency", "Floor & surface types"],
+          },
+          {
+            title: "Effort & wage costs",
+            desc: "Store hourly rates, breaks and overhead — Taskey calculates what a visit really costs before you quote it.",
+            bullets: ["Hourly rate per employee", "Material & overhead", "Auto-calculation per visit"],
+          },
+          {
+            title: "Price & margin",
+            desc: "Set your target margin — Taskey shows the recommended square-metre or monthly price. You see in black and white whether the order pays off before you accept.",
+            bullets: ["Target margin in %", "Recommended monthly price", "Profitability at a glance"],
+          },
+        ],
+      },
     ],
     cta: {
       badge: "3 months free",
@@ -320,7 +363,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Tout ce dont votre entreprise",
       title2: "a vraiment besoin.",
       subtitle:
-        "Pas 200 boutons. Cinq domaines clairs — chacun résout un problème concret du quotidien.",
+        "Pas 200 boutons. Six domaines clairs — chacun résout un problème concret du quotidien.",
     },
     categories: [
       {
@@ -450,6 +493,30 @@ const content: Record<"de" | "en" | "fr", Content> = {
             title: "GPS — conforme",
             desc: "Position uniquement pendant les ordres, pas en permanence. Documentation équitable et transparente.",
             bullets: ["Uniquement en ordre actif", "S'arrête automatiquement en pause", "Visible par l'employé"],
+          },
+        ],
+      },
+      {
+        id: "kalkulationen",
+        badge: "Calculs",
+        headline: "Savoir ce qu'un site coûte vraiment.",
+        intro:
+          "Saisissez surface, fréquence et type de sol — Taskey calcule le temps, les coûts salariaux et la marge cible. Vous voyez ce que vous devez facturer pour que le site reste rentable après la paie.",
+        features: [
+          {
+            title: "Saisir les données du site",
+            desc: "Surface en m², fréquence de nettoyage, type de sol et de surface. Taskey propose une estimation réaliste basée sur les valeurs de référence du secteur.",
+            bullets: ["Mètres carrés par zone", "Fréquence libre", "Types de sol & surfaces"],
+          },
+          {
+            title: "Charge & coûts salariaux",
+            desc: "Renseignez taux horaires, pauses et frais annexes — Taskey calcule automatiquement ce qu'une intervention coûte réellement avant que vous ne la proposiez.",
+            bullets: ["Taux horaire par employé", "Matériel & frais annexes", "Calcul auto. par intervention"],
+          },
+          {
+            title: "Prix & marge",
+            desc: "Définissez votre marge cible — Taskey affiche le prix recommandé au mètre carré ou mensuel. Vous voyez noir sur blanc si l'ordre est rentable avant de l'accepter.",
+            bullets: ["Marge cible en %", "Prix mensuel recommandé", "Rentabilité d'un coup d'œil"],
           },
         ],
       },
@@ -593,6 +660,44 @@ export default function FeaturesClient() {
                 </div>
               ))}
             </div>
+
+            {cat.id === "share" && (
+              <div className="mt-14 md:mt-16 flex flex-col items-center text-center">
+                <Link
+                  href="https://demo.kunden.taskeyapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white text-sm md:text-base font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
+                >
+                  {language === "en"
+                    ? "Open live demo"
+                    : language === "fr"
+                    ? "Ouvrir la démo en direct"
+                    : "Live-Demo öffnen"}
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+                <p className="text-sm text-slate-500 mt-4">
+                  {language === "en"
+                    ? "Right in the browser — no login, no signup."
+                    : language === "fr"
+                    ? "Directement dans le navigateur — sans connexion, sans inscription."
+                    : "Direkt im Browser — kein Login, keine Anmeldung."}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
