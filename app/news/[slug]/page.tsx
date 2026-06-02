@@ -274,6 +274,18 @@ export default async function NewsPostPage(
 
   const cs = categoryStyle[post.category];
 
+  // Auto-extracted TOC for Blog posts without heroImage:
+  // pulls "## Heading" and standalone "**Bold**" lines from the body.
+  const tocItems =
+    post.category === "Blog" && !post.heroImage
+      ? post.body
+          .split("\n")
+          .map((l) => l.trim())
+          .filter((l) => /^##\s+/.test(l) || /^\*\*[^*]+\*\*$/.test(l))
+          .map((l) => l.replace(/^##\s+/, "").replace(/^\*\*|\*\*$/g, ""))
+          .slice(0, 8)
+      : [];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -358,11 +370,28 @@ export default async function NewsPostPage(
               />
             </div>
           </div>
-        ) : post.category === "Blog" ? (
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9] bg-gradient-to-br from-white via-blue-50 to-white">
-              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-100 rounded-full blur-[64px]" />
-              <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[64px]" />
+        ) : post.category === "Blog" && tocItems.length > 0 ? (
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-gradient-to-br from-white via-blue-50 to-white p-8 md:p-10">
+              <div className="absolute -top-32 -right-32 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[64px] pointer-events-none" />
+              <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-[64px] pointer-events-none" />
+              <div className="relative">
+                <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-6">
+                  In diesem Artikel
+                </p>
+                <ol className="space-y-3 list-none">
+                  {tocItems.map((t, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[11px] font-bold flex items-center justify-center mt-0.5">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-slate-700 text-base md:text-lg leading-snug">
+                        {t}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </div>
         ) : null}

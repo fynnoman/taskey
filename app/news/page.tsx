@@ -200,7 +200,7 @@ export default function NewsPage() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 gap-4 md:gap-6 max-w-2xl mx-auto">
               {planned.map((post) => (
                 <div
                   key={post.slug}

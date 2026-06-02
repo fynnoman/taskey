@@ -80,7 +80,7 @@ export default function FAQ() {
                     >
                       <span
                         className={`font-bold text-base md:text-lg transition-colors ${
-                          isOpen ? 'text-blue-700' : 'text-white'
+                          isOpen ? 'text-blue-700' : 'text-slate-900'
                         }`}
                       >
                         {faq.question}

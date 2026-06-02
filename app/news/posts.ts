@@ -306,22 +306,6 @@ Kein Vertrag über 24 Monate. Kein Verkaufsgespräch, das dir erst mal alles sch
 Wenn du es leid bist, jeden Monat Stundenzetteln hinterherzulaufen — dann ist jetzt der richtige Zeitpunkt, das zu ändern.`,
   },
   {
-    slug: "ki-auftragserkennung",
-    category: "Geplant",
-    date: "Demnächst",
-    planned: true,
-    title: "KI-Auftragserkennung: Fotos werden zu Aufträgen",
-    summary:
-      "Du fotografierst einen Schaden – Taskey erstellt automatisch einen Auftrag mit Beschreibung, Priorität und Zuweisung. Kein Tippen mehr.",
-    body: `Wir arbeiten gerade an einem der größten Features, die wir je gebaut haben.
-
-Die Idee ist simpel: Du machst ein Foto von einem Schaden, einer Baustelle oder einem Gerät – und Taskey erstellt daraus automatisch einen vollständigen Auftrag. Mit Beschreibung, vorgeschlagener Priorität, passendem Team und allem was dazugehört.
-
-Das spart nicht nur Zeit. Es bedeutet, dass auch Mitarbeiter ohne viel Erfahrung mit der App sofort produktiv sind.
-
-Wir testen das gerade intern und planen den ersten Beta-Rollout für Q2 2026.`,
-  },
-  {
     slug: "offline-modus",
     category: "Geplant",
     date: "Demnächst",
