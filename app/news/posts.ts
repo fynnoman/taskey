@@ -19,6 +19,83 @@ export interface Post {
 // ─────────────────────────────────────────────────────────────
 export const posts: Post[] = [
   {
+    slug: "taskey-share-live",
+    category: "Release",
+    date: "2. Juni 2026",
+    isoDate: "2026-06-02",
+    title: "Taskey Share ist live: das Auftraggeber-Portal ist da",
+    metaTitle: "Taskey Share ist live | Auftraggeber-Portal jetzt für alle Tarife",
+    metaDescription:
+      "Taskey Share ist endlich raus. Das schlanke Auftraggeber-Portal zeigt Ihren Kunden Live-Status, Nachweise, Budgets und Kommunikation direkt im Browser — ohne Anrufe, ohne E-Mails. Ab sofort in jedem Taskey-Tarif enthalten.",
+    summary:
+      "Wir haben es lange angekündigt — jetzt ist es da. Taskey Share, das Portal, in dem Ihre Auftraggeber selbst sehen, was im Objekt passiert, ist ab heute live und in allen Tarifen enthalten. Ein Überblick, was es kann, was es löst und wie Sie es aktivieren.",
+    body: `Heute ist der Tag. Taskey Share ist live.
+
+Wir haben Taskey Share über Monate hinweg mit Pilotkunden aus der Gebäudereinigung und dem technischen Service entwickelt, getestet, verworfen, neu gebaut — und ab sofort steht es jedem Taskey-Kunden zur Verfügung. Ohne Aufpreis, in jedem Tarif, ohne Setup-Aufwand.
+
+## Was Taskey Share ist
+
+Taskey Share ist das Portal, in dem Ihre Auftraggeber jederzeit selbst sehen, was bei ihnen passiert. Live-Status der laufenden Einsätze, hochgeladene Nachweise, offene Budgets, Mitteilungen — alles in einer schlanken Browser-Ansicht, ohne Login-Hürde, ohne App-Installation, ohne Schulung.
+
+Kein neues System, das Ihre Kunden lernen müssen. Kein zusätzliches Tool, das Sie verwalten. Es ist einfach da, sobald Sie einen Auftrag in Taskey anlegen.
+
+## Warum wir das gebaut haben
+
+In fast jedem Gespräch mit unseren Kunden kam derselbe Punkt: „Wir verbringen den halben Tag damit, Auftraggebern Auskünfte zu geben, die sie eigentlich selbst haben könnten."
+
+Hat der Reinigungstrupp heute schon angefangen? Wie weit ist das Objekt? Wo sind die Fotos vom letzten Einsatz? Wie viel Budget ist diesen Monat noch offen? Wann kommt die Rechnung?
+
+Diese Fragen sind nicht unhöflich. Sie sind völlig nachvollziehbar — schließlich vergibt der Kunde einen Auftrag, für den er bezahlt. Das Problem ist nur: Jede dieser Fragen kostet im Innendienst Zeit, im Außendienst Konzentration, und auf Seiten des Auftraggebers Vertrauen, wenn die Antwort zu lange dauert.
+
+Taskey Share schließt diese Lücke an genau einer Stelle: dort, wo die Information ohnehin entsteht.
+
+## Was Ihre Auftraggeber jetzt sehen
+
+**Live-Status.** Ihr Kunde sieht in Echtzeit, was im Objekt passiert. Welcher Einsatz läuft, welcher abgeschlossen ist, was als nächstes geplant ist. Die Information stammt direkt aus den NFC-Check-ins und Statusmeldungen Ihres Teams — er muss niemanden fragen.
+
+**Nachweise.** Fotos vom Einsatz, Reinigungsprotokolle, Mängelmeldungen, Übergaben — alles automatisch dem richtigen Auftrag zugeordnet und für den Kunden einsehbar. Keine E-Mail-Anhänge mehr, keine PDF-Bündel am Monatsende.
+
+**Budget.** Bei laufenden Verträgen sieht der Kunde, wie viel des Monatsbudgets bereits erbracht wurde, was noch offen ist, ob etwas außerhalb der Pauschale lief. Volle Transparenz — der häufigste Grund für Rückfragen am Monatsende wird damit überflüssig.
+
+**Kommunikation.** Kurze Rückfragen werden direkt im Portal geklärt — zugeordnet zum richtigen Auftrag, nicht in einem E-Mail-Verlauf, der irgendwann verlorengeht. Ihr Telefon bleibt ruhig.
+
+## Was sich für Sie als Betrieb ändert
+
+Konkret drei Dinge.
+
+Erstens: Der Innendienst bekommt weniger Anrufe. „Wann kommt ihr?" / „Habt ihr schon gemacht?" / „Wo sind die Fotos vom Freitag?" — diese Klassen von Fragen lösen sich auf, sobald der Kunde es selbst sehen kann.
+
+Zweitens: Reklamationen werden seltener und kürzer. Wenn der Auftraggeber die Nachweise selbst einsehen kann, eskaliert Unsicherheit gar nicht erst zur Reklamation. Und wenn doch mal eine Diskussion kommt, liegt der Nachweis transparent für beide Seiten auf dem Tisch.
+
+Drittens: Der Vertrieb hat ein neues Argument. „Sie sehen jederzeit live, was bei Ihnen passiert" ist im Wettbewerb mit klassischen Reinigungsbetrieben ein Differenzierungsfaktor, der bei Ausschreibungen Gewicht hat — gerade bei Immobilienverwaltungen, Property-Managern und Filialisten, die ohnehin im Reporting-Modus arbeiten.
+
+## Was Taskey Share bewusst nicht ist
+
+Taskey Share ist kein zweites Backend für Ihren Kunden. Es ist eine reine Sichtebene auf das, was ohnehin in Taskey passiert. Der Kunde kann nichts ändern, nichts umplanen, keine Aufträge auslösen, keine Preise sehen, die er nicht sehen soll. Sie behalten die volle Kontrolle darüber, was sichtbar ist und was nicht — pro Auftraggeber, pro Objekt, pro Auftrag.
+
+Wir haben uns bewusst gegen ein „Self-Service-Portal" entschieden, in dem der Kunde selbst Aufträge anlegt. Das hätte das Verhältnis Betrieb ↔ Auftraggeber verschoben — weg von der Dienstleistungsbeziehung, hin zu einer Ticket-Mechanik. Das wollen weder unsere Kunden noch deren Auftraggeber.
+
+## Wie Sie es aktivieren
+
+Taskey Share ist ab sofort in allen Tarifen enthalten — START, GROW, SCALE und Enterprise. Kein Modul, das Sie zubuchen müssen. Kein zusätzlicher Vertrag. Kein Setup-Termin.
+
+Sie aktivieren das Portal pro Auftraggeber direkt in Taskey: ein Klick im Kundenstamm, der Auftraggeber bekommt eine E-Mail mit seinem persönlichen Link, fertig. Kein Passwort, kein Account-Zwang, keine App. Browser auf, drin.
+
+Was sichtbar ist, steuern Sie pro Auftraggeber. Was nicht sichtbar sein soll, ist nicht sichtbar.
+
+## Ein Wort an unsere Pilotkunden
+
+Ohne unsere Pilotkunden — allen voran MG Gebäudeservice aus Düsseldorf — wäre Taskey Share ein anderes Produkt geworden. Wahrscheinlich ein größeres, komplizierteres, das versucht hätte, alles zu lösen. Stattdessen ist es das geworden, was sich in der Praxis bewährt hat: schmal, klar, ohne Schulung erklärbar, und genau auf den einen Punkt, an dem Innendienst und Auftraggeber heute am meisten Zeit verlieren.
+
+Danke fürs Mittesten, fürs ehrliche Feedback und für die vielen Anrufe der Bauart „Das müsst ihr noch ändern, sonst nimmt das niemand."
+
+## Loslegen
+
+Wenn Sie Taskey bereits einsetzen: Taskey Share ist ab heute in Ihrem Konto. Aktivieren Sie es im Kundenstamm beim nächsten Auftraggeber, dem Sie ohnehin gerade Auskunft geben wollten — und schicken Sie ihm stattdessen den Link.
+
+Wenn Sie Taskey noch nicht einsetzen: Sie können Taskey inklusive Share drei Monate kostenlos testen. Anlegen, Auftrag erfassen, Portal-Link an einen Bestandskunden schicken. Wir sind gespannt, was er dazu sagt.`,
+  },
+  {
     slug: "kommunikation-einsatzort-buero-erfolgsfaktor",
     category: "Blog",
     date: "22. April 2026",

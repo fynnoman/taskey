@@ -100,7 +100,8 @@ const cards: Card[] = [
   },
 ];
 
-// Layout-Slots: 0 = Hero (groß, vorne links), 1-3 = gestaffelt nach rechts-hinten
+// Layout-Slots: 0 = Hero (groß, vorne links), 1-3 = "weight stack" nach rechts-hinten
+// Apple-Style: weniger Rotation, ruhigere Staffelung, klarere Hierarchie.
 const slotStyles = [
   // Slot 0 — Hero
   {
@@ -113,36 +114,36 @@ const slotStyles = [
     width: "clamp(260px, 30vw, 380px)",
     aspect: "aspect-[4/5]",
   },
-  // Slot 1 — gestaffelt rechts oben
+  // Slot 1 — leicht versetzt, kaum gekippt
   {
-    x: "55%",
-    y: "-6%",
-    scale: 0.82,
-    rotate: 4,
+    x: "58%",
+    y: "-4%",
+    scale: 0.84,
+    rotate: 1.5,
     z: 30,
-    opacity: 0.95,
+    opacity: 0.92,
     width: "clamp(220px, 25vw, 320px)",
     aspect: "aspect-[4/5]",
   },
-  // Slot 2 — rechts unten
+  // Slot 2 — weiter hinten, gegenläufig
   {
-    x: "78%",
-    y: "14%",
-    scale: 0.7,
-    rotate: -3,
+    x: "82%",
+    y: "10%",
+    scale: 0.72,
+    rotate: -1.5,
     z: 20,
-    opacity: 0.75,
+    opacity: 0.7,
     width: "clamp(200px, 22vw, 280px)",
     aspect: "aspect-[4/5]",
   },
-  // Slot 3 — ganz hinten
+  // Slot 3 — ruhig hinten
   {
-    x: "100%",
-    y: "4%",
-    scale: 0.58,
-    rotate: 6,
+    x: "104%",
+    y: "2%",
+    scale: 0.6,
+    rotate: 2,
     z: 10,
-    opacity: 0.55,
+    opacity: 0.45,
     width: "clamp(180px, 20vw, 240px)",
     aspect: "aspect-[4/5]",
   },
@@ -157,33 +158,44 @@ export default function TaskeyShare() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+    <section className="bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+      {/* Ein einziger, ruhiger Color-Spot — statt zwei flacher Glow-Bubbles */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08),transparent_65%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-center">
           {/* Linke Spalte */}
           <div>
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
-              Auftraggeber-Portal
-            </p>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-              Ein Klick.
+            {/* Jetzt-live Eyebrow mit Pulse-Dot — Apple/Keynote-Stil */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 mb-6">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-600" />
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-black tracking-[0.28em] uppercase text-blue-700 font-mono">
+                Jetzt live · Taskey Share
+              </span>
+            </div>
+
+            <h2 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-[-0.03em] mb-6 text-slate-900">
+              Es ist da.
               <br />
-              <span className="text-slate-500">Alles sichtbar.</span>
+              <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
+                Taskey Share.
+              </span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-md">
-              Ihr Auftraggeber sieht alles selbst. Sie werden nicht mehr angerufen.
+              Das Portal, in dem Ihr Auftraggeber alles selbst sieht. Live. Ohne Anrufe. Ohne E-Mails.
             </p>
 
             <Link
               href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all hover:shadow-xl hover:shadow-slate-900/20 text-base"
             >
               Kostenlos testen
+              <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
 
             {/* Dots */}
@@ -193,7 +205,7 @@ export default function TaskeyShare() {
                   key={c.tag}
                   onClick={() => setActive(i)}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === active ? "w-8 bg-white" : "w-1.5 bg-blue-200/60 hover:bg-blue-200/80"
+                    i === active ? "w-8 bg-slate-900" : "w-1.5 bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={c.tag}
                 />
@@ -213,10 +225,10 @@ export default function TaskeyShare() {
                 <button
                   key={c.tag}
                   onClick={() => setActive(i)}
-                  className={`absolute top-1/2 left-0 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border overflow-hidden text-left transition-all duration-[900ms] ease-out ${
+                  className={`absolute top-1/2 left-0 rounded-[2rem] bg-white border overflow-hidden text-left transition-all duration-[900ms] ease-out ${
                     isHero
-                      ? "border-slate-300 shadow-2xl shadow-cyan-500/20"
-                      : "border-slate-200/60 shadow-xl shadow-blue-900/15"
+                      ? "border-slate-200 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.18)] ring-1 ring-blue-500/10"
+                      : "border-slate-200/70 shadow-[0_20px_40px_-20px_rgba(15,23,42,0.15)]"
                   }`}
                   style={{
                     width: s.width,
@@ -239,7 +251,7 @@ export default function TaskeyShare() {
                     )}
 
                     <div className="p-6 md:p-7 h-full flex flex-col">
-                      <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-5">
+                      <span className="inline-flex self-start text-[10px] font-black tracking-[0.28em] uppercase text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full mb-5 font-mono">
                         {c.tag}
                       </span>
                       <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-2">
@@ -258,7 +270,7 @@ export default function TaskeyShare() {
           {/* Mobile: nur aktive Karte als einfache Animation */}
           <div className="relative lg:hidden">
             <RevealBlur offset={100} blur={22} duration={1200}>
-            <div className="relative rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-300 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-2xl shadow-cyan-500/20">
+            <div className="relative rounded-[2rem] bg-white border border-slate-200 overflow-hidden aspect-[4/5] max-w-sm mx-auto shadow-[0_30px_60px_-15px_rgba(15,23,42,0.18)] ring-1 ring-blue-500/10">
               <div className="absolute top-0 left-0 right-0 h-1 bg-blue-50 overflow-hidden z-20">
                 <div
                   key={`m-p-${active}`}
@@ -267,7 +279,7 @@ export default function TaskeyShare() {
                 />
               </div>
               <div key={`m-${active}`} className="p-6 h-full flex flex-col" style={{ animation: "share-fade 0.6s ease-out" }}>
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-5">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.28em] uppercase text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full mb-5 font-mono">
                   {cards[active].tag}
                 </span>
                 <h3 className="text-2xl font-black text-slate-900 leading-tight mb-2">
@@ -290,6 +302,10 @@ export default function TaskeyShare() {
         @keyframes share-fade {
           from { opacity: 0; transform: translateY(12px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes share-lift {
+          0% { transform: translate(0, calc(-50% + 0%)) scale(0.985); }
+          100% { transform: translate(0, calc(-50% + 0%)) scale(1); }
         }
       `}</style>
     </section>
