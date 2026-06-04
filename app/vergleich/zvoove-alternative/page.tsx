@@ -125,6 +125,11 @@ export default function Page() {
       ]}
       related={[
         {
+          href: "/software-gebaeudereinigung",
+          label: "Software für Gebäudereinigung",
+          description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+        },
+        {
           href: "/vergleich/blink-alternative",
           label: "Blink Alternative",
           description: "Wie Taskey im Vergleich zu Blink für Gebäudereinigung abschneidet.",

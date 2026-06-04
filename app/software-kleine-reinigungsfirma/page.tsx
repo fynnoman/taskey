@@ -127,6 +127,11 @@ export default function Page() {
       ]}
       related={[
         {
+          href: "/software-gebaeudereinigung",
+          label: "Software für Gebäudereinigung",
+          description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+        },
+        {
           href: "/pricing",
           label: "Preise im Überblick",
           description: "Beginner ab 119 €, Professional ab 315 €, Business ab 429 € pro Monat.",

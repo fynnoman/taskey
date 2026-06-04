@@ -157,6 +157,68 @@ export default function LoesungenPage() {
           </div>
         </div>
       </section>
+
+      <section className="relative pb-24 md:pb-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
+              Funktionen im Detail
+            </p>
+            <h2 className="text-3xl md:text-4xl font-black leading-tight">
+              Die Software für Gebäudereinigung – funktionsweise pro Modul
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { href: "/software-gebaeudereinigung", label: "Software für Gebäudereinigung", desc: "Der Überblick: alle Module der Branchensoftware in einem System." },
+              { href: "/zeiterfassung-gebaeudereinigung", label: "Zeiterfassung Gebäudereinigung", desc: "Mindestlohn-konform per NFC, GPS und Offline-Sync." },
+              { href: "/nfc-zeiterfassung", label: "NFC-Zeiterfassung", desc: "Wie NFC-Tags Stempelzeiten manipulationssicher dokumentieren." },
+              { href: "/einsatzplanung-reinigung", label: "Einsatzplanung Reinigung", desc: "Touren, Kolonnen, Vertretungen per Drag-and-drop." },
+              { href: "/leistungsnachweis-gebaeudereinigung", label: "Leistungsnachweis Gebäudereinigung", desc: "Automatischer Nachweis pro Objekt für Auftraggeber." },
+              { href: "/software-kleine-reinigungsfirma", label: "Software für kleine Reinigungsfirmen", desc: "Speziell für Betriebe mit 1–15 Mitarbeitenden." },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-6 transition-colors"
+              >
+                <h3 className="text-base md:text-lg font-black mb-2 group-hover:text-blue-700 transition-colors">
+                  {l.label}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{l.desc}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-12 mb-6">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
+              Marktvergleich
+            </p>
+            <h2 className="text-3xl md:text-4xl font-black leading-tight">
+              Taskey vs. andere Branchensoftware
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { href: "/vergleich/zvoove-alternative", label: "Taskey vs. zvoove" },
+              { href: "/vergleich/blink-alternative", label: "Taskey vs. Blink" },
+              { href: "/vergleich/mendato-alternative", label: "Taskey vs. Mendato" },
+              { href: "/vergleich/fortytools-alternative", label: "Taskey vs. fortytools" },
+              { href: "/vergleich/plan-d-alternative", label: "Taskey vs. Plan-D" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-5 transition-colors"
+              >
+                <span className="text-base font-bold group-hover:text-blue-700 transition-colors">
+                  {l.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

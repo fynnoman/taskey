@@ -141,6 +141,11 @@ export default function Page() {
       ]}
       related={[
         {
+          href: "/software-gebaeudereinigung",
+          label: "Software für Gebäudereinigung",
+          description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+        },
+        {
           href: "/zeiterfassung-gebaeudereinigung",
           label: "Zeiterfassung Gebäudereinigung",
           description: "Wie die geplante Soll-Zeit zur dokumentierten Ist-Zeit wird.",

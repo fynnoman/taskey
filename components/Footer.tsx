@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 md:gap-8 py-16 sm:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-10 md:gap-8 py-16 sm:py-20">
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.product")}</h4>
             <ul className="space-y-4 text-sm">
@@ -125,6 +125,11 @@ export default function Footer() {
               <li>
                 <Link href="/ios" className="text-slate-300 hover:text-white transition">
                   iOS App
+                </Link>
+              </li>
+              <li>
+                <Link href="/nfc" className="text-slate-300 hover:text-white transition">
+                  NFC-Objektnachweis
                 </Link>
               </li>
               <li>
@@ -186,8 +191,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Themen</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Software für Gebäudereinigung</h4>
             <ul className="space-y-4 text-sm">
+              <li>
+                <Link href="/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                  Software für Gebäudereinigung
+                </Link>
+              </li>
               <li>
                 <Link href="/zeiterfassung-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
                   Zeiterfassung Gebäudereinigung
@@ -205,7 +215,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/leistungsnachweis-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
-                  Leistungsnachweis
+                  Leistungsnachweis Gebäudereinigung
                 </Link>
               </li>
               <li>
@@ -219,6 +229,11 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Branchen</h4>
             <ul className="space-y-4 text-sm">
+              <li>
+                <Link href="/loesungen" className="text-slate-300 hover:text-white transition">
+                  Alle Branchenlösungen
+                </Link>
+              </li>
               <li>
                 <Link href="/loesungen/unterhaltsreinigung" className="text-slate-300 hover:text-white transition">
                   Unterhaltsreinigung
@@ -244,6 +259,12 @@ export default function Footer() {
                   Hotel Housekeeping
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Vergleiche</h4>
+            <ul className="space-y-4 text-sm">
               <li>
                 <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition">
                   Zvoove Alternative
@@ -252,6 +273,16 @@ export default function Footer() {
               <li>
                 <Link href="/vergleich/blink-alternative" className="text-slate-300 hover:text-white transition">
                   Blink Alternative
+                </Link>
+              </li>
+              <li>
+                <Link href="/vergleich/mendato-alternative" className="text-slate-300 hover:text-white transition">
+                  Mendato Alternative
+                </Link>
+              </li>
+              <li>
+                <Link href="/vergleich/fortytools-alternative" className="text-slate-300 hover:text-white transition">
+                  fortytools Alternative
                 </Link>
               </li>
               <li>

@@ -112,6 +112,11 @@ export default function Page() {
       ]}
       related={[
         {
+          href: "/software-gebaeudereinigung",
+          label: "Software für Gebäudereinigung",
+          description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+        },
+        {
           href: "/leistungsnachweis-gebaeudereinigung",
           label: "Leistungsnachweis Gebäudereinigung",
           description: "Audit-fester Nachweis pro Einsatz und Bereich.",
