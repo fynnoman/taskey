@@ -1,0 +1,62 @@
+# Taskey – Software für Gebäudereinigung
+
+> Taskey ist eine All-in-One-Branchensoftware für Gebäudereinigungs- und Facility-Management-Betriebe im DACH-Raum. Die Plattform bündelt Einsatzplanung, NFC-Objektnachweis, mobile Zeiterfassung, Angebote, Rechnungen, DATEV-Export und Live-Margen pro Objekt in einem System. DSGVO-konform, in Deutschland entwickelt und gehostet, ab Beginner-Tarif 119 € pro Monat (3 Monate kostenlos testen).
+
+## Key facts
+
+- Anbieter: Schulz & Stosse GbR, Völklingen (Deutschland)
+- Produktname: Taskey
+- Kategorie: Branchensoftware Gebäudereinigung, Reinigungssoftware
+- Zielgruppe: Gebäudereinigungsbetriebe vom 1-Mann-Betrieb bis Enterprise (mehrere hundert Objekte)
+- Reinigungsarten: Unterhaltsreinigung, Glasreinigung, Industriereinigung, Klinik- und Hygienereinigung, Hotel-Housekeeping, Bauendreinigung, Sonderreinigung
+- Plattformen: Web (Dashboard), iOS, Android
+- Hosting: Deutschland
+- Compliance: DSGVO, Mindestlohn (§17 MiLoG), EuGH-Urteil 2019 zur Arbeitszeiterfassung
+- Preis: ab 119 €/Monat (Beginner) zzgl. 4,40 € pro aktivem Objekt
+- Test: 3 Monate kostenlos, ohne Kreditkarte
+- Einrichtung: <10 Minuten Self-Service, optional Done-for-You in 48h
+- Sprachen Mitarbeiter-App: Deutsch, Türkisch, Russisch, Polnisch u.a.
+
+## Hauptseiten
+
+- [Startseite](https://www.taskeyapp.com/): Produktübersicht, Hero, alle USPs
+- [Software für Gebäudereinigung](https://www.taskeyapp.com/software-gebaeudereinigung): All-in-One-Branchensoftware-Hub mit allen Modulen
+- [Funktionen](https://www.taskeyapp.com/features): Detailansicht aller Module
+- [Preise](https://www.taskeyapp.com/pricing): Tarife Beginner / Professional / Business / Enterprise
+- [iOS-App](https://www.taskeyapp.com/ios): Mitarbeiter-App für Reinigungskräfte
+- [NFC-Objektnachweis](https://www.taskeyapp.com/nfc): Manipulationssicherer Anwesenheitsnachweis
+- [Über Taskey](https://www.taskeyapp.com/about): Team & Mission
+- [News & Ratgeber](https://www.taskeyapp.com/news): Blog mit Branchen-Content
+- [Partnerschaften](https://www.taskeyapp.com/partnerschaften): Reseller- und Integrationspartner
+- [Support](https://www.taskeyapp.com/support): Hilfe, Kontakt, Dokumentation
+
+## Pillar-Themen (Funktionsdetails)
+
+- [Zeiterfassung Gebäudereinigung](https://www.taskeyapp.com/zeiterfassung-gebaeudereinigung): Mindestlohn-konforme Arbeitszeiterfassung per NFC, GPS, Offline-Sync
+- [NFC-Zeiterfassung](https://www.taskeyapp.com/nfc-zeiterfassung): NFC-Tags am Objekt, manipulationssichere Stempelzeiten
+- [Einsatzplanung Reinigung](https://www.taskeyapp.com/einsatzplanung-reinigung): Drag-and-drop-Planung für Touren, Kolonnen, Vertretungen
+- [Leistungsnachweis Gebäudereinigung](https://www.taskeyapp.com/leistungsnachweis-gebaeudereinigung): Automatischer Nachweis pro Objekt für Auftraggeber
+- [Software für kleine Reinigungsfirmen](https://www.taskeyapp.com/software-kleine-reinigungsfirma): Tarif und Setup für Betriebe mit 1–15 Mitarbeitenden
+
+## Branchenlösungen
+
+- [Alle Branchen](https://www.taskeyapp.com/loesungen): Übersicht
+- [Unterhaltsreinigung](https://www.taskeyapp.com/loesungen/unterhaltsreinigung): Wiederkehrende Touren, Schlüsselverwaltung
+- [Glasreinigung](https://www.taskeyapp.com/loesungen/glasreinigung): Tourenplanung, Vorher-Nachher-Fotos, Höhenklassen
+- [Industriereinigung](https://www.taskeyapp.com/loesungen/industriereinigung): Schichtbetrieb, Sicherheitsprotokolle
+- [Klinik- und Hygienereinigung](https://www.taskeyapp.com/loesungen/klinikreinigung): RKI-konforme Protokolle
+- [Hotel-Housekeeping](https://www.taskeyapp.com/loesungen/hotel-housekeeping): Zimmerstatus in Echtzeit
+
+## Marktvergleich
+
+- [Taskey vs. zvoove](https://www.taskeyapp.com/vergleich/zvoove-alternative)
+- [Taskey vs. Blink](https://www.taskeyapp.com/vergleich/blink-alternative)
+- [Taskey vs. Mendato](https://www.taskeyapp.com/vergleich/mendato-alternative)
+- [Taskey vs. fortytools](https://www.taskeyapp.com/vergleich/fortytools-alternative)
+- [Taskey vs. Plan-D](https://www.taskeyapp.com/vergleich/plan-d-alternative)
+
+## Rechtliches
+
+- [Impressum](https://www.taskeyapp.com/impressum)
+- [Datenschutz](https://www.taskeyapp.com/datenschutz)
+- [AGB](https://www.taskeyapp.com/agb)
