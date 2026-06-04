@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/support`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
 
     // ─── Pillar-Landingpages ──────────────────────────────
+    { url: `${baseUrl}/software-gebaeudereinigung`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/zeiterfassung-gebaeudereinigung`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/nfc-zeiterfassung`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/einsatzplanung-reinigung`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
