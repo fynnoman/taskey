@@ -4,29 +4,14 @@ import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
 const path = "/software-gebaeudereinigung";
 
 export const metadata: Metadata = {
-  title: "Software für Gebäudereinigung | All-in-One Branchensoftware | Taskey",
+  title: "Software für Gebäudereinigung – All-in-One Branchensoftware",
   description:
-    "Software für Gebäudereinigung: Einsatzplanung, NFC-Objektnachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen, DATEV – in einer App. Für Unterhaltsreinigung, Glas-, Industrie- und Klinikreinigung. DSGVO, Made in Germany, 3 Monate kostenlos.",
-  keywords: [
-    "Software Gebäudereinigung",
-    "Software für Gebäudereinigung",
-    "Gebäudereinigungssoftware",
-    "Branchensoftware Gebäudereinigung",
-    "Reinigungssoftware",
-    "Software Gebäudereinigungsfirma",
-    "Software für Gebäudereiniger",
-    "Verwaltungssoftware Gebäudereinigung",
-    "ERP Gebäudereinigung",
-    "Unterhaltsreinigung Software",
-    "Glasreinigung Software",
-    "Klinikreinigung Software",
-    "Industriereinigung Software",
-  ],
+    "Software für Gebäudereinigung: NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV – in einer App. DSGVO, Made in Germany, 3 Monate kostenlos.",
   alternates: { canonical: `https://www.taskeyapp.com${path}` },
   openGraph: {
-    title: "Software für Gebäudereinigung | All-in-One Branchensoftware | Taskey",
+    title: "Software für Gebäudereinigung – All-in-One Branchensoftware | Taskey",
     description:
-      "Die führende Software für Gebäudereinigung: Einsatzplanung, NFC-Objektnachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen, DATEV. DSGVO, Made in Germany.",
+      "Die Software für Gebäudereinigung: NFC-Nachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV. DSGVO, Made in Germany.",
     url: `https://www.taskeyapp.com${path}`,
     type: "article",
     locale: "de_DE",
@@ -49,13 +34,68 @@ export const metadata: Metadata = {
   },
 };
 
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Taskey – Software für Gebäudereinigung",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "Branchensoftware Gebäudereinigung",
+  operatingSystem: "Web, iOS, Android",
+  url: `https://www.taskeyapp.com${path}`,
+  description:
+    "All-in-One Software für Gebäudereinigung mit Einsatzplanung, NFC-Objektnachweis, Zeiterfassung, Angeboten, Rechnungen, Live-Margen und DATEV-Export. Für Unterhaltsreinigung, Glas-, Industrie- und Klinikreinigung.",
+  offers: {
+    "@type": "Offer",
+    price: "119",
+    priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "119",
+      priceCurrency: "EUR",
+      unitText: "MONTH",
+    },
+    availability: "https://schema.org/InStock",
+    url: "https://signup.taskeyapp.com",
+    description: "3 Monate kostenlos testen, danach ab 119 € pro Monat",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    ratingCount: "250",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  author: {
+    "@type": "Organization",
+    name: "Schulz & Stosse GbR",
+    url: "https://www.taskeyapp.com",
+  },
+  featureList: [
+    "Einsatzplanung Gebäudereinigung",
+    "NFC-Objektnachweis",
+    "Mobile Zeiterfassung (Mindestlohn-konform)",
+    "Angebote & Rechnungen",
+    "DATEV-Export",
+    "Live-Margen pro Objekt",
+    "Qualitätskontrolle & Checklisten",
+    "Auftraggeber-Portal (Taskey Share)",
+    "DSGVO-konform, Made in Germany",
+  ],
+  inLanguage: "de-DE",
+};
+
 export default function Page() {
   return (
-    <LandingPageTemplate
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+      />
+      <LandingPageTemplate
       path={path}
       title="Software für Gebäudereinigung"
       eyebrow="Pillar · Branchensoftware"
-      h1="Software für Gebäudereinigung —"
+      h1="Software für Gebäudereinigung:"
       h1Accent="alles in einem System statt fünf Abos."
       lead="Taskey ist die Software, mit der Gebäudereinigungsbetriebe Einsatzplanung, NFC-Objektnachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen und DATEV in einer einzigen Branchensoftware abbilden. Made in Germany, DSGVO-konform, ab dem ersten Tag einsatzbereit – egal ob Unterhaltsreinigung, Glas-, Industrie- oder Klinikreinigung."
       breadcrumbs={[
@@ -255,5 +295,6 @@ export default function Page() {
         },
       ]}
     />
+    </>
   );
 }

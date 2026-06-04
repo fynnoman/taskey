@@ -69,11 +69,6 @@ export default function RootLayout({
     <html lang="de">
       <head>
         <link rel="preload" href="/hero-background.webp" as="image" type="image/webp" fetchPriority="high" />
-        <link rel="alternate" hrefLang="de-DE" href="https://www.taskeyapp.com/" />
-        <link rel="alternate" hrefLang="de-AT" href="https://www.taskeyapp.com/" />
-        <link rel="alternate" hrefLang="de-CH" href="https://www.taskeyapp.com/" />
-        <link rel="alternate" hrefLang="de" href="https://www.taskeyapp.com/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.taskeyapp.com/" />
         <link rel="preconnect" href="https://mission-control.vars-development.com" />
         <link rel="preconnect" href="https://signup.taskeyapp.com" />
         <link rel="preconnect" href="https://taskey.vars-development.com" />
