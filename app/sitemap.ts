@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/vergleich/mendato-alternative`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/vergleich/fortytools-alternative`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/vergleich/plan-d-alternative`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/vergleich/software-gebaeudereinigung`, lastModified: now, changeFrequency: 'weekly', priority: 0.92 },
 
     // ─── Branchen-Seiten ──────────────────────────────────
     { url: `${baseUrl}/loesungen`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },

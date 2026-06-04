@@ -266,6 +266,11 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Vergleiche</h4>
             <ul className="space-y-4 text-sm">
               <li>
+                <Link href="/vergleich/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                  Anbietervergleich 2026
+                </Link>
+              </li>
+              <li>
                 <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition">
                   Zvoove Alternative
                 </Link>

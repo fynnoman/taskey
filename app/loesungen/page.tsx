@@ -200,6 +200,7 @@ export default function LoesungenPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
+              { href: "/vergleich/software-gebaeudereinigung", label: "Anbietervergleich 2026" },
               { href: "/vergleich/zvoove-alternative", label: "Taskey vs. zvoove" },
               { href: "/vergleich/blink-alternative", label: "Taskey vs. Blink" },
               { href: "/vergleich/mendato-alternative", label: "Taskey vs. Mendato" },

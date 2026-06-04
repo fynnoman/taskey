@@ -4,9 +4,9 @@ import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
 const path = "/software-gebaeudereinigung";
 
 export const metadata: Metadata = {
-  title: "Software für Gebäudereinigung – All-in-One Branchensoftware",
+  title: "Software für Gebäudereinigung 2026 – All-in-One Branchensoftware",
   description:
-    "Software für Gebäudereinigung: NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV – in einer App. DSGVO, Made in Germany, 3 Monate kostenlos.",
+    "Software für Gebäudereinigung 2026: NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV – in einer App. DSGVO, Made in Germany, 3 Monate kostenlos.",
   alternates: { canonical: `https://www.taskeyapp.com${path}` },
   openGraph: {
     title: "Software für Gebäudereinigung – All-in-One Branchensoftware | Taskey",
@@ -287,6 +287,11 @@ export default function Page() {
           href: "/software-kleine-reinigungsfirma",
           label: "Software für kleine Reinigungsfirmen",
           description: "Speziell für Betriebe mit 1–15 Mitarbeitenden und überschaubarem Objekt-Portfolio.",
+        },
+        {
+          href: "/vergleich/software-gebaeudereinigung",
+          label: "Anbietervergleich 2026",
+          description: "8 Software für Gebäudereinigung im Direktvergleich – Funktionen, Preise, Stärken, Schwächen.",
         },
         {
           href: "/vergleich/zvoove-alternative",
