@@ -1,114 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* "German Operations Manual" — warm paper + deep ink + signal orange */
-  --background: #faf8f3;           /* warm paper cream */
-  --background-deep: #f5f0e3;      /* darker paper (alt sections) */
-  --foreground: #0c0e10;           /* near-black ink */
-  --foreground-muted: #4b5563;     /* steel gray-600 */
-  --foreground-soft: #6b7280;      /* gray-500 */
-  --section-alt: #fef3c7;          /* warm cream surface */
-  --border-soft: #e7e2d5;          /* paper border */
-  --border-strong: #d6d0bd;        /* stronger paper border */
-
-  /* Brand */
-  --ink: #0c0e10;                  /* primary dark (heading, primary CTA bg) */
-  --ink-soft: #1f2329;             /* slightly lighter ink */
-
-  /* Primary accent — signal orange (industrial / safety / German operations) */
-  --signal: #ea580c;
-  --signal-strong: #c2410c;
-  --signal-soft: #fed7aa;
-
-  /* Secondary accent — steel blue (preserves SaaS-blue association, trust signal) */
-  --steel: #1e40af;
-  --steel-soft: #dbeafe;
-
-  /* Legacy aliases — keep existing SEO landing pages working without refactor */
-  --accent: var(--steel);
-  --accent-strong: #1e3a8a;
-  --cta: var(--signal);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-background-deep: var(--background-deep);
-  --color-foreground: var(--foreground);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-signal: var(--signal);
-  --color-signal-strong: var(--signal-strong);
-  --color-steel: var(--steel);
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-mono);
+  --background: #f8fafc; /* slate-50 — Soft Sky base */
+  --foreground: #0f172a; /* slate-900 */
+  --foreground-muted: #475569; /* slate-600 */
+  --section-alt: #eff6ff; /* blue-50 */
+  --border-soft: #dbeafe; /* blue-100 */
+  --border-strong: #e2e8f0; /* slate-200 */
+  --accent: #1d4ed8; /* blue-700 */
+  --accent-strong: #1e40af; /* blue-800 */
+  --cta: #2563eb; /* blue-600 */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Mono utility for stats / timestamps / IDs */
-.font-mono {
-  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-}
-
-/* Graph-paper background — engineer's notebook feel */
-.graph-paper {
-  background-image:
-    linear-gradient(to right, rgba(12, 14, 16, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(12, 14, 16, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.graph-paper-fine {
-  background-image:
-    linear-gradient(to right, rgba(12, 14, 16, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(12, 14, 16, 0.04) 1px, transparent 1px),
-    linear-gradient(to right, rgba(12, 14, 16, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(12, 14, 16, 0.025) 1px, transparent 1px);
-  background-size: 96px 96px, 96px 96px, 16px 16px, 16px 16px;
-}
-
-/* Subtle paper grain texture */
-.paper-grain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.6;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-size: 200px 200px;
-}
-
-/* DIN-stamp box — rotated dashed border for "official" callouts */
-.din-stamp {
-  border: 2px dashed currentColor;
-  padding: 0.4rem 0.85rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Dimension callout — for blueprint-style annotations */
-.dim-line {
-  position: relative;
-}
-.dim-line::before,
-.dim-line::after {
-  content: '';
-  position: absolute;
-  background: currentColor;
 }
 
 @keyframes fadeIn {

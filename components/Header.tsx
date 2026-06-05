@@ -17,15 +17,19 @@ export default function Header() {
   const [solid, setSolid] = useState(!isHomepage);
 
   const navLinks = [
-    { href: "/features", label: t("nav.features") },
-    { href: "/pricing", label: t("nav.pricing") },
-    { href: "/news", label: "News" },
+    { href: "/features",        label: t("nav.features") },
+    { href: "/pricing",         label: t("nav.pricing") },
+    { href: "/news",            label: "News" },
     { href: "/partnerschaften", label: "Partner werden" },
-    { href: "/about", label: t("nav.about") },
+    { href: "/about",           label: t("nav.about") },
   ];
 
   const isActive = (href: string) => pathname === href;
 
+  // Revolut-Business-Verhalten:
+  // 1) Navbar bleibt ganz oben fixed sichtbar während des gesamten Hero
+  // 2) Sobald man weit in den Hero scrollt (≈ "Feld & Büro" – Bereich), gleitet sie smooth nach oben weg
+  // 3) Scrollt man zurück in den Hero, kommt sie wieder.
   useEffect(() => {
     if (!isHomepage) {
       setHidden(false);
@@ -35,7 +39,9 @@ export default function Header() {
     const onScroll = () => {
       const y = window.scrollY;
       const vh = window.innerHeight || 800;
+      // leicht eingedunkelter Hintergrund nach kurzem Scrollen für Lesbarkeit
       setSolid(y > 40);
+      // einklappen sobald ~85% der Viewporthöhe gescrollt wurde (≈ Ende Hero)
       setHidden(y > vh * 0.85);
     };
     onScroll();
@@ -45,173 +51,168 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 text-[var(--ink)] transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 text-slate-900 transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         solid
-          ? "bg-[var(--background)]/85 backdrop-blur-xl border-b border-[var(--border-soft)]"
+          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200"
           : "bg-transparent border-b border-transparent"
       }`}
       aria-hidden={isHomepage ? hidden : false}
     >
-      <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          {/* Wordmark + DIN-stamp tagline */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="Taskey Startseite">
-            <Image
-              src="/logo_transparent.png"
-              alt="Taskey Logo - Reinigungssoftware"
-              width={64}
-              height={64}
-              className="h-11 w-11 sm:h-12 sm:w-12 object-contain"
-              priority
-              sizes="64px"
-            />
-            <div className="flex items-baseline gap-2">
-              <span className="text-[1.15rem] sm:text-xl font-semibold tracking-[-0.02em] text-[var(--ink)]">
-                TASKEY
-              </span>
-              <span className="hidden sm:inline font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--foreground-soft)] border-l border-[var(--border-strong)] pl-2 ml-1">
-                DE · DACH
-              </span>
-            </div>
-          </Link>
+      <NavInner
+        navLinks={navLinks}
+        isActive={isActive}
+        t={t}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        tone="onDark"
+      />
+    </header>
+  );
+}
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-1">
+/* ─── Inner Nav (wird in beiden Header-Layern wiederverwendet) ─── */
+function NavInner({
+  navLinks,
+  isActive,
+  t,
+  mobileMenuOpen,
+  setMobileMenuOpen,
+}: {
+  navLinks: { href: string; label: string }[];
+  isActive: (href: string) => boolean;
+  t: (key: string) => string;
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (v: boolean) => void;
+  tone: "onDark";
+}) {
+  return (
+    <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
+      <div className="flex justify-between items-center h-16 sm:h-20">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
+          <Image
+            src="/logo_transparent.png"
+            alt="Taskey Logo - Reinigungssoftware"
+            width={64}
+            height={64}
+            className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
+            priority
+            sizes="64px"
+          />
+          <span className="text-xl font-bold text-slate-900">TASKEY</span>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`transition font-medium ${
+                isActive(link.href)
+                  ? "text-blue-700 font-bold"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/support"
+            className="text-slate-600 hover:text-slate-900 transition font-medium"
+          >
+            {t("nav.support")}
+          </Link>
+        </div>
+
+        <div className="hidden lg:flex items-center space-x-3">
+          <LanguageSwitcher />
+          <Link
+            href="https://dashboard.taskeyapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 border border-slate-300 hover:border-slate-400 text-slate-900 rounded-lg transition font-semibold hover:bg-blue-50"
+          >
+            Login
+          </Link>
+          <Link
+            href="https://signup.taskeyapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-900 rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+          >
+            {t("nav.tryFree")}
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="lg:hidden text-slate-900"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Menü öffnen"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {mobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden border-t border-slate-200 py-4 bg-white/95 backdrop-blur-xl">
+          <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative group px-3 py-2 text-[13.5px] font-medium transition-colors ${
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg transition ${
                   isActive(link.href)
-                    ? "text-[var(--ink)]"
-                    : "text-[var(--foreground-muted)] hover:text-[var(--ink)]"
+                    ? "text-blue-700 bg-blue-50 font-bold"
+                    : "text-slate-700 hover:bg-blue-50 hover:text-slate-900"
                 }`}
               >
-                <span className="relative z-10">{link.label}</span>
-                <span
-                  className={`absolute inset-x-3 bottom-1 h-px transition-transform duration-300 origin-left ${
-                    isActive(link.href)
-                      ? "bg-[var(--signal)] scale-x-100"
-                      : "bg-[var(--signal)] scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
+                {link.label}
               </Link>
             ))}
             <Link
               href="/support"
-              className={`relative group px-3 py-2 text-[13.5px] font-medium transition-colors ${
-                isActive("/support")
-                  ? "text-[var(--ink)]"
-                  : "text-[var(--foreground-muted)] hover:text-[var(--ink)]"
-              }`}
+              className="px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition"
+              onClick={() => setMobileMenuOpen(false)}
             >
-              <span className="relative z-10">{t("nav.support")}</span>
-              <span
-                className={`absolute inset-x-3 bottom-1 h-px transition-transform duration-300 origin-left ${
-                  isActive("/support")
-                    ? "bg-[var(--signal)] scale-x-100"
-                    : "bg-[var(--signal)] scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
+              {t("nav.support")}
             </Link>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-2.5">
-            <LanguageSwitcher />
-            <Link
-              href="https://dashboard.taskeyapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 text-[13px] font-medium text-[var(--foreground-muted)] hover:text-[var(--ink)] transition-colors"
-            >
-              Login
-            </Link>
-            <Link
-              href="https://signup.taskeyapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[var(--ink)] hover:bg-[var(--ink-soft)] text-[var(--background)] text-[13px] font-semibold shadow-[0_4px_14px_-4px_rgba(12,14,16,0.4)] hover:shadow-[0_8px_22px_-6px_rgba(12,14,16,0.5)] hover:-translate-y-[1px] transition-all duration-300"
-            >
-              <span>{t("nav.tryFree")}</span>
-              <span className="text-[var(--signal-soft)] transition-transform duration-300 group-hover:translate-x-0.5">
-                →
-              </span>
-            </Link>
-          </div>
-
-          {/* Mobile toggle */}
-          <button
-            className="lg:hidden p-2 -mr-2 text-[var(--ink)] rounded-md hover:bg-[var(--background-deep)] transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menü öffnen"
-            aria-expanded={mobileMenuOpen}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h16M4 17h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-[var(--border-soft)] py-3 bg-[var(--background)]/95 backdrop-blur-xl">
-            <div className="flex flex-col gap-0.5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg transition-colors text-[15px] font-medium flex items-center justify-between ${
-                    isActive(link.href)
-                      ? "text-[var(--ink)] bg-[var(--background-deep)]"
-                      : "text-[var(--foreground-muted)] hover:bg-[var(--background-deep)] hover:text-[var(--ink)]"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  <span className="text-[var(--foreground-soft)] text-sm">↗</span>
-                </Link>
-              ))}
-              <Link
-                href="/support"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-lg text-[var(--foreground-muted)] hover:bg-[var(--background-deep)] hover:text-[var(--ink)] transition-colors text-[15px] font-medium flex items-center justify-between"
-              >
-                <span>{t("nav.support")}</span>
-                <span className="text-[var(--foreground-soft)] text-sm">↗</span>
-              </Link>
-              <div className="pt-3 px-2 mt-2 border-t border-[var(--border-soft)] space-y-2">
-                <div className="flex justify-start py-1">
-                  <LanguageSwitcher />
-                </div>
-                <Link
-                  href="https://dashboard.taskeyapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full px-4 py-3 text-center text-[var(--ink)] rounded-xl border border-[var(--border-strong)] hover:bg-[var(--background-deep)] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link
-                  href="https://signup.taskeyapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full px-4 py-3 text-center bg-[var(--ink)] text-[var(--background)] rounded-xl font-semibold transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t("nav.tryFree")} →
-                </Link>
+            <div className="pt-4 px-4 space-y-2">
+              <div className="flex justify-start pb-1">
+                <LanguageSwitcher />
               </div>
+              <Link
+                href="https://dashboard.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full px-4 py-3 text-center text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition font-medium border border-slate-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Login
+              </Link>
+              <Link
+                href="https://signup.taskeyapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-900 rounded-lg transition font-semibold shadow-lg shadow-cyan-500/20"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t("nav.tryFree")}
+              </Link>
             </div>
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+      )}
+    </nav>
   );
 }

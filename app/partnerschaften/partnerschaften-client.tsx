@@ -94,13 +94,13 @@ export default function PartnerschaftenClient() {
   };
 
   const inputCls =
-    'w-full px-4 py-3 rounded-xl bg-[var(--background-deep)] border border-[var(--border-soft)] focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 outline-none transition-all text-slate-900 placeholder-white/30';
+    'w-full px-4 py-3 rounded-xl bg-blue-50 border border-slate-200 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 outline-none transition-all text-slate-900 placeholder-white/30';
 
   return (
-    <main className="relative bg-[var(--background)] text-[var(--ink)] min-h-screen overflow-hidden">
+    <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
       {/* Ambient Glows */}
       <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[700px] h-[600px] bg-[var(--background-deep)] rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[700px] h-[600px] bg-blue-50 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.06),transparent_60%)] pointer-events-none" />
 
@@ -118,42 +118,42 @@ export default function PartnerschaftenClient() {
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
               </span>
-              <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase">
+              <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
                 {t('partner.hero.badge')}
               </span>
             </div>
 
-            <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.98] tracking-[-0.04em] mb-6 text-slate-900">
+            <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
               {t('partner.hero.title')}
               <br />
-              <span className="text-[var(--signal-strong)]">
+              <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
                 {t('partner.hero.title.highlight')}
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-[var(--ink-soft)] font-bold mb-4 max-w-3xl">
+            <p className="text-xl md:text-2xl text-slate-700 font-bold mb-4 max-w-3xl">
               {t('partner.hero.subtitle')}
             </p>
-            <p className="text-[var(--foreground-soft)] text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
+            <p className="text-slate-500 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
               {t('partner.hero.desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#kontakt"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--ink)] text-[var(--background)] text-base font-bold rounded-full hover:bg-[var(--ink-soft)] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors"
               >
                 {t('partner.hero.cta1')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
               <a
                 href="#modelle"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--border-strong)] text-slate-900 text-base font-bold rounded-full hover:bg-blue-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-slate-300 text-slate-900 text-base font-bold rounded-full hover:bg-blue-100 transition-colors"
               >
                 {t('partner.hero.cta2')}
               </a>
@@ -167,13 +167,13 @@ export default function PartnerschaftenClient() {
       {/* ─── Warum Taskey ───────────────────────────────────── */}
       <section className="relative py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
             <Image src="/logoblue.png" alt="Taskey Logo" width={56} height={56} sizes="56px" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6 tracking-tight">
             {t('partner.trust.title')}
           </h2>
-          <p className="text-lg md:text-xl text-[var(--foreground-muted)] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             {t('partner.trust.desc')}
           </p>
         </div>
@@ -183,10 +183,10 @@ export default function PartnerschaftenClient() {
       <section className="relative py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] sm:text-xs font-black text-[var(--signal-strong)] uppercase tracking-[0.3em] mb-4">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
               {t('partner.benefits.badge')}
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t('partner.benefits.title')}
             </h2>
           </div>
@@ -194,13 +194,13 @@ export default function PartnerschaftenClient() {
             {benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-2xl bg-[var(--background-deep)]/70 hover:bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-sm p-7 transition-all hover:-translate-y-1${idx === 4 ? ' sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none' : ''}`}
+                className={`relative rounded-2xl bg-blue-50/70 hover:bg-blue-50 border border-slate-200 backdrop-blur-sm p-7 transition-all hover:-translate-y-1${idx === 4 ? ' sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none' : ''}`}
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-[var(--signal)]/30 flex items-center justify-center mb-5 text-[var(--signal-strong)]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-300 flex items-center justify-center mb-5 text-blue-700">
                   {benefit.icon}
                 </div>
                 <h3 className="font-black text-slate-900 mb-2 text-lg leading-tight">{benefit.title}</h3>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">{benefit.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -214,10 +214,10 @@ export default function PartnerschaftenClient() {
             <p className="text-[10px] sm:text-xs font-black text-emerald-700 uppercase tracking-[0.3em] mb-4">
               {t('partner.models.badge')}
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight mb-4">
               {t('partner.models.title')}
             </h2>
-            <p className="text-lg text-[var(--foreground-muted)] max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               {t('partner.models.subtitle')}
             </p>
           </div>
@@ -233,19 +233,19 @@ export default function PartnerschaftenClient() {
                       : 'bg-white/10'
                   }`}
                 >
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-[var(--border-soft)] p-7 md:p-8 h-full flex flex-col">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
                     <h3 className="text-xl font-black text-slate-900 mb-1 leading-tight">{model.title}</h3>
-                    <p className={`text-sm font-bold mb-4 ${isHl ? 'text-[var(--signal-strong)]' : 'text-[var(--foreground-soft)]'}`}>
+                    <p className={`text-sm font-bold mb-4 ${isHl ? 'text-blue-700' : 'text-slate-500'}`}>
                       {model.subtitle}
                     </p>
-                    <p className="text-[var(--foreground-muted)] text-sm leading-relaxed mb-6">{model.description}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">{model.description}</p>
                     <ul className="space-y-2.5 mt-auto">
                       {model.highlights.map((h, i) => (
                         <li key={i} className="flex items-start gap-2.5">
-                          <svg className="w-4 h-4 text-[var(--signal-strong)] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                          <svg className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-[var(--ink-soft)] text-sm font-medium">{h}</span>
+                          <span className="text-slate-700 text-sm font-medium">{h}</span>
                         </li>
                       ))}
                     </ul>
@@ -261,10 +261,10 @@ export default function PartnerschaftenClient() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] sm:text-xs font-black text-[var(--signal-strong)] uppercase tracking-[0.3em] mb-4">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
               {t('partner.steps.badge')}
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t('partner.steps.title')}
             </h2>
           </div>
@@ -272,13 +272,13 @@ export default function PartnerschaftenClient() {
             {steps.map((s) => (
               <div
                 key={s.step}
-                className="relative rounded-2xl bg-[var(--background-deep)]/70 hover:bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-sm p-6 transition-all"
+                className="relative rounded-2xl bg-blue-50/70 hover:bg-blue-50 border border-slate-200 backdrop-blur-sm p-6 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-[var(--signal)]/30 flex items-center justify-center mb-4">
-                  <span className="text-[var(--signal-strong)] font-black text-sm tracking-wide">{s.step}</span>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-300 flex items-center justify-center mb-4">
+                  <span className="text-blue-700 font-black text-sm tracking-wide">{s.step}</span>
                 </div>
                 <h3 className="font-black text-slate-900 mb-2 leading-tight">{s.title}</h3>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">{s.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
@@ -289,17 +289,17 @@ export default function PartnerschaftenClient() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] sm:text-xs font-black text-[var(--signal-strong)] uppercase tracking-[0.3em] mb-4">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
               {t('partner.partners.badge')}
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t('partner.partners.title')}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Bild */}
-            <div className="relative rounded-3xl overflow-hidden border border-[var(--border-soft)] shadow-2xl shadow-blue-900/15">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/15">
               <Image
                 src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.webp"
                 alt="Taskey Partner – MG Gebäudeservice"
@@ -312,7 +312,7 @@ export default function PartnerschaftenClient() {
 
             {/* Text + Logos */}
             <div className="flex flex-col">
-              <p className="text-base md:text-lg text-[var(--foreground-muted)] leading-relaxed mb-8">
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
                 {t('partner.partners.note')}
               </p>
 
@@ -321,7 +321,7 @@ export default function PartnerschaftenClient() {
                 href="https://mg-gebaeudeservice.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative rounded-2xl bg-[var(--background-deep)]/70 hover:bg-[var(--background-deep)]/80 border border-[var(--border-soft)] hover:border-[var(--border-strong)] backdrop-blur-sm p-7 mb-6 transition-all"
+                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-6 transition-all"
               >
                 <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
                   <Image
@@ -333,7 +333,7 @@ export default function PartnerschaftenClient() {
                   />
                 </div>
                 <p className="text-slate-900 font-black text-lg mb-1.5">MG Gebäudeservice</p>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
               </a>
 
               {/* PAVAN */}
@@ -341,7 +341,7 @@ export default function PartnerschaftenClient() {
                 href="https://pavan-gmbh.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative rounded-2xl bg-[var(--background-deep)]/70 hover:bg-[var(--background-deep)]/80 border border-[var(--border-soft)] hover:border-[var(--border-strong)] backdrop-blur-sm p-7 mb-8 transition-all"
+                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-8 transition-all"
               >
                 <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
                   <Image
@@ -353,20 +353,20 @@ export default function PartnerschaftenClient() {
                   />
                 </div>
                 <p className="text-slate-900 font-black text-lg mb-3">PAVAN GmbH</p>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed mb-3">
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">
                   Die PAVAN GmbH ist spezialisiert auf die Verwaltung und hochwertige Aufwertung von Immobilien. Mit einem klaren Fokus auf Effizienzsteigerung, Werterhalt und nachhaltige Modernisierung betreut PAVAN Wohn- und Gewerbeobjekte in allen Phasen – von der regelmäßigen Bewirtschaftung über Renovierungsprojekte bis zur langfristigen Portfolio-Strategie. Wir unterstützen PAVAN dabei, operative Abläufe zu digitalisieren und betrieblich zu skalieren: Taskey ermöglicht automatisierte Nachweise per NFC, saubere Zeiterfassung, transparente Einsatzplanung und eine durchgängige Dokumentation von Leistungen und Qualitätskontrollen.
                 </p>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed mb-3">
+                <p className="text-slate-600 text-sm leading-relaxed mb-3">
                   Durch die enge Zusammenarbeit konnten Prozesse beschleunigt, Kommunikationswege verkürzt und die Qualität der Dienstleistung messbar erhöht werden. PAVAN nutzt Taskey, um Mitarbeiterkapazitäten besser zu steuern, Einsätze effizienter zu planen und Instandhaltungsarbeiten zielgerichtet nachzuverfolgen. Das Ergebnis ist eine spürbare Kostenreduktion pro Objekt, höhere Kundenzufriedenheit und eine bessere Planbarkeit von Projekten – ideale Voraussetzungen, um das Geschäft nachhaltig zu vergrößern.
                 </p>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Wir arbeiten kontinuierlich mit PAVAN an neuen Automatisierungen, Integrationen und Reporting-Lösungen, damit Skalierung nicht nur möglich, sondern planbar wird. Wenn Sie an einer Partnerschaft mit PAVAN interessiert sind oder mehr über die gemeinsame Lösung erfahren möchten, sprechen Sie uns an – wir verbinden Sie direkt.
                 </p>
               </a>
 
               <Link
                 href="/news/mg-gebaeudeservice-duesseldorf-case-study"
-                className="inline-flex items-center justify-center gap-2 bg-[var(--ink)] text-[var(--background)] font-bold px-7 py-3.5 rounded-full text-sm max-w-fit hover:bg-[var(--ink-soft)] transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-bold px-7 py-3.5 rounded-full text-sm max-w-fit hover:bg-blue-500 transition-colors"
               >
                 {t('partner.partners.caseStudy')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -380,13 +380,13 @@ export default function PartnerschaftenClient() {
       <section id="kontakt" className="relative py-20 md:py-28 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[10px] sm:text-xs font-black text-[var(--signal-strong)] uppercase tracking-[0.3em] mb-4">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
               {t('partner.contact.badge')}
             </p>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight mb-4">
               {t('partner.contact.title')}
             </h2>
-            <p className="text-lg text-[var(--foreground-muted)] max-w-xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-xl mx-auto">
               {t('partner.contact.subtitle')}
             </p>
           </div>
@@ -399,15 +399,15 @@ export default function PartnerschaftenClient() {
                 </svg>
               </div>
               <h3 className="text-2xl font-black text-slate-900 mb-2">{t('partner.contact.success.title')}</h3>
-              <p className="text-[var(--foreground-muted)]">{t('partner.contact.success.desc')}</p>
+              <p className="text-slate-600">{t('partner.contact.success.desc')}</p>
             </div>
           ) : (
-            <div className="relative rounded-3xl bg-gradient-to-br from-white via-[var(--background-deep)] to-white border border-[var(--border-soft)] p-7 md:p-10 overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[var(--signal-soft)] rounded-full blur-[56px] pointer-events-none" />
+            <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-7 md:p-10 overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[56px] pointer-events-none" />
               <form onSubmit={handleSubmit} className="relative space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.name')}</label>
+                    <label htmlFor="name" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.name')}</label>
                     <input
                       id="name"
                       type="text"
@@ -419,7 +419,7 @@ export default function PartnerschaftenClient() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="company" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.company')}</label>
+                    <label htmlFor="company" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.company')}</label>
                     <input
                       id="company"
                       type="text"
@@ -432,7 +432,7 @@ export default function PartnerschaftenClient() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="email" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.email')}</label>
+                    <label htmlFor="email" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.email')}</label>
                     <input
                       id="email"
                       type="email"
@@ -444,7 +444,7 @@ export default function PartnerschaftenClient() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.phone')}</label>
+                    <label htmlFor="phone" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.phone')}</label>
                     <input
                       id="phone"
                       type="tel"
@@ -457,22 +457,22 @@ export default function PartnerschaftenClient() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="partnerType" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.model')}</label>
+                  <label htmlFor="partnerType" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.model')}</label>
                   <select
                     id="partnerType"
                     value={formData.partnerType}
                     onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
-                    className={`${inputCls} bg-[var(--background-deep)] appearance-none`}
+                    className={`${inputCls} bg-slate-50 appearance-none`}
                   >
-                    <option value="" className="bg-[var(--background-deep)]">{t('partner.contact.model.placeholder')}</option>
-                    <option value="Empfehlungspartner" className="bg-[var(--background-deep)]">{t('partner.contact.model.empfehlung')}</option>
-                    <option value="Integrationspartner" className="bg-[var(--background-deep)]">{t('partner.contact.model.integration')}</option>
-                    <option value="Vertriebspartner" className="bg-[var(--background-deep)]">{t('partner.contact.model.vertrieb')}</option>
-                    <option value="Noch unsicher" className="bg-[var(--background-deep)]">{t('partner.contact.model.unsicher')}</option>
+                    <option value="" className="bg-slate-50">{t('partner.contact.model.placeholder')}</option>
+                    <option value="Empfehlungspartner" className="bg-slate-50">{t('partner.contact.model.empfehlung')}</option>
+                    <option value="Integrationspartner" className="bg-slate-50">{t('partner.contact.model.integration')}</option>
+                    <option value="Vertriebspartner" className="bg-slate-50">{t('partner.contact.model.vertrieb')}</option>
+                    <option value="Noch unsicher" className="bg-slate-50">{t('partner.contact.model.unsicher')}</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-xs font-black uppercase tracking-wider text-[var(--foreground-muted)] mb-2">{t('partner.contact.message')}</label>
+                  <label htmlFor="message" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.message')}</label>
                   <textarea
                     id="message"
                     rows={4}
@@ -492,7 +492,7 @@ export default function PartnerschaftenClient() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full inline-flex items-center justify-center gap-3 bg-white hover:bg-[var(--ink-soft)] disabled:bg-blue-200/80 text-slate-900 font-black px-8 py-4 rounded-full transition-all text-base"
+                  className="w-full inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-500 disabled:bg-blue-200/80 text-slate-900 font-black px-8 py-4 rounded-full transition-all text-base"
                 >
                   {status === 'sending' ? (
                     <>
@@ -509,9 +509,9 @@ export default function PartnerschaftenClient() {
                     </>
                   )}
                 </button>
-                <p className="text-center text-[var(--foreground-soft)] text-sm pt-2">
+                <p className="text-center text-slate-500 text-sm pt-2">
                   {t('partner.contact.emailDirect')}{' '}
-                  <a href="mailto:fynn@taskeyapp.com" className="text-[var(--signal-strong)] hover:text-[var(--signal-strong)] font-medium">
+                  <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:text-blue-700 font-medium">
                     fynn@taskeyapp.com
                   </a>
                 </p>

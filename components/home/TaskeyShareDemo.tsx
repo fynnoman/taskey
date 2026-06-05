@@ -29,7 +29,7 @@ export default function TaskeyShareDemo() {
   ];
 
   return (
-    <section className="relative bg-[var(--background)] text-[var(--ink)] py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[700px] h-[500px] bg-blue-100 rounded-full blur-[80px] pointer-events-none" />
@@ -37,15 +37,15 @@ export default function TaskeyShareDemo() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
-          <p className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] mb-5">
+          <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-5">
             Live-Demo · Taskey Share
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[0.98] tracking-[-0.04em] mb-6 text-slate-900">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
             Sehen Sie Taskey Share
             <br />
-            <span className="text-[var(--foreground-soft)]">aus Auftraggeber-Sicht.</span>
+            <span className="text-slate-500">aus Auftraggeber-Sicht.</span>
           </h2>
-          <p className="text-base md:text-lg text-[var(--foreground-muted)] leading-relaxed">
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed">
             Taskey Share ist das schlanke Portal, in dem Ihre Auftraggeber jederzeit selbst sehen,
             was im Objekt passiert. Live-Status, Fotos, Protokolle und Budget — ohne Anrufe,
             ohne E-Mails, ohne Wartezeit. Werfen Sie selbst einen Blick rein.
@@ -57,15 +57,15 @@ export default function TaskeyShareDemo() {
           {features.map((f) => (
             <div
               key={f.tag}
-              className="relative rounded-2xl bg-[var(--background-deep)]/60 border border-[var(--border-soft)] backdrop-blur-sm p-6 md:p-7"
+              className="relative rounded-2xl bg-blue-50/60 border border-slate-200 backdrop-blur-sm p-6 md:p-7"
             >
-              <span className="inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1 rounded-full bg-[var(--signal-soft)] border border-[var(--signal)]/30 text-[var(--signal-strong)] mb-5">
+              <span className="inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1 rounded-full bg-cyan-50 border border-cyan-300 text-blue-700 mb-5">
                 {f.tag}
               </span>
-              <h3 className="text-lg md:text-xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight mb-2">
+              <h3 className="text-lg md:text-xl font-black text-slate-900 leading-tight mb-2">
                 {f.title}
               </h3>
-              <p className="text-sm md:text-base text-[var(--foreground-muted)] leading-relaxed">
+              <p className="text-sm md:text-base text-slate-600 leading-relaxed">
                 {f.desc}
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function TaskeyShareDemo() {
             href="https://demo.kunden.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--ink)] text-[var(--background)] text-base md:text-lg font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white text-base md:text-lg font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
           >
             Live-Demo öffnen
             <svg
@@ -96,7 +96,7 @@ export default function TaskeyShareDemo() {
               />
             </svg>
           </Link>
-          <p className="text-sm text-[var(--foreground-soft)] mt-5">
+          <p className="text-sm text-slate-500 mt-5">
             Direkt im Browser — kein Login, keine Anmeldung.
           </p>
         </div>

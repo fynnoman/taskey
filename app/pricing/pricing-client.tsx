@@ -9,7 +9,7 @@ const EnterpriseApplicationModal = lazy(() => import("../../components/Enterpris
 function CheckIcon() {
   return (
     <svg
-      className="w-4 h-4 text-[var(--signal-strong)] flex-shrink-0 mt-0.5"
+      className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -401,7 +401,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
 export default function PricingPageWrapper() {
   return (
     <Suspense
-      fallback={<div className="min-h-screen bg-[var(--background)]" />}
+      fallback={<div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white" />}
     >
       <PricingPage />
     </Suspense>
@@ -414,7 +414,7 @@ function PricingPage() {
   const c = content[language] ?? content.de;
 
   return (
-    <main className="relative bg-[var(--background)] text-[var(--ink)] min-h-screen overflow-hidden">
+    <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
       <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[700px] h-[600px] bg-blue-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.06),transparent_60%)] pointer-events-none" />
@@ -429,25 +429,25 @@ function PricingPage() {
 
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase">
+            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
               {c.hero.badge}
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.98] tracking-[-0.04em] mb-6 text-slate-900">
+          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
             {c.hero.title1}
             <br />
-            <span className="text-[var(--signal-strong)]">
+            <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
               {c.hero.title2}
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--foreground-muted)] max-w-2xl mx-auto">{c.hero.subtitle}</p>
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">{c.hero.subtitle}</p>
         </div>
       </section>
 
@@ -459,7 +459,7 @@ function PricingPage() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 text-xs text-[var(--foreground-soft)]">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 text-xs text-slate-500">
             <span className="inline-flex items-center gap-1.5"><CheckIcon /> {c.trustBar.unlimited}</span>
             <span className="inline-flex items-center gap-1.5"><CheckIcon /> {c.trustBar.cancel}</span>
             <span className="inline-flex items-center gap-1.5"><CheckIcon /> {c.trustBar.noHidden}</span>
@@ -471,13 +471,13 @@ function PricingPage() {
       <section className="relative pb-20 md:pb-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-            <span className="inline-block px-3 py-1 text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 rounded-full mb-5">
+            <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
               {c.nfc.badge}
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[0.98] tracking-[-0.04em] mb-4 text-slate-900">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-4 text-slate-900">
               {c.nfc.title}
             </h2>
-            <p className="text-base md:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto">{c.nfc.intro}</p>
+            <p className="text-base md:text-lg text-slate-600 max-w-xl mx-auto">{c.nfc.intro}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
@@ -499,29 +499,29 @@ function PricingPage() {
                       </span>
                     </div>
                   )}
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-[var(--border-soft)] p-7 md:p-8 h-full flex flex-col text-center">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col text-center">
                     <span
-                      className={`text-[10px] font-mono font-semibold tracking-[0.3em] uppercase mb-4 ${
-                        isRec ? "text-[var(--signal-strong)]" : "text-[var(--foreground-soft)]"
+                      className={`text-[10px] font-black tracking-[0.3em] uppercase mb-4 ${
+                        isRec ? "text-blue-700" : "text-slate-500"
                       }`}
                     >
                       {tier.name}
                     </span>
-                    <p className="text-sm text-[var(--foreground-soft)] mb-5">{tier.tags}</p>
+                    <p className="text-sm text-slate-500 mb-5">{tier.tags}</p>
                     <div className="mb-2 flex items-baseline justify-center gap-1.5">
                       <span className="text-5xl md:text-6xl font-black leading-none text-slate-900">
                         {tier.price}
                       </span>
-                      <span className="text-2xl text-[var(--foreground-muted)] font-bold">€</span>
+                      <span className="text-2xl text-slate-600 font-bold">€</span>
                     </div>
-                    <p className="text-xs text-[var(--foreground-soft)] mb-7">{tier.shipping}</p>
+                    <p className="text-xs text-slate-500 mb-7">{tier.shipping}</p>
 
                     <a
                       href="mailto:kontakt@taskeyapp.com?subject=NFC-Tag%20Bestellung"
                       className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-colors mt-auto ${
                         isRec
-                          ? "bg-[var(--ink)] text-[var(--background)] hover:bg-[var(--ink-soft)]"
-                          : "bg-blue-100 text-slate-900 hover:bg-blue-100 border border-[var(--border-soft)]"
+                          ? "bg-blue-600 text-white hover:bg-blue-500"
+                          : "bg-blue-100 text-slate-900 hover:bg-blue-100 border border-slate-200"
                       }`}
                     >
                       {tier.cta}
@@ -532,15 +532,15 @@ function PricingPage() {
             })}
           </div>
 
-          <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-[var(--background-deep)]/70 border border-[var(--border-soft)] p-5 flex items-start gap-4">
-            <div className="w-9 h-9 rounded-full bg-[var(--signal-soft)] border border-[var(--signal)]/30 flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4 text-[var(--signal-strong)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-blue-50/70 border border-slate-200 p-5 flex items-start gap-4">
+            <div className="w-9 h-9 rounded-full bg-cyan-50 border border-cyan-300 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
               <h4 className="font-bold text-slate-900 text-sm mb-1">{c.nfc.lossTitle}</h4>
-              <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">{c.nfc.lossDesc}</p>
+              <p className="text-sm text-slate-600 leading-relaxed">{c.nfc.lossDesc}</p>
             </div>
           </div>
         </div>
@@ -549,14 +549,14 @@ function PricingPage() {
       <section id="enterprise" className="relative pb-24 md:pb-32 scroll-mt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
-            <span className="inline-block px-4 py-1.5 text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 rounded-full">
+            <span className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full">
               {c.ent.addon}
             </span>
           </div>
 
           {/* Outer gradient frame for premium feel */}
           <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-blue-500/20">
-            <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-br from-white via-[var(--background-deep)]/60 to-white p-8 md:p-14 overflow-hidden">
+            <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-br from-white via-blue-50/60 to-white p-8 md:p-14 overflow-hidden">
               {/* Ambient glows */}
               <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-200/40 rounded-full blur-[72px] pointer-events-none" />
               <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-[72px] pointer-events-none" />
@@ -574,22 +574,22 @@ function PricingPage() {
                 {/* Left: Title + features */}
                 <div>
                   <div className="inline-flex items-center gap-2 mb-5">
-                    <span className="inline-block px-3 py-1 text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-full shadow-md">
+                    <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-full shadow-md">
                       {c.ent.badge}
                     </span>
                   </div>
 
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[0.98] tracking-[-0.04em] mb-5 text-slate-900">
-                    <span className="text-[var(--signal-strong)]">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-slate-900">
+                    <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
                       {c.ent.title}
                     </span>
                   </h2>
 
-                  <p className="text-[var(--foreground-muted)] text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+                  <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
                     {c.ent.desc}
                   </p>
 
-                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm md:text-base text-[var(--ink-soft)]">
+                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm md:text-base text-slate-700">
                     {c.ent.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
                         <CheckIcon />
@@ -601,19 +601,19 @@ function PricingPage() {
 
                 {/* Right: Price + CTA */}
                 <div className="flex flex-col gap-4 lg:pt-2">
-                  <div className="rounded-2xl bg-white border border-[var(--border-strong)] shadow-lg shadow-blue-500/10 p-6">
-                    <p className="text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] mb-3">
+                  <div className="rounded-2xl bg-white border border-blue-200 shadow-lg shadow-blue-500/10 p-6">
+                    <p className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 mb-3">
                       {c.ent.priceLabel}
                     </p>
-                    <p className="text-3xl md:text-4xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight mb-2">
+                    <p className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
                       Individuell
                     </p>
-                    <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">{c.ent.priceValue}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed">{c.ent.priceValue}</p>
                   </div>
 
                   <button
                     onClick={() => setEnterpriseModalOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-[var(--ink)] text-white text-base font-bold rounded-full hover:from-blue-500 hover:to-blue-600 transition-all shadow-2xl shadow-blue-500/30"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-base font-bold rounded-full hover:from-blue-500 hover:to-blue-600 transition-all shadow-2xl shadow-blue-500/30"
                   >
                     {c.ent.apply}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -621,7 +621,7 @@ function PricingPage() {
                     </svg>
                   </button>
 
-                  <p className="text-xs text-[var(--foreground-soft)] text-center leading-relaxed">
+                  <p className="text-xs text-slate-500 text-center leading-relaxed">
                     Selektive Aufnahme · Wir prüfen jeden Antrag persönlich.
                   </p>
                 </div>
@@ -662,10 +662,10 @@ function PricingCard({ tier, popularLabel }: { tier: Tier; popularLabel: string 
         </div>
       )}
 
-      <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-[var(--border-soft)] p-7 md:p-8 h-full flex flex-col">
+      <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
         <span
-          className={`text-[10px] font-mono font-semibold tracking-[0.3em] uppercase mb-5 ${
-            highlighted ? "text-[var(--signal-strong)]" : "text-[var(--foreground-soft)]"
+          className={`text-[10px] font-black tracking-[0.3em] uppercase mb-5 ${
+            highlighted ? "text-blue-700" : "text-slate-500"
           }`}
         >
           {tier.name}
@@ -673,11 +673,11 @@ function PricingCard({ tier, popularLabel }: { tier: Tier; popularLabel: string 
 
         <div className="mb-1 flex items-baseline gap-2">
           <span className="text-5xl md:text-6xl font-black leading-none text-slate-900">{tier.price}</span>
-          <span className="text-sm text-[var(--foreground-soft)] font-medium">{tier.unit}</span>
+          <span className="text-sm text-slate-500 font-medium">{tier.unit}</span>
         </div>
 
         {tier.perObject ? (
-          <p className="text-sm text-[var(--signal-strong)] font-semibold mb-7 mt-1">{tier.perObject}</p>
+          <p className="text-sm text-blue-700 font-semibold mb-7 mt-1">{tier.perObject}</p>
         ) : (
           <div className="mb-7" />
         )}
@@ -686,14 +686,14 @@ function PricingCard({ tier, popularLabel }: { tier: Tier; popularLabel: string 
           href={tier.ctaHref}
           className={`block w-full text-center py-3.5 rounded-full font-bold text-sm transition-colors mb-7 ${
             highlighted
-              ? "bg-[var(--ink)] text-[var(--background)] hover:bg-[var(--ink-soft)]"
-              : "bg-blue-100 text-slate-900 hover:bg-blue-100 border border-[var(--border-soft)]"
+              ? "bg-blue-600 text-white hover:bg-blue-500"
+              : "bg-blue-100 text-slate-900 hover:bg-blue-100 border border-slate-200"
           }`}
         >
           {tier.ctaLabel}
         </a>
 
-        <ul className="space-y-3 text-sm text-[var(--foreground-muted)]">
+        <ul className="space-y-3 text-sm text-slate-600">
           {tier.features.map((f, i) => (
             <li key={i} className="flex items-start gap-2.5">
               <CheckIcon />

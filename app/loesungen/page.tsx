@@ -68,7 +68,7 @@ const branchen = [
 
 export default function LoesungenPage() {
   return (
-    <main className="relative min-h-screen bg-[var(--background)] text-[var(--ink)] overflow-hidden">
+    <main className="relative min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 overflow-hidden">
       <BreadcrumbSchema
         crumbs={[
           { name: "Home", url: "https://www.taskeyapp.com" },
@@ -77,28 +77,28 @@ export default function LoesungenPage() {
       />
 
       <div className="absolute top-0 left-1/4 w-[800px] h-[600px] bg-cyan-500/12 rounded-full blur-[90px] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-[var(--background-deep)] rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[80px] pointer-events-none" />
 
       <section className="relative pt-32 md:pt-40 pb-14 md:pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase">
+            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
               Lösungen nach Branche
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.98] tracking-[-0.04em] mb-6">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black leading-[0.95] tracking-tight mb-6">
             Reinigungssoftware{" "}
-            <span className="text-[var(--signal-strong)]">
+            <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
               für jede Sparte.
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--foreground-muted)] max-w-3xl leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed">
             Taskey ist eine All-in-One-Plattform – die Spezifika Ihrer Branche bilden wir
             modular ab. Wählen Sie unten Ihre Hauptbranche, um zu sehen, wie Taskey konkret
             für Sie aussieht.
@@ -112,15 +112,15 @@ export default function LoesungenPage() {
             <Link
               key={b.href}
               href={b.href}
-              className="group rounded-3xl bg-[var(--background-deep)]/70 border border-[var(--border-soft)] hover:border-cyan-400 p-7 md:p-9 transition-colors"
+              className="group rounded-3xl bg-blue-50/70 border border-slate-200 hover:border-cyan-400 p-7 md:p-9 transition-colors"
             >
-              <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-[var(--signal-strong)] transition-colors">
+              <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-blue-700 transition-colors">
                 {b.title}
               </h2>
-              <p className="text-[var(--foreground-muted)] leading-relaxed text-sm md:text-base mb-5">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-5">
                 {b.description}
               </p>
-              <span className="inline-flex items-center gap-1 text-xs font-bold text-[var(--signal-strong)]">
+              <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-700">
                 Branche entdecken
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -133,20 +133,20 @@ export default function LoesungenPage() {
 
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-white via-[var(--background-deep)] to-white border border-[var(--border-soft)] p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3">
                   Ihre Branche fehlt?
                 </h2>
-                <p className="text-[var(--foreground-muted)] text-base md:text-lg">
+                <p className="text-slate-600 text-base md:text-lg">
                   Sprechen Sie uns an – Taskey passt sich an, nicht umgekehrt.
                 </p>
               </div>
               <Link
                 href="/support"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--ink)] text-[var(--background)] text-base font-bold rounded-full hover:bg-[var(--ink-soft)] transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
               >
                 Kontakt aufnehmen
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +161,7 @@ export default function LoesungenPage() {
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <p className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase mb-3">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
               Funktionen im Detail
             </p>
             <h2 className="text-3xl md:text-4xl font-black leading-tight">
@@ -180,18 +180,18 @@ export default function LoesungenPage() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="group rounded-2xl bg-white border border-[var(--border-soft)] hover:border-cyan-400 p-6 transition-colors"
+                className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-6 transition-colors"
               >
-                <h3 className="text-base md:text-lg font-black mb-2 group-hover:text-[var(--signal-strong)] transition-colors">
+                <h3 className="text-base md:text-lg font-black mb-2 group-hover:text-blue-700 transition-colors">
                   {l.label}
                 </h3>
-                <p className="text-[var(--foreground-muted)] text-sm leading-relaxed">{l.desc}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{l.desc}</p>
               </Link>
             ))}
           </div>
 
           <div className="mt-12 mb-6">
-            <p className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase mb-3">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
               Marktvergleich
             </p>
             <h2 className="text-3xl md:text-4xl font-black leading-tight">
@@ -210,9 +210,9 @@ export default function LoesungenPage() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="group rounded-2xl bg-white border border-[var(--border-soft)] hover:border-cyan-400 p-5 transition-colors"
+                className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-5 transition-colors"
               >
-                <span className="text-base font-bold group-hover:text-[var(--signal-strong)] transition-colors">
+                <span className="text-base font-bold group-hover:text-blue-700 transition-colors">
                   {l.label}
                 </span>
               </Link>
