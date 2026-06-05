@@ -176,29 +176,26 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
 
   if (variant === "compact") {
     return (
-      <section className="bg-gradient-to-r from-emerald-50 via-emerald-100 to-emerald-50 py-8 border-y border-emerald-200/70">
+      <section className="bg-[var(--section-alt)] py-8 border-y border-[var(--signal)]/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div className="flex items-center gap-3">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--signal)] opacity-70" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--signal)]" />
             </span>
-            <span className="text-[11px] font-black tracking-[0.25em] text-emerald-700 uppercase">
+            <span className="font-mono text-[10px] font-semibold tracking-[0.25em] text-[var(--ink-soft)] uppercase">
               Taskey-USP · All-in-One
             </span>
           </div>
-          <p className="text-slate-900 text-base md:text-lg font-semibold leading-snug flex-1">
-            Schluss mit <span className="line-through text-slate-500">5 Software-Abos</span> —{" "}
-            <span className="text-emerald-700">eine Plattform, die wirklich alles abdeckt.</span>
+          <p className="text-[var(--ink)] text-base md:text-lg font-semibold tracking-[-0.015em] leading-snug flex-1">
+            Schluss mit <span className="line-through text-[var(--foreground-soft)]">5 Software-Abos</span> —{" "}
+            <span className="text-[var(--signal-strong)]">eine Plattform, die wirklich alles abdeckt.</span>
           </p>
           <Link
             href="/#alles-in-einem"
-            className="text-sm font-bold text-emerald-700 hover:text-emerald-700 whitespace-nowrap inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[var(--signal-strong)] hover:text-[var(--ink)] whitespace-nowrap inline-flex items-center gap-1 transition-colors"
           >
-            So spart Taskey Kosten
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            So spart Taskey Kosten <span>→</span>
           </Link>
         </div>
       </section>
@@ -210,21 +207,43 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
   return (
     <section
       id="alles-in-einem"
-      className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden"
+      className="bg-[var(--background-deep)] text-[var(--ink)] py-24 md:py-32 relative overflow-hidden isolate"
     >
-      <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div
+          className="absolute inset-0 graph-paper-fine opacity-60"
+          style={{
+            maskImage:
+              'radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%)',
+          }}
+        />
+        <div
+          className="absolute top-0 right-1/3 w-[500px] h-[500px]"
+          style={{
+            background:
+              'radial-gradient(50% 50% at 50% 50%, rgba(234,88,12,0.12), transparent 75%)',
+          }}
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullets */}
           <div>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-              Mehr als nur
+            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--foreground-soft)] mb-6 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-[var(--border-strong)]" />
+              <span>§02 · All-in-One</span>
+            </div>
+            <h2 className="text-[2.6rem] leading-[0.98] sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] mb-6 text-[var(--ink)]">
+              Eine Software statt
               <br />
-              <span className="text-slate-500">das Wesentliche</span>
+              <span className="line-through decoration-[var(--signal)] decoration-[3px] text-[var(--foreground-soft)]">
+                fünf Abos.
+              </span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-[var(--foreground-muted)] leading-relaxed mb-8 max-w-xl">
               Vom Tag 1 deckt Taskey alles ab, was ein moderner Betrieb vor Ort und im Büro braucht.
             </p>
 
@@ -235,16 +254,25 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
                     onClick={() => setActive(i)}
                     className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
                       i === active
-                        ? "bg-blue-100 border-slate-300"
-                        : "bg-transparent border-transparent hover:bg-blue-50"
+                        ? "bg-[var(--background)] border-[var(--signal)]/40 shadow-[0_4px_14px_-6px_rgba(234,88,12,0.25)]"
+                        : "bg-transparent border-transparent hover:bg-[var(--background)]/60"
                     }`}
                   >
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] font-semibold w-7 text-[var(--foreground-soft)]">
+                      0{i + 1}
+                    </span>
                     <span
                       className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
-                        i === active ? "bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" : "bg-blue-200/60"
+                        i === active
+                          ? "bg-[var(--signal)] shadow-[0_0_10px_rgba(234,88,12,0.6)]"
+                          : "bg-[var(--border-strong)]"
                       }`}
                     />
-                    <span className={`text-base font-semibold ${i === active ? "text-slate-900" : "text-slate-600"}`}>
+                    <span
+                      className={`text-base font-semibold tracking-[-0.015em] ${
+                        i === active ? "text-[var(--ink)]" : "text-[var(--foreground-muted)]"
+                      }`}
+                    >
                       {s.label}
                     </span>
                   </button>
@@ -257,38 +285,40 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--ink)] text-[var(--background)] font-semibold rounded-full hover:bg-[var(--ink-soft)] transition-all duration-300 shadow-[0_10px_30px_-12px_rgba(12,14,16,0.55)] hover:-translate-y-[1px] text-base text-center"
               >
-                Kostenlos starten
+                <span>Kostenlos starten</span>
+                <span className="text-[var(--signal-soft)] transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
               <Link
                 href="/features"
-                className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[var(--border-strong)] bg-[var(--background)]/60 text-[var(--ink)] font-semibold rounded-full hover:bg-[var(--background)] transition-colors text-base text-center"
               >
-                Alle Funktionen
+                <span>Alle Funktionen</span>
+                <span className="text-[var(--foreground-soft)]">↗</span>
               </Link>
             </div>
           </div>
 
           {/* Rechte Spalte: große rotierende Karte */}
           <div className="relative">
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-blue-50 overflow-hidden">
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] bg-[var(--background)] border border-[var(--border-soft)] overflow-hidden shadow-[0_30px_80px_-25px_rgba(12,14,16,0.2)]">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[var(--background-deep)] overflow-hidden">
                 <div
                   key={active}
-                  className="h-full bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
+                  className="h-full bg-[var(--signal)] origin-left"
                   style={{ animation: "allinone-progress 4.5s linear forwards" }}
                 />
               </div>
 
               <div className="p-8 md:p-10 flex flex-col h-full">
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-emerald-700 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full mb-6">
+                <span className="inline-flex self-start font-mono text-[10px] font-semibold tracking-[0.25em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 px-3 py-1 rounded-full mb-6">
                   {current.tag}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight mb-3">
+                <h3 className="text-2xl md:text-3xl font-semibold text-[var(--ink)] tracking-[-0.025em] leading-tight mb-3">
                   {current.title}
                 </h3>
-                <p className="text-sm md:text-base text-slate-500 mb-6">{current.subtitle}</p>
+                <p className="text-sm md:text-base text-[var(--foreground-muted)] mb-6">{current.subtitle}</p>
                 <div className="flex-1 relative">
                   <div key={active} className="absolute inset-0" style={{ animation: "allinone-fade 0.6s ease-out" }}>
                     {current.visual}
@@ -304,7 +334,7 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
                   key={i}
                   onClick={() => setActive(i)}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === active ? "w-6 bg-blue-600" : "w-1.5 bg-blue-200/70"
+                    i === active ? "w-6 bg-[var(--signal)]" : "w-1.5 bg-[var(--border-strong)]"
                   }`}
                   aria-label={`Slide ${i + 1}`}
                 />

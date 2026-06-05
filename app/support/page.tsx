@@ -78,7 +78,7 @@ const supportFaqSchema = {
 
 export default function SupportPage() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 overflow-hidden">
+    <main className="relative min-h-screen bg-[var(--background)] text-[var(--ink)] overflow-hidden">
       <BreadcrumbSchema
         crumbs={[
           { name: "Home", url: "https://www.taskeyapp.com" },
@@ -90,30 +90,30 @@ export default function SupportPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(supportFaqSchema) }}
       />
 
-      <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-cyan-50 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-[var(--signal-soft)] rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[var(--background-deep)] rounded-full blur-[80px] pointer-events-none" />
 
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
+            <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase">
               Support
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-black leading-[0.95] tracking-tight mb-6">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[0.98] tracking-[-0.04em] mb-6">
             Persönlicher Support
             <br />
-            <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
+            <span className="text-[var(--signal-strong)]">
               für Reinigungsbetriebe.
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[var(--foreground-muted)] max-w-2xl mx-auto">
             Direkter Draht zum Team in Völklingen. Keine Tickets in einer Warteschlange,
             keine Hotline aus dem Ausland – Sie schreiben uns, wir antworten.
           </p>
@@ -124,15 +124,15 @@ export default function SupportPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
           <a
             href="mailto:fynn@taskeyapp.com"
-            className="group rounded-3xl bg-blue-50/70 border border-slate-200 hover:border-cyan-400 p-8 md:p-10 transition-colors"
+            className="group rounded-3xl bg-[var(--background-deep)]/70 border border-[var(--border-soft)] hover:border-cyan-400 p-8 md:p-10 transition-colors"
           >
-            <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 mb-4">
+            <p className="text-[10px] font-mono font-semibold tracking-[0.25em] uppercase text-[var(--signal-strong)] mb-4">
               E-Mail
             </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-blue-700 transition-colors">
+            <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-[var(--signal-strong)] transition-colors">
               fynn@taskeyapp.com
             </h2>
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+            <p className="text-[var(--foreground-muted)] text-sm md:text-base leading-relaxed">
               Schreiben Sie uns Ihre Frage – wir antworten in der Regel innerhalb weniger Stunden
               an Werktagen.
             </p>
@@ -140,15 +140,15 @@ export default function SupportPage() {
 
           <a
             href="tel:+4915168488999"
-            className="group rounded-3xl bg-blue-50/70 border border-slate-200 hover:border-cyan-400 p-8 md:p-10 transition-colors"
+            className="group rounded-3xl bg-[var(--background-deep)]/70 border border-[var(--border-soft)] hover:border-cyan-400 p-8 md:p-10 transition-colors"
           >
-            <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 mb-4">
+            <p className="text-[10px] font-mono font-semibold tracking-[0.25em] uppercase text-[var(--signal-strong)] mb-4">
               Telefon
             </p>
-            <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-blue-700 transition-colors">
+            <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-[var(--signal-strong)] transition-colors">
               +49 151 68488999
             </h2>
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+            <p className="text-[var(--foreground-muted)] text-sm md:text-base leading-relaxed">
               Lieber direkt sprechen? Rufen Sie uns an. Montag bis Freitag von 9 bis 18 Uhr.
             </p>
           </a>
@@ -164,15 +164,15 @@ export default function SupportPage() {
             {supportFaqSchema.mainEntity.map((faq) => (
               <details
                 key={faq.name}
-                className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6"
+                className="group rounded-2xl bg-[var(--background-deep)]/70 border border-[var(--border-soft)] p-6"
               >
                 <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
                   <span>{faq.name}</span>
-                  <span className="text-blue-700 transition-transform group-open:rotate-45 text-2xl leading-none">
+                  <span className="text-[var(--signal-strong)] transition-transform group-open:rotate-45 text-2xl leading-none">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-slate-600 leading-relaxed text-sm md:text-base">
+                <p className="mt-4 text-[var(--foreground-muted)] leading-relaxed text-sm md:text-base">
                   {faq.acceptedAnswer.text}
                 </p>
               </details>
@@ -183,14 +183,14 @@ export default function SupportPage() {
 
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-[var(--background-deep)] to-white border border-[var(--border-soft)] p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3">
                   Noch kein Taskey-Konto?
                 </h2>
-                <p className="text-slate-600 text-base md:text-lg">
+                <p className="text-[var(--foreground-muted)] text-base md:text-lg">
                   Testen Sie Taskey 3 Monate kostenlos – keine Kreditkarte, jederzeit kündbar.
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function SupportPage() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--ink)] text-[var(--background)] text-base font-bold rounded-full hover:bg-[var(--ink-soft)] transition-colors whitespace-nowrap"
               >
                 Jetzt starten
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

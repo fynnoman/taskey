@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { WebVitals } from "./web-vitals";
+
+const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.taskeyapp.com'),
@@ -76,7 +91,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://signup.taskeyapp.com" />
         <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
       </head>
-      <body className="antialiased">
+      <body className={`${geist.variable} ${jetbrainsMono.variable} antialiased`}>
         <WebVitals />
         <Script src="https://mission-control.vars-development.com/umami/script.js" data-website-id="15a75075-86a0-4e36-8cd2-7cd83d860d5c" strategy="afterInteractive" />
         <LanguageProvider>

@@ -550,7 +550,7 @@ export default function FeaturesClient() {
   }, [language]);
 
   return (
-    <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
+    <main className="relative bg-[var(--background)] text-[var(--ink)] min-h-screen overflow-hidden">
       <div className="absolute top-0 left-1/4 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[700px] h-[600px] bg-blue-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(29,78,216,0.06),transparent_60%)] pointer-events-none" />
@@ -565,25 +565,25 @@ export default function FeaturesClient() {
 
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--background-deep)] border border-[var(--border-soft)] backdrop-blur-md mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
+            <span className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.25em] text-[var(--signal-strong)] uppercase">
               {c.hero.badge}
             </span>
           </div>
 
-          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.98] tracking-[-0.04em] mb-6 text-slate-900">
             {c.hero.title1}
             <br />
-            <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
+            <span className="text-[var(--signal-strong)]">
               {c.hero.title2}
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">{c.hero.subtitle}</p>
+          <p className="text-lg md:text-xl text-[var(--foreground-muted)] max-w-2xl mx-auto">{c.hero.subtitle}</p>
         </div>
       </section>
 
@@ -596,8 +596,8 @@ export default function FeaturesClient() {
                 onClick={() => setActive(i)}
                 className={`px-4 md:px-5 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all border ${
                   i === active
-                    ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-cyan-500/10"
-                    : "bg-blue-50 text-slate-600 border-slate-200 hover:bg-blue-100 hover:text-slate-900"
+                    ? "bg-[var(--ink)] text-[var(--background)] border-blue-600 shadow-lg shadow-cyan-500/10"
+                    : "bg-[var(--background-deep)] text-[var(--foreground-muted)] border-[var(--border-soft)] hover:bg-blue-100 hover:text-slate-900"
                 }`}
               >
                 {cc.badge}
@@ -611,13 +611,13 @@ export default function FeaturesClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div key={cat.id} className="animate-[features-fade_0.6s_ease-out]">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-              <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
+              <span className="inline-block px-3 py-1 text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 rounded-full mb-5">
                 {cat.badge}
               </span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-slate-900">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[0.98] tracking-[-0.04em] mb-5 text-slate-900">
                 {cat.headline}
               </h2>
-              <p className="text-base md:text-lg text-slate-600">{cat.intro}</p>
+              <p className="text-base md:text-lg text-[var(--foreground-muted)]">{cat.intro}</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
@@ -630,21 +630,21 @@ export default function FeaturesClient() {
                       : "bg-blue-100"
                   }`}
                 >
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-300 flex items-center justify-center mb-5">
-                      <span className="text-blue-700 font-black text-sm">
+                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-[var(--border-soft)] p-7 md:p-8 h-full flex flex-col">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--signal-soft)] border border-[var(--signal)]/30 flex items-center justify-center mb-5">
+                      <span className="text-[var(--signal-strong)] font-black text-sm">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 leading-tight">
                       {f.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-5">{f.desc}</p>
+                    <p className="text-sm text-[var(--foreground-muted)] leading-relaxed mb-5">{f.desc}</p>
                     <ul className="space-y-2.5 mt-auto">
                       {f.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <li key={b} className="flex items-start gap-2.5 text-sm text-[var(--ink-soft)]">
                           <svg
-                            className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5"
+                            className="w-4 h-4 text-[var(--signal-strong)] flex-shrink-0 mt-0.5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -667,7 +667,7 @@ export default function FeaturesClient() {
                   href="https://demo.kunden.taskeyapp.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white text-sm md:text-base font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[var(--ink)] text-[var(--background)] text-sm md:text-base font-bold rounded-full hover:bg-[var(--ink-soft)] transition-colors shadow-lg shadow-blue-600/20"
                 >
                   {language === "en"
                     ? "Open live demo"
@@ -689,7 +689,7 @@ export default function FeaturesClient() {
                     />
                   </svg>
                 </Link>
-                <p className="text-sm text-slate-500 mt-4">
+                <p className="text-sm text-[var(--foreground-soft)] mt-4">
                   {language === "en"
                     ? "Right in the browser — no login, no signup."
                     : language === "fr"
@@ -704,28 +704,28 @@ export default function FeaturesClient() {
 
       <section className="relative pb-24 md:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-[var(--background-deep)] to-white border border-[var(--border-soft)] p-8 md:p-12 overflow-hidden">
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-100 rounded-full blur-[56px] pointer-events-none" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
-                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-4">
+                <span className="inline-block px-3 py-1 text-[10px] font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 rounded-full mb-4">
                   {c.cta.badge}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">
                   {c.cta.title}
                 </h2>
-                <p className="text-slate-600 text-base md:text-lg">{c.cta.subtitle}</p>
+                <p className="text-[var(--foreground-muted)] text-base md:text-lg">{c.cta.subtitle}</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-slate-300 text-slate-900 text-sm font-bold rounded-full hover:bg-blue-100 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[var(--border-strong)] text-slate-900 text-sm font-bold rounded-full hover:bg-blue-100 transition-colors whitespace-nowrap"
                 >
                   {c.cta.pricing}
                 </Link>
                 <a
                   href="https://signup.taskeyapp.com"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[var(--ink)] text-[var(--background)] text-sm font-bold rounded-full hover:bg-[var(--ink-soft)] transition-colors whitespace-nowrap"
                 >
                   {c.cta.start}
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

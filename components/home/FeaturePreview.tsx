@@ -49,10 +49,10 @@ export default function FeaturePreview() {
   const parallaxRef = useParallax<HTMLDivElement>(0.15);
 
   return (
-    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-[var(--background)] text-[var(--ink)] py-24 md:py-32 relative overflow-hidden">
       {/* Ambient glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[var(--signal-soft)] rounded-full blur-[64px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-[var(--steel-soft)] rounded-full blur-[64px] pointer-events-none" />
 
       {/* Großes verblendetes Bild rechts — full-bleed, keine Card */}
       <div ref={parallaxRef} className="hidden lg:block absolute top-0 right-0 bottom-0 w-[62%] pointer-events-none will-change-transform">
@@ -93,7 +93,7 @@ export default function FeaturePreview() {
         <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullet-Liste */}
           <div className="relative z-10">
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
+            <p className="text-[10px] sm:text-xs font-mono font-semibold tracking-[0.3em] uppercase text-[var(--signal-strong)] mb-4">
               {t("features.badge")}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-slate-900">
@@ -101,9 +101,9 @@ export default function FeaturePreview() {
               <br />
               sparen Ärger –
               <br />
-              <span className="text-slate-500">und haben alles schwarz auf weiss.</span>
+              <span className="text-[var(--foreground-soft)]">und haben alles schwarz auf weiss.</span>
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-[var(--foreground-muted)] leading-relaxed mb-8 max-w-xl">
               {t("features.subtitle")}
             </p>
 
@@ -114,18 +114,18 @@ export default function FeaturePreview() {
                     onClick={() => setActive(i)}
                     className={`group w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl border transition-all ${
                       i === active
-                        ? "bg-blue-100 border-slate-300"
-                        : "bg-transparent border-transparent hover:bg-blue-50"
+                        ? "bg-[var(--background-deep)] border-[var(--signal)]/40 shadow-[0_4px_14px_-6px_rgba(234,88,12,0.2)]"
+                        : "bg-transparent border-transparent hover:bg-[var(--background-deep)]"
                     }`}
                   >
                     <span
                       className={`flex-shrink-0 w-2 h-2 rounded-full transition-all ${
                         i === active
-                          ? "bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-                          : "bg-blue-200/60"
+                          ? "bg-[var(--signal)] shadow-[0_0_10px_rgba(234,88,12,0.6)]"
+                          : "bg-[var(--border-strong)]"
                       }`}
                     />
-                    <span className={`text-base font-semibold ${i === active ? "text-slate-900" : "text-slate-600"}`}>
+                    <span className={`text-base font-semibold ${i === active ? "text-slate-900" : "text-[var(--foreground-muted)]"}`}>
                       {f.label}
                     </span>
                     {/* Progress on active */}
@@ -148,13 +148,13 @@ export default function FeaturePreview() {
                 href="https://signup.taskeyapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
+                className="px-8 py-3.5 bg-[var(--ink)] text-[var(--background)] font-semibold rounded-full hover:bg-[var(--ink-soft)] transition-colors text-base text-center"
               >
                 Kostenlos starten
               </Link>
               <Link
                 href="/features"
-                className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base text-center"
+                className="px-8 py-3.5 border border-[var(--border-strong)] text-[var(--ink)] font-semibold rounded-full hover:bg-[var(--background-deep)] transition-colors text-base text-center"
               >
                 Alle Funktionen
               </Link>
@@ -177,11 +177,11 @@ export default function FeaturePreview() {
                   </div>
                 ))}
                 <div key={`m-txt-${active}`} className="absolute bottom-0 left-0 right-0 p-6" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
-                  <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 px-3 py-1 rounded-full mb-3">
+                  <span className="inline-flex self-start text-[10px] font-mono font-semibold tracking-[0.25em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 px-3 py-1 rounded-full mb-3">
                     {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
                   </span>
-                  <h3 className="text-2xl font-black text-slate-900 leading-tight mb-2">{current.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{current.description}</p>
+                  <h3 className="text-2xl font-black text-[var(--ink)] tracking-[-0.025em] leading-tight mb-2">{current.title}</h3>
+                  <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">{current.description}</p>
                 </div>
               </div>
 
@@ -201,7 +201,7 @@ export default function FeaturePreview() {
 
             {/* Desktop: Text schwebt unten rechts frei über dem Hintergrund-Bild */}
             <div key={`d-txt-${active}`} className="hidden lg:block ml-auto max-w-md relative z-10" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>
-              <span className="inline-flex text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 backdrop-blur-md px-3 py-1 rounded-full mb-5">
+              <span className="inline-flex text-[10px] font-mono font-semibold tracking-[0.25em] uppercase text-[var(--signal-strong)] bg-[var(--signal-soft)] border border-[var(--signal)]/30 backdrop-blur-md px-3 py-1 rounded-full mb-5">
                 {current.tag} · {String(active + 1).padStart(2, "0")}/{String(features.length).padStart(2, "0")}
               </span>
               <h3 className="text-3xl xl:text-4xl font-black text-slate-900 leading-[1.1] mb-4 ">

@@ -20,30 +20,28 @@ type Variant = "full" | "compact" | "dark";
 export default function CommunicationUSP({ variant = "full" }: { variant?: Variant }) {
   if (variant === "compact") {
     return (
-      <section className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 py-8 border-y border-blue-200/70">
+      <section className="bg-[var(--background-deep)] py-8 border-y border-[var(--border-soft)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <div className="flex items-center gap-3">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-400" />
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--signal)] opacity-70" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--signal)]" />
             </span>
-            <span className="text-[11px] font-black tracking-[0.25em] text-blue-700 uppercase">
+            <span className="font-mono text-[10px] font-semibold tracking-[0.25em] text-[var(--ink-soft)] uppercase">
               Taskey-USP · Live-Verbindung
             </span>
           </div>
-          <p className="text-slate-900 text-base md:text-lg font-semibold leading-snug flex-1">
+          <p className="text-[var(--ink)] text-base md:text-lg font-semibold tracking-[-0.015em] leading-snug flex-1">
             Die beste Kommunikation zwischen{" "}
-            <span className="text-blue-700">Einsatzort</span> und{" "}
-            <span className="text-blue-700">Büro</span> — in Echtzeit.
+            <span className="text-[var(--signal-strong)]">Einsatzort</span> und{" "}
+            <span className="text-[var(--signal-strong)]">Büro</span> — in Echtzeit.
           </p>
           <Link
             href="/#echtzeit-kommunikation"
-            className="text-sm font-bold text-blue-700 hover:text-blue-700 whitespace-nowrap inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[var(--signal-strong)] hover:text-[var(--ink)] whitespace-nowrap inline-flex items-center gap-1 transition-colors"
           >
             Mehr erfahren
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </Link>
         </div>
       </section>
@@ -162,24 +160,44 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     },
   ];
 
-  const bgFull = isDark
-    ? "bg-gradient-to-b from-white via-blue-50 to-white text-slate-900"
-    : "bg-gradient-to-b from-white via-blue-50 to-white text-slate-900";
-
   return (
-    <section id="echtzeit-kommunikation" className={`${bgFull} py-24 md:py-32 relative overflow-hidden`}>
-      <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[72px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+    <section
+      id="echtzeit-kommunikation"
+      className="bg-[var(--background)] text-[var(--ink)] py-24 md:py-32 relative overflow-hidden isolate"
+    >
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div
+          className="absolute inset-0 graph-paper-fine"
+          style={{
+            maskImage:
+              'radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%)',
+          }}
+        />
+        <div
+          className="absolute top-1/4 left-1/3 w-[600px] h-[600px]"
+          style={{
+            background:
+              'radial-gradient(50% 50% at 50% 50%, rgba(234,88,12,0.08), transparent 75%)',
+          }}
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header – Revolut-Style: zentral, groß, knapp */}
-        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+        {/* Header */}
+        <div className="text-center max-w-4xl mx-auto mb-14 md:mb-20">
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--foreground-soft)] mb-6 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[var(--border-strong)]" />
+            <span>§01 · Live-Verbindung</span>
+            <span className="h-px w-8 bg-[var(--border-strong)]" />
+          </div>
+          <h2 className="text-[2.6rem] leading-[0.98] sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] mb-6 text-[var(--ink)]">
             Feld trifft Büro.
             <br />
-            <span className="text-slate-500">In Echtzeit.</span>
+            <span className="text-[var(--signal-strong)]">In Echtzeit.</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-[var(--foreground-muted)] leading-relaxed max-w-2xl mx-auto mb-10">
             Infos vom Einsatzort landen sofort im Büro. Entscheiden statt raten.
           </p>
 
@@ -188,31 +206,36 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
               href="https://signup.taskeyapp.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--ink)] text-[var(--background)] font-semibold rounded-full hover:bg-[var(--ink-soft)] transition-all duration-300 shadow-[0_10px_30px_-12px_rgba(12,14,16,0.55)] hover:-translate-y-[1px] text-base"
             >
-              Kostenlos starten
+              <span>Kostenlos starten</span>
+              <span className="text-[var(--signal-soft)] transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
             <Link
               href="/features"
-              className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[var(--border-strong)] text-[var(--ink)] font-semibold rounded-full hover:bg-[var(--background-deep)] transition-colors text-base"
             >
-              Funktionen ansehen
+              <span>Funktionen ansehen</span>
+              <span className="text-[var(--foreground-soft)]">↗</span>
             </Link>
           </div>
         </div>
 
-        {/* Karten-Grid – Revolut-Style */}
+        {/* Karten-Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {cards.map((c, i) => (
             <div
               key={i}
-              className="group relative rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 overflow-hidden min-h-[380px] md:min-h-[440px] flex flex-col"
+              className="group relative rounded-3xl bg-[var(--background)] border border-[var(--border-soft)] hover:border-[var(--signal)]/40 overflow-hidden min-h-[380px] md:min-h-[440px] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_-25px_rgba(12,14,16,0.2)]"
             >
               <div className="p-6 md:p-7">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight mb-2">
+                <div className="font-mono text-[10px] uppercase tracking-[0.22em] font-semibold text-[var(--signal-strong)] mb-3">
+                  0{i + 1}
+                </div>
+                <h3 className="text-xl md:text-2xl font-semibold text-[var(--ink)] tracking-[-0.02em] leading-tight mb-2">
                   {c.title}
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
+                <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
                   {c.subtitle}
                 </p>
               </div>

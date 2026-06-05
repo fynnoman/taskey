@@ -10,7 +10,7 @@ import RevealBlur from './RevealBlur';
  */
 export default function LiveMargen() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-[var(--background)] text-[var(--ink)] py-24 md:py-36 overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-emerald-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[500px] bg-red-500/10 rounded-full blur-[72px] pointer-events-none" />
@@ -18,17 +18,17 @@ export default function LiveMargen() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header — zentriert */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-slate-200 text-emerald-700 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] mb-6 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 bg-[var(--background-deep)] border border-[var(--border-soft)] text-emerald-700 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] mb-6 backdrop-blur-md">
             <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
             Live-Übersicht
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.98] tracking-[-0.04em] mb-6 text-slate-900">
             Jeder Auftrag.
             <br />
-            <span className="text-slate-500">Jede Marge. </span>
+            <span className="text-[var(--foreground-soft)]">Jede Marge. </span>
             <span className="text-emerald-600">Live.</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[var(--foreground-muted)] leading-relaxed max-w-2xl mx-auto">
             Sie erfahren erst beim Steuerberater, dass ein Auftrag ein Verlust war?
             Damit ist Schluss. Taskey zeigt Ihnen sofort, wo Sie verdienen – und wo Sie draufzahlen.
           </p>
@@ -49,11 +49,11 @@ export default function LiveMargen() {
 
           {/* Dashboard Card */}
           <RevealBlur offset={120} blur={24} duration={1300}>
-          <div className="relative rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-2xl shadow-blue-900/15 p-6 md:p-8 backdrop-blur-sm">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-[var(--border-soft)] shadow-2xl shadow-blue-900/15 p-6 md:p-8 backdrop-blur-sm">
             {/* Dashboard Header */}
-            <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-slate-200/60">
+            <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-[var(--border-soft)]/60">
               <div>
-                <p className="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-bold">Objekt-Übersicht</p>
+                <p className="text-[10px] text-[var(--foreground-soft)] uppercase tracking-[0.25em] font-bold">Objekt-Übersicht</p>
                 <p className="text-sm md:text-base text-slate-900 font-bold mt-1">3 aktive Verträge · heute 14:07 Uhr</p>
               </div>
               <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold">
@@ -106,7 +106,7 @@ export default function LiveMargen() {
             href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 bg-blue-600 text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-500 transition-colors"
+            className="inline-flex items-center justify-center gap-2.5 bg-[var(--ink)] text-[var(--background)] px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-500 transition-colors"
           >
             Jetzt kostenlos testen
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ export default function LiveMargen() {
           </Link>
           <Link
             href="/features"
-            className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-900 px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-100 transition-colors"
+            className="inline-flex items-center justify-center gap-2 border border-[var(--border-strong)] text-slate-900 px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-100 transition-colors"
           >
             Mehr erfahren
           </Link>
@@ -148,16 +148,16 @@ function KpiChip({
   const colors = {
     emerald: { ring: 'border-emerald-300', val: 'text-emerald-700', dot: 'bg-emerald-400' },
     red: { ring: 'border-red-400/30', val: 'text-red-300', dot: 'bg-red-400' },
-    neutral: { ring: 'border-slate-200', val: 'text-white', dot: 'bg-white/60' },
+    neutral: { ring: 'border-[var(--border-soft)]', val: 'text-white', dot: 'bg-white/60' },
   }[tone];
   return (
     <div className={`relative px-4 py-3 rounded-2xl bg-white/95 border ${colors.ring} backdrop-blur-md shadow-2xl shadow-blue-900/18 min-w-[180px]`}>
       <div className="flex items-center gap-2 mb-1">
         <span className={`w-1.5 h-1.5 rounded-full ${colors.dot} ${pulse ? 'animate-pulse' : ''}`} />
-        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-500">{label}</span>
+        <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--foreground-soft)]">{label}</span>
       </div>
       <div className={`text-2xl font-black ${colors.val} leading-none mb-1`}>{value}</div>
-      <div className="text-[11px] text-slate-500">{sub}</div>
+      <div className="text-[11px] text-[var(--foreground-soft)]">{sub}</div>
     </div>
   );
 }
@@ -187,14 +187,14 @@ function ContractRow({
       className={`rounded-2xl p-4 md:p-5 border ${
         isRed
           ? 'bg-red-950/30 border-red-500/20'
-          : 'bg-blue-50/70 border-slate-200/60 hover:border-slate-200'
+          : 'bg-[var(--background-deep)]/70 border-[var(--border-soft)]/60 hover:border-[var(--border-soft)]'
       } transition-colors relative overflow-hidden`}
     >
       {isRed && <div className="absolute top-0 left-0 right-0 h-0.5 bg-red-500 animate-pulse" />}
       <div className="flex items-center justify-between mb-3 gap-3">
         <div className="min-w-0">
           <p className="text-slate-900 font-bold text-sm md:text-base truncate">{name}</p>
-          <p className="text-slate-500 text-xs mt-0.5">Vertragssumme: {sum}</p>
+          <p className="text-[var(--foreground-soft)] text-xs mt-0.5">Vertragssumme: {sum}</p>
         </div>
         <div className="text-right flex-shrink-0">
           <p className={`font-black text-xl md:text-2xl leading-none ${isRed ? 'text-red-400' : 'text-emerald-600'}`}>
@@ -203,7 +203,7 @@ function ContractRow({
           <p className={`text-[11px] mt-1 ${isRed ? 'text-red-400/70' : 'text-emerald-600/70'}`}>{marginLabel}</p>
         </div>
       </div>
-      <div className="w-full bg-blue-50 rounded-full h-1.5 overflow-hidden">
+      <div className="w-full bg-[var(--background-deep)] rounded-full h-1.5 overflow-hidden">
         <div
           className={`h-full rounded-full ${
             isRed ? 'bg-gradient-to-r from-red-500 to-red-400' : 'bg-gradient-to-r from-emerald-500 to-emerald-400'
@@ -211,7 +211,7 @@ function ContractRow({
           style={{ width: `${progress}%` }}
         />
       </div>
-      <div className="flex justify-between mt-2 text-[10px] text-slate-500">
+      <div className="flex justify-between mt-2 text-[10px] text-[var(--foreground-soft)]">
         <span>Kosten: {cost}</span>
         <span>{progress}% abgeschlossen</span>
       </div>
