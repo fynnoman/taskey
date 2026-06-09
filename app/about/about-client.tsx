@@ -215,24 +215,24 @@ export default function AboutClient() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: "Geschäftsführer" },
-              { name: "Julian Stosse",     img: "/hero-background-alt.webp",      role: "Geschäftsführer" },
+              { name: "Julian Stosse",     img: "/team-julian.png",      role: "Geschäftsführer" },
             ].map((m) => (
               <div
                 key={m.name}
-                className="relative rounded-3xl bg-white border border-blue-100 border border-slate-200 p-8 text-center overflow-hidden"
+                className="relative rounded-3xl bg-white border border-blue-100 border border-slate-200 p-10 text-center overflow-hidden"
               >
                 <div className="absolute -top-20 -right-20 w-[300px] h-[300px] bg-cyan-50 rounded-full blur-[48px] pointer-events-none" />
                 <div className="relative">
-                  <div className="w-40 h-40 rounded-full mx-auto mb-5 overflow-hidden relative ring-2 ring-white/10">
+                  <div className="w-48 h-48 rounded-full mx-auto mb-6 overflow-hidden relative ring-2 ring-white/10">
                     <Image
                       src={m.img}
                       alt={m.name}
                       fill
                       className="object-cover"
-                      sizes="160px"
+                      sizes="192px"
                     />
                   </div>
                   <h3 className="text-xl font-black text-slate-900 mb-1">{m.name}</h3>
