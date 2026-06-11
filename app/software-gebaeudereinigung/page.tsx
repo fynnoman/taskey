@@ -209,6 +209,23 @@ export default function Page() {
             "Vier Abos für vier Tools → eine Software, ein Login, ein Preis",
           ],
         },
+        {
+          eyebrow: "Garantie",
+          heading: "Sie sehen alles vorher. In einem kostenlosen Call, persönlich, ohne Verkaufsdruck.",
+          intro:
+            "Sie müssen Taskey nicht blind einkaufen. Bevor Sie sich entscheiden, gehen wir die gesamte Software in einem unverbindlichen Termin Schritt für Schritt mit Ihnen durch – am Beispiel Ihres eigenen Betriebs, Ihrer Objekte und Ihrer Reinigungsarten.",
+          body: [
+            "In rund 30 Minuten zeigen wir Ihnen jedes Modul live: Wie Sie ein Objekt anlegen, einen Einsatz planen, den NFC-Nachweis verproben, Stundenzettel exportieren und die Live-Marge pro Objekt ablesen. Sie fragen, wir zeigen – nichts wird beschönigt, nichts ausgespart.",
+            "Wenn Taskey für Ihren Betrieb nicht passt, sagen wir Ihnen das offen. Wenn es passt, übernimmt unser Onboarding-Team die komplette Ersteinrichtung in 48 Stunden – inklusive Stammdaten-Migration aus Excel oder Alt-Software. Die ersten drei Monate sind kostenlos. Ohne Kreditkarte. Ohne automatische Verlängerung.",
+          ],
+          bullets: [
+            "30 Minuten Live-Demo, individuell auf Ihren Reinigungsbetrieb zugeschnitten",
+            "Wir gehen alle Module einmal vollständig mit Ihnen durch – nicht nur die schönen",
+            "Ehrliche Einschätzung, ob Taskey für Ihre Objekte und Reinigungsarten passt",
+            "Kostenlos, unverbindlich, keine versteckten Verkaufs-Tricks",
+            "Bei Passung: 48-Stunden-Onboarding inkl. Datenmigration + 3 Monate kostenlos testen",
+          ],
+        },
       ]}
       faqs={[
         {
