@@ -66,7 +66,7 @@ const FAQ_BY_LOCALE: Record<"de" | "en" | "fr", { q: string; a: string }[]> = {
     { q: "Kann ich Daten exportieren?", a: "Ja, Taskey bietet umfangreiche Export-Funktionen. Zeitdaten und Abrechnungen können als PDF, CSV oder Excel exportiert werden." },
     { q: "Wie schnell kann ich starten?", a: "Sofort nach der Registrierung. Mit unserem Done-for-You Setup ist Ihr kompletter Betrieb in 48 Stunden einsatzbereit." },
     { q: "Wie funktioniert die Schlüsselverwaltung?", a: "Taskey dokumentiert, welcher Mitarbeiter Zugang zu welchem Objekt hat. Per NFC-Tag am Schlüsselkasten wird jede Entnahme und Rückgabe protokolliert." },
-    { q: "Was kostet Taskey?", a: "Taskey bietet flexible Preismodelle ab 119 € pro Monat – vom Soloselbstständigen bis zum Großbetrieb. Die Details finden Sie auf der Preisseite." },
+    { q: "Was kostet Taskey?", a: "Taskey bietet flexible Preismodelle ab 69 € pro Monat – vom Soloselbstständigen bis zum Großbetrieb. Die Details finden Sie auf der Preisseite." },
   ],
   en: [
     { q: "Is Taskey GDPR-compliant?", a: "Yes, Taskey is fully GDPR-compliant. All data is stored on German servers and transmitted encrypted." },
@@ -78,7 +78,7 @@ const FAQ_BY_LOCALE: Record<"de" | "en" | "fr", { q: string; a: string }[]> = {
     { q: "Can I export data?", a: "Yes, Taskey offers extensive export options. Time data and billing can be exported as PDF, CSV or Excel." },
     { q: "How fast can I get started?", a: "Right after sign-up. With our Done-for-You setup, your entire operation is up and running within 48 hours." },
     { q: "How does key management work?", a: "Taskey documents which employee has access to which site. An NFC tag on the key cabinet logs every pickup and return." },
-    { q: "How much does Taskey cost?", a: "Taskey offers flexible plans starting at €119 per month – from solo operators to large enterprises. Details on the pricing page." },
+    { q: "How much does Taskey cost?", a: "Taskey offers flexible plans starting at €69 per month – from solo operators to large enterprises. Details on the pricing page." },
   ],
   fr: [
     { q: "Taskey est-il conforme au RGPD ?", a: "Oui, Taskey est entièrement conforme au RGPD. Toutes les données sont stockées sur des serveurs allemands et transmises de manière chiffrée." },
@@ -90,7 +90,7 @@ const FAQ_BY_LOCALE: Record<"de" | "en" | "fr", { q: string; a: string }[]> = {
     { q: "Puis-je exporter les données ?", a: "Oui, Taskey offre de nombreuses options d'export. Les données de temps et de facturation s'exportent en PDF, CSV ou Excel." },
     { q: "À quelle vitesse puis-je démarrer ?", a: "Immédiatement après l'inscription. Avec notre Done-for-You Setup, toute votre activité est opérationnelle en 48 heures." },
     { q: "Comment fonctionne la gestion des clés ?", a: "Taskey documente quel employé a accès à quel site. Un tag NFC sur l'armoire à clés enregistre chaque retrait et restitution." },
-    { q: "Combien coûte Taskey ?", a: "Taskey propose des forfaits flexibles à partir de 119 €/mois – du travailleur indépendant aux grandes entreprises. Détails sur la page tarifs." },
+    { q: "Combien coûte Taskey ?", a: "Taskey propose des forfaits flexibles à partir de 69 €/mois – du travailleur indépendant aux grandes entreprises. Détails sur la page tarifs." },
   ],
 };
 
@@ -121,7 +121,7 @@ export default async function Home({
     },
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "119",
+      "lowPrice": "69",
       "highPrice": "429",
       "priceCurrency": "EUR",
       "offerCount": "3",
