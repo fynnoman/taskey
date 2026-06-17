@@ -51,12 +51,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 text-slate-900 transition-[transform,background-color,backdrop-filter,border-color] duration-500 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[transform,background-color,backdrop-filter,border-color,color] duration-500 ease-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         solid
-          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-white/85 backdrop-blur-xl border-b border-slate-200 text-slate-900"
+          : "bg-transparent border-b border-transparent text-white"
       }`}
       aria-hidden={isHomepage ? hidden : false}
     >
@@ -66,7 +66,7 @@ export default function Header() {
         t={t}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
-        tone="onDark"
+        solid={solid}
       />
     </header>
   );
@@ -79,14 +79,26 @@ function NavInner({
   t,
   mobileMenuOpen,
   setMobileMenuOpen,
+  solid,
 }: {
   navLinks: { href: string; label: string }[];
   isActive: (href: string) => boolean;
   t: (key: string) => string;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (v: boolean) => void;
-  tone: "onDark";
+  solid: boolean;
 }) {
+  // Colour palette that flips when the header sits over the dark hero video.
+  const wordmark = solid ? "text-slate-900" : "text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]";
+  const navIdle = solid
+    ? "text-slate-600 hover:text-slate-900"
+    : "text-white/80 hover:text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.3)]";
+  const navActive = solid ? "text-blue-700 font-bold" : "text-white font-bold";
+  const loginBtn = solid
+    ? "px-5 py-2.5 border border-slate-300 hover:border-slate-400 text-slate-900 rounded-lg transition font-semibold hover:bg-blue-50"
+    : "px-5 py-2.5 border border-white/30 hover:border-white/60 text-white rounded-lg transition font-semibold hover:bg-white/10 backdrop-blur-sm";
+  const mobileToggle = solid ? "text-slate-900" : "text-white";
+
   return (
     <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
       <div className="flex justify-between items-center h-16 sm:h-20">
@@ -100,7 +112,7 @@ function NavInner({
             priority
             sizes="64px"
           />
-          <span className="text-xl font-bold text-slate-900">TASKEY</span>
+          <span className={`text-xl font-bold transition-colors ${wordmark}`}>TASKEY</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -110,9 +122,7 @@ function NavInner({
               key={link.href}
               href={link.href}
               className={`transition font-medium ${
-                isActive(link.href)
-                  ? "text-blue-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900"
+                isActive(link.href) ? navActive : navIdle
               }`}
             >
               {link.label}
@@ -120,19 +130,19 @@ function NavInner({
           ))}
           <Link
             href="/support"
-            className="text-slate-600 hover:text-slate-900 transition font-medium"
+            className={`transition font-medium ${navIdle}`}
           >
             {t("nav.support")}
           </Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-3">
-          <LanguageSwitcher />
+          <LanguageSwitcher tone={solid ? "light" : "dark"} />
           <Link
             href="https://dashboard.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 border border-slate-300 hover:border-slate-400 text-slate-900 rounded-lg transition font-semibold hover:bg-blue-50"
+            className={loginBtn}
           >
             Login
           </Link>
@@ -148,7 +158,7 @@ function NavInner({
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-slate-900"
+          className={`lg:hidden ${mobileToggle}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menü öffnen"
         >
@@ -189,7 +199,7 @@ function NavInner({
             </Link>
             <div className="pt-4 px-4 space-y-2">
               <div className="flex justify-start pb-1">
-                <LanguageSwitcher />
+                <LanguageSwitcher tone={solid ? "light" : "dark"} />
               </div>
               <Link
                 href="https://dashboard.taskeyapp.com"

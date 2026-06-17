@@ -9,7 +9,7 @@ const languages: { code: Language; label: string; flag: string }[] = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
 ];
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ tone = "light" }: { tone?: "light" | "dark" }) {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -26,11 +26,16 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const buttonTone =
+    tone === "dark"
+      ? "text-white/85 hover:text-white hover:bg-white/10"
+      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70";
+
   return (
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all text-sm font-medium"
+        className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-all text-sm font-medium ${buttonTone}`}
         aria-label="Sprache wechseln"
       >
         <span className="text-base leading-none">{current.flag}</span>

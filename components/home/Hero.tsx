@@ -65,7 +65,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-white uppercase">
+            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-white/90 uppercase">
               Echtzeit · Feld ↔ Büro
             </span>
           </div>
@@ -75,14 +75,14 @@ export default function Hero() {
         <h1 className="text-center text-[clamp(2.6rem,8.5vw,6.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
           {t("homeHero.title1")}
           <br />
-          <span className="text-white">
+          <span className="bg-gradient-to-r from-cyan-300 via-sky-200 to-cyan-300 bg-clip-text text-transparent">
             {t("homeHero.title2")}{" "}
             <span className="block sm:inline">{t("homeHero.title3")}</span>
           </span>
         </h1>
 
         {/* Subline */}
-        <p className="text-center text-base md:text-xl text-white font-medium mb-2 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-center text-base md:text-xl text-white/85 font-medium mb-2 max-w-3xl mx-auto leading-relaxed">
           {t("homeHero.features")}
         </p>
         <p className="text-center text-base md:text-xl font-black text-white mb-10 max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <p className="text-center text-sm text-white">{t("homeHero.trust")}</p>
+        <p className="text-center text-sm text-white/60">{t("homeHero.trust")}</p>
       </div>
 
       {/* === Story-Boxen: menschliche Szenen ================================== */}
