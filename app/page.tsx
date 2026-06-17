@@ -1,6 +1,7 @@
 import Hero from "@/components/home/Hero";
 import CommunicationUSP from "@/components/CommunicationUSP";
 import AllInOneUSP from "@/components/AllInOneUSP";
+import TestimonialReviews from "@/components/schema/TestimonialReviews";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
@@ -245,6 +246,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
+      <TestimonialReviews />
       <main>
         {/* 1. Hook: Hero (Wert-Versprechen + CTA) */}
         <Hero />

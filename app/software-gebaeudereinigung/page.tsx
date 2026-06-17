@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import TestimonialReviews from "@/components/schema/TestimonialReviews";
 
 const path = "/software-gebaeudereinigung";
 
@@ -91,6 +92,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
+      <TestimonialReviews />
       <LandingPageTemplate
       path={path}
       title="Software für Gebäudereinigung"
