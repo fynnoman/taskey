@@ -40,25 +40,41 @@ export default function IOSAppSection() {
           </p>
         </div>
 
-        {/* Phone als Held mit floating Pills */}
-        <div className="relative flex items-center justify-center mb-16 md:mb-20">
-          {/* Orbiting Pills */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            {/* Top-Left */}
-            <div className="absolute left-0 top-4 sm:left-8 md:left-20 hidden sm:block pointer-events-auto">
-              <PillBadge icon="bolt" label={pills[2].label} />
+        {/* Phone als Held — flankiert von zwei Mensch-Bildern */}
+        <div className="relative flex items-center justify-center mb-12 md:mb-16">
+          {/* Mensch-Bild links */}
+          <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
+            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Reinigungskraft öffnet die Taskey-App vor dem Einsatz"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-left">
+                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">Im Einsatz</p>
+                <p className="text-sm font-bold text-slate-900 leading-tight">„Ich öffne die App, ein Tap – fertig."</p>
+              </div>
             </div>
-            {/* Top-Right */}
-            <div className="absolute right-0 top-4 sm:right-8 md:right-20 hidden sm:block pointer-events-auto">
-              <PillBadge icon="wifi-off" label={pills[1].label} />
-            </div>
-            {/* Bottom-Left */}
-            <div className="absolute left-2 bottom-20 sm:left-12 md:left-24 hidden sm:block pointer-events-auto">
-              <PillBadge icon="fingerprint" label={pills[3].label} />
-            </div>
-            {/* Bottom-Right */}
-            <div className="absolute right-2 bottom-20 sm:right-12 md:right-24 hidden sm:block pointer-events-auto">
-              <PillBadge icon="sparkles" label={pills[0].label} />
+          </div>
+
+          {/* Mensch-Bild rechts */}
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
+            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900"
+                alt="Disponentin sieht den Einsatz live im Büro"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-left">
+                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">Im Büro</p>
+                <p className="text-sm font-bold text-slate-900 leading-tight">„Wir wissen sofort, wer wo ist."</p>
+              </div>
             </div>
           </div>
 
@@ -70,11 +86,35 @@ export default function IOSAppSection() {
             <div className="absolute -inset-20 rounded-[5rem] border border-slate-100/70 hidden md:block" />
 
             <RevealBlur offset={140} blur={26} duration={1400}>
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/18 border border-slate-200 bg-black">
-              {/* TODO: replace with CDN-hosted .mp4 — upload to cdn.vars-development.com */}
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/25 border-[6px] border-slate-900 bg-black aspect-[9/19]">
+              {/* TODO: Hero-Phone-Video durch finalen App-Screencast ersetzen.
+                  Empfohlen: eigene Bildschirmaufzeichnung der App, vertikal 9:19, 8–12s loop.
+                  Lokal nach /public/videos/app-loop.mp4 legen und src austauschen. */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster="https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=600"
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-label="Taskey App in Aktion"
+              >
+                <source src="https://videos.pexels.com/video-files/3196601/3196601-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              </video>
+              {/* Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-b-2xl z-10" />
             </div>
             </RevealBlur>
           </div>
+        </div>
+
+        {/* Feature-Pills als klare Boxen (statt orbitierend) */}
+        <div className="hidden sm:grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10">
+          <PillBadge icon="sparkles" label={pills[0].label} />
+          <PillBadge icon="wifi-off" label={pills[1].label} />
+          <PillBadge icon="bolt" label={pills[2].label} />
+          <PillBadge icon="fingerprint" label={pills[3].label} />
         </div>
 
         {/* Pills auf Mobile (Grid) */}
@@ -121,11 +161,11 @@ export default function IOSAppSection() {
 
 function PillBadge({ icon, label }: { icon: string; label: string }) {
   return (
-    <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-blue-50/80 border border-slate-200 backdrop-blur-md shadow-xl shadow-blue-900/15 text-xs font-semibold text-slate-800 whitespace-nowrap">
-      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-400/20 border border-cyan-400 flex items-center justify-center text-blue-700">
+    <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-slate-200 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.18)] text-sm font-semibold text-slate-800">
+      <span className="flex-shrink-0 w-9 h-9 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-blue-700">
         <Icon name={icon} />
       </span>
-      {label}
+      <span className="leading-tight">{label}</span>
     </div>
   );
 }
@@ -138,7 +178,7 @@ function Icon({ name }: { name: string }) {
     sparkles: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z",
   };
   return (
-    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" d={paths[name] || paths.sparkles} />
     </svg>
   );
