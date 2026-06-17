@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export type LandingFaq = { question: string; answer: string };

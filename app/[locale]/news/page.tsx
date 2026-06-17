@@ -1,51 +1,96 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { posts, type PostCategory } from "./posts";
+import Link from "@/components/LocaleLink";
+import { posts, getCategoryLabel, type PostCategory, type Locale } from "./posts";
+import { getLocalizedPost } from "./i18n";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
-export const metadata: Metadata = {
-  title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
-  description:
-    "Aktuelle Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung für Reinigungsbetriebe im DACH-Raum.",
-  alternates: { canonical: "https://www.taskeyapp.com/news" },
-  openGraph: {
+const COPY: PageCopy = {
+  de: {
     title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
     description:
-      "Aktuelle Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung für Reinigungsbetriebe.",
-    url: "https://www.taskeyapp.com/news",
-    type: "website",
-    locale: "de_DE",
-    siteName: "Taskey",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Taskey Blog – Tipps für Reinigungsbetriebe",
-      },
-    ],
+      "Aktuelle Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung für Reinigungsbetriebe im DACH-Raum.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blog & News | Tipps für Reinigungsbetriebe | Taskey",
+  en: {
+    title: "Blog & news | Tips for cleaning businesses | Taskey",
     description:
-      "Beiträge zu Gebäudereinigungssoftware, NFC-Zeiterfassung, Einsatzplanung und Digitalisierung.",
-    images: ["/opengraph-image"],
+      "The latest on cleaning management software, NFC time tracking, scheduling and digitalisation for cleaning businesses.",
+  },
+  fr: {
+    title: "Blog & actualités | Conseils pour entreprises de nettoyage | Taskey",
+    description:
+      "Articles récents sur les logiciels de gestion de nettoyage, le pointage NFC, la planification et la digitalisation pour les entreprises de nettoyage.",
   },
 };
 
-const categoryStyle: Record<PostCategory, { label: string; tone: string }> = {
-  Update:      { label: "Update",      tone: "bg-cyan-50 border-cyan-300 text-blue-700" },
-  Feature:     { label: "Feature",     tone: "bg-violet-500/10 border-violet-400/30 text-violet-300" },
-  Release:     { label: "Release",     tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
-  Unternehmen: { label: "Unternehmen", tone: "bg-blue-50 border-slate-200 text-slate-600" },
-  Geplant:     { label: "Geplant",     tone: "bg-amber-500/10 border-amber-400/30 text-amber-300" },
-  Blog:        { label: "Blog",        tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    copyByLocale: COPY,
+    locale: pickLocale(locale),
+    path: "/news",
+  });
+}
+
+const categoryToneByName: Record<PostCategory, string> = {
+  Update:      "bg-cyan-50 border-cyan-300 text-blue-700",
+  Feature:     "bg-violet-500/10 border-violet-400/30 text-violet-300",
+  Release:     "bg-emerald-50 border-emerald-300 text-emerald-700",
+  Unternehmen: "bg-blue-50 border-slate-200 text-slate-600",
+  Geplant:     "bg-amber-500/10 border-amber-400/30 text-amber-300",
+  Blog:        "bg-emerald-50 border-emerald-300 text-emerald-700",
 };
 
-export default function NewsPage() {
+const UI: Record<Locale, {
+  newsUpdates: string;
+  headline1: string;
+  headline2: string;
+  cadence: string;
+  read: string;
+  plannedHeading: string;
+}> = {
+  de: {
+    newsUpdates: "News & Updates",
+    headline1: "Was läuft",
+    headline2: "bei uns.",
+    cadence: "Posts alle zwei Wochen. Direkt vom Team — keine Marketing-Floskeln.",
+    read: "Lesen",
+    plannedHeading: "Demnächst",
+  },
+  en: {
+    newsUpdates: "News & updates",
+    headline1: "What's going on",
+    headline2: "around here.",
+    cadence: "New posts every two weeks. Straight from the team — no marketing speak.",
+    read: "Read",
+    plannedHeading: "Coming soon",
+  },
+  fr: {
+    newsUpdates: "Actualités & mises à jour",
+    headline1: "Ce qui se passe",
+    headline2: "chez nous.",
+    cadence: "Nouveaux articles toutes les deux semaines. Directement de l'équipe — sans jargon marketing.",
+    read: "Lire",
+    plannedHeading: "Prochainement",
+  },
+};
+
+export default async function NewsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const loc = pickLocale(locale);
+  const ui = UI[loc];
+
   const live    = posts.filter((p) => !p.planned);
   const planned = posts.filter((p) => p.planned);
   const [hero, ...rest] = live;
+  const heroL = hero ? getLocalizedPost(hero, loc) : null;
 
   return (
     <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
@@ -74,27 +119,27 @@ export default function NewsPage() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
               </span>
               <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
-                News &amp; Updates
+                {ui.newsUpdates}
               </span>
             </div>
 
             <h1 className="text-[clamp(2.8rem,8vw,6.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-              Was läuft
+              {ui.headline1}
               <br />
               <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
-                bei uns.
+                {ui.headline2}
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto">
-              Posts alle zwei Wochen. Direkt vom Team — keine Marketing-Floskeln.
+              {ui.cadence}
             </p>
           </div>
         </div>
       </section>
 
       {/* ─── HERO POST ─────────────────────────────────────── */}
-      {hero && (
+      {hero && heroL && (
         <section className="relative pb-12 md:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
@@ -109,23 +154,23 @@ export default function NewsPage() {
                   <div>
                     <div className="flex items-center gap-3 mb-6 md:mb-8">
                       <span
-                        className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border ${categoryStyle[hero.category].tone}`}
+                        className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border ${categoryToneByName[hero.category]}`}
                       >
-                        {categoryStyle[hero.category].label}
+                        {getCategoryLabel(hero.category, loc)}
                       </span>
-                      <span className="text-slate-500 text-xs sm:text-sm">{hero.date}</span>
+                      <span className="text-slate-500 text-xs sm:text-sm">{heroL.date}</span>
                     </div>
                     <h2 className="text-[clamp(2rem,5vw,4.5rem)] font-black text-slate-900 leading-[0.95] tracking-tight mb-6 group-hover:text-blue-700 transition-colors duration-300">
-                      {hero.title}
+                      {heroL.title}
                     </h2>
                     <p className="text-base md:text-xl text-slate-600 max-w-3xl leading-relaxed">
-                      {hero.summary}
+                      {heroL.summary}
                     </p>
                   </div>
 
                   <div className="hidden lg:flex items-center self-end pb-2">
                     <span className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-blue-600 text-white text-sm font-bold group-hover:scale-[1.03] transition-transform">
-                      Lesen
+                      {ui.read}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -143,7 +188,8 @@ export default function NewsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-4">
             {rest.map((post, i) => {
-              const cs = categoryStyle[post.category];
+              const tone = categoryToneByName[post.category];
+              const lp = getLocalizedPost(post, loc);
               return (
                 <Link
                   key={post.slug}
@@ -158,17 +204,17 @@ export default function NewsPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2.5">
                         <span
-                          className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-2.5 py-1 rounded-full border ${cs.tone}`}
+                          className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-2.5 py-1 rounded-full border ${tone}`}
                         >
-                          {cs.label}
+                          {getCategoryLabel(post.category, loc)}
                         </span>
-                        <span className="text-slate-500 text-xs">{post.date}</span>
+                        <span className="text-slate-500 text-xs">{lp.date}</span>
                       </div>
                       <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight group-hover:text-blue-700 transition-colors mb-2">
-                        {post.title}
+                        {lp.title}
                       </h3>
                       <p className="text-slate-500 text-sm md:text-base leading-relaxed line-clamp-2">
-                        {post.summary}
+                        {lp.summary}
                       </p>
                     </div>
 
@@ -191,32 +237,35 @@ export default function NewsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
               <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-amber-300 mb-5">
-                Roadmap
+                {loc === "fr" ? "Feuille de route" : loc === "en" ? "Roadmap" : "Roadmap"}
               </p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-4">
-                Was als nächstes
+                {loc === "fr" ? "Ce qui arrive" : loc === "en" ? "What's coming" : "Was als nächstes"}
                 <br />
-                <span className="text-amber-300">kommt.</span>
+                <span className="text-amber-300">{loc === "fr" ? "ensuite." : loc === "en" ? "next." : "kommt."}</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:gap-6 max-w-2xl mx-auto">
-              {planned.map((post) => (
-                <div
-                  key={post.slug}
-                  className="relative rounded-2xl bg-blue-50/60 border border-amber-400/15 backdrop-blur-sm p-7 md:p-8 flex flex-col gap-5"
-                >
-                  <span className="inline-flex self-start text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300">
-                    Geplant
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed">
-                    {post.summary}
-                  </p>
-                </div>
-              ))}
+              {planned.map((post) => {
+                const lp = getLocalizedPost(post, loc);
+                return (
+                  <div
+                    key={post.slug}
+                    className="relative rounded-2xl bg-blue-50/60 border border-amber-400/15 backdrop-blur-sm p-7 md:p-8 flex flex-col gap-5"
+                  >
+                    <span className="inline-flex self-start text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300">
+                      {getCategoryLabel("Geplant", loc)}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight">
+                      {lp.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm md:text-base leading-relaxed">
+                      {lp.summary}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

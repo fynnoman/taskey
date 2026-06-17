@@ -1,13 +1,38 @@
 import type { Metadata } from "next";
 import PricingClient from "./pricing-client";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
-export const metadata: Metadata = {
-  title: "Preise Gebäudereinigungssoftware | Ab 119€/Monat | Taskey",
-  description:
-    "Transparente Preise für Reinigungssoftware: Beginner ab 71€, Professional ab 189€, Business ab 257€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
-  alternates: { canonical: "https://www.taskeyapp.com/pricing" },
+const COPY: PageCopy = {
+  de: {
+    title: "Preise Gebäudereinigungssoftware | Ab 119€/Monat | Taskey",
+    description:
+      "Transparente Preise für Reinigungssoftware: Beginner ab 71€, Professional ab 189€, Business ab 257€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
+  },
+  en: {
+    title: "Cleaning software pricing | From €119/month | Taskey",
+    description:
+      "Transparent pricing for cleaning software: Beginner from €71, Professional from €189, Business from €257/month. Unlimited employees. Cancel anytime.",
+  },
+  fr: {
+    title: "Tarifs logiciel de nettoyage | À partir de 119 €/mois | Taskey",
+    description:
+      "Tarifs transparents pour logiciel de nettoyage : Beginner dès 71 €, Professional dès 189 €, Business dès 257 €/mois. Employés illimités. Résiliable chaque jour.",
+  },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    copyByLocale: COPY,
+    locale: pickLocale(locale),
+    path: "/pricing",
+  });
+}
 
 const beginnerProduct = {
   "@context": "https://schema.org",

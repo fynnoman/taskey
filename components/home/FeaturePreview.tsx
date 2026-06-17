@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useParallax } from "./useParallax";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 
 /**
  * TaskeyShareDemo — Erklärt das Auftraggeber-Portal "Taskey Share"

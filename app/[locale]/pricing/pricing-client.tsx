@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, lazy, Suspense } from "react";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
 
-const EnterpriseApplicationModal = lazy(() => import("../../components/EnterpriseApplicationModal"));
+const EnterpriseApplicationModal = lazy(() => import("@/components/EnterpriseApplicationModal"));
 
 function CheckIcon() {
   return (

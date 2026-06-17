@@ -23,6 +23,10 @@ const translations: Record<string, string> = {
     "homeHero.title3": "cleaning company.",
     "homeHero.features": "No more arguments with clients about whether your team was on site. No more timesheet chaos at month-end. No more calls asking when someone is coming.",
     "homeHero.tagline": "Taskey takes care of it for you – right from your phone.",
+    "homeHero.cta.trial": "Start 3-month free trial →",
+    "homeHero.cta.demo": "Watch live demo",
+    "homeHero.trust": "No credit card. No risk. Get started instantly.",
+    "homeHero.solutions": "All features at a glance",
     // Communication USP
     "usp.communication.title": "Seamless communication between field and office",
     "usp.communication.subtitle": "Taskey ensures that all information from the field flows automatically to the office — photos, times, reports, status updates. Decision-makers see immediately what is happening on-site.",
@@ -42,6 +46,12 @@ const translations: Record<string, string> = {
     "features.3.title": "When a client complains, you have the evidence",
     "features.3.desc": "Photos after cleaning, completion reports, digital signatures – all saved. When complaints come in, you can immediately show what was done.",
     "features.communication.title": "Real communication between field and office",
+
+    // NFC Section
+    "nfc.badge": "OUR NFC TAGS",
+    "nfc.title": "Arrive. Tap your phone. Proof is done.",
+    "nfc.subtitle": "A small NFC tag sits on each of your sites or buildings. When your team arrives, they simply tap their phone against it – and Taskey automatically logs who, when and where. So you and your client always have clean proof of service.",
+    "nfc.1.title": "Everything important at the site",
     "nfc.1.desc": "Cleaning schedule, special tasks, supply list, last cleaning – your team sees what needs to be done right after scanning. No calls, no questions.",
     "nfc.2.title": "Proof nobody can argue away",
     "nfc.2.desc": "Every scan is saved with time and location. When a client asks 'Were you there?' – you have the answer in black and white.",

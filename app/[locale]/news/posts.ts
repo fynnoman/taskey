@@ -1,5 +1,16 @@
 export type PostCategory = "Update" | "Feature" | "Release" | "Unternehmen" | "Geplant" | "Blog";
 
+export type Locale = "de" | "en" | "fr";
+
+export interface PostTranslation {
+  title?: string;
+  summary?: string;
+  body?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  date?: string;
+}
+
 export interface Post {
   slug: string;
   category: PostCategory;
@@ -12,6 +23,16 @@ export interface Post {
   metaTitle?: string; // custom SEO title
   metaDescription?: string; // custom SEO description
   heroImage?: string; // optional hero image path (e.g. "/images/blog/xyz.jpg")
+}
+
+const CATEGORY_LABELS: Record<Locale, Record<PostCategory, string>> = {
+  de: { Update: "Update", Feature: "Feature", Release: "Release", Unternehmen: "Unternehmen", Geplant: "Geplant", Blog: "Blog" },
+  en: { Update: "Update", Feature: "Feature", Release: "Release", Unternehmen: "Company", Geplant: "Planned", Blog: "Blog" },
+  fr: { Update: "Mise à jour", Feature: "Fonctionnalité", Release: "Version", Unternehmen: "Entreprise", Geplant: "À venir", Blog: "Blog" },
+};
+
+export function getCategoryLabel(category: PostCategory, locale: Locale): string {
+  return CATEGORY_LABELS[locale]?.[category] ?? category;
 }
 
 // ─────────────────────────────────────────────────────────────

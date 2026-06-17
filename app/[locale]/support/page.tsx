@@ -1,37 +1,38 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
-export const metadata: Metadata = {
-  title: "Support & Hilfe | Persönlicher Kontakt zum Taskey-Team | Taskey",
-  description:
-    "Direkter Draht zum Taskey-Team in Völklingen. E-Mail, Telefon und Hilfecenter für alle Fragen rund um Ihre Reinigungssoftware – Montag bis Freitag.",
-  alternates: { canonical: "https://www.taskeyapp.com/support" },
-  openGraph: {
+const COPY: PageCopy = {
+  de: {
     title: "Support & Hilfe | Persönlicher Kontakt zum Taskey-Team | Taskey",
     description:
-      "Direkter Draht zum Taskey-Team in Völklingen. E-Mail, Telefon und Hilfecenter für alle Fragen rund um Ihre Reinigungssoftware.",
-    url: "https://www.taskeyapp.com/support",
-    type: "website",
-    locale: "de_DE",
-    siteName: "Taskey",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Taskey Support – persönlicher Kontakt für Reinigungssoftware",
-      },
-    ],
+      "Direkter Draht zum Taskey-Team in Völklingen. E-Mail, Telefon und Hilfecenter für alle Fragen rund um Ihre Reinigungssoftware – Montag bis Freitag.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Support & Hilfe | Persönlicher Kontakt zum Taskey-Team",
+  en: {
+    title: "Support & help | Talk to the Taskey team | Taskey",
     description:
-      "Direkter Draht zum Taskey-Team in Völklingen. E-Mail, Telefon und Hilfecenter.",
-    images: ["/opengraph-image"],
+      "A direct line to the Taskey team in Völklingen. Email, phone and help center for any question about your cleaning software – Monday to Friday.",
+  },
+  fr: {
+    title: "Support & aide | Contact direct avec l'équipe Taskey | Taskey",
+    description:
+      "Ligne directe avec l'équipe Taskey à Völklingen. E-mail, téléphone et centre d'aide pour toutes vos questions sur votre logiciel de nettoyage – du lundi au vendredi.",
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    copyByLocale: COPY,
+    locale: pickLocale(locale),
+    path: "/support",
+  });
+}
 
 const supportFaqSchema = {
   "@context": "https://schema.org",

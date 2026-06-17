@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const path = "/vergleich/software-gebaeudereinigung";

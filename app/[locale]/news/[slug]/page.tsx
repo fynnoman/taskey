@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { posts, type PostCategory } from "../posts";
+import { posts, getCategoryLabel, type PostCategory, type Locale } from "../posts";
+import { getLocalizedPost, isBodyFallback } from "../i18n";
+import { pickLocale, alternates } from "@/lib/i18n-metadata";
 
 export const dynamicParams = false;
 
@@ -11,31 +13,68 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ slug: string; locale: string }> }
 ): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const loc = pickLocale(locale);
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "News" };
+  const l = getLocalizedPost(post, loc);
+  const ogLocale = loc === "de" ? "de_DE" : loc === "en" ? "en_US" : "fr_FR";
   return {
-    title: post.metaTitle ?? post.title,
-    description: post.metaDescription ?? post.summary,
+    title: l.metaTitle ?? l.title,
+    description: l.metaDescription ?? l.summary,
+    alternates: alternates(`/news/${slug}`),
     openGraph: {
-      title: post.metaTitle ?? post.title,
-      description: post.metaDescription ?? post.summary,
+      title: l.metaTitle ?? l.title,
+      description: l.metaDescription ?? l.summary,
       type: "article",
+      locale: ogLocale,
       publishedTime: post.isoDate,
       images: post.heroImage ? [{ url: post.heroImage }] : undefined,
     },
   };
 }
 
-const categoryStyle: Record<PostCategory, { label: string; tone: string }> = {
-  Update:      { label: "Update",      tone: "bg-cyan-50 border-cyan-300 text-blue-700" },
-  Feature:     { label: "Feature",     tone: "bg-violet-500/10 border-violet-400/30 text-violet-300" },
-  Release:     { label: "Release",     tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
-  Unternehmen: { label: "Unternehmen", tone: "bg-blue-50 border-slate-200 text-slate-600" },
-  Geplant:     { label: "Geplant",     tone: "bg-amber-500/10 border-amber-400/30 text-amber-300" },
-  Blog:        { label: "Blog",        tone: "bg-emerald-50 border-emerald-300 text-emerald-700" },
+const categoryToneByName: Record<PostCategory, string> = {
+  Update:      "bg-cyan-50 border-cyan-300 text-blue-700",
+  Feature:     "bg-violet-500/10 border-violet-400/30 text-violet-300",
+  Release:     "bg-emerald-50 border-emerald-300 text-emerald-700",
+  Unternehmen: "bg-blue-50 border-slate-200 text-slate-600",
+  Geplant:     "bg-amber-500/10 border-amber-400/30 text-amber-300",
+  Blog:        "bg-emerald-50 border-emerald-300 text-emerald-700",
+};
+
+const UI: Record<Locale, {
+  allNews: string;
+  inThisArticle: string;
+  previous: string;
+  next: string;
+  translationNote: string;
+}> = {
+  de: {
+    allNews: "Alle News",
+    inThisArticle: "In diesem Artikel",
+    previous: "← Vorheriger Beitrag",
+    next: "Nächster Beitrag →",
+    translationNote: "",
+  },
+  en: {
+    allNews: "All news",
+    inThisArticle: "In this article",
+    previous: "← Previous post",
+    next: "Next post →",
+    translationNote:
+      "The English version of the full article is in progress. The German version below carries the complete piece.",
+  },
+  fr: {
+    allNews: "Toutes les actualités",
+    inThisArticle: "Dans cet article",
+    previous: "← Article précédent",
+    next: "Article suivant →",
+    translationNote:
+      "La version française complète est en cours de traduction. L'article intégral est disponible ci-dessous en allemand.",
+  },
 };
 
 // ──────────────────────────────────────────────────────────────
@@ -261,39 +300,45 @@ function renderBody(body: string) {
 }
 
 export default async function NewsPostPage(
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ slug: string; locale: string }> }
 ) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const loc = pickLocale(locale);
   const post = posts.find((p) => p.slug === slug);
   if (!post || post.planned) notFound();
+
+  const l = getLocalizedPost(post, loc);
+  const bodyIsFallback = isBodyFallback(post, loc);
+  const ui = UI[loc];
 
   const livePosts = posts.filter((p) => !p.planned);
   const idx = livePosts.findIndex((p) => p.slug === post.slug);
   const prev = idx > 0 ? livePosts[idx - 1] : null;
   const next = idx < livePosts.length - 1 ? livePosts[idx + 1] : null;
 
-  const cs = categoryStyle[post.category];
+  const categoryLabel = getCategoryLabel(post.category, loc);
+  const categoryTone = categoryToneByName[post.category];
 
   // Auto-extracted TOC for Blog posts without heroImage:
   // pulls "## Heading" and standalone "**Bold**" lines from the body.
   const tocItems =
     post.category === "Blog" && !post.heroImage
-      ? post.body
+      ? l.body
           .split("\n")
-          .map((l) => l.trim())
-          .filter((l) => /^##\s+/.test(l) || /^\*\*[^*]+\*\*$/.test(l))
-          .map((l) => l.replace(/^##\s+/, "").replace(/^\*\*|\*\*$/g, ""))
+          .map((line) => line.trim())
+          .filter((line) => /^##\s+/.test(line) || /^\*\*[^*]+\*\*$/.test(line))
+          .map((line) => line.replace(/^##\s+/, "").replace(/^\*\*|\*\*$/g, ""))
           .slice(0, 8)
       : [];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: post.title,
-    description: post.summary,
-    datePublished: post.isoDate ?? post.date,
-    dateModified: post.isoDate ?? post.date,
-    inLanguage: "de-DE",
+    headline: l.title,
+    description: l.summary,
+    datePublished: post.isoDate ?? l.date,
+    dateModified: post.isoDate ?? l.date,
+    inLanguage: loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR",
     author: {
       "@type": "Organization",
       name: "Taskey",
@@ -335,24 +380,24 @@ export default async function NewsPostPage(
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
-            Alle News
+            {ui.allNews}
           </Link>
 
           <div className="flex items-center gap-3 mb-6">
             <span
-              className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border ${cs.tone}`}
+              className={`inline-flex text-[10px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border ${categoryTone}`}
             >
-              {cs.label}
+              {categoryLabel}
             </span>
-            <span className="text-slate-500 text-xs sm:text-sm">{post.date}</span>
+            <span className="text-slate-500 text-xs sm:text-sm">{l.date}</span>
           </div>
 
           <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
-            {post.title}
+            {l.title}
           </h1>
 
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed pb-10 border-b border-slate-200">
-            {post.summary}
+            {l.summary}
           </p>
         </div>
 
@@ -362,7 +407,7 @@ export default async function NewsPostPage(
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9]">
               <Image
                 src={post.heroImage}
-                alt={post.title}
+                alt={l.title}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 1024px"
@@ -377,16 +422,16 @@ export default async function NewsPostPage(
               <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-[64px] pointer-events-none" />
               <div className="relative">
                 <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-6">
-                  In diesem Artikel
+                  {ui.inThisArticle}
                 </p>
                 <ol className="space-y-3 list-none">
-                  {tocItems.map((t, i) => (
+                  {tocItems.map((tocLine, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[11px] font-bold flex items-center justify-center mt-0.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="text-slate-700 text-base md:text-lg leading-snug">
-                        {t}
+                        {tocLine}
                       </span>
                     </li>
                   ))}
@@ -396,9 +441,18 @@ export default async function NewsPostPage(
           </div>
         ) : null}
 
+        {/* Translation-in-progress banner if body is German fallback */}
+        {bodyIsFallback && (
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
+              {ui.translationNote}
+            </div>
+          </div>
+        )}
+
         {/* Body */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-16">
-          {renderBody(post.body)}
+          {renderBody(l.body)}
         </div>
       </article>
 
@@ -413,10 +467,10 @@ export default async function NewsPostPage(
                   className="group rounded-2xl bg-blue-50/60 hover:bg-blue-50 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-6 transition-all"
                 >
                   <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 mb-2 block">
-                    ← Vorheriger Beitrag
+                    {ui.previous}
                   </span>
                   <span className="text-slate-900 font-bold group-hover:text-blue-700 transition-colors leading-snug block">
-                    {prev.title}
+                    {getLocalizedPost(prev, loc).title}
                   </span>
                 </Link>
               ) : (
@@ -428,10 +482,10 @@ export default async function NewsPostPage(
                   className="group rounded-2xl bg-blue-50/60 hover:bg-blue-50 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-6 transition-all sm:text-right"
                 >
                   <span className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500 mb-2 block">
-                    Nächster Beitrag →
+                    {ui.next}
                   </span>
                   <span className="text-slate-900 font-bold group-hover:text-blue-700 transition-colors leading-snug block">
-                    {next.title}
+                    {getLocalizedPost(next, loc).title}
                   </span>
                 </Link>
               ) : (
