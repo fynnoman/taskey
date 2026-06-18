@@ -17,12 +17,13 @@ import { useLanguage } from "@/context/LanguageContext";
  * und unten die ASSETS-Konstante umbiegen. Ein Ort, eine Änderung.
  * ========================================================================== */
 const ASSETS = {
-  // Cinematic Hintergrund-Loop. Sollte ruhig laufen (keine schnellen Schnitte).
-  // Ideal: 1080p, max 15s, < 4MB, ohne Ton.
-  heroVideo: "https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4",
-  heroPoster: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1920",
+  // Cinematic Hintergrund-Loop. Eigenes Brand-Video.
+  heroVideo: "/videos/hero-bg.mp4",
+  heroPoster: "/images/hero-poster.jpg",
 
   // 3 Story-Boxen unter dem Hero (menschliche Gesichter / echte Szenen)
+  // TODO: Sobald die finalen Gemini-Bilder als /public/images/* abgelegt sind, hier umbiegen
+  // auf z.B. "/images/team-vor-ort.jpg" usw.
   storyOne: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=900",   // Reinigungsteam im Einsatz
   storyTwo: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=900",   // Bürokraft / Disponentin
   storyThree: "https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=900", // Handy / NFC-Tap-Geste

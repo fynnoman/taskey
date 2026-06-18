@@ -42,15 +42,15 @@ export default function IOSAppSection() {
 
         {/* Phone als Held — flankiert von zwei Mensch-Bildern */}
         <div className="relative flex items-center justify-center mb-12 md:mb-16">
-          {/* Mensch-Bild links */}
+          {/* Mensch-Bild links (Brand-Foto, leicht ranggezoomt) */}
           <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
             <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="https://i.ibb.co/rRs4XL7w/IMG-4458.jpg"
                 alt="Reinigungskraft öffnet die Taskey-App vor dem Einsatz"
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.55] object-center"
               />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 text-left">
@@ -60,13 +60,13 @@ export default function IOSAppSection() {
             </div>
           </div>
 
-          {/* Mensch-Bild rechts */}
+          {/* Mensch-Bild rechts (Büro-Szene) */}
           <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
             <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Disponentin sieht den Einsatz live im Büro"
+                alt="Team im Büro arbeitet mit Taskey"
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
