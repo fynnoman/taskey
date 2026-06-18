@@ -89,7 +89,7 @@ export default async function Image() {
               color: "#64748b",
             }}
           >
-            3 Monate kostenlos testen
+            30 Tage kostenlos testen
           </span>
         </div>
       </div>

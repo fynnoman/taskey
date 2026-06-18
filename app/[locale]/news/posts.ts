@@ -114,7 +114,7 @@ Danke fürs Mittesten, fürs ehrliche Feedback und für die vielen Anrufe der Ba
 
 Wenn Sie Taskey bereits einsetzen: Taskey Share ist ab heute in Ihrem Konto. Aktivieren Sie es im Kundenstamm beim nächsten Auftraggeber, dem Sie ohnehin gerade Auskunft geben wollten — und schicken Sie ihm stattdessen den Link.
 
-Wenn Sie Taskey noch nicht einsetzen: Sie können Taskey inklusive Share drei Monate kostenlos testen. Anlegen, Auftrag erfassen, Portal-Link an einen Bestandskunden schicken. Wir sind gespannt, was er dazu sagt.`,
+Wenn Sie Taskey noch nicht einsetzen: Sie können Taskey inklusive Share 30 Tage kostenlos testen. Anlegen, Auftrag erfassen, Portal-Link an einen Bestandskunden schicken. Wir sind gespannt, was er dazu sagt.`,
   },
   {
     slug: "kommunikation-einsatzort-buero-erfolgsfaktor",

@@ -76,7 +76,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Preise, die mit",
       title2: "Ihrem Betrieb wachsen.",
       subtitle:
-        "Keine Setup-Tricks. Keine Mindestlaufzeit. 3 Monate gratis testen — danach täglich kündbar.",
+        "Keine Setup-Tricks. Keine Mindestlaufzeit. 30 Tage gratis testen — danach täglich kündbar.",
     },
     trustBar: {
       unlimited: "Unbegrenzte Mitarbeiter",
@@ -102,7 +102,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "E-Mail-Support",
           "DATEV-Export",
         ],
-        ctaLabel: "3 Monate kostenlos",
+        ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
       },
       {
@@ -119,7 +119,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Chat-Support (24h)",
           "Kostenloses Setup",
         ],
-        ctaLabel: "3 Monate kostenlos",
+        ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
         highlighted: true,
       },
@@ -138,7 +138,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Mehrere Standorte",
           "Onboarding-Session",
         ],
-        ctaLabel: "3 Monate kostenlos",
+        ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
       },
     ],

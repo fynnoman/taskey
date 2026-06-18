@@ -68,9 +68,9 @@ const pricingFaqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Gibt es eine kostenlose Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Sie können Taskey 3 Monate lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." } },
+    { "@type": "Question", "name": "Gibt es eine kostenlose Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Sie können Taskey 30 Tage lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." } },
     { "@type": "Question", "name": "Kann ich das Paket wechseln?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." } },
-    { "@type": "Question", "name": "Was passiert nach der 3-monatigen Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Nach drei Monaten wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." } },
+    { "@type": "Question", "name": "Was passiert nach der 30-tägigen Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Nach 30 Tagen wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." } },
     { "@type": "Question", "name": "Sind Updates und neue Funktionen inklusive?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." } },
     { "@type": "Question", "name": "Was kosten zusätzliche Objekte?", "acceptedAnswer": { "@type": "Answer", "text": "Pro aktivem Objekt kostet Beginner 3,14 €, Professional 3,54 € und Business 3,84 € im Monat. Inaktive Objekte zählen nicht." } },
     { "@type": "Question", "name": "Gibt es Setup- oder Onboarding-Kosten?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." } },

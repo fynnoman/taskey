@@ -38,7 +38,7 @@ export type LandingPageProps = {
   breadcrumbs: { name: string; url: string }[];
   /** Mind. 3 interne Links für Themen-Vernetzung */
   related: { href: string; label: string; description?: string }[];
-  /** Schluss-CTA-Text. Default: "3 Monate kostenlos testen" */
+  /** Schluss-CTA-Text. Default: "30 Tage kostenlos testen" */
   ctaTitle?: string;
   ctaSubtitle?: string;
 };
@@ -53,7 +53,7 @@ export default function LandingPageTemplate({
   faqs,
   breadcrumbs,
   related,
-  ctaTitle = "3 Monate kostenlos testen.",
+  ctaTitle = "30 Tage kostenlos testen.",
   ctaSubtitle = "Keine Kreditkarte, kein Risiko. Einrichtung in 48 Stunden – Done-for-You durch unser Team.",
 }: LandingPageProps) {
   const faqSchema = {
@@ -174,7 +174,7 @@ export default function LandingPageTemplate({
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
             >
-              3 Monate kostenlos testen
+              30 Tage kostenlos testen
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

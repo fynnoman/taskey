@@ -22,7 +22,7 @@ const HOME_COPY: PageCopy = {
   de: {
     title: "Gebäudereinigungssoftware | NFC Zeiterfassung & Live-Margen | Taskey",
     description:
-      "Reinigungssoftware Made in Germany: NFC-Zeiterfassung, Einsatzplanung, Live-Margen & Auftraggeber-Portal. DSGVO-konform. 3 Monate kostenlos testen.",
+      "Reinigungssoftware Made in Germany: NFC-Zeiterfassung, Einsatzplanung, Live-Margen & Auftraggeber-Portal. DSGVO-konform. 30 Tage kostenlos testen.",
   },
   en: {
     title: "Cleaning management software | NFC time tracking & live margins | Taskey",

@@ -176,7 +176,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       },
     ],
     cta: {
-      badge: "3 Monate kostenlos",
+      badge: "30 Tage kostenlos",
       title: "Selbst ausprobieren — ohne Risiko.",
       subtitle: "Keine Kreditkarte. Täglich kündbar. Setup in einem Tag.",
       pricing: "Preise ansehen",

@@ -224,7 +224,7 @@ export default function Branchen() {
               Werden Sie der nächste Erfolgsfall.
             </h3>
             <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
-              Testen Sie Taskey 3 Monate gratis. Kein Setup-Aufwand, keine Vertragsbindung,
+              Testen Sie Taskey 30 Tage gratis. Kein Setup-Aufwand, keine Vertragsbindung,
               voller Funktionsumfang.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">

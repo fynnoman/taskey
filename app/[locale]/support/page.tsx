@@ -192,7 +192,7 @@ export default function SupportPage() {
                   Noch kein Taskey-Konto?
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg">
-                  Testen Sie Taskey 3 Monate kostenlos – keine Kreditkarte, jederzeit kündbar.
+                  Testen Sie Taskey 30 Tage kostenlos – keine Kreditkarte, jederzeit kündbar.
                 </p>
               </div>
               <Link

@@ -319,7 +319,7 @@ export default function AboutClient() {
                   Selbst ausprobieren.
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg">
-                  3 Monate kostenlos — kein Risiko, keine Kreditkarte.
+                  30 Tage kostenlos — kein Risiko, keine Kreditkarte.
                 </p>
               </div>
               <a

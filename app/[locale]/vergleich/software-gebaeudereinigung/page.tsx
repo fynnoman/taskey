@@ -51,7 +51,7 @@ const vendors: Vendor[] = [
     schwaechen:
       "Jüngerer Anbieter (gegründet 2023), kleinere Brand-Awareness als zvoove oder Blink.",
     preisAbMonat: "ab 119 € / Monat (Beginner) + 4,40 € pro aktivem Objekt",
-    testZeitraum: "3 Monate kostenlos, keine Kreditkarte",
+    testZeitraum: "30 Tage kostenlos, keine Kreditkarte",
     features: [
       "NFC-Objektnachweis",
       "Einsatzplanung (Drag-and-drop)",
@@ -255,7 +255,7 @@ const faqs = [
   },
   {
     q: "Gibt es Software für Gebäudereinigung mit kostenlosem Test?",
-    a: "Ja. Taskey bietet 3 Monate kostenlos ohne Kreditkarte. HERO und fortytools bieten 14 Tage. Die meisten anderen Anbieter (zvoove, Blink, Mendato, Plan-D) arbeiten mit Demo-Terminen statt Self-Service-Trials.",
+    a: "Ja. Taskey bietet 30 Tage kostenlos ohne Kreditkarte. HERO und fortytools bieten 14 Tage. Die meisten anderen Anbieter (zvoove, Blink, Mendato, Plan-D) arbeiten mit Demo-Terminen statt Self-Service-Trials.",
   },
   {
     q: "Welche Software hat NFC-Objektnachweis?",
@@ -480,7 +480,7 @@ export default function Page() {
               <div>
                 <h3 className="text-xl font-black text-slate-900 mb-2">1-Mann-Betrieb bis 15 Mitarbeitende</h3>
                 <p>
-                  Wer gerade aus Excel und WhatsApp aussteigt, will eine Software ohne Implementierungs-Marathon. Empfehlung: <strong>Taskey</strong> (All-in-One inkl. NFC-Nachweis, 3 Monate kostenlos), <strong>fortytools</strong> (günstiger Einstieg, weniger Tiefe) oder <strong>profacilo</strong> (sehr schlank).
+                  Wer gerade aus Excel und WhatsApp aussteigt, will eine Software ohne Implementierungs-Marathon. Empfehlung: <strong>Taskey</strong> (All-in-One inkl. NFC-Nachweis, 30 Tage kostenlos), <strong>fortytools</strong> (günstiger Einstieg, weniger Tiefe) oder <strong>profacilo</strong> (sehr schlank).
                 </p>
               </div>
               <div>
@@ -541,7 +541,7 @@ export default function Page() {
                   Taskey kostenlos testen statt nur vergleichen
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg max-w-2xl mb-6">
-                  3 Monate Vollversion, ohne Kreditkarte. Einrichtung in 48 Stunden – Done-for-You durch unser Team.
+                  30 Tage Vollversion, ohne Kreditkarte. Einrichtung in 48 Stunden – Done-for-You durch unser Team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
