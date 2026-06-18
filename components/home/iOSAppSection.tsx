@@ -87,20 +87,17 @@ export default function IOSAppSection() {
 
             <RevealBlur offset={140} blur={26} duration={1400}>
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/25 border-[6px] border-slate-900 bg-black aspect-[9/19]">
-              {/* TODO: Hero-Phone-Video durch finalen App-Screencast ersetzen.
-                  Empfohlen: eigene Bildschirmaufzeichnung der App, vertikal 9:19, 8–12s loop.
-                  Lokal nach /public/videos/app-loop.mp4 legen und src austauschen. */}
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="metadata"
-                poster="https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=600"
+                poster="/images/phone-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-label="Taskey App in Aktion"
               >
-                <source src="https://videos.pexels.com/video-files/3196601/3196601-hd_1920_1080_25fps.mp4" type="video/mp4" />
+                <source src="/videos/phone-cleaning.mp4" type="video/mp4" />
               </video>
               {/* Notch */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-b-2xl z-10" />
