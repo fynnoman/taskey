@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import PricingClient from "./pricing-client";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+import { buildMetadata, pickLocale, canonical, type PageCopy } from "@/lib/i18n-metadata";
+
+type Locale = "de" | "en" | "fr";
 
 const COPY: PageCopy = {
   de: {
@@ -64,56 +66,112 @@ const businessProduct = {
   "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "249", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "EUR", "unitText": "MONTH" } },
 };
 
-const pricingFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Gibt es eine kostenlose Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Sie können Taskey 30 Tage lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." } },
-    { "@type": "Question", "name": "Kann ich das Paket wechseln?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." } },
-    { "@type": "Question", "name": "Was passiert nach der 30-tägigen Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Nach 30 Tagen wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." } },
-    { "@type": "Question", "name": "Sind Updates und neue Funktionen inklusive?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." } },
-    { "@type": "Question", "name": "Was kosten zusätzliche Objekte?", "acceptedAnswer": { "@type": "Answer", "text": "Pro aktivem Objekt kostet Beginner 3,14 €, Professional 3,54 € und Business 3,84 € im Monat. Inaktive Objekte zählen nicht." } },
-    { "@type": "Question", "name": "Gibt es Setup- oder Onboarding-Kosten?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." } },
-    { "@type": "Question", "name": "Ist die Anzahl der Mitarbeitenden begrenzt?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten. Sie zahlen ausschließlich nach aktivem Objekt – nicht pro User." } },
+const FAQ_BY_LOCALE: Record<Locale, { q: string; a: string }[]> = {
+  de: [
+    { q: "Gibt es eine kostenlose Testphase?", a: "Ja. Sie können Taskey 30 Tage lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." },
+    { q: "Kann ich das Paket wechseln?", a: "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." },
+    { q: "Was passiert nach der 30-tägigen Testphase?", a: "Nach 30 Tagen wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." },
+    { q: "Sind Updates und neue Funktionen inklusive?", a: "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." },
+    { q: "Was kosten zusätzliche Objekte?", a: "Pro aktivem Objekt kostet Beginner 3,14 €, Professional 3,54 € und Business 3,84 € im Monat. Inaktive Objekte zählen nicht." },
+    { q: "Gibt es Setup- oder Onboarding-Kosten?", a: "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." },
+    { q: "Ist die Anzahl der Mitarbeitenden begrenzt?", a: "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten. Sie zahlen ausschließlich nach aktivem Objekt – nicht pro User." },
+  ],
+  en: [
+    { q: "Is there a free trial?", a: "Yes. You can try Taskey free for 30 days – no credit card and no automatic renewal." },
+    { q: "Can I switch plans?", a: "Yes, you can upgrade or downgrade between Beginner, Professional and Business at any time – effective the next month." },
+    { q: "What happens after the 30-day trial?", a: "After 30 days you actively choose a plan or the account is paused. There is no automatic charge without your consent." },
+    { q: "Are updates and new features included?", a: "Yes. All updates, security fixes and new features are included in every plan at no extra cost and are rolled out automatically." },
+    { q: "How much do additional properties cost?", a: "Per active property, Beginner costs €3.14, Professional €3.54 and Business €3.84 per month. Inactive properties are not counted." },
+    { q: "Are there setup or onboarding fees?", a: "No. The done-for-you setup with import of your properties, employees and contracts is included in every plan – no extra charge." },
+    { q: "Is the number of employees limited?", a: "No. Every plan includes unlimited employees. You only pay per active property – not per user." },
+  ],
+  fr: [
+    { q: "Y a-t-il une période d'essai gratuite ?", a: "Oui. Vous pouvez essayer Taskey gratuitement pendant 30 jours – sans carte de crédit et sans reconduction automatique." },
+    { q: "Puis-je changer de forfait ?", a: "Oui, vous pouvez passer entre Beginner, Professional et Business à tout moment – avec effet le mois suivant." },
+    { q: "Que se passe-t-il après l'essai de 30 jours ?", a: "Après 30 jours, vous choisissez activement un forfait ou le compte est mis en pause. Aucun prélèvement automatique sans votre accord." },
+    { q: "Les mises à jour et nouvelles fonctionnalités sont-elles incluses ?", a: "Oui. Toutes les mises à jour, correctifs de sécurité et nouvelles fonctionnalités sont inclus gratuitement dans chaque forfait et déployés automatiquement." },
+    { q: "Combien coûtent les sites supplémentaires ?", a: "Par site actif, Beginner coûte 3,14 €, Professional 3,54 € et Business 3,84 € par mois. Les sites inactifs ne sont pas comptés." },
+    { q: "Y a-t-il des frais de mise en place ou d'onboarding ?", a: "Non. La mise en place clé en main avec import de vos sites, employés et contrats est incluse dans chaque forfait – sans supplément." },
+    { q: "Le nombre d'employés est-il limité ?", a: "Non. Chaque forfait inclut un nombre illimité d'employés. Vous payez uniquement par site actif – pas par utilisateur." },
   ],
 };
 
-export default function PricingPage() {
+const FAQ_SECTION_LABELS: Record<Locale, { kicker: string; title: string }> = {
+  de: { kicker: "Häufige Fragen zu den Preisen", title: "Was Sie zu den Tarifen wissen sollten." },
+  en: { kicker: "Frequently asked questions about pricing", title: "What you should know about the plans." },
+  fr: { kicker: "Questions fréquentes sur les tarifs", title: "Ce qu'il faut savoir sur les forfaits." },
+};
+
+const CRUMB_LABELS: Record<Locale, { home: string; pricing: string }> = {
+  de: { home: "Home", pricing: "Preise" },
+  en: { home: "Home", pricing: "Pricing" },
+  fr: { home: "Accueil", pricing: "Tarifs" },
+};
+
+export default async function PricingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const loc = pickLocale(locale);
+  const faqItems = FAQ_BY_LOCALE[loc];
+  const labels = FAQ_SECTION_LABELS[loc];
+  const crumbs = CRUMB_LABELS[loc];
+
+  const pricingFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a },
+    })),
+  };
+
   return (
     <>
       <BreadcrumbSchema crumbs={[
-        { name: "Home", url: "https://www.taskeyapp.com" },
-        { name: "Preise", url: "https://www.taskeyapp.com/pricing" },
+        { name: crumbs.home, url: canonical("/", loc) },
+        { name: crumbs.pricing, url: canonical("/pricing", loc) },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(beginnerProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }} />
       <PricingClient />
-      <PricingFaqSection />
+      <PricingFaqSection items={faqItems} kicker={labels.kicker} title={labels.title} />
     </>
   );
 }
 
-function PricingFaqSection() {
+function PricingFaqSection({
+  items,
+  kicker,
+  title,
+}: {
+  items: { q: string; a: string }[];
+  kicker: string;
+  title: string;
+}) {
   return (
     <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-20 md:py-28">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
-          Häufige Fragen zu den Preisen
+          {kicker}
         </p>
         <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tight mb-10">
-          Was Sie zu den Tarifen wissen sollten.
+          {title}
         </h2>
         <div className="space-y-4">
-          {pricingFaqSchema.mainEntity.map((faq) => (
-            <details key={faq.name} className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6">
+          {items.map((faq) => (
+            <details key={faq.q} className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6">
               <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
-                <span>{faq.name}</span>
+                <span>{faq.q}</span>
                 <span className="text-blue-700 transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
               </summary>
-              <p className="mt-4 text-slate-600 leading-relaxed text-sm md:text-base">{faq.acceptedAnswer.text}</p>
+              <p className="mt-4 text-slate-600 leading-relaxed text-sm md:text-base">{faq.a}</p>
             </details>
           ))}
         </div>

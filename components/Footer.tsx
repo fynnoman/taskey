@@ -51,18 +51,18 @@ export default function Footer() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
             </span>
             <span className="text-[11px] font-black tracking-[0.25em] text-blue-400 uppercase">
-              Taskey-USP
+              {t("footer.usp1.tag")}
             </span>
           </div>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
-            Die beste Kommunikation zwischen{" "}
-            <span className="text-blue-400">Einsatzort</span> und{" "}
-            <span className="text-blue-400">Büro</span>.
+            {t("footer.usp1.title.prefix")}
+            <span className="text-blue-400">{t("footer.usp1.title.word1")}</span>
+            {t("footer.usp1.title.middle")}
+            <span className="text-blue-400">{t("footer.usp1.title.word2")}</span>
+            {t("footer.usp1.title.suffix")}
           </h3>
           <p className="text-slate-400 text-base sm:text-lg max-w-3xl leading-relaxed">
-            Taskey ist nicht nur eine Software — Taskey ist der Vermittler für Infos, die Ihr Team
-            vor Ort sammelt. Defekte, Einsatzstunden, Probleme, Material. Das Büro bekommt alles in
-            Echtzeit und kann sofort entscheiden.
+            {t("footer.usp1.desc")}
           </p>
         </div>
 
@@ -74,17 +74,18 @@ export default function Footer() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
             </span>
             <span className="text-[11px] font-black tracking-[0.25em] text-emerald-400 uppercase">
-              Taskey-USP · Alles in einem System
+              {t("footer.usp2.tag")}
             </span>
           </div>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
-            Eine <span className="text-emerald-400">Software</span> statt{" "}
-            <span className="line-through text-slate-400">fünf Abos</span>.
+            {t("footer.usp2.title.prefix")}
+            <span className="text-emerald-400">{t("footer.usp2.title.word1")}</span>
+            {t("footer.usp2.title.middle")}
+            <span className="line-through text-slate-400">{t("footer.usp2.title.word2")}</span>
+            {t("footer.usp2.title.suffix")}
           </h3>
           <p className="text-slate-400 text-base sm:text-lg max-w-3xl leading-relaxed">
-            Zeiterfassung, Einsatzplanung, Auftragsverwaltung, Objektdokumentation, Angebote,
-            Rechnungen und DATEV-Export — in einer Plattform. Ein Login, ein Datenmodell, eine
-            Rechnung. Schluss mit dem Tool-Zoo und Excel als Klammer dazwischen.
+            {t("footer.usp2.desc")}
           </p>
         </div>
 
@@ -124,17 +125,17 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/ios" className="text-slate-300 hover:text-white transition">
-                  iOS App
+                  {t("footer.link.iosApp")}
                 </Link>
               </li>
               <li>
                 <Link href="/nfc" className="text-slate-300 hover:text-white transition">
-                  NFC-Objektnachweis
+                  {t("footer.link.nfcProof")}
                 </Link>
               </li>
               <li>
                 <Link href="/pricing#enterprise" className="text-slate-300 hover:text-white transition">
-                  Enterprise
+                  {t("footer.link.enterprise")}
                 </Link>
               </li>
             </ul>
@@ -150,12 +151,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/news" className="text-slate-300 hover:text-white transition">
-                  News
+                  {t("footer.link.news")}
                 </Link>
               </li>
               <li>
                 <Link href="/partnerschaften" className="text-slate-300 hover:text-white transition">
-                  Partnerschaften
+                  {t("footer.link.partnerships")}
                 </Link>
               </li>
               <li>
@@ -191,108 +192,108 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Software für Gebäudereinigung</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.solutions")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
                 <Link href="/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
-                  Software für Gebäudereinigung
+                  {t("footer.link.softwareGebaeude")}
                 </Link>
               </li>
               <li>
                 <Link href="/zeiterfassung-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
-                  Zeiterfassung Gebäudereinigung
+                  {t("footer.link.zeiterfassung")}
                 </Link>
               </li>
               <li>
                 <Link href="/nfc-zeiterfassung" className="text-slate-300 hover:text-white transition">
-                  NFC Zeiterfassung
+                  {t("footer.link.nfcZeiterfassung")}
                 </Link>
               </li>
               <li>
                 <Link href="/einsatzplanung-reinigung" className="text-slate-300 hover:text-white transition">
-                  Einsatzplanung Reinigung
+                  {t("footer.link.einsatzplanung")}
                 </Link>
               </li>
               <li>
                 <Link href="/leistungsnachweis-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
-                  Leistungsnachweis Gebäudereinigung
+                  {t("footer.link.leistungsnachweis")}
                 </Link>
               </li>
               <li>
                 <Link href="/software-kleine-reinigungsfirma" className="text-slate-300 hover:text-white transition">
-                  Software für kleine Reinigungsfirmen
+                  {t("footer.link.softwareKleineReinigung")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Branchen</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.branchen")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
                 <Link href="/loesungen" className="text-slate-300 hover:text-white transition">
-                  Alle Branchenlösungen
+                  {t("footer.link.alleBranchen")}
                 </Link>
               </li>
               <li>
                 <Link href="/loesungen/unterhaltsreinigung" className="text-slate-300 hover:text-white transition">
-                  Unterhaltsreinigung
+                  {t("footer.link.unterhalt")}
                 </Link>
               </li>
               <li>
                 <Link href="/loesungen/glasreinigung" className="text-slate-300 hover:text-white transition">
-                  Glasreinigung
+                  {t("footer.link.glas")}
                 </Link>
               </li>
               <li>
                 <Link href="/loesungen/industriereinigung" className="text-slate-300 hover:text-white transition">
-                  Industriereinigung
+                  {t("footer.link.industrie")}
                 </Link>
               </li>
               <li>
                 <Link href="/loesungen/klinikreinigung" className="text-slate-300 hover:text-white transition">
-                  Klinikreinigung
+                  {t("footer.link.klinik")}
                 </Link>
               </li>
               <li>
                 <Link href="/loesungen/hotel-housekeeping" className="text-slate-300 hover:text-white transition">
-                  Hotel Housekeeping
+                  {t("footer.link.hotel")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">Vergleiche</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.vergleiche")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
                 <Link href="/vergleich/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
-                  Anbietervergleich 2026
+                  {t("footer.link.anbietervergleich")}
                 </Link>
               </li>
               <li>
                 <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition">
-                  Zvoove Alternative
+                  {t("footer.link.zvoove")}
                 </Link>
               </li>
               <li>
                 <Link href="/vergleich/blink-alternative" className="text-slate-300 hover:text-white transition">
-                  Blink Alternative
+                  {t("footer.link.blink")}
                 </Link>
               </li>
               <li>
                 <Link href="/vergleich/mendato-alternative" className="text-slate-300 hover:text-white transition">
-                  Mendato Alternative
+                  {t("footer.link.mendato")}
                 </Link>
               </li>
               <li>
                 <Link href="/vergleich/fortytools-alternative" className="text-slate-300 hover:text-white transition">
-                  fortytools Alternative
+                  {t("footer.link.fortytools")}
                 </Link>
               </li>
               <li>
                 <Link href="/vergleich/plan-d-alternative" className="text-slate-300 hover:text-white transition">
-                  Plan-D Alternative
+                  {t("footer.link.planD")}
                 </Link>
               </li>
             </ul>
@@ -322,7 +323,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Taskey. {t("footer.rights")}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4 md:mt-0">
             <Link href="/sitemap.xml" className="hover:text-white transition text-xs">
-              Sitemap
+              {t("footer.link.sitemap")}
             </Link>
             <button
               onClick={() => {

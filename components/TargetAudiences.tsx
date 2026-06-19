@@ -2,6 +2,7 @@
 
 import Link from "@/components/LocaleLink";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 /**
  * TargetAudiences
@@ -27,143 +28,438 @@ type Audience = {
 
 /* TODO: Bilder gegen finale Branchen-Fotos austauschen.
    Quelle Platzhalter: pexels.com */
-const audiences: Audience[] = [
-  {
-    iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
-    title: "Unterhaltsreinigung",
-    subtitle: "Für Büro-, Praxis- und Verwaltungsobjekte mit täglichen Reinigungstouren.",
-    keywords: [
-      "Software Unterhaltsreinigung",
-      "Reinigungsmanagement Software",
-      "NFC Objektnachweis",
-      "Revierreinigung App",
-      "Tourenplanung Reinigung",
-      "Reinigungsplan digital",
-      "Stundenzettel Reinigung",
-      "Software Reinigungsfirma",
-    ],
-    pains: [
-      "Unvollständige Stundenzettel",
-      "Leistungsnachweise im WhatsApp-Chaos",
-    ],
-    cta: "Für Unterhaltsreinigung",
-    image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Reinigungskraft bei der Büroreinigung",
+const CONTENT = {
+  de: {
+    eyebrow: "Für wen ist Taskey gemacht?",
+    headingLine1: "Gebaut für",
+    headingCompactHighlight: "Reinigungsbetriebe",
+    headingCompactSuffix: ".",
+    headingHighlight: "Reinigungsfirmen.",
+    intro:
+      "Keine generische Business-Software. Taskey ist 100 % auf den Alltag von Reinigungsbetrieben im DACH-Raum zugeschnitten.",
+    badgePrefix: "Reinigungsart",
+    painsLabel: "Typische Pain-Points",
+    dotAriaPrefix: "Reinigungsart",
+    ctaStart: "Kostenlos starten",
+    moreHeading: "Und viele weitere Reinigungs-Spezialisierungen:",
+    moreText:
+      "Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern, Containerreinigung, Tank- und Behälterreinigung, Reinigern für Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen, Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung, Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung, Reinigern für Banken und öffentliche Gebäude, Apartment- und Ferienwohnungsreinigung, mobile Reinigungsdiensten, Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie Spezialreinigern für Brand- und Wasserschadensanierung.",
+    audiences: [
+      {
+        iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
+        title: "Unterhaltsreinigung",
+        subtitle: "Für Büro-, Praxis- und Verwaltungsobjekte mit täglichen Reinigungstouren.",
+        keywords: [
+          "Software Unterhaltsreinigung",
+          "Reinigungsmanagement Software",
+          "NFC Objektnachweis",
+          "Revierreinigung App",
+          "Tourenplanung Reinigung",
+          "Reinigungsplan digital",
+          "Stundenzettel Reinigung",
+          "Software Reinigungsfirma",
+        ],
+        pains: [
+          "Unvollständige Stundenzettel",
+          "Leistungsnachweise im WhatsApp-Chaos",
+        ],
+        cta: "Für Unterhaltsreinigung",
+        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Reinigungskraft bei der Büroreinigung",
+      },
+      {
+        iconPath: "M3 12h18M3 6h18M3 18h18",
+        title: "Glas- & Fassadenreinigung",
+        subtitle: "Für Glas-, Fenster- und Fassadenreiniger mit Höhen- und Spezialeinsätzen.",
+        keywords: [
+          "Software Glasreinigung",
+          "Fensterreinigung App",
+          "Fassadenreinigung Software",
+          "Höhenreinigung Doku",
+          "Aufmaß Glasflächen",
+          "Auftragsverwaltung Reinigung",
+        ],
+        pains: [
+          "Aufmaß und Abrechnung händisch",
+          "Sicherheits- und Einsatznachweise unvollständig",
+        ],
+        cta: "Für Glasreinigung",
+        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Glasreiniger an einer Fensterfront",
+      },
+      {
+        iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
+        title: "Industrie- & Produktionsreinigung",
+        subtitle: "Für Produktionsreinigung, Maschinenreinigung und Werksreinigung.",
+        keywords: [
+          "Industriereinigung Software",
+          "Produktionsreinigung digital",
+          "Maschinenreinigung Doku",
+          "Werksreinigung App",
+          "Schichtreinigung Software",
+        ],
+        pains: [
+          "Dokumentationspflicht gegenüber Auftraggebern",
+          "Revisionssichere Nachweise für Audits",
+        ],
+        cta: "Für Industriereinigung",
+        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Industriereinigung in einer Produktionshalle",
+      },
+      {
+        iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
+        title: "Klinik- & Hygienereinigung",
+        subtitle: "Für Krankenhäuser, Praxen, Pflegeheime und Reinräume mit höchstem Hygienelevel.",
+        keywords: [
+          "Software Klinikreinigung",
+          "Hygienereinigung Doku",
+          "Desinfektion Dokumentation",
+          "OP-Reinigung Software",
+          "Pflegeheim Reinigung App",
+          "Praxisreinigung Software",
+        ],
+        pains: [
+          "Hygienenachweise auf Papier",
+          "Audit-Vorbereitung kostet Tage",
+        ],
+        cta: "Für Klinikreinigung",
+        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Hygiene- und Klinikreinigung",
+      },
+      {
+        iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
+        title: "Hotel-Housekeeping",
+        subtitle: "Für Reinigungsfirmen mit Hotel-, Ferienanlagen- und Apartment-Aufträgen.",
+        keywords: [
+          "Housekeeping Software",
+          "Hotelreinigung App",
+          "Zimmerreinigung digital",
+          "Ferienwohnung Reinigung Software",
+          "Reinigungsabrechnung Hotel",
+        ],
+        pains: [
+          "Zimmerstatus telefonisch durchgesagt",
+          "Reklamationen ohne Foto-Nachweis",
+        ],
+        cta: "Für Housekeeping",
+        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Housekeeping im Hotelzimmer",
+      },
+      {
+        iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+        title: "Sonder- & Baureinigung",
+        subtitle: "Für Bau-, Grund-, Brand- und Wasserschadensanierung sowie Spezialreinigung.",
+        keywords: [
+          "Baureinigung Software",
+          "Grundreinigung App",
+          "Sonderreinigung digital",
+          "Brandschadensanierung Software",
+          "Wasserschadensanierung Doku",
+        ],
+        pains: [
+          "Aufträge schlecht kalkuliert – Marge weg",
+          "Doku für Versicherungen fehlt",
+        ],
+        cta: "Für Sonderreinigung",
+        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Sonderreinigung auf einer Baustelle",
+      },
+    ] as Audience[],
   },
-  {
-    iconPath: "M3 12h18M3 6h18M3 18h18",
-    title: "Glas- & Fassadenreinigung",
-    subtitle: "Für Glas-, Fenster- und Fassadenreiniger mit Höhen- und Spezialeinsätzen.",
-    keywords: [
-      "Software Glasreinigung",
-      "Fensterreinigung App",
-      "Fassadenreinigung Software",
-      "Höhenreinigung Doku",
-      "Aufmaß Glasflächen",
-      "Auftragsverwaltung Reinigung",
-    ],
-    pains: [
-      "Aufmaß und Abrechnung händisch",
-      "Sicherheits- und Einsatznachweise unvollständig",
-    ],
-    cta: "Für Glasreinigung",
-    image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Glasreiniger an einer Fensterfront",
+  en: {
+    eyebrow: "Who is Taskey built for?",
+    headingLine1: "Built for",
+    headingCompactHighlight: "cleaning companies",
+    headingCompactSuffix: ".",
+    headingHighlight: "cleaning companies.",
+    intro:
+      "Not generic business software. Taskey is 100% tailored to the day-to-day of cleaning companies in the DACH region.",
+    badgePrefix: "Cleaning type",
+    painsLabel: "Typical pain points",
+    dotAriaPrefix: "Cleaning type",
+    ctaStart: "Start for free",
+    moreHeading: "And many more cleaning specialisations:",
+    moreText:
+      "Taskey is also used by: stairwell cleaners, carpet and upholstery cleaners, solar panel cleaners, vehicle cleaners, container cleaning, tank and vessel cleaning, cleaners for food production, cleanrooms and pharma, hospital service companies, nursing home cleaning, school and daycare cleaning, sports facility cleaning, swimming pool and sauna cleaning, event cleaning, cleaners for banks and public buildings, apartment and holiday rental cleaning, mobile cleaning services, glass and conservatory cleaning, photovoltaic cleaning as well as specialists for fire and water damage restoration.",
+    audiences: [
+      {
+        iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
+        title: "Maintenance cleaning",
+        subtitle: "For offices, practices and administrative buildings with daily cleaning rounds.",
+        keywords: [
+          "Maintenance cleaning software",
+          "Cleaning management software",
+          "NFC object verification",
+          "Route cleaning app",
+          "Cleaning route planning",
+          "Digital cleaning schedule",
+          "Cleaning timesheet",
+          "Cleaning company software",
+        ],
+        pains: [
+          "Incomplete timesheets",
+          "Service records lost in WhatsApp chaos",
+        ],
+        cta: "For maintenance cleaning",
+        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Cleaner during office cleaning",
+      },
+      {
+        iconPath: "M3 12h18M3 6h18M3 18h18",
+        title: "Glass & facade cleaning",
+        subtitle: "For glass, window and facade cleaners with height and special assignments.",
+        keywords: [
+          "Glass cleaning software",
+          "Window cleaning app",
+          "Facade cleaning software",
+          "Height cleaning documentation",
+          "Glass surface measurement",
+          "Cleaning order management",
+        ],
+        pains: [
+          "Measurement and billing done by hand",
+          "Incomplete safety and assignment records",
+        ],
+        cta: "For glass cleaning",
+        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Window cleaner on a glass facade",
+      },
+      {
+        iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
+        title: "Industrial & production cleaning",
+        subtitle: "For production cleaning, machine cleaning and factory cleaning.",
+        keywords: [
+          "Industrial cleaning software",
+          "Digital production cleaning",
+          "Machine cleaning documentation",
+          "Factory cleaning app",
+          "Shift cleaning software",
+        ],
+        pains: [
+          "Documentation requirements towards clients",
+          "Audit-proof records for inspections",
+        ],
+        cta: "For industrial cleaning",
+        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Industrial cleaning in a production hall",
+      },
+      {
+        iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
+        title: "Clinical & hygiene cleaning",
+        subtitle: "For hospitals, practices, nursing homes and cleanrooms with the highest hygiene level.",
+        keywords: [
+          "Clinical cleaning software",
+          "Hygiene cleaning documentation",
+          "Disinfection documentation",
+          "OR cleaning software",
+          "Nursing home cleaning app",
+          "Practice cleaning software",
+        ],
+        pains: [
+          "Hygiene records on paper",
+          "Audit preparation takes days",
+        ],
+        cta: "For clinical cleaning",
+        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Hygiene and clinical cleaning",
+      },
+      {
+        iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
+        title: "Hotel housekeeping",
+        subtitle: "For cleaning companies with hotel, holiday resort and apartment contracts.",
+        keywords: [
+          "Housekeeping software",
+          "Hotel cleaning app",
+          "Digital room cleaning",
+          "Holiday rental cleaning software",
+          "Hotel cleaning billing",
+        ],
+        pains: [
+          "Room status reported by phone",
+          "Complaints without photo evidence",
+        ],
+        cta: "For housekeeping",
+        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Housekeeping in a hotel room",
+      },
+      {
+        iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+        title: "Special & post-construction cleaning",
+        subtitle: "For post-construction, deep, fire and water damage cleaning as well as special cleaning.",
+        keywords: [
+          "Post-construction cleaning software",
+          "Deep cleaning app",
+          "Digital special cleaning",
+          "Fire damage restoration software",
+          "Water damage documentation",
+        ],
+        pains: [
+          "Jobs poorly calculated – margin gone",
+          "Documentation for insurers missing",
+        ],
+        cta: "For special cleaning",
+        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Special cleaning on a construction site",
+      },
+    ] as Audience[],
   },
-  {
-    iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
-    title: "Industrie- & Produktionsreinigung",
-    subtitle: "Für Produktionsreinigung, Maschinenreinigung und Werksreinigung.",
-    keywords: [
-      "Industriereinigung Software",
-      "Produktionsreinigung digital",
-      "Maschinenreinigung Doku",
-      "Werksreinigung App",
-      "Schichtreinigung Software",
-    ],
-    pains: [
-      "Dokumentationspflicht gegenüber Auftraggebern",
-      "Revisionssichere Nachweise für Audits",
-    ],
-    cta: "Für Industriereinigung",
-    image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Industriereinigung in einer Produktionshalle",
+  fr: {
+    eyebrow: "À qui s'adresse Taskey ?",
+    headingLine1: "Conçu pour",
+    headingCompactHighlight: "les entreprises de nettoyage",
+    headingCompactSuffix: ".",
+    headingHighlight: "les entreprises de nettoyage.",
+    intro:
+      "Pas un logiciel d'entreprise générique. Taskey est conçu à 100 % pour le quotidien des entreprises de nettoyage de la région DACH.",
+    badgePrefix: "Type de nettoyage",
+    painsLabel: "Points de friction typiques",
+    dotAriaPrefix: "Type de nettoyage",
+    ctaStart: "Commencer gratuitement",
+    moreHeading: "Et bien d'autres spécialisations de nettoyage :",
+    moreText:
+      "Taskey est également utilisé par : nettoyeurs de cages d'escalier, nettoyeurs de tapis et de tissus d'ameublement, nettoyeurs de panneaux solaires, nettoyeurs de véhicules, nettoyage de conteneurs, nettoyage de cuves et de réservoirs, nettoyeurs pour la production alimentaire, salles blanches et pharmaceutique, sociétés de services hospitaliers, nettoyage de maisons de retraite, nettoyage d'écoles et de crèches, nettoyage d'installations sportives, nettoyage de piscines et de saunas, nettoyage événementiel, nettoyeurs pour banques et bâtiments publics, nettoyage d'appartements et de locations de vacances, services de nettoyage mobiles, nettoyage de vitres et de vérandas, nettoyage photovoltaïque ainsi que spécialistes de l'assainissement après incendie et dégât des eaux.",
+    audiences: [
+      {
+        iconPath: "M3 21l1.5-4.5M20 21l-1.5-4.5M6 17h12l-1-6H7l-1 6zM9 11V7a3 3 0 016 0v4",
+        title: "Nettoyage d'entretien",
+        subtitle: "Pour les bureaux, cabinets et bâtiments administratifs avec des tournées de nettoyage quotidiennes.",
+        keywords: [
+          "Logiciel nettoyage d'entretien",
+          "Logiciel de gestion de nettoyage",
+          "Justificatif d'objet NFC",
+          "Application de tournées de nettoyage",
+          "Planification de tournées de nettoyage",
+          "Plan de nettoyage numérique",
+          "Feuille d'heures nettoyage",
+          "Logiciel pour entreprise de nettoyage",
+        ],
+        pains: [
+          "Feuilles d'heures incomplètes",
+          "Justificatifs de prestation noyés dans WhatsApp",
+        ],
+        cta: "Pour le nettoyage d'entretien",
+        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Agent de nettoyage en plein nettoyage de bureaux",
+      },
+      {
+        iconPath: "M3 12h18M3 6h18M3 18h18",
+        title: "Nettoyage de vitres et façades",
+        subtitle: "Pour les nettoyeurs de vitres, fenêtres et façades avec interventions en hauteur et spéciales.",
+        keywords: [
+          "Logiciel nettoyage de vitres",
+          "Application nettoyage de fenêtres",
+          "Logiciel nettoyage de façades",
+          "Documentation nettoyage en hauteur",
+          "Métré des surfaces vitrées",
+          "Gestion des ordres de nettoyage",
+        ],
+        pains: [
+          "Métré et facturation à la main",
+          "Justificatifs de sécurité et d'intervention incomplets",
+        ],
+        cta: "Pour le nettoyage de vitres",
+        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Laveur de vitres devant une façade vitrée",
+      },
+      {
+        iconPath: "M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01",
+        title: "Nettoyage industriel et de production",
+        subtitle: "Pour le nettoyage de production, de machines et d'usines.",
+        keywords: [
+          "Logiciel nettoyage industriel",
+          "Nettoyage de production numérique",
+          "Documentation nettoyage de machines",
+          "Application nettoyage d'usine",
+          "Logiciel nettoyage en équipes",
+        ],
+        pains: [
+          "Obligation de documentation envers les donneurs d'ordre",
+          "Justificatifs traçables pour les audits",
+        ],
+        cta: "Pour le nettoyage industriel",
+        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Nettoyage industriel dans un hall de production",
+      },
+      {
+        iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
+        title: "Nettoyage clinique et d'hygiène",
+        subtitle: "Pour hôpitaux, cabinets, maisons de retraite et salles blanches au niveau d'hygiène le plus élevé.",
+        keywords: [
+          "Logiciel nettoyage clinique",
+          "Documentation nettoyage d'hygiène",
+          "Documentation de désinfection",
+          "Logiciel nettoyage de bloc opératoire",
+          "Application nettoyage maison de retraite",
+          "Logiciel nettoyage de cabinet médical",
+        ],
+        pains: [
+          "Justificatifs d'hygiène sur papier",
+          "La préparation à l'audit prend des jours",
+        ],
+        cta: "Pour le nettoyage clinique",
+        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Nettoyage clinique et d'hygiène",
+      },
+      {
+        iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
+        title: "Housekeeping hôtelier",
+        subtitle: "Pour les entreprises de nettoyage avec contrats d'hôtels, résidences de vacances et appartements.",
+        keywords: [
+          "Logiciel housekeeping",
+          "Application nettoyage hôtelier",
+          "Nettoyage de chambres numérique",
+          "Logiciel nettoyage location de vacances",
+          "Facturation nettoyage hôtel",
+        ],
+        pains: [
+          "Statut des chambres communiqué par téléphone",
+          "Réclamations sans preuve photo",
+        ],
+        cta: "Pour le housekeeping",
+        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Housekeeping dans une chambre d'hôtel",
+      },
+      {
+        iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+        title: "Nettoyage spécial et après chantier",
+        subtitle: "Pour le nettoyage de chantier, en profondeur, après incendie et dégât des eaux ainsi que le nettoyage spécial.",
+        keywords: [
+          "Logiciel nettoyage de chantier",
+          "Application nettoyage en profondeur",
+          "Nettoyage spécial numérique",
+          "Logiciel assainissement après incendie",
+          "Documentation dégât des eaux",
+        ],
+        pains: [
+          "Chantiers mal calculés – marge perdue",
+          "Documentation pour les assurances manquante",
+        ],
+        cta: "Pour le nettoyage spécial",
+        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        alt: "Nettoyage spécial sur un chantier",
+      },
+    ] as Audience[],
   },
-  {
-    iconPath: "M12 4v16M4 12h16M8 8h8v8H8z",
-    title: "Klinik- & Hygienereinigung",
-    subtitle: "Für Krankenhäuser, Praxen, Pflegeheime und Reinräume mit höchstem Hygienelevel.",
-    keywords: [
-      "Software Klinikreinigung",
-      "Hygienereinigung Doku",
-      "Desinfektion Dokumentation",
-      "OP-Reinigung Software",
-      "Pflegeheim Reinigung App",
-      "Praxisreinigung Software",
-    ],
-    pains: [
-      "Hygienenachweise auf Papier",
-      "Audit-Vorbereitung kostet Tage",
-    ],
-    cta: "Für Klinikreinigung",
-    image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Hygiene- und Klinikreinigung",
-  },
-  {
-    iconPath: "M3 21V10h18v11M3 10V7a2 2 0 012-2h14a2 2 0 012 2v3M7 14h10",
-    title: "Hotel-Housekeeping",
-    subtitle: "Für Reinigungsfirmen mit Hotel-, Ferienanlagen- und Apartment-Aufträgen.",
-    keywords: [
-      "Housekeeping Software",
-      "Hotelreinigung App",
-      "Zimmerreinigung digital",
-      "Ferienwohnung Reinigung Software",
-      "Reinigungsabrechnung Hotel",
-    ],
-    pains: [
-      "Zimmerstatus telefonisch durchgesagt",
-      "Reklamationen ohne Foto-Nachweis",
-    ],
-    cta: "Für Housekeeping",
-    image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Housekeeping im Hotelzimmer",
-  },
-  {
-    iconPath: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-    title: "Sonder- & Baureinigung",
-    subtitle: "Für Bau-, Grund-, Brand- und Wasserschadensanierung sowie Spezialreinigung.",
-    keywords: [
-      "Baureinigung Software",
-      "Grundreinigung App",
-      "Sonderreinigung digital",
-      "Brandschadensanierung Software",
-      "Wasserschadensanierung Doku",
-    ],
-    pains: [
-      "Aufträge schlecht kalkuliert – Marge weg",
-      "Doku für Versicherungen fehlt",
-    ],
-    cta: "Für Sonderreinigung",
-    image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    alt: "Sonderreinigung auf einer Baustelle",
-  },
-];
+} as const;
 
 export default function TargetAudiences({
   variant = "light",
 }: {
   variant?: "light" | "dark" | "compact";
 }) {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
+  const audiences = c.audiences;
   if (variant === "compact") {
     return (
       <section id="zielgruppen" className="bg-white py-16 sm:py-20 border-y border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
             <p className="text-blue-600 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] mb-3">
-              Für wen ist Taskey gemacht?
+              {c.eyebrow}
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.05] tracking-tight">
-              Gebaut für <span className="text-blue-600">Reinigungsbetriebe</span>.
+              {c.headingLine1} <span className="text-blue-600">{c.headingCompactHighlight}</span>{c.headingCompactSuffix}
             </h2>
           </div>
 
@@ -232,7 +528,7 @@ export default function TargetAudiences({
               {/* Text-Overlay */}
               <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full text-white">
                 <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-cyan-200 bg-cyan-500/15 border border-cyan-400/40 backdrop-blur-md px-3 py-1 rounded-full mb-5">
-                  Reinigungsart · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
+                  {c.badgePrefix} · {String(active + 1).padStart(2, "0")}/{String(audiences.length).padStart(2, "0")}
                 </span>
 
                 <h3 className="text-3xl md:text-4xl font-black text-white leading-tight mb-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
@@ -244,7 +540,7 @@ export default function TargetAudiences({
 
                 <div className="mb-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 text-white/70">
-                    Typische Pain-Points
+                    {c.painsLabel}
                   </p>
                   <ul className="space-y-1.5">
                     {current.pains.map((p) => (
@@ -269,7 +565,7 @@ export default function TargetAudiences({
                   className={`h-1.5 rounded-full transition-all ${
                     i === active ? "w-6 bg-blue-600" : "w-1.5 bg-blue-200/70"
                   }`}
-                  aria-label={`Reinigungsart ${i + 1}`}
+                  aria-label={`${c.dotAriaPrefix} ${i + 1}`}
                 />
               ))}
             </div>
@@ -278,16 +574,15 @@ export default function TargetAudiences({
           {/* Rechte Spalte: Text + klickbare Bullet-Liste */}
           <div className="order-1 lg:order-2">
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
-              Für wen ist Taskey gemacht?
+              {c.eyebrow}
             </p>
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-              Gebaut für
+              {c.headingLine1}
               <br />
-              <span className="text-slate-500">Reinigungsfirmen.</span>
+              <span className="text-slate-500">{c.headingHighlight}</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
-              Keine generische Business-Software. Taskey ist 100 % auf den Alltag von
-              Reinigungsbetrieben im DACH-Raum zugeschnitten.
+              {c.intro}
             </p>
 
             <ul className="space-y-2 mb-10">
@@ -321,7 +616,7 @@ export default function TargetAudiences({
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
               >
-                Kostenlos starten
+                {c.ctaStart}
               </Link>
             </div>
           </div>
@@ -330,19 +625,10 @@ export default function TargetAudiences({
         {/* Weitere Reinigungs-Spezialisierungen — SEO-Block, Keyword-Liste */}
         <div className="mt-20 rounded-2xl border bg-blue-50/70 border-slate-200 p-6 sm:p-8">
           <h3 className="text-base sm:text-lg font-black mb-3 text-slate-900">
-            Und viele weitere Reinigungs-Spezialisierungen:
+            {c.moreHeading}
           </h3>
           <p className="text-sm leading-relaxed text-slate-600">
-            Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und
-            Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern,
-            Containerreinigung, Tank- und Behälterreinigung, Reinigern für
-            Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen,
-            Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung,
-            Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung,
-            Reinigern für Banken und öffentliche Gebäude, Apartment- und
-            Ferienwohnungsreinigung, mobile Reinigungsdiensten,
-            Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie
-            Spezialreinigern für Brand- und Wasserschadensanierung.
+            {c.moreText}
           </p>
         </div>
       </div>

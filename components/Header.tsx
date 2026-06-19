@@ -19,8 +19,8 @@ export default function Header() {
   const navLinks = [
     { href: "/features",        label: t("nav.features") },
     { href: "/pricing",         label: t("nav.pricing") },
-    { href: "/news",            label: "News" },
-    { href: "/partnerschaften", label: "Partner werden" },
+    { href: "/news",            label: t("nav.news") },
+    { href: "/partnerschaften", label: t("nav.partner") },
     { href: "/about",           label: t("nav.about") },
   ];
 
@@ -100,12 +100,12 @@ function NavInner({
   const mobileToggle = solid ? "text-slate-900" : "text-white";
 
   return (
-    <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Hauptnavigation">
+    <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label={t("header.aria.mainNav")}>
       <div className="flex justify-between items-center h-16 sm:h-20">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Taskey Startseite">
+        <Link href="/" className="flex items-center gap-2.5" aria-label={t("header.aria.home")}>
           <Image
             src="/logo_transparent.png"
-            alt="Taskey Logo - Reinigungssoftware"
+            alt={t("header.logo.alt")}
             width={64}
             height={64}
             className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
@@ -144,7 +144,7 @@ function NavInner({
             rel="noopener noreferrer"
             className={loginBtn}
           >
-            Login
+            {t("header.login")}
           </Link>
           <Link
             href="https://signup.taskeyapp.com"
@@ -160,7 +160,7 @@ function NavInner({
         <button
           className={`lg:hidden ${mobileToggle}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Menü öffnen"
+          aria-label={t("header.aria.menu")}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {mobileMenuOpen ? (
@@ -208,7 +208,7 @@ function NavInner({
                 className="block w-full px-4 py-3 text-center text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition font-medium border border-slate-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Login
+                {t("header.login")}
               </Link>
               <Link
                 href="https://signup.taskeyapp.com"

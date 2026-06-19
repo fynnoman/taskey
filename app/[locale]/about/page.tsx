@@ -1,5 +1,6 @@
 import AboutClient from "./about-client";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { pickLocale, canonical } from "@/lib/i18n-metadata";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -59,12 +60,26 @@ const founderJulian = {
   "nationality": "DE",
 };
 
-export default function AboutPage() {
+const CRUMB_LABELS: Record<"de" | "en" | "fr", { home: string; about: string }> = {
+  de: { home: "Home", about: "Über uns" },
+  en: { home: "Home", about: "About" },
+  fr: { home: "Accueil", about: "À propos" },
+};
+
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const loc = pickLocale(locale);
+  const crumbs = CRUMB_LABELS[loc];
+
   return (
     <>
       <BreadcrumbSchema crumbs={[
-        { name: "Home", url: "https://www.taskeyapp.com" },
-        { name: "Über uns", url: "https://www.taskeyapp.com/about" },
+        { name: crumbs.home, url: canonical("/", loc) },
+        { name: crumbs.about, url: canonical("/about", loc) },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(founderFynn) }} />

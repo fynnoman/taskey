@@ -67,7 +67,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
             <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-white/90 uppercase">
-              Echtzeit · Feld ↔ Büro
+              {t("hero.bridge.tag")}
             </span>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Hero() {
             href="/features"
             className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white text-base font-bold rounded-full hover:bg-white/10 transition-colors"
           >
-            Alle Funktionen
+            {t("common.cta.allFeatures")}
           </Link>
         </div>
 
@@ -119,21 +119,21 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           <StoryCard
             image={ASSETS.storyOne}
-            tag="Im Feld"
-            title="Ihr Team vor Ort"
-            sub="Jeder Einsatz dokumentiert – Foto, Zeit, Ort."
+            tag={t("homeHero.story1.tag")}
+            title={t("homeHero.story1.title")}
+            sub={t("homeHero.story1.sub")}
           />
           <StoryCard
             image={ASSETS.storyTwo}
-            tag="Im Büro"
-            title="Disposition im Überblick"
-            sub="Live sehen, wer wo ist. Ohne WhatsApp-Chaos."
+            tag={t("homeHero.story2.tag")}
+            title={t("homeHero.story2.title")}
+            sub={t("homeHero.story2.sub")}
           />
           <StoryCard
             image={ASSETS.storyThree}
-            tag="Ein Tap"
-            title="NFC am Objekt"
-            sub="Anmelden in 1 Sekunde – auch ohne Deutschkenntnisse."
+            tag={t("homeHero.story3.tag")}
+            title={t("homeHero.story3.title")}
+            sub={t("homeHero.story3.sub")}
           />
         </div>
       </div>

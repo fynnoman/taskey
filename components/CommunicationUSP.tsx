@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/LocaleLink";
+import { useLanguage } from "@/context/LanguageContext";
 
 /**
  * CommunicationUSP
@@ -18,6 +19,7 @@ import Link from "@/components/LocaleLink";
 type Variant = "full" | "compact" | "dark";
 
 export default function CommunicationUSP({ variant = "full" }: { variant?: Variant }) {
+  const { t } = useLanguage();
   if (variant === "compact") {
     return (
       <section className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 py-8 border-y border-blue-200/70">
@@ -28,19 +30,21 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
               <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-400" />
             </span>
             <span className="text-[11px] font-black tracking-[0.25em] text-blue-700 uppercase">
-              Taskey-USP · Live-Verbindung
+              {t("usp.tag.live")}
             </span>
           </div>
           <p className="text-slate-900 text-base md:text-lg font-semibold leading-snug flex-1">
-            Die beste Kommunikation zwischen{" "}
-            <span className="text-blue-700">Einsatzort</span> und{" "}
-            <span className="text-blue-700">Büro</span> — in Echtzeit.
+            {t("usp.compact.prefix")}
+            <span className="text-blue-700">{t("usp.compact.word1")}</span>
+            {t("usp.compact.middle")}
+            <span className="text-blue-700">{t("usp.compact.word2")}</span>
+            {t("usp.compact.suffix")}
           </p>
           <Link
             href="/#echtzeit-kommunikation"
             className="text-sm font-bold text-blue-700 hover:text-blue-700 whitespace-nowrap inline-flex items-center gap-1"
           >
-            Mehr erfahren
+            {t("usp.compact.cta")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -56,28 +60,28 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
      Quelle Platzhalter: pexels.com (kostenfrei). Empfohlen final: eigene Fotos der Teams. */
   const cards = [
     {
-      title: "Echtzeit zwischen Feld & Büro",
-      subtitle: "Live-Standorte, Scans und Statusänderungen — ohne WhatsApp-Rückfragen.",
+      title: t("usp.card1.title"),
+      subtitle: t("usp.card1.subtitle"),
       image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=900",
-      alt: "Reinigungskraft im Einsatz – sichtbar dokumentiert per App",
+      alt: t("usp.card1.alt"),
     },
     {
-      title: "Transparenz für den Kunden",
-      subtitle: "Auftraggeber sehen Leistungen und Protokolle live — statt nur am Monatsende.",
+      title: t("usp.card2.title"),
+      subtitle: t("usp.card2.subtitle"),
       image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900",
-      alt: "Auftraggeberin prüft Berichte am Laptop",
+      alt: t("usp.card2.alt"),
     },
     {
-      title: "Nachweisbar statt nur geplant",
-      subtitle: "NFC-Scan, Zeit, Ort, Foto — jede Leistung lückenlos belegt.",
+      title: t("usp.card3.title"),
+      subtitle: t("usp.card3.subtitle"),
       image: "https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=900",
-      alt: "Hand mit Smartphone scannt NFC-Tag",
+      alt: t("usp.card3.alt"),
     },
     {
-      title: "Einfach im Außendienst",
-      subtitle: "Wenige Taps, große Symbole, Offline-Sync. Jedes Team kommt klar.",
+      title: t("usp.card4.title"),
+      subtitle: t("usp.card4.subtitle"),
       image: "https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=900",
-      alt: "Reinigungsteam koordiniert Einsatz mit App",
+      alt: t("usp.card4.alt"),
     },
   ];
 
@@ -94,12 +98,12 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
         {/* Header – Revolut-Style: zentral, groß, knapp */}
         <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-            Feld trifft Büro.
+            {t("usp.full.title.line1")}
             <br />
-            <span className="text-slate-500">In Echtzeit.</span>
+            <span className="text-slate-500">{t("usp.full.title.line2")}</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
-            Infos vom Einsatzort landen sofort im Büro. Entscheiden statt raten.
+            {t("usp.full.subtitle")}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -109,13 +113,13 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
               rel="noopener noreferrer"
               className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base"
             >
-              Kostenlos starten
+              {t("usp.full.cta.start")}
             </Link>
             <Link
               href="/features"
               className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base"
             >
-              Funktionen ansehen
+              {t("usp.full.cta.features")}
             </Link>
           </div>
         </div>

@@ -51,6 +51,9 @@ const UI: Record<Locale, {
   previous: string;
   next: string;
   translationNote: string;
+  ctaHeadline: string;
+  ctaBody: string;
+  ctaButton: string;
 }> = {
   de: {
     allNews: "Alle News",
@@ -58,6 +61,9 @@ const UI: Record<Locale, {
     previous: "← Vorheriger Beitrag",
     next: "Nächster Beitrag →",
     translationNote: "",
+    ctaHeadline: "Selbst ausprobieren.",
+    ctaBody: "30 Tage kostenlos — kein Risiko, keine Kreditkarte.",
+    ctaButton: "Jetzt starten",
   },
   en: {
     allNews: "All news",
@@ -66,6 +72,9 @@ const UI: Record<Locale, {
     next: "Next post →",
     translationNote:
       "The English version of the full article is in progress. The German version below carries the complete piece.",
+    ctaHeadline: "See it for yourself.",
+    ctaBody: "30 days free — no risk, no credit card.",
+    ctaButton: "Get started",
   },
   fr: {
     allNews: "Toutes les actualités",
@@ -74,6 +83,9 @@ const UI: Record<Locale, {
     next: "Article suivant →",
     translationNote:
       "La version française complète est en cours de traduction. L'article intégral est disponible ci-dessous en allemand.",
+    ctaHeadline: "Essayez par vous-même.",
+    ctaBody: "30 jours gratuits — sans risque, sans carte de crédit.",
+    ctaButton: "Commencer",
   },
 };
 
@@ -504,10 +516,10 @@ export default async function NewsPostPage(
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">
-                  Selbst ausprobieren.
+                  {ui.ctaHeadline}
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg">
-                  30 Tage kostenlos — kein Risiko, keine Kreditkarte.
+                  {ui.ctaBody}
                 </p>
               </div>
               <Link
@@ -516,7 +528,7 @@ export default async function NewsPostPage(
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap shrink-0"
               >
-                Jetzt starten
+                {ui.ctaButton}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

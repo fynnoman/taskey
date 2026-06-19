@@ -1,5 +1,6 @@
 import IOSClient from "./ios-client";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { pickLocale, canonical } from "@/lib/i18n-metadata";
 
 const mobileAppSchema = {
   "@context": "https://schema.org",
@@ -23,12 +24,26 @@ const mobileAppSchema = {
   },
 };
 
-export default function IOSPage() {
+const CRUMB_LABELS: Record<"de" | "en" | "fr", { home: string; ios: string }> = {
+  de: { home: "Home", ios: "iOS App" },
+  en: { home: "Home", ios: "iOS App" },
+  fr: { home: "Accueil", ios: "Application iOS" },
+};
+
+export default async function IOSPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const loc = pickLocale(locale);
+  const crumbs = CRUMB_LABELS[loc];
+
   return (
     <>
       <BreadcrumbSchema crumbs={[
-        { name: "Home", url: "https://www.taskeyapp.com" },
-        { name: "iOS App", url: "https://www.taskeyapp.com/ios" },
+        { name: crumbs.home, url: canonical("/", loc) },
+        { name: crumbs.ios, url: canonical("/ios", loc) },
       ]} />
       <script
         type="application/ld+json"

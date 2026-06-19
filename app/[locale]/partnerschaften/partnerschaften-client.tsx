@@ -354,13 +354,13 @@ export default function PartnerschaftenClient() {
                 </div>
                 <p className="text-slate-900 font-black text-lg mb-3">PAVAN GmbH</p>
                 <p className="text-slate-600 text-sm leading-relaxed mb-3">
-                  Die PAVAN GmbH ist spezialisiert auf die Verwaltung und hochwertige Aufwertung von Immobilien. Mit einem klaren Fokus auf Effizienzsteigerung, Werterhalt und nachhaltige Modernisierung betreut PAVAN Wohn- und Gewerbeobjekte in allen Phasen – von der regelmäßigen Bewirtschaftung über Renovierungsprojekte bis zur langfristigen Portfolio-Strategie. Wir unterstützen PAVAN dabei, operative Abläufe zu digitalisieren und betrieblich zu skalieren: Taskey ermöglicht automatisierte Nachweise per NFC, saubere Zeiterfassung, transparente Einsatzplanung und eine durchgängige Dokumentation von Leistungen und Qualitätskontrollen.
+                  {t("partnerClient.pavan.p1")}
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed mb-3">
-                  Durch die enge Zusammenarbeit konnten Prozesse beschleunigt, Kommunikationswege verkürzt und die Qualität der Dienstleistung messbar erhöht werden. PAVAN nutzt Taskey, um Mitarbeiterkapazitäten besser zu steuern, Einsätze effizienter zu planen und Instandhaltungsarbeiten zielgerichtet nachzuverfolgen. Das Ergebnis ist eine spürbare Kostenreduktion pro Objekt, höhere Kundenzufriedenheit und eine bessere Planbarkeit von Projekten – ideale Voraussetzungen, um das Geschäft nachhaltig zu vergrößern.
+                  {t("partnerClient.pavan.p2")}
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Wir arbeiten kontinuierlich mit PAVAN an neuen Automatisierungen, Integrationen und Reporting-Lösungen, damit Skalierung nicht nur möglich, sondern planbar wird. Wenn Sie an einer Partnerschaft mit PAVAN interessiert sind oder mehr über die gemeinsame Lösung erfahren möchten, sprechen Sie uns an – wir verbinden Sie direkt.
+                  {t("partnerClient.pavan.p3")}
                 </p>
               </a>
 

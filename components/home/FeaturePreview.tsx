@@ -17,25 +17,25 @@ export default function FeaturePreview() {
 
   const features = [
     {
-      label: "Lückenlose Nachweise",
+      label: t("features.1.label"),
       title: t("features.1.title"),
       description: t("features.1.desc"),
       image: "/BA2B10E7-7DE2-41AD-B48D-EE39BC2E52E6.webp",
-      tag: "Nachweis",
+      tag: t("features.1.tag"),
     },
     {
-      label: "Zeiten automatisch",
+      label: t("features.2.label"),
       title: t("features.2.title"),
       description: t("features.2.desc"),
       image: "/B899021B-1AAA-40FD-9668-5DBB4E23D5D2.webp",
-      tag: "Zeiterfassung",
+      tag: t("features.2.tag"),
     },
     {
-      label: "Belege bei Reklamationen",
+      label: t("features.3.label"),
       title: t("features.3.title"),
       description: t("features.3.desc"),
       image: "/feature-zeiterfassung.webp",
-      tag: "Dokumentation",
+      tag: t("features.3.tag"),
     },
   ];
 
@@ -97,11 +97,11 @@ export default function FeaturePreview() {
               {t("features.badge")}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.02] tracking-tight mb-6 text-slate-900">
-              Sie sparen Zeit,
+              {t("features.title.line1")}
               <br />
-              sparen Ärger –
+              {t("features.title.line2")}
               <br />
-              <span className="text-slate-500">und haben alles schwarz auf weiss.</span>
+              <span className="text-slate-500">{t("features.title.line3")}</span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
               {t("features.subtitle")}
@@ -150,13 +150,13 @@ export default function FeaturePreview() {
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
               >
-                Kostenlos starten
+                {t("usp.full.cta.start")}
               </Link>
               <Link
                 href="/features"
                 className="px-8 py-3.5 border border-slate-300 text-slate-900 font-bold rounded-full hover:bg-blue-100 transition-colors text-base text-center"
               >
-                Alle Funktionen
+                {t("common.cta.allFeatures")}
               </Link>
             </div>
           </div>

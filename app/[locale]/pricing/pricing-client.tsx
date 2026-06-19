@@ -63,7 +63,9 @@ type Content = {
     desc: string;
     features: string[];
     priceLabel: string;
+    priceHeadline: string;
     priceValue: string;
+    selectiveNote: string;
     more: string;
     apply: string;
   };
@@ -173,7 +175,9 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Persönliches Onboarding & Schulungen",
       ],
       priceLabel: "Preis",
+      priceHeadline: "Individuell",
       priceValue: "Individuell — angepasst an Größe, Anforderungen und Integrationen.",
+      selectiveNote: "Selektive Aufnahme · Wir prüfen jeden Antrag persönlich.",
       more: "Mehr erfahren",
       apply: "Enterprise anfragen",
     },
@@ -282,7 +286,9 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Personal onboarding & training",
       ],
       priceLabel: "Price",
+      priceHeadline: "Custom",
       priceValue: "Custom — aligned with size, requirements and integrations.",
+      selectiveNote: "Selective intake · We review every application personally.",
       more: "Learn more",
       apply: "Apply for Enterprise",
     },
@@ -391,7 +397,9 @@ const content: Record<"de" | "en" | "fr", Content> = {
         "Onboarding personnel & formations",
       ],
       priceLabel: "Prix",
+      priceHeadline: "Sur mesure",
       priceValue: "Sur mesure — aligné sur la taille, les exigences et les intégrations.",
+      selectiveNote: "Admission sélective · Nous étudions chaque demande personnellement.",
       more: "En savoir plus",
       apply: "Demander Enterprise",
     },
@@ -606,7 +614,7 @@ function PricingPage() {
                       {c.ent.priceLabel}
                     </p>
                     <p className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
-                      Individuell
+                      {c.ent.priceHeadline}
                     </p>
                     <p className="text-slate-600 text-sm leading-relaxed">{c.ent.priceValue}</p>
                   </div>
@@ -622,7 +630,7 @@ function PricingPage() {
                   </button>
 
                   <p className="text-xs text-slate-500 text-center leading-relaxed">
-                    Selektive Aufnahme · Wir prüfen jeden Antrag persönlich.
+                    {c.ent.selectiveNote}
                   </p>
                 </div>
               </div>

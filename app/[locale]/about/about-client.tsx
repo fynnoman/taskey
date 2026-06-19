@@ -100,7 +100,7 @@ export default function AboutClient() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
             </span>
             <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
-              Über Taskey
+              {t("aboutClient.heroBadge")}
             </span>
           </div>
 
@@ -120,7 +120,7 @@ export default function AboutClient() {
       <section className="relative py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-6">
-            Mission
+            {t("aboutClient.missionLabel")}
           </p>
           <p className="text-2xl md:text-3xl text-slate-900 font-bold leading-snug mb-8 tracking-tight">
             {t("about.mission.p1")}
@@ -136,7 +136,7 @@ export default function AboutClient() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-50 border border-slate-200 backdrop-blur-md mb-6">
-              <Image src={LOGO_SRC} alt="Taskey – Reinigungssoftware aus Völklingen" width={44} height={44} priority sizes="44px" className="rounded-lg object-cover" />
+              <Image src={LOGO_SRC} alt={t("aboutClient.logoAlt")} width={44} height={44} priority sizes="44px" className="rounded-lg object-cover" />
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t("about.why.title")}
@@ -147,7 +147,7 @@ export default function AboutClient() {
             {/* Problem */}
             <div className="relative rounded-3xl bg-blue-50/70 border border-slate-200 backdrop-blur-sm p-8 md:p-10">
               <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-amber-300 bg-amber-500/10 border border-amber-400/20 rounded-full mb-5">
-                Problem
+                {t("aboutClient.problemLabel")}
               </span>
               <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight">
                 {t("about.why.problem.title")}
@@ -161,7 +161,7 @@ export default function AboutClient() {
             <div className="relative rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20">
               <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-8 md:p-10 h-full">
                 <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
-                  Lösung
+                  {t("aboutClient.solutionLabel")}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight">
                   {t("about.why.solution.title")}
@@ -180,7 +180,7 @@ export default function AboutClient() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
-              Werte
+              {t("aboutClient.valuesLabel")}
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t("about.values.title")}
@@ -217,8 +217,8 @@ export default function AboutClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: "Geschäftsführer" },
-              { name: "Julian Stosse",     img: "/team-julian.png",      role: "Geschäftsführer" },
+              { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: t("aboutClient.role.ceo") },
+              { name: "Julian Stosse",     img: "/team-julian.png",      role: t("aboutClient.role.ceo") },
             ].map((m) => (
               <div
                 key={m.name}
@@ -249,7 +249,7 @@ export default function AboutClient() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
-              Kontakt
+              {t("aboutClient.contactLabel")}
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
               {t("about.contact.title")}
@@ -288,7 +288,7 @@ export default function AboutClient() {
                 <p className="text-slate-600 leading-relaxed">
                   In der Acht 44<br />
                   66333 Völklingen<br />
-                  Deutschland
+                  {t("aboutClient.country")}
                 </p>
               </div>
             </div>
@@ -316,10 +316,10 @@ export default function AboutClient() {
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3 text-slate-900">
-                  Selbst ausprobieren.
+                  {t("aboutClient.cta.title")}
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg">
-                  30 Tage kostenlos — kein Risiko, keine Kreditkarte.
+                  {t("aboutClient.cta.subtitle")}
                 </p>
               </div>
               <a
@@ -328,7 +328,7 @@ export default function AboutClient() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap shrink-0"
               >
-                Jetzt starten
+                {t("aboutClient.cta.start")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

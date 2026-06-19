@@ -3,6 +3,88 @@
 import { useEffect, useState } from "react";
 import Link from "@/components/LocaleLink";
 import RevealBlur from "./RevealBlur";
+import { useLanguage } from "@/context/LanguageContext";
+
+const CONTENT = {
+  de: {
+    EYEBROW: "Jetzt live · Taskey Share",
+    HEAD_1: "Es ist da.",
+    HEAD_2: "Taskey Share.",
+    LEAD: "Das Portal, in dem Ihr Auftraggeber alles selbst sieht. Live. Ohne Anrufe. Ohne E-Mails.",
+    CTA: "Kostenlos testen",
+    CARD1_TAG: "Live-Status",
+    CARD1_TITLE: "Fortschritt live",
+    CARD1_SUBTITLE: "Ihr Auftraggeber sieht jederzeit, was im Objekt passiert.",
+    CARD1_PROGRESS_LABEL: "Fortschritt",
+    CARD1_NEXT: "Nächste Reinigung: Mo, 28.",
+    CARD2_TAG: "Nachweise",
+    CARD2_TITLE: "Fotos & Protokolle",
+    CARD2_SUBTITLE: "Bilder vom Einsatz — automatisch geteilt, nie wieder per E-Mail.",
+    CARD2_HEADER: "Leistungsnachweise",
+    CARD2_FOOT: "Heute 14:32 hochgeladen",
+    CARD3_TAG: "Budget",
+    CARD3_TITLE: "Volle Transparenz",
+    CARD3_SUBTITLE: "Monatsbudget, offene Posten, gelieferte Leistungen — in Echtzeit.",
+    CARD3_HEADER: "Monatsvertrag",
+    CARD3_STATUS: "Im Rahmen",
+    CARD4_TAG: "Kommunikation",
+    CARD4_TITLE: "Ein Klick, keine Anrufe",
+    CARD4_SUBTITLE: "Fragen werden direkt im Portal geklärt. Ihr Telefon bleibt ruhig.",
+    CARD4_FOOT: "Erledigt in 42 Sekunden",
+  },
+  en: {
+    EYEBROW: "Now live · Taskey Share",
+    HEAD_1: "It's here.",
+    HEAD_2: "Taskey Share.",
+    LEAD: "The portal where your client sees everything for themselves. Live. No phone calls. No emails.",
+    CTA: "Start free trial",
+    CARD1_TAG: "Live status",
+    CARD1_TITLE: "Live progress",
+    CARD1_SUBTITLE: "Your client sees at any moment what's happening on site.",
+    CARD1_PROGRESS_LABEL: "Progress",
+    CARD1_NEXT: "Next cleaning: Mon, 28th",
+    CARD2_TAG: "Proof of work",
+    CARD2_TITLE: "Photos & reports",
+    CARD2_SUBTITLE: "Photos from the job — shared automatically, never by email again.",
+    CARD2_HEADER: "Service records",
+    CARD2_FOOT: "Uploaded today 14:32",
+    CARD3_TAG: "Budget",
+    CARD3_TITLE: "Full transparency",
+    CARD3_SUBTITLE: "Monthly budget, open items, delivered services — in real time.",
+    CARD3_HEADER: "Monthly contract",
+    CARD3_STATUS: "On budget",
+    CARD4_TAG: "Communication",
+    CARD4_TITLE: "One click, no phone calls",
+    CARD4_SUBTITLE: "Questions are resolved directly in the portal. Your phone stays quiet.",
+    CARD4_FOOT: "Resolved in 42 seconds",
+  },
+  fr: {
+    EYEBROW: "Maintenant en ligne · Taskey Share",
+    HEAD_1: "Ça y est.",
+    HEAD_2: "Taskey Share.",
+    LEAD: "Le portail où votre client voit tout par lui-même. En direct. Sans appels. Sans e-mails.",
+    CTA: "Essayer gratuitement",
+    CARD1_TAG: "Statut en direct",
+    CARD1_TITLE: "Avancement en direct",
+    CARD1_SUBTITLE: "Votre client voit à tout moment ce qui se passe sur le site.",
+    CARD1_PROGRESS_LABEL: "Avancement",
+    CARD1_NEXT: "Prochain nettoyage : lun. 28",
+    CARD2_TAG: "Justificatifs",
+    CARD2_TITLE: "Photos & rapports",
+    CARD2_SUBTITLE: "Photos des interventions — partagées automatiquement, fini les e-mails.",
+    CARD2_HEADER: "Rapports d'intervention",
+    CARD2_FOOT: "Téléversé aujourd'hui 14h32",
+    CARD3_TAG: "Budget",
+    CARD3_TITLE: "Transparence totale",
+    CARD3_SUBTITLE: "Budget mensuel, postes ouverts, prestations livrées — en temps réel.",
+    CARD3_HEADER: "Contrat mensuel",
+    CARD3_STATUS: "Dans le budget",
+    CARD4_TAG: "Communication",
+    CARD4_TITLE: "Un clic, zéro appel",
+    CARD4_SUBTITLE: "Les questions se règlent directement dans le portail. Votre téléphone reste calme.",
+    CARD4_FOOT: "Réglé en 42 secondes",
+  },
+} as const;
 
 /**
  * TaskeyShare — Revolut-Style:
@@ -17,88 +99,6 @@ type Card = {
   subtitle: string;
   visual: React.ReactNode;
 };
-
-const cards: Card[] = [
-  {
-    tag: "Live-Status",
-    title: "Fortschritt live",
-    subtitle: "Ihr Auftraggeber sieht jederzeit, was im Objekt passiert.",
-    visual: (
-      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
-        <div className="flex items-center justify-between mb-3">
-          <p className="text-[11px] font-bold text-slate-700">Fortschritt</p>
-          <p className="text-[11px] font-black text-blue-700">67%</p>
-        </div>
-        <div className="w-full bg-blue-100 rounded-full h-2 mb-2 overflow-hidden">
-          <div className="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style={{ width: "67%" }} />
-        </div>
-        <p className="text-[10px] text-slate-500">Nächste Reinigung: Mo, 28.</p>
-      </div>
-    ),
-  },
-  {
-    tag: "Nachweise",
-    title: "Fotos & Protokolle",
-    subtitle: "Bilder vom Einsatz — automatisch geteilt, nie wieder per E-Mail.",
-    visual: (
-      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
-        <p className="text-[11px] font-bold text-slate-700 mb-3">Leistungsnachweise</p>
-        <div className="grid grid-cols-3 gap-1.5 mb-2">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className={`aspect-square rounded-md border border-slate-200 ${
-                ["bg-cyan-100", "bg-blue-100", "bg-emerald-100", "bg-purple-100", "bg-cyan-50", "bg-blue-50"][i]
-              }`}
-            />
-          ))}
-        </div>
-        <p className="text-[10px] text-slate-500">Heute 14:32 hochgeladen</p>
-      </div>
-    ),
-  },
-  {
-    tag: "Budget",
-    title: "Volle Transparenz",
-    subtitle: "Monatsbudget, offene Posten, gelieferte Leistungen — in Echtzeit.",
-    visual: (
-      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
-        <p className="text-[11px] font-bold text-slate-700 mb-2">Monatsvertrag</p>
-        <div className="flex items-baseline gap-1 mb-3">
-          <span className="text-2xl font-black text-slate-900">4.200 €</span>
-          <span className="text-[10px] text-slate-500">/ 4.800 €</span>
-        </div>
-        <div className="w-full bg-blue-100 rounded-full h-1.5 overflow-hidden">
-          <div className="bg-emerald-400 h-1.5" style={{ width: "89%" }} />
-        </div>
-        <p className="text-[10px] text-emerald-700 mt-2 font-semibold">Im Rahmen</p>
-      </div>
-    ),
-  },
-  {
-    tag: "Kommunikation",
-    title: "Ein Klick, keine Anrufe",
-    subtitle: "Fragen werden direkt im Portal geklärt. Ihr Telefon bleibt ruhig.",
-    visual: (
-      <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
-        <div className="flex items-start gap-2 mb-3">
-          <div className="w-7 h-7 rounded-full bg-cyan-100 border border-cyan-300 flex-shrink-0" />
-          <div className="flex-1">
-            <div className="h-2 rounded-full bg-blue-100 w-3/4 mb-1.5" />
-            <div className="h-2 rounded-full bg-blue-100 w-1/2" />
-          </div>
-        </div>
-        <div className="flex items-start gap-2 justify-end">
-          <div className="flex-1 max-w-[70%]">
-            <div className="h-2 rounded-full bg-cyan-400/30 w-full mb-1.5 ml-auto" />
-            <div className="h-2 rounded-full bg-cyan-400/30 w-2/3 ml-auto" />
-          </div>
-        </div>
-        <p className="text-[10px] text-slate-500 mt-3">Erledigt in 42 Sekunden</p>
-      </div>
-    ),
-  },
-];
 
 // Layout-Slots: 0 = Hero (groß, vorne links), 1-3 = "weight stack" nach rechts-hinten
 // Apple-Style: weniger Rotation, ruhigere Staffelung, klarere Hierarchie.
@@ -150,7 +150,91 @@ const slotStyles = [
 ];
 
 export default function TaskeyShare() {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
   const [active, setActive] = useState(0);
+
+  const cards: Card[] = [
+    {
+      tag: c.CARD1_TAG,
+      title: c.CARD1_TITLE,
+      subtitle: c.CARD1_SUBTITLE,
+      visual: (
+        <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-[11px] font-bold text-slate-700">{c.CARD1_PROGRESS_LABEL}</p>
+            <p className="text-[11px] font-black text-blue-700">67%</p>
+          </div>
+          <div className="w-full bg-blue-100 rounded-full h-2 mb-2 overflow-hidden">
+            <div className="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style={{ width: "67%" }} />
+          </div>
+          <p className="text-[10px] text-slate-500">{c.CARD1_NEXT}</p>
+        </div>
+      ),
+    },
+    {
+      tag: c.CARD2_TAG,
+      title: c.CARD2_TITLE,
+      subtitle: c.CARD2_SUBTITLE,
+      visual: (
+        <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+          <p className="text-[11px] font-bold text-slate-700 mb-3">{c.CARD2_HEADER}</p>
+          <div className="grid grid-cols-3 gap-1.5 mb-2">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`aspect-square rounded-md border border-slate-200 ${
+                  ["bg-cyan-100", "bg-blue-100", "bg-emerald-100", "bg-purple-100", "bg-cyan-50", "bg-blue-50"][i]
+                }`}
+              />
+            ))}
+          </div>
+          <p className="text-[10px] text-slate-500">{c.CARD2_FOOT}</p>
+        </div>
+      ),
+    },
+    {
+      tag: c.CARD3_TAG,
+      title: c.CARD3_TITLE,
+      subtitle: c.CARD3_SUBTITLE,
+      visual: (
+        <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+          <p className="text-[11px] font-bold text-slate-700 mb-2">{c.CARD3_HEADER}</p>
+          <div className="flex items-baseline gap-1 mb-3">
+            <span className="text-2xl font-black text-slate-900">4.200 €</span>
+            <span className="text-[10px] text-slate-500">/ 4.800 €</span>
+          </div>
+          <div className="w-full bg-blue-100 rounded-full h-1.5 overflow-hidden">
+            <div className="bg-emerald-400 h-1.5" style={{ width: "89%" }} />
+          </div>
+          <p className="text-[10px] text-emerald-700 mt-2 font-semibold">{c.CARD3_STATUS}</p>
+        </div>
+      ),
+    },
+    {
+      tag: c.CARD4_TAG,
+      title: c.CARD4_TITLE,
+      subtitle: c.CARD4_SUBTITLE,
+      visual: (
+        <div className="w-full rounded-2xl bg-blue-50/80 border border-slate-200 p-5 backdrop-blur-sm">
+          <div className="flex items-start gap-2 mb-3">
+            <div className="w-7 h-7 rounded-full bg-cyan-100 border border-cyan-300 flex-shrink-0" />
+            <div className="flex-1">
+              <div className="h-2 rounded-full bg-blue-100 w-3/4 mb-1.5" />
+              <div className="h-2 rounded-full bg-blue-100 w-1/2" />
+            </div>
+          </div>
+          <div className="flex items-start gap-2 justify-end">
+            <div className="flex-1 max-w-[70%]">
+              <div className="h-2 rounded-full bg-cyan-400/30 w-full mb-1.5 ml-auto" />
+              <div className="h-2 rounded-full bg-cyan-400/30 w-2/3 ml-auto" />
+            </div>
+          </div>
+          <p className="text-[10px] text-slate-500 mt-3">{c.CARD4_FOOT}</p>
+        </div>
+      ),
+    },
+  ];
 
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % cards.length), 4500);
@@ -173,19 +257,19 @@ export default function TaskeyShare() {
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-600" />
               </span>
               <span className="text-[10px] sm:text-[11px] font-black tracking-[0.28em] uppercase text-blue-700 font-mono">
-                Jetzt live · Taskey Share
+                {c.EYEBROW}
               </span>
             </div>
 
             <h2 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-[-0.03em] mb-6 text-slate-900">
-              Es ist da.
+              {c.HEAD_1}
               <br />
               <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
-                Taskey Share.
+                {c.HEAD_2}
               </span>
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-md">
-              Das Portal, in dem Ihr Auftraggeber alles selbst sieht. Live. Ohne Anrufe. Ohne E-Mails.
+              {c.LEAD}
             </p>
 
             <Link
@@ -194,7 +278,7 @@ export default function TaskeyShare() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition-all hover:shadow-xl hover:shadow-slate-900/20 text-base"
             >
-              Kostenlos testen
+              {c.CTA}
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
 

@@ -1,37 +1,54 @@
 import type { Metadata } from "next";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
-export const metadata: Metadata = {
-  title: "Preise Gebäudereinigungssoftware | Ab 69€/Monat | Taskey",
-  description:
-    "Transparente Preise für Reinigungssoftware: Beginner ab 69€, Professional ab 179€, Business ab 249€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
-  alternates: {
-    canonical: "https://www.taskeyapp.com/pricing",
-  },
-  openGraph: {
+const COPY: PageCopy = {
+  de: {
     title: "Preise Gebäudereinigungssoftware | Ab 69€/Monat | Taskey",
     description:
+      "Transparente Preise für Reinigungssoftware: Beginner ab 69€, Professional ab 179€, Business ab 249€/Monat. Unbegrenzte Mitarbeiter. Täglich kündbar.",
+    ogTitle: "Preise Gebäudereinigungssoftware | Ab 69€/Monat | Taskey",
+    ogDescription:
       "Transparente Preise für Reinigungssoftware: Beginner ab 69€, Professional ab 179€, Business ab 249€/Monat. Unbegrenzte Mitarbeiter.",
-    url: "https://www.taskeyapp.com/pricing",
-    type: "website",
-    locale: "de_DE",
-    siteName: "Taskey",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Taskey Preise – Gebäudereinigungssoftware ab 69 € pro Monat",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Preise Gebäudereinigungssoftware | Ab 69€/Monat | Taskey",
-    description:
+    twitterTitle: "Preise Gebäudereinigungssoftware | Ab 69€/Monat | Taskey",
+    twitterDescription:
       "Beginner ab 69€, Professional ab 179€, Business ab 249€/Monat. Unbegrenzte Mitarbeiter.",
-    images: ["/opengraph-image"],
+  },
+  en: {
+    title: "Cleaning software pricing | From €69/month | Taskey",
+    description:
+      "Transparent pricing for cleaning software: Beginner from €69, Professional from €179, Business from €249/month. Unlimited employees. Cancel anytime.",
+    ogTitle: "Cleaning software pricing | From €69/month | Taskey",
+    ogDescription:
+      "Transparent pricing for cleaning software: Beginner from €69, Professional from €179, Business from €249/month. Unlimited employees.",
+    twitterTitle: "Cleaning software pricing | From €69/month | Taskey",
+    twitterDescription:
+      "Beginner from €69, Professional from €179, Business from €249/month. Unlimited employees.",
+  },
+  fr: {
+    title: "Tarifs logiciel de nettoyage | À partir de 69 €/mois | Taskey",
+    description:
+      "Tarifs transparents pour logiciel de nettoyage : Beginner dès 69 €, Professional dès 179 €, Business dès 249 €/mois. Employés illimités. Résiliable chaque jour.",
+    ogTitle: "Tarifs logiciel de nettoyage | À partir de 69 €/mois | Taskey",
+    ogDescription:
+      "Tarifs transparents pour logiciel de nettoyage : Beginner dès 69 €, Professional dès 179 €, Business dès 249 €/mois. Employés illimités.",
+    twitterTitle: "Tarifs logiciel de nettoyage | À partir de 69 €/mois | Taskey",
+    twitterDescription:
+      "Beginner dès 69 €, Professional dès 179 €, Business dès 249 €/mois. Employés illimités.",
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    copyByLocale: COPY,
+    locale: pickLocale(locale),
+    path: "/pricing",
+  });
+}
 
 export default function PricingLayout({ children }: { children: React.ReactNode }) {
   return children;

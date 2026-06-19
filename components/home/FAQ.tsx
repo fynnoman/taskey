@@ -40,11 +40,11 @@ export default function FAQ() {
                 {t('faq.title') || 'Häufige Fragen'}
               </p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-                Alles,
+                {t("faqHero.line1")}
                 <br />
-                <span className="text-slate-500">was Sie</span>
+                <span className="text-slate-500">{t("faqHero.line2")}</span>
                 <br />
-                wissen müssen.
+                {t("faqHero.line3")}
               </h2>
               <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8 max-w-md">
                 {t('faq.subtitle') ||
@@ -54,7 +54,7 @@ export default function FAQ() {
                 href="mailto:hello@taskeyapp.com"
                 className="inline-flex items-center gap-2 text-blue-700 font-bold text-sm hover:text-blue-700 transition-colors group"
               >
-                Persönlich fragen
+                {t("faqHero.askPersonal")}
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="none"

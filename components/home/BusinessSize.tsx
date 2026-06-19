@@ -96,9 +96,9 @@ export default function BusinessSize() {
               {t("biz.badge")}
             </p>
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-8 text-slate-900">
-              Taskey wächst
+              {t("biz.title")}
               <br />
-              <span className="text-slate-500">mit Ihnen.</span>
+              <span className="text-slate-500">{t("biz.title.highlight")}.</span>
             </h2>
 
             <div className="space-y-2 mb-10">

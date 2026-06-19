@@ -1,36 +1,55 @@
 import type { Metadata } from "next";
 import PartnerschaftenClient from "./partnerschaften-client";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
-export const metadata: Metadata = {
-  title: "Partner werden | Reinigungssoftware empfehlen & verdienen | Taskey",
-  description:
-    "Werden Sie Taskey-Partner und verdienen Sie dauerhaft an jeder Empfehlung. Für Berater, Verbände und Softwareanbieter im Reinigungsbereich.",
-  alternates: { canonical: "https://www.taskeyapp.com/partnerschaften" },
-  openGraph: {
+const COPY: PageCopy = {
+  de: {
     title: "Partner werden | Reinigungssoftware empfehlen & verdienen | Taskey",
     description:
+      "Werden Sie Taskey-Partner und verdienen Sie dauerhaft an jeder Empfehlung. Für Berater, Verbände und Softwareanbieter im Reinigungsbereich.",
+    ogTitle: "Partner werden | Reinigungssoftware empfehlen & verdienen | Taskey",
+    ogDescription:
       "Werden Sie Taskey-Partner und verdienen Sie dauerhaft an jeder Empfehlung. Für Berater, Verbände und Softwareanbieter.",
-    url: "https://www.taskeyapp.com/partnerschaften",
-    type: "website",
-    locale: "de_DE",
-    siteName: "Taskey",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Taskey Partnerprogramm für Reinigungssoftware",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Partner werden | Reinigungssoftware empfehlen & verdienen | Taskey",
-    description:
+    twitterTitle: "Partner werden | Reinigungssoftware empfehlen & verdienen | Taskey",
+    twitterDescription:
       "Werden Sie Taskey-Partner und verdienen Sie dauerhaft an jeder Empfehlung.",
-    images: ["/opengraph-image"],
+  },
+  en: {
+    title: "Become a partner | Recommend cleaning software & earn | Taskey",
+    description:
+      "Become a Taskey partner and earn continuously on every recommendation. For consultants, associations and software providers in the cleaning sector.",
+    ogTitle: "Become a partner | Recommend cleaning software & earn | Taskey",
+    ogDescription:
+      "Become a Taskey partner and earn continuously on every recommendation. For consultants, associations and software providers.",
+    twitterTitle: "Become a partner | Recommend cleaning software & earn | Taskey",
+    twitterDescription:
+      "Become a Taskey partner and earn continuously on every recommendation.",
+  },
+  fr: {
+    title: "Devenir partenaire | Recommander un logiciel de nettoyage & gagner | Taskey",
+    description:
+      "Devenez partenaire Taskey et gagnez durablement sur chaque recommandation. Pour consultants, fédérations et éditeurs de logiciels dans le secteur du nettoyage.",
+    ogTitle: "Devenir partenaire | Recommander un logiciel de nettoyage & gagner | Taskey",
+    ogDescription:
+      "Devenez partenaire Taskey et gagnez durablement sur chaque recommandation. Pour consultants, fédérations et éditeurs de logiciels.",
+    twitterTitle: "Devenir partenaire | Recommander un logiciel de nettoyage & gagner | Taskey",
+    twitterDescription:
+      "Devenez partenaire Taskey et gagnez durablement sur chaque recommandation.",
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    copyByLocale: COPY,
+    locale: pickLocale(locale),
+    path: "/partnerschaften",
+  });
+}
 
 export default function PartnerschaftenPage() {
   return <PartnerschaftenClient />;

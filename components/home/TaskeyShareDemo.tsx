@@ -1,30 +1,98 @@
+"use client";
+
 import Link from "@/components/LocaleLink";
+import { useLanguage } from "@/context/LanguageContext";
+
+const CONTENT = {
+  de: {
+    EYEBROW: "Live-Demo · Taskey Share",
+    HEAD_1: "Sehen Sie Taskey Share",
+    HEAD_2: "aus Auftraggeber-Sicht.",
+    LEAD: "Taskey Share ist das schlanke Portal, in dem Ihre Auftraggeber jederzeit selbst sehen, was im Objekt passiert. Live-Status, Fotos, Protokolle und Budget — ohne Anrufe, ohne E-Mails, ohne Wartezeit. Werfen Sie selbst einen Blick rein.",
+    FEAT1_TAG: "Live-Status",
+    FEAT1_TITLE: "Fortschritt in Echtzeit",
+    FEAT1_DESC: "Auftraggeber sehen jederzeit, wo gerade gearbeitet wird und wann der nächste Einsatz ansteht.",
+    FEAT2_TAG: "Nachweise",
+    FEAT2_TITLE: "Fotos & Protokolle",
+    FEAT2_DESC: "Bilder vom Einsatz landen automatisch im Portal — kein E-Mail-Anhang, kein Hinterherlaufen.",
+    FEAT3_TAG: "Budget",
+    FEAT3_TITLE: "Volle Transparenz",
+    FEAT3_DESC: "Monatsbudget, gelieferte Leistungen und offene Posten sind jederzeit einsehbar.",
+    FEAT4_TAG: "Kommunikation",
+    FEAT4_TITLE: "Direkt im Portal",
+    FEAT4_DESC: "Fragen, Freigaben und Reklamationen werden geklärt — mit einem Klick statt einem Anruf.",
+    CTA: "Live-Demo öffnen",
+    FOOTER: "Direkt im Browser — kein Login, keine Anmeldung.",
+  },
+  en: {
+    EYEBROW: "Live demo · Taskey Share",
+    HEAD_1: "See Taskey Share",
+    HEAD_2: "from your client's perspective.",
+    LEAD: "Taskey Share is the lightweight portal where your clients can see for themselves at any time what's happening on site. Live status, photos, reports and budget — no calls, no emails, no waiting. Take a look for yourself.",
+    FEAT1_TAG: "Live status",
+    FEAT1_TITLE: "Progress in real time",
+    FEAT1_DESC: "Clients see at any moment where work is happening and when the next visit is due.",
+    FEAT2_TAG: "Proof of work",
+    FEAT2_TITLE: "Photos & reports",
+    FEAT2_DESC: "Photos from the job land automatically in the portal — no email attachments, no chasing.",
+    FEAT3_TAG: "Budget",
+    FEAT3_TITLE: "Full transparency",
+    FEAT3_DESC: "Monthly budget, delivered services and open items are visible at any time.",
+    FEAT4_TAG: "Communication",
+    FEAT4_TITLE: "Right in the portal",
+    FEAT4_DESC: "Questions, approvals and complaints are resolved — one click instead of one call.",
+    CTA: "Open live demo",
+    FOOTER: "Right in your browser — no login, no sign-up.",
+  },
+  fr: {
+    EYEBROW: "Démo en direct · Taskey Share",
+    HEAD_1: "Découvrez Taskey Share",
+    HEAD_2: "du point de vue du client.",
+    LEAD: "Taskey Share est le portail léger dans lequel vos clients voient eux-mêmes à tout moment ce qui se passe sur le site. Statut en direct, photos, rapports et budget — sans appels, sans e-mails, sans attente. Jetez-y un œil par vous-même.",
+    FEAT1_TAG: "Statut en direct",
+    FEAT1_TITLE: "Avancement en temps réel",
+    FEAT1_DESC: "Le client voit à tout moment où l'on travaille et quand la prochaine intervention est prévue.",
+    FEAT2_TAG: "Justificatifs",
+    FEAT2_TITLE: "Photos & rapports",
+    FEAT2_DESC: "Les photos des interventions arrivent automatiquement dans le portail — fini les pièces jointes, fini la relance.",
+    FEAT3_TAG: "Budget",
+    FEAT3_TITLE: "Transparence totale",
+    FEAT3_DESC: "Budget mensuel, prestations livrées et postes ouverts sont consultables à tout moment.",
+    FEAT4_TAG: "Communication",
+    FEAT4_TITLE: "Directement dans le portail",
+    FEAT4_DESC: "Questions, validations et réclamations se règlent — d'un clic plutôt que d'un appel.",
+    CTA: "Ouvrir la démo en direct",
+    FOOTER: "Directement dans le navigateur — sans connexion, sans inscription.",
+  },
+} as const;
 
 /**
  * TaskeyShareDemo — Erklärt das Auftraggeber-Portal "Taskey Share"
  * und leitet zur Live-Demo unter demo.kunden.taskeyapp.com weiter.
  */
 export default function TaskeyShareDemo() {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
   const features = [
     {
-      tag: "Live-Status",
-      title: "Fortschritt in Echtzeit",
-      desc: "Auftraggeber sehen jederzeit, wo gerade gearbeitet wird und wann der nächste Einsatz ansteht.",
+      tag: c.FEAT1_TAG,
+      title: c.FEAT1_TITLE,
+      desc: c.FEAT1_DESC,
     },
     {
-      tag: "Nachweise",
-      title: "Fotos & Protokolle",
-      desc: "Bilder vom Einsatz landen automatisch im Portal — kein E-Mail-Anhang, kein Hinterherlaufen.",
+      tag: c.FEAT2_TAG,
+      title: c.FEAT2_TITLE,
+      desc: c.FEAT2_DESC,
     },
     {
-      tag: "Budget",
-      title: "Volle Transparenz",
-      desc: "Monatsbudget, gelieferte Leistungen und offene Posten sind jederzeit einsehbar.",
+      tag: c.FEAT3_TAG,
+      title: c.FEAT3_TITLE,
+      desc: c.FEAT3_DESC,
     },
     {
-      tag: "Kommunikation",
-      title: "Direkt im Portal",
-      desc: "Fragen, Freigaben und Reklamationen werden geklärt — mit einem Klick statt einem Anruf.",
+      tag: c.FEAT4_TAG,
+      title: c.FEAT4_TITLE,
+      desc: c.FEAT4_DESC,
     },
   ];
 
@@ -38,17 +106,15 @@ export default function TaskeyShareDemo() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
           <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-5">
-            Live-Demo · Taskey Share
+            {c.EYEBROW}
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-            Sehen Sie Taskey Share
+            {c.HEAD_1}
             <br />
-            <span className="text-slate-500">aus Auftraggeber-Sicht.</span>
+            <span className="text-slate-500">{c.HEAD_2}</span>
           </h2>
           <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-            Taskey Share ist das schlanke Portal, in dem Ihre Auftraggeber jederzeit selbst sehen,
-            was im Objekt passiert. Live-Status, Fotos, Protokolle und Budget — ohne Anrufe,
-            ohne E-Mails, ohne Wartezeit. Werfen Sie selbst einen Blick rein.
+            {c.LEAD}
           </p>
         </div>
 
@@ -80,7 +146,7 @@ export default function TaskeyShareDemo() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white text-base md:text-lg font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
           >
-            Live-Demo öffnen
+            {c.CTA}
             <svg
               className="w-5 h-5"
               fill="none"
@@ -97,7 +163,7 @@ export default function TaskeyShareDemo() {
             </svg>
           </Link>
           <p className="text-sm text-slate-500 mt-5">
-            Direkt im Browser — kein Login, keine Anmeldung.
+            {c.FOOTER}
           </p>
         </div>
       </div>

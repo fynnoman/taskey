@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 type EnterpriseApplicationModalProps = {
   isOpen: boolean;
@@ -13,7 +14,213 @@ type Question = {
   options: string[];
 };
 
+const CONTENT = {
+  de: {
+    closeAria: 'Schließen',
+    questionLabel: (cur: number, total: number) => `Frage ${cur} von ${total}`,
+    title: 'Enterprise-Bewerbung',
+    subtitle: 'Bewerben Sie sich für Taskey Enterprise. Unser Team prüft Ihre Anfrage individuell.',
+    labelName: 'Vollständiger Name *',
+    placeholderName: 'Ihr vollständiger Name',
+    labelCompany: 'Unternehmen *',
+    placeholderCompany: 'Ihr Unternehmensname',
+    labelEmail: 'Geschäftliche E-Mail *',
+    placeholderEmail: 'ihre.email@unternehmen.de',
+    labelPhone: 'Telefonnummer *',
+    placeholderPhone: '+49 123 456789',
+    info: 'Ihre Bewerbung wird vom Enterprise-Team geprüft. Wir melden uns bei passender Eignung.',
+    next: 'Weiter',
+    back: 'Zurück',
+    submit: 'Bewerbung absenden',
+    sending: 'Wird gesendet...',
+    successAlert: '✅ Vielen Dank für Ihre Enterprise-Bewerbung! Unser Enterprise-Team wird Ihre Anfrage prüfen und sich in Kürze bei Ihnen melden.',
+    errorGeneric: 'Es gab ein Problem beim Senden Ihrer Bewerbung. Bitte versuchen Sie es erneut.',
+    errorNetwork: '❌ Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.',
+    questions: [
+      {
+        id: 'industry_type',
+        question: 'In welchem Sektor ist Ihr Unternehmen tätig?',
+        options: [
+          'Gebäudereinigung & Unterhaltsreinigung',
+          'Facility Management & Infrastruktur',
+          'Industriereinigung & Sonderreinigung',
+          'Öffentlicher Sektor / Behörden',
+          'Andere Reinigungsbereiche',
+        ],
+      },
+      {
+        id: 'compliance_needs',
+        question: 'Welche Compliance- und Sicherheitsanforderungen haben Sie?',
+        options: [
+          'ISO 27001 oder vergleichbare Zertifizierung erforderlich',
+          'Branchenspezifische Compliance (z.B. KRITIS)',
+          'Erweiterte Datenschutzanforderungen',
+          'On-Premise oder Private Cloud erforderlich',
+          'Standard DSGVO-Konformität ausreichend',
+        ],
+      },
+      {
+        id: 'integration_requirements',
+        question: 'Welche Integrationsanforderungen haben Sie?',
+        options: [
+          'ERP-System (SAP, Oracle, Microsoft Dynamics)',
+          'CRM-System (Salesforce, HubSpot, etc.)',
+          'HR-System (Workday, SAP SuccessFactors)',
+          'Custom API-Integrationen',
+          'Keine spezifischen Integrationen',
+        ],
+      },
+      {
+        id: 'decision_timeline',
+        question: 'Wann planen Sie eine Implementierung?',
+        options: [
+          'In den nächsten 1-3 Monaten',
+          'In 3-6 Monaten',
+          'In 6-12 Monaten',
+          'Langfristige Planung (12+ Monate)',
+        ],
+      },
+    ],
+  },
+  en: {
+    closeAria: 'Close',
+    questionLabel: (cur: number, total: number) => `Question ${cur} of ${total}`,
+    title: 'Enterprise application',
+    subtitle: 'Apply for Taskey Enterprise. Our team reviews your request individually.',
+    labelName: 'Full name *',
+    placeholderName: 'Your full name',
+    labelCompany: 'Company *',
+    placeholderCompany: 'Your company name',
+    labelEmail: 'Business email *',
+    placeholderEmail: 'your.email@company.com',
+    labelPhone: 'Phone number *',
+    placeholderPhone: '+49 123 456789',
+    info: 'Your application will be reviewed by the Enterprise team. We will reach out if there is a fit.',
+    next: 'Next',
+    back: 'Back',
+    submit: 'Submit application',
+    sending: 'Sending...',
+    successAlert: '✅ Thank you for your Enterprise application! Our Enterprise team will review your request and get back to you shortly.',
+    errorGeneric: 'There was a problem sending your application. Please try again.',
+    errorNetwork: '❌ Connection error. Please check your internet connection and try again.',
+    questions: [
+      {
+        id: 'industry_type',
+        question: 'In which sector does your company operate?',
+        options: [
+          'Building cleaning & maintenance cleaning',
+          'Facility management & infrastructure',
+          'Industrial cleaning & specialised cleaning',
+          'Public sector / authorities',
+          'Other cleaning areas',
+        ],
+      },
+      {
+        id: 'compliance_needs',
+        question: 'What compliance and security requirements do you have?',
+        options: [
+          'ISO 27001 or comparable certification required',
+          'Industry-specific compliance (e.g. KRITIS)',
+          'Advanced data protection requirements',
+          'On-premise or private cloud required',
+          'Standard DSGVO compliance is sufficient',
+        ],
+      },
+      {
+        id: 'integration_requirements',
+        question: 'What integration requirements do you have?',
+        options: [
+          'ERP system (SAP, Oracle, Microsoft Dynamics)',
+          'CRM system (Salesforce, HubSpot, etc.)',
+          'HR system (Workday, SAP SuccessFactors)',
+          'Custom API integrations',
+          'No specific integrations',
+        ],
+      },
+      {
+        id: 'decision_timeline',
+        question: 'When do you plan to implement?',
+        options: [
+          'Within the next 1-3 months',
+          'In 3-6 months',
+          'In 6-12 months',
+          'Long-term planning (12+ months)',
+        ],
+      },
+    ],
+  },
+  fr: {
+    closeAria: 'Fermer',
+    questionLabel: (cur: number, total: number) => `Question ${cur} sur ${total}`,
+    title: 'Candidature Enterprise',
+    subtitle: 'Postulez pour Taskey Enterprise. Notre équipe examine votre demande individuellement.',
+    labelName: 'Nom complet *',
+    placeholderName: 'Votre nom complet',
+    labelCompany: 'Entreprise *',
+    placeholderCompany: 'Le nom de votre entreprise',
+    labelEmail: 'E-mail professionnel *',
+    placeholderEmail: 'votre.email@entreprise.com',
+    labelPhone: 'Numéro de téléphone *',
+    placeholderPhone: '+49 123 456789',
+    info: 'Votre candidature sera examinée par l’équipe Enterprise. Nous vous recontacterons en cas de correspondance.',
+    next: 'Suivant',
+    back: 'Retour',
+    submit: 'Envoyer la candidature',
+    sending: 'Envoi en cours...',
+    successAlert: '✅ Merci pour votre candidature Enterprise ! Notre équipe Enterprise examinera votre demande et vous recontactera sous peu.',
+    errorGeneric: 'Un problème est survenu lors de l’envoi de votre candidature. Veuillez réessayer.',
+    errorNetwork: '❌ Erreur de connexion. Veuillez vérifier votre connexion Internet et réessayer.',
+    questions: [
+      {
+        id: 'industry_type',
+        question: 'Dans quel secteur votre entreprise est-elle active ?',
+        options: [
+          'Nettoyage de bâtiments & nettoyage d’entretien',
+          'Facility Management & infrastructure',
+          'Nettoyage industriel & nettoyage spécial',
+          'Secteur public / administrations',
+          'Autres domaines de nettoyage',
+        ],
+      },
+      {
+        id: 'compliance_needs',
+        question: 'Quelles exigences de conformité et de sécurité avez-vous ?',
+        options: [
+          'ISO 27001 ou certification comparable requise',
+          'Conformité sectorielle (p. ex. KRITIS)',
+          'Exigences avancées en matière de protection des données',
+          'On-premise ou private cloud requis',
+          'Conformité standard au RGPD suffisante',
+        ],
+      },
+      {
+        id: 'integration_requirements',
+        question: 'Quelles exigences d’intégration avez-vous ?',
+        options: [
+          'Système ERP (SAP, Oracle, Microsoft Dynamics)',
+          'Système CRM (Salesforce, HubSpot, etc.)',
+          'Système RH (Workday, SAP SuccessFactors)',
+          'Intégrations API personnalisées',
+          'Aucune intégration spécifique',
+        ],
+      },
+      {
+        id: 'decision_timeline',
+        question: 'Quand prévoyez-vous une mise en œuvre ?',
+        options: [
+          'Dans les 1 à 3 prochains mois',
+          'Dans 3 à 6 mois',
+          'Dans 6 à 12 mois',
+          'Planification à long terme (12+ mois)',
+        ],
+      },
+    ],
+  },
+} as const;
+
 export default function EnterpriseApplicationModal({ isOpen, onClose }: EnterpriseApplicationModalProps) {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
   const [currentStep, setCurrentStep] = useState(0); // 0 = contact form, 1-5 = questions
   const [formData, setFormData] = useState({
     name: '',
@@ -24,51 +231,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const questions: Question[] = [
-    {
-      id: 'industry_type',
-      question: 'In welchem Sektor ist Ihr Unternehmen tätig?',
-      options: [
-        'Gebäudereinigung & Unterhaltsreinigung',
-        'Facility Management & Infrastruktur',
-        'Industriereinigung & Sonderreinigung',
-        'Öffentlicher Sektor / Behörden',
-        'Andere Reinigungsbereiche',
-      ],
-    },
-    {
-      id: 'compliance_needs',
-      question: 'Welche Compliance- und Sicherheitsanforderungen haben Sie?',
-      options: [
-        'ISO 27001 oder vergleichbare Zertifizierung erforderlich',
-        'Branchenspezifische Compliance (z.B. KRITIS)',
-        'Erweiterte Datenschutzanforderungen',
-        'On-Premise oder Private Cloud erforderlich',
-        'Standard DSGVO-Konformität ausreichend',
-      ],
-    },
-    {
-      id: 'integration_requirements',
-      question: 'Welche Integrationsanforderungen haben Sie?',
-      options: [
-        'ERP-System (SAP, Oracle, Microsoft Dynamics)',
-        'CRM-System (Salesforce, HubSpot, etc.)',
-        'HR-System (Workday, SAP SuccessFactors)',
-        'Custom API-Integrationen',
-        'Keine spezifischen Integrationen',
-      ],
-    },
-    {
-      id: 'decision_timeline',
-      question: 'Wann planen Sie eine Implementierung?',
-      options: [
-        'In den nächsten 1-3 Monaten',
-        'In 3-6 Monaten',
-        'In 6-12 Monaten',
-        'Langfristige Planung (12+ Monate)',
-      ],
-    },
-  ];
+  const questions: Question[] = c.questions as unknown as Question[];
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,18 +278,18 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
       });
 
       if (response.ok) {
-        alert('✅ Vielen Dank für Ihre Enterprise-Bewerbung! Unser Enterprise-Team wird Ihre Anfrage prüfen und sich in Kürze bei Ihnen melden.');
+        alert(c.successAlert);
         setFormData({ name: '', email: '', phone: '', company: '' });
         setAnswers({});
         setCurrentStep(0);
         onClose();
       } else {
         const data = await response.json().catch(() => ({}));
-        alert('❌ ' + (data.detail || 'Es gab ein Problem beim Senden Ihrer Bewerbung. Bitte versuchen Sie es erneut.'));
+        alert('❌ ' + (data.detail || c.errorGeneric));
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('❌ Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.');
+      alert(c.errorNetwork);
     } finally {
       setIsSubmitting(false);
     }
@@ -171,7 +334,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
               <button
                 onClick={onClose}
                 className="text-cyan-900 hover:text-cyan-700 transition-all duration-300 hover:rotate-90 transform group p-2 rounded-full hover:bg-cyan-100"
-                aria-label="Schließen"
+                aria-label={c.closeAria}
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -184,7 +347,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
               <div className="mb-6 animate-[slideDown_0.3s_ease-out]">
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-xs sm:text-sm text-cyan-900 font-medium animate-[fadeIn_0.5s_ease-out]">
-                    Frage {currentStep} von {questions.length}
+                    {c.questionLabel(currentStep, questions.length)}
                   </span>
                 </div>
                 <div className="w-full bg-cyan-100/50 rounded-full h-3 overflow-hidden border-2 border-cyan-200 relative shadow-inner">
@@ -206,10 +369,10 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
               <>
                 <div className="mb-5 sm:mb-6 animate-[fadeIn_0.5s_ease-out]">
                   <h2 className="text-xl sm:text-2xl font-bold text-cyan-900 mb-2 pr-8">
-                    Enterprise-Bewerbung
+                    {c.title}
                   </h2>
                   <p className="text-slate-600 text-xs sm:text-sm">
-                    Bewerben Sie sich für Taskey Enterprise. Unser Team prüft Ihre Anfrage individuell.
+                    {c.subtitle}
                   </p>
                 </div>
 
@@ -217,7 +380,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                   {/* Name */}
                   <div className="animate-[slideUp_0.4s_ease-out]">
                     <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-cyan-900 mb-1 sm:mb-2">
-                      Vollständiger Name *
+                      {c.labelName}
                     </label>
                     <input
                       type="text"
@@ -227,14 +390,14 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
-                      placeholder="Ihr vollständiger Name"
+                      placeholder={c.placeholderName}
                     />
                   </div>
 
                   {/* Company */}
                   <div className="animate-[slideUp_0.45s_ease-out]">
                     <label htmlFor="company" className="block text-xs sm:text-sm font-semibold text-cyan-900 mb-1 sm:mb-2">
-                      Unternehmen *
+                      {c.labelCompany}
                     </label>
                     <input
                       type="text"
@@ -244,14 +407,14 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
-                      placeholder="Ihr Unternehmensname"
+                      placeholder={c.placeholderCompany}
                     />
                   </div>
 
                   {/* Email */}
                   <div className="animate-[slideUp_0.5s_ease-out]">
                     <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-cyan-900 mb-1 sm:mb-2">
-                      Geschäftliche E-Mail *
+                      {c.labelEmail}
                     </label>
                     <input
                       type="email"
@@ -261,14 +424,14 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
-                      placeholder="ihre.email@unternehmen.de"
+                      placeholder={c.placeholderEmail}
                     />
                   </div>
 
                   {/* Phone */}
                   <div className="animate-[slideUp_0.6s_ease-out]">
                     <label htmlFor="phone" className="block text-xs sm:text-sm font-semibold text-cyan-900 mb-1 sm:mb-2">
-                      Telefonnummer *
+                      {c.labelPhone}
                     </label>
                     <input
                       type="tel"
@@ -278,13 +441,13 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border-2 border-cyan-200 text-slate-900 rounded-lg focus:border-cyan-600 focus:ring-2 focus:ring-cyan-200 focus:outline-none transition-all placeholder-slate-400 hover:border-cyan-300 shadow-sm"
-                      placeholder="+49 123 456789"
+                      placeholder={c.placeholderPhone}
                     />
                   </div>
 
                   {/* Info text */}
                   <p className="text-xs text-slate-600 animate-[fadeIn_0.7s_ease-out]">
-                    Ihre Bewerbung wird vom Enterprise-Team geprüft. Wir melden uns bei passender Eignung.
+                    {c.info}
                   </p>
 
                   {/* Submit button with cyan theme */}
@@ -294,7 +457,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                   >
                     {/* Animated shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <span className="relative">Weiter</span>
+                    <span className="relative">{c.next}</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -355,7 +518,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                     <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
-                    <span>Zurück</span>
+                    <span>{c.back}</span>
                   </button>
 
                   {isLastQuestion ? (
@@ -376,11 +539,11 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Wird gesendet...
+                          {c.sending}
                         </span>
                       ) : (
                         <span className="relative flex items-center justify-center gap-2">
-                          Bewerbung absenden
+                          {c.submit}
                           <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -399,7 +562,7 @@ export default function EnterpriseApplicationModal({ isOpen, onClose }: Enterpri
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                       )}
 
-                      <span className="relative">Weiter</span>
+                      <span className="relative">{c.next}</span>
                       <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>

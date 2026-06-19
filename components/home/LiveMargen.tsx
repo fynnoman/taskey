@@ -2,6 +2,97 @@
 
 import Link from 'next/link';
 import RevealBlur from './RevealBlur';
+import { useLanguage } from "@/context/LanguageContext";
+
+const CONTENT = {
+  de: {
+    BADGE: "Live-Übersicht",
+    HEAD_1: "Jeder Auftrag.",
+    HEAD_2: "Jede Marge. ",
+    HEAD_3: "Live.",
+    LEAD: "Sie erfahren erst beim Steuerberater, dass ein Auftrag ein Verlust war? Damit ist Schluss. Taskey zeigt Ihnen sofort, wo Sie verdienen – und wo Sie draufzahlen.",
+    KPI1_LABEL: "Gesamt-Marge",
+    KPI1_SUB: "Ø aus 3 Objekten",
+    KPI2_LABEL: "Warnung",
+    KPI2_VALUE: "1 Objekt",
+    KPI2_SUB: "Personalkosten 18% ↑",
+    KPI3_LABEL: "In Echtzeit",
+    KPI3_SUB: "Update-Latenz",
+    DASH_EYEBROW: "Objekt-Übersicht",
+    DASH_META: "3 aktive Verträge · heute 14:07 Uhr",
+    LIVE_TAG: "LIVE",
+    ROW1_NAME: "Bürogebäude Müller GmbH",
+    ROW1_MARGIN_LABEL: "4.773 € Marge",
+    ROW2_NAME: "Treppenhaus Hausverwaltung Krause",
+    ROW2_MARGIN_LABEL: "1.804 € Marge",
+    ROW3_NAME: "Klinikreinigung Waldklinik",
+    ROW3_MARGIN_LABEL: "−1.587 € Verlust",
+    ROW3_WARNING: "Achtung: Personalkosten 18% über Plan",
+    CTA_PRIMARY: "Jetzt kostenlos testen",
+    CTA_SECONDARY: "Mehr erfahren",
+    CONTRACT_SUM_LABEL: "Vertragssumme",
+    COST_LABEL: "Kosten",
+    PROGRESS_DONE: "abgeschlossen",
+  },
+  en: {
+    BADGE: "Live overview",
+    HEAD_1: "Every job.",
+    HEAD_2: "Every margin. ",
+    HEAD_3: "Live.",
+    LEAD: "Only finding out from your tax advisor that a contract was a loss? That ends now. Taskey shows you instantly where you're earning — and where you're losing money.",
+    KPI1_LABEL: "Total margin",
+    KPI1_SUB: "Avg. across 3 sites",
+    KPI2_LABEL: "Warning",
+    KPI2_VALUE: "1 site",
+    KPI2_SUB: "Labour costs 18% ↑",
+    KPI3_LABEL: "Real-time",
+    KPI3_SUB: "Update latency",
+    DASH_EYEBROW: "Site overview",
+    DASH_META: "3 active contracts · today 14:07",
+    LIVE_TAG: "LIVE",
+    ROW1_NAME: "Office building Müller GmbH",
+    ROW1_MARGIN_LABEL: "€4,773 margin",
+    ROW2_NAME: "Stairwell Hausverwaltung Krause",
+    ROW2_MARGIN_LABEL: "€1,804 margin",
+    ROW3_NAME: "Clinical cleaning Waldklinik",
+    ROW3_MARGIN_LABEL: "−€1,587 loss",
+    ROW3_WARNING: "Caution: labour costs 18% over plan",
+    CTA_PRIMARY: "Start free trial",
+    CTA_SECONDARY: "Learn more",
+    CONTRACT_SUM_LABEL: "Contract value",
+    COST_LABEL: "Costs",
+    PROGRESS_DONE: "complete",
+  },
+  fr: {
+    BADGE: "Vue en direct",
+    HEAD_1: "Chaque mission.",
+    HEAD_2: "Chaque marge. ",
+    HEAD_3: "En direct.",
+    LEAD: "Apprendre seulement chez le comptable qu'un contrat a été déficitaire ? C'est fini. Taskey vous montre immédiatement où vous gagnez — et où vous perdez de l'argent.",
+    KPI1_LABEL: "Marge globale",
+    KPI1_SUB: "Moy. sur 3 sites",
+    KPI2_LABEL: "Alerte",
+    KPI2_VALUE: "1 site",
+    KPI2_SUB: "Coûts de personnel 18 % ↑",
+    KPI3_LABEL: "En temps réel",
+    KPI3_SUB: "Latence de mise à jour",
+    DASH_EYEBROW: "Vue des sites",
+    DASH_META: "3 contrats actifs · aujourd'hui 14h07",
+    LIVE_TAG: "LIVE",
+    ROW1_NAME: "Immeuble de bureaux Müller GmbH",
+    ROW1_MARGIN_LABEL: "4 773 € de marge",
+    ROW2_NAME: "Cage d'escalier Hausverwaltung Krause",
+    ROW2_MARGIN_LABEL: "1 804 € de marge",
+    ROW3_NAME: "Nettoyage clinique Waldklinik",
+    ROW3_MARGIN_LABEL: "−1 587 € de perte",
+    ROW3_WARNING: "Attention : coûts de personnel 18 % au-dessus du plan",
+    CTA_PRIMARY: "Essayer gratuitement",
+    CTA_SECONDARY: "En savoir plus",
+    CONTRACT_SUM_LABEL: "Montant du contrat",
+    COST_LABEL: "Coûts",
+    PROGRESS_DONE: "achevé",
+  },
+} as const;
 
 /**
  * LiveMargen — Revolut-Style Bühne:
@@ -9,6 +100,8 @@ import RevealBlur from './RevealBlur';
  * Kein Split-Layout – ein Hero-Moment mit einem einzigen Dashboard als Star.
  */
 export default function LiveMargen() {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
   return (
     <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
       {/* Ambient glows */}
@@ -20,17 +113,16 @@ export default function LiveMargen() {
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-slate-200 text-emerald-700 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] mb-6 backdrop-blur-md">
             <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-            Live-Übersicht
+            {c.BADGE}
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-            Jeder Auftrag.
+            {c.HEAD_1}
             <br />
-            <span className="text-slate-500">Jede Marge. </span>
-            <span className="text-emerald-600">Live.</span>
+            <span className="text-slate-500">{c.HEAD_2}</span>
+            <span className="text-emerald-600">{c.HEAD_3}</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Sie erfahren erst beim Steuerberater, dass ein Auftrag ein Verlust war?
-            Damit ist Schluss. Taskey zeigt Ihnen sofort, wo Sie verdienen – und wo Sie draufzahlen.
+            {c.LEAD}
           </p>
         </div>
 
@@ -38,13 +130,13 @@ export default function LiveMargen() {
         <div className="relative max-w-5xl mx-auto">
           {/* Floating KPI Chips — desktop only */}
           <div className="hidden lg:block absolute -left-8 top-20 z-20 animate-[float_6s_ease-in-out_infinite]">
-            <KpiChip tone="emerald" label="Gesamt-Marge" value="+9,8%" sub="Ø aus 3 Objekten" />
+            <KpiChip tone="emerald" label={c.KPI1_LABEL} value="+9,8%" sub={c.KPI1_SUB} />
           </div>
           <div className="hidden lg:block absolute -right-8 top-8 z-20 animate-[float_7s_ease-in-out_infinite_reverse]">
-            <KpiChip tone="red" label="Warnung" value="1 Objekt" sub="Personalkosten 18% ↑" pulse />
+            <KpiChip tone="red" label={c.KPI2_LABEL} value={c.KPI2_VALUE} sub={c.KPI2_SUB} pulse />
           </div>
           <div className="hidden lg:block absolute -right-4 bottom-16 z-20 animate-[float_8s_ease-in-out_infinite]">
-            <KpiChip tone="neutral" label="In Echtzeit" value="0,3 s" sub="Update-Latenz" />
+            <KpiChip tone="neutral" label={c.KPI3_LABEL} value="0,3 s" sub={c.KPI3_SUB} />
           </div>
 
           {/* Dashboard Card */}
@@ -53,44 +145,53 @@ export default function LiveMargen() {
             {/* Dashboard Header */}
             <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-slate-200/60">
               <div>
-                <p className="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-bold">Objekt-Übersicht</p>
-                <p className="text-sm md:text-base text-slate-900 font-bold mt-1">3 aktive Verträge · heute 14:07 Uhr</p>
+                <p className="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-bold">{c.DASH_EYEBROW}</p>
+                <p className="text-sm md:text-base text-slate-900 font-bold mt-1">{c.DASH_META}</p>
               </div>
               <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold">
                 <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                LIVE
+                {c.LIVE_TAG}
               </div>
             </div>
 
             {/* Contracts */}
             <div className="space-y-3">
               <ContractRow
-                name="Bürogebäude Müller GmbH"
+                name={c.ROW1_NAME}
                 sum="38.500 €"
                 margin="+12,4%"
-                marginLabel="4.773 € Marge"
+                marginLabel={c.ROW1_MARGIN_LABEL}
                 tone="emerald"
                 progress={68}
                 cost="26.120 €"
+                sumLabel={c.CONTRACT_SUM_LABEL}
+                costLabel={c.COST_LABEL}
+                progressLabel={c.PROGRESS_DONE}
               />
               <ContractRow
-                name="Treppenhaus Hausverwaltung Krause"
+                name={c.ROW2_NAME}
                 sum="22.000 €"
                 margin="+8,2%"
-                marginLabel="1.804 € Marge"
+                marginLabel={c.ROW2_MARGIN_LABEL}
                 tone="emerald"
                 progress={45}
                 cost="9.350 €"
+                sumLabel={c.CONTRACT_SUM_LABEL}
+                costLabel={c.COST_LABEL}
+                progressLabel={c.PROGRESS_DONE}
               />
               <ContractRow
-                name="Klinikreinigung Waldklinik"
+                name={c.ROW3_NAME}
                 sum="51.200 €"
                 margin="−3,1%"
-                marginLabel="−1.587 € Verlust"
+                marginLabel={c.ROW3_MARGIN_LABEL}
                 tone="red"
                 progress={82}
                 cost="43.280 €"
-                warning="Achtung: Personalkosten 18% über Plan"
+                warning={c.ROW3_WARNING}
+                sumLabel={c.CONTRACT_SUM_LABEL}
+                costLabel={c.COST_LABEL}
+                progressLabel={c.PROGRESS_DONE}
               />
             </div>
           </div>
@@ -108,7 +209,7 @@ export default function LiveMargen() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2.5 bg-blue-600 text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-500 transition-colors"
           >
-            Jetzt kostenlos testen
+            {c.CTA_PRIMARY}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -117,7 +218,7 @@ export default function LiveMargen() {
             href="/features"
             className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-900 px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-100 transition-colors"
           >
-            Mehr erfahren
+            {c.CTA_SECONDARY}
           </Link>
         </div>
       </div>
@@ -171,6 +272,9 @@ function ContractRow({
   progress,
   cost,
   warning,
+  sumLabel,
+  costLabel,
+  progressLabel,
 }: {
   name: string;
   sum: string;
@@ -180,6 +284,9 @@ function ContractRow({
   progress: number;
   cost: string;
   warning?: string;
+  sumLabel: string;
+  costLabel: string;
+  progressLabel: string;
 }) {
   const isRed = tone === 'red';
   return (
@@ -194,7 +301,7 @@ function ContractRow({
       <div className="flex items-center justify-between mb-3 gap-3">
         <div className="min-w-0">
           <p className="text-slate-900 font-bold text-sm md:text-base truncate">{name}</p>
-          <p className="text-slate-500 text-xs mt-0.5">Vertragssumme: {sum}</p>
+          <p className="text-slate-500 text-xs mt-0.5">{sumLabel}: {sum}</p>
         </div>
         <div className="text-right flex-shrink-0">
           <p className={`font-black text-xl md:text-2xl leading-none ${isRed ? 'text-red-400' : 'text-emerald-600'}`}>
@@ -212,8 +319,8 @@ function ContractRow({
         />
       </div>
       <div className="flex justify-between mt-2 text-[10px] text-slate-500">
-        <span>Kosten: {cost}</span>
-        <span>{progress}% abgeschlossen</span>
+        <span>{costLabel}: {cost}</span>
+        <span>{progress}% {progressLabel}</span>
       </div>
       {warning && (
         <div className="mt-3 flex items-center gap-2 text-red-400 text-xs font-bold">

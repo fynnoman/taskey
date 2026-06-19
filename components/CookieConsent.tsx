@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 type CookiePreferences = {
   necessary: boolean;
@@ -10,7 +11,144 @@ type CookiePreferences = {
   external: boolean;
 };
 
+const CONTENT = {
+  de: {
+    bannerTitle: 'Cookie-Einstellungen',
+    bannerP1: 'Wir verwenden auf unserer Website Cookies und ähnliche Technologien, um den technischen Betrieb der Website sicherzustellen, grundlegende Funktionen bereitzustellen und – sofern Sie ausdrücklich einwilligen – das Nutzungsverhalten auszuwerten sowie Inhalte zu optimieren.',
+    bannerP2Strong: 'Technisch notwendige Cookies',
+    bannerP2Rest: ' sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden. Alle anderen Cookies werden nur mit Ihrer freiwilligen Einwilligung gesetzt.',
+    bannerP3Prefix: 'Weitere Informationen finden Sie in unseren',
+    bannerP3LinkText: 'Datenschutzhinweisen',
+    btnAcceptAll: 'Alle Cookies akzeptieren',
+    btnNecessaryOnly: 'Nur notwendige Cookies',
+    btnSettings: 'Einstellungen anpassen',
+    settingsTitle: 'Cookie-Einstellungen anpassen',
+    settingsIntro: 'In den folgenden Einstellungen können Sie auswählen, welche Cookie-Kategorien Sie zulassen möchten. Notwendige Cookies sind immer aktiviert, da sie für den sicheren Betrieb der Website erforderlich sind.',
+    necessaryTitle: 'Notwendige Cookies',
+    alwaysActive: 'Immer aktiv',
+    necessaryDesc: 'Notwendige Cookies ermöglichen grundlegende Funktionen dieser Website und sind für deren ordnungsgemäßen Betrieb zwingend erforderlich. Ohne diese Cookies kann die Website nicht korrekt dargestellt oder genutzt werden.',
+    necessaryUseLabel: 'Typische Einsatzbereiche:',
+    necessaryUseText: ' Seitenaufrufe und Navigation, Speicherung Ihrer Cookie-Auswahl, Schutz vor Missbrauch und Angriffen, Lastverteilung und Systemstabilität',
+    legalLabel: 'Rechtsgrundlage:',
+    necessaryLegalText: ' Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 Nr. 2 TTDSG',
+    functionalTitle: 'Funktionale Cookies',
+    functionalDesc: 'Funktionale Cookies ermöglichen erweiterte Funktionen und Personalisierungen, z. B. die Speicherung von Spracheinstellungen oder regionalen Präferenzen. Sie verbessern den Nutzungskomfort, sind jedoch nicht zwingend für den Betrieb der Website erforderlich.',
+    functionalUseText: ' Speicherung von Spracheinstellungen, Benutzerpräferenzen, Wiedererkennung von Einstellungen bei erneutem Besuch',
+    functionalLegalText: ' Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG',
+    storageLabel: 'Speicherdauer:',
+    functionalStorageText: ' Bis zu 12 Monate',
+    analyticsTitle: 'Analyse- und Statistik-Cookies',
+    analyticsDesc: 'Analyse- und Statistik-Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen. Dabei werden Informationen über Seitenaufrufe, Verweildauer, Klickpfade und technische Rahmenbedingungen erfasst. Die Auswertung erfolgt anonym oder pseudonym. Ziel ist es, die Benutzerfreundlichkeit, Performance und Inhalte unserer Website kontinuierlich zu verbessern.',
+    analyticsUseText: ' Messung von Seitenaufrufen, Analyse von Nutzerströmen, Optimierung von Ladezeiten und Inhalten, Fehleranalyse',
+    analyticsLegalText: ' Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG',
+    analyticsStorageText: ' Bis zu 14 Monate',
+    marketingTitle: 'Marketing- und Tracking-Cookies',
+    marketingDesc: 'Marketing-Cookies werden verwendet, um Besuchern relevante Inhalte und Angebote anzuzeigen. Sie können auch dazu dienen, die Wirksamkeit von Marketingmaßnahmen zu messen und personalisierte Werbung auszuspielen. Dabei können Informationen über Ihr Nutzungsverhalten auch über verschiedene Websites hinweg verarbeitet werden.',
+    marketingUseText: ' Erfolgsmessung von Kampagnen, Anzeige relevanter Inhalte, Wiederansprache (Remarketing)',
+    marketingLegalText: ' Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG',
+    marketingStorageText: ' Abhängig vom jeweiligen Anbieter',
+    externalTitle: 'Externe Inhalte',
+    externalDesc: 'Externe Inhalte von Drittanbietern (z. B. Videos, Karten, Schriftarten) können Cookies oder ähnliche Technologien setzen. Beim Laden dieser Inhalte können personenbezogene Daten an die jeweiligen Anbieter übertragen werden. Diese Inhalte werden erst angezeigt, wenn Sie ausdrücklich einwilligen.',
+    externalUseText: ' Eingebettete Videos (z. B. YouTube), Kartenmaterial (z. B. Google Maps), Externe Schriftarten',
+    externalLegalText: ' Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG',
+    revokeTitle: 'Widerruf & Änderung der Einwilligung',
+    revokeText: 'Sie können Ihre Cookie-Einwilligung jederzeit mit Wirkung für die Zukunft ändern oder widerrufen. Hierfür steht Ihnen der Link “Cookie-Einstellungen” auf unserer Website dauerhaft zur Verfügung. Ein Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.',
+    btnSave: 'Auswahl speichern',
+    btnBack: 'Zurück',
+  },
+  en: {
+    bannerTitle: 'Cookie settings',
+    bannerP1: 'We use cookies and similar technologies on our website to ensure the technical operation of the site, provide basic functionality and – if you explicitly consent – analyse usage behaviour and optimise content.',
+    bannerP2Strong: 'Strictly necessary cookies',
+    bannerP2Rest: ' are required for the operation of the website and cannot be disabled. All other cookies are only set with your voluntary consent.',
+    bannerP3Prefix: 'You can find more information in our',
+    bannerP3LinkText: 'privacy policy',
+    btnAcceptAll: 'Accept all cookies',
+    btnNecessaryOnly: 'Necessary cookies only',
+    btnSettings: 'Adjust settings',
+    settingsTitle: 'Adjust cookie settings',
+    settingsIntro: 'In the following settings you can choose which cookie categories to allow. Necessary cookies are always enabled because they are required for the secure operation of the website.',
+    necessaryTitle: 'Necessary cookies',
+    alwaysActive: 'Always active',
+    necessaryDesc: 'Necessary cookies enable basic functions of this website and are strictly required for its proper operation. Without these cookies the website cannot be displayed or used correctly.',
+    necessaryUseLabel: 'Typical use cases:',
+    necessaryUseText: ' Page views and navigation, storage of your cookie selection, protection against abuse and attacks, load balancing and system stability',
+    legalLabel: 'Legal basis:',
+    necessaryLegalText: ' Art. 6 (1) lit. f GDPR, Section 25 (2) No. 2 TTDSG',
+    functionalTitle: 'Functional cookies',
+    functionalDesc: 'Functional cookies enable advanced features and personalisation, e.g. saving language settings or regional preferences. They improve ease of use but are not strictly required for the operation of the website.',
+    functionalUseText: ' Saving language settings, user preferences, recognising settings on repeat visits',
+    functionalLegalText: ' Art. 6 (1) lit. a GDPR, Section 25 (1) TTDSG',
+    storageLabel: 'Storage period:',
+    functionalStorageText: ' Up to 12 months',
+    analyticsTitle: 'Analytics and statistics cookies',
+    analyticsDesc: 'Analytics and statistics cookies help us understand how visitors use our website. They record information about page views, dwell time, click paths and technical conditions. Analysis is anonymous or pseudonymous. The goal is to continuously improve the usability, performance and content of our website.',
+    analyticsUseText: ' Measuring page views, analysing user flows, optimising loading times and content, error analysis',
+    analyticsLegalText: ' Art. 6 (1) lit. a GDPR, Section 25 (1) TTDSG',
+    analyticsStorageText: ' Up to 14 months',
+    marketingTitle: 'Marketing and tracking cookies',
+    marketingDesc: 'Marketing cookies are used to display relevant content and offers to visitors. They can also be used to measure the effectiveness of marketing campaigns and deliver personalised advertising. Information about your usage behaviour may also be processed across different websites.',
+    marketingUseText: ' Campaign performance measurement, display of relevant content, retargeting (remarketing)',
+    marketingLegalText: ' Art. 6 (1) lit. a GDPR, Section 25 (1) TTDSG',
+    marketingStorageText: ' Depending on the respective provider',
+    externalTitle: 'External content',
+    externalDesc: 'External content from third parties (e.g. videos, maps, fonts) may set cookies or similar technologies. When this content is loaded, personal data may be transmitted to the respective providers. This content is only displayed once you explicitly consent.',
+    externalUseText: ' Embedded videos (e.g. YouTube), map material (e.g. Google Maps), external fonts',
+    externalLegalText: ' Art. 6 (1) lit. a GDPR, Section 25 (1) TTDSG',
+    revokeTitle: 'Withdrawal & changing your consent',
+    revokeText: 'You can change or withdraw your cookie consent at any time with effect for the future. The “Cookie settings” link on our website is permanently available for this purpose. A withdrawal does not affect the lawfulness of processing carried out up to that point.',
+    btnSave: 'Save selection',
+    btnBack: 'Back',
+  },
+  fr: {
+    bannerTitle: 'Paramètres des cookies',
+    bannerP1: 'Nous utilisons sur notre site des cookies et des technologies similaires afin d’assurer le fonctionnement technique du site, de fournir des fonctionnalités de base et – sous réserve de votre consentement explicite – d’analyser l’utilisation et d’optimiser les contenus.',
+    bannerP2Strong: 'Les cookies techniquement nécessaires',
+    bannerP2Rest: ' sont indispensables au fonctionnement du site et ne peuvent pas être désactivés. Tous les autres cookies ne sont déposés qu’avec votre consentement volontaire.',
+    bannerP3Prefix: 'Vous trouverez plus d’informations dans notre',
+    bannerP3LinkText: 'politique de confidentialité',
+    btnAcceptAll: 'Accepter tous les cookies',
+    btnNecessaryOnly: 'Cookies nécessaires uniquement',
+    btnSettings: 'Personnaliser les réglages',
+    settingsTitle: 'Personnaliser les paramètres de cookies',
+    settingsIntro: 'Dans les paramètres suivants, vous pouvez choisir les catégories de cookies que vous souhaitez autoriser. Les cookies nécessaires sont toujours activés, car ils sont indispensables au fonctionnement sécurisé du site.',
+    necessaryTitle: 'Cookies nécessaires',
+    alwaysActive: 'Toujours actif',
+    necessaryDesc: 'Les cookies nécessaires permettent les fonctions de base de ce site et sont indispensables à son bon fonctionnement. Sans ces cookies, le site ne peut pas être affiché ou utilisé correctement.',
+    necessaryUseLabel: 'Cas d’usage typiques :',
+    necessaryUseText: ' affichage des pages et navigation, mémorisation de votre choix de cookies, protection contre les abus et les attaques, répartition de charge et stabilité du système',
+    legalLabel: 'Base légale :',
+    necessaryLegalText: ' Art. 6 §1 f) RGPD, § 25 al. 2 n° 2 TTDSG',
+    functionalTitle: 'Cookies fonctionnels',
+    functionalDesc: 'Les cookies fonctionnels permettent des fonctionnalités avancées et une personnalisation, par exemple la mémorisation des préférences linguistiques ou régionales. Ils améliorent le confort d’utilisation, mais ne sont pas indispensables au fonctionnement du site.',
+    functionalUseText: ' mémorisation des préférences linguistiques, préférences utilisateur, reconnaissance des réglages lors de visites ultérieures',
+    functionalLegalText: ' Art. 6 §1 a) RGPD, § 25 al. 1 TTDSG',
+    storageLabel: 'Durée de conservation :',
+    functionalStorageText: ' jusqu’à 12 mois',
+    analyticsTitle: 'Cookies d’analyse et de statistiques',
+    analyticsDesc: 'Les cookies d’analyse et de statistiques nous aident à comprendre comment les visiteurs utilisent notre site. Des informations sur les pages consultées, le temps passé, les parcours de clic et les conditions techniques sont collectées. L’analyse est anonyme ou pseudonyme. L’objectif est d’améliorer en continu la convivialité, la performance et les contenus de notre site.',
+    analyticsUseText: ' mesure des pages vues, analyse des flux d’utilisateurs, optimisation des temps de chargement et des contenus, analyse des erreurs',
+    analyticsLegalText: ' Art. 6 §1 a) RGPD, § 25 al. 1 TTDSG',
+    analyticsStorageText: ' jusqu’à 14 mois',
+    marketingTitle: 'Cookies marketing et de suivi',
+    marketingDesc: 'Les cookies marketing sont utilisés pour afficher aux visiteurs des contenus et offres pertinents. Ils peuvent aussi servir à mesurer l’efficacité des actions marketing et à diffuser de la publicité personnalisée. Des informations sur votre comportement de navigation peuvent être traitées sur plusieurs sites.',
+    marketingUseText: ' mesure du succès des campagnes, affichage de contenus pertinents, reciblage (remarketing)',
+    marketingLegalText: ' Art. 6 §1 a) RGPD, § 25 al. 1 TTDSG',
+    marketingStorageText: ' selon le prestataire concerné',
+    externalTitle: 'Contenus externes',
+    externalDesc: 'Les contenus externes de tiers (p. ex. vidéos, cartes, polices) peuvent déposer des cookies ou des technologies similaires. Lors du chargement de ces contenus, des données personnelles peuvent être transmises aux prestataires concernés. Ces contenus ne sont affichés qu’après votre consentement explicite.',
+    externalUseText: ' vidéos intégrées (p. ex. YouTube), cartes (p. ex. Google Maps), polices externes',
+    externalLegalText: ' Art. 6 §1 a) RGPD, § 25 al. 1 TTDSG',
+    revokeTitle: 'Retrait et modification du consentement',
+    revokeText: 'Vous pouvez modifier ou retirer votre consentement aux cookies à tout moment avec effet pour l’avenir. Le lien « Paramètres des cookies » est disponible en permanence sur notre site à cette fin. Un retrait n’affecte pas la licéité des traitements effectués jusqu’alors.',
+    btnSave: 'Enregistrer la sélection',
+    btnBack: 'Retour',
+  },
+} as const;
+
 export default function CookieBanner() {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
   const [showBanner, setShowBanner] = useState(() => {
     if (typeof window === 'undefined') return false;
     return !localStorage.getItem('taskey-cookie-consent');
@@ -68,25 +206,22 @@ export default function CookieBanner() {
             <div className="p-6">
               <div className="mb-4">
                 <h2 className="text-xl font-bold text-slate-900 mb-3">
-                  Cookie-Einstellungen
+                  {c.bannerTitle}
                 </h2>
-                
+
                 <div className="text-slate-700 space-y-3 text-sm leading-relaxed">
                   <p>
-                    Wir verwenden auf unserer Website Cookies und ähnliche Technologien, um den technischen Betrieb 
-                    der Website sicherzustellen, grundlegende Funktionen bereitzustellen und – sofern Sie ausdrücklich 
-                    einwilligen – das Nutzungsverhalten auszuwerten sowie Inhalte zu optimieren.
+                    {c.bannerP1}
                   </p>
-                  
+
                   <p>
-                    <strong>Technisch notwendige Cookies</strong> sind für den Betrieb der Website erforderlich und 
-                    können nicht deaktiviert werden. Alle anderen Cookies werden nur mit Ihrer freiwilligen Einwilligung gesetzt.
+                    <strong>{c.bannerP2Strong}</strong>{c.bannerP2Rest}
                   </p>
-                  
+
                   <p>
-                    Weitere Informationen finden Sie in unseren{' '}
+                    {c.bannerP3Prefix}{' '}
                     <a href="/datenschutz" className="text-blue-600 hover:underline font-semibold">
-                      Datenschutzhinweisen
+                      {c.bannerP3LinkText}
                     </a>.
                   </p>
                 </div>
@@ -98,19 +233,19 @@ export default function CookieBanner() {
                   onClick={acceptAll}
                   className="flex-1 bg-blue-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition text-sm"
                 >
-                  Alle Cookies akzeptieren
+                  {c.btnAcceptAll}
                 </button>
                 <button
                   onClick={acceptNecessary}
                   className="flex-1 bg-gray-600 text-slate-900 px-5 py-2.5 rounded-md font-semibold hover:bg-slate-700 transition text-sm"
                 >
-                  Nur notwendige Cookies
+                  {c.btnNecessaryOnly}
                 </button>
                 <button
                   onClick={() => setShowSettings(true)}
                   className="flex-1 bg-white text-slate-800 px-5 py-2.5 rounded-md font-semibold border-2 border-slate-300 hover:bg-slate-50 transition text-sm"
                 >
-                  Einstellungen anpassen
+                  {c.btnSettings}
                 </button>
               </div>
             </div>
@@ -126,12 +261,11 @@ export default function CookieBanner() {
             <div className="bg-white rounded-lg shadow-2xl max-w-4xl w-full border-2 border-slate-200 max-h-[90vh] overflow-y-auto">
               <div className="p-6 sm:p-8">
                 <h2 className="text-xl font-bold text-slate-900 mb-4">
-                  Cookie-Einstellungen anpassen
+                  {c.settingsTitle}
                 </h2>
-                
+
                 <p className="text-slate-700 mb-5 text-sm">
-                  In den folgenden Einstellungen können Sie auswählen, welche Cookie-Kategorien Sie zulassen möchten.
-                  Notwendige Cookies sind immer aktiviert, da sie für den sicheren Betrieb der Website erforderlich sind.
+                  {c.settingsIntro}
                 </p>
 
                 <div className="space-y-6">
@@ -140,10 +274,10 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-bold text-slate-900 text-lg mb-2">
-                        Notwendige Cookies
+                        {c.necessaryTitle}
                       </h3>
                       <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded">
-                        Immer aktiv
+                        {c.alwaysActive}
                       </span>
                     </div>
                     <input
@@ -154,16 +288,13 @@ export default function CookieBanner() {
                     />
                   </div>
                   <p className="text-sm text-slate-700 mb-3">
-                    Notwendige Cookies ermöglichen grundlegende Funktionen dieser Website und sind für deren 
-                    ordnungsgemäßen Betrieb zwingend erforderlich. Ohne diese Cookies kann die Website nicht 
-                    korrekt dargestellt oder genutzt werden.
+                    {c.necessaryDesc}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Typische Einsatzbereiche:</strong> Seitenaufrufe und Navigation, Speicherung Ihrer 
-                    Cookie-Auswahl, Schutz vor Missbrauch und Angriffen, Lastverteilung und Systemstabilität
+                    <strong>{c.necessaryUseLabel}</strong>{c.necessaryUseText}
                   </p>
                   <p className="text-xs text-slate-600">
-                    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 Nr. 2 TTDSG
+                    <strong>{c.legalLabel}</strong>{c.necessaryLegalText}
                   </p>
                 </div>
 
@@ -172,7 +303,7 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-bold text-slate-900 text-lg mb-2">
-                        Funktionale Cookies
+                        {c.functionalTitle}
                       </h3>
                     </div>
                     <input
@@ -183,19 +314,16 @@ export default function CookieBanner() {
                     />
                   </div>
                   <p className="text-sm text-slate-700 mb-3">
-                    Funktionale Cookies ermöglichen erweiterte Funktionen und Personalisierungen, z. B. die 
-                    Speicherung von Spracheinstellungen oder regionalen Präferenzen. Sie verbessern den 
-                    Nutzungskomfort, sind jedoch nicht zwingend für den Betrieb der Website erforderlich.
+                    {c.functionalDesc}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Typische Einsatzbereiche:</strong> Speicherung von Spracheinstellungen, 
-                    Benutzerpräferenzen, Wiedererkennung von Einstellungen bei erneutem Besuch
+                    <strong>{c.necessaryUseLabel}</strong>{c.functionalUseText}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG
+                    <strong>{c.legalLabel}</strong>{c.functionalLegalText}
                   </p>
                   <p className="text-xs text-slate-600">
-                    <strong>Speicherdauer:</strong> Bis zu 12 Monate
+                    <strong>{c.storageLabel}</strong>{c.functionalStorageText}
                   </p>
                 </div>
 
@@ -204,7 +332,7 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-bold text-slate-900 text-lg mb-2">
-                        Analyse- und Statistik-Cookies
+                        {c.analyticsTitle}
                       </h3>
                     </div>
                     <input
@@ -215,20 +343,16 @@ export default function CookieBanner() {
                     />
                   </div>
                   <p className="text-sm text-slate-700 mb-3">
-                    Analyse- und Statistik-Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen. 
-                    Dabei werden Informationen über Seitenaufrufe, Verweildauer, Klickpfade und technische 
-                    Rahmenbedingungen erfasst. Die Auswertung erfolgt anonym oder pseudonym. Ziel ist es, die 
-                    Benutzerfreundlichkeit, Performance und Inhalte unserer Website kontinuierlich zu verbessern.
+                    {c.analyticsDesc}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Typische Einsatzbereiche:</strong> Messung von Seitenaufrufen, Analyse von Nutzerströmen, 
-                    Optimierung von Ladezeiten und Inhalten, Fehleranalyse
+                    <strong>{c.necessaryUseLabel}</strong>{c.analyticsUseText}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG
+                    <strong>{c.legalLabel}</strong>{c.analyticsLegalText}
                   </p>
                   <p className="text-xs text-slate-600">
-                    <strong>Speicherdauer:</strong> Bis zu 14 Monate
+                    <strong>{c.storageLabel}</strong>{c.analyticsStorageText}
                   </p>
                 </div>
 
@@ -237,7 +361,7 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-bold text-slate-900 text-lg mb-2">
-                        Marketing- und Tracking-Cookies
+                        {c.marketingTitle}
                       </h3>
                     </div>
                     <input
@@ -248,20 +372,16 @@ export default function CookieBanner() {
                     />
                   </div>
                   <p className="text-sm text-slate-700 mb-3">
-                    Marketing-Cookies werden verwendet, um Besuchern relevante Inhalte und Angebote anzuzeigen. 
-                    Sie können auch dazu dienen, die Wirksamkeit von Marketingmaßnahmen zu messen und 
-                    personalisierte Werbung auszuspielen. Dabei können Informationen über Ihr Nutzungsverhalten 
-                    auch über verschiedene Websites hinweg verarbeitet werden.
+                    {c.marketingDesc}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Typische Einsatzbereiche:</strong> Erfolgsmessung von Kampagnen, Anzeige relevanter 
-                    Inhalte, Wiederansprache (Remarketing)
+                    <strong>{c.necessaryUseLabel}</strong>{c.marketingUseText}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG
+                    <strong>{c.legalLabel}</strong>{c.marketingLegalText}
                   </p>
                   <p className="text-xs text-slate-600">
-                    <strong>Speicherdauer:</strong> Abhängig vom jeweiligen Anbieter
+                    <strong>{c.storageLabel}</strong>{c.marketingStorageText}
                   </p>
                 </div>
 
@@ -270,7 +390,7 @@ export default function CookieBanner() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-bold text-slate-900 text-lg mb-2">
-                        Externe Inhalte
+                        {c.externalTitle}
                       </h3>
                     </div>
                     <input
@@ -281,26 +401,21 @@ export default function CookieBanner() {
                     />
                   </div>
                   <p className="text-sm text-slate-700 mb-3">
-                    Externe Inhalte von Drittanbietern (z. B. Videos, Karten, Schriftarten) können Cookies oder 
-                    ähnliche Technologien setzen. Beim Laden dieser Inhalte können personenbezogene Daten an die 
-                    jeweiligen Anbieter übertragen werden. Diese Inhalte werden erst angezeigt, wenn Sie ausdrücklich einwilligen.
+                    {c.externalDesc}
                   </p>
                   <p className="text-xs text-slate-600 mb-2">
-                    <strong>Typische Einsatzbereiche:</strong> Eingebettete Videos (z. B. YouTube), Kartenmaterial 
-                    (z. B. Google Maps), Externe Schriftarten
+                    <strong>{c.necessaryUseLabel}</strong>{c.externalUseText}
                   </p>
                   <p className="text-xs text-slate-600">
-                    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG
+                    <strong>{c.legalLabel}</strong>{c.externalLegalText}
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-slate-700">
-                <p className="font-semibold mb-2">Widerruf & Änderung der Einwilligung</p>
+                <p className="font-semibold mb-2">{c.revokeTitle}</p>
                 <p>
-                  Sie können Ihre Cookie-Einwilligung jederzeit mit Wirkung für die Zukunft ändern oder widerrufen.
-                  Hierfür steht Ihnen der Link &ldquo;Cookie-Einstellungen&rdquo; auf unserer Website dauerhaft zur Verfügung.
-                  Ein Widerruf berührt nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.
+                  {c.revokeText}
                 </p>
               </div>
 
@@ -310,13 +425,13 @@ export default function CookieBanner() {
                     onClick={saveCustom}
                     className="flex-1 bg-blue-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition text-sm"
                   >
-                    Auswahl speichern
+                    {c.btnSave}
                   </button>
                   <button
                     onClick={() => setShowSettings(false)}
                     className="flex-1 bg-slate-200 text-slate-800 px-5 py-2.5 rounded-md font-semibold hover:bg-slate-300 transition text-sm"
                   >
-                    Zurück
+                    {c.btnBack}
                   </button>
                 </div>
               </div>

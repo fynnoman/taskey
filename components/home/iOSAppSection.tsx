@@ -31,12 +31,12 @@ export default function IOSAppSection() {
             {t("ios.badge")}
           </p>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
-            Ihr Team.
+            {t("iosSection.heading.line1")}
             <br />
-            <span className="text-slate-500">In der Hosentasche.</span>
+            <span className="text-slate-500">{t("iosSection.heading.line2")}</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto">
-            So einfach wie WhatsApp – aber für die Arbeit.
+            {t("iosSection.lead")}
           </p>
         </div>
 
@@ -54,8 +54,8 @@ export default function IOSAppSection() {
               />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 text-left">
-                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">Im Einsatz</p>
-                <p className="text-sm font-bold text-slate-900 leading-tight">„Ich öffne die App, ein Tap – fertig."</p>
+                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">{t("iosSection.field.tag")}</p>
+                <p className="text-sm font-bold text-slate-900 leading-tight">{t("iosSection.field.quote")}</p>
               </div>
             </div>
           </div>
@@ -72,8 +72,8 @@ export default function IOSAppSection() {
               />
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3 text-left">
-                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">Im Büro</p>
-                <p className="text-sm font-bold text-slate-900 leading-tight">„Wir wissen sofort, wer wo ist."</p>
+                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">{t("iosSection.office.tag")}</p>
+                <p className="text-sm font-bold text-slate-900 leading-tight">{t("iosSection.office.quote")}</p>
               </div>
             </div>
           </div>

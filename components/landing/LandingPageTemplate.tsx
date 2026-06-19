@@ -1,5 +1,53 @@
+"use client";
+
 import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { useLanguage } from "@/context/LanguageContext";
+
+const CONTENT = {
+  de: {
+    breadcrumbAriaLabel: "Breadcrumb",
+    heroPrimaryCta: "30 Tage kostenlos testen",
+    heroSecondaryCta: "Alle Funktionen ansehen",
+    faqEyebrow: "Häufige Fragen",
+    faqHeading: "Was Inhaber jetzt wissen wollen.",
+    relatedEyebrow: "Passende Themen",
+    relatedHeading: "Weiterlesen.",
+    relatedMore: "Mehr erfahren",
+    ctaTitleDefault: "30 Tage kostenlos testen.",
+    ctaSubtitleDefault:
+      "Keine Kreditkarte, kein Risiko. Einrichtung in 48 Stunden – Done-for-You durch unser Team.",
+    bottomCta: "Jetzt starten",
+  },
+  en: {
+    breadcrumbAriaLabel: "Breadcrumb",
+    heroPrimaryCta: "Start 30-day free trial",
+    heroSecondaryCta: "See all features",
+    faqEyebrow: "Frequently asked",
+    faqHeading: "What owners want to know now.",
+    relatedEyebrow: "Related topics",
+    relatedHeading: "Keep reading.",
+    relatedMore: "Learn more",
+    ctaTitleDefault: "Try it free for 30 days.",
+    ctaSubtitleDefault:
+      "No credit card, no risk. Set up in 48 hours – Done-for-You by our team.",
+    bottomCta: "Get started",
+  },
+  fr: {
+    breadcrumbAriaLabel: "Fil d’Ariane",
+    heroPrimaryCta: "Essayer 30 jours gratuitement",
+    heroSecondaryCta: "Voir toutes les fonctionnalités",
+    faqEyebrow: "Questions fréquentes",
+    faqHeading: "Ce que les dirigeants veulent savoir maintenant.",
+    relatedEyebrow: "Sujets connexes",
+    relatedHeading: "Continuer la lecture.",
+    relatedMore: "En savoir plus",
+    ctaTitleDefault: "30 jours d’essai gratuit.",
+    ctaSubtitleDefault:
+      "Sans carte bancaire, sans risque. Mise en place en 48 heures – Done-for-You par notre équipe.",
+    bottomCta: "Démarrer maintenant",
+  },
+} as const;
 
 export type LandingFaq = { question: string; answer: string };
 export type LandingSection = {
@@ -53,9 +101,14 @@ export default function LandingPageTemplate({
   faqs,
   breadcrumbs,
   related,
-  ctaTitle = "30 Tage kostenlos testen.",
-  ctaSubtitle = "Keine Kreditkarte, kein Risiko. Einrichtung in 48 Stunden – Done-for-You durch unser Team.",
+  ctaTitle,
+  ctaSubtitle,
 }: LandingPageProps) {
+  const { language } = useLanguage();
+  const c = CONTENT[language];
+  const resolvedCtaTitle = ctaTitle ?? c.ctaTitleDefault;
+  const resolvedCtaSubtitle = ctaSubtitle ?? c.ctaSubtitleDefault;
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -117,7 +170,7 @@ export default function LandingPageTemplate({
       <section className="relative pt-32 md:pt-40 pb-14 md:pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Sichtbare Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="mb-8 text-xs sm:text-sm text-slate-500">
+          <nav aria-label={c.breadcrumbAriaLabel} className="mb-8 text-xs sm:text-sm text-slate-500">
             <ol className="flex flex-wrap items-center gap-2">
               {breadcrumbs.map((b, i) => {
                 const isLast = i === breadcrumbs.length - 1;
@@ -174,7 +227,7 @@ export default function LandingPageTemplate({
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
             >
-              30 Tage kostenlos testen
+              {c.heroPrimaryCta}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -183,7 +236,7 @@ export default function LandingPageTemplate({
               href="/features"
               className="inline-flex items-center justify-center px-8 py-4 text-slate-900 border border-slate-300 hover:border-slate-400 text-base font-bold rounded-full transition-colors whitespace-nowrap"
             >
-              Alle Funktionen ansehen
+              {c.heroSecondaryCta}
             </Link>
           </div>
         </div>
@@ -253,10 +306,10 @@ export default function LandingPageTemplate({
       <section className="relative py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
-            Häufige Fragen
+            {c.faqEyebrow}
           </p>
           <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tight mb-10">
-            Was Inhaber jetzt wissen wollen.
+            {c.faqHeading}
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
@@ -284,10 +337,10 @@ export default function LandingPageTemplate({
         <section className="relative py-20 md:py-24 bg-blue-50/60">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
-              Passende Themen
+              {c.relatedEyebrow}
             </p>
             <h2 className="text-3xl md:text-4xl font-black leading-tight mb-10">
-              Weiterlesen.
+              {c.relatedHeading}
             </h2>
             <div className="grid md:grid-cols-3 gap-5">
               {related.map((r) => (
@@ -303,7 +356,7 @@ export default function LandingPageTemplate({
                     <p className="text-slate-600 text-sm leading-relaxed">{r.description}</p>
                   )}
                   <span className="inline-flex items-center gap-1 mt-4 text-xs font-bold text-blue-700">
-                    Mehr erfahren
+                    {c.relatedMore}
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -323,9 +376,9 @@ export default function LandingPageTemplate({
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-xl">
                 <h2 className="text-3xl md:text-4xl font-black leading-tight mb-3">
-                  {ctaTitle}
+                  {resolvedCtaTitle}
                 </h2>
-                <p className="text-slate-600 text-base md:text-lg">{ctaSubtitle}</p>
+                <p className="text-slate-600 text-base md:text-lg">{resolvedCtaSubtitle}</p>
               </div>
               <Link
                 href="https://signup.taskeyapp.com"
@@ -333,7 +386,7 @@ export default function LandingPageTemplate({
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
               >
-                Jetzt starten
+                {c.bottomCta}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

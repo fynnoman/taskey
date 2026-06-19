@@ -6,6 +6,28 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function IOSClient() {
   const { t } = useLanguage();
 
+  const branchenMobile = [
+    { icon: "🏢", name: t("iosPage.branchen.mobile.1") },
+    { icon: "⚡", name: t("iosPage.branchen.mobile.2") },
+    { icon: "�", name: t("iosPage.branchen.mobile.3") },
+    { icon: "🧹", name: t("iosPage.branchen.mobile.4") },
+    { icon: "�", name: t("iosPage.branchen.mobile.5") },
+    { icon: "🌳", name: t("iosPage.branchen.mobile.6") },
+    { icon: "🛡️", name: t("iosPage.branchen.mobile.7") },
+    { icon: "🏭", name: t("iosPage.branchen.mobile.8") },
+  ];
+
+  const branchenDesktop = [
+    { icon: "🏢", name: t("iosPage.branchen.desktop.1") },
+    { icon: "⚡", name: t("iosPage.branchen.desktop.2") },
+    { icon: "�", name: t("iosPage.branchen.desktop.3") },
+    { icon: "�️", name: t("iosPage.branchen.desktop.4") },
+    { icon: "🧹", name: t("iosPage.branchen.desktop.5") },
+    { icon: "🏢", name: t("iosPage.branchen.desktop.6") },
+    { icon: "�", name: t("iosPage.branchen.desktop.7") },
+    { icon: "🛡️", name: t("iosPage.branchen.desktop.8") },
+  ];
+
   return (
     <main className="bg-white">
 
@@ -242,16 +264,7 @@ export default function IOSClient() {
 
           {/* ── Mobile Branchen (bis lg): Kompakte 2-Spalten ── */}
           <div className="lg:hidden grid grid-cols-2 gap-2.5 mb-8">
-            {[
-              { icon: "🏢", name: "Facility Management" },
-              { icon: "⚡", name: "Elektrotechnik" },
-              { icon: "�", name: "Dach & Ausbau" },
-              { icon: "🧹", name: "Gebäudereinigung" },
-              { icon: "�", name: "Facility Management" },
-              { icon: "🌳", name: "GaLaBau" },
-              { icon: "🛡️", name: "Sicherheitsdienste" },
-              { icon: "🏭", name: "Industrie-Dienstleister" },
-            ].map((b) => (
+            {branchenMobile.map((b) => (
               <div key={b.name} className="bg-slate-50 rounded-lg p-3 text-center border border-slate-100">
                 <span className="text-xl block mb-1">{b.icon}</span>
                 <p className="text-[11px] font-bold text-slate-700">{b.name}</p>
@@ -261,16 +274,7 @@ export default function IOSClient() {
 
           {/* ── Desktop Branchen (ab lg): 4-Spalten Grid ── */}
           <div className="hidden lg:grid grid-cols-4 gap-4 mb-16">
-            {[
-              { icon: "🏢", name: "Facility Management" },
-              { icon: "⚡", name: "Elektrotechnik & Haustechnik" },
-              { icon: "�", name: "Dachdecker, Maler & Ausbau" },
-              { icon: "�️", name: "Bauunternehmen" },
-              { icon: "🧹", name: "Gebäudereinigung" },
-              { icon: "🏢", name: "Facility Management" },
-              { icon: "�", name: "GaLaBau & Winterdienst" },
-              { icon: "🛡️", name: "Sicherheits- & Industrie-Dienstleister" },
-            ].map((b) => (
+            {branchenDesktop.map((b) => (
               <div
                 key={b.name}
                 className="bg-slate-50 rounded-2xl p-5 text-center hover:bg-blue-50 hover:border-blue-200 border border-slate-100 transition-colors cursor-default"
