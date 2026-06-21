@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Self-contained build for Docker (.next/standalone has its own minimal server).
+  output: 'standalone',
   images: {
     formats: ['image/webp'],
     qualities: [80],

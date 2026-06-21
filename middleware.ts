@@ -16,7 +16,13 @@ import { NextResponse, type NextRequest } from "next/server";
  * ========================================================================== */
 
 const SUPPORTED_LOCALES = ["de", "en", "fr"] as const;
-const DEFAULT_LOCALE = "de";
+
+// Which language is served on the bare URL ("/") for THIS deployment.
+// Set per Docker image at build time (Dockerfile.de / .en / .fr). Falls back
+// to "de" for local dev. Must be baked in at build time because Next.js inlines
+// env vars into the middleware bundle.
+const ENV_LOCALE = process.env.DEFAULT_LOCALE as (typeof SUPPORTED_LOCALES)[number] | undefined;
+const DEFAULT_LOCALE = ENV_LOCALE && SUPPORTED_LOCALES.includes(ENV_LOCALE) ? ENV_LOCALE : "de";
 
 // Paths that must NEVER be rewritten through [locale] — root-level resources.
 const PASS_THROUGH = [
