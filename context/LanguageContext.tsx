@@ -11,6 +11,19 @@ export type Language = "de" | "en" | "fr";
 const SUPPORTED: Language[] = ["de", "en", "fr"];
 const DEFAULT_LOCALE: Language = "de";
 
+/**
+ * Production home for each language.
+ *   de + en → taskeyapp.com  (de at root, en under /en)
+ *   fr      → taskeyapp.fr    (fr at root)
+ * Used by the language switcher to jump to the right domain. Only kicks in on
+ * the real taskeyapp hosts — locally/preview everything stays on one origin.
+ */
+const LOCALE_SITES: Record<Language, { origin: string; prefix: string }> = {
+  de: { origin: "https://taskeyapp.com", prefix: "" },
+  en: { origin: "https://taskeyapp.com", prefix: "/en" },
+  fr: { origin: "https://taskeyapp.fr", prefix: "" },
+};
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -98,8 +111,30 @@ export function LanguageProvider({
     (lang: Language) => {
       if (!SUPPORTED.includes(lang) || lang === language) return;
       const bare = stripLocalePrefix(pathname || "/");
-      const next = buildLocalePath(bare, lang);
-      router.push(next);
+
+      // On the live taskeyapp domains each language family has its own home:
+      // de+en on .com, fr on .fr. Crossing that boundary needs a real
+      // cross-domain navigation; staying on the same domain keeps SPA routing.
+      const host = typeof window !== "undefined" ? window.location.hostname : "";
+      const onProdDomain =
+        host.endsWith("taskeyapp.com") || host.endsWith("taskeyapp.fr");
+
+      if (onProdDomain) {
+        const target = LOCALE_SITES[lang];
+        const targetPath = `${target.prefix}${bare === "/" ? "" : bare}` || "/";
+        const onFrDomain = host.endsWith("taskeyapp.fr");
+        const crossDomain = (lang === "fr") !== onFrDomain;
+
+        if (crossDomain) {
+          window.location.assign(`${target.origin}${targetPath}`);
+        } else {
+          router.push(targetPath);
+        }
+        return;
+      }
+
+      // Local dev / preview: single origin → keep the /en /fr prefix scheme.
+      router.push(buildLocalePath(bare, lang));
     },
     [language, pathname, router]
   );
