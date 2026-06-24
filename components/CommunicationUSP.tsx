@@ -68,7 +68,7 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     {
       title: t("usp.card2.title"),
       subtitle: t("usp.card2.subtitle"),
-      image: "/sections/buero-einsatzort-kommunikation.png",
+      image: "/sections/transparenz-kunde.png",
       alt: t("usp.card2.alt"),
     },
     {
