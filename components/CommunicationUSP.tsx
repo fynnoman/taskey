@@ -68,7 +68,7 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     {
       title: t("usp.card2.title"),
       subtitle: t("usp.card2.subtitle"),
-      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900",
+      image: "/sections/buero-einsatzort-kommunikation.png",
       alt: t("usp.card2.alt"),
     },
     {
@@ -121,19 +121,6 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
             >
               {t("usp.full.cta.features")}
             </Link>
-          </div>
-        </div>
-
-        {/* Hero-Visual: Büro ↔ Einsatzort */}
-        <div className="relative max-w-2xl mx-auto mb-12 md:mb-16">
-          <div className="relative aspect-square rounded-3xl overflow-hidden border border-slate-200/70 bg-white shadow-[0_8px_30px_-12px_rgba(15,23,42,0.15)]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/sections/buero-einsatzort-kommunikation.png"
-              alt={t("usp.full.subtitle")}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
           </div>
         </div>
 

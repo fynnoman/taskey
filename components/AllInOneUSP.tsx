@@ -290,23 +290,11 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
             </div>
           </div>
 
-          {/* Rechte Spalte: große rotierende Karte mit Foto-Hintergrund */}
+          {/* Rechte Spalte: Karte mit Bild oben + dunklem Text-Band unten */}
           <div className="relative">
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] overflow-hidden bg-slate-900 shadow-2xl shadow-slate-900/15 border border-slate-200/60">
-              {/* Foto-Background */}
-              <div key={`img-${active}`} className="absolute inset-0" style={{ animation: "allinone-fade 0.7s ease-out" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={current.image}
-                  alt={current.alt}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-slate-950/30" />
-              </div>
-
+            <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-[2rem] overflow-hidden bg-white shadow-2xl shadow-slate-900/15 border border-slate-200/60 flex flex-col">
               {/* Progress-Bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-white/15 overflow-hidden z-10">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-slate-100 overflow-hidden z-20">
                 <div
                   key={active}
                   className="h-full bg-gradient-to-r from-emerald-400 to-cyan-400 origin-left"
@@ -314,12 +302,29 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
                 />
               </div>
 
-              {/* Text-Overlay */}
-              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-end h-full text-white">
-                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-emerald-200 bg-emerald-500/15 border border-emerald-400/40 backdrop-blur-md px-3 py-1 rounded-full mb-5">
+              {/* Bild-Bereich – formatfreundlich, kein Crop */}
+              <div className="relative flex-1 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50/70 flex items-center justify-center p-6 md:p-8 overflow-hidden">
+                <div
+                  key={`img-${active}`}
+                  className="relative w-full h-full flex items-center justify-center"
+                  style={{ animation: "allinone-fade 0.7s ease-out" }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={current.image}
+                    alt={current.alt}
+                    className="max-w-full max-h-full object-contain rounded-xl border border-slate-200/70 bg-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.45)]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Text-Band unten */}
+              <div className="relative bg-slate-950 px-7 md:px-9 py-6 md:py-7 text-white">
+                <span className="inline-flex self-start text-[10px] font-black tracking-[0.25em] uppercase text-emerald-200 bg-emerald-500/15 border border-emerald-400/40 backdrop-blur-md px-3 py-1 rounded-full mb-3">
                   {current.tag}
                 </span>
-                <h3 className="text-3xl md:text-4xl font-black text-white leading-tight mb-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+                <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
                   {current.title}
                 </h3>
                 <p className="text-sm md:text-base text-white/85 max-w-md">
