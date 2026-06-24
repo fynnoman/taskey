@@ -12,69 +12,71 @@ type Testimonial = {
   location: string;
 };
 
+const ANON_COMPANY = "Reinigungsbetrieb (anonymisiert)";
+
 const testimonials: Testimonial[] = [
   {
     quote:
       "Seit Taskey wissen wir auf die Minute genau, wer wo geputzt hat – und unsere Auftraggeber bekommen den Nachweis automatisch.",
-    name: "Markus Weber",
+    name: "M. W.",
     role: "Geschäftsführer",
-    company: "Weber Gebäudereinigung GmbH",
+    company: ANON_COMPANY,
     location: "Stuttgart",
   },
   {
     quote:
       "Die NFC-Tags an den Objekten haben uns die Diskussionen über Stundenzettel komplett erspart. Jede Minute revisionssicher dokumentiert.",
-    name: "Sandra Klein",
+    name: "S. K.",
     role: "Objektleiterin",
-    company: "ProClean Service",
+    company: ANON_COMPANY,
     location: "München",
   },
   {
     quote:
       "Vorher 4 Tools, jetzt eines. Allein bei den Lizenzen sparen wir über 600 € im Monat – und das Team kommt endlich klar.",
-    name: "Tobias Reuter",
+    name: "T. R.",
     role: "Inhaber",
-    company: "Reuter Reinigungsservice",
+    company: ANON_COMPANY,
     location: "Köln",
   },
   {
     quote:
       "Unsere Reinigungskräfte erfassen Mängel direkt mit Foto in der App. Das Büro reagiert sofort statt am Monatsende.",
-    name: "Anja Hoffmann",
+    name: "A. H.",
     role: "Betriebsleitung",
-    company: "Hoffmann Hygieneservice",
+    company: ANON_COMPANY,
     location: "Hamburg",
   },
   {
     quote:
       "Die Auftraggeber-Freigabe per Link ist ein echter Gamechanger. Hotels und Verwalter sehen den Status live – ohne Mail-Pingpong.",
-    name: "Daniel Brandt",
+    name: "D. B.",
     role: "Geschäftsführer",
-    company: "Brandt Cleaning Group",
+    company: ANON_COMPANY,
     location: "Frankfurt",
   },
   {
     quote:
       "Wir haben uns jahrelang vor der Digitalisierung gedrückt. Mit Taskey waren wir nach 2 Wochen produktiv – und das Team liebt es.",
-    name: "Petra Lindner",
+    name: "P. L.",
     role: "Inhaberin",
-    company: "Lindner Reinigungsmanufaktur",
+    company: ANON_COMPANY,
     location: "Wien",
   },
   {
     quote:
       "Live-Margen pro Objekt – das hatten wir vorher nirgendwo. Jetzt sehen wir sofort, welcher Auftrag rechnet und welcher nicht.",
-    name: "Murat Yılmaz",
+    name: "M. Y.",
     role: "Operations Manager",
-    company: "Clean & Smart Services",
+    company: ANON_COMPANY,
     location: "Berlin",
   },
   {
     quote:
       "Schichtplanung für 30 Reinigungskräfte ging vorher per Excel und WhatsApp. Heute klicke ich 10 Minuten und der Plan steht.",
-    name: "Lisa Maier",
+    name: "L. M.",
     role: "Disposition",
-    company: "Alpenglanz Reinigung",
+    company: ANON_COMPANY,
     location: "Innsbruck",
   },
 ];

@@ -298,7 +298,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           heading: c.sec1Heading,
           intro: c.sec1Intro,
           subsections: [
-            { heading: c.sec1Sub1Heading, body: c.sec1Sub1Body },
+            {
+              heading: c.sec1Sub1Heading,
+              body: c.sec1Sub1Body,
+              image: "/sections/nfc-scan-objekt.png",
+              imageAlt: c.sec1Sub1Heading,
+            },
             { heading: c.sec1Sub2Heading, body: c.sec1Sub2Body },
             { heading: c.sec1Sub3Heading, body: c.sec1Sub3Body },
             { heading: c.sec1Sub4Heading, body: c.sec1Sub4Body },

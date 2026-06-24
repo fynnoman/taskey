@@ -40,45 +40,39 @@ export default function IOSAppSection() {
           </p>
         </div>
 
-        {/* Phone als Held — flankiert von zwei Mensch-Bildern */}
+        {/* Phone als Held — flankiert von zwei kleineren Phone-Mockups */}
         <div className="relative flex items-center justify-center mb-12 md:mb-16">
-          {/* Mensch-Bild links (Brand-Foto, leicht ranggezoomt) */}
-          <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
-            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
+          {/* Phone links (kleiner) */}
+          <div className="hidden lg:block absolute left-4 xl:left-8 top-1/2 -translate-y-1/2 w-[180px] xl:w-[210px] z-0">
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/15 border-[5px] border-slate-900 bg-black aspect-[9/19]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://i.ibb.co/rRs4XL7w/IMG-4458.jpg"
-                alt="Reinigungskraft öffnet die Taskey-App vor dem Einsatz"
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover scale-[1.55] object-center"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3 text-left">
-                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">{t("iosSection.field.tag")}</p>
-                <p className="text-sm font-bold text-slate-900 leading-tight">{t("iosSection.field.quote")}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Mensch-Bild rechts (Büro-Szene) */}
-          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[260px] xl:w-[300px] z-0">
-            <div className="relative rounded-[2rem] overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/10 aspect-[4/5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=900"
-                alt="Team im Büro arbeitet mit Taskey"
+                src="/sections/phone-screen-1.jpg"
+                alt="Taskey App – Übersicht des Reinigungs-Teams"
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/30 to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3 text-left">
-                <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700">{t("iosSection.office.tag")}</p>
-                <p className="text-sm font-bold text-slate-900 leading-tight">{t("iosSection.office.quote")}</p>
-              </div>
+              {/* Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-b-xl z-10" />
             </div>
           </div>
 
-          {/* Phone */}
+          {/* Phone rechts (kleiner) */}
+          <div className="hidden lg:block absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 w-[180px] xl:w-[210px] z-0">
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/15 border-[5px] border-slate-900 bg-black aspect-[9/19]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sections/phone-screen-3.jpg"
+                alt="Taskey App – Aufgaben und Nachweise"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-b-xl z-10" />
+            </div>
+          </div>
+
+          {/* Phone in der Mitte (größer) */}
           <div className="relative w-[240px] sm:w-[280px] md:w-[320px] z-10">
             {/* Glow ring */}
             <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-b from-cyan-400/20 to-blue-500/10 blur-2xl" />
@@ -87,18 +81,13 @@ export default function IOSAppSection() {
 
             <RevealBlur offset={140} blur={26} duration={1400}>
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/25 border-[6px] border-slate-900 bg-black aspect-[9/19]">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/images/phone-poster.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sections/phone-screen-2.jpg"
+                alt="Taskey App in Aktion"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
-                aria-label="Taskey App in Aktion"
-              >
-                <source src="/videos/phone-cleaning.mp4" type="video/mp4" />
-              </video>
+              />
               {/* Notch */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-b-2xl z-10" />
             </div>

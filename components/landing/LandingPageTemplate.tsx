@@ -62,7 +62,7 @@ export type LandingSection = {
   /** Optionale Bullet-Liste */
   bullets?: string[];
   /** Optionale H3-Subsections */
-  subsections?: { heading: string; body: string }[];
+  subsections?: { heading: string; body: string; image?: string; imageAlt?: string }[];
 };
 
 export type LandingPageProps = {
@@ -292,6 +292,17 @@ export default function LandingPageTemplate({
                     key={s.heading}
                     className="rounded-2xl bg-blue-50/70 border border-slate-200 p-6"
                   >
+                    {s.image && (
+                      <div className="relative aspect-[4/3] mb-5 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={s.image}
+                          alt={s.imageAlt ?? s.heading}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-contain"
+                        />
+                      </div>
+                    )}
                     <h3 className="text-lg md:text-xl font-bold mb-3 text-slate-900">{s.heading}</h3>
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed">{s.body}</p>
                   </div>

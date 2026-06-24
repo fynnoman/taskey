@@ -84,7 +84,7 @@ const CONTENT = {
           "Sicherheits- und Einsatznachweise unvollständig",
         ],
         cta: "Für Glasreinigung",
-        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/glasreinigung.jpg",
         alt: "Glasreiniger an einer Fensterfront",
       },
       {
@@ -103,7 +103,7 @@ const CONTENT = {
           "Revisionssichere Nachweise für Audits",
         ],
         cta: "Für Industriereinigung",
-        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/industriereinigung.png",
         alt: "Industriereinigung in einer Produktionshalle",
       },
       {
@@ -123,7 +123,7 @@ const CONTENT = {
           "Audit-Vorbereitung kostet Tage",
         ],
         cta: "Für Klinikreinigung",
-        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/klinikreinigung.png",
         alt: "Hygiene- und Klinikreinigung",
       },
       {
@@ -142,7 +142,7 @@ const CONTENT = {
           "Reklamationen ohne Foto-Nachweis",
         ],
         cta: "Für Housekeeping",
-        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/hotel-housekeeping.png",
         alt: "Housekeeping im Hotelzimmer",
       },
       {
@@ -161,7 +161,7 @@ const CONTENT = {
           "Doku für Versicherungen fehlt",
         ],
         cta: "Für Sonderreinigung",
-        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/baureinigung.jpg",
         alt: "Sonderreinigung auf einer Baustelle",
       },
     ] as Audience[],
@@ -221,7 +221,7 @@ const CONTENT = {
           "Incomplete safety and assignment records",
         ],
         cta: "For glass cleaning",
-        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/glasreinigung.jpg",
         alt: "Window cleaner on a glass facade",
       },
       {
@@ -240,7 +240,7 @@ const CONTENT = {
           "Audit-proof records for inspections",
         ],
         cta: "For industrial cleaning",
-        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/industriereinigung.png",
         alt: "Industrial cleaning in a production hall",
       },
       {
@@ -260,7 +260,7 @@ const CONTENT = {
           "Audit preparation takes days",
         ],
         cta: "For clinical cleaning",
-        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/klinikreinigung.png",
         alt: "Hygiene and clinical cleaning",
       },
       {
@@ -279,7 +279,7 @@ const CONTENT = {
           "Complaints without photo evidence",
         ],
         cta: "For housekeeping",
-        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/hotel-housekeeping.png",
         alt: "Housekeeping in a hotel room",
       },
       {
@@ -298,7 +298,7 @@ const CONTENT = {
           "Documentation for insurers missing",
         ],
         cta: "For special cleaning",
-        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/baureinigung.jpg",
         alt: "Special cleaning on a construction site",
       },
     ] as Audience[],
@@ -358,7 +358,7 @@ const CONTENT = {
           "Justificatifs de sécurité et d'intervention incomplets",
         ],
         cta: "Pour le nettoyage de vitres",
-        image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/glasreinigung.jpg",
         alt: "Laveur de vitres devant une façade vitrée",
       },
       {
@@ -377,7 +377,7 @@ const CONTENT = {
           "Justificatifs traçables pour les audits",
         ],
         cta: "Pour le nettoyage industriel",
-        image: "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/industriereinigung.png",
         alt: "Nettoyage industriel dans un hall de production",
       },
       {
@@ -397,7 +397,7 @@ const CONTENT = {
           "La préparation à l'audit prend des jours",
         ],
         cta: "Pour le nettoyage clinique",
-        image: "https://images.pexels.com/photos/5025639/pexels-photo-5025639.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/klinikreinigung.png",
         alt: "Nettoyage clinique et d'hygiène",
       },
       {
@@ -416,7 +416,7 @@ const CONTENT = {
           "Réclamations sans preuve photo",
         ],
         cta: "Pour le housekeeping",
-        image: "https://images.pexels.com/photos/7641842/pexels-photo-7641842.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/hotel-housekeeping.png",
         alt: "Housekeeping dans une chambre d'hôtel",
       },
       {
@@ -435,7 +435,7 @@ const CONTENT = {
           "Documentation pour les assurances manquante",
         ],
         cta: "Pour le nettoyage spécial",
-        image: "https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "/sections/baureinigung.jpg",
         alt: "Nettoyage spécial sur un chantier",
       },
     ] as Audience[],

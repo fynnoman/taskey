@@ -11,7 +11,6 @@ import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 const FeaturePreview = dynamic(() => import("@/components/home/FeaturePreview"));
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
-const TaskeyShareDemo = dynamic(() => import("@/components/home/TaskeyShareDemo"));
 const TargetAudiences = dynamic(() => import("@/components/TargetAudiences"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));
 const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
@@ -238,9 +237,6 @@ export default async function Home({
 
         {/* 8. Auftraggeber-Portal: differenzierendes USP */}
         <TaskeyShare />
-
-        {/* 8.5 Live-Demo des Auftraggeber-Portals */}
-        <TaskeyShareDemo />
 
         {/* 9. Skalierbarkeit: vom 1-Mann bis Enterprise */}
         <BusinessSize />

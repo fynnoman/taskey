@@ -74,13 +74,13 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     {
       title: t("usp.card3.title"),
       subtitle: t("usp.card3.subtitle"),
-      image: "https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&w=900",
+      image: "/sections/nachweisbarkeit.png",
       alt: t("usp.card3.alt"),
     },
     {
       title: t("usp.card4.title"),
       subtitle: t("usp.card4.subtitle"),
-      image: "https://images.pexels.com/photos/4239146/pexels-photo-4239146.jpeg?auto=compress&cs=tinysrgb&w=900",
+      image: "/sections/aussendienst-einfach.png",
       alt: t("usp.card4.alt"),
     },
   ];
@@ -121,6 +121,19 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
             >
               {t("usp.full.cta.features")}
             </Link>
+          </div>
+        </div>
+
+        {/* Hero-Visual: Büro ↔ Einsatzort */}
+        <div className="relative max-w-2xl mx-auto mb-12 md:mb-16">
+          <div className="relative aspect-square rounded-3xl overflow-hidden border border-slate-200/70 bg-white shadow-[0_8px_30px_-12px_rgba(15,23,42,0.15)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/sections/buero-einsatzort-kommunikation.png"
+              alt={t("usp.full.subtitle")}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </div>
         </div>
 

@@ -5,15 +5,15 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const CONTENT = {
   de: {
-    KICKER: "Stimmen aus der Reinigungsbranche",
-    H2_LINE1: "Reinigungsfirmen.",
-    H2_LINE2: "Die uns vertrauen.",
-    INTRO: "Vom 9-Personen-Betrieb bis zur Reinigungs-Gruppe mit 200+ Mitarbeitenden – Taskey läuft im Alltag. Hier sprechen die, die jeden Tag damit arbeiten.",
-    STAT_RATING_LABEL: "Ø Bewertung",
-    STAT_COMPANIES_LABEL: "Reinigungsfirmen",
+    KICKER: "Frisch am Markt. Mit voller Energie.",
+    H2_LINE1: "Seit Februar 2026 live.",
+    H2_LINE2: "Mit klarer Mission.",
+    INTRO: "Wir sind seit Februar 2026 am Markt. Unser Anspruch: eine Software bauen, die Reinigungsbetriebe im Alltag wirklich weiterbringt – und sie professionell, ehrlich und mit voller Energie an den Betrieb bringen. Hier ein paar erste Stimmen aus Pilotgesprächen mit Reinigungsfirmen.",
+    STAT_RATING_LABEL: "Markteintritt",
+    STAT_COMPANIES_LABEL: "Entwickelt in Deutschland",
     STAT_REGION_LABEL: "DE · AT · CH",
-    STAT_NPS_LABEL: "Weiterempfehlung",
-    CTA_TITLE: "Werden Sie der nächste Erfolgsfall.",
+    STAT_NPS_LABEL: "DSGVO-konform",
+    CTA_TITLE: "Starten Sie Ihre Erfolgsgeschichte mit Taskey.",
     CTA_BODY: "Testen Sie Taskey 30 Tage gratis. Kein Setup-Aufwand, keine Vertragsbindung, voller Funktionsumfang.",
     CTA_SECONDARY: "Alle Funktionen",
     T1_QUOTE: "Seit Taskey wissen wir auf die Minute genau, wer wo geputzt hat – und unsere Auftraggeber bekommen den Nachweis automatisch.",
@@ -58,15 +58,15 @@ const CONTENT = {
     T8_TAG: "Unterhaltsreinigung",
   },
   en: {
-    KICKER: "Voices from the cleaning industry",
-    H2_LINE1: "Cleaning companies.",
-    H2_LINE2: "Who trust us.",
-    INTRO: "From 9-person operations to cleaning groups with 200+ staff – Taskey runs in daily operations. Here speak those who work with it every day.",
-    STAT_RATING_LABEL: "Avg. rating",
-    STAT_COMPANIES_LABEL: "Cleaning companies",
+    KICKER: "New on the market. Full energy.",
+    H2_LINE1: "Live since February 2026.",
+    H2_LINE2: "With a clear mission.",
+    INTRO: "We launched in February 2026. Our ambition: build software that genuinely moves cleaning businesses forward in their daily operations – and bring it to market professionally, honestly and with full energy. Here are some early voices from pilot conversations with cleaning companies.",
+    STAT_RATING_LABEL: "Market launch",
+    STAT_COMPANIES_LABEL: "Built in Germany",
     STAT_REGION_LABEL: "DE · AT · CH",
-    STAT_NPS_LABEL: "Would recommend",
-    CTA_TITLE: "Become the next success story.",
+    STAT_NPS_LABEL: "GDPR-compliant",
+    CTA_TITLE: "Start your success story with Taskey.",
     CTA_BODY: "Try Taskey free for 30 days. No setup effort, no contract lock-in, full feature set.",
     CTA_SECONDARY: "All features",
     T1_QUOTE: "Thanks to Taskey, we know to the minute who cleaned where – and our clients receive the proof automatically.",
@@ -111,15 +111,15 @@ const CONTENT = {
     T8_TAG: "Maintenance cleaning",
   },
   fr: {
-    KICKER: "Témoignages du secteur du nettoyage",
-    H2_LINE1: "Entreprises de nettoyage.",
-    H2_LINE2: "Qui nous font confiance.",
-    INTRO: "De la structure de 9 personnes au groupe de nettoyage de plus de 200 collaborateurs – Taskey tourne au quotidien. Ici parlent celles et ceux qui l'utilisent chaque jour.",
-    STAT_RATING_LABEL: "Note moyenne",
-    STAT_COMPANIES_LABEL: "Entreprises de nettoyage",
+    KICKER: "Nouveau sur le marché. Pleine énergie.",
+    H2_LINE1: "Live depuis février 2026.",
+    H2_LINE2: "Avec une mission claire.",
+    INTRO: "Nous sommes sur le marché depuis février 2026. Notre ambition : bâtir un logiciel qui fait réellement avancer les entreprises de nettoyage au quotidien – et le porter sur le marché de façon professionnelle, honnête et avec une énergie totale. Voici quelques premières voix issues d'échanges pilotes avec des entreprises de nettoyage.",
+    STAT_RATING_LABEL: "Lancement",
+    STAT_COMPANIES_LABEL: "Conçu en Allemagne",
     STAT_REGION_LABEL: "DE · AT · CH",
-    STAT_NPS_LABEL: "Recommandation",
-    CTA_TITLE: "Devenez la prochaine réussite.",
+    STAT_NPS_LABEL: "Conforme RGPD",
+    CTA_TITLE: "Lancez votre histoire de succès avec Taskey.",
     CTA_BODY: "Essayez Taskey gratuitement pendant 30 jours. Sans frais de mise en place, sans engagement, fonctionnalités complètes.",
     CTA_SECONDARY: "Toutes les fonctionnalités",
     T1_QUOTE: "Depuis Taskey, nous savons à la minute près qui a nettoyé où – et nos clients reçoivent la preuve automatiquement.",
@@ -174,12 +174,19 @@ export default function Branchen() {
   const { t, language } = useLanguage();
   const c = CONTENT[language];
 
+  const ANON_COMPANY =
+    language === "en"
+      ? "Cleaning company (anonymised)"
+      : language === "fr"
+      ? "Entreprise de nettoyage (anonymisée)"
+      : "Reinigungsbetrieb (anonymisiert)";
+
   const testimonials = [
     {
       quote: c.T1_QUOTE,
-      name: "Markus Weber",
+      name: "M. W.",
       role: c.T1_ROLE,
-      company: "Weber Gebäudereinigung GmbH",
+      company: ANON_COMPANY,
       location: c.T1_LOCATION,
       employees: c.T1_EMPLOYEES,
       rating: 5,
@@ -187,9 +194,9 @@ export default function Branchen() {
     },
     {
       quote: c.T2_QUOTE,
-      name: "Sandra Klein",
+      name: "S. K.",
       role: c.T2_ROLE,
-      company: "ProClean Service",
+      company: ANON_COMPANY,
       location: c.T2_LOCATION,
       employees: c.T2_EMPLOYEES,
       rating: 5,
@@ -197,9 +204,9 @@ export default function Branchen() {
     },
     {
       quote: c.T3_QUOTE,
-      name: "Tobias Reuter",
+      name: "T. R.",
       role: c.T3_ROLE,
-      company: "Reuter Reinigungsservice",
+      company: ANON_COMPANY,
       location: c.T3_LOCATION,
       employees: c.T3_EMPLOYEES,
       rating: 5,
@@ -207,9 +214,9 @@ export default function Branchen() {
     },
     {
       quote: c.T4_QUOTE,
-      name: "Anja Hoffmann",
+      name: "A. H.",
       role: c.T4_ROLE,
-      company: "Hoffmann Hygieneservice",
+      company: ANON_COMPANY,
       location: c.T4_LOCATION,
       employees: c.T4_EMPLOYEES,
       rating: 5,
@@ -217,9 +224,9 @@ export default function Branchen() {
     },
     {
       quote: c.T5_QUOTE,
-      name: "Daniel Brandt",
+      name: "D. B.",
       role: c.T5_ROLE,
-      company: "Brandt Cleaning Group",
+      company: ANON_COMPANY,
       location: c.T5_LOCATION,
       employees: c.T5_EMPLOYEES,
       rating: 5,
@@ -227,9 +234,9 @@ export default function Branchen() {
     },
     {
       quote: c.T6_QUOTE,
-      name: "Petra Lindner",
+      name: "P. L.",
       role: c.T6_ROLE,
-      company: "Lindner Reinigungsmanufaktur",
+      company: ANON_COMPANY,
       location: c.T6_LOCATION,
       employees: c.T6_EMPLOYEES,
       rating: 5,
@@ -237,9 +244,9 @@ export default function Branchen() {
     },
     {
       quote: c.T7_QUOTE,
-      name: "Murat Yılmaz",
+      name: "M. Y.",
       role: c.T7_ROLE,
-      company: "Clean & Smart Services",
+      company: ANON_COMPANY,
       location: c.T7_LOCATION,
       employees: c.T7_EMPLOYEES,
       rating: 5,
@@ -247,9 +254,9 @@ export default function Branchen() {
     },
     {
       quote: c.T8_QUOTE,
-      name: "Lisa Maier",
+      name: "L. M.",
       role: c.T8_ROLE,
-      company: "Alpenglanz Reinigung",
+      company: ANON_COMPANY,
       location: c.T8_LOCATION,
       employees: c.T8_EMPLOYEES,
       rating: 5,
@@ -350,11 +357,11 @@ export default function Branchen() {
         {/* Stats Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 rounded-2xl border border-slate-200/60 bg-blue-50/60 p-6 md:p-8">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">4,9</div>
+            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">02/2026</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_RATING_LABEL}</div>
           </div>
           <div className="text-center border-l border-slate-200">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">250+</div>
+            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">DE</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_COMPANIES_LABEL}</div>
           </div>
           <div className="text-center border-l border-slate-200">
@@ -362,7 +369,7 @@ export default function Branchen() {
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_REGION_LABEL}</div>
           </div>
           <div className="text-center border-l border-slate-200">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">98%</div>
+            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">100%</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_NPS_LABEL}</div>
           </div>
         </div>
