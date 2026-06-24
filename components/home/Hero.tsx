@@ -122,6 +122,7 @@ export default function Hero() {
             tag={t("homeHero.story1.tag")}
             title={t("homeHero.story1.title")}
             sub={t("homeHero.story1.sub")}
+            fit="cover"
           />
           <StoryCard
             image={ASSETS.storyTwo}
@@ -146,23 +147,39 @@ function StoryCard({
   tag,
   title,
   sub,
+  fit = "contain",
 }: {
   image: string;
   tag: string;
   title: string;
   sub: string;
+  fit?: "contain" | "cover";
 }) {
+  const isCover = fit === "cover";
   return (
     <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-2xl shadow-black/30 transition-transform duration-500 hover:-translate-y-1">
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50/70 flex items-center justify-center p-4">
+      <div
+        className={
+          isCover
+            ? "relative aspect-[4/3] overflow-hidden bg-slate-900"
+            : "relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50/70 flex items-center justify-center p-4"
+        }
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image}
           alt={title}
           loading="lazy"
-          className="relative max-w-full max-h-full object-contain rounded-lg border border-slate-200/70 bg-white shadow-[0_12px_30px_-15px_rgba(15,23,42,0.45)] transition-transform duration-700 group-hover:scale-[1.03]"
+          className={
+            isCover
+              ? "absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              : "relative max-w-full max-h-full object-contain rounded-lg border border-slate-200/70 bg-white shadow-[0_12px_30px_-15px_rgba(15,23,42,0.45)] transition-transform duration-700 group-hover:scale-[1.03]"
+          }
         />
+        {isCover && (
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent" />
+        )}
         <span className="absolute top-3 left-3 z-10 inline-flex items-center text-[10px] font-black tracking-[0.25em] uppercase text-white/95 bg-slate-900/80 border border-slate-700/60 backdrop-blur-md rounded-full px-3 py-1">
           {tag}
         </span>
