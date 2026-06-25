@@ -26,6 +26,10 @@ const CONTENT = {
     addrStreet: "In der Acht 44",
     addrCity: "66333 Völklingen",
     addrCountry: "Deutschland",
+    sec1bTitle: "Vertretungsberechtigte Gesellschafter",
+    partner1: "Fynn-Luca Schulz",
+    partner2: "Julian Stosse",
+    partnersAddressNote: "Anschrift wie oben.",
     sec2Title: "Kontakt",
     contactPhoneLabel: "Telefon: +49 151 68488999",
     contactEmailLabel: "E-Mail: fynn@taskeyapp.com",
@@ -50,6 +54,10 @@ const CONTENT = {
     addrStreet: "In der Acht 44",
     addrCity: "66333 Völklingen",
     addrCountry: "Germany",
+    sec1bTitle: "Authorised representatives",
+    partner1: "Fynn-Luca Schulz",
+    partner2: "Julian Stosse",
+    partnersAddressNote: "Address as above.",
     sec2Title: "Contact",
     contactPhoneLabel: "Phone: +49 151 68488999",
     contactEmailLabel: "Email: fynn@taskeyapp.com",
@@ -74,6 +82,10 @@ const CONTENT = {
     addrStreet: "In der Acht 44",
     addrCity: "66333 Völklingen",
     addrCountry: "Allemagne",
+    sec1bTitle: "Représentants autorisés",
+    partner1: "Fynn-Luca Schulz",
+    partner2: "Julian Stosse",
+    partnersAddressNote: "Adresse identique à celle ci-dessus.",
     sec2Title: "Contact",
     contactPhoneLabel: "Téléphone : +49 151 68488999",
     contactEmailLabel: "E-mail : fynn@taskeyapp.com",
@@ -129,6 +141,13 @@ export default async function ImpressumPage({
             {c.addrStreet}<br />
             {c.addrCity}<br />
             {c.addrCountry}
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mb-4 mt-8">{c.sec1bTitle}</h2>
+          <p>
+            {c.partner1}<br />
+            {c.partner2}<br />
+            <span className="text-sm text-slate-500">{c.partnersAddressNote}</span>
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mb-4 mt-8">{c.sec2Title}</h2>
