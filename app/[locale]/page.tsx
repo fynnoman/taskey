@@ -8,6 +8,7 @@ import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 // Above-the-fold / initial: Hero + CommunicationUSP + AllInOneUSP statisch.
 // Alles darunter wird dynamisch nachgeladen für schnellere First Paint / LCP.
+const IntroVideo = dynamic(() => import("@/components/home/IntroVideo"));
 const FeaturePreview = dynamic(() => import("@/components/home/FeaturePreview"));
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
@@ -216,6 +217,9 @@ export default async function Home({
       <main>
         {/* 1. Hook: Hero (Wert-Versprechen + CTA) */}
         <Hero />
+
+        {/* 1b. Einstiegsvideo: kurzer Software-Überblick */}
+        <IntroVideo />
 
         {/* 2. Kern-USP #1: Kommunikation Feld ↔ Büro (zentraler Schmerz) */}
         <CommunicationUSP variant="full" />
