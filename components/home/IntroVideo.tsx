@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
 
 const POSTER = "/videos/taskey-einstieg-cover.jpg";
@@ -13,6 +14,7 @@ const COPY = {
       "Ein kurzer Überblick — wie Taskey deinen Reinigungsbetrieb steuert, von der Einsatzplanung bis zur Live-Marge.",
     playLabel: "Einstiegsvideo abspielen",
     posterAlt: "Taskey Einstiegsvideo Vorschau",
+    moreVideosLabel: "Weitere Erklärungsvideos ansehen",
   },
   en: {
     title: "Understand Taskey in 5 minutes",
@@ -20,6 +22,7 @@ const COPY = {
       "A quick overview — how Taskey runs your cleaning business, from scheduling to live margins.",
     playLabel: "Play intro video",
     posterAlt: "Taskey intro video preview",
+    moreVideosLabel: "Watch more explainer videos",
   },
   fr: {
     title: "Comprendre Taskey en 5 minutes",
@@ -27,6 +30,7 @@ const COPY = {
       "Un aperçu rapide — comment Taskey pilote votre activité de nettoyage, de la planification aux marges en direct.",
     playLabel: "Lire la vidéo d'introduction",
     posterAlt: "Aperçu de la vidéo d'introduction Taskey",
+    moreVideosLabel: "Voir d'autres vidéos explicatives",
   },
 } as const;
 
@@ -113,6 +117,16 @@ export default function IntroVideo() {
               className="absolute inset-0 w-full h-full object-cover bg-black"
             />
           )}
+        </div>
+
+        <div className="mt-6 text-center">
+          <Link
+            href="/videos"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-white/90 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 rounded"
+          >
+            <span>{copy.moreVideosLabel}</span>
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>
