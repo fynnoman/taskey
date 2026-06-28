@@ -39,20 +39,34 @@ type VideoEntry = {
   title: string;
   description: string;
   src: string;
+  poster?: string;
+  orientation: "portrait" | "landscape";
 };
 
 const VIDEOS: VideoEntry[] = [
+  {
+    title: "Taskey in 5 Minuten verstehen",
+    description:
+      "Ein kurzer Überblick — wie Taskey deinen Reinigungsbetrieb steuert, von der Einsatzplanung bis zur Live-Marge.",
+    src: "/videos/taskey-einstieg.mp4",
+    poster: "/videos/taskey-einstieg-cover.jpg",
+    orientation: "landscape",
+  },
   {
     title: "NFC-Tags einrichten",
     description:
       "Schritt für Schritt: NFC-Tags am Objekt anbringen, in Taskey registrieren und für die Zeiterfassung scharfschalten.",
     src: "/videos/nfc-tags-einrichten.mp4",
+    poster: "/videos/nfc-tags-einrichten-cover.png",
+    orientation: "portrait",
   },
   {
     title: "Überblick zur Mobile App",
     description:
       "Allgemeine Einführung in die Taskey Mobile App – wichtigste Funktionen, Navigation und Alltagsabläufe für dein Team.",
     src: "/videos/mobile-app-ueberblick.mp4",
+    poster: "/videos/mobile-app-ueberblick-cover.png",
+    orientation: "portrait",
   },
 ];
 
@@ -82,25 +96,33 @@ export default function VideosPage() {
         </p>
 
         <div className="space-y-12 md:space-y-16">
-          {VIDEOS.map((video) => (
-            <article key={video.src}>
-              <h2 className="text-white/90 text-xl md:text-2xl font-bold tracking-tight mb-2">
-                {video.title}
-              </h2>
-              <p className="text-white/60 text-sm md:text-base mb-5 max-w-2xl">
-                {video.description}
-              </p>
-              <div className="relative mx-auto aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5">
-                <video
-                  src={video.src}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="absolute inset-0 w-full h-full object-cover bg-black"
-                />
-              </div>
-            </article>
-          ))}
+          {VIDEOS.map((video) => {
+            const isPortrait = video.orientation === "portrait";
+            return (
+              <article key={video.src}>
+                <h2 className="text-white/90 text-xl md:text-2xl font-bold tracking-tight mb-2">
+                  {video.title}
+                </h2>
+                <p className="text-white/60 text-sm md:text-base mb-5 max-w-2xl">
+                  {video.description}
+                </p>
+                <div
+                  className={`relative mx-auto w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5 ${
+                    isPortrait ? "aspect-[886/1920] max-w-sm" : "aspect-video"
+                  }`}
+                >
+                  <video
+                    src={video.src}
+                    poster={video.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-contain bg-black"
+                  />
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </main>
