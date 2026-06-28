@@ -273,7 +273,7 @@ export default function Branchen() {
       .slice(0, 2);
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-32 overflow-hidden">
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
@@ -355,21 +355,21 @@ export default function Branchen() {
         </div>
 
         {/* Stats Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 rounded-2xl border border-slate-200/60 bg-blue-50/60 p-6 md:p-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 rounded-2xl border border-slate-200/60 bg-blue-50/60 p-4 sm:p-6 md:p-8">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">02/2026</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-1">02/2026</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_RATING_LABEL}</div>
           </div>
-          <div className="text-center border-l border-slate-200">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">DE</div>
+          <div className="text-center sm:border-l sm:border-slate-200">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-1">DE</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_COMPANIES_LABEL}</div>
           </div>
-          <div className="text-center border-l border-slate-200">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">DACH</div>
+          <div className="text-center sm:border-l sm:border-slate-200">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-1">DACH</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_REGION_LABEL}</div>
           </div>
-          <div className="text-center border-l border-slate-200">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-1">100%</div>
+          <div className="text-center sm:border-l sm:border-slate-200">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-1">100%</div>
             <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{c.STAT_NPS_LABEL}</div>
           </div>
         </div>
@@ -377,11 +377,11 @@ export default function Branchen() {
         {/* CTA */}
         <div
           data-scrollline-cta
-          className="relative rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 p-8 md:p-12 overflow-hidden"
+          className="relative rounded-[2rem] bg-gradient-to-br from-white to-slate-50 border border-slate-200/60 p-6 sm:p-8 md:p-12 overflow-hidden"
         >
           <div className="absolute -top-16 -right-16 w-64 h-64 bg-cyan-50 rounded-full blur-3xl pointer-events-none" />
           <div className="relative max-w-2xl">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-[1.05] tracking-tight mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-[1.05] tracking-tight mb-4">
               {c.CTA_TITLE}
             </h3>
             <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">

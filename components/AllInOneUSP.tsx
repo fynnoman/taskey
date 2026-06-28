@@ -230,7 +230,7 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
   return (
     <section
       id="alles-in-einem"
-      className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden"
+      className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-32 relative overflow-hidden"
     >
       <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[64px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
@@ -239,7 +239,7 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullets */}
           <div>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
               {c.HEADLINE_LINE_1}
               <br />
               <span className="text-slate-500">{c.HEADLINE_LINE_2}</span>

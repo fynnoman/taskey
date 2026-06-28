@@ -90,14 +90,14 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     : "bg-gradient-to-b from-white via-blue-50 to-white text-slate-900";
 
   return (
-    <section id="echtzeit-kommunikation" className={`${bgFull} py-24 md:py-32 relative overflow-hidden`}>
+    <section id="echtzeit-kommunikation" className={`${bgFull} py-16 sm:py-20 md:py-32 relative overflow-hidden`}>
       <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header – Revolut-Style: zentral, groß, knapp */}
         <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
             {t("usp.full.title.line1")}
             <br />
             <span className="text-slate-500">{t("usp.full.title.line2")}</span>

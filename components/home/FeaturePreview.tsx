@@ -49,7 +49,7 @@ export default function FeaturePreview() {
   const parallaxRef = useParallax<HTMLDivElement>(0.15);
 
   return (
-    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-32 relative overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />

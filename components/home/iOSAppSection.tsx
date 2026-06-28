@@ -19,23 +19,23 @@ export default function IOSAppSection() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-36 overflow-hidden">
       {/* Spotlight glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-cyan-100 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header — zentriert, viel Weißraum */}
-        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 max-w-3xl mx-auto">
           <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-5">
             {t("ios.badge")}
           </p>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
             {t("iosSection.heading.line1")}
             <br />
             <span className="text-slate-500">{t("iosSection.heading.line2")}</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl mx-auto">
             {t("iosSection.lead")}
           </p>
         </div>

@@ -26,13 +26,13 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-36 overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[72px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16">
           {/* Left: Sticky Intro */}
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
@@ -79,7 +79,7 @@ export default function FAQ() {
                       onClick={() => setOpenIndex(isOpen ? null : index)}
                     >
                       <span
-                        className={`font-bold text-base md:text-lg transition-colors ${
+                        className={`font-bold text-sm sm:text-base md:text-lg transition-colors ${
                           isOpen ? 'text-blue-700' : 'text-slate-900'
                         }`}
                       >

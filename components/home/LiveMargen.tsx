@@ -103,7 +103,7 @@ export default function LiveMargen() {
   const { language } = useLanguage();
   const c = CONTENT[language];
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-36 overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-emerald-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[500px] bg-red-500/10 rounded-full blur-[72px] pointer-events-none" />
@@ -141,14 +141,14 @@ export default function LiveMargen() {
 
           {/* Dashboard Card */}
           <RevealBlur offset={120} blur={24} duration={1300}>
-          <div className="relative rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-2xl shadow-blue-900/15 p-6 md:p-8 backdrop-blur-sm">
+          <div className="relative rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-2xl shadow-blue-900/15 p-4 sm:p-6 md:p-8 backdrop-blur-sm">
             {/* Dashboard Header */}
-            <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-slate-200/60">
-              <div>
+            <div className="flex items-center justify-between gap-3 mb-6 md:mb-8 pb-5 border-b border-slate-200/60">
+              <div className="min-w-0">
                 <p className="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-bold">{c.DASH_EYEBROW}</p>
-                <p className="text-sm md:text-base text-slate-900 font-bold mt-1">{c.DASH_META}</p>
+                <p className="text-xs sm:text-sm md:text-base text-slate-900 font-bold mt-1 leading-tight">{c.DASH_META}</p>
               </div>
-              <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold">
+              <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-bold flex-shrink-0">
                 <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
                 {c.LIVE_TAG}
               </div>

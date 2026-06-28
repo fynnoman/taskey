@@ -97,7 +97,7 @@ export default function TaskeyShareDemo() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-36 overflow-hidden">
       {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-[700px] h-[500px] bg-cyan-100 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[700px] h-[500px] bg-blue-100 rounded-full blur-[80px] pointer-events-none" />
@@ -144,7 +144,7 @@ export default function TaskeyShareDemo() {
             href="https://demo.kunden.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white text-base md:text-lg font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
+            className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-blue-600 text-white text-base md:text-lg font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
           >
             {c.CTA}
             <svg

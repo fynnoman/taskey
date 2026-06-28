@@ -194,11 +194,11 @@ export default function TaskeyShare() {
     s === "done" ? "#047857" : s === "active" ? "#9a3412" : "#475569";
 
   return (
-    <section className="bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 py-16 sm:py-20 md:py-32 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08),transparent_65%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* Linke Spalte */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 mb-6">
@@ -211,7 +211,7 @@ export default function TaskeyShare() {
               </span>
             </div>
 
-            <h2 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-[-0.03em] mb-6 text-slate-900">
+            <h2 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-[-0.03em] mb-6 text-slate-900">
               {c.HEAD_1}
               <br />
               <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent">

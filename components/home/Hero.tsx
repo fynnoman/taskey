@@ -58,7 +58,7 @@ export default function Hero() {
       </div>
 
       {/* === Stage Content ===================================================== */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 pb-16 md:pb-24 min-h-[88vh] flex flex-col justify-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-40 pb-12 md:pb-24 min-h-[78vh] md:min-h-[88vh] flex flex-col justify-center">
         {/* Live Badge */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-lg shadow-black/20">
@@ -96,7 +96,7 @@ export default function Hero() {
             href="https://signup.taskeyapp.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-white text-slate-900 text-base font-bold rounded-full hover:bg-cyan-50 transition-all shadow-2xl shadow-cyan-500/20 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 bg-white text-slate-900 text-base font-bold rounded-full hover:bg-cyan-50 transition-all shadow-2xl shadow-cyan-500/20 hover:scale-[1.02]"
           >
             {t("homeHero.cta.trial")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ export default function Hero() {
           </Link>
           <Link
             href="/features"
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white text-base font-bold rounded-full hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-3.5 sm:py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white text-base font-bold rounded-full hover:bg-white/10 transition-colors"
           >
             {t("common.cta.allFeatures")}
           </Link>
@@ -115,7 +115,7 @@ export default function Hero() {
       </div>
 
       {/* === Story-Boxen: menschliche Szenen ================================== */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           <StoryCard
             image={ASSETS.storyOne}

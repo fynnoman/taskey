@@ -44,7 +44,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* USP Hero im Footer */}
-        <div className="pt-16 sm:pt-20 pb-10 border-b border-slate-800">
+        <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-10 border-b border-slate-800">
           <div className="flex items-center gap-2 mb-5">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
@@ -54,7 +54,7 @@ export default function Footer() {
               {t("footer.usp1.tag")}
             </span>
           </div>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl mb-5">
             {t("footer.usp1.title.prefix")}
             <span className="text-blue-400">{t("footer.usp1.title.word1")}</span>
             {t("footer.usp1.title.middle")}
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Zweiter USP-Block: Alles in einem System */}
-        <div className="pt-10 pb-10 border-b border-slate-800">
+        <div className="pt-8 sm:pt-10 pb-8 sm:pb-10 border-b border-slate-800">
           <div className="flex items-center gap-2 mb-5">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -77,7 +77,7 @@ export default function Footer() {
               {t("footer.usp2.tag")}
             </span>
           </div>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight max-w-4xl mb-5">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl mb-5">
             {t("footer.usp2.title.prefix")}
             <span className="text-emerald-400">{t("footer.usp2.title.word1")}</span>
             {t("footer.usp2.title.middle")}
@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
 
         {/* Top section — big branding */}
-        <div className="pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 border-b border-slate-800">
+        <div className="pt-12 sm:pt-20 md:pt-32 pb-10 sm:pb-16 md:pb-20 border-b border-slate-800">
           <div className="flex items-center gap-4 mb-8">
             <Image
               src="/843B6B8E-CED8-4FF8-8C63-B354140A7BC5e5e1f940b1a8d4df34c43ec444a293f3116e09c2a98dcecd8e8882d3099b7c2d.png"
@@ -103,13 +103,13 @@ export default function Footer() {
             />
             <h2 className="text-3xl sm:text-4xl font-bold">Taskey</h2>
           </div>
-          <p className="text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
             {t("footer.tagline")}
           </p>
         </div>
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-10 md:gap-8 py-16 sm:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6 sm:gap-8 md:gap-8 py-10 sm:py-16 md:py-20">
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.product")}</h4>
             <ul className="space-y-4 text-sm">

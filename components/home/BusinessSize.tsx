@@ -49,7 +49,7 @@ export default function BusinessSize() {
   const parallaxRef = useParallax<HTMLDivElement>(0.15);
 
   return (
-    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 py-16 sm:py-20 md:py-32 relative overflow-hidden">
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[64px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
 
@@ -95,7 +95,7 @@ export default function BusinessSize() {
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-6">
               {t("biz.badge")}
             </p>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-8 text-slate-900">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-8 text-slate-900">
               {t("biz.title")}
               <br />
               <span className="text-slate-500">{t("biz.title.highlight")}.</span>
