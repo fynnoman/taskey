@@ -95,14 +95,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / Monat",
         perObject: "+ 3,14 € pro Objekt",
         features: [
-          "Unbegrenzte Mitarbeiter",
-          "NFC-Leistungsnachweis",
-          "Automatische Zeiterfassung",
-          "Einsatzplanung",
-          "30 NFC-Tags inklusive",
-          "50 GB Speicher",
+          "Alle Basisfunktionen",
+          "10 NFC-Tags inklusive",
+          "10 GB Speicher",
           "E-Mail-Support",
-          "DATEV-Export",
+          "CRM-Tool",
         ],
         ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
@@ -114,12 +111,13 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / Monat",
         perObject: "+ 3,54 € pro Objekt",
         features: [
-          "Alles aus Beginner",
-          "75 NFC-Tags inklusive",
-          "250 GB Speicher",
-          "PDF-, CSV- & Excel-Export",
-          "Chat-Support (24h)",
-          "Kostenloses Setup",
+          "Alle Basisfunktionen",
+          "50 NFC-Tags inklusive",
+          "50 GB Speicher",
+          "Direkter Chat-Support",
+          "CRM-Tool",
+          "Subunternehmer-Portal",
+          "Lohnabrechnungen",
         ],
         ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
@@ -132,13 +130,15 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / Monat",
         perObject: "+ 3,84 € pro Objekt",
         features: [
-          "Alles aus Professional",
-          "200 NFC-Tags inklusive",
-          "1 TB Speicher",
-          "Erweiterte Auswertungen",
-          "Priority-Support",
-          "Mehrere Standorte",
-          "Onboarding-Session",
+          "Alle Basisfunktionen",
+          "100 NFC-Tags inklusive",
+          "Unbegrenzter Speicher",
+          "Priority-Support per Telefon",
+          "CRM-Tool mit E-Mail-Anbindung & Automatisierung",
+          "Subunternehmer-Portal",
+          "Lohnabrechnungen",
+          "Taskey Share (animiertes Kundendashboard + Ticketsystem)",
+          "Ausschreibungsportal + Empfehlungen",
         ],
         ctaLabel: "30 Tage kostenlos",
         ctaHref: "https://signup.taskeyapp.com",
@@ -165,14 +165,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
       desc:
         "Individuelle Preise. Spezifisch entwickelte, innovative und unabhängige Funktionen — auf Ihren Betrieb zugeschnitten. Für Unternehmen, die mit Standard-Paketen nicht weiterkommen.",
       features: [
+        "Alles aus Business",
         "Custom-Features für Ihren Betrieb",
         "Dedizierter Account-Manager",
-        "Priority-Support & SLA",
-        "Unbegrenzte NFC-Tags & Speicher",
-        "API-Zugang & Webhooks",
-        "SSO / SAML",
-        "Custom-Integrationen (ERP, Lohn, Asset)",
         "Persönliches Onboarding & Schulungen",
+        "API-Anbindungen & Webhooks",
       ],
       priceLabel: "Preis",
       priceHeadline: "Individuell",
@@ -206,14 +203,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / month",
         perObject: "+ €3.14 per property",
         features: [
-          "Unlimited employees",
-          "NFC service proof",
-          "Automatic time tracking",
-          "Shift planning",
-          "30 NFC tags included",
-          "50 GB storage",
+          "All core features",
+          "10 NFC tags included",
+          "10 GB storage",
           "Email support",
-          "DATEV export",
+          "CRM tool",
         ],
         ctaLabel: "3 months free",
         ctaHref: "https://signup.taskeyapp.com",
@@ -225,12 +219,13 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / month",
         perObject: "+ €3.54 per property",
         features: [
-          "Everything in Beginner",
-          "75 NFC tags included",
-          "250 GB storage",
-          "PDF, CSV & Excel export",
-          "Chat support (24h)",
-          "Free setup",
+          "All core features",
+          "50 NFC tags included",
+          "50 GB storage",
+          "Direct chat support",
+          "CRM tool",
+          "Subcontractor portal",
+          "Payroll management",
         ],
         ctaLabel: "3 months free",
         ctaHref: "https://signup.taskeyapp.com",
@@ -243,13 +238,15 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / month",
         perObject: "+ €3.84 per property",
         features: [
-          "Everything in Professional",
-          "200 NFC tags included",
-          "1 TB storage",
-          "Advanced analytics",
-          "Priority support",
-          "Multiple sites",
-          "Onboarding session",
+          "All core features",
+          "100 NFC tags included",
+          "Unlimited storage",
+          "Priority phone support",
+          "CRM tool with email integration & automation",
+          "Subcontractor portal",
+          "Payroll management",
+          "Taskey Share (animated client dashboard + ticket system)",
+          "Tender portal + referrals",
         ],
         ctaLabel: "3 months free",
         ctaHref: "https://signup.taskeyapp.com",
@@ -276,14 +273,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
       desc:
         "Custom pricing. Specifically built, innovative and independent features — tailored to your business. For companies that hit the limits of standard plans.",
       features: [
-        "Custom features built for your business",
+        "Everything in Business",
+        "Custom features for your business",
         "Dedicated account manager",
-        "Priority support & SLA",
-        "Unlimited NFC tags & storage",
-        "API access & webhooks",
-        "SSO / SAML",
-        "Custom integrations (ERP, payroll, asset)",
         "Personal onboarding & training",
+        "API integrations & webhooks",
       ],
       priceLabel: "Price",
       priceHeadline: "Custom",
@@ -317,14 +311,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / mois",
         perObject: "+ 3,14 € par site",
         features: [
-          "Employés illimités",
-          "Preuve d'intervention NFC",
-          "Suivi du temps automatique",
-          "Planning d'intervention",
-          "30 étiquettes NFC incluses",
-          "50 Go de stockage",
+          "Toutes les fonctions de base",
+          "10 étiquettes NFC incluses",
+          "10 Go de stockage",
           "Support e-mail",
-          "Export DATEV",
+          "Outil CRM",
         ],
         ctaLabel: "3 mois gratuits",
         ctaHref: "https://signup.taskeyapp.com",
@@ -336,12 +327,13 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / mois",
         perObject: "+ 3,54 € par site",
         features: [
-          "Tout de Beginner",
-          "75 étiquettes NFC incluses",
-          "250 Go de stockage",
-          "Export PDF, CSV & Excel",
-          "Support chat (24h)",
-          "Mise en place gratuite",
+          "Toutes les fonctions de base",
+          "50 étiquettes NFC incluses",
+          "50 Go de stockage",
+          "Support chat direct",
+          "Outil CRM",
+          "Portail sous-traitants",
+          "Gestion de la paie",
         ],
         ctaLabel: "3 mois gratuits",
         ctaHref: "https://signup.taskeyapp.com",
@@ -354,13 +346,15 @@ const content: Record<"de" | "en" | "fr", Content> = {
         unit: "€ / mois",
         perObject: "+ 3,84 € par site",
         features: [
-          "Tout de Professional",
-          "200 étiquettes NFC incluses",
-          "1 To de stockage",
-          "Analyses avancées",
-          "Support prioritaire",
-          "Plusieurs sites",
-          "Session d'onboarding",
+          "Toutes les fonctions de base",
+          "100 étiquettes NFC incluses",
+          "Stockage illimité",
+          "Support prioritaire par téléphone",
+          "Outil CRM avec intégration e-mail & automatisation",
+          "Portail sous-traitants",
+          "Gestion de la paie",
+          "Taskey Share (tableau de bord client animé + système de tickets)",
+          "Portail d'appels d'offres + recommandations",
         ],
         ctaLabel: "3 mois gratuits",
         ctaHref: "https://signup.taskeyapp.com",
@@ -387,14 +381,11 @@ const content: Record<"de" | "en" | "fr", Content> = {
       desc:
         "Prix sur mesure. Fonctionnalités spécifiquement développées, innovantes et indépendantes — adaptées à votre entreprise. Pour les sociétés qui dépassent les limites des offres standard.",
       features: [
+        "Tout de Business",
         "Fonctionnalités sur mesure pour votre entreprise",
         "Account manager dédié",
-        "Support prioritaire & SLA",
-        "Étiquettes NFC & stockage illimités",
-        "Accès API & webhooks",
-        "SSO / SAML",
-        "Intégrations sur mesure (ERP, paie, asset)",
         "Onboarding personnel & formations",
+        "Intégrations API & webhooks",
       ],
       priceLabel: "Prix",
       priceHeadline: "Sur mesure",
@@ -476,6 +467,98 @@ function PricingPage() {
         </div>
       </section>
 
+      {/* Enterprise — Premium silver / chrome / liquid-glass */}
+      <section id="enterprise" className="relative pb-16 md:pb-24 scroll-mt-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-12">
+            <span className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] uppercase text-slate-700 bg-gradient-to-b from-white via-slate-100 to-slate-200 border border-white/80 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_6px_rgba(15,23,42,0.12)]">
+              {c.ent.addon}
+            </span>
+          </div>
+
+          {/* Outer chrome ring */}
+          <div className="relative rounded-[2rem] p-[1px] bg-gradient-to-br from-white via-slate-300 to-slate-500 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.4)]">
+            {/* Inner liquid-glass surface */}
+            <div className="relative rounded-[calc(2rem-1px)] overflow-hidden bg-gradient-to-br from-white/85 via-slate-50/70 to-white/60 backdrop-blur-2xl">
+              {/* Top hairline highlight */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
+              {/* Soft top gloss */}
+              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/70 via-white/15 to-transparent pointer-events-none" />
+              {/* Silver sheens */}
+              <div className="absolute -top-20 -right-20 w-[420px] h-[420px] bg-[radial-gradient(ellipse_at_center,rgba(226,232,240,0.6),transparent_70%)] pointer-events-none" />
+              <div className="absolute -bottom-24 -left-24 w-[420px] h-[420px] bg-[radial-gradient(ellipse_at_center,rgba(203,213,225,0.45),transparent_70%)] pointer-events-none" />
+              {/* Refraction line */}
+              <div className="absolute inset-y-0 left-[38%] w-px bg-gradient-to-b from-transparent via-white/40 to-transparent pointer-events-none hidden lg:block" />
+
+              <div className="relative p-8 md:p-14">
+                <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-start">
+                  {/* Left: Badge + headline + features */}
+                  <div>
+                    <div className="inline-flex items-center gap-2 mb-5">
+                      <span className="inline-block px-3.5 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-slate-900 bg-gradient-to-b from-white via-slate-100 to-slate-300 border border-white/80 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_8px_rgba(15,23,42,0.15)]">
+                        {c.ent.badge}
+                      </span>
+                    </div>
+
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5">
+                      <span className="bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+                        {c.ent.title}
+                      </span>
+                    </h2>
+
+                    <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+                      {c.ent.desc}
+                    </p>
+
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm md:text-base text-slate-700">
+                      {c.ent.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2.5">
+                          <svg className="w-4 h-4 text-slate-700 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Right: Price + CTA — chrome glass */}
+                  <div className="flex flex-col gap-4 lg:pt-2">
+                    <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-white via-slate-200 to-slate-400 shadow-[0_10px_30px_-12px_rgba(15,23,42,0.18)]">
+                      <div className="rounded-[calc(1rem-1px)] bg-gradient-to-br from-white/85 to-slate-50/70 backdrop-blur-xl p-6 relative overflow-hidden">
+                        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none" />
+                        <p className="text-[10px] font-black tracking-[0.3em] uppercase text-slate-600 mb-3">
+                          {c.ent.priceLabel}
+                        </p>
+                        <p className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
+                          {c.ent.priceHeadline}
+                        </p>
+                        <p className="text-slate-600 text-sm leading-relaxed">{c.ent.priceValue}</p>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => setEnterpriseModalOpen(true)}
+                      className="relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-bold rounded-full overflow-hidden text-white bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.55),inset_0_1px_0_rgba(255,255,255,0.18)] hover:from-slate-600 hover:via-slate-700 hover:to-slate-900 transition-all"
+                    >
+                      <span className="absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none" />
+                      {c.ent.apply}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+
+                    <p className="text-xs text-slate-500 text-center leading-relaxed">
+                      {c.ent.selectiveNote}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative pb-20 md:pb-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -549,91 +632,6 @@ function PricingPage() {
             <div>
               <h4 className="font-bold text-slate-900 text-sm mb-1">{c.nfc.lossTitle}</h4>
               <p className="text-sm text-slate-600 leading-relaxed">{c.nfc.lossDesc}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="enterprise" className="relative pb-24 md:pb-32 scroll-mt-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 md:mb-12">
-            <span className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full">
-              {c.ent.addon}
-            </span>
-          </div>
-
-          {/* Outer gradient frame for premium feel */}
-          <div className="relative rounded-[2rem] p-[2px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-blue-500/20">
-            <div className="relative rounded-[calc(2rem-2px)] bg-gradient-to-br from-white via-blue-50/60 to-white p-8 md:p-14 overflow-hidden">
-              {/* Ambient glows */}
-              <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-cyan-200/40 rounded-full blur-[72px] pointer-events-none" />
-              <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-[72px] pointer-events-none" />
-              {/* Subtle grid */}
-              <div
-                className="absolute inset-0 opacity-[0.04] pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #1e3a8a 1px, transparent 1px), linear-gradient(to bottom, #1e3a8a 1px, transparent 1px)",
-                  backgroundSize: "48px 48px",
-                }}
-              />
-
-              <div className="relative grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-start">
-                {/* Left: Title + features */}
-                <div>
-                  <div className="inline-flex items-center gap-2 mb-5">
-                    <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-full shadow-md">
-                      {c.ent.badge}
-                    </span>
-                  </div>
-
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5 text-slate-900">
-                    <span className="bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-700 bg-clip-text text-transparent">
-                      {c.ent.title}
-                    </span>
-                  </h2>
-
-                  <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                    {c.ent.desc}
-                  </p>
-
-                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm md:text-base text-slate-700">
-                    {c.ent.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5">
-                        <CheckIcon />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Right: Price + CTA */}
-                <div className="flex flex-col gap-4 lg:pt-2">
-                  <div className="rounded-2xl bg-white border border-blue-200 shadow-lg shadow-blue-500/10 p-6">
-                    <p className="text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 mb-3">
-                      {c.ent.priceLabel}
-                    </p>
-                    <p className="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-2">
-                      {c.ent.priceHeadline}
-                    </p>
-                    <p className="text-slate-600 text-sm leading-relaxed">{c.ent.priceValue}</p>
-                  </div>
-
-                  <button
-                    onClick={() => setEnterpriseModalOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-base font-bold rounded-full hover:from-blue-500 hover:to-blue-600 transition-all shadow-2xl shadow-blue-500/30"
-                  >
-                    {c.ent.apply}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
-
-                  <p className="text-xs text-slate-500 text-center leading-relaxed">
-                    {c.ent.selectiveNote}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
