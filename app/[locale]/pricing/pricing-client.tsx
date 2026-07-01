@@ -93,7 +93,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / Monat",
-        perObject: "+ 3,14 € pro Objekt",
+        perObject: "+ 4,80 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "10 NFC-Tags inklusive",
@@ -109,7 +109,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / Monat",
-        perObject: "+ 3,54 € pro Objekt",
+        perObject: "+ 4,20 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "50 NFC-Tags inklusive",
@@ -128,7 +128,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / Monat",
-        perObject: "+ 3,84 € pro Objekt",
+        perObject: "+ 3,80 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "100 NFC-Tags inklusive",
@@ -201,7 +201,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / month",
-        perObject: "+ €3.14 per property",
+        perObject: "+ €4.80 per property",
         features: [
           "All core features",
           "10 NFC tags included",
@@ -217,7 +217,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / month",
-        perObject: "+ €3.54 per property",
+        perObject: "+ €4.20 per property",
         features: [
           "All core features",
           "50 NFC tags included",
@@ -236,7 +236,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / month",
-        perObject: "+ €3.84 per property",
+        perObject: "+ €3.80 per property",
         features: [
           "All core features",
           "100 NFC tags included",
@@ -309,7 +309,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / mois",
-        perObject: "+ 3,14 € par site",
+        perObject: "+ 4,80 € par site",
         features: [
           "Toutes les fonctions de base",
           "10 étiquettes NFC incluses",
@@ -325,7 +325,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / mois",
-        perObject: "+ 3,54 € par site",
+        perObject: "+ 4,20 € par site",
         features: [
           "Toutes les fonctions de base",
           "50 étiquettes NFC incluses",
@@ -344,7 +344,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / mois",
-        perObject: "+ 3,84 € par site",
+        perObject: "+ 3,80 € par site",
         features: [
           "Toutes les fonctions de base",
           "100 étiquettes NFC incluses",
