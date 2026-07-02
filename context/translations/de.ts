@@ -59,7 +59,7 @@ const translations: Record<string, string> = {
     "features.title.em": "im Hintergrund",
     "features.subtitle": "Damit alles im grünen Bereich sein kann, arbeiten drei Dinge im Stillen: Nachweise, die niemand anzweifelt. Zeiten, die sich selbst erfassen. Belege, die für Sie sprechen, wenn ein Kunde nachhakt.",
     "features.1.title": "Jeder Einsatz beweist sich selbst.",
-    "features.1.desc": "Ihr Team hält das Handy an den NFC-Aufkleber am Objekt – fertig. Wer wann wo war, steht automatisch. Kein „Ihr wart gar nicht da" mehr, ohne dass Sie eine Sekunde investieren.",
+    "features.1.desc": "Ihr Team hält das Handy an den NFC-Aufkleber am Objekt – fertig. Wer wann wo war, steht automatisch. Kein „Ihr wart gar nicht da\" mehr, ohne dass Sie eine Sekunde investieren.",
     "features.2.title": "Zeiten erfassen sich, während gearbeitet wird.",
     "features.2.desc": "Ein- und Ausscannen genügt. Am Monatsende ist alles fertig – nicht weil Sie nachgehakt haben, sondern weil es nie ein Chaos gab.",
     "features.3.title": "Wenn eine Reklamation kommt, sind Sie schon fertig.",
