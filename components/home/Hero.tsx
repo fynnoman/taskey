@@ -20,13 +20,6 @@ const ASSETS = {
   // Cinematic Hintergrund-Loop. Eigenes Brand-Video.
   heroVideo: "/videos/hero-bg.mp4",
   heroPoster: "/images/hero-poster.jpg",
-
-  // 3 Story-Boxen unter dem Hero (menschliche Gesichter / echte Szenen)
-  // TODO: Sobald die finalen Gemini-Bilder als /public/images/* abgelegt sind, hier umbiegen
-  // auf z.B. "/images/team-vor-ort.jpg" usw.
-  storyOne: "/sections/aussendienst-einfach.png",   // Im Feld – Team vor Ort
-  storyTwo: "/sections/einsatzplanung.png",         // Im Büro – Disposition im Überblick
-  storyThree: "/sections/nfc-scan-objekt.png",      // Ein Tap – NFC am Objekt
 };
 
 export default function Hero() {
@@ -114,27 +107,23 @@ export default function Hero() {
         <p className="text-center text-sm text-white/60">{t("homeHero.trust")}</p>
       </div>
 
-      {/* === Story-Boxen: menschliche Szenen ================================== */}
+      {/* === 3 Kern-Aussagen unter dem Hero =================================== */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-28">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          <StoryCard
-            image={ASSETS.storyOne}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+          <StoryText
             tag={t("homeHero.story1.tag")}
             title={t("homeHero.story1.title")}
-            sub={t("homeHero.story1.sub")}
-            fit="cover"
+            body={t("homeHero.story1.sub")}
           />
-          <StoryCard
-            image={ASSETS.storyTwo}
+          <StoryText
             tag={t("homeHero.story2.tag")}
             title={t("homeHero.story2.title")}
-            sub={t("homeHero.story2.sub")}
+            body={t("homeHero.story2.sub")}
           />
-          <StoryCard
-            image={ASSETS.storyThree}
+          <StoryText
             tag={t("homeHero.story3.tag")}
             title={t("homeHero.story3.title")}
-            sub={t("homeHero.story3.sub")}
+            body={t("homeHero.story3.sub")}
           />
         </div>
       </div>
@@ -142,56 +131,29 @@ export default function Hero() {
   );
 }
 
-function StoryCard({
-  image,
+function StoryText({
   tag,
   title,
-  sub,
-  fit = "contain",
+  body,
 }: {
-  image: string;
   tag: string;
   title: string;
-  sub: string;
-  fit?: "contain" | "cover";
+  body: string;
 }) {
-  const isCover = fit === "cover";
   return (
-    <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-2xl shadow-black/30 transition-transform duration-500 hover:-translate-y-1">
-      {/* Image */}
-      <div
-        className={
-          isCover
-            ? "relative aspect-[4/3] overflow-hidden bg-slate-900"
-            : "relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50/70 flex items-center justify-center p-4"
-        }
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          className={
-            isCover
-              ? "absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              : "relative max-w-full max-h-full object-contain rounded-lg border border-slate-200/70 bg-white shadow-[0_12px_30px_-15px_rgba(15,23,42,0.45)] transition-transform duration-700 group-hover:scale-[1.03]"
-          }
-        />
-        {isCover && (
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent" />
-        )}
-        <span className="absolute top-3 left-3 z-10 inline-flex items-center text-[10px] font-black tracking-[0.25em] uppercase text-white/95 bg-slate-900/80 border border-slate-700/60 backdrop-blur-md rounded-full px-3 py-1">
+    <div className="relative">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="w-8 h-px bg-cyan-300/60" aria-hidden="true" />
+        <span className="text-[10px] font-black tracking-[0.28em] uppercase text-cyan-300/90">
           {tag}
         </span>
       </div>
-
-      {/* Text */}
-      <div className="p-5 md:p-6">
-        <h3 className="text-lg md:text-xl font-black text-white leading-tight mb-1.5">
-          {title}
-        </h3>
-        <p className="text-sm text-white/70 leading-relaxed">{sub}</p>
-      </div>
+      <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-3 drop-shadow-[0_2px_18px_rgba(0,0,0,0.4)]">
+        {title}
+      </h3>
+      <p className="text-sm md:text-base text-white/75 leading-relaxed">
+        {body}
+      </p>
     </div>
   );
 }
