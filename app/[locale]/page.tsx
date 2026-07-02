@@ -15,7 +15,6 @@ const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
 const TargetAudiences = dynamic(() => import("@/components/TargetAudiences"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));
-const BusinessSize = dynamic(() => import("@/components/home/BusinessSize"));
 const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 
@@ -245,9 +244,6 @@ export default async function Home({
 
         {/* 8. Auftraggeber-Portal: differenzierendes USP */}
         <TaskeyShare />
-
-        {/* 9. Skalierbarkeit: vom 1-Mann bis Enterprise */}
-        <BusinessSize />
 
         {/* 10. Mobile App: Alltag des Teams */}
         <IOSAppSection />
