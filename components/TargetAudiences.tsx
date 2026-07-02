@@ -37,6 +37,8 @@ const CONTENT = {
     headingHighlight: "Reinigungsfirmen.",
     intro:
       "Keine generische Business-Software. Taskey ist 100 % auf den Alltag von Reinigungsbetrieben im DACH-Raum zugeschnitten.",
+    personaLine:
+      "Für die Chefs, die längst gemerkt haben: Kontrolle heißt nicht, überall dabei zu sein — sondern immer zu wissen, dass es läuft.",
     badgePrefix: "Reinigungsart",
     painsLabel: "Typische Pain-Points",
     dotAriaPrefix: "Reinigungsart",
@@ -174,6 +176,8 @@ const CONTENT = {
     headingHighlight: "cleaning companies.",
     intro:
       "Not generic business software. Taskey is 100% tailored to the day-to-day of cleaning companies in the DACH region.",
+    personaLine:
+      "For the bosses who've long realised: control isn't being everywhere — it's always knowing that it's running.",
     badgePrefix: "Cleaning type",
     painsLabel: "Typical pain points",
     dotAriaPrefix: "Cleaning type",
@@ -311,6 +315,8 @@ const CONTENT = {
     headingHighlight: "les entreprises de nettoyage.",
     intro:
       "Pas un logiciel d'entreprise générique. Taskey est conçu à 100 % pour le quotidien des entreprises de nettoyage de la région DACH.",
+    personaLine:
+      "Pour les patrons qui ont depuis longtemps compris : contrôler, ce n'est pas être partout — c'est toujours savoir que ça tourne.",
     badgePrefix: "Type de nettoyage",
     painsLabel: "Points de friction typiques",
     dotAriaPrefix: "Type de nettoyage",
@@ -583,6 +589,9 @@ export default function TargetAudiences({
             </h2>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
               {c.intro}
+            </p>
+            <p className="text-base md:text-lg text-slate-500 italic leading-relaxed mb-8 max-w-xl border-l-2 border-blue-200 pl-4">
+              {c.personaLine}
             </p>
 
             <ul className="space-y-2 mb-10">

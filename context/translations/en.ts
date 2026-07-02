@@ -18,10 +18,10 @@ const translations: Record<string, string> = {
     "hero.cta.trial": "Try free for 3 months",
 
     // Home Hero
-    "homeHero.title1": "The software",
-    "homeHero.title2": "for your",
-    "homeHero.title3": "cleaning company.",
-    "homeHero.features": "No more arguments with clients about whether your team was on site. No more timesheet chaos at month-end. No more calls asking when someone is coming.",
+    "homeHero.title1": "Your business is running.",
+    "homeHero.title2": "You see it",
+    "homeHero.title3": "at a glance.",
+    "homeHero.features": "Teams, margins, clients, tenders — you open Taskey briefly, see it's all in the green, and put it down. That's what leadership looks like when the software does its job.",
     "homeHero.tagline": "Taskey takes care of it for you – right from your phone.",
     "homeHero.cta.trial": "Start 3-month free trial →",
     "homeHero.cta.demo": "Watch live demo",
@@ -36,6 +36,22 @@ const translations: Record<string, string> = {
     "homeHero.story3.tag": "One system instead of five",
     "homeHero.story3.title": "The full feature set under a single login.",
     "homeHero.story3.sub": "NFC proof of service, CRM with email integration, time tracking, payroll assistant, calculations and an animated client portal – all in one software. On price, Taskey sits in a range that comparable systems with this breadth rarely offer today.",
+
+    // At a glance — end-state section (home)
+    "atAGlance.tag": "Your day with Taskey",
+    "atAGlance.title1": "At a glance.",
+    "atAGlance.title2": "And you know it's all running.",
+    "atAGlance.body": "A quick look at your phone – and you see where your teams are right now, how this month's margins stand, which client enquiries your inbox has already handled and which new tenders survived the night. If it's all in the green, put the phone down. Taskey has already done the rest.",
+    "atAGlance.persona": "For owners and managers who want to carry their business in their head – not in their inbox.",
+    "atAGlance.phone.header": "Today · all in the green",
+    "atAGlance.phone.row1.label": "Teams on site",
+    "atAGlance.phone.row1.value": "12 active · all on time",
+    "atAGlance.phone.row2.label": "Margin this month",
+    "atAGlance.phone.row2.value": "+5.4 % over target",
+    "atAGlance.phone.row3.label": "Inbox",
+    "atAGlance.phone.row3.value": "answered · 3 leads rated",
+    "atAGlance.phone.row4.label": "Tenders",
+    "atAGlance.phone.row4.value": "2 matching · pre-scored",
     // Communication USP
     "usp.communication.title": "Seamless communication between field and office",
     "usp.communication.subtitle": "Taskey ensures that all information from the field flows automatically to the office — photos, times, reports, status updates. Decision-makers see immediately what is happening on-site.",

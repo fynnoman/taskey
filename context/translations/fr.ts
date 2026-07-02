@@ -18,10 +18,10 @@ const translations: Record<string, string> = {
     "hero.cta.trial": "Essai gratuit 14 jours",
 
     // Home Hero
-    "homeHero.title1": "Le logiciel",
-    "homeHero.title2": "pour votre",
-    "homeHero.title3": "entreprise de nettoyage.",
-    "homeHero.features": "Plus jamais de disputes avec les clients sur la présence de votre équipe. Plus jamais de chaos de fiches de temps en fin de mois. Plus jamais d'appels pour savoir quand quelqu'un arrive.",
+    "homeHero.title1": "Votre entreprise tourne.",
+    "homeHero.title2": "Vous le voyez",
+    "homeHero.title3": "d'un coup d'œil.",
+    "homeHero.features": "Équipes, marges, clients, appels d'offres — vous ouvrez brièvement Taskey, vous voyez que tout est au vert, et vous refermez. Voilà à quoi ressemble le pilotage quand le logiciel fait son travail.",
     "homeHero.tagline": "Taskey s'en occupe pour vous – directement depuis le téléphone.",
     "homeHero.cta.trial": "Essai gratuit 14 jours →",
     "homeHero.cta.demo": "Voir la démo en direct",
@@ -36,6 +36,22 @@ const translations: Record<string, string> = {
     "homeHero.story3.tag": "Un seul système, pas cinq",
     "homeHero.story3.title": "L'intégralité des fonctions sous un seul login.",
     "homeHero.story3.sub": "Preuve NFC, CRM avec intégration e-mail, pointage, assistant de paie, calculs et un portail client animé – tout dans un seul logiciel. Côté prix, Taskey se positionne dans une gamme que des systèmes comparables avec cette ampleur atteignent rarement aujourd'hui.",
+
+    // D'un coup d'œil — section end-state (accueil)
+    "atAGlance.tag": "Votre quotidien avec Taskey",
+    "atAGlance.title1": "D'un coup d'œil.",
+    "atAGlance.title2": "Et vous savez que tout tourne.",
+    "atAGlance.body": "Un bref coup d'œil au téléphone – et vous voyez où sont vos équipes, où en sont les marges du mois, quelles demandes clients votre boîte a déjà traitées et quels nouveaux appels d'offres ont passé la nuit. Si tout est au vert, vous reposez le téléphone. Taskey a déjà fait le reste.",
+    "atAGlance.persona": "Pour les dirigeants et gérants qui veulent porter leur entreprise dans leur tête – pas dans leur boîte mail.",
+    "atAGlance.phone.header": "Aujourd'hui · tout est au vert",
+    "atAGlance.phone.row1.label": "Équipes en poste",
+    "atAGlance.phone.row1.value": "12 actives · toutes à l'heure",
+    "atAGlance.phone.row2.label": "Marge ce mois-ci",
+    "atAGlance.phone.row2.value": "+5,4 % au-dessus de l'objectif",
+    "atAGlance.phone.row3.label": "Boîte mail",
+    "atAGlance.phone.row3.value": "répondu · 3 demandes évaluées",
+    "atAGlance.phone.row4.label": "Appels d'offres",
+    "atAGlance.phone.row4.value": "2 correspondants · pré-évalués",
 
     // FeaturePreview
     "features.badge": "Ce que Taskey fait pour votre entreprise",

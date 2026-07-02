@@ -18,10 +18,10 @@ const translations: Record<string, string> = {
     "hero.cta.trial": "30 Tage kostenlos testen",
 
     // Home Hero
-    "homeHero.title1": "Die Software",
-    "homeHero.title2": "für Ihre",
-    "homeHero.title3": "Gebäudereinigung.",
-    "homeHero.features": "Nie wieder Streit, ob Ihr Team vor Ort war. Nie wieder Stundenzettel-Chaos am Monatsende. Nie wieder Anrufe, wann endlich wer kommt.",
+    "homeHero.title1": "Ihr Betrieb läuft.",
+    "homeHero.title2": "Sie sehen es",
+    "homeHero.title3": "auf einen Blick.",
+    "homeHero.features": "Teams, Margen, Kunden, Ausschreibungen — Sie öffnen Taskey kurz, sehen dass alles im grünen Bereich ist, und legen weg. So sieht Führung aus, wenn die Software ihren Job macht.",
     "homeHero.tagline": "Taskey erledigt das für Sie – direkt vom Handy.",
     "homeHero.cta.trial": "30 Tage kostenlos testen →",
     "homeHero.cta.demo": "Live-Demo ansehen",
@@ -36,6 +36,22 @@ const translations: Record<string, string> = {
     "homeHero.story3.tag": "Ein System statt fünf",
     "homeHero.story3.title": "Der komplette Funktionsumfang unter einem Login.",
     "homeHero.story3.sub": "NFC-Nachweis, CRM mit E-Mail-Anbindung, Zeiterfassung, Lohnabrechnungshelfer, Kalkulationen und ein animiertes Auftraggeber-Portal – alles in einer Software. Preislich bewegt sich Taskey dabei in einem Bereich, den vergleichbare Systeme mit dieser Bandbreite aktuell selten anbieten.",
+
+    // Auf einen Blick — End-State-Sektion (Home)
+    "atAGlance.tag": "Ihr Alltag mit Taskey",
+    "atAGlance.title1": "Auf einen Blick.",
+    "atAGlance.title2": "Und Sie wissen, dass alles läuft.",
+    "atAGlance.body": "Ein Kurzblick aufs Handy – und Sie sehen, wo Ihre Teams gerade sind, wie die Margen dieses Monats stehen, welche Kundenanfragen Ihr Postfach längst beantwortet hat und welche neuen Ausschreibungen die Nacht überstanden haben. Ist alles im grünen Bereich, legen Sie das Handy weg. Taskey hat den Rest schon erledigt.",
+    "atAGlance.persona": "Für Inhaber und Geschäftsführer, die ihren Betrieb im Kopf tragen wollen – nicht in der Inbox.",
+    "atAGlance.phone.header": "Heute · alles im grünen Bereich",
+    "atAGlance.phone.row1.label": "Teams im Einsatz",
+    "atAGlance.phone.row1.value": "12 aktiv · alle in Zeit",
+    "atAGlance.phone.row2.label": "Marge diesen Monat",
+    "atAGlance.phone.row2.value": "+5,4 % über Ziel",
+    "atAGlance.phone.row3.label": "Postfach",
+    "atAGlance.phone.row3.value": "beantwortet · 3 Anfragen bewertet",
+    "atAGlance.phone.row4.label": "Ausschreibungen",
+    "atAGlance.phone.row4.value": "2 passende · vorbewertet",
 
     // FeaturePreview
     "features.badge": "Was Taskey für Ihren Betrieb tut",
