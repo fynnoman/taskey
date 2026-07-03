@@ -114,27 +114,27 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.product")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/features" className="text-slate-300 hover:text-white transition">
+                <Link href="/features" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.features")}
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-slate-300 hover:text-white transition">
+                <Link href="/pricing" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.pricing")}
                 </Link>
               </li>
               <li>
-                <Link href="/ios" className="text-slate-300 hover:text-white transition">
+                <Link href="/ios" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.iosApp")}
                 </Link>
               </li>
               <li>
-                <Link href="/nfc" className="text-slate-300 hover:text-white transition">
+                <Link href="/nfc" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.nfcProof")}
                 </Link>
               </li>
               <li>
-                <Link href="/pricing#enterprise" className="text-slate-300 hover:text-white transition">
+                <Link href="/pricing#enterprise" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.enterprise")}
                 </Link>
               </li>
@@ -145,24 +145,24 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.company")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/about" className="text-slate-300 hover:text-white transition">
+                <Link href="/about" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="text-slate-300 hover:text-white transition">
+                <Link href="/news" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.news")}
                 </Link>
               </li>
               <li>
-                <Link href="/partnerschaften" className="text-slate-300 hover:text-white transition">
+                <Link href="/partnerschaften" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.partnerships")}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/support"
-                  className="text-slate-300 hover:text-white transition"
+                  className="text-slate-300 hover:text-white transition break-words"
                 >
                   {t("footer.link.support")}
                 </Link>
@@ -174,17 +174,17 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.legal")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/impressum" className="text-slate-300 hover:text-white transition">
+                <Link href="/impressum" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.imprint")}
                 </Link>
               </li>
               <li>
-                <Link href="/datenschutz" className="text-slate-300 hover:text-white transition">
+                <Link href="/datenschutz" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.privacy")}
                 </Link>
               </li>
               <li>
-                <Link href="/agb" className="text-slate-300 hover:text-white transition">
+                <Link href="/agb" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.agb")}
                 </Link>
               </li>
@@ -195,32 +195,32 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.solutions")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.softwareGebaeude")}
                 </Link>
               </li>
               <li>
-                <Link href="/zeiterfassung-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/zeiterfassung-gebaeudereinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.zeiterfassung")}
                 </Link>
               </li>
               <li>
-                <Link href="/nfc-zeiterfassung" className="text-slate-300 hover:text-white transition">
+                <Link href="/nfc-zeiterfassung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.nfcZeiterfassung")}
                 </Link>
               </li>
               <li>
-                <Link href="/einsatzplanung-reinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/einsatzplanung-reinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.einsatzplanung")}
                 </Link>
               </li>
               <li>
-                <Link href="/leistungsnachweis-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/leistungsnachweis-gebaeudereinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.leistungsnachweis")}
                 </Link>
               </li>
               <li>
-                <Link href="/software-kleine-reinigungsfirma" className="text-slate-300 hover:text-white transition">
+                <Link href="/software-kleine-reinigungsfirma" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.softwareKleineReinigung")}
                 </Link>
               </li>
@@ -231,32 +231,32 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.branchen")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/loesungen" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.alleBranchen")}
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen/unterhaltsreinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen/unterhaltsreinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.unterhalt")}
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen/glasreinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen/glasreinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.glas")}
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen/industriereinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen/industriereinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.industrie")}
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen/klinikreinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen/klinikreinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.klinik")}
                 </Link>
               </li>
               <li>
-                <Link href="/loesungen/hotel-housekeeping" className="text-slate-300 hover:text-white transition">
+                <Link href="/loesungen/hotel-housekeeping" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.hotel")}
                 </Link>
               </li>
@@ -267,32 +267,32 @@ export default function Footer() {
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.vergleiche")}</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/vergleich/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.anbietervergleich")}
                 </Link>
               </li>
               <li>
-                <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.zvoove")}
                 </Link>
               </li>
               <li>
-                <Link href="/vergleich/blink-alternative" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/blink-alternative" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.blink")}
                 </Link>
               </li>
               <li>
-                <Link href="/vergleich/mendato-alternative" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/mendato-alternative" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.mendato")}
                 </Link>
               </li>
               <li>
-                <Link href="/vergleich/fortytools-alternative" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/fortytools-alternative" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.fortytools")}
                 </Link>
               </li>
               <li>
-                <Link href="/vergleich/plan-d-alternative" className="text-slate-300 hover:text-white transition">
+                <Link href="/vergleich/plan-d-alternative" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.planD")}
                 </Link>
               </li>

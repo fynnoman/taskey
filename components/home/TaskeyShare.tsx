@@ -211,7 +211,7 @@ export default function TaskeyShare() {
               </span>
             </div>
 
-            <h2 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-[-0.03em] mb-6 text-slate-900">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[0.92] tracking-tight sm:tracking-[-0.03em] mb-6 text-slate-900 break-words">
               {c.HEAD_1}
               <br />
               <span className="bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
@@ -299,7 +299,7 @@ export default function TaskeyShare() {
                             y={room.y + room.h / 2}
                             textAnchor="middle"
                             dominantBaseline="middle"
-                            fontSize={room.w < 130 ? 10 : 11}
+                            fontSize={room.w < 130 ? 14 : 15}
                             fontWeight={700}
                             fill={textColorFor(room.status)}
                             style={{ fontFamily: "ui-sans-serif, system-ui, sans-serif", pointerEvents: "none" }}

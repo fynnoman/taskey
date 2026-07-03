@@ -158,7 +158,7 @@ function NavInner({
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden ${mobileToggle}`}
+          className={`lg:hidden p-2 -m-2 ${mobileToggle}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={t("header.aria.menu")}
         >

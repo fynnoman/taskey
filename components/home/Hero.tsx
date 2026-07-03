@@ -66,7 +66,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-center text-[clamp(2.6rem,8.5vw,6.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
+        <h1 className="text-center text-[clamp(2rem,8.5vw,6.5rem)] font-black leading-[0.95] tracking-tight mb-6 text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)] break-words hyphens-auto">
           {t("homeHero.title1")}
           <br />
           <span className="bg-gradient-to-r from-cyan-300 via-sky-200 to-cyan-300 bg-clip-text text-transparent">

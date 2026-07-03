@@ -582,7 +582,7 @@ export default function TargetAudiences({
             <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-4">
               {c.eyebrow}
             </p>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900 break-words">
               {c.headingLine1}
               <br />
               <span className="text-slate-500">{c.headingHighlight}</span>

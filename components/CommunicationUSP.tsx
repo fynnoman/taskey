@@ -97,7 +97,7 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header – Revolut-Style: zentral, groß, knapp */}
         <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900 break-words">
             {t("usp.full.title.line1")}
             <br />
             <span className="text-slate-500">{t("usp.full.title.line2")}</span>

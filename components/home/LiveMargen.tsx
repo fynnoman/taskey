@@ -323,7 +323,7 @@ function ContractRow({
         <span>{progress}% {progressLabel}</span>
       </div>
       {warning && (
-        <div className="mt-3 flex items-center gap-2 text-red-400 text-xs font-bold">
+        <div className="mt-3 flex items-start gap-2 text-red-400 text-xs font-bold">
           <svg className="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"

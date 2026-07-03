@@ -239,7 +239,7 @@ export default function AllInOneUSP({ variant = "full" }: { variant?: Variant })
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
           {/* Linke Spalte: Text + Bullets */}
           <div>
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight mb-6 text-slate-900 break-words">
               {c.HEADLINE_LINE_1}
               <br />
               <span className="text-slate-500">{c.HEADLINE_LINE_2}</span>
