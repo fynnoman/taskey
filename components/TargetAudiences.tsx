@@ -66,7 +66,7 @@ const CONTENT = {
           "Leistungsnachweise im WhatsApp-Chaos",
         ],
         cta: "Für Unterhaltsreinigung",
-        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
         alt: "Reinigungskraft bei der Büroreinigung",
       },
       {
@@ -205,7 +205,7 @@ const CONTENT = {
           "Service records lost in WhatsApp chaos",
         ],
         cta: "For maintenance cleaning",
-        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
         alt: "Cleaner during office cleaning",
       },
       {
@@ -344,7 +344,7 @@ const CONTENT = {
           "Justificatifs de prestation noyés dans WhatsApp",
         ],
         cta: "Pour le nettoyage d'entretien",
-        image: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=1400",
+        image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
         alt: "Agent de nettoyage en plein nettoyage de bureaux",
       },
       {
