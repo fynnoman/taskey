@@ -47,6 +47,7 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/partnerschaften", changeFrequency: "monthly", priority: 0.7 },
   { path: "/ios", changeFrequency: "monthly", priority: 0.8 },
   { path: "/support", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/google-kalender-sync", changeFrequency: "monthly", priority: 0.6 },
 
   // Pillar-Landingpages
   { path: "/software-gebaeudereinigung", changeFrequency: "weekly", priority: 0.95 },
