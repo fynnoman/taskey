@@ -128,12 +128,6 @@ function NavInner({
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/support"
-            className={`transition font-medium ${navIdle}`}
-          >
-            {t("nav.support")}
-          </Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-3">
@@ -190,13 +184,6 @@ function NavInner({
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/support"
-              className="px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-slate-900 rounded-lg transition"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t("nav.support")}
-            </Link>
             <div className="pt-4 px-4 space-y-2">
               <div className="flex justify-start pb-1">
                 <LanguageSwitcher tone={solid ? "light" : "dark"} />
