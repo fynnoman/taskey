@@ -23,6 +23,7 @@ export interface Post {
   metaTitle?: string; // custom SEO title
   metaDescription?: string; // custom SEO description
   heroImage?: string; // optional hero image path (e.g. "/images/blog/xyz.jpg")
+  heroImagePortrait?: boolean; // render hero at original portrait aspect (narrower, uncropped)
 }
 
 const CATEGORY_LABELS: Record<Locale, Record<PostCategory, string>> = {
@@ -106,31 +107,12 @@ Weitere Informationen zum Programm gibt es auf der Website von [Triathlon – St
     summary:
       "Ende Juni 2026 waren wir beim Mentor-Meetup des Business Angels Netzwerk Saarland (BANS) zu Gast und haben Taskey vor erfahrenen Business Angels vorgestellt. Vier Teams, präzise Fragen, ehrliches Feedback — genau das, was man in einem Verkaufsgespräch nicht bekommt.",
     heroImage: "/bans-meetup.png",
+    heroImagePortrait: true,
     body: `Heiße Temperaturen, spannende Pitches und jede Menge wertvoller Austausch — so lässt sich das **BANS Mentor-Meetup Ende Juni 2026** wohl am ehrlichsten zusammenfassen.
 
 Wir waren zu Gast beim **Business Angels Netzwerk Saarland (BANS)** und haben Taskey vor einem Kreis erfahrener Business Angels aus dem saarländischen Netzwerk vorgestellt. Vier Gründungsteams, offene Gespräche, konkrete Rückfragen — und am Ende ein Eis zur Belohnung.
 
-## Warum wir dort waren
-
-Ein Mentor-Meetup ist kein Fundraising-Termin. Es ist ein strukturiertes Format, in dem Gründungsteams ihre Geschäftsideen vor erfahrenen Angels präsentieren und ehrliches, unverstelltes Feedback bekommen — zu Geschäftsmodell, Skalierung, Marktverteidigung, Preisstruktur und operativer Umsetzung.
-
-Für uns war das der Wert dieses Termins: Rückfragen, die man in einem klassischen Verkaufsgespräch nie hört, weil dort andere Ziele im Raum stehen. Angels sind in ihrem Feedback direkt. Sie haben Muster gesehen, die man als operatives Gründungsteam noch nicht kennt — und sie sagen, was ihnen auffällt, ohne Rücksicht darauf, wie es sich anhört.
-
-## Was wir mitgenommen haben
-
-Konkret drei Dinge.
-
-**Erstens.** Der Grundgedanke von Taskey — Echtzeit-Kommunikation zwischen Einsatzort und Büro, in einem System statt fünf, mit NFC als physischem Ankerpunkt — trägt auch außerhalb unserer heutigen Kundenwelt. Das war die Kernfrage, mit der wir in den Raum gegangen sind. Sie wurde nicht in Frage gestellt.
-
-**Zweitens.** Die Angels haben präzise Punkte benannt, an denen wir noch schärfer werden müssen. Wo genau, gehört in die interne Arbeit — nicht in einen Blog-Post. Aber der Effekt eines guten Mentor-Meetups ist, dass diese Punkte am nächsten Morgen konkret auf der Roadmap stehen.
-
-**Drittens.** Das Format hat gezeigt, wie wertvoll strukturierte externe Reibung ist. Nicht Feedback von Kund:innen, die Rücksicht nehmen. Nicht Feedback vom eigenen Netzwerk, das wohlwollend ist. Sondern der ungeschminkte Blick von außen.
-
-## Wer dabei war
-
-Neben unserem Team haben drei weitere Gründungsteams vor den Angels präsentiert. Ein herzlicher Dank an alle Mitgründungsteams für die offenen Gespräche und den intensiven Austausch — trotz Sommer und trotz der Temperaturen an dem Tag.
-
-Und ein besonderer Dank an das **BANS-Team** für die Organisation und die konzentrierte Atmosphäre, sowie an alle **Business Angels**, die sich die Zeit genommen haben, sich vier Geschäftsideen anzuhören, mitzudenken und uns mit ihrem Feedback voranzubringen.
+Der Originalbeitrag mit weiteren Eindrücken vom Meetup ist auf [LinkedIn beim Business Angels Netzwerk Saarland](https://www.linkedin.com/company/business-angels-netzwerk-saarland-bans/posts/?feedView=all) zu finden.
 
 ## Was jetzt kommt
 

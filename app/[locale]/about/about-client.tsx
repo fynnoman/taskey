@@ -285,10 +285,76 @@ export default function AboutClient() {
                       </div>
                     ))}
                   </div>
+
+                  {/* Partner-Logos */}
+                  <div className="mt-8 pt-6 border-t border-slate-200">
+                    <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500 mb-4">
+                      {t("about.launchpad.partnersLabel")}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
+                      <div className="h-10 md:h-11 flex items-center">
+                        <Image
+                          src="/triathlon-logo.png"
+                          alt={t("about.launchpad.triathlonAlt")}
+                          width={640}
+                          height={351}
+                          className="h-full w-auto object-contain"
+                          sizes="130px"
+                        />
+                      </div>
+                      <div className="h-10 md:h-11 flex items-center">
+                        <Image
+                          src="/uni-saarland-logo.png"
+                          alt={t("about.launchpad.uniSaarlandAlt")}
+                          width={640}
+                          height={381}
+                          className="h-full w-auto object-contain"
+                          sizes="150px"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Programm-Preview: Screenshot der Launchpad-Programmseite */}
+          <a
+            href="https://www.uds-triathlon.de/startup-launchpad/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-3 md:p-4 mb-6 overflow-hidden hover:border-slate-300 transition-colors"
+          >
+            <div className="absolute top-4 left-6 flex items-center gap-1.5 z-10">
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white">
+              <Image
+                src="/launchpad-programm-preview.png"
+                alt={t("about.launchpad.previewAlt")}
+                width={640}
+                height={306}
+                sizes="(max-width: 768px) 100vw, 1024px"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="flex items-center justify-between px-3 md:px-4 pt-4 pb-1">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-blue-700 mb-1">
+                  {t("about.launchpad.previewLabel")}
+                </p>
+                <p className="text-sm text-slate-600">
+                  {t("about.launchpad.previewCaption")}
+                </p>
+              </div>
+              <svg className="w-4 h-4 text-slate-400 group-hover:text-blue-700 transition-colors flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
 
           {/* BANS — Card mit Foto */}
           <div className="relative rounded-3xl bg-blue-50/70 border border-slate-200 backdrop-blur-sm p-6 md:p-10 overflow-hidden">

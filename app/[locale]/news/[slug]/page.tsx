@@ -90,13 +90,12 @@ const UI: Record<Locale, {
 };
 
 // ──────────────────────────────────────────────────────────────
-// Inline-Formatierung: **bold**, *italic*, deutsche „Anführung"
+// Inline-Formatierung: **bold**, [label](url), deutsche „Anführung"
 // ──────────────────────────────────────────────────────────────
 function renderFormattedText(text: string): React.ReactNode[] {
-  // Replace ASCII " quotes around words with German „..." typographic quotes (only on segments without already-typed)
   const out: React.ReactNode[] = [];
-  // Split on **bold** first
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  // Split on **bold** or [label](url) — keep delimiters
+  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g);
   parts.forEach((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) {
       out.push(
@@ -105,7 +104,23 @@ function renderFormattedText(text: string): React.ReactNode[] {
         </strong>
       );
     } else {
-      out.push(<span key={`t-${i}`}>{part}</span>);
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+      if (linkMatch) {
+        const [, label, url] = linkMatch;
+        const external = /^https?:\/\//.test(url);
+        out.push(
+          <a
+            key={`l-${i}`}
+            href={url}
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-500 hover:decoration-blue-500 transition-colors"
+          >
+            {label}
+          </a>
+        );
+      } else {
+        out.push(<span key={`t-${i}`}>{part}</span>);
+      }
     }
   });
   return out;
@@ -415,18 +430,34 @@ export default async function NewsPostPage(
 
         {/* Hero Image */}
         {post.heroImage ? (
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9]">
-              <Image
-                src={post.heroImage}
-                alt={l.title}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover"
-              />
+          post.heroImagePortrait ? (
+            <div className="max-w-md sm:max-w-lg mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-white">
+                <Image
+                  src={post.heroImage}
+                  alt={l.title}
+                  width={483}
+                  height={640}
+                  priority
+                  sizes="(max-width: 640px) 100vw, 512px"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+              <div className="relative rounded-3xl overflow-hidden border border-slate-200 aspect-[16/9]">
+                <Image
+                  src={post.heroImage}
+                  alt={l.title}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )
         ) : post.category === "Blog" && tocItems.length > 0 ? (
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
             <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-gradient-to-br from-white via-blue-50 to-white p-8 md:p-10">
