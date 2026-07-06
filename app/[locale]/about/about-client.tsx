@@ -203,6 +203,144 @@ export default function AboutClient() {
         </div>
       </section>
 
+      {/* ─── ÖKOSYSTEM: LAUNCHPAD + BANS ─────────────────── */}
+      <section className="relative py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14 max-w-3xl mx-auto">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
+              {t("about.ecosystem.eyebrow")}
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight mb-6">
+              {t("about.ecosystem.title")}
+            </h2>
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+              {t("about.ecosystem.intro")}
+            </p>
+          </div>
+
+          {/* Launchpad — Hero-Card */}
+          <div className="relative rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20 mb-6">
+            <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-8 md:p-12 overflow-hidden">
+              <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-8 md:gap-12 items-center">
+                {/* Logo Column */}
+                <div className="flex flex-col items-center md:items-start">
+                  <div className="w-full max-w-[280px] p-6 rounded-2xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 flex items-center justify-center">
+                    <Image
+                      src="/launchpad-saarland.png"
+                      alt={t("about.launchpad.logoAlt")}
+                      width={500}
+                      height={196}
+                      className="w-full h-auto object-contain"
+                      sizes="(max-width: 768px) 240px, 280px"
+                    />
+                  </div>
+                  <a
+                    href="https://www.uds-triathlon.de/startup-launchpad/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-500 transition-colors"
+                  >
+                    {t("about.launchpad.link")}
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                </div>
+
+                {/* Text Column */}
+                <div>
+                  <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
+                    {t("about.launchpad.badge")}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight tracking-tight">
+                    {t("about.launchpad.title")}
+                  </h3>
+                  <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-4 font-medium">
+                    {t("about.launchpad.lead")}
+                  </p>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                    {t("about.launchpad.p1")}
+                  </p>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                    {t("about.launchpad.p2")}
+                  </p>
+                  <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+                    {t("about.launchpad.p3")}
+                  </p>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200">
+                    {[
+                      { label: t("about.launchpad.stat1.label"), value: t("about.launchpad.stat1.value") },
+                      { label: t("about.launchpad.stat2.label"), value: t("about.launchpad.stat2.value") },
+                      { label: t("about.launchpad.stat3.label"), value: t("about.launchpad.stat3.value") },
+                    ].map((s) => (
+                      <div key={s.label}>
+                        <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 mb-1.5">
+                          {s.label}
+                        </p>
+                        <p className="text-sm md:text-base font-black text-slate-900 leading-tight">
+                          {s.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* BANS — Card mit Foto */}
+          <div className="relative rounded-3xl bg-blue-50/70 border border-slate-200 backdrop-blur-sm p-6 md:p-10 overflow-hidden">
+            <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] gap-8 md:gap-10 items-center">
+              {/* Photo Column */}
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200 bg-white">
+                <Image
+                  src="/bans-meetup.png"
+                  alt={t("about.bans.photoAlt")}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+              </div>
+
+              {/* Text Column */}
+              <div>
+                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-5">
+                  {t("about.bans.badge")}
+                </span>
+                <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 leading-tight tracking-tight">
+                  {t("about.bans.title")}
+                </h3>
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-4 font-medium">
+                  {t("about.bans.lead")}
+                </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                  {t("about.bans.p1")}
+                </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                  {t("about.bans.p2")}
+                </p>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-6">
+                  {t("about.bans.p3")}
+                </p>
+                <a
+                  href="https://www.business-angels-saarland.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-500 transition-colors"
+                >
+                  {t("about.bans.link")}
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── TEAM ──────────────────────────────────────────── */}
       <section className="relative py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

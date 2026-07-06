@@ -960,6 +960,45 @@ const translations: Record<string, string> = {
     "aboutClient.cta.subtitle": "3 mois gratuits — sans risque, sans carte de crédit.",
     "aboutClient.cta.start": "Commencer",
 
+    // about-client.tsx — Écosystème : Launchpad + BANS
+    "about.ecosystem.eyebrow": "D'où nous venons",
+    "about.ecosystem.title": "Portés par l'un des écosystèmes de startups les plus solides du sud-ouest de l'Allemagne.",
+    "about.ecosystem.intro": "Taskey n'est pas un projet logiciel anonyme venu de nulle part. Nous avons grandi dans un environnement très concret — accompagnés, coachés, mis au défi. Cela façonne notre manière de construire : sobre, fondée sur des faits, centrée sur ce qui fonctionne vraiment dans les entreprises opérationnelles.",
+    "about.launchpad.badge": "Université de la Sarre · Triathlon",
+    "about.launchpad.title": "Startup Launchpad 2026",
+    "about.launchpad.lead": "Nous faisons partie du Startup Launchpad — le programme intensif de trois mois pour les start-ups technologiques en Sarre, porté par Triathlon, l'écosystème d'entrepreneuriat et de transfert de l'Université de la Sarre.",
+    "about.launchpad.p1": "Le programme a démarré le 7 juillet 2026 et se poursuit jusqu'au Demo Day du 22 septembre 2026. Trois jours par semaine à Sarrebruck, revues 1:1 hebdomadaires, pitchs mensuels, plus de 20 workshops et un réseau de mentors et d'investisseurs expérimentés — concentrés sur ce dont les équipes deep-tech ont réellement besoin pour arriver sur le marché.",
+    "about.launchpad.p2": "Le Launchpad est déployé par SouthwestX, la startup factory du sud-ouest, financé par le ministère fédéral allemand de l'Économie et de la Protection du climat, le ministère de l'Économie de la Sarre et le programme EXIST — cofinancé par l'Union européenne.",
+    "about.launchpad.p3": "Pour nous, c'est bien plus qu'un programme de subvention. C'est l'environnement structuré dans lequel nous confrontons Taskey semaine après semaine à la réalité du marché — avec des coachs, des mentors et des pairs qui ne nous disent pas ce que nous voulons entendre, mais posent les bonnes questions.",
+    "about.launchpad.stat1.label": "Durée",
+    "about.launchpad.stat1.value": "3 mois intensifs",
+    "about.launchpad.stat2.label": "Kickoff",
+    "about.launchpad.stat2.value": "7 juillet 2026",
+    "about.launchpad.stat3.label": "Demo Day",
+    "about.launchpad.stat3.value": "22 septembre 2026",
+    "about.launchpad.logoAlt": "Startup Launchpad – Université de la Sarre, Triathlon",
+    "about.launchpad.link": "En savoir plus sur le programme",
+    "about.bans.badge": "BANS · Business Angels Netzwerk Saarland",
+    "about.bans.title": "Pitch devant des business angels — et retour honnête à la clé.",
+    "about.bans.lead": "Lors du BANS Mentor Meetup fin juin 2026, nous avons présenté Taskey à un cercle de business angels expérimentés du réseau sarrois.",
+    "about.bans.p1": "Quatre équipes, des échanges ouverts, des questions concrètes. Pas d'applaudissements polis — mais des relances précises sur l'échelle, la structure tarifaire, la défense du marché et l'exécution opérationnelle. Exactement le type d'échange qu'on n'obtient pas dans un rendez-vous commercial.",
+    "about.bans.p2": "Ce qui s'est confirmé pour nous : le principe fondamental de Taskey — communication en temps réel entre le terrain et le bureau, dans un seul système au lieu de cinq — tient la route au-delà de notre clientèle actuelle. Et les points sur lesquels nous devons encore affûter ont été nommés clairement.",
+    "about.bans.p3": "Un grand merci à l'équipe BANS, aux business angels pour ces échanges ouverts et aux équipes co-fondatrices pour la qualité des discussions.",
+    "about.bans.photoAlt": "Taskey au BANS Mentor Meetup 2026",
+    "about.bans.link": "En savoir plus sur le réseau BANS",
+
+    // Hero (accueil) — bandeau de confiance Launchpad
+    "homeHero.launchpad.label": "Soutenus par",
+    "homeHero.launchpad.program": "Startup Launchpad 2026",
+    "homeHero.launchpad.body": "Université de la Sarre · Triathlon",
+    "homeHero.launchpad.logoAlt": "Startup Launchpad – Université de la Sarre",
+
+    // Footer — bandeau Launchpad (visible sur toutes les pages)
+    "footer.launchpad.label": "Soutenus par",
+    "footer.launchpad.program": "Startup Launchpad 2026",
+    "footer.launchpad.body": "Université de la Sarre · Triathlon",
+    "footer.launchpad.logoAlt": "Startup Launchpad – Université de la Sarre",
+
     // ios-client.tsx — Secteurs
     "iosPage.branchen.mobile.1": "Facility Management",
     "iosPage.branchen.mobile.2": "Électrotechnique",

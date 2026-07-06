@@ -960,6 +960,45 @@ const translations: Record<string, string> = {
     "aboutClient.cta.subtitle": "30 Tage kostenlos — kein Risiko, keine Kreditkarte.",
     "aboutClient.cta.start": "Jetzt starten",
 
+    // about-client.tsx — Ökosystem: Launchpad + BANS
+    "about.ecosystem.eyebrow": "Wo wir stehen",
+    "about.ecosystem.title": "Getragen von einem der stärksten Gründungs-Ökosysteme im Südwesten.",
+    "about.ecosystem.intro": "Taskey ist kein anonymes Software-Projekt aus dem Nirgendwo. Wir sind in einem konkreten Umfeld groß geworden — begleitet, gecoacht, herausgefordert. Das prägt, wie wir bauen: nüchtern, evidenzbasiert, mit Fokus auf das, was in operativen Betrieben tatsächlich funktioniert.",
+    "about.launchpad.badge": "Universität des Saarlandes · Triathlon",
+    "about.launchpad.title": "Startup Launchpad 2026",
+    "about.launchpad.lead": "Wir sind Teil des Startup Launchpad — dem dreimonatigen Intensivprogramm für technologiegetriebene Gründungen im Saarland, getragen von Triathlon, dem Gründungs- und Transfer-Ökosystem der Universität des Saarlandes.",
+    "about.launchpad.p1": "Das Programm startete am 7. Juli 2026 und läuft bis zum Demo Day am 22. September 2026. Drei Tage pro Woche in Saarbrücken, wöchentliche 1:1-Reviews, monatliche Pitches, über 20 Workshops und ein Netzwerk aus erfahrenen Mentor:innen und Investor:innen — konzentriert auf das, was Deep-Tech-Teams beim Sprung in den Markt wirklich brauchen.",
+    "about.launchpad.p2": "Getragen wird das Launchpad von SouthwestX, der Startup-Factory für den Südwesten, gefördert vom Bundesministerium für Wirtschaft und Klimaschutz, dem Ministerium für Wirtschaft, Innovation, Digitales und Energie des Saarlandes und dem EXIST-Programm — kofinanziert durch die Europäische Union.",
+    "about.launchpad.p3": "Für uns ist das mehr als ein Förderprogramm. Es ist die strukturierte Umgebung, in der wir Taskey Woche für Woche gegen echte Marktrealität testen — mit Coaches, Mentor:innen und Peers, die uns nicht nach dem Mund reden, sondern die richtigen Fragen stellen.",
+    "about.launchpad.stat1.label": "Programmdauer",
+    "about.launchpad.stat1.value": "3 Monate intensiv",
+    "about.launchpad.stat2.label": "Kickoff",
+    "about.launchpad.stat2.value": "7. Juli 2026",
+    "about.launchpad.stat3.label": "Demo Day",
+    "about.launchpad.stat3.value": "22. September 2026",
+    "about.launchpad.logoAlt": "Startup Launchpad – Universität des Saarlandes, Triathlon",
+    "about.launchpad.link": "Mehr über das Programm",
+    "about.bans.badge": "BANS · Business Angels Netzwerk Saarland",
+    "about.bans.title": "Vor Business Angels gepitcht — und ehrliches Feedback bekommen.",
+    "about.bans.lead": "Beim BANS Mentor-Meetup Ende Juni 2026 haben wir Taskey vor einem Kreis erfahrener Business Angels aus dem saarländischen Netzwerk vorgestellt.",
+    "about.bans.p1": "Vier Teams, offene Gespräche, konkrete Fragen. Kein Höflichkeitsapplaus — sondern präzise Rückfragen zu Skalierung, Preisstruktur, Marktverteidigung und operativer Umsetzung. Genau die Art von Austausch, die man in einem Verkaufsgespräch nicht bekommt.",
+    "about.bans.p2": "Für uns bestätigt hat sich: Der Grundgedanke von Taskey — Echtzeit-Kommunikation zwischen Einsatzort und Büro, in einem System statt fünf — trägt auch außerhalb unserer Kundenwelt. Und die Punkte, an denen wir noch schärfer werden müssen, wurden klar benannt.",
+    "about.bans.p3": "Ein herzlicher Dank an das BANS-Team, an die Business Angels für die offenen Gespräche und an alle Mitgründungsteams für den intensiven Austausch.",
+    "about.bans.photoAlt": "Taskey beim BANS Mentor-Meetup 2026",
+    "about.bans.link": "Mehr zum BANS-Netzwerk",
+
+    // Hero (Startseite) — Launchpad-Trust-Streifen
+    "homeHero.launchpad.label": "Gefördert im",
+    "homeHero.launchpad.program": "Startup Launchpad 2026",
+    "homeHero.launchpad.body": "Universität des Saarlandes · Triathlon",
+    "homeHero.launchpad.logoAlt": "Startup Launchpad – Universität des Saarlandes",
+
+    // Footer — Launchpad-Streifen (global auf jeder Seite)
+    "footer.launchpad.label": "Gefördert im",
+    "footer.launchpad.program": "Startup Launchpad 2026",
+    "footer.launchpad.body": "Universität des Saarlandes · Triathlon",
+    "footer.launchpad.logoAlt": "Startup Launchpad – Universität des Saarlandes",
+
     // ios-client.tsx — Branchen
     "iosPage.branchen.mobile.1": "Facility Management",
     "iosPage.branchen.mobile.2": "Elektrotechnik",

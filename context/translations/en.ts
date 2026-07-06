@@ -967,6 +967,45 @@ const translations: Record<string, string> = {
     "aboutClient.cta.subtitle": "3 months free — no risk, no credit card.",
     "aboutClient.cta.start": "Get started",
 
+    // about-client.tsx — Ecosystem: Launchpad + BANS
+    "about.ecosystem.eyebrow": "Where we come from",
+    "about.ecosystem.title": "Backed by one of the strongest founder ecosystems in south-west Germany.",
+    "about.ecosystem.intro": "Taskey is not an anonymous software project from nowhere. We grew up in a very specific environment — coached, challenged, held to a standard. That shapes how we build: sober, evidence-based, focused on what actually works in operational businesses.",
+    "about.launchpad.badge": "Saarland University · Triathlon",
+    "about.launchpad.title": "Startup Launchpad 2026",
+    "about.launchpad.lead": "We are part of the Startup Launchpad — the three-month intensive programme for technology-driven ventures in Saarland, run by Triathlon, the entrepreneurship and transfer ecosystem of Saarland University.",
+    "about.launchpad.p1": "The programme kicked off on 7 July 2026 and runs through to Demo Day on 22 September 2026. Three days per week on site in Saarbrücken, weekly 1:1 reviews, monthly pitches, over 20 workshops, and a network of experienced mentors and investors — focused on what deep-tech teams actually need for the jump into the market.",
+    "about.launchpad.p2": "Launchpad is delivered by SouthwestX, the startup factory for south-west Germany, funded by the German Federal Ministry for Economic Affairs and Climate Action, the Saarland Ministry of Economics, Innovation, Digital Affairs and Energy, and the EXIST programme — co-financed by the European Union.",
+    "about.launchpad.p3": "For us it is more than a funding programme. It is the structured environment in which we test Taskey week after week against real market reality — with coaches, mentors and peers who don't tell us what we want to hear, but ask the right questions.",
+    "about.launchpad.stat1.label": "Duration",
+    "about.launchpad.stat1.value": "3 months intensive",
+    "about.launchpad.stat2.label": "Kickoff",
+    "about.launchpad.stat2.value": "7 July 2026",
+    "about.launchpad.stat3.label": "Demo Day",
+    "about.launchpad.stat3.value": "22 September 2026",
+    "about.launchpad.logoAlt": "Startup Launchpad – Saarland University, Triathlon",
+    "about.launchpad.link": "More about the programme",
+    "about.bans.badge": "BANS · Business Angels Network Saarland",
+    "about.bans.title": "Pitched in front of business angels — and got honest feedback.",
+    "about.bans.lead": "At the BANS Mentor Meetup in late June 2026 we presented Taskey to a circle of experienced business angels from the Saarland network.",
+    "about.bans.p1": "Four teams, open conversations, concrete questions. No polite applause — but precise follow-ups on scaling, pricing structure, market defensibility and operational delivery. Exactly the kind of exchange you don't get in a sales meeting.",
+    "about.bans.p2": "What was confirmed for us: the core idea behind Taskey — real-time communication between the field and the office, in one system rather than five — holds up outside our customer world. And the points where we still need to sharpen were named clearly.",
+    "about.bans.p3": "A warm thank you to the BANS team, to the business angels for the open conversations, and to the co-founding teams for the intense exchange.",
+    "about.bans.photoAlt": "Taskey at the BANS Mentor Meetup 2026",
+    "about.bans.link": "More about the BANS network",
+
+    // Hero (home) — Launchpad trust strip
+    "homeHero.launchpad.label": "Backed by",
+    "homeHero.launchpad.program": "Startup Launchpad 2026",
+    "homeHero.launchpad.body": "Saarland University · Triathlon",
+    "homeHero.launchpad.logoAlt": "Startup Launchpad – Saarland University",
+
+    // Footer — Launchpad strip (visible on every page)
+    "footer.launchpad.label": "Backed by",
+    "footer.launchpad.program": "Startup Launchpad 2026",
+    "footer.launchpad.body": "Saarland University · Triathlon",
+    "footer.launchpad.logoAlt": "Startup Launchpad – Saarland University",
+
     // ios-client.tsx — Industries
     "iosPage.branchen.mobile.1": "Facility Management",
     "iosPage.branchen.mobile.2": "Electrical",

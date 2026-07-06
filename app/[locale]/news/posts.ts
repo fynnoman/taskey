@@ -40,6 +40,105 @@ export function getCategoryLabel(category: PostCategory, locale: Locale): string
 // ─────────────────────────────────────────────────────────────
 export const posts: Post[] = [
   {
+    slug: "launchpad-saarland-2026",
+    category: "Unternehmen",
+    date: "6. Juli 2026",
+    isoDate: "2026-07-06",
+    title: "Taskey ist Teil des Startup Launchpad 2026 der Universität des Saarlandes",
+    metaTitle: "Taskey im Startup Launchpad 2026 | Universität des Saarlandes · Triathlon",
+    metaDescription:
+      "Taskey ist eines der Teams im Startup Launchpad 2026 — dem dreimonatigen Intensivprogramm für technologiegetriebene Gründungen an der Universität des Saarlandes, getragen von Triathlon und SouthwestX.",
+    summary:
+      "Ab dem 7. Juli 2026 sind wir Teil des Startup Launchpad, dem Deep-Tech-Intensivprogramm der Universität des Saarlandes (Triathlon / SouthwestX). Drei Monate, wöchentliche Reviews, Coaching und Mentoring — und am Ende der Demo Day am 22. September 2026.",
+    body: `Es gibt Meldungen, bei denen wir die Ankündigung eher zurückhaltend formulieren würden. Diese hier gehört nicht dazu.
+
+Taskey ist ab dem 7. Juli 2026 offiziell Teil des **Startup Launchpad** — dem dreimonatigen Intensivprogramm für technologiegetriebene Gründungen im Saarland, getragen von **Triathlon**, dem Gründungs- und Transfer-Ökosystem der **Universität des Saarlandes**, und operativ umgesetzt durch **SouthwestX**, die Startup-Factory für den Südwesten.
+
+## Was das Startup Launchpad ist
+
+Das Launchpad ist kein Beschleuniger im klassischen Sinne, sondern ein hoch verdichtetes Intensivprogramm — drei Monate, drei Tage pro Woche vor Ort in Saarbrücken, wöchentliche 1:1-Reviews, monatliche Pitches, über 20 Workshops und ein Netzwerk aus erfahrenen Mentor:innen, Coaches und Investor:innen. Der Fokus liegt auf Deep-Tech-Teams, die den Sprung von der Idee in den Markt vorbereiten — und dafür strukturierte Reibung, harte Fragen und ehrliches Feedback brauchen.
+
+Das Programm ist eingebettet in das größere Ökosystem rund um die Universität des Saarlandes und wird gefördert durch das Bundesministerium für Wirtschaft und Klimaschutz, das saarländische Ministerium für Wirtschaft, Innovation, Digitales und Energie sowie das EXIST-Programm — kofinanziert durch die Europäische Union.
+
+## Warum wir uns beworben haben
+
+Man kann ein Software-Unternehmen sehr lange aus dem eigenen Kopf heraus bauen. Man kann Features schneiden, Preise setzen, Kunden gewinnen — und trotzdem systematisch die falschen Fragen stellen, ohne es zu merken. Genau das ist der stille Feind vieler Gründungsphasen: nicht der Wettbewerb da draußen, sondern die eigene, nicht kalibrierte Sicht auf das Produkt.
+
+Das Startup Launchpad adressiert genau diesen Punkt. Es zwingt uns, unsere Annahmen jede Woche gegen die Realität zu spiegeln — mit Coaches, Mentor:innen und Peers, die weder Verkäufer noch Auftraggeber sind, sondern Sparringspartner mit Erfahrung und ohne Höflichkeitszwang. Für ein Team wie unseres, das aus dem operativen Alltag von Gebäudereinigern und Facility-Betrieben heraus baut, ist diese externe Reibung Gold wert.
+
+## Was das für unsere Kunden bedeutet
+
+Nichts, was sich negativ auf den laufenden Betrieb auswirkt — und einiges, was sich in den nächsten Monaten positiv niederschlägt.
+
+**Produktentwicklung.** Wir bekommen strukturierten Zugang zu erfahrenen Coaches, die vergleichbare B2B-SaaS-Themen kennen. Themen wie Preisstruktur, Onboarding-Reibung, Kundenbindung und Skalierung werden im Programm systematisch bearbeitet. Das schärft die Version von Taskey, die Sie in den kommenden Monaten sehen.
+
+**Verlässlichkeit.** Als Teil eines geförderten Deep-Tech-Programms mit Institutionen wie der Universität des Saarlandes, dem BMWK und dem Saarland-Wirtschaftsministerium im Rücken sind wir keine Blackbox — sondern ein Unternehmen mit institutioneller Einbindung. Das ist gerade im Mittelstand ein Signal, das zählt.
+
+**Tempo mit Boden.** Das Programm kombiniert Geschwindigkeit mit Struktur. Wir bewegen uns weiter zügig — aber mit einem klaren Rahmen, der dafür sorgt, dass keine Baustelle aus dem Blick fällt.
+
+## Die nächsten Meilensteine
+
+- **7. Juli 2026** — Kickoff des Programms in Saarbrücken.
+- **Ab Juli** — wöchentliche 1:1-Reviews, monatliche Pitch-Sessions, Workshops mit externen Referent:innen.
+- **22. September 2026** — Demo Day. Wir präsentieren den Stand von Taskey vor Investor:innen, Mentor:innen und Vertreter:innen aus dem Ökosystem.
+
+Wir werden auf dieser News-Seite über den Verlauf berichten — nicht als Programm-Update, sondern immer dann, wenn im Ergebnis etwas entstanden ist, was für unsere Kund:innen einen konkreten Unterschied macht.
+
+## Ein Wort zum Standort
+
+Taskey wurde in Völklingen aufgebaut. Dass wir jetzt Teil des größten Deep-Tech-Programms des Saarlandes sind, ist für uns nicht nur eine Etappe — es ist auch eine bewusste Entscheidung, den Standort mitzugestalten, an dem wir groß geworden sind. Das Saarland hat in den letzten Jahren eines der interessantesten Gründungs-Ökosysteme im deutschen Südwesten aufgebaut. Wir freuen uns, jetzt Teil davon zu sein.
+
+## Danke
+
+Ein herzliches Dankeschön an das gesamte Team von Triathlon und SouthwestX für die Aufnahme, an die Coaches und Mentor:innen für die Zeit, die sie in uns investieren — und an unsere Kund:innen, deren Vertrauen die Grundlage dafür ist, dass wir überhaupt mit dem Anspruch antreten können, Taskey noch schärfer zu machen.
+
+Weitere Informationen zum Programm gibt es auf der Website von [Triathlon – Startup Launchpad](https://www.uds-triathlon.de/startup-launchpad/).`,
+  },
+  {
+    slug: "bans-mentor-meetup",
+    category: "Unternehmen",
+    date: "2. Juli 2026",
+    isoDate: "2026-07-02",
+    title: "Taskey pitcht beim BANS Mentor-Meetup vor saarländischen Business Angels",
+    metaTitle: "Taskey beim BANS Mentor-Meetup 2026 | Business Angels Netzwerk Saarland",
+    metaDescription:
+      "Beim BANS Mentor-Meetup Ende Juni 2026 hat Taskey vor einem Kreis erfahrener Business Angels aus dem saarländischen Netzwerk gepitcht — mit ehrlichem Feedback zu Skalierung, Preisstruktur und operativer Umsetzung.",
+    summary:
+      "Ende Juni 2026 waren wir beim Mentor-Meetup des Business Angels Netzwerk Saarland (BANS) zu Gast und haben Taskey vor erfahrenen Business Angels vorgestellt. Vier Teams, präzise Fragen, ehrliches Feedback — genau das, was man in einem Verkaufsgespräch nicht bekommt.",
+    heroImage: "/bans-meetup.png",
+    body: `Heiße Temperaturen, spannende Pitches und jede Menge wertvoller Austausch — so lässt sich das **BANS Mentor-Meetup Ende Juni 2026** wohl am ehrlichsten zusammenfassen.
+
+Wir waren zu Gast beim **Business Angels Netzwerk Saarland (BANS)** und haben Taskey vor einem Kreis erfahrener Business Angels aus dem saarländischen Netzwerk vorgestellt. Vier Gründungsteams, offene Gespräche, konkrete Rückfragen — und am Ende ein Eis zur Belohnung.
+
+## Warum wir dort waren
+
+Ein Mentor-Meetup ist kein Fundraising-Termin. Es ist ein strukturiertes Format, in dem Gründungsteams ihre Geschäftsideen vor erfahrenen Angels präsentieren und ehrliches, unverstelltes Feedback bekommen — zu Geschäftsmodell, Skalierung, Marktverteidigung, Preisstruktur und operativer Umsetzung.
+
+Für uns war das der Wert dieses Termins: Rückfragen, die man in einem klassischen Verkaufsgespräch nie hört, weil dort andere Ziele im Raum stehen. Angels sind in ihrem Feedback direkt. Sie haben Muster gesehen, die man als operatives Gründungsteam noch nicht kennt — und sie sagen, was ihnen auffällt, ohne Rücksicht darauf, wie es sich anhört.
+
+## Was wir mitgenommen haben
+
+Konkret drei Dinge.
+
+**Erstens.** Der Grundgedanke von Taskey — Echtzeit-Kommunikation zwischen Einsatzort und Büro, in einem System statt fünf, mit NFC als physischem Ankerpunkt — trägt auch außerhalb unserer heutigen Kundenwelt. Das war die Kernfrage, mit der wir in den Raum gegangen sind. Sie wurde nicht in Frage gestellt.
+
+**Zweitens.** Die Angels haben präzise Punkte benannt, an denen wir noch schärfer werden müssen. Wo genau, gehört in die interne Arbeit — nicht in einen Blog-Post. Aber der Effekt eines guten Mentor-Meetups ist, dass diese Punkte am nächsten Morgen konkret auf der Roadmap stehen.
+
+**Drittens.** Das Format hat gezeigt, wie wertvoll strukturierte externe Reibung ist. Nicht Feedback von Kund:innen, die Rücksicht nehmen. Nicht Feedback vom eigenen Netzwerk, das wohlwollend ist. Sondern der ungeschminkte Blick von außen.
+
+## Wer dabei war
+
+Neben unserem Team haben drei weitere Gründungsteams vor den Angels präsentiert. Ein herzlicher Dank an alle Mitgründungsteams für die offenen Gespräche und den intensiven Austausch — trotz Sommer und trotz der Temperaturen an dem Tag.
+
+Und ein besonderer Dank an das **BANS-Team** für die Organisation und die konzentrierte Atmosphäre, sowie an alle **Business Angels**, die sich die Zeit genommen haben, sich vier Geschäftsideen anzuhören, mitzudenken und uns mit ihrem Feedback voranzubringen.
+
+## Was jetzt kommt
+
+Der nächste größere Meilenstein für uns ist der Kickoff des **Startup Launchpad 2026** an der Universität des Saarlandes am 7. Juli 2026 — dem dreimonatigen Deep-Tech-Intensivprogramm, dessen Teil Taskey ab dem Sommer ist. Über das Zusammenspiel aus Angel-Feedback aus dem BANS-Meetup und der strukturierten Programmarbeit im Launchpad werden wir in den kommenden Wochen berichten, sobald konkrete Ergebnisse für unsere Kund:innen sichtbar sind.
+
+Bis dahin: Danke fürs Zuhören, fürs Weitergeben, fürs ehrliche Nachhaken.`,
+  },
+  {
     slug: "taskey-share-live",
     category: "Release",
     date: "2. Juni 2026",
