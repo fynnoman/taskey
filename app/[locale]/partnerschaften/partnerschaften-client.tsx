@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import CommunicationUSP from '@/components/CommunicationUSP';
 
 // SVG icon paths for benefits (5 benefits)
 const benefitIcons = [
@@ -161,8 +160,6 @@ export default function PartnerschaftenClient() {
           </div>
         </div>
       </section>
-
-      <CommunicationUSP variant="compact" />
 
       {/* ─── Warum Taskey ───────────────────────────────────── */}
       <section className="relative py-20 md:py-28">
