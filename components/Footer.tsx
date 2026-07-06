@@ -159,14 +159,6 @@ export default function Footer() {
                   {t("footer.link.partnerships")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/support"
-                  className="text-slate-300 hover:text-white transition break-words"
-                >
-                  {t("footer.link.support")}
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -302,14 +294,6 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.contact")}</h4>
             <ul className="space-y-4 text-sm text-slate-300">
-              <li>
-                <Link
-                  href="/support"
-                  className="hover:text-white transition"
-                >
-                  {t("footer.link.supportContact")}
-                </Link>
-              </li>
               <li>fynn@taskeyapp.com</li>
               <li>+49 151 68488999</li>
               <li>In der Acht 44</li>
