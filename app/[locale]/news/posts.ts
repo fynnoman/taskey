@@ -51,15 +51,20 @@ export const posts: Post[] = [
       "Taskey ist eines der Teams im Startup Launchpad 2026 — dem dreimonatigen Intensivprogramm für technologiegetriebene Gründungen an der Universität des Saarlandes, getragen von Triathlon und SouthwestX.",
     summary:
       "Ab dem 7. Juli 2026 sind wir Teil des Startup Launchpad, dem Deep-Tech-Intensivprogramm der Universität des Saarlandes (Triathlon / SouthwestX). Drei Monate, wöchentliche Reviews, Coaching und Mentoring — und am Ende der Demo Day am 22. September 2026.",
+    heroImage: "/launchpad-programm-preview.png",
     body: `Es gibt Meldungen, bei denen wir die Ankündigung eher zurückhaltend formulieren würden. Diese hier gehört nicht dazu.
 
 Taskey ist ab dem 7. Juli 2026 offiziell Teil des **Startup Launchpad** — dem dreimonatigen Intensivprogramm für technologiegetriebene Gründungen im Saarland, getragen von **Triathlon**, dem Gründungs- und Transfer-Ökosystem der **Universität des Saarlandes**, und operativ umgesetzt durch **SouthwestX**, die Startup-Factory für den Südwesten.
+
+![Startup Launchpad 2026 – Programm-Wordmark der Universität des Saarlandes / Triathlon](/launchpad-saarland.png "Startup Launchpad 2026 · Universität des Saarlandes · Triathlon")
 
 ## Was das Startup Launchpad ist
 
 Das Launchpad ist kein Beschleuniger im klassischen Sinne, sondern ein hoch verdichtetes Intensivprogramm — drei Monate, drei Tage pro Woche vor Ort in Saarbrücken, wöchentliche 1:1-Reviews, monatliche Pitches, über 20 Workshops und ein Netzwerk aus erfahrenen Mentor:innen, Coaches und Investor:innen. Der Fokus liegt auf Deep-Tech-Teams, die den Sprung von der Idee in den Markt vorbereiten — und dafür strukturierte Reibung, harte Fragen und ehrliches Feedback brauchen.
 
 Das Programm ist eingebettet in das größere Ökosystem rund um die Universität des Saarlandes und wird gefördert durch das Bundesministerium für Wirtschaft und Klimaschutz, das saarländische Ministerium für Wirtschaft, Innovation, Digitales und Energie sowie das EXIST-Programm — kofinanziert durch die Europäische Union.
+
+{logos:/triathlon-logo.png|Triathlon – Gründungs- und Transfer-Ökosystem der Universität des Saarlandes||/uni-saarland-logo.png|Universität des Saarlandes}
 
 ## Warum wir uns beworben haben
 

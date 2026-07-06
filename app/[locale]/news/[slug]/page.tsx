@@ -141,6 +141,12 @@ function isOrderedListItem(line: string) {
 function isUnorderedListItem(line: string) {
   return /^[-*]\s/.test(line);
 }
+function isImageLine(line: string) {
+  return /^!\[[^\]]*\]\([^)\s]+(?:\s+"[^"]*")?\)$/.test(line.trim());
+}
+function isLogoRowLine(line: string) {
+  return /^\{logos:[^}]+\}$/.test(line.trim());
+}
 
 function renderTable(lines: string[], keyBase: string) {
   // lines: each line "| col | col |"
@@ -216,6 +222,75 @@ function renderBody(body: string) {
       }
       const t = renderTable(tableLines, `tbl-${key++}`);
       if (t) blocks.push(t);
+      continue;
+    }
+
+    // Standalone image: ![alt](url "optional caption")
+    if (isImageLine(line)) {
+      const m = line.trim().match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/);
+      if (m) {
+        const [, alt, url, caption] = m;
+        blocks.push(
+          <figure key={`img-${key++}`} className="my-10">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white">
+              <Image
+                src={url}
+                alt={alt}
+                width={1200}
+                height={720}
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            {caption ? (
+              <figcaption className="mt-3 text-center text-sm text-slate-500 italic">
+                {caption}
+              </figcaption>
+            ) : null}
+          </figure>
+        );
+      }
+      i++;
+      continue;
+    }
+
+    // Logo row: {logos:src|alt||src|alt}
+    if (isLogoRowLine(line)) {
+      const m = line.trim().match(/^\{logos:([^}]+)\}$/);
+      if (m) {
+        const items = m[1]
+          .split("||")
+          .map((chunk) => {
+            const [src, alt] = chunk.split("|");
+            return { src: src?.trim(), alt: alt?.trim() ?? "" };
+          })
+          .filter((it) => it.src);
+        blocks.push(
+          <div
+            key={`logos-${key++}`}
+            className="my-10 rounded-2xl border border-slate-200 bg-blue-50/60 px-6 py-6 md:px-8 md:py-7"
+          >
+            <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500 mb-4 text-center">
+              Programm-Partner
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+              {items.map((it, idx) => (
+                <div key={idx} className="h-10 md:h-12 flex items-center">
+                  <Image
+                    src={it.src}
+                    alt={it.alt}
+                    width={640}
+                    height={381}
+                    sizes="160px"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      }
+      i++;
       continue;
     }
 
