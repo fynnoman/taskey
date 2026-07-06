@@ -47,8 +47,8 @@ export default function Hero() {
         </video>
 
         {/* Gradient-Overlay: hält die Headline lesbar ohne das Video zu erschlagen */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/55 to-slate-950/95" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.55)_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/68 via-slate-950/44 to-slate-950/76" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.44)_70%)]" />
       </div>
 
       {/* === Stage Content ===================================================== */}
