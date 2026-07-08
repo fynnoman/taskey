@@ -14,6 +14,7 @@ const FeaturePreview = dynamic(() => import("@/components/home/FeaturePreview"))
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const TaskeyShare = dynamic(() => import("@/components/home/TaskeyShare"));
 const TargetAudiences = dynamic(() => import("@/components/TargetAudiences"));
+const SoloPackageMention = dynamic(() => import("@/components/home/SoloPackageMention"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));
 const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
@@ -229,6 +230,9 @@ export default async function Home({
 
         {/* 3. Kern-USP #2: Alles in einem System statt 5 Abos */}
         <AllInOneUSP variant="dark" />
+
+        {/* 3a. Kleine Erwähnung: neues Einzelunternehmer-Paket → /pricing */}
+        <SoloPackageMention />
 
         {/* 4. Soziale Validierung: Für wen ist Taskey? */}
         <TargetAudiences variant="dark" />
