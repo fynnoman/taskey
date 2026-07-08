@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect, useRef } from "react";
 
 /* ============================================================================
  * HERO — Cinematic Video-Stage
@@ -25,6 +26,42 @@ const ASSETS = {
 
 export default function Hero() {
   const { t } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    // Safari needs the muted attribute explicitly set before play() to allow autoplay
+    v.muted = true;
+    v.defaultMuted = true;
+
+    const tryPlay = () => {
+      const p = v.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(() => {
+          // Autoplay blocked. Retry on the next user interaction.
+        });
+      }
+    };
+
+    tryPlay();
+
+    // Some Safari builds pause background videos when the tab regains focus.
+    const onVisibility = () => {
+      if (document.visibilityState === "visible" && v.paused) tryPlay();
+    };
+    const onPageShow = () => {
+      if (v.paused) tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pageshow", onPageShow);
+
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("pageshow", onPageShow);
+    };
+  }, []);
 
   return (
     <section
@@ -34,11 +71,13 @@ export default function Hero() {
       {/* === Background Video Layer ============================================ */}
       <div className="absolute inset-0 -z-10">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
+          disablePictureInPicture
           poster={ASSETS.heroPoster}
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"

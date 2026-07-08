@@ -57,14 +57,6 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/leistungsnachweis-gebaeudereinigung", changeFrequency: "monthly", priority: 0.9 },
   { path: "/software-kleine-reinigungsfirma", changeFrequency: "monthly", priority: 0.9 },
 
-  // Vergleichsseiten
-  { path: "/vergleich/zvoove-alternative", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/vergleich/blink-alternative", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/vergleich/mendato-alternative", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/vergleich/fortytools-alternative", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/vergleich/plan-d-alternative", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/vergleich/software-gebaeudereinigung", changeFrequency: "weekly", priority: 0.92 },
-
   // Branchen
   { path: "/loesungen", changeFrequency: "monthly", priority: 0.8 },
   { path: "/loesungen/unterhaltsreinigung", changeFrequency: "monthly", priority: 0.85 },

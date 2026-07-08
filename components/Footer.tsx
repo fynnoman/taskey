@@ -43,50 +43,22 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* USP Hero im Footer */}
-        <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-10 border-b border-slate-800">
+        {/* USP im Footer */}
+        <div className="pt-10 sm:pt-16 md:pt-20 pb-10 sm:pb-14 border-b border-slate-800">
           <div className="flex items-center gap-2 mb-5">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
             </span>
             <span className="text-[11px] font-black tracking-[0.25em] text-blue-400 uppercase">
-              {t("footer.usp1.tag")}
+              {t("footer.usp.tag")}
             </span>
           </div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl mb-5">
-            {t("footer.usp1.title.prefix")}
-            <span className="text-blue-400">{t("footer.usp1.title.word1")}</span>
-            {t("footer.usp1.title.middle")}
-            <span className="text-blue-400">{t("footer.usp1.title.word2")}</span>
-            {t("footer.usp1.title.suffix")}
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl">
+            {t("footer.usp.line1")}{" "}
+            <span className="text-blue-400">{t("footer.usp.line2")}</span>{" "}
+            {t("footer.usp.line3")}
           </h3>
-          <p className="text-slate-400 text-base sm:text-lg max-w-3xl leading-relaxed">
-            {t("footer.usp1.desc")}
-          </p>
-        </div>
-
-        {/* Zweiter USP-Block: Alles in einem System */}
-        <div className="pt-8 sm:pt-10 pb-8 sm:pb-10 border-b border-slate-800">
-          <div className="flex items-center gap-2 mb-5">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400" />
-            </span>
-            <span className="text-[11px] font-black tracking-[0.25em] text-emerald-400 uppercase">
-              {t("footer.usp2.tag")}
-            </span>
-          </div>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight max-w-4xl mb-5">
-            {t("footer.usp2.title.prefix")}
-            <span className="text-emerald-400">{t("footer.usp2.title.word1")}</span>
-            {t("footer.usp2.title.middle")}
-            <span className="line-through text-slate-400">{t("footer.usp2.title.word2")}</span>
-            {t("footer.usp2.title.suffix")}
-          </h3>
-          <p className="text-slate-400 text-base sm:text-lg max-w-3xl leading-relaxed">
-            {t("footer.usp2.desc")}
-          </p>
         </div>
 
         {/* Top section — big branding */}
@@ -250,42 +222,6 @@ export default function Footer() {
               <li>
                 <Link href="/loesungen/hotel-housekeeping" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.hotel")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.vergleiche")}</h4>
-            <ul className="space-y-4 text-sm">
-              <li>
-                <Link href="/vergleich/software-gebaeudereinigung" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.anbietervergleich")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/vergleich/zvoove-alternative" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.zvoove")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/vergleich/blink-alternative" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.blink")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/vergleich/mendato-alternative" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.mendato")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/vergleich/fortytools-alternative" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.fortytools")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/vergleich/plan-d-alternative" className="text-slate-300 hover:text-white transition break-words">
-                  {t("footer.link.planD")}
                 </Link>
               </li>
             </ul>

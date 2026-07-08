@@ -699,16 +699,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           label: c.rel5Label,
           description: c.rel5Desc,
         },
-        {
-          href: "/vergleich/software-gebaeudereinigung",
-          label: c.rel6Label,
-          description: c.rel6Desc,
-        },
-        {
-          href: "/vergleich/zvoove-alternative",
-          label: c.rel7Label,
-          description: c.rel7Desc,
-        },
       ]}
     />
     </>

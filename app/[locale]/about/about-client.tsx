@@ -131,6 +131,44 @@ export default function AboutClient() {
         </div>
       </section>
 
+      {/* ─── URSPRUNG / BEZUG ZUR GEBÄUDEREINIGUNG ─────────── */}
+      <section className="relative py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl bg-white/70 border border-slate-200 backdrop-blur-sm p-8 md:p-12 overflow-hidden">
+            <div className="absolute -top-24 -left-24 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+            <div className="relative">
+              <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4">
+                {t("about.origin.eyebrow")}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight mb-6">
+                {t("about.origin.title")}
+              </h2>
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-4 font-medium">
+                {t("about.origin.p1")}
+              </p>
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
+                {t("about.origin.p2")}
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {[
+                  t("about.origin.pill1"),
+                  t("about.origin.pill2"),
+                  t("about.origin.pill3"),
+                  t("about.origin.pill4"),
+                ].map((pill) => (
+                  <span
+                    key={pill}
+                    className="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs md:text-sm font-bold text-blue-700 bg-cyan-50 border border-cyan-200"
+                  >
+                    {pill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── PROBLEM / LÖSUNG ──────────────────────────────── */}
       <section className="relative py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

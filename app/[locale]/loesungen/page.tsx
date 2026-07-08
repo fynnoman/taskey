@@ -130,16 +130,9 @@ const CONTENT = {
       { href: "/leistungsnachweis-gebaeudereinigung", label: "Leistungsnachweis Gebäudereinigung", desc: "Automatischer Nachweis pro Objekt für Auftraggeber." },
       { href: "/software-kleine-reinigungsfirma", label: "Software für kleine Reinigungsfirmen", desc: "Speziell für Betriebe mit 1–15 Mitarbeitenden." },
     ],
-    compareEyebrow: "Marktvergleich",
-    compareHeading: "Taskey vs. andere Branchensoftware",
-    comparisons: [
-      { href: "/vergleich/software-gebaeudereinigung", label: "Anbietervergleich 2026" },
-      { href: "/vergleich/zvoove-alternative", label: "Taskey vs. zvoove" },
-      { href: "/vergleich/blink-alternative", label: "Taskey vs. Blink" },
-      { href: "/vergleich/mendato-alternative", label: "Taskey vs. Mendato" },
-      { href: "/vergleich/fortytools-alternative", label: "Taskey vs. fortytools" },
-      { href: "/vergleich/plan-d-alternative", label: "Taskey vs. Plan-D" },
-    ],
+    compareEyebrow: "",
+    compareHeading: "",
+    comparisons: [] as { href: string; label: string }[],
   },
   en: {
     breadcrumbHome: "Home",
@@ -194,16 +187,9 @@ const CONTENT = {
       { href: "/leistungsnachweis-gebaeudereinigung", label: "Service proof for cleaning", desc: "Automatic proof per site for your clients." },
       { href: "/software-kleine-reinigungsfirma", label: "Software for small cleaning companies", desc: "Built for teams of 1–15 employees." },
     ],
-    compareEyebrow: "Market comparison",
-    compareHeading: "Taskey vs. other industry software",
-    comparisons: [
-      { href: "/vergleich/software-gebaeudereinigung", label: "Vendor comparison 2026" },
-      { href: "/vergleich/zvoove-alternative", label: "Taskey vs. zvoove" },
-      { href: "/vergleich/blink-alternative", label: "Taskey vs. Blink" },
-      { href: "/vergleich/mendato-alternative", label: "Taskey vs. Mendato" },
-      { href: "/vergleich/fortytools-alternative", label: "Taskey vs. fortytools" },
-      { href: "/vergleich/plan-d-alternative", label: "Taskey vs. Plan-D" },
-    ],
+    compareEyebrow: "",
+    compareHeading: "",
+    comparisons: [] as { href: string; label: string }[],
   },
   fr: {
     breadcrumbHome: "Accueil",
@@ -258,16 +244,9 @@ const CONTENT = {
       { href: "/leistungsnachweis-gebaeudereinigung", label: "Justificatif de prestations de nettoyage", desc: "Preuve automatique par site pour vos donneurs d’ordres." },
       { href: "/software-kleine-reinigungsfirma", label: "Logiciel pour petites entreprises de nettoyage", desc: "Conçu pour les structures de 1 à 15 collaborateurs." },
     ],
-    compareEyebrow: "Comparatif du marché",
-    compareHeading: "Taskey vs. autres logiciels métiers",
-    comparisons: [
-      { href: "/vergleich/software-gebaeudereinigung", label: "Comparatif des éditeurs 2026" },
-      { href: "/vergleich/zvoove-alternative", label: "Taskey vs. zvoove" },
-      { href: "/vergleich/blink-alternative", label: "Taskey vs. Blink" },
-      { href: "/vergleich/mendato-alternative", label: "Taskey vs. Mendato" },
-      { href: "/vergleich/fortytools-alternative", label: "Taskey vs. fortytools" },
-      { href: "/vergleich/plan-d-alternative", label: "Taskey vs. Plan-D" },
-    ],
+    compareEyebrow: "",
+    compareHeading: "",
+    comparisons: [] as { href: string; label: string }[],
   },
 } as const;
 
@@ -394,27 +373,31 @@ export default async function LoesungenPage({
             ))}
           </div>
 
-          <div className="mt-12 mb-6">
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
-              {c.compareEyebrow}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-black leading-tight">
-              {c.compareHeading}
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {c.comparisons.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-5 transition-colors"
-              >
-                <span className="text-base font-bold group-hover:text-blue-700 transition-colors">
-                  {l.label}
-                </span>
-              </Link>
-            ))}
-          </div>
+          {c.comparisons.length > 0 && (
+            <>
+              <div className="mt-12 mb-6">
+                <p className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase mb-3">
+                  {c.compareEyebrow}
+                </p>
+                <h2 className="text-3xl md:text-4xl font-black leading-tight">
+                  {c.compareHeading}
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {c.comparisons.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="group rounded-2xl bg-white border border-slate-200 hover:border-cyan-400 p-5 transition-colors"
+                  >
+                    <span className="text-base font-bold group-hover:text-blue-700 transition-colors">
+                      {l.label}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
     </main>
