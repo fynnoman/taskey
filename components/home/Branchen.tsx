@@ -212,56 +212,6 @@ export default function Branchen() {
       rating: 5,
       tag: c.T3_TAG,
     },
-    {
-      quote: c.T4_QUOTE,
-      name: "A. H.",
-      role: c.T4_ROLE,
-      company: ANON_COMPANY,
-      location: c.T4_LOCATION,
-      employees: c.T4_EMPLOYEES,
-      rating: 5,
-      tag: c.T4_TAG,
-    },
-    {
-      quote: c.T5_QUOTE,
-      name: "D. B.",
-      role: c.T5_ROLE,
-      company: ANON_COMPANY,
-      location: c.T5_LOCATION,
-      employees: c.T5_EMPLOYEES,
-      rating: 5,
-      tag: c.T5_TAG,
-    },
-    {
-      quote: c.T6_QUOTE,
-      name: "P. L.",
-      role: c.T6_ROLE,
-      company: ANON_COMPANY,
-      location: c.T6_LOCATION,
-      employees: c.T6_EMPLOYEES,
-      rating: 5,
-      tag: c.T6_TAG,
-    },
-    {
-      quote: c.T7_QUOTE,
-      name: "M. Y.",
-      role: c.T7_ROLE,
-      company: ANON_COMPANY,
-      location: c.T7_LOCATION,
-      employees: c.T7_EMPLOYEES,
-      rating: 5,
-      tag: c.T7_TAG,
-    },
-    {
-      quote: c.T8_QUOTE,
-      name: "L. M.",
-      role: c.T8_ROLE,
-      company: ANON_COMPANY,
-      location: c.T8_LOCATION,
-      employees: c.T8_EMPLOYEES,
-      rating: 5,
-      tag: c.T8_TAG,
-    },
   ];
 
   const initials = (name: string) =>
@@ -294,7 +244,7 @@ export default function Branchen() {
         </div>
 
         {/* Grid — Testimonial-Karten im selben Stil wie zuvor die Branchen-Karten */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-16">
           {testimonials.map((t, index) => (
             <div
               key={index}

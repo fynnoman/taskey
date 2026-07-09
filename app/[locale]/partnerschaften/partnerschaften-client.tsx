@@ -21,27 +21,20 @@ export default function PartnerschaftenClient() {
     window.scrollTo(0, 0);
   }, []);
 
-  const partnerModels = [
+  const partnerTypes = [
     {
-      id: 'empfehlung',
-      title: t('partner.model1.title'),
-      subtitle: t('partner.model1.subtitle'),
-      description: t('partner.model1.desc'),
-      highlights: [t('partner.model1.h1'), t('partner.model1.h2'), t('partner.model1.h3')],
+      id: 'recommender',
+      title: t('partner.type1.title'),
+      subtitle: t('partner.type1.subtitle'),
+      description: t('partner.type1.desc'),
+      highlights: [t('partner.type1.h1'), t('partner.type1.h2'), t('partner.type1.h3')],
     },
     {
-      id: 'integration',
-      title: t('partner.model2.title'),
-      subtitle: t('partner.model2.subtitle'),
-      description: t('partner.model2.desc'),
-      highlights: [t('partner.model2.h1'), t('partner.model2.h2'), t('partner.model2.h3')],
-    },
-    {
-      id: 'vertrieb',
-      title: t('partner.model3.title'),
-      subtitle: t('partner.model3.subtitle'),
-      description: t('partner.model3.desc'),
-      highlights: [t('partner.model3.h1'), t('partner.model3.h2'), t('partner.model3.h3')],
+      id: 'cleaner',
+      title: t('partner.type2.title'),
+      subtitle: t('partner.type2.subtitle'),
+      description: t('partner.type2.desc'),
+      highlights: [t('partner.type2.h1'), t('partner.type2.h2'), t('partner.type2.h3')],
     },
   ];
 
@@ -135,11 +128,8 @@ export default function PartnerschaftenClient() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-700 font-bold mb-4 max-w-3xl">
+            <p className="text-xl md:text-2xl text-slate-700 font-bold mb-10 max-w-3xl leading-snug">
               {t('partner.hero.subtitle')}
-            </p>
-            <p className="text-slate-500 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
-              {t('partner.hero.desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -151,7 +141,7 @@ export default function PartnerschaftenClient() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
               <a
-                href="#modelle"
+                href="#partner-typen"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-slate-300 text-slate-900 text-base font-bold rounded-full hover:bg-blue-100 transition-colors"
               >
                 {t('partner.hero.cta2')}
@@ -204,26 +194,26 @@ export default function PartnerschaftenClient() {
         </div>
       </section>
 
-      {/* ─── Partner-Modelle ───────────────────────────────── */}
-      <section id="modelle" className="relative py-20 md:py-28 scroll-mt-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Partner-Typen ─────────────────────────────────── */}
+      <section id="partner-typen" className="relative py-20 md:py-28 scroll-mt-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-[10px] sm:text-xs font-black text-emerald-700 uppercase tracking-[0.3em] mb-4">
-              {t('partner.models.badge')}
+              {t('partner.types.badge')}
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight mb-4">
-              {t('partner.models.title')}
+              {t('partner.types.title')}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              {t('partner.models.subtitle')}
+              {t('partner.types.subtitle')}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {partnerModels.map((model, idx) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {partnerTypes.map((type, idx) => {
               const isHl = idx === 1;
               return (
                 <div
-                  key={model.id}
+                  key={type.id}
                   className={`relative rounded-3xl p-[1.5px] ${
                     isHl
                       ? 'bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-cyan-500/20'
@@ -231,13 +221,13 @@ export default function PartnerschaftenClient() {
                   }`}
                 >
                   <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
-                    <h3 className="text-xl font-black text-slate-900 mb-1 leading-tight">{model.title}</h3>
+                    <h3 className="text-xl font-black text-slate-900 mb-1 leading-tight">{type.title}</h3>
                     <p className={`text-sm font-bold mb-4 ${isHl ? 'text-blue-700' : 'text-slate-500'}`}>
-                      {model.subtitle}
+                      {type.subtitle}
                     </p>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6">{model.description}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">{type.description}</p>
                     <ul className="space-y-2.5 mt-auto">
-                      {model.highlights.map((h, i) => (
+                      {type.highlights.map((h, i) => (
                         <li key={i} className="flex items-start gap-2.5">
                           <svg className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -462,9 +452,8 @@ export default function PartnerschaftenClient() {
                     className={`${inputCls} bg-slate-50 appearance-none`}
                   >
                     <option value="" className="bg-slate-50">{t('partner.contact.model.placeholder')}</option>
-                    <option value="Empfehlungspartner" className="bg-slate-50">{t('partner.contact.model.empfehlung')}</option>
-                    <option value="Integrationspartner" className="bg-slate-50">{t('partner.contact.model.integration')}</option>
-                    <option value="Vertriebspartner" className="bg-slate-50">{t('partner.contact.model.vertrieb')}</option>
+                    <option value="Kenne Reinigungsbetriebe" className="bg-slate-50">{t('partner.contact.model.recommender')}</option>
+                    <option value="Bin selbst Reinigungsbetrieb" className="bg-slate-50">{t('partner.contact.model.cleaner')}</option>
                     <option value="Noch unsicher" className="bg-slate-50">{t('partner.contact.model.unsicher')}</option>
                   </select>
                 </div>
