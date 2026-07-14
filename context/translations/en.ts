@@ -1019,6 +1019,9 @@ const translations: Record<string, string> = {
     "partnerClient.pavan.p1": "PAVAN GmbH specialises in the management and high-quality upgrading of real estate. With a clear focus on efficiency, value preservation and sustainable modernisation, PAVAN manages residential and commercial properties through every phase, from routine operations through renovation projects to long-term portfolio strategy. We support PAVAN in digitising and scaling operations: Taskey enables automated NFC proof of service, clean time tracking, transparent scheduling and end-to-end documentation of services and quality controls.",
     "partnerClient.pavan.p2": "Through close collaboration, processes have been accelerated, communication shortened and service quality measurably improved. PAVAN uses Taskey to better steer staff capacity, plan deployments more efficiently and track maintenance work in a targeted way. The result is a noticeable cost reduction per property, higher customer satisfaction and better project predictability. Ideal conditions for sustainable growth.",
     "partnerClient.pavan.p3": "We continuously work with PAVAN on new automations, integrations and reporting solutions so that scaling is not just possible but plannable. If you are interested in a partnership with PAVAN or want to learn more about our joint solution, get in touch. We will connect you directly.",
+
+    // partnerschaften-client.tsx — Flix-Clean
+    "partnerClient.flixclean.p1": "Flix-Clean from Homburg is a specialised cleaning company that supports us with precise finishing work. Professional cleaning services with high quality standards, clean process management and reliable execution. Together we ensure that customer sites stay in perfect condition.",
 };
 
 export default translations;

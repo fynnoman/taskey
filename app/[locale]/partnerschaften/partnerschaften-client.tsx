@@ -351,6 +351,28 @@ export default function PartnerschaftenClient() {
                 </p>
               </a>
 
+              {/* Flix-Clean */}
+              <a
+                href="https://flix-clean.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-8 transition-all"
+              >
+                <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
+                  <Image
+                    src="/logos/flix-clean-logo.jpg"
+                    alt="Flix-Clean Gebäudereinigung"
+                    width={160}
+                    height={60}
+                    className="object-contain h-12 w-auto"
+                  />
+                </div>
+                <p className="text-slate-900 font-black text-lg mb-1.5">Flix-Clean Homburg</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {t("partnerClient.flixclean.p1")}
+                </p>
+              </a>
+
               <Link
                 href="/news/mg-gebaeudeservice-duesseldorf-case-study"
                 className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-bold px-7 py-3.5 rounded-full text-sm max-w-fit hover:bg-blue-500 transition-colors"
