@@ -68,6 +68,7 @@ const STATIC_ENTRIES: Entry[] = [
   // Rechtliches
   { path: "/impressum", changeFrequency: "yearly", priority: 0.3 },
   { path: "/datenschutz", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/datenschutz-app", changeFrequency: "yearly", priority: 0.3 },
   { path: "/agb", changeFrequency: "yearly", priority: 0.3 },
 
   // News-Index
