@@ -89,7 +89,7 @@ export default async function Image() {
               color: "#64748b",
             }}
           >
-            30 Tage kostenlos testen
+            Kostenlosen Account erstellen
           </span>
         </div>
       </div>

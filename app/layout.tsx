@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Taskey",
   },
   description:
-    "Taskey ist die einfachste Betriebssoftware für Gebäudereinigung und Facility Management im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – alles in einer App. DSGVO-konform. 30 Tage kostenlos testen!",
+    "Taskey ist die einfachste Betriebssoftware für Gebäudereinigung und Facility Management im DACH-Raum. Zeiterfassung, NFC-Nachweise, Einsatzplanung, Live-Margen – alles in einer App. DSGVO-konform. Kostenlosen Account erstellen!",
   authors: [{ name: "Taskey" }],
   creator: "Taskey",
   publisher: "Taskey",

@@ -65,7 +65,7 @@ Ab heute schon. Wir haben ein eigenes **Einzelunternehmer-Paket** freigeschaltet
 
 ## Was kostet's
 
-**59 € pro Monat, all inklusive.** Kein Setup, keine Zusatzkosten pro Objekt, kein Kleingedrucktes. Täglich kündbar. 30 Tage kostenlos zum Ausprobieren.
+**59 € pro Monat, all inklusive.** Kein Setup, keine Zusatzkosten pro Objekt, kein Kleingedrucktes. Täglich kündbar. Einfach kostenlos den Account anlegen und ausprobieren.
 
 ## Für wen das Paket ist
 
@@ -239,7 +239,7 @@ Danke fürs Mittesten, fürs ehrliche Feedback und für die vielen Anrufe der Ba
 
 Wenn Sie Taskey bereits einsetzen: Taskey Share ist ab heute in Ihrem Konto. Aktivieren Sie es im Kundenstamm beim nächsten Auftraggeber, dem Sie ohnehin gerade Auskunft geben wollten — und schicken Sie ihm stattdessen den Link.
 
-Wenn Sie Taskey noch nicht einsetzen: Sie können Taskey inklusive Share 30 Tage kostenlos testen. Anlegen, Auftrag erfassen, Portal-Link an einen Bestandskunden schicken. Wir sind gespannt, was er dazu sagt.`,
+Wenn Sie Taskey noch nicht einsetzen: Legen Sie sich einen kostenlosen Account an — Taskey inklusive Share ist damit direkt einsatzbereit. Auftrag erfassen, Portal-Link an einen Bestandskunden schicken. Wir sind gespannt, was er dazu sagt.`,
   },
   {
     slug: "kommunikation-einsatzort-buero-erfolgsfaktor",

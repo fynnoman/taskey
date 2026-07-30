@@ -9,17 +9,17 @@ const META_COPY: PageCopy = {
   de: {
     title: "Software für Gebäudereinigung 2026 – All-in-One Branchensoftware",
     description:
-      "Software für Gebäudereinigung 2026: NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV – in einer App. DSGVO, Made in Germany, 30 Tage kostenlos.",
+      "Software für Gebäudereinigung 2026: NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Rechnungen, Live-Margen, DATEV – in einer App. DSGVO, Made in Germany. Kostenlosen Account erstellen.",
   },
   en: {
     title: "Building Cleaning Software 2026 – All-in-one Industry Software",
     description:
-      "Building cleaning software 2026: NFC site proof, time tracking, scheduling, invoicing, live margins, DATEV — in one app. GDPR-compliant, Made in Germany, 30-day free trial.",
+      "Building cleaning software 2026: NFC site proof, time tracking, scheduling, invoicing, live margins, DATEV — in one app. GDPR-compliant, Made in Germany. Create your free account.",
   },
   fr: {
     title: "Logiciel pour le nettoyage de bâtiments 2026 – Solution métier tout-en-un",
     description:
-      "Logiciel pour le nettoyage de bâtiments 2026 : justificatif NFC sur site, pointage, planification, factures, marges en direct, DATEV — dans une seule app. Conforme RGPD, Made in Germany, 30 jours d’essai gratuit.",
+      "Logiciel pour le nettoyage de bâtiments 2026 : justificatif NFC sur site, pointage, planification, factures, marges en direct, DATEV — dans une seule app. Conforme RGPD, Made in Germany. Créez votre compte gratuit.",
   },
 };
 
@@ -44,7 +44,7 @@ const SCHEMA_COPY = {
     schemaSubCategory: "Branchensoftware Gebäudereinigung",
     schemaDescription:
       "All-in-One Software für Gebäudereinigung mit Einsatzplanung, NFC-Objektnachweis, Zeiterfassung, Angeboten, Rechnungen, Live-Margen und DATEV-Export. Für Unterhaltsreinigung, Glas-, Industrie- und Klinikreinigung.",
-    schemaOfferDescription: "30 Tage kostenlos testen, danach ab 119 € pro Monat",
+    schemaOfferDescription: "Kostenlosen Account erstellen, danach ab 119 € pro Monat",
     schemaFeatures: [
       "Einsatzplanung Gebäudereinigung",
       "NFC-Objektnachweis",
@@ -63,7 +63,7 @@ const SCHEMA_COPY = {
     schemaSubCategory: "Industry software for building cleaning",
     schemaDescription:
       "All-in-one software for building cleaning with workforce scheduling, NFC proof of service, time tracking, quotes, invoices, live margins and DATEV export. For maintenance, glass, industrial and hospital cleaning.",
-    schemaOfferDescription: "Try 30 days free, then from EUR 119 per month",
+    schemaOfferDescription: "Create your free account, then from EUR 119 per month",
     schemaFeatures: [
       "Workforce scheduling for building cleaning",
       "NFC proof of service",
@@ -82,7 +82,7 @@ const SCHEMA_COPY = {
     schemaSubCategory: "Logiciel métier nettoyage de bâtiments",
     schemaDescription:
       "Logiciel tout-en-un pour le nettoyage de bâtiments : planification, justificatif NFC, pointage, devis, factures, marges en direct et export DATEV. Pour nettoyage d’entretien, vitres, industriel et hospitalier.",
-    schemaOfferDescription: "30 jours d’essai gratuit, puis à partir de 119 € par mois",
+    schemaOfferDescription: "Créez votre compte gratuit, puis à partir de 119 € par mois",
     schemaFeatures: [
       "Planification nettoyage de bâtiments",
       "Justificatif NFC d’intervention",
@@ -188,12 +188,12 @@ const CONTENT = {
     sec6Body1:
       "In rund 30 Minuten zeigen wir Ihnen jedes Modul live: Wie Sie ein Objekt anlegen, einen Einsatz planen, den NFC-Nachweis verproben, Stundenzettel exportieren und die Live-Marge pro Objekt ablesen. Sie fragen, wir zeigen – nichts wird beschönigt, nichts ausgespart.",
     sec6Body2:
-      "Wenn Taskey für Ihren Betrieb nicht passt, sagen wir Ihnen das offen. Wenn es passt, übernimmt unser Onboarding-Team die komplette Ersteinrichtung in 48 Stunden – inklusive Stammdaten-Migration aus Excel oder Alt-Software. Die ersten 30 Tage sind kostenlos. Ohne Kreditkarte. Ohne automatische Verlängerung.",
+      "Wenn Taskey für Ihren Betrieb nicht passt, sagen wir Ihnen das offen. Wenn es passt, übernimmt unser Onboarding-Team die komplette Ersteinrichtung in 48 Stunden – inklusive Stammdaten-Migration aus Excel oder Alt-Software. Der Account ist kostenlos anzulegen. Ohne Kreditkarte. Ohne automatische Verlängerung.",
     sec6Bullet1: "30 Minuten Live-Demo, individuell auf Ihren Reinigungsbetrieb zugeschnitten",
     sec6Bullet2: "Wir gehen alle Module einmal vollständig mit Ihnen durch – nicht nur die schönen",
     sec6Bullet3: "Ehrliche Einschätzung, ob Taskey für Ihre Objekte und Reinigungsarten passt",
     sec6Bullet4: "Kostenlos, unverbindlich, keine versteckten Verkaufs-Tricks",
-    sec6Bullet5: "Bei Passung: 48-Stunden-Onboarding inkl. Datenmigration + 30 Tage kostenlos testen",
+    sec6Bullet5: "Bei Passung: 48-Stunden-Onboarding inkl. Datenmigration + kostenloser Account",
     faq1Q: "Was ist die beste Software für Gebäudereinigung?",
     faq1A:
       "Die beste Software für Gebäudereinigung deckt alle Kernprozesse einer Reinigungsfirma in einem System ab: Einsatzplanung, mobile Zeiterfassung, NFC-Objektnachweis, Angebote, Rechnungen, DATEV-Export und Live-Margen pro Objekt. Taskey ist die einzige Branchensoftware für Gebäudereinigung, die diese Module gebündelt anbietet – statt sie als einzelne Abos zu verkaufen. DSGVO-konform, gehostet in Deutschland, ab dem ersten Tag einsatzbereit.",
@@ -202,7 +202,7 @@ const CONTENT = {
       "Gebäudereinigungsfirmen nutzen heute meist eine Kombination aus Zeiterfassung, Einsatzplanung, Buchhaltungs-Tool und Office-Anwendungen. Genau dieses Tool-Chaos löst Taskey auf: eine Software für Gebäudereinigung, in der Disposition, Nachweis, Abrechnung und Reporting durchgehend miteinander verbunden sind. So spart eine durchschnittliche Reinigungsfirma 4–8 Bürostunden pro Woche.",
     faq3Q: "Was kostet eine Software für Gebäudereinigung?",
     faq3A:
-      "Taskey startet als Software für Gebäudereinigung mit dem Beginner-Tarif ab 119 € pro Monat (zzgl. 4,40 € pro aktivem Objekt). Es gibt feste Monatspreise statt versteckter Modulkosten. Die ersten 30 Tage sind kostenlos – ohne Kreditkarte, ohne automatische Verlängerung. Volle Preise auf der Pricing-Seite.",
+      "Taskey startet als Software für Gebäudereinigung mit dem Beginner-Tarif ab 119 € pro Monat (zzgl. 4,40 € pro aktivem Objekt). Es gibt feste Monatspreise statt versteckter Modulkosten. Der Account ist kostenlos anzulegen – ohne Kreditkarte, ohne automatische Verlängerung. Volle Preise auf der Pricing-Seite.",
     faq4Q: "Welche Reinigungsarten deckt die Software ab?",
     faq4A:
       "Taskey ist als Software für Gebäudereinigung speziell auf Unterhaltsreinigung, Glasreinigung, Grundreinigung, Industriereinigung, Klinik- und Praxisreinigung, Bauendreinigung, Hotel-Housekeeping sowie Sonderreinigung ausgelegt. Spezielle Checklisten, Objekttypen und Tarifmodelle decken jede Reinigungsart ab.",
@@ -328,12 +328,12 @@ const CONTENT = {
     sec6Body1:
       "In around 30 minutes we show you every module live: how to set up a site, plan an assignment, test the NFC proof, export timesheets and read the live margin per site. You ask, we show – nothing is sugar-coated, nothing left out.",
     sec6Body2:
-      "If Taskey is not right for your operation, we say so openly. If it fits, our onboarding team handles the complete initial setup within 48 hours – including master data migration from Excel or legacy software. The first 30 days are free. No credit card. No automatic renewal.",
+      "If Taskey is not right for your operation, we say so openly. If it fits, our onboarding team handles the complete initial setup within 48 hours – including master data migration from Excel or legacy software. The account is free to create. No credit card. No automatic renewal.",
     sec6Bullet1: "30 minutes of live demo, tailored to your cleaning operation",
     sec6Bullet2: "We walk through every module with you once in full – not just the nice ones",
     sec6Bullet3: "Honest assessment of whether Taskey fits your sites and cleaning types",
     sec6Bullet4: "Free, no commitment, no hidden sales tricks",
-    sec6Bullet5: "If it fits: 48-hour onboarding incl. data migration + 30 days free trial",
+    sec6Bullet5: "If it fits: 48-hour onboarding incl. data migration + free account",
     faq1Q: "What is the best software for building cleaning?",
     faq1A:
       "The best software for building cleaning covers all the core processes of a cleaning company in one system: scheduling, mobile time tracking, NFC proof of service, quotes, invoices, DATEV export and live margins per site. Taskey is the only industry software for building cleaning that offers these modules bundled – instead of selling them as separate subscriptions. DSGVO-compliant, hosted in Germany, ready from day one.",
@@ -342,7 +342,7 @@ const CONTENT = {
       "Today, building cleaning companies typically use a combination of time tracking, scheduling, an accounting tool and office applications. Taskey resolves exactly this tool chaos: one piece of software for building cleaning where dispatch, proof, invoicing and reporting are continuously connected. An average cleaning company saves 4–8 office hours per week this way.",
     faq3Q: "What does software for building cleaning cost?",
     faq3A:
-      "Taskey, as software for building cleaning, starts with the Beginner plan from EUR 119 per month (plus EUR 4.40 per active site). It has fixed monthly prices instead of hidden module costs. The first 30 days are free – no credit card, no automatic renewal. Full prices on the pricing page.",
+      "Taskey, as software for building cleaning, starts with the Beginner plan from EUR 119 per month (plus EUR 4.40 per active site). It has fixed monthly prices instead of hidden module costs. The account is free to create – no credit card, no automatic renewal. Full prices on the pricing page.",
     faq4Q: "Which types of cleaning does the software cover?",
     faq4A:
       "Taskey is designed as software for building cleaning specifically for maintenance cleaning, glass cleaning, deep cleaning, industrial cleaning, hospital and practice cleaning, post-construction cleaning, hotel housekeeping and special cleaning. Dedicated checklists, site types and pricing models cover every cleaning type.",
@@ -473,7 +473,7 @@ const CONTENT = {
     sec6Bullet2: "Nous parcourons chaque module une fois en entier avec vous – pas seulement les plus séduisants",
     sec6Bullet3: "Évaluation honnête de l’adéquation à vos sites et types de nettoyage",
     sec6Bullet4: "Gratuit, sans engagement, sans astuce commerciale cachée",
-    sec6Bullet5: "En cas d’adéquation : onboarding en 48 h avec migration + 30 jours d’essai gratuit",
+    sec6Bullet5: "En cas d’adéquation : onboarding en 48 h avec migration + compte gratuit",
     faq1Q: "Quel est le meilleur logiciel pour le nettoyage de bâtiments ?",
     faq1A:
       "Le meilleur logiciel pour le nettoyage de bâtiments couvre tous les processus clés d’une entreprise de nettoyage dans un seul système : planification, pointage mobile, justificatif NFC, devis, factures, export DATEV et marges en direct par site. Taskey est le seul logiciel métier de nettoyage à proposer ces modules en bundle – plutôt qu’en abonnements séparés. Conforme DSGVO, hébergé en Allemagne, prêt dès le premier jour.",

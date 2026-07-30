@@ -7,42 +7,42 @@ import { useLanguage } from "@/context/LanguageContext";
 const CONTENT = {
   de: {
     breadcrumbAriaLabel: "Breadcrumb",
-    heroPrimaryCta: "30 Tage kostenlos testen",
+    heroPrimaryCta: "Kostenlosen Account erstellen",
     heroSecondaryCta: "Alle Funktionen ansehen",
     faqEyebrow: "Häufige Fragen",
     faqHeading: "Was Inhaber jetzt wissen wollen.",
     relatedEyebrow: "Passende Themen",
     relatedHeading: "Weiterlesen.",
     relatedMore: "Mehr erfahren",
-    ctaTitleDefault: "30 Tage kostenlos testen.",
+    ctaTitleDefault: "Kostenlosen Account erstellen.",
     ctaSubtitleDefault:
       "Keine Kreditkarte, kein Risiko. Einrichtung in 48 Stunden – Done-for-You durch unser Team.",
     bottomCta: "Jetzt starten",
   },
   en: {
     breadcrumbAriaLabel: "Breadcrumb",
-    heroPrimaryCta: "Start 30-day free trial",
+    heroPrimaryCta: "Create free account",
     heroSecondaryCta: "See all features",
     faqEyebrow: "Frequently asked",
     faqHeading: "What owners want to know now.",
     relatedEyebrow: "Related topics",
     relatedHeading: "Keep reading.",
     relatedMore: "Learn more",
-    ctaTitleDefault: "Try it free for 30 days.",
+    ctaTitleDefault: "Create your free account.",
     ctaSubtitleDefault:
       "No credit card, no risk. Set up in 48 hours – Done-for-You by our team.",
     bottomCta: "Get started",
   },
   fr: {
     breadcrumbAriaLabel: "Fil d’Ariane",
-    heroPrimaryCta: "Essayer 30 jours gratuitement",
+    heroPrimaryCta: "Créer un compte gratuit",
     heroSecondaryCta: "Voir toutes les fonctionnalités",
     faqEyebrow: "Questions fréquentes",
     faqHeading: "Ce que les dirigeants veulent savoir maintenant.",
     relatedEyebrow: "Sujets connexes",
     relatedHeading: "Continuer la lecture.",
     relatedMore: "En savoir plus",
-    ctaTitleDefault: "30 jours d’essai gratuit.",
+    ctaTitleDefault: "Créez votre compte gratuit.",
     ctaSubtitleDefault:
       "Sans carte bancaire, sans risque. Mise en place en 48 heures – Done-for-You par notre équipe.",
     bottomCta: "Démarrer maintenant",
@@ -86,7 +86,7 @@ export type LandingPageProps = {
   breadcrumbs: { name: string; url: string }[];
   /** Mind. 3 interne Links für Themen-Vernetzung */
   related: { href: string; label: string; description?: string }[];
-  /** Schluss-CTA-Text. Default: "30 Tage kostenlos testen" */
+  /** Schluss-CTA-Text. Default: "Kostenlosen Account erstellen" */
   ctaTitle?: string;
   ctaSubtitle?: string;
 };

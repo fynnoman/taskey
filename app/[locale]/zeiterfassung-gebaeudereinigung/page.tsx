@@ -9,19 +9,19 @@ const META_COPY: PageCopy = {
     title:
       "Zeiterfassung Gebäudereinigung | Digital, Mindestlohn-konform | Taskey",
     description:
-      "Digitale Zeiterfassung für Gebäudereinigung: NFC, GPS, Offline, DSGVO. Mindestlohn-konforme Dokumentation und automatische Stundenzettel. Jetzt testen.",
+      "Digitale Zeiterfassung für Gebäudereinigung: NFC, GPS, Offline, DSGVO. Mindestlohn-konforme Dokumentation und automatische Stundenzettel. Kostenlosen Account erstellen.",
   },
   en: {
     title:
       "Time Tracking for Building Cleaning | Digital, compliant | Taskey",
     description:
-      "Digital time tracking for building cleaning: NFC, GPS, offline, GDPR-compliant. Minimum-wage compliant documentation and automatic timesheets. Try it now.",
+      "Digital time tracking for building cleaning: NFC, GPS, offline, GDPR-compliant. Minimum-wage compliant documentation and automatic timesheets. Create your free account.",
   },
   fr: {
     title:
       "Pointage nettoyage de bâtiments | Numérique, conforme | Taskey",
     description:
-      "Pointage numérique pour le nettoyage de bâtiments : NFC, GPS, hors ligne, RGPD. Documentation conforme au salaire minimum et feuilles d’heures automatiques. À tester maintenant.",
+      "Pointage numérique pour le nettoyage de bâtiments : NFC, GPS, hors ligne, RGPD. Documentation conforme au salaire minimum et feuilles d’heures automatiques. Créez votre compte gratuit.",
   },
 };
 

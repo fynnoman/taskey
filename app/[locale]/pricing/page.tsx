@@ -68,27 +68,21 @@ const businessProduct = {
 
 const FAQ_BY_LOCALE: Record<Locale, { q: string; a: string }[]> = {
   de: [
-    { q: "Gibt es eine kostenlose Testphase?", a: "Ja. Sie können Taskey 30 Tage lang kostenlos testen – ohne Kreditkarte und ohne automatische Verlängerung." },
     { q: "Kann ich das Paket wechseln?", a: "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." },
-    { q: "Was passiert nach der 30-tägigen Testphase?", a: "Nach 30 Tagen wählen Sie ein Paket aktiv aus oder das Konto wird pausiert. Es gibt keine automatische Abbuchung ohne Ihre Zustimmung." },
     { q: "Sind Updates und neue Funktionen inklusive?", a: "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." },
     { q: "Was kosten zusätzliche Objekte?", a: "Pro aktivem Objekt kostet Beginner 3,14 €, Professional 3,54 € und Business 3,84 € im Monat. Inaktive Objekte zählen nicht." },
     { q: "Gibt es Setup- oder Onboarding-Kosten?", a: "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." },
     { q: "Ist die Anzahl der Mitarbeitenden begrenzt?", a: "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten. Sie zahlen ausschließlich nach aktivem Objekt – nicht pro User." },
   ],
   en: [
-    { q: "Is there a free trial?", a: "Yes. You can try Taskey free for 30 days – no credit card and no automatic renewal." },
     { q: "Can I switch plans?", a: "Yes, you can upgrade or downgrade between Beginner, Professional and Business at any time – effective the next month." },
-    { q: "What happens after the 30-day trial?", a: "After 30 days you actively choose a plan or the account is paused. There is no automatic charge without your consent." },
     { q: "Are updates and new features included?", a: "Yes. All updates, security fixes and new features are included in every plan at no extra cost and are rolled out automatically." },
     { q: "How much do additional properties cost?", a: "Per active property, Beginner costs €3.14, Professional €3.54 and Business €3.84 per month. Inactive properties are not counted." },
     { q: "Are there setup or onboarding fees?", a: "No. The done-for-you setup with import of your properties, employees and contracts is included in every plan – no extra charge." },
     { q: "Is the number of employees limited?", a: "No. Every plan includes unlimited employees. You only pay per active property – not per user." },
   ],
   fr: [
-    { q: "Y a-t-il une période d'essai gratuite ?", a: "Oui. Vous pouvez essayer Taskey gratuitement pendant 30 jours – sans carte de crédit et sans reconduction automatique." },
     { q: "Puis-je changer de forfait ?", a: "Oui, vous pouvez passer entre Beginner, Professional et Business à tout moment – avec effet le mois suivant." },
-    { q: "Que se passe-t-il après l'essai de 30 jours ?", a: "Après 30 jours, vous choisissez activement un forfait ou le compte est mis en pause. Aucun prélèvement automatique sans votre accord." },
     { q: "Les mises à jour et nouvelles fonctionnalités sont-elles incluses ?", a: "Oui. Toutes les mises à jour, correctifs de sécurité et nouvelles fonctionnalités sont inclus gratuitement dans chaque forfait et déployés automatiquement." },
     { q: "Combien coûtent les sites supplémentaires ?", a: "Par site actif, Beginner coûte 3,14 €, Professional 3,54 € et Business 3,84 € par mois. Les sites inactifs ne sont pas comptés." },
     { q: "Y a-t-il des frais de mise en place ou d'onboarding ?", a: "Non. La mise en place clé en main avec import de vos sites, employés et contrats est incluse dans chaque forfait – sans supplément." },

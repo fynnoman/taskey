@@ -7,17 +7,17 @@ const COPY: PageCopy = {
   de: {
     title: "Funktionen | NFC Zeiterfassung, Einsatzplanung & DATEV-Export | Taskey",
     description:
-      "Alle Funktionen von Taskey: NFC-Objektnachweis, automatische Zeiterfassung, Schichtplanung, Auftraggeber-Portal und DATEV-Export. Jetzt kostenlos testen.",
+      "Alle Funktionen von Taskey: NFC-Objektnachweis, automatische Zeiterfassung, Schichtplanung, Auftraggeber-Portal und DATEV-Export. Kostenlosen Account erstellen.",
   },
   en: {
     title: "Features | NFC time tracking, scheduling & DATEV export | Taskey",
     description:
-      "All Taskey features: NFC proof of service, automatic time tracking, shift scheduling, client portal and DATEV export. Try free now.",
+      "All Taskey features: NFC proof of service, automatic time tracking, shift scheduling, client portal and DATEV export. Create your free account.",
   },
   fr: {
     title: "Fonctionnalités | Pointage NFC, planification & export DATEV | Taskey",
     description:
-      "Toutes les fonctionnalités Taskey : preuve de service NFC, pointage automatique, planification, portail client et export DATEV. Essai gratuit.",
+      "Toutes les fonctionnalités Taskey : preuve de service NFC, pointage automatique, planification, portail client et export DATEV. Créez votre compte gratuit.",
   },
 };
 

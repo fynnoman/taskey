@@ -90,7 +90,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Preise, die mit",
       title2: "Ihrem Betrieb wachsen.",
       subtitle:
-        "Keine Setup-Tricks. Keine Mindestlaufzeit. 30 Tage gratis testen — danach täglich kündbar.",
+        "Keine Setup-Tricks. Keine Mindestlaufzeit. Kostenlos starten — täglich kündbar.",
     },
     trustBar: {
       unlimited: "Unbegrenzte Mitarbeiter",
@@ -113,7 +113,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "E-Mail-Support",
           "CRM-Tool",
         ],
-        ctaLabel: "30 Tage kostenlos",
+        ctaLabel: "Kostenlosen Account erstellen",
         ctaHref: "https://signup.taskeyapp.com",
       },
       {
@@ -131,7 +131,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Subunternehmer-Portal",
           "Lohnabrechnungen",
         ],
-        ctaLabel: "30 Tage kostenlos",
+        ctaLabel: "Kostenlosen Account erstellen",
         ctaHref: "https://signup.taskeyapp.com",
         highlighted: true,
       },
@@ -152,7 +152,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Taskey Share (animiertes Kundendashboard + Ticketsystem)",
           "Ausschreibungsportal + Empfehlungen",
         ],
-        ctaLabel: "30 Tage kostenlos",
+        ctaLabel: "Kostenlosen Account erstellen",
         ctaHref: "https://signup.taskeyapp.com",
       },
     ],
@@ -171,7 +171,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       price: "59",
       unit: "€ / Monat",
       allInclusive: "All inklusive · täglich kündbar",
-      ctaLabel: "30 Tage kostenlos",
+      ctaLabel: "Kostenlosen Account erstellen",
       ctaHref: "https://signup.taskeyapp.com",
     },
     nfc: {
@@ -216,7 +216,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Pricing that grows",
       title2: "with your business.",
       subtitle:
-        "No setup tricks. No minimum term. Try free for 3 months — then cancel daily.",
+        "No setup tricks. No minimum term. Start free — cancel daily.",
     },
     trustBar: {
       unlimited: "Unlimited employees",
@@ -239,7 +239,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Email support",
           "CRM tool",
         ],
-        ctaLabel: "3 months free",
+        ctaLabel: "Create free account",
         ctaHref: "https://signup.taskeyapp.com",
       },
       {
@@ -257,7 +257,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Subcontractor portal",
           "Payroll management",
         ],
-        ctaLabel: "3 months free",
+        ctaLabel: "Create free account",
         ctaHref: "https://signup.taskeyapp.com",
         highlighted: true,
       },
@@ -278,7 +278,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Taskey Share (animated client dashboard + ticket system)",
           "Tender portal + referrals",
         ],
-        ctaLabel: "3 months free",
+        ctaLabel: "Create free account",
         ctaHref: "https://signup.taskeyapp.com",
       },
     ],
@@ -297,7 +297,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       price: "59",
       unit: "€ / month",
       allInclusive: "All-inclusive · cancel daily",
-      ctaLabel: "3 months free",
+      ctaLabel: "Create free account",
       ctaHref: "https://signup.taskeyapp.com",
     },
     nfc: {
@@ -342,7 +342,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title1: "Des tarifs qui grandissent",
       title2: "avec votre entreprise.",
       subtitle:
-        "Pas d'astuces de mise en place. Pas de durée minimale. 3 mois gratuits — résiliable au jour le jour.",
+        "Pas d'astuces de mise en place. Pas de durée minimale. Démarrer gratuitement — résiliable au jour le jour.",
     },
     trustBar: {
       unlimited: "Employés illimités",
@@ -365,7 +365,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Support e-mail",
           "Outil CRM",
         ],
-        ctaLabel: "3 mois gratuits",
+        ctaLabel: "Créer un compte gratuit",
         ctaHref: "https://signup.taskeyapp.com",
       },
       {
@@ -383,7 +383,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Portail sous-traitants",
           "Gestion de la paie",
         ],
-        ctaLabel: "3 mois gratuits",
+        ctaLabel: "Créer un compte gratuit",
         ctaHref: "https://signup.taskeyapp.com",
         highlighted: true,
       },
@@ -404,7 +404,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Taskey Share (tableau de bord client animé + système de tickets)",
           "Portail d'appels d'offres + recommandations",
         ],
-        ctaLabel: "3 mois gratuits",
+        ctaLabel: "Créer un compte gratuit",
         ctaHref: "https://signup.taskeyapp.com",
       },
     ],
@@ -423,7 +423,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
       price: "59",
       unit: "€ / mois",
       allInclusive: "Tout inclus · résiliable au jour le jour",
-      ctaLabel: "3 mois gratuits",
+      ctaLabel: "Créer un compte gratuit",
       ctaHref: "https://signup.taskeyapp.com",
     },
     nfc: {

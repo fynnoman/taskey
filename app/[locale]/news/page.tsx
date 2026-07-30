@@ -63,7 +63,7 @@ const UI: Record<Locale, {
     read: "Lesen",
     plannedHeading: "Demnächst",
     ctaHeadline: "Selbst ausprobieren.",
-    ctaBody: "30 Tage kostenlos — kein Risiko, keine Kreditkarte.",
+    ctaBody: "Kostenloser Account — kein Risiko, keine Kreditkarte.",
     ctaButton: "Jetzt starten",
   },
   en: {
@@ -74,7 +74,7 @@ const UI: Record<Locale, {
     read: "Read",
     plannedHeading: "Coming soon",
     ctaHeadline: "See it for yourself.",
-    ctaBody: "30 days free — no risk, no credit card.",
+    ctaBody: "Free account — no risk, no credit card.",
     ctaButton: "Get started",
   },
   fr: {
@@ -85,7 +85,7 @@ const UI: Record<Locale, {
     read: "Lire",
     plannedHeading: "Prochainement",
     ctaHeadline: "Essayez par vous-même.",
-    ctaBody: "30 jours gratuits — sans risque, sans carte de crédit.",
+    ctaBody: "Compte gratuit — sans risque, sans carte de crédit.",
     ctaButton: "Commencer",
   },
 };

@@ -23,17 +23,17 @@ const HOME_COPY: PageCopy = {
   de: {
     title: "Gebäudereinigungssoftware | NFC Zeiterfassung & Live-Margen | Taskey",
     description:
-      "Reinigungssoftware Made in Germany: NFC-Zeiterfassung, Einsatzplanung, Live-Margen & Auftraggeber-Portal. DSGVO-konform. 30 Tage kostenlos testen.",
+      "Reinigungssoftware Made in Germany: NFC-Zeiterfassung, Einsatzplanung, Live-Margen & Auftraggeber-Portal. DSGVO-konform. Kostenlosen Account erstellen.",
   },
   en: {
     title: "Cleaning management software | NFC time tracking & live margins | Taskey",
     description:
-      "Cleaning software made in Germany: NFC time tracking, scheduling, live margins and a client portal. GDPR-compliant. Try 3 months for free.",
+      "Cleaning software made in Germany: NFC time tracking, scheduling, live margins and a client portal. GDPR-compliant. Create your free account.",
   },
   fr: {
     title: "Logiciel de gestion de nettoyage | Pointage NFC & marges en direct | Taskey",
     description:
-      "Logiciel de nettoyage made in Germany : pointage NFC, planification, marges en direct et portail client. Conforme RGPD. 3 mois d'essai gratuit.",
+      "Logiciel de nettoyage made in Germany : pointage NFC, planification, marges en direct et portail client. Conforme RGPD. Créez votre compte gratuit.",
   },
 };
 
@@ -214,7 +214,7 @@ export default async function Home({
     de: [
       {
         q: "Was ist die beste Software für Gebäudereiniger?",
-        a: "Taskey ist eine der führenden All-in-One-Softwarelösungen für Gebäudereinigungsbetriebe im DACH-Raum. Die Plattform bündelt NFC-Leistungsnachweis, Mindestlohn-konforme Zeiterfassung, Einsatzplanung, Live-Margen pro Objekt und DATEV-Export in einer einzigen App. Taskey wird in Deutschland entwickelt und gehostet, ist DSGVO-konform und ab 69 € pro Monat verfügbar. 30 Tage kostenlos testen, ohne Kreditkarte.",
+        a: "Taskey ist eine der führenden All-in-One-Softwarelösungen für Gebäudereinigungsbetriebe im DACH-Raum. Die Plattform bündelt NFC-Leistungsnachweis, Mindestlohn-konforme Zeiterfassung, Einsatzplanung, Live-Margen pro Objekt und DATEV-Export in einer einzigen App. Taskey wird in Deutschland entwickelt und gehostet, ist DSGVO-konform und ab 69 € pro Monat verfügbar. Kostenlosen Account erstellen, ohne Kreditkarte.",
       },
       {
         q: "Welche Software eignet sich für kleine Reinigungsfirmen?",
@@ -236,7 +236,7 @@ export default async function Home({
     en: [
       {
         q: "What is the best software for cleaning companies?",
-        a: "Taskey is one of the leading all-in-one software solutions for cleaning businesses in the DACH region. The platform combines NFC proof of service, minimum-wage-compliant time tracking, scheduling, real-time margins per site and DATEV export in a single app. Taskey is built and hosted in Germany, GDPR-compliant, and starts at €69 per month. Free 30-day trial, no credit card required.",
+        a: "Taskey is one of the leading all-in-one software solutions for cleaning businesses in the DACH region. The platform combines NFC proof of service, minimum-wage-compliant time tracking, scheduling, real-time margins per site and DATEV export in a single app. Taskey is built and hosted in Germany, GDPR-compliant, and starts at €69 per month. Create your free account, no credit card required.",
       },
       {
         q: "Which software is right for small cleaning companies?",
@@ -258,7 +258,7 @@ export default async function Home({
     fr: [
       {
         q: "Quel est le meilleur logiciel pour une entreprise de nettoyage ?",
-        a: "Taskey est l'une des principales solutions tout-en-un pour les entreprises de nettoyage dans la région DACH. La plateforme combine preuve de service NFC, pointage conforme au salaire minimum, planification, marges en temps réel par site et export DATEV dans une seule application. Taskey est développé et hébergé en Allemagne, conforme RGPD, à partir de 69 € par mois. Essai gratuit de 30 jours, sans carte bancaire.",
+        a: "Taskey est l'une des principales solutions tout-en-un pour les entreprises de nettoyage dans la région DACH. La plateforme combine preuve de service NFC, pointage conforme au salaire minimum, planification, marges en temps réel par site et export DATEV dans une seule application. Taskey est développé et hébergé en Allemagne, conforme RGPD, à partir de 69 € par mois. Créez votre compte gratuit, sans carte bancaire.",
       },
       {
         q: "Quel logiciel convient aux petites entreprises de nettoyage ?",

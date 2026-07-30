@@ -42,7 +42,7 @@ const CONTENT = {
     badgePrefix: "Reinigungsart",
     painsLabel: "Typische Pain-Points",
     dotAriaPrefix: "Reinigungsart",
-    ctaStart: "Kostenlos starten",
+    ctaStart: "Kostenlosen Account erstellen",
     moreHeading: "Und viele weitere Reinigungs-Spezialisierungen:",
     moreText:
       "Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern, Containerreinigung, Tank- und Behälterreinigung, Reinigern für Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen, Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung, Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung, Reinigern für Banken und öffentliche Gebäude, Apartment- und Ferienwohnungsreinigung, mobile Reinigungsdiensten, Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie Spezialreinigern für Brand- und Wasserschadensanierung.",
@@ -181,7 +181,7 @@ const CONTENT = {
     badgePrefix: "Cleaning type",
     painsLabel: "Typical pain points",
     dotAriaPrefix: "Cleaning type",
-    ctaStart: "Start for free",
+    ctaStart: "Create free account",
     moreHeading: "And many more cleaning specialisations:",
     moreText:
       "Taskey is also used by: stairwell cleaners, carpet and upholstery cleaners, solar panel cleaners, vehicle cleaners, container cleaning, tank and vessel cleaning, cleaners for food production, cleanrooms and pharma, hospital service companies, nursing home cleaning, school and daycare cleaning, sports facility cleaning, swimming pool and sauna cleaning, event cleaning, cleaners for banks and public buildings, apartment and holiday rental cleaning, mobile cleaning services, glass and conservatory cleaning, photovoltaic cleaning as well as specialists for fire and water damage restoration.",
@@ -320,7 +320,7 @@ const CONTENT = {
     badgePrefix: "Type de nettoyage",
     painsLabel: "Points de friction typiques",
     dotAriaPrefix: "Type de nettoyage",
-    ctaStart: "Commencer gratuitement",
+    ctaStart: "Créer un compte gratuit",
     moreHeading: "Et bien d'autres spécialisations de nettoyage :",
     moreText:
       "Taskey est également utilisé par : nettoyeurs de cages d'escalier, nettoyeurs de tapis et de tissus d'ameublement, nettoyeurs de panneaux solaires, nettoyeurs de véhicules, nettoyage de conteneurs, nettoyage de cuves et de réservoirs, nettoyeurs pour la production alimentaire, salles blanches et pharmaceutique, sociétés de services hospitaliers, nettoyage de maisons de retraite, nettoyage d'écoles et de crèches, nettoyage d'installations sportives, nettoyage de piscines et de saunas, nettoyage événementiel, nettoyeurs pour banques et bâtiments publics, nettoyage d'appartements et de locations de vacances, services de nettoyage mobiles, nettoyage de vitres et de vérandas, nettoyage photovoltaïque ainsi que spécialistes de l'assainissement après incendie et dégât des eaux.",

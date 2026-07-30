@@ -62,7 +62,7 @@ const UI: Record<Locale, {
     next: "Nächster Beitrag →",
     translationNote: "",
     ctaHeadline: "Selbst ausprobieren.",
-    ctaBody: "30 Tage kostenlos — kein Risiko, keine Kreditkarte.",
+    ctaBody: "Kostenloser Account — kein Risiko, keine Kreditkarte.",
     ctaButton: "Jetzt starten",
   },
   en: {
@@ -73,7 +73,7 @@ const UI: Record<Locale, {
     translationNote:
       "The English version of the full article is in progress. The German version below carries the complete piece.",
     ctaHeadline: "See it for yourself.",
-    ctaBody: "30 days free — no risk, no credit card.",
+    ctaBody: "Free account — no risk, no credit card.",
     ctaButton: "Get started",
   },
   fr: {
@@ -84,7 +84,7 @@ const UI: Record<Locale, {
     translationNote:
       "La version française complète est en cours de traduction. L'article intégral est disponible ci-dessous en allemand.",
     ctaHeadline: "Essayez par vous-même.",
-    ctaBody: "30 jours gratuits — sans risque, sans carte de crédit.",
+    ctaBody: "Compte gratuit — sans risque, sans carte de crédit.",
     ctaButton: "Commencer",
   },
 };
