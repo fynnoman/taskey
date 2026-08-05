@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
+import AIBadge from "@/components/AIBadge";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -476,6 +477,7 @@ export default function AboutClient() {
                       className="object-cover"
                       sizes="192px"
                     />
+                    <AIBadge size="xs" position="bottom-center" />
                   </div>
                   <h3 className="text-xl font-black text-slate-900 mb-1">{m.name}</h3>
                   <p className="text-blue-700 text-sm font-bold tracking-wide">{m.role}</p>
