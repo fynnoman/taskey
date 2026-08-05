@@ -1,56 +1,38 @@
 "use client";
 
-import { useRef, useState } from "react";
-import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
 
-const POSTER = "/videos/taskey-einstieg-cover.jpg";
-const VIDEO_SRC = "/videos/taskey-einstieg.mp4";
+const YOUTUBE_ID = "vUGSXbZomt4";
+const YOUTUBE_URL = `https://youtu.be/${YOUTUBE_ID}`;
+const YOUTUBE_THUMB = `https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`;
 
 const COPY = {
   de: {
     title: "Taskey in 5 Minuten verstehen",
     subtitle:
       "Ein kurzer Überblick — wie Taskey deinen Reinigungsbetrieb steuert, von der Einsatzplanung bis zur Live-Marge.",
-    playLabel: "Einstiegsvideo abspielen",
+    playLabel: "Einstiegsvideo auf YouTube ansehen",
     posterAlt: "Taskey Einstiegsvideo Vorschau",
-    moreVideosLabel: "Weitere Erklärungsvideos ansehen",
   },
   en: {
     title: "Understand Taskey in 5 minutes",
     subtitle:
       "A quick overview — how Taskey runs your cleaning business, from scheduling to live margins.",
-    playLabel: "Play intro video",
+    playLabel: "Watch intro video on YouTube",
     posterAlt: "Taskey intro video preview",
-    moreVideosLabel: "Watch more explainer videos",
   },
   fr: {
     title: "Comprendre Taskey en 5 minutes",
     subtitle:
       "Un aperçu rapide — comment Taskey pilote votre activité de nettoyage, de la planification aux marges en direct.",
-    playLabel: "Lire la vidéo d'introduction",
+    playLabel: "Regarder la vidéo d'introduction sur YouTube",
     posterAlt: "Aperçu de la vidéo d'introduction Taskey",
-    moreVideosLabel: "Voir d'autres vidéos explicatives",
   },
 } as const;
 
 export default function IntroVideo() {
   const { language } = useLanguage();
   const copy = COPY[language] ?? COPY.de;
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [started, setStarted] = useState(false);
-
-  const start = () => {
-    setStarted(true);
-    requestAnimationFrame(() => {
-      const v = videoRef.current;
-      if (v) {
-        v.play().catch(() => {
-          /* Autoplay-Block: User klickt dann selbst auf Controls */
-        });
-      }
-    });
-  };
 
   return (
     <section
@@ -72,62 +54,39 @@ export default function IntroVideo() {
           {copy.subtitle}
         </p>
 
-        <div className="relative mx-auto aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5">
-          {!started ? (
-            <button
-              type="button"
-              onClick={start}
-              aria-label={copy.playLabel}
-              className="group absolute inset-0 w-full h-full block focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-400/60"
-            >
-              {}
-              <img
-                src={POSTER}
-                alt={copy.posterAlt}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/40 transition-colors group-hover:from-black/0 group-hover:to-black/30" />
+        <a
+          href={YOUTUBE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={copy.playLabel}
+          className="group relative mx-auto block aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-400/60"
+        >
+          {}
+          <img
+            src={YOUTUBE_THUMB}
+            alt={copy.posterAlt}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/40 transition-colors group-hover:from-black/0 group-hover:to-black/30" />
 
-              <span
-                className="absolute inset-0 flex items-center justify-center"
-                aria-hidden="true"
-              >
-                <span className="relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/95 shadow-2xl shadow-black/50 transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
-                  <span className="absolute inset-0 rounded-full bg-white/40 blur-xl -z-10" />
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-8 h-8 md:w-10 md:h-10 translate-x-[2px] text-slate-900"
-                    fill="currentColor"
-                  >
-                    <path d="M8 5.14v13.72c0 .81.87 1.32 1.58.92l11.04-6.86a1.06 1.06 0 0 0 0-1.84L9.58 4.22A1.06 1.06 0 0 0 8 5.14z" />
-                  </svg>
-                </span>
-              </span>
-            </button>
-          ) : (
-            <video
-              ref={videoRef}
-              src={VIDEO_SRC}
-              poster={POSTER}
-              controls
-              playsInline
-              preload="metadata"
-              className="absolute inset-0 w-full h-full object-cover bg-black"
-            />
-          )}
-        </div>
-
-        <div className="mt-6 text-center">
-          <Link
-            href="/videos"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white/90 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 rounded"
+          <span
+            className="absolute inset-0 flex items-center justify-center"
+            aria-hidden="true"
           >
-            <span>{copy.moreVideosLabel}</span>
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
+            <span className="relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/95 shadow-2xl shadow-black/50 transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
+              <span className="absolute inset-0 rounded-full bg-white/40 blur-xl -z-10" />
+              <svg
+                viewBox="0 0 24 24"
+                className="w-8 h-8 md:w-10 md:h-10 translate-x-[2px] text-slate-900"
+                fill="currentColor"
+              >
+                <path d="M8 5.14v13.72c0 .81.87 1.32 1.58.92l11.04-6.86a1.06 1.06 0 0 0 0-1.84L9.58 4.22A1.06 1.06 0 0 0 8 5.14z" />
+              </svg>
+            </span>
+          </span>
+        </a>
       </div>
     </section>
   );
