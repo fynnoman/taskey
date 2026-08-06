@@ -25,7 +25,6 @@ type Tier = {
   name: string;
   price: string;
   unit: string;
-  perObject?: string;
   features: string[];
   ctaLabel: string;
   ctaHref?: string;
@@ -105,7 +104,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / Monat",
-        perObject: "+ 4,80 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "10 NFC-Tags inklusive",
@@ -121,7 +119,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / Monat",
-        perObject: "+ 4,20 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "50 NFC-Tags inklusive",
@@ -140,7 +137,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / Monat",
-        perObject: "+ 3,80 € pro Objekt",
         features: [
           "Alle Basisfunktionen",
           "100 NFC-Tags inklusive",
@@ -231,7 +227,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / month",
-        perObject: "+ €4.80 per property",
         features: [
           "All core features",
           "10 NFC tags included",
@@ -247,7 +242,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / month",
-        perObject: "+ €4.20 per property",
         features: [
           "All core features",
           "50 NFC tags included",
@@ -266,7 +260,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / month",
-        perObject: "+ €3.80 per property",
         features: [
           "All core features",
           "100 NFC tags included",
@@ -357,7 +350,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Beginner",
         price: "69",
         unit: "€ / mois",
-        perObject: "+ 4,80 € par site",
         features: [
           "Toutes les fonctions de base",
           "10 étiquettes NFC incluses",
@@ -373,7 +365,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Professional",
         price: "179",
         unit: "€ / mois",
-        perObject: "+ 4,20 € par site",
         features: [
           "Toutes les fonctions de base",
           "50 étiquettes NFC incluses",
@@ -392,7 +383,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
         name: "Business",
         price: "249",
         unit: "€ / mois",
-        perObject: "+ 3,80 € par site",
         features: [
           "Toutes les fonctions de base",
           "100 étiquettes NFC incluses",
@@ -803,11 +793,7 @@ function PricingCard({ tier, popularLabel }: { tier: Tier; popularLabel: string 
           <span className="text-sm text-slate-500 font-medium">{tier.unit}</span>
         </div>
 
-        {tier.perObject ? (
-          <p className="text-sm text-blue-700 font-semibold mb-7 mt-1">{tier.perObject}</p>
-        ) : (
-          <div className="mb-7" />
-        )}
+        <div className="mb-7" />
 
         <a
           href={tier.ctaHref}
