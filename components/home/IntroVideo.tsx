@@ -44,17 +44,6 @@ export default function IntroVideo() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-cyan-500/10 blur-[120px] rounded-full" />
       </div>
 
-      {/* Saubär – groß am rechten Rand der Section (Desktop) */}
-      <div className="hidden lg:block pointer-events-none absolute -right-16 xl:-right-4 2xl:right-8 bottom-0 z-0 w-[280px] xl:w-[340px] 2xl:w-[380px]">
-        <Image
-          src="/Saub%C3%A4r/top-zufrieden.png"
-          alt=""
-          width={600}
-          height={600}
-          className="w-full h-auto drop-shadow-[0_24px_40px_rgba(0,0,0,0.55)]"
-        />
-      </div>
-
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           id="intro-video-heading"
@@ -66,12 +55,25 @@ export default function IntroVideo() {
           {copy.subtitle}
         </p>
 
+        {/* Video + Saubär davor – Saubär z-30, Video darunter */}
+        <div className="relative">
+          {/* Saubär – vor dem Video, überlappt rechte untere Ecke */}
+          <div className="hidden lg:block pointer-events-none absolute -right-8 xl:-right-24 2xl:-right-40 -bottom-6 z-30 w-[260px] xl:w-[320px] 2xl:w-[360px]">
+            <Image
+              src="/Saub%C3%A4r/top-zufrieden.png"
+              alt=""
+              width={600}
+              height={600}
+              className="w-full h-auto drop-shadow-[0_24px_40px_rgba(0,0,0,0.55)]"
+            />
+          </div>
+
         <a
           href={YOUTUBE_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={copy.playLabel}
-          className="group relative mx-auto block aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-400/60"
+          className="group relative z-10 mx-auto block aspect-video w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/60 bg-black ring-1 ring-white/5 focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-400/60"
         >
           {}
           <img
@@ -106,6 +108,7 @@ export default function IntroVideo() {
             </span>
           </span>
         </a>
+        </div>
       </div>
     </section>
   );
