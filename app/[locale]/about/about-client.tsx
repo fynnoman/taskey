@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
-import AIBadge from "@/components/AIBadge";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -458,10 +457,11 @@ export default function AboutClient() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: t("aboutClient.role.ceo") },
               { name: "Julian Stosse",     img: "/team-julian.png",      role: t("aboutClient.role.ceo") },
+              { name: "Yukio Jonas Sato",  img: "/team-yukio.jpg",       role: t("aboutClient.role.ceo") },
             ].map((m) => (
               <div
                 key={m.name}
@@ -477,7 +477,6 @@ export default function AboutClient() {
                       className="object-cover"
                       sizes="192px"
                     />
-                    <AIBadge size="xs" position="bottom-center" />
                   </div>
                   <h3 className="text-xl font-black text-slate-900 mb-1">{m.name}</h3>
                   <p className="text-blue-700 text-sm font-bold tracking-wide">{m.role}</p>
