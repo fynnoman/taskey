@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
-import AIBadge from "@/components/AIBadge";
 import { useLanguage } from "@/context/LanguageContext";
 
 /**
@@ -154,7 +153,6 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                <AIBadge />
               </div>
 
               {/* Text-Block */}

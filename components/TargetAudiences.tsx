@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "@/components/LocaleLink";
-import AIBadge from "@/components/AIBadge";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -521,7 +520,6 @@ export default function TargetAudiences({
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-slate-950/20" />
-                <AIBadge />
               </div>
 
               {/* Progress-Bar */}

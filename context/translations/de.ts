@@ -922,6 +922,7 @@ const translations: Record<string, string> = {
     "aboutClient.valuesLabel": "Was uns wichtig ist",
     "aboutClient.contactLabel": "Kontakt",
     "aboutClient.role.ceo": "Geschäftsführer",
+    "aboutClient.role.cofounder": "Mitgründer",
     "aboutClient.country": "Deutschland",
     "aboutClient.cta.title": "Sehen Sie selbst, wie Ruhe im Betrieb aussieht.",
     "aboutClient.cta.subtitle": "Kostenlosen Account erstellen. Kein Risiko, keine Kreditkarte.",

@@ -461,7 +461,7 @@ export default function AboutClient() {
             {[
               { name: "Fynn-Luca Schulz", img: "/ACCD988C-E7FD-4CAE-9A87-E4452122FD80_1_201_a.jpeg", role: t("aboutClient.role.ceo") },
               { name: "Julian Stosse",     img: "/team-julian.png",      role: t("aboutClient.role.ceo") },
-              { name: "Yukio Jonas Sato",  img: "/team-yukio.jpg",       role: t("aboutClient.role.ceo") },
+              { name: "Yukio Jonas Sato",  img: "/team-yukio.jpg",       role: t("aboutClient.role.cofounder") },
             ].map((m) => (
               <div
                 key={m.name}

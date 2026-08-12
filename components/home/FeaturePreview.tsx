@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
-import AIBadge from "@/components/AIBadge";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useParallax } from "./useParallax";
@@ -86,7 +85,6 @@ export default function FeaturePreview() {
                   "linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.45) 15%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.7) 85%, #ffffff 100%)",
               }}
             />
-            <AIBadge />
           </div>
         ))}
       </div>
@@ -176,7 +174,6 @@ export default function FeaturePreview() {
                   >
                     <Image src={f.image} alt={f.title} fill sizes="100vw" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
-                    <AIBadge />
                   </div>
                 ))}
                 <div key={`m-txt-${active}`} className="absolute bottom-0 left-0 right-0 p-6" style={{ animation: "featurepreview-fade 0.7s ease-out" }}>

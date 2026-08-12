@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "@/components/LocaleLink";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import AIBadge from "@/components/AIBadge";
 import { posts, getCategoryLabel, type PostCategory, type Locale } from "../posts";
 import { getLocalizedPost, isBodyFallback } from "../i18n";
 import { pickLocale, alternates } from "@/lib/i18n-metadata";
@@ -242,7 +241,6 @@ function renderBody(body: string) {
                 sizes="(max-width: 768px) 100vw, 768px"
                 className="w-full h-auto object-contain"
               />
-              <AIBadge />
             </div>
             {caption ? (
               <figcaption className="mt-3 text-center text-sm text-slate-500 italic">
@@ -519,7 +517,6 @@ export default async function NewsPostPage(
                   sizes="(max-width: 640px) 100vw, 512px"
                   className="w-full h-auto object-contain"
                 />
-                <AIBadge />
               </div>
             </div>
           ) : (
@@ -533,7 +530,6 @@ export default async function NewsPostPage(
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   className="object-cover"
                 />
-                <AIBadge />
               </div>
             </div>
           )

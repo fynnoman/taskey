@@ -86,13 +86,6 @@ export default function IntroVideo() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/0 to-black/40 transition-colors group-hover:from-black/0 group-hover:to-black/30" />
 
           <span
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-3 right-3 z-10 inline-flex items-center rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-medium tracking-wide text-white/75 ring-1 ring-white/15 backdrop-blur-md"
-          >
-            KI-generiert
-          </span>
-
-          <span
             className="absolute inset-0 flex items-center justify-center"
             aria-hidden="true"
           >

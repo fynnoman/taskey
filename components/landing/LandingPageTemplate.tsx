@@ -2,7 +2,6 @@
 
 import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import AIBadge from "@/components/AIBadge";
 import { useLanguage } from "@/context/LanguageContext";
 
 const CONTENT = {
@@ -302,7 +301,6 @@ export default function LandingPageTemplate({
                           loading="lazy"
                           className="absolute inset-0 w-full h-full object-contain"
                         />
-                        <AIBadge />
                       </div>
                     )}
                     <h3 className="text-lg md:text-xl font-bold mb-3 text-slate-900">{s.heading}</h3>

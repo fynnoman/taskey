@@ -90,13 +90,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.44)_70%)]" />
       </div>
 
-      <span
-        aria-label="KI-generiertes Hintergrundvideo"
-        className="pointer-events-none absolute bottom-3 right-3 md:bottom-4 md:right-4 z-20 inline-flex items-center rounded-full bg-black/50 px-2.5 py-1 text-[10px] font-medium tracking-wide text-white/75 ring-1 ring-white/15 backdrop-blur-md"
-      >
-        KI-generiert
-      </span>
-
       {/* === Stage Content ===================================================== */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-40 pb-12 md:pb-24 min-h-[78vh] md:min-h-[88vh] flex flex-col justify-center">
         {/* Live Badge */}
