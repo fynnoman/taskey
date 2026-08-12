@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 const YOUTUBE_ID = "vUGSXbZomt4";
@@ -41,6 +42,17 @@ export default function IntroVideo() {
     >
       <div className="pointer-events-none absolute inset-0 -z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-cyan-500/10 blur-[120px] rounded-full" />
+      </div>
+
+      {/* Saubär – groß am rechten Rand der Section (Desktop) */}
+      <div className="hidden lg:block pointer-events-none absolute -right-16 xl:-right-4 2xl:right-8 bottom-0 z-0 w-[280px] xl:w-[340px] 2xl:w-[380px]">
+        <Image
+          src="/Saub%C3%A4r/top-zufrieden.png"
+          alt=""
+          width={600}
+          height={600}
+          className="w-full h-auto drop-shadow-[0_24px_40px_rgba(0,0,0,0.55)]"
+        />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

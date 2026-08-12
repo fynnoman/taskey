@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "@/components/LocaleLink";
 import AIBadge from "@/components/AIBadge";
 import { useLanguage } from "@/context/LanguageContext";
@@ -94,6 +95,17 @@ export default function CommunicationUSP({ variant = "full" }: { variant?: Varia
     <section id="echtzeit-kommunikation" className={`${bgFull} py-16 sm:py-20 md:py-32 relative overflow-hidden`}>
       <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[72px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-50 rounded-full blur-[64px] pointer-events-none" />
+
+      {/* Saubär – groß am linken Rand der Section, hört zu */}
+      <div className="hidden lg:block pointer-events-none absolute -left-16 xl:-left-8 bottom-8 xl:bottom-16 z-0 w-[300px] xl:w-[360px] 2xl:w-[400px]">
+        <Image
+          src="/Saub%C3%A4r/nachdenken.png"
+          alt=""
+          width={600}
+          height={600}
+          className="w-full h-auto drop-shadow-[0_24px_40px_rgba(15,23,42,0.18)]"
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header – Revolut-Style: zentral, groß, knapp */}

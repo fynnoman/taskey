@@ -104,14 +104,14 @@ export default function BookMeeting() {
 
         {/* Calendly Card */}
         <div className="relative">
-          {/* Saubär – peeking on top-left */}
-          <div className="hidden md:block pointer-events-none absolute -top-24 -left-6 lg:-left-16 z-10 w-[140px] lg:w-[170px]">
+          {/* Saubär – groß rechts neben dem Kalender (Desktop) */}
+          <div className="hidden xl:block pointer-events-none absolute -right-40 2xl:-right-52 -bottom-4 z-10 w-[380px] 2xl:w-[440px]">
             <Image
               src="/Saub%C3%A4r/classic-stehen.png"
               alt=""
-              width={340}
-              height={340}
-              className="w-full h-auto drop-shadow-[0_18px_28px_rgba(0,0,0,0.45)]"
+              width={600}
+              height={800}
+              className="w-full h-auto drop-shadow-[0_30px_50px_rgba(0,0,0,0.55)]"
             />
           </div>
 
@@ -120,6 +120,19 @@ export default function BookMeeting() {
               className="calendly-inline-widget"
               data-url="https://calendly.com/fynn-taskeyapp/new-meeting"
               style={{ minWidth: "320px", height: "740px" }}
+            />
+          </div>
+        </div>
+
+        {/* Saubär – groß, mittig unter dem Widget für kleinere Screens */}
+        <div className="xl:hidden mt-10 flex justify-center">
+          <div className="relative w-full max-w-md pointer-events-none">
+            <Image
+              src="/Saub%C3%A4r/top-zufrieden.png"
+              alt=""
+              width={600}
+              height={600}
+              className="w-full h-auto drop-shadow-[0_20px_36px_rgba(0,0,0,0.5)]"
             />
           </div>
         </div>
