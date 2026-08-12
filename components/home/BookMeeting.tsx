@@ -1,8 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import Script from "next/script";
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const CALENDLY_URL = "https://calendly.com/fynn-taskeyapp/new-meeting";
+const CALENDLY_CSS = "https://assets.calendly.com/assets/external/widget.css";
+const CALENDLY_JS = "https://assets.calendly.com/assets/external/widget.js";
+
+type CalendlyGlobal = {
+  initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
+};
 
 const COPY = {
   de: {
@@ -14,6 +22,7 @@ const COPY = {
     highlight1: "Direkt mit Fynn (Gründer)",
     highlight2: "Individuelle Live-Demo",
     highlight3: "Keine Verkaufspräsentation",
+    fallbackCta: "Termin bei Calendly öffnen",
   },
   en: {
     badge: "Intro call",
@@ -24,6 +33,7 @@ const COPY = {
     highlight1: "Direct with Fynn (founder)",
     highlight2: "Personal live demo",
     highlight3: "No sales pitch",
+    fallbackCta: "Open scheduling on Calendly",
   },
   fr: {
     badge: "Rendez-vous découverte",
@@ -34,12 +44,74 @@ const COPY = {
     highlight1: "Directement avec Fynn (fondateur)",
     highlight2: "Démo live personnalisée",
     highlight3: "Pas de discours commercial",
+    fallbackCta: "Ouvrir la prise de rendez-vous",
   },
 } as const;
+
+function ensureCalendlyCss(): void {
+  if (document.querySelector(`link[href="${CALENDLY_CSS}"]`)) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = CALENDLY_CSS;
+  document.head.appendChild(link);
+}
+
+function loadCalendlyScript(): Promise<CalendlyGlobal> {
+  const w = window as unknown as { Calendly?: CalendlyGlobal };
+  if (w.Calendly) return Promise.resolve(w.Calendly);
+
+  const existing = document.querySelector<HTMLScriptElement>(
+    `script[src="${CALENDLY_JS}"]`
+  );
+  if (existing) {
+    return new Promise<CalendlyGlobal>((resolve, reject) => {
+      existing.addEventListener("load", () => {
+        const c = (window as unknown as { Calendly?: CalendlyGlobal }).Calendly;
+        c ? resolve(c) : reject(new Error("Calendly loaded but window.Calendly missing"));
+      });
+      existing.addEventListener("error", () =>
+        reject(new Error("Calendly script failed to load"))
+      );
+    });
+  }
+
+  return new Promise<CalendlyGlobal>((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = CALENDLY_JS;
+    script.async = true;
+    script.onload = () => {
+      const c = (window as unknown as { Calendly?: CalendlyGlobal }).Calendly;
+      c ? resolve(c) : reject(new Error("Calendly loaded but window.Calendly missing"));
+    };
+    script.onerror = () => reject(new Error("Calendly script failed to load"));
+    document.body.appendChild(script);
+  });
+}
 
 export default function BookMeeting() {
   const { language } = useLanguage();
   const copy = COPY[language] ?? COPY.de;
+
+  const widgetRef = useRef<HTMLDivElement | null>(null);
+  const initializedRef = useRef(false);
+
+  useEffect(() => {
+    if (initializedRef.current) return;
+    const el = widgetRef.current;
+    if (!el) return;
+
+    ensureCalendlyCss();
+
+    loadCalendlyScript()
+      .then((Calendly) => {
+        if (initializedRef.current || !widgetRef.current) return;
+        Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: widgetRef.current });
+        initializedRef.current = true;
+      })
+      .catch((err) => {
+        console.error("[BookMeeting] Calendly init failed:", err);
+      });
+  }, []);
 
   return (
     <section
@@ -117,10 +189,35 @@ export default function BookMeeting() {
 
           <div className="relative rounded-[2rem] border border-white/10 bg-white shadow-2xl shadow-black/50 overflow-hidden ring-1 ring-white/5">
             <div
+              ref={widgetRef}
               className="calendly-inline-widget"
-              data-url="https://calendly.com/fynn-taskeyapp/new-meeting"
+              data-url={CALENDLY_URL}
               style={{ minWidth: "320px", height: "740px" }}
-            />
+            >
+              {/* Fallback wenn Script blockiert wird oder noch nicht geladen ist */}
+              <noscript>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full h-full text-blue-700 font-bold"
+                >
+                  {copy.fallbackCta}
+                </a>
+              </noscript>
+            </div>
+          </div>
+
+          {/* Sichtbarer Fallback-Link direkt unter dem Widget */}
+          <div className="mt-4 text-center">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/50 hover:text-white/80 underline underline-offset-4 transition-colors"
+            >
+              {copy.fallbackCta}
+            </a>
           </div>
         </div>
 
@@ -137,11 +234,6 @@ export default function BookMeeting() {
           </div>
         </div>
       </div>
-
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
     </section>
   );
 }
