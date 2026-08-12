@@ -1007,6 +1007,17 @@ const translations: Record<string, string> = {
 
     // partnerschaften-client.tsx — Flix-Clean
     "partnerClient.flixclean.p1": "Flix-Clean aus Homburg ist ein spezialisierter Gebäudereiniger, der uns beim präzisen Feinschliff unterstützt. Professionelle Reinigungsleistungen mit hohem Qualitätsanspruch, sauberer Prozessführung und verlässlicher Ausführung. Gemeinsam sorgen wir dafür, dass Kundenobjekte konstant in einwandfreiem Zustand bleiben.",
+
+    // partnerschaften-client.tsx — Acrotec
+    "partnerClient.acrotec.p1": "Die Acrotec GmbH ergänzt unser Partnernetzwerk im technischen Gebäudeservice und in angrenzenden Dienstleistungen rund um Objektbetrieb und Instandhaltung. Gemeinsam verzahnen wir digitale Einsatzsteuerung mit sauberer Ausführung vor Ort.",
+
+    // partnerschaften-client.tsx — neue Sektion-Header
+    "partner.partners.featured.badge": "Referenzkunde",
+    "partner.partners.featured.title": "Aus dem Alltag eines Taskey-Betriebs",
+    "partner.partners.network.badge": "Partnernetzwerk",
+    "partner.partners.network.title": "Weitere Betriebe im Netzwerk",
+    "partner.partners.network.subtitle": "Betriebe, mit denen wir Taskey Schritt für Schritt weiterentwickeln.",
+    "partner.partners.visit": "Zur Website",
 };
 
 export default translations;

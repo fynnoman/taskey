@@ -1007,6 +1007,17 @@ const translations: Record<string, string> = {
 
     // partnerschaften-client.tsx — Flix-Clean
     "partnerClient.flixclean.p1": "Flix-Clean, basé à Homburg, est une entreprise spécialisée dans le nettoyage professionnel qui nous accompagne dans les finitions précises. Prestations de nettoyage de haute qualité, processus soignés et exécution fiable. Ensemble, nous veillons à ce que les sites de nos clients restent constamment en parfait état.",
+
+    // partnerschaften-client.tsx — Acrotec
+    "partnerClient.acrotec.p1": "Acrotec GmbH complète notre réseau de partenaires dans les services techniques du bâtiment et les prestations connexes autour de l'exploitation et de la maintenance. Ensemble, nous relions le pilotage numérique des interventions à une exécution soignée sur site.",
+
+    // partnerschaften-client.tsx — nouveaux en-têtes
+    "partner.partners.featured.badge": "Client de référence",
+    "partner.partners.featured.title": "Le quotidien d'une entreprise Taskey",
+    "partner.partners.network.badge": "Réseau de partenaires",
+    "partner.partners.network.title": "Autres entreprises du réseau",
+    "partner.partners.network.subtitle": "Des entreprises avec lesquelles nous faisons évoluer Taskey étape par étape.",
+    "partner.partners.visit": "Voir le site",
 };
 
 export default translations;

@@ -284,104 +284,180 @@ export default function PartnerschaftenClient() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Bild */}
-            <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl shadow-blue-900/15">
+          {/* Featured Spotlight — MG */}
+          <div className="relative mb-16 md:mb-20">
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl shadow-blue-900/15">
+              <div className="grid grid-cols-1 lg:grid-cols-5">
+                {/* Bild */}
+                <div className="relative lg:col-span-3 aspect-[4/3] lg:aspect-auto">
+                  <Image
+                    src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.webp"
+                    alt="Taskey Partner – MG Gebäudeservice"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-white/60 shadow-lg shadow-black/10">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                    </span>
+                    <span className="text-[10px] font-black tracking-[0.25em] text-slate-700 uppercase">
+                      {t('partner.partners.featured.badge')}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="lg:col-span-2 p-7 md:p-10 flex flex-col justify-center">
+                  <div className="mb-6 inline-flex items-center h-14 rounded-xl bg-slate-50 border border-slate-200 px-4 self-start">
+                    <Image
+                      src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
+                      alt="MG Gebäudeservice"
+                      width={140}
+                      height={50}
+                      className="object-contain h-8 w-auto"
+                    />
+                  </div>
+                  <p className="text-[11px] font-black text-blue-700 uppercase tracking-[0.28em] mb-3">
+                    {t('partner.partners.featured.title')}
+                  </p>
+                  <h3 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight mb-4">
+                    MG Gebäudeservice
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed mb-8">
+                    {t('partner.partners.mgDesc')}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Link
+                      href="/news/mg-gebaeudeservice-duesseldorf-case-study"
+                      className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-blue-500 transition-colors"
+                    >
+                      {t('partner.partners.caseStudy')}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </Link>
+                    <a
+                      href="https://mg-gebaeudeservice.de"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-900 font-bold px-6 py-3 rounded-full text-sm hover:bg-slate-50 transition-colors"
+                    >
+                      {t('partner.partners.visit')}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Saubär – sits on top edge of the featured card */}
+            <div className="hidden md:block pointer-events-none absolute -top-24 right-6 lg:right-12 z-10 w-[130px] lg:w-[150px]">
               <Image
-                src="/095818D7-E56D-4784-AB51-A0EC8E9E85D5.webp"
-                alt="Taskey Partner – MG Gebäudeservice"
-                width={1200}
-                height={800}
-                className="w-full h-auto"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                src="/Saub%C3%A4r/top-zufrieden.png"
+                alt=""
+                width={300}
+                height={300}
+                className="w-full h-auto drop-shadow-[0_18px_28px_rgba(15,23,42,0.25)]"
               />
             </div>
-
-            {/* Text + Logos */}
-            <div className="flex flex-col">
-              <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
-                {t('partner.partners.note')}
-              </p>
-
-              {/* MG */}
-              <a
-                href="https://mg-gebaeudeservice.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-6 transition-all"
-              >
-                <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
-                  <Image
-                    src="https://cdn.vars-development.com/logos/enterprise/mg-geba%CC%88udeservice.png.avif"
-                    alt="MG Gebäudeservice"
-                    width={140}
-                    height={50}
-                    className="object-contain"
-                  />
-                </div>
-                <p className="text-slate-900 font-black text-lg mb-1.5">MG Gebäudeservice</p>
-                <p className="text-slate-600 text-sm leading-relaxed">{t('partner.partners.mgDesc')}</p>
-              </a>
-
-              {/* PAVAN */}
-              <a
-                href="https://pavan-gmbh.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-8 transition-all"
-              >
-                <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
-                  <Image
-                    src="/logos/pavan-logo.png"
-                    alt="PAVAN GmbH"
-                    width={140}
-                    height={50}
-                    className="object-contain"
-                  />
-                </div>
-                <p className="text-slate-900 font-black text-lg mb-3">PAVAN GmbH</p>
-                <p className="text-slate-600 text-sm leading-relaxed mb-3">
-                  {t("partnerClient.pavan.p1")}
-                </p>
-                <p className="text-slate-600 text-sm leading-relaxed mb-3">
-                  {t("partnerClient.pavan.p2")}
-                </p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {t("partnerClient.pavan.p3")}
-                </p>
-              </a>
-
-              {/* Flix-Clean */}
-              <a
-                href="https://flix-clean.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative rounded-2xl bg-blue-50/70 hover:bg-blue-50/80 border border-slate-200 hover:border-slate-300 backdrop-blur-sm p-7 mb-8 transition-all"
-              >
-                <div className="bg-white/95 rounded-xl px-4 py-3 inline-flex items-center mb-4">
-                  <Image
-                    src="/logos/flix-clean-logo.jpg"
-                    alt="Flix-Clean Gebäudereinigung"
-                    width={160}
-                    height={60}
-                    className="object-contain h-12 w-auto"
-                  />
-                </div>
-                <p className="text-slate-900 font-black text-lg mb-1.5">Flix-Clean Homburg</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {t("partnerClient.flixclean.p1")}
-                </p>
-              </a>
-
-              <Link
-                href="/news/mg-gebaeudeservice-duesseldorf-case-study"
-                className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-bold px-7 py-3.5 rounded-full text-sm max-w-fit hover:bg-blue-500 transition-colors"
-              >
-                {t('partner.partners.caseStudy')}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-            </div>
           </div>
+
+          {/* Partner-Netzwerk */}
+          <div className="text-center mb-10">
+            <p className="text-[10px] sm:text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3">
+              {t('partner.partners.network.badge')}
+            </p>
+            <h3 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight tracking-tight mb-2">
+              {t('partner.partners.network.title')}
+            </h3>
+            <p className="text-slate-600 text-base max-w-xl mx-auto">
+              {t('partner.partners.network.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {/* PAVAN */}
+            <a
+              href="https://pavan-gmbh.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10 p-7 transition-all hover:-translate-y-1"
+            >
+              <div className="h-16 flex items-center mb-6">
+                <Image
+                  src="/logos/pavan-logo.png"
+                  alt="PAVAN GmbH"
+                  width={160}
+                  height={60}
+                  className="object-contain h-10 w-auto grayscale group-hover:grayscale-0 transition-all"
+                />
+              </div>
+              <p className="text-slate-900 font-black text-lg mb-2">PAVAN GmbH</p>
+              <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+                {t("partnerClient.pavan.p1")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 group-hover:gap-2.5 transition-all">
+                {t('partner.partners.visit')}
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </span>
+            </a>
+
+            {/* Flix-Clean */}
+            <a
+              href="https://flix-clean.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10 p-7 transition-all hover:-translate-y-1"
+            >
+              <div className="h-16 flex items-center mb-6">
+                <Image
+                  src="/logos/flix-clean-logo.jpg"
+                  alt="Flix-Clean Gebäudereinigung"
+                  width={160}
+                  height={60}
+                  className="object-contain h-12 w-auto grayscale group-hover:grayscale-0 transition-all"
+                />
+              </div>
+              <p className="text-slate-900 font-black text-lg mb-2">Flix-Clean Homburg</p>
+              <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+                {t("partnerClient.flixclean.p1")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 group-hover:gap-2.5 transition-all">
+                {t('partner.partners.visit')}
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </span>
+            </a>
+
+            {/* Acrotec */}
+            <a
+              href="https://acrotec.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-900/10 p-7 transition-all hover:-translate-y-1"
+            >
+              <div className="h-16 flex items-center mb-6">
+                <Image
+                  src="/logos/acrotec-logo.jpg"
+                  alt="Acrotec GmbH"
+                  width={160}
+                  height={60}
+                  className="object-contain h-10 w-auto grayscale group-hover:grayscale-0 transition-all"
+                />
+              </div>
+              <p className="text-slate-900 font-black text-lg mb-2">Acrotec GmbH</p>
+              <p className="text-slate-600 text-sm leading-relaxed flex-grow">
+                {t("partnerClient.acrotec.p1")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 group-hover:gap-2.5 transition-all">
+                {t('partner.partners.visit')}
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </span>
+            </a>
+          </div>
+
+          <p className="text-center text-sm text-slate-500 mt-10 max-w-2xl mx-auto">
+            {t('partner.partners.note')}
+          </p>
         </div>
       </section>
 

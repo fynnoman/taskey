@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 
 /**
@@ -35,7 +36,17 @@ export default function FAQ() {
         <div className="grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16">
           {/* Left: Sticky Intro */}
           <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-28">
+            <div className="lg:sticky lg:top-28 relative">
+              {/* Saubär – am Nachdenken */}
+              <div className="hidden lg:block pointer-events-none absolute -top-8 -right-6 w-[120px] xl:w-[140px] rotate-[6deg]">
+                <Image
+                  src="/Saub%C3%A4r/nachdenken.png"
+                  alt=""
+                  width={280}
+                  height={280}
+                  className="w-full h-auto drop-shadow-[0_14px_22px_rgba(15,23,42,0.18)]"
+                />
+              </div>
               <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-5">
                 {t('faq.title') || 'Häufige Fragen'}
               </p>

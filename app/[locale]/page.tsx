@@ -9,6 +9,7 @@ import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 // Above-the-fold / initial: Hero + CommunicationUSP + AllInOneUSP statisch.
 // Alles darunter wird dynamisch nachgeladen für schnellere First Paint / LCP.
 const AufEinenBlick = dynamic(() => import("@/components/home/AufEinenBlick"));
+const BookMeeting = dynamic(() => import("@/components/home/BookMeeting"));
 const IntroVideo = dynamic(() => import("@/components/home/IntroVideo"));
 const FeaturePreview = dynamic(() => import("@/components/home/FeaturePreview"));
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
@@ -328,10 +329,13 @@ export default async function Home({
         {/* 1. Hook: Hero (Wert-Versprechen + CTA) */}
         <Hero />
 
-        {/* 1a. End-State-Sektion: das Gefühl, alles im Griff zu haben */}
+        {/* 1a. Direkter Weg zum Kennenlerngespräch — Calendly */}
+        <BookMeeting />
+
+        {/* 1b. End-State-Sektion: das Gefühl, alles im Griff zu haben */}
         <AufEinenBlick />
 
-        {/* 1b. Einstiegsvideo: kurzer Software-Überblick */}
+        {/* 1c. Einstiegsvideo: kurzer Software-Überblick */}
         <IntroVideo />
 
         {/* 2. Kern-USP #1: Kommunikation Feld ↔ Büro (zentraler Schmerz) */}

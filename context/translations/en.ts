@@ -1014,6 +1014,17 @@ const translations: Record<string, string> = {
 
     // partnerschaften-client.tsx — Flix-Clean
     "partnerClient.flixclean.p1": "Flix-Clean from Homburg is a specialised cleaning company that supports us with precise finishing work. Professional cleaning services with high quality standards, clean process management and reliable execution. Together we ensure that customer sites stay in perfect condition.",
+
+    // partnerschaften-client.tsx — Acrotec
+    "partnerClient.acrotec.p1": "Acrotec GmbH extends our partner network in technical building services and adjacent trades around facility operations and maintenance. Together we combine digital job control with clean execution on site.",
+
+    // partnerschaften-client.tsx — new section headers
+    "partner.partners.featured.badge": "Reference customer",
+    "partner.partners.featured.title": "A day in the life of a Taskey business",
+    "partner.partners.network.badge": "Partner network",
+    "partner.partners.network.title": "More businesses in the network",
+    "partner.partners.network.subtitle": "Businesses we work with to evolve Taskey step by step.",
+    "partner.partners.visit": "Visit website",
 };
 
 export default translations;
