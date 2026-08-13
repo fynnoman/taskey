@@ -66,6 +66,12 @@ type Content = {
     recommended: string;
     lossTitle: string;
     lossDesc: string;
+    onsiteBadge: string;
+    onsiteTitle: string;
+    onsiteDesc: string;
+    onsiteBullets: string[];
+    onsitePriceNote: string;
+    onsiteCta: string;
   };
   ent: {
     addon: string;
@@ -174,14 +180,26 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title: "Hardware nachbestellen.",
       intro: "Mehr Objekte, mehr Räume, mehr Tags. Bestellen Sie jederzeit nach.",
       offers: [
-        { key: "starter", name: "Starter", tags: "10 NFC-Tags", price: "6,30", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
-        { key: "pro", name: "Pro", tags: "50 NFC-Tags", price: "16,10", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen", recommended: true },
-        { key: "business", name: "Business", tags: "150 NFC-Tags", price: "30,80", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
+        { key: "starter", name: "Starter", tags: "10 NFC-Tags", price: "7,25", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
+        { key: "pro", name: "Pro", tags: "50 NFC-Tags", price: "18,52", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen", recommended: true },
+        { key: "business", name: "Business", tags: "150 NFC-Tags", price: "35,42", shipping: "Inkl. Versand · Lieferung in 2–3 Tagen", cta: "Bestellen" },
       ],
       recommended: "Empfohlen",
       lossTitle: "Verlustersatz inklusive",
       lossDesc:
         "Tag verloren oder beschädigt? Wir ersetzen ihn kostenlos — bis zu 5 % der bestellten Menge pro Jahr.",
+      onsiteBadge: "Vor Ort",
+      onsiteTitle: "Wir richten Ihre Objekte komplett vor Ort ein",
+      onsiteDesc:
+        "Sie müssen die NFC-Tags nicht selbst anbringen. Unser Team kommt vor Ort und übernimmt die komplette Einrichtung.",
+      onsiteBullets: [
+        "Alle Räume und Bereiche in Taskey angelegt",
+        "NFC-Tags an der optimalen Position montiert",
+        "Ihr Team direkt am Objekt eingewiesen",
+      ],
+      onsitePriceNote:
+        "Einmalbetrag nach Fahrzeit, Objektgröße und Anzahl der Tags. Individuelles Angebot innerhalb von 24 Stunden.",
+      onsiteCta: "Vor-Ort-Einrichtung anfragen",
     },
     ent: {
       addon: "Wenn Standard nicht genügt",
@@ -296,14 +314,26 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title: "Reorder hardware.",
       intro: "More properties, more rooms, more tags. Reorder anytime.",
       offers: [
-        { key: "starter", name: "Starter", tags: "10 NFC tags", price: "6.30", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
-        { key: "pro", name: "Pro", tags: "50 NFC tags", price: "16.10", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order", recommended: true },
-        { key: "business", name: "Business", tags: "150 NFC tags", price: "30.80", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
+        { key: "starter", name: "Starter", tags: "10 NFC tags", price: "7.25", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
+        { key: "pro", name: "Pro", tags: "50 NFC tags", price: "18.52", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order", recommended: true },
+        { key: "business", name: "Business", tags: "150 NFC tags", price: "35.42", shipping: "Shipping incl. · Delivery in 2–3 days", cta: "Order" },
       ],
       recommended: "Recommended",
       lossTitle: "Loss replacement included",
       lossDesc:
         "Tag lost or damaged? We replace it free of charge — up to 5% of the ordered amount per year.",
+      onsiteBadge: "On-site",
+      onsiteTitle: "We set up your properties fully on-site",
+      onsiteDesc:
+        "You don't need to place the NFC tags yourself. Our team comes on-site and takes care of the complete setup.",
+      onsiteBullets: [
+        "All rooms and zones created in Taskey",
+        "NFC tags placed at the optimal position",
+        "Your team trained directly on-site",
+      ],
+      onsitePriceNote:
+        "One-time fee based on travel time, property size and number of tags. Individual quote within 24 hours.",
+      onsiteCta: "Request on-site setup",
     },
     ent: {
       addon: "When standard isn't enough",
@@ -418,14 +448,26 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title: "Recommander du matériel.",
       intro: "Plus de sites, plus de pièces, plus d'étiquettes. Recommandez à tout moment.",
       offers: [
-        { key: "starter", name: "Starter", tags: "10 étiquettes NFC", price: "6,30", shipping: "Livraison incluse · 2–3 jours", cta: "Commander" },
-        { key: "pro", name: "Pro", tags: "50 étiquettes NFC", price: "16,10", shipping: "Livraison incluse · 2–3 jours", cta: "Commander", recommended: true },
-        { key: "business", name: "Business", tags: "150 étiquettes NFC", price: "30,80", shipping: "Livraison incluse · 2–3 jours", cta: "Commander" },
+        { key: "starter", name: "Starter", tags: "10 étiquettes NFC", price: "7,25", shipping: "Livraison incluse · 2–3 jours", cta: "Commander" },
+        { key: "pro", name: "Pro", tags: "50 étiquettes NFC", price: "18,52", shipping: "Livraison incluse · 2–3 jours", cta: "Commander", recommended: true },
+        { key: "business", name: "Business", tags: "150 étiquettes NFC", price: "35,42", shipping: "Livraison incluse · 2–3 jours", cta: "Commander" },
       ],
       recommended: "Recommandé",
       lossTitle: "Remplacement en cas de perte inclus",
       lossDesc:
         "Étiquette perdue ou endommagée ? Nous la remplaçons gratuitement — jusqu'à 5 % de la quantité commandée par an.",
+      onsiteBadge: "Sur site",
+      onsiteTitle: "Nous installons vos sites entièrement sur place",
+      onsiteDesc:
+        "Vous n'avez pas à poser les étiquettes NFC vous-même. Notre équipe se déplace et prend en charge l'installation complète.",
+      onsiteBullets: [
+        "Toutes les pièces et zones créées dans Taskey",
+        "Étiquettes NFC placées à la position optimale",
+        "Votre équipe formée directement sur place",
+      ],
+      onsitePriceNote:
+        "Montant forfaitaire selon le temps de trajet, la taille du site et le nombre d'étiquettes. Devis personnalisé sous 24 heures.",
+      onsiteCta: "Demander une installation sur site",
     },
     ent: {
       addon: "Quand le standard ne suffit pas",
@@ -678,7 +720,51 @@ function PricingPage() {
             })}
           </div>
 
-          <div className="mt-10 max-w-2xl mx-auto rounded-2xl bg-blue-50/70 border border-slate-200 p-5 flex items-start gap-4">
+          <div className="mt-12 max-w-4xl mx-auto rounded-3xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-2xl shadow-blue-500/15">
+            <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-9 flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/25">
+                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <span className="inline-block px-3 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-3">
+                  {c.nfc.onsiteBadge}
+                </span>
+                <h3 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-3">
+                  {c.nfc.onsiteTitle}
+                </h3>
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-5">
+                  {c.nfc.onsiteDesc}
+                </p>
+                <ul className="space-y-2 mb-5">
+                  {c.nfc.onsiteBullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <svg className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs text-slate-500 leading-relaxed mb-5">
+                  {c.nfc.onsitePriceNote}
+                </p>
+                <a
+                  href="mailto:kontakt@taskeyapp.com?subject=Vor-Ort-Einrichtung%20NFC-Tags"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-500 transition-colors"
+                >
+                  {c.nfc.onsiteCta}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 max-w-2xl mx-auto rounded-2xl bg-blue-50/70 border border-slate-200 p-5 flex items-start gap-4">
             <div className="w-9 h-9 rounded-full bg-cyan-50 border border-cyan-300 flex items-center justify-center flex-shrink-0">
               <svg className="w-4 h-4 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

@@ -18,6 +18,7 @@ const TargetAudiences = dynamic(() => import("@/components/TargetAudiences"));
 const SoloPackageMention = dynamic(() => import("@/components/home/SoloPackageMention"));
 const Branchen = dynamic(() => import("@/components/home/Branchen"));
 const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
+const AblaufSection = dynamic(() => import("@/components/home/AblaufSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 
 const HOME_COPY: PageCopy = {
@@ -364,6 +365,9 @@ export default async function Home({
 
         {/* 10. Mobile App: Alltag des Teams */}
         <IOSAppSection />
+
+        {/* 10a. Ablauf: 4 Schritte vom Kennenlernen bis zum Tarif */}
+        <AblaufSection />
 
         {/* 11. Einwände abbauen */}
         <FAQ />
