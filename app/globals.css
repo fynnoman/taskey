@@ -169,3 +169,164 @@ html {
 .animate-footer-flicker {
   animation: footer-flicker 6s ease-in-out infinite;
 }
+
+/* ==========================================================================
+   REDESIGN TOKENS  (namespaced tk-*  →  zero collision with existing styles)
+   Consumed only by components under components/home/redesign/*.
+   ========================================================================== */
+
+:root {
+  /* Surface + ink for the redesign shell */
+  --tk-ink: #0b1220;              /* deep near-black for corporate typography */
+  --tk-ink-soft: #1e293b;         /* slate-800 */
+  --tk-ink-muted: #64748b;        /* slate-500 */
+  --tk-canvas: #f4f6fb;           /* off-white, warmer than pure slate-50 */
+  --tk-canvas-elev: #ffffff;
+
+  /* Brand accent (kept close to existing cyan/blue but calmer) */
+  --tk-accent: #2563eb;           /* blue-600 primary CTA */
+  --tk-accent-strong: #1d4ed8;
+  --tk-accent-soft: rgba(37, 99, 235, 0.08);
+
+  /* Liquid Glass materials
+     Light glass  = subtle floating chrome over content
+     Heavy glass  = structural translucent surfaces (nav, hero chrome)
+     Dark glass   = translucent surface over bright media */
+  --tk-glass-blur: 24px;
+  --tk-glass-saturate: 180%;
+  --tk-glass-light-bg: rgba(255, 255, 255, 0.55);
+  --tk-glass-light-border: rgba(255, 255, 255, 0.65);
+  --tk-glass-heavy-bg: rgba(255, 255, 255, 0.72);
+  --tk-glass-heavy-border: rgba(255, 255, 255, 0.55);
+  --tk-glass-dark-bg: rgba(15, 23, 42, 0.5);
+  --tk-glass-dark-border: rgba(255, 255, 255, 0.12);
+
+  /* Hairlines that catch light on top edge (like real glass) */
+  --tk-glass-highlight: rgba(255, 255, 255, 0.5);
+  --tk-glass-shadow-sm: 0 6px 24px -12px rgba(15, 23, 42, 0.25);
+  --tk-glass-shadow-md: 0 20px 60px -20px rgba(15, 23, 42, 0.35);
+  --tk-glass-shadow-lg: 0 40px 120px -40px rgba(15, 23, 42, 0.45);
+
+  /* Section rhythm — corporate wants breathing room */
+  --tk-section-py-sm: clamp(4rem, 6vw, 6rem);
+  --tk-section-py:    clamp(6rem, 10vw, 10rem);
+  --tk-section-py-lg: clamp(8rem, 14vw, 14rem);
+  --tk-container-max: 1200px;
+  --tk-container-x:   clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Radii — softer, more product-y */
+  --tk-radius-chip:  0.75rem;
+  --tk-radius-card:  1.25rem;
+  --tk-radius-panel: 1.75rem;
+  --tk-radius-shell: 2.5rem;
+
+  /* Motion — fallback timings for pure CSS; JS springs live in motion.ts */
+  --tk-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --tk-ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Reusable liquid-glass materials
+   Each surface = bg + backdrop-filter + inner highlight ring + outer shadow. */
+.tk-glass {
+  background: var(--tk-glass-light-bg);
+  -webkit-backdrop-filter: blur(var(--tk-glass-blur)) saturate(var(--tk-glass-saturate));
+  backdrop-filter: blur(var(--tk-glass-blur)) saturate(var(--tk-glass-saturate));
+  border: 1px solid var(--tk-glass-light-border);
+  box-shadow:
+    inset 0 1px 0 0 var(--tk-glass-highlight),
+    var(--tk-glass-shadow-sm);
+}
+
+.tk-glass-heavy {
+  background: var(--tk-glass-heavy-bg);
+  -webkit-backdrop-filter: blur(calc(var(--tk-glass-blur) * 1.25)) saturate(var(--tk-glass-saturate));
+  backdrop-filter: blur(calc(var(--tk-glass-blur) * 1.25)) saturate(var(--tk-glass-saturate));
+  border: 1px solid var(--tk-glass-heavy-border);
+  box-shadow:
+    inset 0 1px 0 0 var(--tk-glass-highlight),
+    var(--tk-glass-shadow-md);
+}
+
+.tk-glass-dark {
+  background: var(--tk-glass-dark-bg);
+  -webkit-backdrop-filter: blur(var(--tk-glass-blur)) saturate(var(--tk-glass-saturate));
+  backdrop-filter: blur(var(--tk-glass-blur)) saturate(var(--tk-glass-saturate));
+  border: 1px solid var(--tk-glass-dark-border);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    var(--tk-glass-shadow-lg);
+  color: #fff;
+}
+
+/* Nav-specific glass: strong blur, bright bottom hairline as scroll-edge cue */
+.tk-glass-nav {
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Corporate display typography defaults inside redesign scope */
+.tk-display {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.tk-headline {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.tk-eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--tk-ink-muted);
+}
+
+/* Section shells */
+.tk-section        { padding-top: var(--tk-section-py);    padding-bottom: var(--tk-section-py); }
+.tk-section-sm     { padding-top: var(--tk-section-py-sm); padding-bottom: var(--tk-section-py-sm); }
+.tk-section-lg     { padding-top: var(--tk-section-py-lg); padding-bottom: var(--tk-section-py-lg); }
+.tk-container {
+  width: 100%;
+  max-width: var(--tk-container-max);
+  margin-inline: auto;
+  padding-inline: var(--tk-container-x);
+}
+.tk-container-wide {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--tk-container-x);
+}
+
+/* Scroll-edge fade for floating chrome (nav overlap with content) */
+.tk-edge-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+
+/* Accessibility: soften materials when user asked for less transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .tk-glass,
+  .tk-glass-heavy,
+  .tk-glass-nav {
+    background: var(--tk-canvas-elev);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    border-color: rgba(15, 23, 42, 0.08);
+  }
+  .tk-glass-dark {
+    background: var(--tk-ink);
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+}
