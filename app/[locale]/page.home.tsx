@@ -129,11 +129,6 @@ export default async function Home({
       "priceCurrency": "EUR",
       "offerCount": "3",
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "250",
-    },
     "softwareVersion": "2.0",
     "keywords": loc === "de"
       ? "beste Software für Gebäudereiniger, Software Gebäudereinigung, Reinigungssoftware, NFC Zeiterfassung, Einsatzplanung Reinigung, Leistungsnachweis Gebäudereinigung, Software für kleine Reinigungsfirmen, DSGVO Reinigungssoftware, All-in-One Reinigungssoftware, Facility Management Software"

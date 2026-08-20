@@ -550,13 +550,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       url: "https://signup.taskeyapp.com",
       description: sc.schemaOfferDescription,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "250",
-      bestRating: "5",
-      worstRating: "1",
-    },
     author: {
       "@type": "Organization",
       name: "Schulz & Stosse GbR",
