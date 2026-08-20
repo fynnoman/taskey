@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+
+const ANSWER_COPY = {
+  de: {
+    q: "NFC-Zeiterfassung in der Gebäudereinigung: was ist das?",
+    a: "NFC-Zeiterfassung nutzt einen NFC-Tag am Objekt oder Schlüsselkasten. Reinigungskräfte halten das Handy an den Tag, Beginn und Ende werden automatisch mit Zeitstempel, GPS-Position und Objektbezug erfasst. Der Nachweis ist manipulationssicher, offline-fähig und §17 MiLoG-konform. In Taskey ist die NFC-Zeiterfassung ab dem Beginner-Tarif enthalten.",
+  },
+  en: {
+    q: "NFC time tracking for building cleaning: what is it?",
+    a: "NFC time tracking uses an NFC tag at the site or key box. Cleaners tap their phone on the tag, start and end are captured automatically with timestamp, GPS location and site link. The record is tamper-proof, works offline and complies with German minimum-wage law. Included in Taskey from the Beginner plan.",
+  },
+  fr: {
+    q: "Pointage NFC pour le nettoyage : de quoi s’agit-il ?",
+    a: "Le pointage NFC utilise un tag NFC placé sur le site ou la boîte à clés. Les agents approchent leur téléphone, début et fin sont capturés automatiquement avec horodatage, position GPS et lien au site. La preuve est infalsifiable, fonctionne hors-ligne et est conforme au droit du travail allemand. Inclus dans Taskey dès le tarif Beginner.",
+  },
+} as const;
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/nfc-zeiterfassung";
@@ -279,8 +295,12 @@ const CONTENT = {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const c = CONTENT[pickLocale(locale)];
+  const loc = pickLocale(locale);
+  const c = CONTENT[loc];
+  const answer = ANSWER_COPY[loc];
   return (
+    <>
+    <AnswerBox question={answer.q} answer={answer.a} />
     <LandingPageTemplate
       path={path}
       title={c.title}
@@ -370,5 +390,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         },
       ]}
     />
+    </>
   );
 }

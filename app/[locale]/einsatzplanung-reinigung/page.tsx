@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+
+const ANSWER_COPY = {
+  de: {
+    q: "Einsatzplanung Reinigung: was gehört rein?",
+    a: "Einsatzplanung in der Reinigung heißt: Kolonnen, Touren und Vertretungen per Drag-and-drop planen, Krankmeldungen in Minuten umverteilen, Objekt-Skills berücksichtigen und die Planung direkt mit Zeiterfassung und Nachweis verbinden. Taskey bildet die komplette Planung in einer App ab, ab dem Beginner-Tarif enthalten.",
+  },
+  en: {
+    q: "Cleaning scheduling: what does it need to cover?",
+    a: "Scheduling in cleaning means: planning crews, routes and substitutions via drag-and-drop, redistributing sick leave in minutes, matching site skills, and tying the plan directly to time tracking and proof of service. Taskey covers the entire scheduling flow in one app, included from the Beginner plan.",
+  },
+  fr: {
+    q: "Planification du nettoyage : ce qu’il faut couvrir",
+    a: "La planification en nettoyage : gérer équipes, tournées et remplacements en drag-and-drop, redistribuer les arrêts maladie en quelques minutes, tenir compte des compétences par site et relier la planification directement au pointage et à la preuve d’intervention. Taskey couvre toute la planification dans une seule app, incluse dès le tarif Beginner.",
+  },
+} as const;
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/einsatzplanung-reinigung";
@@ -279,8 +295,12 @@ const CONTENT = {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const c = CONTENT[pickLocale(locale)];
+  const loc = pickLocale(locale);
+  const c = CONTENT[loc];
+  const answer = ANSWER_COPY[loc];
   return (
+    <>
+    <AnswerBox question={answer.q} answer={answer.a} />
     <LandingPageTemplate
       path={path}
       title={c.title}
@@ -360,5 +380,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         },
       ]}
     />
+    </>
   );
 }

@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+
+const ANSWER_COPY = {
+  de: {
+    q: "Zeiterfassung Gebäudereinigung: was gehört rein?",
+    a: "Zeiterfassung in der Gebäudereinigung ist heute Pflicht (§17 MiLoG, EuGH 2019) und sollte automatisch per NFC oder GPS erfassen, offline funktionieren, den Objektbezug pro Einsatz sichern und ohne Nachbearbeitung an DATEV übergeben. Taskey erfüllt alle vier Punkte in einer App, ab 119 € pro Monat.",
+  },
+  en: {
+    q: "Time tracking for building cleaning: what does it need?",
+    a: "Time tracking in building cleaning is mandatory under German law (§17 MiLoG, ECJ 2019). It should capture time automatically via NFC or GPS, work offline, tie each shift to a specific site and hand hours over to payroll without rework. Taskey covers all four in one app, from EUR 119 per month.",
+  },
+  fr: {
+    q: "Pointage nettoyage de bâtiments : ce qui est requis",
+    a: "Le pointage dans le nettoyage de bâtiments est obligatoire en Allemagne (§17 MiLoG, CJUE 2019). Il doit s’enregistrer automatiquement via NFC ou GPS, fonctionner hors-ligne, lier chaque intervention à un site précis et alimenter la paie sans retouche. Taskey couvre les quatre points dans une seule app, à partir de 119 € par mois.",
+  },
+} as const;
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/zeiterfassung-gebaeudereinigung";
@@ -288,8 +304,12 @@ const CONTENT = {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const c = CONTENT[pickLocale(locale)];
+  const loc = pickLocale(locale);
+  const c = CONTENT[loc];
+  const answer = ANSWER_COPY[loc];
   return (
+    <>
+    <AnswerBox question={answer.q} answer={answer.a} />
     <LandingPageTemplate
       path={path}
       title={c.title}
@@ -375,5 +395,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         },
       ]}
     />
+    </>
   );
 }

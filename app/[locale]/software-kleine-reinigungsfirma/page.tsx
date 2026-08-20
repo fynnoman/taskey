@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+
+const ANSWER_COPY = {
+  de: {
+    q: "Software für kleine Reinigungsfirmen: was brauchen 1–15 Mitarbeitende?",
+    a: "Kleine Reinigungsfirmen brauchen NFC-Objektnachweis, Mindestlohn-konforme Zeiterfassung, einfache Einsatzplanung, Rechnungen und DATEV-Export in einer App, ohne Enterprise-Setup. Taskey liefert genau das im Beginner-Tarif ab 119 € pro Monat, mit Self-Service-Einrichtung unter 10 Minuten oder Done-for-You-Setup in 48 Stunden.",
+  },
+  en: {
+    q: "Software for small cleaning companies: what do 1–15 staff need?",
+    a: "Small cleaning companies need NFC proof of service, minimum-wage-compliant time tracking, simple scheduling, invoicing and DATEV export in one app, without enterprise setup. Taskey delivers exactly that in the Beginner plan from EUR 119 per month, with self-service setup in under 10 minutes or Done-for-You setup in 48 hours.",
+  },
+  fr: {
+    q: "Logiciel pour petites entreprises de nettoyage : ce qu’il faut pour 1–15 salariés",
+    a: "Les petites entreprises de nettoyage ont besoin de preuve NFC, pointage conforme, planification simple, factures et export DATEV dans une seule app – sans dispositif entreprise. Taskey couvre tout cela dans le tarif Beginner à partir de 119 € par mois, mise en place en libre-service en moins de 10 minutes ou Done-for-You en 48 heures.",
+  },
+} as const;
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/software-kleine-reinigungsfirma";
@@ -255,8 +271,12 @@ const CONTENT = {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const c = CONTENT[pickLocale(locale)];
+  const loc = pickLocale(locale);
+  const c = CONTENT[loc];
+  const answer = ANSWER_COPY[loc];
   return (
+    <>
+    <AnswerBox question={answer.q} answer={answer.a} />
     <LandingPageTemplate
       path={path}
       title={c.title}
@@ -341,5 +361,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         },
       ]}
     />
+    </>
   );
 }

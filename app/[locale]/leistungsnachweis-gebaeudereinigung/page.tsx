@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+
+const ANSWER_COPY = {
+  de: {
+    q: "Leistungsnachweis Gebäudereinigung: wie sieht er heute aus?",
+    a: "Ein moderner Leistungsnachweis in der Gebäudereinigung entsteht automatisch: pro Objekt per NFC-Scan oder GPS, mit Zeitstempel, Foto und Zuordnung zum Mitarbeiter. Er ist manipulationssicher, in Echtzeit für Auftraggeber einsehbar und ersetzt Papier-Reinigungsnachweise komplett. In Taskey ist der Leistungsnachweis Kernbestandteil ab dem Beginner-Tarif.",
+  },
+  en: {
+    q: "Proof of service in building cleaning: how does it work today?",
+    a: "A modern proof of service in building cleaning is captured automatically: per site via NFC scan or GPS, with timestamp, photo and staff link. It is tamper-proof, visible to clients in real time and fully replaces paper cleaning logs. In Taskey, proof of service is a core feature from the Beginner plan.",
+  },
+  fr: {
+    q: "Preuve d’intervention nettoyage : à quoi elle ressemble aujourd’hui",
+    a: "Une preuve d’intervention moderne en nettoyage se génère automatiquement : par site via scan NFC ou GPS, avec horodatage, photo et rattachement à l’agent. Elle est infalsifiable, visible en temps réel côté client et remplace intégralement les fiches papier. Dans Taskey, la preuve d’intervention est intégrée dès le tarif Beginner.",
+  },
+} as const;
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/leistungsnachweis-gebaeudereinigung";
@@ -270,8 +286,12 @@ const CONTENT = {
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const c = CONTENT[pickLocale(locale)];
+  const loc = pickLocale(locale);
+  const c = CONTENT[loc];
+  const answer = ANSWER_COPY[loc];
   return (
+    <>
+    <AnswerBox question={answer.q} answer={answer.a} />
     <LandingPageTemplate
       path={path}
       title={c.title}
@@ -348,5 +368,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         },
       ]}
     />
+    </>
   );
 }
