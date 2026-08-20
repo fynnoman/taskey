@@ -99,6 +99,16 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/410', '/dashboard', '/signup'],
       },
       {
+        userAgent: 'Claude-SearchBot',
+        allow: '/',
+        disallow: ['/api/', '/410', '/dashboard', '/signup'],
+      },
+      {
+        userAgent: 'Claude-User',
+        allow: '/',
+        disallow: ['/api/', '/410', '/dashboard', '/signup'],
+      },
+      {
         userAgent: 'Google-Extended',
         allow: '/',
         disallow: ['/api/', '/410', '/dashboard', '/signup'],

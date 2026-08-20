@@ -75,6 +75,16 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/news", changeFrequency: "weekly", priority: 0.8 },
 ];
 
+// DE-only Vergleichsseiten (kein en/fr — Seiten geben dort notFound zurück).
+const VERGLEICH_ENTRIES: Entry[] = [
+  { path: "/vergleich/software-gebaeudereinigung", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/vergleich/beste-software-gebaeudereiniger-2026", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/vergleich/taskey-vs-fortytools", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/vergleich/taskey-vs-pland", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/vergleich/taskey-vs-blink", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/vergleich/taskey-vs-cleanmanager", changeFrequency: "monthly", priority: 0.8 },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
@@ -93,6 +103,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticUrls = STATIC_ENTRIES.flatMap(expand);
 
+  const vergleichUrls = VERGLEICH_ENTRIES.map((entry) => ({
+    url: `${BASE}${entry.path}`,
+    lastModified: entry.lastModified ?? now,
+    changeFrequency: entry.changeFrequency,
+    priority: entry.priority,
+  }));
+
   const newsUrls = posts
     .filter((p) => !p.planned)
     .flatMap((post) => {
@@ -101,5 +118,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       return expand({ path, changeFrequency: "monthly", priority: 0.7, lastModified });
     });
 
-  return [...staticUrls, ...newsUrls];
+  return [...staticUrls, ...vergleichUrls, ...newsUrls];
 }

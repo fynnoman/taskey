@@ -3,6 +3,7 @@ import Script from "next/script";
 import { headers } from "next/headers";
 import "./globals.css";
 import { WebVitals } from "./web-vitals";
+import { GlobalStructuredData } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.taskeyapp.com"),
@@ -88,6 +89,7 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://mission-control.vars-development.com" />
         <link rel="dns-prefetch" href="https://signup.taskeyapp.com" />
         <link rel="dns-prefetch" href="https://taskey.vars-development.com" />
+        <GlobalStructuredData />
       </head>
       <body className="antialiased">
         <WebVitals />
