@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "llm:visibility": "npx tsx scripts/llm-visibility.ts"
   },
   "dependencies": {
     "motion": "^13.1.0",
