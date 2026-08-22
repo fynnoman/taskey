@@ -241,6 +241,11 @@ export default function Footer() {
                   {t("footer.link.hotel")}
                 </Link>
               </li>
+              <li>
+                <Link href="/oepnv" className="text-slate-300 hover:text-white transition break-words">
+                  {t("footer.link.oepnv")}
+                </Link>
+              </li>
             </ul>
           </div>
 

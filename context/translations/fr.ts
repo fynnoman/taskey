@@ -207,6 +207,7 @@ const translations: Record<string, string> = {
     "footer.link.industrie": "Nettoyage industriel",
     "footer.link.klinik": "Nettoyage hospitalier",
     "footer.link.hotel": "Hôtellerie / housekeeping",
+    "footer.link.oepnv": "Transports publics",
     "footer.link.sitemap": "Plan du site",
 
     // CommunicationUSP component

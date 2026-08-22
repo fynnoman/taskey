@@ -214,6 +214,7 @@ const translations: Record<string, string> = {
     "footer.link.industrie": "Industrial cleaning",
     "footer.link.klinik": "Hospital cleaning",
     "footer.link.hotel": "Hotel housekeeping",
+    "footer.link.oepnv": "Public transport",
     "footer.link.sitemap": "Sitemap",
 
     // CommunicationUSP component
