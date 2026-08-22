@@ -69,20 +69,20 @@ const businessProduct = {
 const FAQ_BY_LOCALE: Record<Locale, { q: string; a: string }[]> = {
   de: [
     { q: "Kann ich das Paket wechseln?", a: "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." },
+    { q: "Gibt es etwas Größeres als Business?", a: "Ja. Für größere Reinigungsunternehmen und Verkehrsbetriebe bieten wir Enterprise mit SSO, API- und PMS-Anbindungen, individueller SLA und priorisiertem Support. Sprechen Sie uns an, wir konfigurieren Enterprise passend zu Ihrer Objektstruktur." },
     { q: "Sind Updates und neue Funktionen inklusive?", a: "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." },
-    { q: "Gibt es Setup- oder Onboarding-Kosten?", a: "Nein. Das Done-for-You Setup mit Import Ihrer Objekte, Mitarbeitenden und Verträge ist in jedem Tarif enthalten – ohne Aufpreis." },
     { q: "Ist die Anzahl der Mitarbeitenden begrenzt?", a: "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten." },
   ],
   en: [
     { q: "Can I switch plans?", a: "Yes, you can upgrade or downgrade between Beginner, Professional and Business at any time – effective the next month." },
+    { q: "Is there anything bigger than Business?", a: "Yes. For larger cleaning companies and transit operators we offer Enterprise with SSO, API and PMS integrations, an individual SLA and priority support. Get in touch and we will configure Enterprise to fit your site structure." },
     { q: "Are updates and new features included?", a: "Yes. All updates, security fixes and new features are included in every plan at no extra cost and are rolled out automatically." },
-    { q: "Are there setup or onboarding fees?", a: "No. The done-for-you setup with import of your properties, employees and contracts is included in every plan – no extra charge." },
     { q: "Is the number of employees limited?", a: "No. Every plan includes unlimited employees." },
   ],
   fr: [
     { q: "Puis-je changer de forfait ?", a: "Oui, vous pouvez passer entre Beginner, Professional et Business à tout moment – avec effet le mois suivant." },
+    { q: "Existe-t-il une offre supérieure à Business ?", a: "Oui. Pour les grandes entreprises de nettoyage et les exploitants de transport, nous proposons Enterprise avec SSO, intégrations API et PMS, un SLA individuel et un support prioritaire. Contactez-nous, nous configurons Enterprise selon votre structure de sites." },
     { q: "Les mises à jour et nouvelles fonctionnalités sont-elles incluses ?", a: "Oui. Toutes les mises à jour, correctifs de sécurité et nouvelles fonctionnalités sont inclus gratuitement dans chaque forfait et déployés automatiquement." },
-    { q: "Y a-t-il des frais de mise en place ou d'onboarding ?", a: "Non. La mise en place clé en main avec import de vos sites, employés et contrats est incluse dans chaque forfait – sans supplément." },
     { q: "Le nombre d'employés est-il limité ?", a: "Non. Chaque forfait inclut un nombre illimité d'employés." },
   ],
 };
