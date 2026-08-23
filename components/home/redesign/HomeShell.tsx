@@ -222,6 +222,23 @@ function HeroScene() {
                 >
                   Alle Funktionen
                 </motion.a>
+                <motion.a
+                  href="https://demo.kunden.taskeyapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileTap={{ scale: 0.97 }}
+                  transition={springs.snappy}
+                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
+                  style={{
+                    background: "#F97316",
+                    color: "#fff",
+                    fontSize: "16px",
+                    boxShadow: "0 20px 50px -20px rgba(249,115,22,0.55)",
+                  }}
+                >
+                  Kundendashboard-Demo anschauen
+                  <span aria-hidden>→</span>
+                </motion.a>
               </div>
 
               <p
