@@ -104,7 +104,7 @@ function NavInner({
   const mobileToggle = solid ? "text-slate-900" : "text-white";
 
   return (
-    <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label={t("header.aria.mainNav")}>
+    <nav className="relative w-full px-4 sm:px-6 lg:px-10" aria-label={t("header.aria.mainNav")}>
       <div className="flex justify-between items-center h-16 sm:h-20">
         <Link href="/" className="flex items-center gap-2.5" aria-label={t("header.aria.home")}>
           <Image

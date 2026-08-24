@@ -5,27 +5,37 @@ import { posts } from "./[locale]/news/posts";
  * Sitemap with hreflang alternates for /, /en/*, /fr/*
  *  - Default locale "de" stays at root (no prefix).
  *  - "en" and "fr" are prefixed.
- *  - Each entry carries `alternates.languages` so Google sees all three
+ *  - Each localized entry carries `alternates.languages` so Google sees all
  *    URL variants pointing at one another (+ x-default = DE).
+ *  - DE-only pages (Vergleiche) get an explicit de-DE / x-default block.
  * ========================================================================== */
 
 const BASE = "https://www.taskeyapp.com";
 const SUPPORTED = ["de", "en", "fr"] as const;
 type Locale = (typeof SUPPORTED)[number];
 
-function localized(path: string, locale: Locale): string {
-  const safe = path === "/" ? "" : path;
-  if (locale === "de") return `${BASE}${safe || "/"}`.replace(/\/$/, BASE === `${BASE}` && safe === "" ? "" : "");
-  return `${BASE}/${locale}${safe}`;
+function urlFor(path: string, locale: Locale): string {
+  if (locale === "de") return path === "/" ? BASE : `${BASE}${path}`;
+  return `${BASE}/${locale}${path === "/" ? "" : path}`;
 }
 
-function alternates(path: string) {
-  const de = path === "/" ? BASE : `${BASE}${path}`;
+function multilingualAlternates(path: string) {
+  const de = urlFor(path, "de");
   return {
     languages: {
       "de-DE": de,
-      "en-US": `${BASE}/en${path === "/" ? "" : path}`,
-      "fr-FR": `${BASE}/fr${path === "/" ? "" : path}`,
+      "en-US": urlFor(path, "en"),
+      "fr-FR": urlFor(path, "fr"),
+      "x-default": de,
+    },
+  };
+}
+
+function deOnlyAlternates(path: string) {
+  const de = urlFor(path, "de");
+  return {
+    languages: {
+      "de-DE": de,
       "x-default": de,
     },
   };
@@ -60,7 +70,7 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/software-kleine-reinigungsfirma", changeFrequency: "monthly", priority: 0.9 },
   { path: "/oepnv", changeFrequency: "monthly", priority: 0.9 },
 
-  // Branchen
+  // Branchen (Hub + Pillars)
   { path: "/loesungen", changeFrequency: "monthly", priority: 0.8 },
   { path: "/loesungen/unterhaltsreinigung", changeFrequency: "monthly", priority: 0.85 },
   { path: "/loesungen/glasreinigung", changeFrequency: "monthly", priority: 0.85 },
@@ -140,26 +150,25 @@ const VERGLEICH_ENTRIES: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const expand = (entry: Entry) => {
+  const expandMultilingual = (entry: Entry) => {
     const ts = entry.lastModified ?? now;
     return SUPPORTED.map((locale) => ({
-      url: locale === "de"
-        ? (entry.path === "/" ? BASE : `${BASE}${entry.path}`)
-        : `${BASE}/${locale}${entry.path === "/" ? "" : entry.path}`,
+      url: urlFor(entry.path, locale),
       lastModified: ts,
       changeFrequency: entry.changeFrequency,
       priority: entry.priority,
-      alternates: alternates(entry.path),
+      alternates: multilingualAlternates(entry.path),
     }));
   };
 
-  const staticUrls = STATIC_ENTRIES.flatMap(expand);
+  const staticUrls = STATIC_ENTRIES.flatMap(expandMultilingual);
 
   const vergleichUrls = VERGLEICH_ENTRIES.map((entry) => ({
-    url: `${BASE}${entry.path}`,
+    url: urlFor(entry.path, "de"),
     lastModified: entry.lastModified ?? now,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
+    alternates: deOnlyAlternates(entry.path),
   }));
 
   const newsUrls = posts
@@ -167,7 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .flatMap((post) => {
       const path = `/news/${post.slug}`;
       const lastModified = post.isoDate ? new Date(post.isoDate) : now;
-      return expand({ path, changeFrequency: "monthly", priority: 0.7, lastModified });
+      return expandMultilingual({ path, changeFrequency: "monthly", priority: 0.7, lastModified });
     });
 
   return [...staticUrls, ...vergleichUrls, ...newsUrls];
