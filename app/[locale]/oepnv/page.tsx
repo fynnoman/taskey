@@ -1,8 +1,46 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
+import AnswerBox from "@/components/AnswerBox";
+import { ServiceJsonLd } from "@/components/StructuredData";
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
 
 const path = "/oepnv";
+
+const ANSWER_COPY = {
+  de: {
+    q: "Software für Reinigung im ÖPNV: was leistet sie?",
+    a: "Sie sichert Reinigungsleistungen in Bahnhöfen, U-Bahnen und Verkehrsanlagen manipulationssicher ab. Per NFC-Tag am Standort werden An- und Abmeldung, Fotodokumentation und Plan-vs.-Ist-Vergleich pro Station erfasst. Mängel gehen als Ticket direkt an die Zentrale, Reports laufen auf Knopfdruck. DSGVO-konform, Server in Deutschland, Enterprise mit SSO und SLA.",
+  },
+  en: {
+    q: "Cleaning software for public transport: what does it do?",
+    a: "It secures cleaning services at stations, metros and transit sites against manipulation. NFC tags on-site capture check-in and check-out, photo documentation and plan-vs.-actual per station. Defects flow to headquarters as tickets, reports run at the push of a button. GDPR-compliant, servers in Germany, Enterprise with SSO and SLA.",
+  },
+  fr: {
+    q: "Logiciel de nettoyage pour les transports publics : à quoi sert-il ?",
+    a: "Il sécurise les prestations de nettoyage dans les gares, métros et sites de transport contre toute falsification. Un tag NFC sur site capture le pointage, la documentation photo et le comparatif planifié/réel par station. Les anomalies partent en tickets au siège, les rapports en un clic. Conforme RGPD, serveurs en Allemagne, Enterprise avec SSO et SLA.",
+  },
+} as const;
+
+const SERVICE_COPY = {
+  de: {
+    name: "Reinigungssoftware für ÖPNV und Verkehrsbetriebe",
+    description:
+      "Manipulationssichere Nachweisführung für Reinigungsleistungen in Bahnhöfen, U-Bahnen und Verkehrsanlagen: NFC-Stempelung pro Standort, Fotodokumentation, Plan-vs.-Ist-Vergleich, Ticket-Funktion für Mängel und Reports auf Knopfdruck. DSGVO-konform, gehostet in Deutschland.",
+    audienceType: "Verkehrsbetriebe und ÖPNV-Reinigungsdienstleister",
+  },
+  en: {
+    name: "Cleaning software for public transport operators",
+    description:
+      "Tamper-proof proof of service for cleaning at stations, metros and transit sites: NFC check-in per location, photo documentation, plan-vs-actual, ticket function for defects and one-click reports. GDPR-compliant, hosted in Germany.",
+    audienceType: "Public Transport Operators and Transit Cleaning Contractors",
+  },
+  fr: {
+    name: "Logiciel de nettoyage pour les exploitants de transports publics",
+    description:
+      "Preuves de service infalsifiables pour le nettoyage dans les gares, métros et sites de transport : pointage NFC par site, documentation photo, planifié vs. réel, fonction ticket pour anomalies et rapports en un clic. Conforme RGPD, hébergé en Allemagne.",
+    audienceType: "Exploitants de transports publics et prestataires de nettoyage",
+  },
+} as const;
 
 const COPY: PageCopy = {
   de: {
@@ -660,19 +698,31 @@ export default async function Page({
   const { locale } = await params;
   const l = pickLocale(locale);
   const c = CONTENT[l];
+  const answer = ANSWER_COPY[l];
+  const service = SERVICE_COPY[l];
 
   return (
-    <LandingPageTemplate
-      path={path}
-      title={c.title}
-      eyebrow={c.eyebrow}
-      h1={c.h1}
-      h1Accent={c.h1Accent}
-      lead={c.lead}
-      breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
-      sections={c.sections as any}
-      faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
-      related={[...c.related] as { href: string; label: string; description?: string }[]}
-    />
+    <>
+      <AnswerBox question={answer.q} answer={answer.a} />
+      <ServiceJsonLd
+        name={service.name}
+        description={service.description}
+        audienceType={service.audienceType}
+        url={`https://www.taskeyapp.com${path}`}
+        id="ld-service-oepnv"
+      />
+      <LandingPageTemplate
+        path={path}
+        title={c.title}
+        eyebrow={c.eyebrow}
+        h1={c.h1}
+        h1Accent={c.h1Accent}
+        lead={c.lead}
+        breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
+        sections={c.sections as any}
+        faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
+        related={[...c.related] as { href: string; label: string; description?: string }[]}
+      />
+    </>
   );
 }

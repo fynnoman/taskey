@@ -96,6 +96,48 @@ export function FaqJsonLd({ items, id }: { items: FaqItem[]; id?: string }) {
   return jsonLdScript(id ?? "ld-faq", data);
 }
 
+export function ServiceJsonLd({
+  name,
+  description,
+  serviceType,
+  areaServed,
+  audienceType,
+  url,
+  id,
+}: {
+  name: string;
+  description: string;
+  serviceType?: string;
+  areaServed?: string[];
+  audienceType?: string;
+  url?: string;
+  id?: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    serviceType: serviceType ?? "Software as a Service",
+    ...(url ? { url } : {}),
+    provider: {
+      "@type": "Organization",
+      name: "Taskey",
+      url: SITE_URL,
+    },
+    areaServed: areaServed ?? ["DE", "AT", "CH"],
+    ...(audienceType
+      ? {
+          audience: {
+            "@type": "Audience",
+            audienceType,
+          },
+        }
+      : {}),
+  };
+  return jsonLdScript(id ?? "ld-service", data);
+}
+
 export function BreadcrumbJsonLd({ crumbs, id }: { crumbs: Crumb[]; id?: string }) {
   if (!crumbs.length) return null;
   const data = {
