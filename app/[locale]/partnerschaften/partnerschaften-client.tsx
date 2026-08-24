@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 // SVG icon paths for benefits (5 benefits)
 const benefitIcons = [
@@ -15,7 +16,8 @@ const benefitIcons = [
 ];
 
 export default function PartnerschaftenClient() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const partnerWhatsAppUrl = getWhatsAppUrl(language, 'partner');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,41 +54,6 @@ export default function PartnerschaftenClient() {
     { title: t('partner.benefit4.title'), description: t('partner.benefit4.desc'), icon: benefitIcons[3] },
     { title: t('partner.benefit5.title'), description: t('partner.benefit5.desc'), icon: benefitIcons[4] },
   ];
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    partnerType: '',
-    message: '',
-  });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-
-    try {
-      const res = await fetch('/api/send-partner-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', company: '', partnerType: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
-  };
-
-  const inputCls =
-    'w-full px-4 py-3 rounded-xl bg-blue-50 border border-slate-200 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 outline-none transition-all text-slate-900 placeholder-white/30';
 
   return (
     <main className="relative bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 min-h-screen overflow-hidden">
@@ -461,7 +428,7 @@ export default function PartnerschaftenClient() {
         </div>
       </section>
 
-      {/* ─── Kontaktformular ───────────────────────────────── */}
+      {/* ─── Kontakt via WhatsApp ──────────────────────────── */}
       <section id="kontakt" className="relative py-20 md:py-28 scroll-mt-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -476,132 +443,37 @@ export default function PartnerschaftenClient() {
             </p>
           </div>
 
-          {status === 'success' ? (
-            <div className="relative rounded-3xl bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 border border-emerald-300 p-10 text-center">
-              <div className="w-16 h-16 bg-emerald-100 border border-emerald-300 rounded-full flex items-center justify-center mx-auto mb-5">
-                <svg className="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-8 md:p-12 overflow-hidden text-center">
+            <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[56px] pointer-events-none" />
+            <div className="relative flex flex-col items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="#25D366" className="w-9 h-9" aria-hidden>
+                  <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-black text-slate-900 mb-2">{t('partner.contact.success.title')}</h3>
-              <p className="text-slate-600">{t('partner.contact.success.desc')}</p>
+              <p className="text-slate-600 max-w-md leading-relaxed">
+                {t('partner.contact.subtitle')}
+              </p>
+              <a
+                href={partnerWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Per WhatsApp schreiben"
+                className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black px-8 py-4 rounded-full transition-all text-base shadow-[0_20px_50px_-16px_rgba(37,211,102,0.55)]"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden>
+                  <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+                </svg>
+                WhatsApp
+              </a>
+              <p className="text-slate-500 text-sm pt-1">
+                {t('partner.contact.emailDirect')}{' '}
+                <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:text-blue-500 font-medium">
+                  fynn@taskeyapp.com
+                </a>
+              </p>
             </div>
-          ) : (
-            <div className="relative rounded-3xl bg-gradient-to-br from-white via-blue-50 to-white border border-slate-200 p-7 md:p-10 overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-cyan-50 rounded-full blur-[56px] pointer-events-none" />
-              <form onSubmit={handleSubmit} className="relative space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.name')}</label>
-                    <input
-                      id="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={inputCls}
-                      placeholder={t('partner.contact.name.placeholder')}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.company')}</label>
-                    <input
-                      id="company"
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className={inputCls}
-                      placeholder={t('partner.contact.company.placeholder')}
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.email')}</label>
-                    <input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={inputCls}
-                      placeholder={t('partner.contact.email.placeholder')}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.phone')}</label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={inputCls}
-                      placeholder="+49 ..."
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="partnerType" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.model')}</label>
-                  <select
-                    id="partnerType"
-                    value={formData.partnerType}
-                    onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
-                    className={`${inputCls} bg-slate-50 appearance-none`}
-                  >
-                    <option value="" className="bg-slate-50">{t('partner.contact.model.placeholder')}</option>
-                    <option value="Kenne Reinigungsbetriebe" className="bg-slate-50">{t('partner.contact.model.recommender')}</option>
-                    <option value="Bin selbst Reinigungsbetrieb" className="bg-slate-50">{t('partner.contact.model.cleaner')}</option>
-                    <option value="Noch unsicher" className="bg-slate-50">{t('partner.contact.model.unsicher')}</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-xs font-black uppercase tracking-wider text-slate-600 mb-2">{t('partner.contact.message')}</label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className={`${inputCls} resize-none`}
-                    placeholder={t('partner.contact.message.placeholder')}
-                  />
-                </div>
-
-                {status === 'error' && (
-                  <div className="bg-red-500/10 border border-red-400/30 rounded-xl p-4 text-red-300 text-sm font-medium">
-                    {t('partner.contact.error')}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-500 disabled:bg-blue-200/80 text-slate-900 font-black px-8 py-4 rounded-full transition-all text-base"
-                >
-                  {status === 'sending' ? (
-                    <>
-                      <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                      </svg>
-                      {t('partner.contact.sending')}
-                    </>
-                  ) : (
-                    <>
-                      {t('partner.contact.submit')}
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </>
-                  )}
-                </button>
-                <p className="text-center text-slate-500 text-sm pt-2">
-                  {t('partner.contact.emailDirect')}{' '}
-                  <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:text-blue-700 font-medium">
-                    fynn@taskeyapp.com
-                  </a>
-                </p>
-              </form>
-            </div>
-          )}
+          </div>
         </div>
       </section>
     </main>
