@@ -8,6 +8,8 @@ const translations: Record<string, string> = {
     "nav.support": "Support",
     "nav.bookDemo": "Demo buchen",
     "nav.tryFree": "Kostenlosen Account erstellen",
+    "nav.branchen": "Branchen",
+    "nav.branche.oepnv": "ÖPNV",
 
     // Hero
     "hero.title": "Die Betriebssoftware für Handwerk, Reinigung & Facility Management",

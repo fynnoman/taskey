@@ -7,6 +7,10 @@ import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
 
+const branchenItems: { href: string; labelKey: string }[] = [
+  { href: "/oepnv", labelKey: "nav.branche.oepnv" },
+];
+
 export default function Header() {
   const { t } = useLanguage();
   const pathname = usePathname();
@@ -117,6 +121,13 @@ function NavInner({
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-10">
+          <BranchenDropdown
+            t={t}
+            isActive={isActive}
+            solid={solid}
+            navIdle={navIdle}
+            navActive={navActive}
+          />
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -170,6 +181,11 @@ function NavInner({
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-200 py-4 bg-white/95 backdrop-blur-xl">
           <div className="flex flex-col space-y-1">
+            <BranchenMobileSection
+              t={t}
+              isActive={isActive}
+              onNavigate={() => setMobileMenuOpen(false)}
+            />
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -211,5 +227,111 @@ function NavInner({
         </div>
       )}
     </nav>
+  );
+}
+
+/* ─── Branchen dropdown (Desktop) ─── */
+function BranchenDropdown({
+  t,
+  isActive,
+  solid,
+  navIdle,
+  navActive,
+}: {
+  t: (key: string) => string;
+  isActive: (href: string) => boolean;
+  solid: boolean;
+  navIdle: string;
+  navActive: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const anyActive = branchenItems.some((i) => isActive(i.href));
+  const triggerStyle = anyActive ? navActive : navIdle;
+  const chevronColor = solid ? "currentColor" : "currentColor";
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="true"
+        aria-expanded={open}
+        className={`inline-flex items-center gap-1 transition font-medium ${triggerStyle}`}
+      >
+        {t("nav.branchen")}
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke={chevronColor}
+          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          aria-hidden
+        >
+          <path
+            d="M5 8l5 5 5-5"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full pt-3 z-50">
+          <div className="min-w-[220px] rounded-xl bg-white border border-slate-200 shadow-xl shadow-slate-900/10 py-2">
+            {branchenItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`block px-4 py-2.5 text-sm transition ${
+                  isActive(item.href)
+                    ? "text-blue-700 font-semibold bg-blue-50"
+                    : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                }`}
+              >
+                {t(item.labelKey)}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─── Branchen section (Mobile menu) ─── */
+function BranchenMobileSection({
+  t,
+  isActive,
+  onNavigate,
+}: {
+  t: (key: string) => string;
+  isActive: (href: string) => boolean;
+  onNavigate: () => void;
+}) {
+  return (
+    <div className="pb-1">
+      <div className="px-4 pt-2 pb-1 text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+        {t("nav.branchen")}
+      </div>
+      {branchenItems.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onNavigate}
+          className={`block px-4 py-3 rounded-lg transition ${
+            isActive(item.href)
+              ? "text-blue-700 bg-blue-50 font-bold"
+              : "text-slate-700 hover:bg-blue-50 hover:text-slate-900"
+          }`}
+        >
+          {t(item.labelKey)}
+        </Link>
+      ))}
+    </div>
   );
 }

@@ -8,6 +8,8 @@ const translations: Record<string, string> = {
     "nav.support": "Support",
     "nav.bookDemo": "Réserver une démo",
     "nav.tryFree": "Créer un compte gratuit",
+    "nav.branchen": "Secteurs",
+    "nav.branche.oepnv": "Transports publics",
 
     // Hero
     "hero.title": "Le logiciel n°1 pour les entreprises de services",
