@@ -200,7 +200,7 @@ function HeroScene() {
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <motion.a
-                  href="https://app.taskeyapp.com/register"
+                  href="https://signup.taskeyapp.com"
                   whileTap={{ scale: 0.97 }}
                   transition={springs.snappy}
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
@@ -742,7 +742,7 @@ function CommunicationUSPSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <CtaButton href="https://app.taskeyapp.com/register">Kostenlos starten</CtaButton>
+            <CtaButton href="https://signup.taskeyapp.com">Kostenlos starten</CtaButton>
             <CtaButton href="/features" variant="ghost">
               Funktionen ansehen
             </CtaButton>
@@ -876,7 +876,7 @@ function AllInOneSection() {
         </motion.div>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <CtaButton href="https://app.taskeyapp.com/register">Kostenlosen Account erstellen</CtaButton>
+          <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
           <CtaButton href="/features" variant="ghost">Alle Funktionen</CtaButton>
         </div>
       </div>
@@ -1189,7 +1189,7 @@ function AudiencesSection() {
         </p>
         <div className="mt-8">
           <motion.a
-            href="https://app.taskeyapp.com/register"
+            href="https://signup.taskeyapp.com"
             whileTap={{ scale: 0.97 }}
             transition={springs.snappy}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium"
@@ -1399,7 +1399,7 @@ function TestimonialsSection() {
           Vertragsbindung, voller Funktionsumfang.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <CtaButton href="https://app.taskeyapp.com/register">Kostenlosen Account erstellen</CtaButton>
+          <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
           <CtaButton href="/features" variant="ghost">Alle Funktionen</CtaButton>
         </div>
       </motion.div>
@@ -1437,7 +1437,7 @@ function LiveMargenSection() {
               passiert, und drehen bei, solange es noch etwas nützt.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CtaButton href="https://app.taskeyapp.com/register">Kostenlosen Account erstellen</CtaButton>
+              <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
               <CtaButton href="/features" variant="ghost">Mehr erfahren</CtaButton>
             </div>
           </motion.div>
@@ -1783,7 +1783,7 @@ function FinalCTASection() {
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <motion.a
-            href="https://app.taskeyapp.com/register"
+            href="https://signup.taskeyapp.com"
             whileTap={{ scale: 0.97 }}
             transition={springs.snappy}
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
