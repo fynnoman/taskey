@@ -193,6 +193,7 @@ const translations: Record<string, string> = {
     "footer.link.iosApp": "Application iOS",
     "footer.link.nfcProof": "Preuve de présence NFC",
     "footer.link.enterprise": "Enterprise",
+    "footer.link.handbook": "Manuel",
     "footer.link.news": "Actualités",
     "footer.link.partnerships": "Partenariats",
     "footer.col.solutions": "Logiciel de nettoyage",

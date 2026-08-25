@@ -200,6 +200,7 @@ const translations: Record<string, string> = {
     "footer.link.iosApp": "iOS app",
     "footer.link.nfcProof": "NFC site verification",
     "footer.link.enterprise": "Enterprise",
+    "footer.link.handbook": "Manual",
     "footer.link.news": "News",
     "footer.link.partnerships": "Partnerships",
     "footer.col.solutions": "Cleaning software",

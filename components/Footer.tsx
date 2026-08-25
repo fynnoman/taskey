@@ -127,6 +127,16 @@ export default function Footer() {
                   {t("footer.link.enterprise")}
                 </Link>
               </li>
+              <li>
+                <a
+                  href="/TaskeyNutzerhandbuch.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-white transition break-words"
+                >
+                  {t("footer.link.handbook")}
+                </a>
+              </li>
             </ul>
           </div>
 
