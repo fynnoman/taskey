@@ -230,13 +230,37 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
         policy: "https://osmfoundation.org/wiki/Privacy_Policy",
       },
       {
+        name: "Apple Inc. — Apple Push Notification service (nur iOS)",
+        body:
+          "Empfängt den APNs-Device-Token des iOS-Geräts und leitet Push-Nachrichten an das Gerät aus. Der Token wird an Firebase Cloud Messaging weitergegeben.",
+        policy: "https://www.apple.com/legal/privacy/",
+      },
+      {
+        name: 'Functional Software, Inc. („Sentry") — Fehler-Tracking',
+        body:
+          "Erfasst App-Abstürze und Fehler mit Stack-Trace und technischen Metadaten. Personenbezogene Bezüge werden vor der Übertragung minimiert.",
+        policy: "https://sentry.io/privacy/",
+      },
+      {
+        name: "Google Ireland Limited — Firebase Analytics for Apps (nur iOS)",
+        body:
+          "Erfasst Nutzungsereignisse (Bildschirmaufrufe, App-Öffnungen, Interaktionen) mit pseudonymer Instanz-ID. Diese SDK ist im Hinblick auf ihre Notwendigkeit im Beschäftigtenkontext in Prüfung.",
+        policy: "https://firebase.google.com/support/privacy",
+      },
+      {
+        name: "Google Ireland Limited — Google Ads On-Device Conversion Measurement (nur iOS)",
+        body:
+          "Zuordnung von App-Installationen zu Marketing-Kampagnen (Conversion-Attribution). Diese SDK ist im Hinblick auf ihre Notwendigkeit im Beschäftigtenkontext in Prüfung.",
+        policy: "https://policies.google.com/privacy",
+      },
+      {
         name: "Taskey-Backend (Schulz & Stosse GbR)",
         body:
           "Speichert die Konto-, Zeiterfassungs-, Auftrags-, Objekt- und Chatdaten. Der Serverbetrieb erfolgt in der Europäischen Union. Eine Datenverarbeitung außerhalb des EWR findet nicht statt.",
       },
     ],
     sec5NoAds:
-      "Personenbezogene Daten werden nicht zu Werbezwecken verkauft. In der Android-Version enthält die App weder Werbe-SDKs noch Analytics- oder Attribution-Tracking-Bibliotheken. Die iOS-Version enthält abweichend zwei zusätzliche Google-SDKs (siehe Abschnitt 4 und Anlage 2 der Auftragsverarbeitungsvereinbarung unter taskeyapp.com/legal/avv.html): Firebase Analytics for Apps (GoogleAppMeasurement) für die Erfassung von Nutzungsereignissen sowie Google Ads On-Device Conversion Measurement für die Zuordnung von App-Installationen zu Marketing-Kampagnen. Diese SDKs werden derzeit im Hinblick auf ihre Notwendigkeit im Beschäftigtenkontext geprüft; bis dahin gilt: Wo eine belastbare Rechtsgrundlage im Verhältnis zum Arbeitgeber fehlt, sollen die Funktionen deaktiviert oder ausgebaut werden.",
+      "Personenbezogene Daten werden nicht zu Werbezwecken verkauft. In der Android-Version enthält die App weder Werbe-SDKs noch Analytics- oder Attribution-Tracking-Bibliotheken. Die iOS-Version enthält abweichend zwei zusätzliche Google-SDKs (in der obigen Empfänger-Liste gesondert ausgewiesen): Firebase Analytics for Apps (GoogleAppMeasurement) sowie Google Ads On-Device Conversion Measurement. Diese SDKs werden derzeit im Hinblick auf ihre Notwendigkeit im Beschäftigtenkontext geprüft; bis dahin gilt: Wo eine belastbare Rechtsgrundlage im Verhältnis zum Arbeitgeber fehlt, sollen die Funktionen deaktiviert oder ausgebaut werden.",
 
     sec6Title: "6. Datensicherheit",
     sec6Body:
@@ -443,7 +467,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       },
     ],
     sec5NoAds:
-      "Personal data is not sold for advertising purposes. The Android version contains neither advertising SDKs nor analytics/attribution tracking libraries. The iOS version additionally embeds two Google SDKs (see section 4 and Annex 2 of the Data Processing Agreement at taskeyapp.com/legal/avv.html): Firebase Analytics for Apps (GoogleAppMeasurement) for usage-event collection and Google Ads On-Device Conversion Measurement for attributing app installs to marketing campaigns. These SDKs are currently under review with regard to their necessity in an employment context; where no solid legal basis exists in the employer/employee relationship, the features are to be deactivated or removed.",
+      "Personal data is not sold for advertising purposes. The Android version contains neither advertising SDKs nor analytics/attribution tracking libraries. The iOS version additionally embeds two Google SDKs, called out separately in the recipient list above: Firebase Analytics for Apps (GoogleAppMeasurement) for usage-event collection and Google Ads On-Device Conversion Measurement for attributing app installs to marketing campaigns. These SDKs are currently under review with regard to their necessity in an employment context; where no solid legal basis exists in the employer/employee relationship, the features are to be deactivated or removed. The full processor list is available at taskeyapp.com/legal/avv.html.",
 
     sec6Title: "6. Data security",
     sec6Body:
@@ -651,7 +675,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       },
     ],
     sec5NoAds:
-      "Les données à caractère personnel ne sont pas vendues à des fins publicitaires. La version Android ne contient ni SDK publicitaire ni bibliothèque de suivi analytique ou d'attribution. La version iOS intègre en outre deux SDK Google (voir section 4 et Annexe 2 du contrat de sous-traitance sur taskeyapp.com/legal/avv.html) : Firebase Analytics for Apps (GoogleAppMeasurement) pour la collecte d'événements d'utilisation et Google Ads On-Device Conversion Measurement pour l'attribution des installations à des campagnes marketing. Ces SDK sont actuellement examinés quant à leur nécessité dans un contexte professionnel ; en l'absence de base juridique solide dans la relation employeur/salarié, les fonctionnalités seront désactivées ou retirées.",
+      "Les données à caractère personnel ne sont pas vendues à des fins publicitaires. La version Android ne contient ni SDK publicitaire ni bibliothèque de suivi analytique ou d'attribution. La version iOS intègre en outre deux SDK Google, signalés séparément dans la liste des destinataires ci-dessus : Firebase Analytics for Apps (GoogleAppMeasurement) pour la collecte d'événements d'utilisation et Google Ads On-Device Conversion Measurement pour l'attribution des installations à des campagnes marketing. Ces SDK sont actuellement examinés quant à leur nécessité dans un contexte professionnel ; en l'absence de base juridique solide dans la relation employeur/salarié, les fonctionnalités seront désactivées ou retirées. La liste complète des sous-traitants est disponible sur taskeyapp.com/legal/avv.html.",
 
     sec6Title: "6. Sécurité des données",
     sec6Body:
