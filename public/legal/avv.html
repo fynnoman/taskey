@@ -496,7 +496,7 @@
     <h3>1. Vertraulichkeit</h3>
     <ul class="plain">
       <li><strong>Zutrittskontrolle:</strong> Die Verarbeitung erfolgt in Rechenzentren, die durch physische Zutrittskontrollen (Vereinzelungsanlagen, Videoüberwachung, protokollierten Zutritt) gesichert sind. <span class="todo-box"><strong>TODO:</strong> konkreten Betreiber und Standort des Dokploy-Servers einsetzen (Ziel: Deutschland).</span></li>
-      <li><strong>Zugangskontrolle:</strong> Zugriff auf die Systeme nur nach Multi-Faktor-Authentifizierung; individuelle Nutzerkonten für Beschäftigte; Passwort-Richtlinien nach Stand der Technik; Sperrung bei Inaktivität.</li>
+      <li><strong>Zugangskontrolle:</strong> Zugriff auf die Systeme nur nach Multi-Faktor-Authentifizierung; individuelle Nutzerkonten für Beschäftigte; Sperrung bei Inaktivität. <strong>Passwörter der Endnutzer werden ausschließlich als bcrypt-Hash (via <code>passlib</code>-CryptContext, Standard-Work-Faktor) gespeichert; Klartext-Passwörter werden nicht persistiert.</strong> Session- und Reset-Tokens werden zur Wiedererkennung als SHA-256-Hash abgelegt.</li>
       <li><strong>Zugriffskontrolle:</strong> Rollen- und Berechtigungskonzept mit Mandantentrennung. Anwendungsseitige Isolation der Kundendaten durch mandantenspezifische Kennzeichnung und Row-Level-Security in der Datenbank.</li>
       <li><strong>Trennungskontrolle:</strong> Logische Trennung von Produktion, Staging und Entwicklung. Test- und Analysedaten werden vor Verwendung anonymisiert oder pseudonymisiert.</li>
       <li><strong>Pseudonymisierung:</strong> Wo möglich werden personenbezogene Bezüge in Auswertungen pseudonymisiert; interne Auswertungen erfolgen aggregiert.</li>
