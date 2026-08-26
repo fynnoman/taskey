@@ -306,17 +306,22 @@
   <section>
     <h2><span class="num">§ 4</span> Kategorien personenbezogener Daten</h2>
     <ul class="plain">
-      <li><strong>Stammdaten:</strong> Name, dienstliche Kontaktdaten, Rolle, Mandanten- bzw. Standortzuordnung</li>
-      <li><strong>Anmelde- und Zugriffsdaten:</strong> Login-Kennung, verschlüsselt gespeicherte Authentifizierungs-Merkmale, Session-Informationen, IP-Adresse (soweit für Sicherheit und Missbrauchserkennung erforderlich)</li>
-      <li><strong>Zeiterfassungs- und Anwesenheitsdaten:</strong> Arbeitszeit-Buchungen, Pausen, Krankmeldungen, Urlaubs- und Abwesenheitszeiten</li>
-      <li><strong>NFC-Scan- und Standortbezüge:</strong> ID des gescannten Tags, Zeitpunkt, ausführender Nutzer, dem Tag zugeordnetes Objekt bzw. Auftrag; auf Wunsch des Kunden zusätzlich Geokoordinaten</li>
-      <li><strong>Foto- und Mediendokumentation:</strong> Auftragsbezogene Fotos und Dateien, die inhaltlich Dritte abbilden können</li>
-      <li><strong>Objekt- und Auftragsdaten mit Personenbezug:</strong> Kontaktinformationen der Auftraggeber, Notizen, Kommunikationsverläufe im Portal „Taskey Share"</li>
-      <li><strong>Lohn- und Abrechnungsdaten:</strong> Kalkulations- und Auswertungsdaten, Grundlage der Rechnungsstellung; Bankverbindungen nur, soweit der Kunde diese aktiv einpflegt</li>
-      <li><strong>Support- und Kommunikationsdaten:</strong> Inhalte von Support-Tickets, E-Mails und in Notfällen aufgezeichneter Fernwartungssitzungen</li>
+      <li><strong>Nutzerkonto- und Stammdaten:</strong> Nutzername, vollständiger Name, dienstliche E-Mail-Adresse, Telefon, Rolle, Mandanten- bzw. Standortzuordnung; verschlüsselt gespeicherter Passwort-Hash; Passwort-Reset-Tokens.</li>
+      <li><strong>Beschäftigten-Stammdaten:</strong> Vor- und Nachname, dienstliche Kontaktdaten, Position, Abteilung, Einstellungsdatum, Beschäftigungsstatus.</li>
+      <li><strong>Personal- und Abrechnungsdaten:</strong> Gehalt, Stundenlohn, Urlaubskonto (Gesamt- und Rest-Urlaubstage). Diese Felder sind für die Personalverwaltung der Kunden ausgelegt und werden ausschließlich in dessen Auftrag verarbeitet.</li>
+      <li><strong>Zeiterfassungs- und Anwesenheitsdaten:</strong> Arbeitszeit-Sessions, Pausen, Urlaubsanträge (mit optionalem Grund) inkl. Genehmigungsstatus.</li>
+      <li><strong>Krankmeldungen (Art. 9 DSGVO — Gesundheitsdaten):</strong> Zeiträume, Anzahl Tage und die vom Arbeitnehmer optional hochgeladene Arbeitsunfähigkeits-Bescheinigung (im Objekt-Speicher unter <code>certificate_s3_key</code>). Die Verarbeitung ist im Sinne des Art. 9 Abs. 2 lit. b DSGVO für die Ausübung von Rechten und Pflichten aus dem Arbeitsverhältnis erforderlich; das Weisungsverhältnis nach Art. 28 DSGVO gilt weiterhin.</li>
+      <li><strong>Standort- und Bewegungsdaten:</strong> Kontinuierliches GPS-Tracking während aktiver Zeit-Sessions (Breitengrad, Längengrad, Genauigkeit, Richtung, Zeitstempel) sowie besuchte Einsatzorte. Die Aktivierung liegt in der Verantwortung des Kunden und setzt eine Rechtsgrundlage im Beschäftigtenverhältnis voraus (z.&thinsp;B. Betriebsvereinbarung oder Einwilligung).</li>
+      <li><strong>NFC- und QR-Scan-Daten:</strong> Tag-Kennung, Scan-Zeitpunkt, ausführender Nutzer, zugeordnetes Objekt bzw. Auftrag.</li>
+      <li><strong>Foto- und Mediendokumentation:</strong> Auftragsbezogene Fotos und Dateien (Baustellen- bzw. Reinigungsdokumentation, Kostenvoranschläge, Belege), die inhaltlich Dritte abbilden können. Vom Kunden zwischen Nutzern geteilte Dateien mit Empfängerprotokoll.</li>
+      <li><strong>Objekt- und Auftragsdaten mit Personenbezug:</strong> Kontaktdaten der Auftraggeber (Titel, Name, E-Mail, Telefon, Adresse, Bewertung), Notizen, Kommunikationsverläufe im Portal „Taskey Share".</li>
+      <li><strong>Belege und Rechnungsdaten:</strong> Beleg-Fotos, Betrag, Kategorie; von Subunternehmern eingereichte Rechnungen (PDF/Bild) einschließlich Rechnungsstellernamen, Beträgen, Steuernummern.</li>
+      <li><strong>Push-Benachrichtigungs-Tokens:</strong> Firebase-Cloud-Messaging-Token pro Gerät, Plattform-Kennzeichnung, letzte Aktualisierung — zur Zustellung funktionaler Benachrichtigungen.</li>
+      <li><strong>Feedback- und Support-Daten:</strong> Vom Nutzer freiwillig übermittelte Rückmeldungen und Bewertungen (mit Nutzerbezug); Support-Anfragen (Name, E-Mail, Betreff, Nachricht).</li>
+      <li><strong>Bank-Zugangsdaten (Modul „Banking", derzeit nur für die Instanz MG-Gebäudeservice aktiv):</strong> Verschlüsselt gespeicherte FinTS-Zugangsdaten (Login, PIN, Sitzung) zum Lesen des Kontostands und der Buchungen. Verschlüsselung mit einem instanz­spezifischen <code>BANKING_ENCRYPTION_KEY</code>; ohne Schlüssel keine Verarbeitung.</li>
     </ul>
     <div class="info-box">
-      Besondere Kategorien personenbezogener Daten im Sinne des Art. 9 DSGVO (z.&thinsp;B. Gesundheitsdaten) verarbeitet Taskey nicht bestimmungsgemäß. Weist der Kunde Taskey eigenverantwortlich derartige Daten zu (z.&thinsp;B. durch Krankschreibungen als Datei-Upload), verarbeitet Taskey diese ausschließlich im Rahmen der Weisung und mit denselben technischen und organisatorischen Maßnahmen.
+      <strong>Besondere Kategorien nach Art. 9 DSGVO:</strong> Die Software verarbeitet in der oben genannten Krankmeldungs-Funktion optionale Gesundheitsdaten (AU-Bescheinigungen) durch Design. Weitere besondere Kategorien werden nicht bestimmungsgemäß verarbeitet. Weist der Kunde Taskey darüber hinaus derartige Daten zu (z.&thinsp;B. durch das Hochladen medizinischer Unterlagen als Foto), verarbeitet Taskey diese ausschließlich im Rahmen der Weisung und mit denselben technischen und organisatorischen Maßnahmen.
     </div>
   </section>
 
@@ -532,85 +537,230 @@
     <h2>Anlage 2 — Unterauftragsverarbeiter</h2>
     <p class="subtitle">Stand August 2026. Änderungen werden gemäß § 8 dieses AVV mitgeteilt.</p>
 
+    <p style="font-size:13.5px; color:var(--muted); margin-bottom:0.8rem;">Die Liste ist nach Zweck gruppiert und beschreibt alle zum Stand August 2026 im laufenden Betrieb eingesetzten Unterauftragsverarbeiter. Optionale bzw. Feature-flagged Anbieter sind gesondert gekennzeichnet.</p>
+
+    <h3 style="margin-top:1rem;">1. Hosting, Datenbank und Objekt-Speicher</h3>
     <table>
       <thead>
         <tr>
-          <th>Name / Anbieter</th>
+          <th>Anbieter</th>
           <th>Sitz</th>
           <th>Erbrachte Leistung</th>
           <th>Ort der Verarbeitung</th>
-          <th>Drittland?</th>
+          <th>Drittland-Garantie</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Cloudflare, Inc. — Cloudflare R2</td>
-          <td>USA</td>
-          <td>Objekt-Speicher für Foto- und Dateidokumentation</td>
-          <td>Region EU (Endpoint <code>*.eu.r2.cloudflarestorage.com</code>)</td>
-          <td>Nein (EU-Region gewählt); für Fallbacks Standardvertragsklauseln</td>
-        </tr>
-        <tr>
-          <td>Cloudflare, Inc. — Content Delivery Network</td>
-          <td>USA</td>
-          <td>Reverse Proxy, DDoS-Schutz, statische Auslieferung</td>
-          <td>global verteiltes CDN, primäre Region EU</td>
-          <td>Ggf. ja — Absicherung über Standardvertragsklauseln</td>
+          <td>IONOS SE</td>
+          <td>Montabaur, Deutschland</td>
+          <td>Datenbank-Hosting (PostgreSQL) für sämtliche Betriebsdaten des Kunden</td>
+          <td>Rechenzentrum in Deutschland</td>
+          <td>Kein Drittlandtransfer</td>
         </tr>
         <tr>
           <td>Dokploy-Betreiber / Hosting-Provider für Backend-Cluster</td>
-          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO</span></td>
-          <td>Betrieb der Backend-Services (Docker Swarm), PostgreSQL, Redis</td>
-          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Ziel: Rechenzentrum in Deutschland</span></td>
-          <td>Nein (Ziel)</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Fynn</span></td>
+          <td>Betrieb der Backend-Services (Docker Swarm), Redis-Cache, Reverse Proxy</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Ziel: Deutschland/EU</span></td>
+          <td>Nein (Ziel), SCC falls doch</td>
+        </tr>
+        <tr>
+          <td>Cloudflare Germany GmbH / Cloudflare, Inc. — R2 Object Storage</td>
+          <td>USA (Muttergesellschaft), EU-Region gewählt</td>
+          <td>Objekt-Speicher für Fotos, Belege, AU-Bescheinigungen, geteilte Dateien, Rechnungen. Serverseitige Verschlüsselung mit AES-256.</td>
+          <td>Region EU (Endpoint <code>*.eu.r2.cloudflarestorage.com</code>)</td>
+          <td>Standardvertragsklauseln vorhanden</td>
+        </tr>
+        <tr>
+          <td>Cloudflare Germany GmbH / Cloudflare, Inc. — CDN und Zero-Trust-Tunnel</td>
+          <td>USA (Muttergesellschaft)</td>
+          <td>Reverse-Proxy, DDoS-Schutz, statische Auslieferung, verschlüsselter Tunnel für interne Anbindungen (<code>TUNNEL_TOKEN</code>)</td>
+          <td>global verteiltes CDN, primäre Region EU</td>
+          <td>Standardvertragsklauseln vorhanden, EU-US Data Privacy Framework</td>
         </tr>
         <tr>
           <td>Vercel Inc.</td>
           <td>USA</td>
-          <td>Hosting der Marketing-Website taskeyapp.com (keine Kunden-Betriebsdaten)</td>
+          <td>Hosting der Marketing-Website taskeyapp.com — verarbeitet keine Betriebsdaten des Kunden, nur Website-Besucherdaten</td>
           <td>Region Frankfurt (fra1)</td>
-          <td>Nein (EU-Region); Standardvertragsklauseln vorhanden</td>
-        </tr>
-        <tr>
-          <td>Resend, Inc.</td>
-          <td>USA</td>
-          <td>Transaktionaler E-Mail-Versand (Passwort-Reset, Einladungen, Systemnachrichten)</td>
-          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — EU-Region prüfen</span></td>
-          <td>Ggf. ja — Standardvertragsklauseln bzw. EU-US Data Privacy Framework</td>
-        </tr>
-        <tr>
-          <td>Functional Software, Inc. („Sentry")</td>
-          <td>USA</td>
-          <td>Fehler- und Absturzberichte der Anwendung</td>
-          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Region prüfen (EU verfügbar)</span></td>
-          <td>Ggf. ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
-        </tr>
-        <tr>
-          <td>Stripe Payments Europe, Ltd.</td>
-          <td>Irland</td>
-          <td>Zahlungsabwicklung (nur bei aktiviertem Billing-Layer)</td>
-          <td>EU / EWR</td>
-          <td>Nein (Vertragspartner in Irland)</td>
-        </tr>
-        <tr>
-          <td>Google Ireland Ltd. — Google Maps Platform</td>
-          <td>Irland</td>
-          <td>Kartendarstellung, Geocoding im Dashboard</td>
-          <td>EU sowie ggf. USA</td>
-          <td>Ggf. ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
-        </tr>
-        <tr>
-          <td>Push-Benachrichtigungen (Apple APNs, Google FCM)</td>
-          <td>USA</td>
-          <td>Zustellung mobiler Push-Benachrichtigungen — nur Geräte-Token und Nachrichten-ID, keine Inhaltsdaten</td>
-          <td>global</td>
-          <td>Ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
+          <td>EU-Region, Standardvertragsklauseln</td>
         </tr>
       </tbody>
     </table>
 
+    <h3>2. E-Mail-Versand, Push-Benachrichtigungen und Fehler-Tracking</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland-Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Resend, Inc.</td>
+          <td>Wilmington, USA</td>
+          <td>Transaktionaler E-Mail-Versand (Passwort-Reset, Einladungen, Systemnachrichten). Übertragen werden Empfänger-Adresse, Betreff und Nachrichteninhalt.</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — EU-Region prüfen</span></td>
+          <td>EU-US Data Privacy Framework bzw. Standardvertragsklauseln</td>
+        </tr>
+        <tr>
+          <td>Google Ireland Ltd. / Google LLC — Firebase Cloud Messaging</td>
+          <td>Irland / USA</td>
+          <td>Zustellung mobiler Push-Benachrichtigungen an Android- und iOS-Geräte. Übertragen werden Geräte-Token, Nachrichtenkennung und der Nachrichteninhalt.</td>
+          <td>global</td>
+          <td>EU-US Data Privacy Framework</td>
+        </tr>
+        <tr>
+          <td>Apple Inc. / Apple Distribution International Ltd. — Apple Push Notification service (APNs)</td>
+          <td>USA / Irland</td>
+          <td>Zustellung von Push-Nachrichten an iOS-Geräte (nachgelagert an FCM). Übertragen werden Geräte-Token und Nachrichten.</td>
+          <td>global</td>
+          <td>Standardvertragsklauseln</td>
+        </tr>
+        <tr>
+          <td>Functional Software, Inc. („Sentry")</td>
+          <td>San Francisco, USA</td>
+          <td>Erfassung von Fehlern und Ausnahmen (a) in den Backend-Services, (b) im Dashboard-Frontend, im Share-Portal und im Payment-Portal (Client-seitig im Browser des Nutzers). Übertragen werden Stack-Traces, technische Metadaten, ggf. anonymisierte User-IDs; personenbezogene Bezüge werden vor der Übertragung soweit möglich minimiert.</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — EU-Region prüfen (verfügbar)</span></td>
+          <td>EU-US Data Privacy Framework bzw. Standardvertragsklauseln</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3. KI-gestützte Rechnungserfassung (Subunternehmer-Modul)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland-Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mistral AI</td>
+          <td>Paris, Frankreich</td>
+          <td>Primäre OCR-Engine (Modell <code>mistral-ocr-latest</code>) für die Extraktion strukturierter Rechnungsdaten aus PDF- und Bilddateien, die der Kunde in das Subunternehmer-Modul hochlädt. Übertragen wird die Rechnungsdatei mit allen darin enthaltenen personenbezogenen Daten (Rechnungssteller, Beträge, Positionen).</td>
+          <td>EU (Frankreich)</td>
+          <td>Kein Drittlandtransfer</td>
+        </tr>
+        <tr>
+          <td>Anthropic PBC (optional, Fallback)</td>
+          <td>San Francisco, USA</td>
+          <td>Fallback-Sprachmodell (Modell <code>claude-opus</code>-Familie) für die Rechnungsextraktion, das <strong>nur dann angesprochen wird, wenn Mistral nicht konfiguriert oder erreichbar ist</strong> (<code>ANTHROPIC_API_KEY</code> gesetzt, <code>MISTRAL_API_KEY</code> leer). Bei aktivem Mistral-Modus findet keine Übermittlung an Anthropic statt.</td>
+          <td>USA</td>
+          <td>EU-US Data Privacy Framework bzw. Standardvertragsklauseln</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4. Karten, Geocoding und externe Web-Inhalte im Dashboard</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland-Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google Ireland Ltd. — Google Maps Platform</td>
+          <td>Irland / USA</td>
+          <td>Kartendarstellung, Geocoding im Dashboard</td>
+          <td>EU sowie ggf. USA</td>
+          <td>EU-US Data Privacy Framework bzw. Standardvertragsklauseln</td>
+        </tr>
+        <tr>
+          <td>Komoot GmbH — Photon</td>
+          <td>Potsdam, Deutschland</td>
+          <td>Adress-Autovervollständigung im Dashboard beim Anlegen von Aufträgen</td>
+          <td>Deutschland</td>
+          <td>Kein Drittlandtransfer</td>
+        </tr>
+        <tr>
+          <td>OpenStreetMap Foundation — Nominatim</td>
+          <td>Vereinigtes Königreich</td>
+          <td>Serverseitige Adressumwandlung in Geokoordinaten (Backend)</td>
+          <td>Vereinigtes Königreich / EU</td>
+          <td>Angemessenheitsbeschluss der EU-Kommission für das Vereinigte Königreich</td>
+        </tr>
+        <tr>
+          <td>CARTO</td>
+          <td>Madrid, Spanien / New York, USA</td>
+          <td>Basemap-Styles („dark-matter", „positron") für die Kartendarstellung im Live-Tracking</td>
+          <td>global CDN</td>
+          <td>Standardvertragsklauseln</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>5. Zahlungsabwicklung</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland-Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stripe Payments Europe, Ltd.</td>
+          <td>Dublin, Irland</td>
+          <td>Zahlungsabwicklung im Rahmen der Plattform-Abrechnung. <strong>Aktuell inaktiv</strong> (<code>PAYMENT_FEATURE_ENABLED=false</code>); wird erst mit Aktivierung des Billing-Layers zum Auftragsverarbeiter.</td>
+          <td>EU / EWR</td>
+          <td>Kein Drittlandtransfer</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>6. Marketing-Website taskeyapp.com (nur Website-Besucher, keine Kunden-Betriebsdaten)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland-Garantie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Umami (selbst gehostet)</td>
+          <td>Deutschland (eigene Infrastruktur)</td>
+          <td>Web-Analytics für die Marketing-Website — wird ausschließlich nach Einwilligung im Cookie-Banner geladen. Keine dauerhaften Cookies.</td>
+          <td><code>mission-control.vars-development.com/umami</code></td>
+          <td>Kein Drittlandtransfer (Eigenbetrieb)</td>
+        </tr>
+        <tr>
+          <td>Calendly LLC</td>
+          <td>Atlanta, USA</td>
+          <td>Terminbuchung („Demo buchen" auf der Website), nur nach Einwilligung im Cookie-Banner. Übertragen werden IP, Browser-Daten und ggf. Kalender-Wunschzeit.</td>
+          <td>USA</td>
+          <td>EU-US Data Privacy Framework</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>Auf dem Endgerät verbleibende Google-Bibliotheken (kein Drittlandtransfer):</strong> Die Android-App nutzt Google ML Kit Barcode Scanning und Google Play Services Location on-device — es findet keine Übertragung von Bilddaten oder GPS-Koordinaten an Google statt. Die iOS-App enthält zusätzlich Firebase Analytics (<code>GoogleAppMeasurement</code>) und Google Ads On-Device Conversion; diese SDKs übertragen Ereignisdaten an Google. <span class="todo-box" style="margin:0;padding:2px 6px;">TODO Fynn: Ausbau- oder Einwilligungs­konzept dieser SDKs entscheiden — im Beschäftigtenkontext ist eine belastbare Rechtsgrundlage nach § 25 TDDDG erforderlich.</span>
+    </div>
+
     <div class="todo-box">
-      <strong>TODO vor Veröffentlichung:</strong> Diese Liste ist auf Basis der aktuellen Konfigurationsdateien erstellt. Bitte vollständig verifizieren und ergänzen (insbesondere: konkreter Dokploy-Hosting-Provider und Rechenzentrumsstandort; ob bei Resend und Sentry die EU-Regionen tatsächlich gebucht sind; ob Web-Analytics oder Session-Recording eingesetzt werden; ob externer Backup-Provider verwendet wird).
+      <strong>TODO vor Veröffentlichung:</strong> (a) IONOS-Tarifdetails (Managed DB oder Server), Datenbank-Verschlüsselung „at rest" und TLS-Erzwingung zur Datenbank bestätigen. (b) Dokploy-Hosting-Provider und Rechenzentrumsstandort bestätigen. (c) Sentry und Resend: EU-Region konfiguriert oder USA? (d) Firebase-Analytics-/Ads-SDK-Entscheidung für die iOS-App treffen.
     </div>
   </div>
 

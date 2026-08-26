@@ -150,14 +150,14 @@ const CONTENT = {
     sec7LegalLabel: "Rechtsgrundlage:",
     sec7LegalValue: "Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG (Einwilligung)",
 
-    sec8Title: "8. Hosting",
-    sec8P1: "Die Website wird bei einem externen Hosting-Anbieter betrieben.",
+    sec8Title: "8. Hosting und eingesetzte Dienstleister",
+    sec8P1: "Die Marketing-Website taskeyapp.com wird bei Vercel Inc. (USA) in der Region Frankfurt (fra1) betrieben. Bei jedem Aufruf werden serverseitig Standard-Log-Daten verarbeitet (IP-Adresse, aufgerufene URL, Zeitpunkt, Referrer, User-Agent). Für Terminbuchungen auf der Website wird nach ausdrücklicher Einwilligung Calendly (Calendly LLC, USA) eingebunden. Nach ausdrücklicher Einwilligung wird zusätzlich das selbst gehostete Web-Analyse-Werkzeug Umami auf mission-control.vars-development.com geladen. Vorschaubilder und Verlinkungen zu YouTube-Videos werden ebenfalls nur nach Einwilligung geladen. Eine vollständige Liste aller im Betrieb der Taskey-Plattform (Dashboard, mobile Apps, Kundenportal) eingesetzten Auftragsverarbeiter finden Geschäftskunden in der Anlage 2 zum Auftragsverarbeitungsvertrag unter taskeyapp.com/legal/avv.html.",
     sec8DataLabel: "Verarbeitete Daten:",
     sec8DataValue: "alle im Rahmen des Websitebetriebs anfallenden Daten.",
     sec8LegalLabel: "Rechtsgrundlage:",
-    sec8LegalValue: "Art. 6 Abs. 1 lit. f DSGVO",
+    sec8LegalValue: "Art. 6 Abs. 1 lit. f DSGVO (Hosting), Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit § 25 Abs. 1 TTDSG (Analytics, externe Inhalte)",
     sec8AVV:
-      "Mit dem Hosting-Anbieter besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.",
+      "Mit allen genannten Auftragsverarbeitern bestehen Auftragsverarbeitungsverträge gemäß Art. 28 DSGVO; bei Übermittlungen in Drittländer werden die Standardvertragsklauseln der EU-Kommission bzw. eine gültige Zertifizierung nach dem EU-US Data Privacy Framework als Garantien nach Kap. V DSGVO herangezogen.",
 
     sec9Title: "9. Weitergabe von Daten",
     sec9Intro: "Eine Weitergabe personenbezogener Daten erfolgt nur, wenn:",
@@ -325,14 +325,14 @@ const CONTENT = {
     sec7LegalLabel: "Legal basis:",
     sec7LegalValue: "Art. 6 Abs. 1 lit. a DSGVO",
 
-    sec8Title: "8. Hosting",
-    sec8P1: "The website is operated by an external hosting provider.",
+    sec8Title: "8. Hosting and processors",
+    sec8P1: "The marketing website taskeyapp.com is hosted by Vercel Inc. (USA), region Frankfurt (fra1). Standard server logs are processed on every request (IP address, requested URL, timestamp, referrer, user agent). Appointment booking uses Calendly (Calendly LLC, USA) after explicit consent. After explicit consent the self-hosted web analytics tool Umami is loaded from mission-control.vars-development.com. YouTube preview images and links are also only loaded after consent. A complete list of processors used in the operation of the Taskey platform (dashboard, mobile apps, customer portal) is available to business customers in Annex 2 of the Data Processing Agreement at taskeyapp.com/legal/avv.html.",
     sec8DataLabel: "Processed data:",
     sec8DataValue: "all data arising in connection with the operation of the website.",
     sec8LegalLabel: "Legal basis:",
-    sec8LegalValue: "Art. 6 Abs. 1 lit. f DSGVO",
+    sec8LegalValue: "Art. 6 (1) lit. f GDPR (hosting), Art. 6 (1) lit. a GDPR in conjunction with Section 25 (1) TTDSG (analytics, external content)",
     sec8AVV:
-      "A data processing agreement pursuant to Art. 28 DSGVO is in place with the hosting provider.",
+      "Data processing agreements pursuant to Art. 28 GDPR are in place with all named processors; for transfers to third countries the EU Commission's Standard Contractual Clauses or valid certification under the EU-US Data Privacy Framework serve as safeguards under Chapter V GDPR.",
 
     sec9Title: "9. Disclosure of data",
     sec9Intro: "Personal data is only disclosed if:",
@@ -501,14 +501,14 @@ const CONTENT = {
     sec7LegalLabel: "Base juridique :",
     sec7LegalValue: "Art. 6 Abs. 1 lit. a DSGVO",
 
-    sec8Title: "8. Hébergement",
-    sec8P1: "Le site est exploité par un prestataire d'hébergement externe.",
+    sec8Title: "8. Hébergement et sous-traitants",
+    sec8P1: "Le site marketing taskeyapp.com est hébergé par Vercel Inc. (États-Unis), région Francfort (fra1). Des journaux serveurs standard sont traités à chaque appel (adresse IP, URL demandée, horodatage, referrer, user-agent). La prise de rendez-vous utilise Calendly (Calendly LLC, États-Unis) après consentement explicite. Après consentement explicite, l'outil d'analyse web auto-hébergé Umami est chargé depuis mission-control.vars-development.com. Les vignettes et liens vers YouTube ne sont chargés qu'après consentement. La liste complète des sous-traitants utilisés pour l'exploitation de la plateforme Taskey (tableau de bord, applications mobiles, portail client) est disponible pour les clients professionnels dans l'Annexe 2 du contrat de sous-traitance sur taskeyapp.com/legal/avv.html.",
     sec8DataLabel: "Données traitées :",
     sec8DataValue: "toutes les données liées à l'exploitation du site.",
     sec8LegalLabel: "Base juridique :",
-    sec8LegalValue: "Art. 6 Abs. 1 lit. f DSGVO",
+    sec8LegalValue: "Art. 6 §1 f) RGPD (hébergement), Art. 6 §1 a) RGPD en liaison avec § 25 al. 1 TTDSG (analytique, contenus externes)",
     sec8AVV:
-      "Un contrat de sous-traitance conformément à l'Art. 28 DSGVO a été conclu avec le prestataire d'hébergement.",
+      "Des contrats de sous-traitance conformément à l'article 28 RGPD sont conclus avec l'ensemble des sous-traitants nommés ; pour les transferts vers des pays tiers, les clauses contractuelles types de la Commission européenne ou une certification valide au titre du Data Privacy Framework UE-US servent de garanties au titre du chapitre V RGPD.",
 
     sec9Title: "9. Transmission des données",
     sec9Intro: "Les données personnelles ne sont transmises que si :",

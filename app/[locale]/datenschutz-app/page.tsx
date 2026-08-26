@@ -120,7 +120,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec2Title: "2. Geltungsbereich",
     sec2Body:
-      "Diese Datenschutzerklärung gilt ausschließlich für die mobile Anwendung Taskey (nachfolgend die App), die im Google Play Store und über weitere Vertriebskanäle bereitgestellt wird. Für die Verarbeitung personenbezogener Daten beim Besuch der Website taskeyapp.com gilt die separate Website-Datenschutzerklärung unter taskeyapp.com/datenschutz.",
+      "Diese Datenschutzerklärung gilt für die Android-Version der mobilen Anwendung Taskey (nachfolgend die App), die im Google Play Store und über weitere Vertriebskanäle bereitgestellt wird. Für die iOS-Version gelten die Angaben zu Datenkategorien und Empfängern sinngemäß mit einer Ausnahme: In der iOS-Version sind zusätzlich Firebase Analytics for Apps (Google Analytics for Firebase, SDK GoogleAppMeasurement) und Google Ads On-Device Conversion Measurement enthalten (siehe Abschnitt 4). Diese SDKs erheben Nutzungsereignisse und Werbe-Attributionsdaten und werden gesondert kenntlich gemacht. Für die Verarbeitung personenbezogener Daten beim Besuch der Website taskeyapp.com gilt die separate Website-Datenschutzerklärung unter taskeyapp.com/datenschutz.",
 
     sec3Title: "3. Welche Daten die App erhebt",
     sec3Intro:
@@ -236,7 +236,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       },
     ],
     sec5NoAds:
-      "Personenbezogene Daten werden nicht zu Werbezwecken weitergegeben und nicht verkauft. Die App enthält keine Werbe-SDKs, kein Analytics- oder Attribution-Tracking und keine Drittanbieter-Advertising-Identifier.",
+      "Personenbezogene Daten werden nicht zu Werbezwecken verkauft. In der Android-Version enthält die App weder Werbe-SDKs noch Analytics- oder Attribution-Tracking-Bibliotheken. Die iOS-Version enthält abweichend zwei zusätzliche Google-SDKs (siehe Abschnitt 4 und Anlage 2 der Auftragsverarbeitungsvereinbarung unter taskeyapp.com/legal/avv.html): Firebase Analytics for Apps (GoogleAppMeasurement) für die Erfassung von Nutzungsereignissen sowie Google Ads On-Device Conversion Measurement für die Zuordnung von App-Installationen zu Marketing-Kampagnen. Diese SDKs werden derzeit im Hinblick auf ihre Notwendigkeit im Beschäftigtenkontext geprüft; bis dahin gilt: Wo eine belastbare Rechtsgrundlage im Verhältnis zum Arbeitgeber fehlt, sollen die Funktionen deaktiviert oder ausgebaut werden.",
 
     sec6Title: "6. Datensicherheit",
     sec6Body:
@@ -327,7 +327,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec2Title: "2. Scope",
     sec2Body:
-      "This privacy policy applies exclusively to the Taskey mobile application (hereinafter the app), which is distributed via the Google Play Store and additional channels. The processing of personal data during a visit to the taskeyapp.com website is governed by the separate website privacy policy available at taskeyapp.com/datenschutz.",
+      "This privacy policy applies to the Android version of the Taskey mobile application (hereinafter the app), which is distributed via the Google Play Store and additional channels. It also applies to the iOS version with the following exception: the iOS version additionally embeds Firebase Analytics for Apps (Google Analytics for Firebase, SDK GoogleAppMeasurement) and Google Ads On-Device Conversion Measurement (see section 4). These SDKs collect usage events and ad-attribution data and are called out separately. The processing of personal data during a visit to the taskeyapp.com website is governed by the separate website privacy policy available at taskeyapp.com/datenschutz.",
 
     sec3Title: "3. What data the app collects",
     sec3Intro:
@@ -443,7 +443,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       },
     ],
     sec5NoAds:
-      "Personal data is not shared for advertising purposes and is not sold. The app contains no advertising SDKs, no analytics or attribution tracking, and no third-party advertising identifiers.",
+      "Personal data is not sold for advertising purposes. The Android version contains neither advertising SDKs nor analytics/attribution tracking libraries. The iOS version additionally embeds two Google SDKs (see section 4 and Annex 2 of the Data Processing Agreement at taskeyapp.com/legal/avv.html): Firebase Analytics for Apps (GoogleAppMeasurement) for usage-event collection and Google Ads On-Device Conversion Measurement for attributing app installs to marketing campaigns. These SDKs are currently under review with regard to their necessity in an employment context; where no solid legal basis exists in the employer/employee relationship, the features are to be deactivated or removed.",
 
     sec6Title: "6. Data security",
     sec6Body:
@@ -535,7 +535,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec2Title: "2. Champ d'application",
     sec2Body:
-      "La présente politique s'applique exclusivement à l'application mobile Taskey (ci-après l'application), distribuée via le Google Play Store et d'autres canaux. Le traitement des données lors de la visite du site taskeyapp.com est régi par la politique de confidentialité distincte disponible sur taskeyapp.com/datenschutz.",
+      "La présente politique s'applique à la version Android de l'application mobile Taskey (ci-après l'application), distribuée via le Google Play Store et d'autres canaux. Elle s'applique également à la version iOS avec l'exception suivante : la version iOS intègre en plus Firebase Analytics for Apps (Google Analytics for Firebase, SDK GoogleAppMeasurement) et Google Ads On-Device Conversion Measurement (voir section 4). Ces SDK collectent des événements d'utilisation et des données d'attribution publicitaire et sont signalés séparément. Le traitement des données lors de la visite du site taskeyapp.com est régi par la politique de confidentialité distincte disponible sur taskeyapp.com/datenschutz.",
 
     sec3Title: "3. Données collectées par l'application",
     sec3Intro:
@@ -651,7 +651,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       },
     ],
     sec5NoAds:
-      "Aucune donnée à caractère personnel n'est partagée à des fins publicitaires ni vendue. L'application ne contient aucun SDK publicitaire, aucun suivi analytique ou d'attribution, ni identifiant publicitaire tiers.",
+      "Les données à caractère personnel ne sont pas vendues à des fins publicitaires. La version Android ne contient ni SDK publicitaire ni bibliothèque de suivi analytique ou d'attribution. La version iOS intègre en outre deux SDK Google (voir section 4 et Annexe 2 du contrat de sous-traitance sur taskeyapp.com/legal/avv.html) : Firebase Analytics for Apps (GoogleAppMeasurement) pour la collecte d'événements d'utilisation et Google Ads On-Device Conversion Measurement pour l'attribution des installations à des campagnes marketing. Ces SDK sont actuellement examinés quant à leur nécessité dans un contexte professionnel ; en l'absence de base juridique solide dans la relation employeur/salarié, les fonctionnalités seront désactivées ou retirées.",
 
     sec6Title: "6. Sécurité des données",
     sec6Body:
