@@ -499,7 +499,7 @@
 
     <h3>2. Integrität</h3>
     <ul class="plain">
-      <li><strong>Weitergabekontrolle / Transportverschlüsselung:</strong> Kommunikation zwischen Endgeräten, Anwendungsservern und Datenbanken ausschließlich über TLS ≥ 1.2 (HSTS aktiviert).</li>
+      <li><strong>Weitergabekontrolle / Transportverschlüsselung:</strong> Auslieferung an Endgeräte ausschließlich über HTTPS mit TLS ≥ 1.2 (HSTS aktiviert). Interne Verbindungen der Backend-Services untereinander laufen in einem privaten Container-Netzwerk. Cloudflare R2 verschlüsselt Objekte serverseitig mit AES-256.</li>
       <li><strong>Eingabekontrolle:</strong> Sicherheitsrelevante Vorgänge (Anmeldung, Berechtigungsänderungen, Löschungen) werden mit Zeitstempel und Nutzerbezug protokolliert.</li>
       <li><strong>Datenintegrität:</strong> Backups mit Prüfsummen-Verifikation.</li>
     </ul>

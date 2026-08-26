@@ -139,15 +139,16 @@ const CONTENT = {
 
     sec7Title: "7. Analyse- und Tracking-Tools",
     sec7P1:
-      "Sofern Analyse-Tools (z. B. Google Analytics, Plausible, etc.) eingesetzt werden, erfolgt dies nur nach Ihrer Einwilligung.",
-    sec7ListIntro: "Verarbeitete Daten können sein:",
+      "Wir setzen ausschließlich das selbst gehostete Web-Analyse-Werkzeug Umami ein. Die Umami-Instanz läuft auf unserer eigenen Infrastruktur unter mission-control.vars-development.com. Umami erhebt Seitenaufrufe pseudonym, ohne dauerhafte Cookies und ohne seitenübergreifendes Tracking. Andere Analyse- oder Tracking-Tools (z. B. Google Analytics, Meta Pixel, TikTok Pixel) setzen wir nicht ein. Das Umami-Skript wird ausschließlich nach Ihrer Einwilligung im Cookie-Banner geladen.",
+    sec7ListIntro: "Verarbeitete Daten:",
     sec7List: [
-      "IP-Adresse (gekürzt/anonymisiert)",
-      "Nutzungsverhalten",
-      "Seitenaufrufe",
+      "IP-Adresse (nur serverseitig zur Sitzungszählung, nicht dauerhaft gespeichert)",
+      "Seitenaufrufe und Verweildauer",
+      "Herkunftsseite (Referrer) und ungefährer Standort auf Länderebene",
+      "User-Agent (Browser- und Gerätetyp)",
     ],
     sec7LegalLabel: "Rechtsgrundlage:",
-    sec7LegalValue: "Art. 6 Abs. 1 lit. a DSGVO",
+    sec7LegalValue: "Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TTDSG (Einwilligung)",
 
     sec8Title: "8. Hosting",
     sec8P1: "Die Website wird bei einem externen Hosting-Anbieter betrieben.",

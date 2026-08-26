@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { headers } from "next/headers";
 import "./globals.css";
 import { WebVitals } from "./web-vitals";
 import { GlobalStructuredData } from "@/components/StructuredData";
+import AnalyticsScript from "@/components/AnalyticsScript";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.taskeyapp.com"),
@@ -93,11 +93,7 @@ export default async function RootLayout({
       </head>
       <body className="antialiased">
         <WebVitals />
-        <Script
-          src="https://mission-control.vars-development.com/umami/script.js"
-          data-website-id="15a75075-86a0-4e36-8cd2-7cd83d860d5c"
-          strategy="afterInteractive"
-        />
+        <AnalyticsScript />
         {children}
       </body>
     </html>
