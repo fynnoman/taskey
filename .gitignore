@@ -44,3 +44,7 @@ next-env.d.ts
 
 # Large video files — host on CDN instead
 public/*.mov
+
+# Local working mirror of the CDN compliance docs (has its own git repo).
+# Actual live legal documents live under public/legal/.
+/compliance/

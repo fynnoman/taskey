@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechtliche Dokumentation - Taskey Gesamtsystem</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: #1f2937; max-width: 1100px; margin: 0 auto; padding: 30px; background: #f1f5f9; }
+        .doc-card { background: #fff; padding: 45px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 8px solid #10b981; }
+        .sla-card { border-top: 8px solid #3b82f6; }
+        h1 { color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 15px; font-size: 1.8em; }
+        h2 { color: #10b981; margin-top: 35px; font-size: 1.4em; border-left: 4px solid #10b981; padding-left: 15px; }
+        .sla-card h2 { color: #3b82f6; border-left-color: #3b82f6; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; }
+        th { background: #f9fafb; font-weight: 600; }
+        .danger-box { background: #fef2f2; border-left: 5px solid #ef4444; padding: 20px; color: #991b1b; margin: 20px 0; font-weight: 600; }
+        .tarif-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #d1fae5; color: #065f46; font-size: 0.8em; font-weight: bold; }
+        .meta { font-size: 0.9em; color: #64748b; margin-bottom: 20px; }
+        footer { text-align: center; color: #94a3b8; font-size: 0.8em; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <div class="doc-card">
+        <h1>Teil A: Nutzungsbedingungen „Taskey Share“</h1>
+        <div class="meta">Status: Host-Provider gemäß Art. 6 DSA | Geltungsbereich: Endkunden & Bauherren</div>
+        <p>Dieses Portal dient der Bereitstellung von Projektinformationen durch Ihren Dienstleister. Taskey stellt lediglich die technische Infrastruktur zur Verfügung.</p>
+        
+        <h2>§ 1 Inhalte & Haftungsausschluss</h2>
+        <p>(1) Alle angezeigten Daten (Fotos, Budgets, Termine) werden ausschließlich vom Dienstleister hochgeladen und verantwortet.</p>
+        <p>(2) <strong>Notice-and-Takedown:</strong> Rechtswidrige Inhalte können an <a href="mailto:support@taskey.de">support@taskey.de</a> gemeldet werden; eine Prüfung erfolgt innerhalb von 24 Stunden.</p>
+        
+        <h2>§ 2 Datenschutz</h2>
+        <p>Verantwortlicher für personenbezogene Daten im Portal ist der Dienstleister. Taskey agiert als Auftragsverarbeiter gemäß Art. 28 DSGVO.</p>
+    </div>
+
+    <div class="doc-card">
+        <h1>Teil B: Allgemeine Geschäftsbedingungen (B2B)</h1>
+        <div class="meta">Anbieter: Schulz & Stosse GbR | Stand: März 2026 | Gerichtsstand: Saarbrücken</div>
+
+        <h2>§ 1 Haftungsbegrenzung (Haftungsdeckel)</h2>
+        <div class="danger-box">
+            SYSTEM-HAFTUNG: Bei leichter Fahrlässigkeit (z. B. technisches Datenleck) ist die Haftung systemweit auf die Summe der vom Kunden in den letzten 12 Monaten vor Schadenseintritt gezahlten SaaS-Gebühren begrenzt. Mittelbare Schäden und entgangener Gewinn sind ausgeschlossen.
+        </div>
+
+        <h2>§ 2 NFC-Hardware & Baumaschinen</h2>
+        <p>(1) NFC-Anzeigen sind rein informativ und ersetzen keine gesetzlich vorgeschriebene Sichtprüfung vor Inbetriebnahme von Maschinen.</p>
+        <p>(2) Taskey haftet nicht für die dauerhafte Lesbarkeit oder physische Integrität der Tags unter Baustellenbedingungen.</p>
+
+        <h2>§ 3 Laufzeit & Kündigung</h2>
+        <p>(1) Monatliche Tarife: Frist von 7 Tagen zum Ende des Abrechnungsmonats.</p>
+        <p>(2) Jährliche Tarife: Frist von 30 Tagen vor Ablauf der 12-monatigen Laufzeit.</p>
+    </div>
+
+    <div class="doc-card sla-card">
+        <h1>Teil C: System-SLA & Verfügbarkeit</h1>
+        <div class="meta">Geltungsbereich: Gesamte Taskey-Infrastruktur (Dashboard, Datenbank, API)</div>
+
+        <h2>§ 1 Verfügbarkeits-Garantien (Anpassung 97% Basis)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarifstufe</th>
+                    <th>Uptime (p.a.)</th>
+                    <th>Max. Ausfall/Monat</th>
+                    <th>P1-Reaktion</th>
+                    <th>Remedy (Gutschrift)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tarif-badge">START</span></td>
+                    <td>97,0%</td>
+                    <td>~ 21,9 Stunden</td>
+                    <td>24h (Werktags)</td>
+                    <td>1% / 1,0% Unterschreitung</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge">GROW</span></td>
+                    <td>98,0%</td>
+                    <td>~ 14,6 Stunden</td>
+                    <td>12h (Werktags)</td>
+                    <td>2% / 1,0% Unterschreitung</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge">SCALE</span></td>
+                    <td>98,5%</td>
+                    <td>~ 11,0 Stunden</td>
+                    <td>8h (Werktags)</td>
+                    <td>5% / 1,0% Unterschreitung</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge" style="background:#3b82f6; color:#fff;">ENTERPRISE</span></td>
+                    <td>99,9%</td>
+                    <td>43 Min.</td>
+                    <td>2h (24/7)</td>
+                    <td>10% / 0,1% Unterschreitung + Audit-Recht</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>§ 2 Wartung & Reporting</h2>
+        <p>(1) <strong>Wartungsfenster:</strong> Arbeiten zwischen 20:00 und 06:00 Uhr MEZ gelten nicht als Ausfallzeit.</p>
+        <p>(2) <strong>Reporting:</strong> Monatlicher Uptime-Report (Ping-Test-Nachweis) auf Anfrage; im Enterprise-Tarif erfolgt dies proaktiv.</p>
+
+        <h2>§ 3 Weiterentwicklung & Wartung</h2>
+        <p>(1) Taskey schuldet „Best Efforts“ für kontinuierliche Wartung und Sicherheitsfixes.</p>
+        <p>(2) Kein Anspruch auf individuelle Funktionsgarantien (Custom Features) ohne separate Vereinbarung.</p>
+        <p>(3) Taskey führt ein monatliches Changelog.</p>
+    </div>
+
+    <footer>
+        &copy; 2026 Schulz & Stosse GbR | Stand: März 2026 | Gerichtsstand: Saarbrücken
+    </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

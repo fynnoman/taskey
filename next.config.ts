@@ -55,6 +55,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Fängt versehentliche Aufrufe der alten CDN-Pfade auf der Website-Domain ab und
+  // leitet sie auf die neuen /legal/*-Dokumente um. Die eigentliche 301 für
+  // cdn.vars-development.com muss zusätzlich auf CDN-Seite (Cloudflare) gesetzt werden.
+  async redirects() {
+    return [
+      { source: '/compliance/client/germany/AGB.html',    destination: '/legal/agb-share.html',       permanent: true },
+      { source: '/compliance/companies/germany/AGB.html', destination: '/legal/agb-b2b.html',         permanent: true },
+      { source: '/compliance/companies/germany/SLA.html', destination: '/legal/sla.html',             permanent: true },
+      { source: '/compliance/companies/germany/AVV.html', destination: '/legal/avv.html',             permanent: true },
+      { source: '/compliance/employees/germany/AGB.html', destination: '/legal/agb-mitarbeiter.html', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

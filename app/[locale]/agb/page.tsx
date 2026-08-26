@@ -24,100 +24,106 @@ const CONTENT = {
     translationNote: "",
     pageTitle: "Rechtliches",
     pageIntro:
-      "Hier finden Sie alle relevanten Geschäftsbedingungen, Nutzungsbedingungen und Service Level Agreements für Taskey.",
-    pageMeta: "Schulz & Stosse GbR · Stand: März 2026",
+      "Hier finden Sie alle relevanten Nutzungsbedingungen, Geschäftsbedingungen, das Service Level Agreement und den Auftragsverarbeitungsvertrag für Taskey.",
+    pageMeta: "Schulz & Stosse GbR · Stand: August 2026",
 
     card1Badge: "ENDKUNDEN",
-    card1Title: "Nutzungsbedingungen & AGB",
+    card1Title: 'Nutzungsbedingungen „Taskey Share"',
     card1Body:
-      "Für Endkunden und Bauherren – Nutzungsbedingungen für das Taskey Share Portal und allgemeine Geschäftsbedingungen.",
+      "Für Endkunden und Auftraggeber des Dienstleisters – Nutzungsbedingungen für das Taskey Share Portal.",
     card1Cta: "Dokument öffnen",
 
     card2Badge: "FIRMENKUNDEN",
-    card2Title: "AGB & SLA für Unternehmen",
+    card2Title: "AGB, SLA & AVV für Unternehmen",
     card2Body:
-      "Für Firmen, die Taskey kaufen – ausführliche Geschäftsbedingungen (B2B) und Service Level Agreement.",
+      "Für Firmen, die Taskey einsetzen – ausführliche Geschäftsbedingungen (B2B), Service Level Agreement und Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.",
     card2AgbLabel: "AGB (B2B)",
     card2AgbSub: "Allgemeine Geschäftsbedingungen",
     card2SlaLabel: "SLA",
     card2SlaSub: "Service Level Agreement & Verfügbarkeit",
+    card2AvvLabel: "AVV",
+    card2AvvSub: "Auftragsverarbeitungsvertrag nach Art. 28 DSGVO",
 
-    card3Badge: "MITARBEITER",
-    card3Title: "AGB für Mitarbeiter",
+    card3Badge: "MITARBEITENDE",
+    card3Title: "Nutzungsbedingungen für Mitarbeitende",
     card3Body:
-      "Für Mitarbeiter der Firmen – Geschäftsbedingungen zur Nutzung der Taskey App im Arbeitsalltag.",
+      "Für Mitarbeitende der Firmen – Muster-Vorlage für die Nutzung der Taskey App im Arbeitsalltag zur internen Übernahme durch den Arbeitgeber.",
     card3Cta: "Dokument öffnen",
 
     footerCompany: "Schulz & Stosse GbR",
     footerAddress: "In der Acht 44, 66333 Völklingen, Deutschland",
-    footerContactPrefix: "Bei Fragen zu unseren Geschäftsbedingungen erreichen Sie uns unter",
+    footerContactPrefix: "Bei Fragen zu unseren Rechtsdokumenten erreichen Sie uns unter",
   },
   en: {
     translationNote:
-      "This document is a translation for convenience. The legally binding version is the German original.",
+      "This overview page is a translation for convenience. The legally binding legal documents are the German originals.",
     pageTitle: "Legal",
     pageIntro:
-      "Here you will find all relevant terms and conditions, terms of use and Service Level Agreements for Taskey.",
-    pageMeta: "Schulz & Stosse GbR · As of: March 2026",
+      "Here you will find all relevant terms of use, general terms and conditions, the Service Level Agreement and the Data Processing Agreement for Taskey.",
+    pageMeta: "Schulz & Stosse GbR · As of: August 2026",
 
     card1Badge: "END CUSTOMERS",
-    card1Title: "Terms of use & GTC",
+    card1Title: 'Terms of use „Taskey Share"',
     card1Body:
-      "For end customers and property owners – terms of use for the Taskey Share Portal and general terms and conditions.",
+      "For end customers and clients of the service provider – terms of use for the Taskey Share Portal.",
     card1Cta: "Open document",
 
     card2Badge: "BUSINESS CUSTOMERS",
-    card2Title: "GTC & SLA for businesses",
+    card2Title: "GTC, SLA & DPA for businesses",
     card2Body:
-      "For companies purchasing Taskey – detailed general terms and conditions (B2B) and Service Level Agreement.",
+      "For companies using Taskey – detailed general terms and conditions (B2B), Service Level Agreement and Data Processing Agreement under Art. 28 GDPR.",
     card2AgbLabel: "GTC (B2B)",
     card2AgbSub: "General terms and conditions",
     card2SlaLabel: "SLA",
     card2SlaSub: "Service Level Agreement & availability",
+    card2AvvLabel: "DPA",
+    card2AvvSub: "Data Processing Agreement under Art. 28 GDPR",
 
     card3Badge: "EMPLOYEES",
-    card3Title: "GTC for employees",
+    card3Title: "Terms of use for employees",
     card3Body:
-      "For employees of partner companies – terms and conditions for using the Taskey app in day-to-day work.",
+      "For employees of partner companies – template for internal terms of use of the Taskey App to be adopted by the employer.",
     card3Cta: "Open document",
 
     footerCompany: "Schulz & Stosse GbR",
     footerAddress: "In der Acht 44, 66333 Völklingen, Germany",
-    footerContactPrefix: "For questions about our terms and conditions, please contact us at",
+    footerContactPrefix: "For questions about our legal documents, please contact us at",
   },
   fr: {
     translationNote:
-      "Ce document est une traduction de courtoisie. Seule la version originale allemande fait foi.",
+      "Cette page récapitulative est une traduction de courtoisie. Seuls les documents juridiques originaux en allemand font foi.",
     pageTitle: "Mentions juridiques",
     pageIntro:
-      "Vous trouverez ici l'ensemble des conditions générales, conditions d'utilisation et Service Level Agreements applicables à Taskey.",
-    pageMeta: "Schulz & Stosse GbR · Dernière mise à jour : mars 2026",
+      "Vous trouverez ici l'ensemble des conditions d'utilisation, conditions générales, du Service Level Agreement et du contrat de sous-traitance applicables à Taskey.",
+    pageMeta: "Schulz & Stosse GbR · Dernière mise à jour : août 2026",
 
     card1Badge: "CLIENTS FINAUX",
-    card1Title: "Conditions d'utilisation & CGV",
+    card1Title: 'Conditions d\'utilisation „Taskey Share"',
     card1Body:
-      "Pour les clients finaux et maîtres d'ouvrage – conditions d'utilisation du Portail Taskey Share et conditions générales.",
+      "Pour les clients finaux et donneurs d'ordre du prestataire – conditions d'utilisation du Portail Taskey Share.",
     card1Cta: "Ouvrir le document",
 
     card2Badge: "CLIENTS PROFESSIONNELS",
-    card2Title: "CGV & SLA pour les entreprises",
+    card2Title: "CGV, SLA & DPA pour les entreprises",
     card2Body:
-      "Pour les entreprises qui achètent Taskey – conditions générales détaillées (B2B) et Service Level Agreement.",
+      "Pour les entreprises qui utilisent Taskey – conditions générales détaillées (B2B), Service Level Agreement et contrat de sous-traitance conforme à l'art. 28 RGPD.",
     card2AgbLabel: "CGV (B2B)",
     card2AgbSub: "Conditions générales de vente",
     card2SlaLabel: "SLA",
     card2SlaSub: "Service Level Agreement & disponibilité",
+    card2AvvLabel: "DPA",
+    card2AvvSub: "Contrat de sous-traitance (art. 28 RGPD)",
 
     card3Badge: "COLLABORATEURS",
-    card3Title: "CGV pour les collaborateurs",
+    card3Title: "Conditions d'utilisation pour les collaborateurs",
     card3Body:
-      "Pour les collaborateurs des entreprises clientes – conditions d'utilisation de l'application Taskey au quotidien.",
+      "Pour les collaborateurs des entreprises clientes – modèle interne pour l'utilisation de l'application Taskey, à reprendre par l'employeur.",
     card3Cta: "Ouvrir le document",
 
     footerCompany: "Schulz & Stosse GbR",
     footerAddress: "In der Acht 44, 66333 Völklingen, Allemagne",
     footerContactPrefix:
-      "Pour toute question sur nos conditions générales, contactez-nous à",
+      "Pour toute question concernant nos documents juridiques, contactez-nous à",
   },
 } as const;
 
@@ -165,9 +171,9 @@ export default async function AGBPage({
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
 
-          {/* 1 — Endkunden / Bauherren */}
+          {/* 1 — Endkunden */}
           <a
-            href="https://cdn.vars-development.com/compliance/client/germany/AGB.html"
+            href="/legal/agb-share.html"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative bg-white rounded-2xl border-2 border-slate-200 hover:border-blue-400 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
@@ -206,7 +212,7 @@ export default async function AGBPage({
             </p>
             <div className="space-y-3">
               <a
-                href="https://cdn.vars-development.com/compliance/companies/germany/AGB.html"
+                href="/legal/agb-b2b.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/link flex items-center justify-between bg-slate-50 hover:bg-white rounded-xl px-4 py-3 transition-all duration-300 border border-slate-200 hover:border-slate-400"
@@ -218,23 +224,35 @@ export default async function AGBPage({
                 <svg className="w-4 h-4 text-slate-500 group-hover/link:text-slate-900 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
               <a
-                href="https://cdn.vars-development.com/compliance/companies/germany/SLA.html"
+                href="/legal/sla.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/link flex items-center justify-between bg-slate-50 hover:bg-blue-900 rounded-xl px-4 py-3 transition-all duration-300 border border-slate-200 hover:border-blue-900"
+                className="group/link flex items-center justify-between bg-slate-50 hover:bg-white rounded-xl px-4 py-3 transition-all duration-300 border border-slate-200 hover:border-slate-400"
               >
                 <div>
                   <span className="text-sm font-bold text-slate-900 group-hover/link:text-slate-900 transition-colors">{c.card2SlaLabel}</span>
-                  <span className="block text-xs text-slate-500 group-hover/link:text-blue-200 transition-colors">{c.card2SlaSub}</span>
+                  <span className="block text-xs text-slate-500 group-hover/link:text-slate-500 transition-colors">{c.card2SlaSub}</span>
+                </div>
+                <svg className="w-4 h-4 text-slate-500 group-hover/link:text-slate-900 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+              <a
+                href="/legal/avv.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link flex items-center justify-between bg-slate-50 hover:bg-white rounded-xl px-4 py-3 transition-all duration-300 border border-slate-200 hover:border-slate-400"
+              >
+                <div>
+                  <span className="text-sm font-bold text-slate-900 group-hover/link:text-slate-900 transition-colors">{c.card2AvvLabel}</span>
+                  <span className="block text-xs text-slate-500 group-hover/link:text-slate-500 transition-colors">{c.card2AvvSub}</span>
                 </div>
                 <svg className="w-4 h-4 text-slate-500 group-hover/link:text-slate-900 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
           </div>
 
-          {/* 3 — Mitarbeiter */}
+          {/* 3 — Mitarbeitende */}
           <a
-            href="https://cdn.vars-development.com/compliance/employees/germany/AGB.html"
+            href="/legal/agb-mitarbeiter.html"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative bg-white rounded-2xl border-2 border-slate-200 hover:border-purple-400 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
@@ -268,7 +286,7 @@ export default async function AGBPage({
             <div>
               <p className="text-sm text-slate-700 font-semibold mb-1">{c.footerCompany}</p>
               <p className="text-sm text-slate-600">{c.footerAddress}</p>
-              <p className="text-sm text-slate-500 mt-2">{c.footerContactPrefix} <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:underline font-medium">fynn@taskeyapp.com</a></p>
+              <p className="text-sm text-slate-500 mt-2">{c.footerContactPrefix} <a href="mailto:support@taskey.de" className="text-blue-700 hover:underline font-medium">support@taskey.de</a></p>
             </div>
           </div>
         </div>

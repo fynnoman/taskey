@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auftragsverarbeitungsvertrag (AVV) – Taskey Betriebsplattform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fafaf8;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --border: #e2e2dd;
+    --muted: #6b7280;
+    --highlight-bg: #fffbe6;
+    --highlight-border: #f59e0b;
+    --section-gap: 2.6rem;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.72;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem 6rem;
+  }
+
+  header {
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  header .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  header .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 2rem;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  header .meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  section { margin-bottom: var(--section-gap); }
+
+  section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1.5px solid var(--border);
+    color: var(--ink);
+  }
+
+  section h2 .num {
+    color: var(--accent);
+    margin-right: 0.3em;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .clause {
+    margin-bottom: 0.85rem;
+    padding-left: 1.6rem;
+    position: relative;
+  }
+
+  .clause::before {
+    content: attr(data-abs);
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    top: 0.12em;
+  }
+
+  .clause strong { font-weight: 600; }
+
+  ul.plain, ol.plain {
+    padding-left: 1.4rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+  ul.plain li, ol.plain li { margin-bottom: 0.35rem; }
+
+  .info-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+    font-size: 14.5px;
+  }
+
+  .todo-box {
+    background: var(--highlight-bg);
+    border-left: 3px solid var(--highlight-border);
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 0.8rem 0;
+    font-size: 13.5px;
+    color: #7c4a03;
+  }
+  .todo-box strong { color: #6a3d02; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.4rem;
+    font-size: 13.5px;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #f4f4ef; font-weight: 600; }
+
+  .anlage {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--border);
+  }
+
+  .anlage h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    border: none;
+    margin-bottom: 0.4rem;
+  }
+
+  .anlage .subtitle {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 1.4rem;
+  }
+
+  .signature-block {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .signature-block .party {
+    border-top: 1px solid var(--ink);
+    padding-top: 0.6rem;
+    font-size: 13.5px;
+  }
+  .signature-block .party strong { display: block; margin-bottom: 0.3rem; }
+  .signature-block .field {
+    display: block;
+    margin-top: 1.2rem;
+    color: var(--muted);
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1.5px solid var(--border);
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  @media print {
+    body { font-size: 11pt; background: #fff; }
+    .page { padding: 0; max-width: 100%; }
+    .info-box, .todo-box { break-inside: avoid; }
+    section, .anlage { break-inside: avoid-page; }
+    .signature-block { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 2rem 1.2rem 3rem; }
+    header h1 { font-size: 1.7rem; }
+    header .meta { flex-direction: column; gap: 0.25rem; }
+    .signature-block { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="label">Auftragsverarbeitungsvertrag (AVV) &middot; Art. 28 DSGVO</div>
+    <h1>Auftragsverarbeitung für die Taskey Betriebsplattform</h1>
+    <div class="meta">
+      <span><strong>Auftragsverarbeiter:</strong> Schulz &amp; Stosse GbR, In der Acht 44, 66333 Völklingen, Deutschland (nachfolgend „Taskey")</span>
+      <span><strong>Verantwortlicher:</strong> der Kunde gemäß Hauptvertrag (nachfolgend „Kunde")</span>
+      <span><strong>Stand:</strong> August 2026</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Präambel</h2>
+    <p>Die Parteien haben einen Vertrag über die Nutzung der Taskey Betriebsplattform (SaaS) geschlossen (der „Hauptvertrag"). Im Rahmen dieses Vertrages verarbeitet Taskey personenbezogene Daten im Auftrag des Kunden. Um den Anforderungen des Art. 28 DSGVO Rechnung zu tragen, schließen die Parteien den vorliegenden Auftragsverarbeitungsvertrag (nachfolgend „AVV"). Der AVV tritt gemeinsam mit dem Hauptvertrag in Kraft und endet mit dessen Beendigung, sofern nicht ausdrücklich eine längere Geltung vereinbart ist.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 1</span> Gegenstand und Dauer</h2>
+    <div class="clause" data-abs="(1)">
+      Gegenstand des Auftrags ist die Verarbeitung personenbezogener Daten durch Taskey im Zusammenhang mit dem Betrieb und der Bereitstellung der Taskey Betriebsplattform (Web-Dashboard, Mobile Apps, API, Datenbank, Objekt-Speicher, Benachrichtigungsdienste) sowie damit verbundenen Support-Leistungen.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Die Dauer der Verarbeitung entspricht der Laufzeit des Hauptvertrages. Nachlaufende Verpflichtungen (insbesondere Löschung, Rückgabe, gesetzliche Aufbewahrung) bleiben davon unberührt (§ 13).
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 2</span> Art, Umfang und Zweck der Verarbeitung</h2>
+    <div class="clause" data-abs="(1)">
+      <strong>Art der Verarbeitung:</strong> Erhebung, Speicherung, strukturierte Verwaltung, Anzeige, Änderung, Übermittlung an vom Kunden autorisierte Empfänger, Sicherung und Löschung personenbezogener Daten in einer mandantenfähigen SaaS-Umgebung.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Umfang:</strong> Die Verarbeitung umfasst alle Verarbeitungsvorgänge, die für die vertragsgemäße Bereitstellung, den Betrieb, die Weiterentwicklung, die Sicherheit und den Support der Betriebsplattform erforderlich sind, einschließlich technischer Protokollierung (Logs), Backups und Fehleranalyse.
+    </div>
+    <div class="clause" data-abs="(3)">
+      <strong>Zweck:</strong> Digitale Betriebsführung des Kunden (Auftragsplanung, Zeiterfassung, Anwesenheits- und Leistungsnachweis über NFC, Foto-Dokumentation, Kommunikation mit den Auftraggebern des Kunden über das Portal „Taskey Share", Rechnungsstellung und angrenzende Prozesse). Zwecke, die außerhalb dieses vertraglichen Rahmens liegen, sind Taskey nicht gestattet.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 3</span> Kategorien betroffener Personen</h2>
+    <ul class="plain">
+      <li>Mitarbeitende des Kunden (Angestellte, Aushilfen, Auszubildende)</li>
+      <li>Subunternehmer und deren Mitarbeitende, sofern sie im System hinterlegt werden</li>
+      <li>Ansprechpartner der Auftraggeber des Kunden (Gebäudeeigentümer, Facility-Manager, Verwaltungen)</li>
+      <li>Kontaktpersonen am Einsatzobjekt</li>
+      <li>Endkunden bzw. Bewohner am Einsatzobjekt, soweit sie in Fotos oder Berichten mittelbar abgebildet werden können</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 4</span> Kategorien personenbezogener Daten</h2>
+    <ul class="plain">
+      <li><strong>Stammdaten:</strong> Name, dienstliche Kontaktdaten, Rolle, Mandanten- bzw. Standortzuordnung</li>
+      <li><strong>Anmelde- und Zugriffsdaten:</strong> Login-Kennung, verschlüsselt gespeicherte Authentifizierungs-Merkmale, Session-Informationen, IP-Adresse (soweit für Sicherheit und Missbrauchserkennung erforderlich)</li>
+      <li><strong>Zeiterfassungs- und Anwesenheitsdaten:</strong> Arbeitszeit-Buchungen, Pausen, Krankmeldungen, Urlaubs- und Abwesenheitszeiten</li>
+      <li><strong>NFC-Scan- und Standortbezüge:</strong> ID des gescannten Tags, Zeitpunkt, ausführender Nutzer, dem Tag zugeordnetes Objekt bzw. Auftrag; auf Wunsch des Kunden zusätzlich Geokoordinaten</li>
+      <li><strong>Foto- und Mediendokumentation:</strong> Auftragsbezogene Fotos und Dateien, die inhaltlich Dritte abbilden können</li>
+      <li><strong>Objekt- und Auftragsdaten mit Personenbezug:</strong> Kontaktinformationen der Auftraggeber, Notizen, Kommunikationsverläufe im Portal „Taskey Share"</li>
+      <li><strong>Lohn- und Abrechnungsdaten:</strong> Kalkulations- und Auswertungsdaten, Grundlage der Rechnungsstellung; Bankverbindungen nur, soweit der Kunde diese aktiv einpflegt</li>
+      <li><strong>Support- und Kommunikationsdaten:</strong> Inhalte von Support-Tickets, E-Mails und in Notfällen aufgezeichneter Fernwartungssitzungen</li>
+    </ul>
+    <div class="info-box">
+      Besondere Kategorien personenbezogener Daten im Sinne des Art. 9 DSGVO (z.&thinsp;B. Gesundheitsdaten) verarbeitet Taskey nicht bestimmungsgemäß. Weist der Kunde Taskey eigenverantwortlich derartige Daten zu (z.&thinsp;B. durch Krankschreibungen als Datei-Upload), verarbeitet Taskey diese ausschließlich im Rahmen der Weisung und mit denselben technischen und organisatorischen Maßnahmen.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 5</span> Weisungsrecht des Verantwortlichen</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey verarbeitet personenbezogene Daten ausschließlich im Rahmen der getroffenen Vereinbarungen und nach dokumentierten Weisungen des Kunden. Als Weisungen gelten der Hauptvertrag, dieser AVV, die in der Betriebsplattform vom Kunden gesetzten Konfigurationen sowie einzelne Weisungen in Textform.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Weisungen können jederzeit vom Kunden gegenüber der in § 17 (2) benannten Kontaktstelle in Textform (z.&thinsp;B. E-Mail an <a href="mailto:support@taskey.de">support@taskey.de</a>) erteilt werden. Mündliche Weisungen sind unverzüglich in Textform zu bestätigen.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Ist Taskey der Auffassung, dass eine Weisung des Kunden gegen datenschutzrechtliche Vorschriften verstößt, informiert Taskey den Kunden unverzüglich. Taskey ist berechtigt, die Ausführung der betroffenen Weisung auszusetzen, bis sie durch den Kunden bestätigt oder geändert wird.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 6</span> Vertraulichkeit</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey verpflichtet sämtliche Beschäftigte, die Zugang zu personenbezogenen Daten des Kunden haben, schriftlich auf Vertraulichkeit gemäß Art. 28 Abs. 3 lit. b, Art. 29 und Art. 32 Abs. 4 DSGVO sowie – soweit einschlägig – auf das Fernmeldegeheimnis nach § 3 TTDSG.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Die Vertraulichkeitsverpflichtung besteht auch nach Beendigung des Beschäftigungsverhältnisses und des Hauptvertrages fort.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 7</span> Technische und organisatorische Maßnahmen</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey ergreift alle nach Art. 32 DSGVO erforderlichen technischen und organisatorischen Maßnahmen, um ein dem Risiko angemessenes Schutzniveau sicherzustellen. Die zum Zeitpunkt des Vertragsschlusses konkret umgesetzten Maßnahmen sind in <strong>Anlage 1</strong> beschrieben und Bestandteil dieses AVV.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Taskey ist berechtigt, die Maßnahmen fortzuschreiben und dem Stand der Technik anzupassen, sofern das vereinbarte Schutzniveau dabei nicht unterschritten wird. Wesentliche Änderungen werden dem Kunden in Textform mitgeteilt.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 8</span> Unterauftragsverarbeiter</h2>
+    <div class="clause" data-abs="(1)">
+      Der Kunde erteilt Taskey mit Abschluss dieses AVV die <strong>allgemeine Genehmigung</strong> zum Einsatz von Unterauftragsverarbeitern. Die zum Zeitpunkt des Vertragsschlusses eingesetzten Unterauftragsverarbeiter sind abschließend in <strong>Anlage 2</strong> aufgeführt.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Wechsel und Neuaufnahme:</strong> Beabsichtigt Taskey, einen weiteren Unterauftragsverarbeiter einzusetzen oder einen bestehenden auszutauschen, informiert Taskey den Kunden hierüber mindestens <strong>vier Wochen vor dem geplanten Wechsel</strong> in Textform (Name, Sitz, Leistung, Ort der Verarbeitung, Rechtsgrundlage etwaiger Drittlandtransfers).
+    </div>
+    <div class="clause" data-abs="(3)">
+      <strong>Widerspruchsrecht:</strong> Der Kunde kann dem Einsatz des neuen Unterauftragsverarbeiters innerhalb von vier Wochen nach Zugang der Mitteilung aus wichtigem datenschutzrechtlichen Grund widersprechen. Kann in diesem Fall keine für beide Parteien tragfähige Lösung gefunden werden, steht dem Kunden ein Sonderkündigungsrecht hinsichtlich der betroffenen Leistungen zu.
+    </div>
+    <div class="clause" data-abs="(4)">
+      Taskey verpflichtet den Unterauftragsverarbeiter vor Beginn der Verarbeitung schriftlich zu Datenschutzpflichten, die den in diesem AVV vereinbarten mindestens gleichwertig sind. Für die Einhaltung durch den Unterauftragsverarbeiter haftet Taskey wie für eigenes Handeln.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 9</span> Verarbeitung außerhalb des EWR</h2>
+    <div class="clause" data-abs="(1)">
+      Die Verarbeitung findet grundsätzlich innerhalb der Europäischen Union bzw. des Europäischen Wirtschaftsraums (EWR) statt. Etwaige Übermittlungen an Unterauftragsverarbeiter außerhalb des EWR sind in Anlage 2 gesondert gekennzeichnet.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Für solche Übermittlungen sichert Taskey ein angemessenes Datenschutzniveau ab, insbesondere durch einen Angemessenheitsbeschluss der Europäischen Kommission (Art. 45 DSGVO), durch die Standardvertragsklauseln der Europäischen Kommission in ihrer jeweils gültigen Fassung (Art. 46 Abs. 2 lit. c DSGVO) oder durch eine Zertifizierung nach dem EU-US Data Privacy Framework, soweit anwendbar.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 10</span> Unterstützung bei Betroffenenrechten</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey unterstützt den Kunden mit angemessenen technischen und organisatorischen Maßnahmen bei der Wahrnehmung der Rechte betroffener Personen nach Art. 12 bis 23 DSGVO (insbesondere Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch).
+    </div>
+    <div class="clause" data-abs="(2)">
+      Wendet sich eine betroffene Person unmittelbar an Taskey, verweist Taskey diese Person an den Kunden und informiert den Kunden unverzüglich. Ohne ausdrückliche Weisung des Kunden erteilt Taskey keine Auskünfte.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 11</span> Unterstützung bei Art. 32–36 DSGVO</h2>
+    <p>Taskey unterstützt den Kunden angemessen bei der Einhaltung der Pflichten aus Art. 32 (Sicherheit der Verarbeitung), Art. 33 (Meldung von Datenschutzverletzungen), Art. 34 (Benachrichtigung betroffener Personen), Art. 35 (Datenschutz-Folgenabschätzung) und Art. 36 DSGVO (vorherige Konsultation).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 12</span> Meldung von Datenschutzverletzungen</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey informiert den Kunden bei einer Verletzung des Schutzes personenbezogener Daten (Art. 4 Nr. 12 DSGVO) unverzüglich, spätestens jedoch innerhalb von <strong>48 Stunden nach Kenntniserlangung</strong>, in Textform.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Die Meldung enthält, soweit bekannt: eine Beschreibung der Art der Verletzung, die betroffenen Kategorien und Näherungswerte zur Zahl der Betroffenen und Datensätze, die wahrscheinlichen Folgen, die ergriffenen bzw. vorgeschlagenen Maßnahmen sowie Namen und Kontaktdaten der zuständigen Stelle bei Taskey.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Werden zum Zeitpunkt der ersten Meldung nicht alle Informationen vorliegen, werden diese unverzüglich nachgereicht.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 13</span> Löschung und Rückgabe nach Vertragsende</h2>
+    <div class="clause" data-abs="(1)">
+      Nach Beendigung des Hauptvertrages stellt Taskey dem Kunden für einen Zeitraum von <strong>30 Kalendertagen</strong> einen vollständigen Export der personenbezogenen Daten in einem gängigen, strukturierten Format bereit (Standard: CSV bzw. JSON für strukturierte Daten, Original-Dateien für Fotos und Uploads).
+    </div>
+    <div class="clause" data-abs="(2)">
+      Nach Ablauf der Frist aus Absatz (1) löscht Taskey sämtliche personenbezogenen Daten des Kunden unwiderruflich, einschließlich aller Kopien in Historien, Objekt-Speicher, Backups und Logs. Löschungen aus Backups erfolgen im Rahmen des regulären Backup-Rotations-Zyklus (RPO 24&nbsp;h, RTO 24&nbsp;h), spätestens jedoch innerhalb von <strong>90 Kalendertagen</strong> nach dem Löschauftrag.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Gesetzliche Aufbewahrungspflichten Taskeys (insbesondere handels- und steuerrechtliche Fristen für Rechnungsstellungs- und Zahlungsdaten) bleiben unberührt. Die betreffenden Daten werden für die Dauer der Aufbewahrungspflicht gesondert vor Zugriff geschützt.
+    </div>
+    <div class="clause" data-abs="(4)">
+      Die Löschung wird dem Kunden auf Anfrage in Textform bestätigt.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 14</span> Nachweise, Kontrollen und Audits</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey weist die Einhaltung der Pflichten aus diesem AVV auf Anforderung des Kunden in geeigneter Weise nach, insbesondere durch die aktuelle Fassung von Anlage 1, durch Vorlage aktueller Auditberichte anerkannter Prüfer oder Zertifizierungen, soweit vorhanden.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Der Kunde ist berechtigt, sich – auch durch einen zur Verschwiegenheit verpflichteten Dritten – vor Ort von der Einhaltung der Datenschutzpflichten zu überzeugen. Vor-Ort-Kontrollen werden mit einer Ankündigungsfrist von mindestens <strong>zehn Werktagen</strong> zwischen den Parteien abgestimmt, erfolgen während der üblichen Geschäftszeiten und dürfen den Betrieb von Taskey nicht unangemessen beeinträchtigen.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Die Kosten der Kontrolle trägt der Kunde, es sei denn, es werden datenschutzrechtliche Verstöße festgestellt, die Taskey zuzurechnen sind.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 15</span> Haftung</h2>
+    <p>Die Haftung der Parteien richtet sich nach den Regelungen des Hauptvertrages und den zwingenden gesetzlichen Vorschriften, insbesondere Art. 82 DSGVO. Eine gesamtschuldnerische Haftung nach Art. 82 Abs. 4 DSGVO bleibt unberührt.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 16</span> Vorrang der AVV in Datenschutzfragen</h2>
+    <p>Bei Widersprüchen zwischen diesem AVV und dem Hauptvertrag oder sonstigen Vereinbarungen der Parteien gehen die Regelungen dieses AVV in datenschutzrechtlichen Fragen vor.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">§ 17</span> Schlussbestimmungen</h2>
+    <div class="clause" data-abs="(1)">
+      Änderungen und Ergänzungen dieses AVV bedürfen der Textform.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Kontaktstelle Datenschutz bei Taskey:</strong> E-Mail <a href="mailto:support@taskey.de">support@taskey.de</a>, Anschrift Schulz &amp; Stosse GbR, In der Acht 44, 66333 Völklingen.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Sollten einzelne Bestimmungen dieses AVV unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+    </div>
+    <div class="clause" data-abs="(4)">
+      Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand für Streitigkeiten mit Kaufleuten ist Saarbrücken.
+    </div>
+    <div class="clause" data-abs="(5)">
+      Dieser AVV wird mit Wirksamwerden des Hauptvertrages wirksam und endet mit dessen Beendigung; die Regelungen zur Löschung und Rückgabe (§ 13) sowie zur Vertraulichkeit (§ 6) gelten nachvertraglich fort.
+    </div>
+  </section>
+
+  <div class="signature-block">
+    <div class="party">
+      <strong>Für den Kunden (Verantwortlicher)</strong>
+      <span class="field">Ort, Datum: ____________________</span>
+      <span class="field">Name, Funktion: ____________________</span>
+      <span class="field">Unterschrift: ____________________</span>
+    </div>
+    <div class="party">
+      <strong>Für Taskey (Auftragsverarbeiter)</strong>
+      <span>Schulz &amp; Stosse GbR</span>
+      <span class="field">Ort, Datum: ____________________</span>
+      <span class="field">Name, Funktion: ____________________</span>
+      <span class="field">Unterschrift: ____________________</span>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       Anlage 1 — Technische und organisatorische Maßnahmen (TOM)
+       ===================================================================== -->
+  <div class="anlage">
+    <h2>Anlage 1 — Technische und organisatorische Maßnahmen (TOM)</h2>
+    <p class="subtitle">Beschreibung gemäß Art. 32 DSGVO in der Fassung vom Stand August 2026.</p>
+
+    <h3>1. Vertraulichkeit</h3>
+    <ul class="plain">
+      <li><strong>Zutrittskontrolle:</strong> Die Verarbeitung erfolgt in Rechenzentren, die durch physische Zutrittskontrollen (Vereinzelungsanlagen, Videoüberwachung, protokollierten Zutritt) gesichert sind. <span class="todo-box"><strong>TODO:</strong> konkreten Betreiber und Standort des Dokploy-Servers einsetzen (Ziel: Deutschland).</span></li>
+      <li><strong>Zugangskontrolle:</strong> Zugriff auf die Systeme nur nach Multi-Faktor-Authentifizierung; individuelle Nutzerkonten für Beschäftigte; Passwort-Richtlinien nach Stand der Technik; Sperrung bei Inaktivität.</li>
+      <li><strong>Zugriffskontrolle:</strong> Rollen- und Berechtigungskonzept mit Mandantentrennung. Anwendungsseitige Isolation der Kundendaten durch mandantenspezifische Kennzeichnung und Row-Level-Security in der Datenbank.</li>
+      <li><strong>Trennungskontrolle:</strong> Logische Trennung von Produktion, Staging und Entwicklung. Test- und Analysedaten werden vor Verwendung anonymisiert oder pseudonymisiert.</li>
+      <li><strong>Pseudonymisierung:</strong> Wo möglich werden personenbezogene Bezüge in Auswertungen pseudonymisiert; interne Auswertungen erfolgen aggregiert.</li>
+    </ul>
+
+    <h3>2. Integrität</h3>
+    <ul class="plain">
+      <li><strong>Weitergabekontrolle / Transportverschlüsselung:</strong> Kommunikation zwischen Endgeräten, Anwendungsservern und Datenbanken ausschließlich über TLS ≥ 1.2 (HSTS aktiviert).</li>
+      <li><strong>Eingabekontrolle:</strong> Sicherheitsrelevante Vorgänge (Anmeldung, Berechtigungsänderungen, Löschungen) werden mit Zeitstempel und Nutzerbezug protokolliert.</li>
+      <li><strong>Datenintegrität:</strong> Backups mit Prüfsummen-Verifikation.</li>
+    </ul>
+
+    <h3>3. Verfügbarkeit und Belastbarkeit</h3>
+    <ul class="plain">
+      <li><strong>Sicherungskonzept:</strong> Tägliche automatisierte Backups der Datenbanken und der im Objekt-Speicher abgelegten Dateien.</li>
+      <li><strong>RPO / RTO:</strong> Recovery Point Objective 24&nbsp;Stunden, Recovery Time Objective 24&nbsp;Stunden.</li>
+      <li><strong>Monitoring:</strong> Externes Verfügbarkeits-Monitoring am Übergabepunkt (§ 1 SLA), interne Metriken über Redis- und Anwendungslogs, Alarmierung bei Ausfällen.</li>
+      <li><strong>Härtung:</strong> Aktuelle Sicherheits-Patches, minimale Container-Images, keine Klartext-Speicherung von Zugangsdaten in Anwendungscode.</li>
+    </ul>
+
+    <h3>4. Verfahren zur regelmäßigen Überprüfung, Bewertung und Evaluierung</h3>
+    <ul class="plain">
+      <li><strong>Datenschutz-Management:</strong> Verzeichnis von Verarbeitungstätigkeiten; interne Richtlinien zur Datenverarbeitung; Awareness-Schulungen der Beschäftigten.</li>
+      <li><strong>Vorfall-Management:</strong> Definierter Prozess zur Behandlung und Meldung von Sicherheitsvorfällen (§ 12).</li>
+      <li><strong>Löschkonzept:</strong> Automatisierte Umsetzung der Löschfristen aus § 13; Löschung aus Backups im Rahmen der regulären Rotation, spätestens innerhalb von 90 Tagen.</li>
+      <li><strong>Fehler-Monitoring:</strong> Zentralisiertes Error-Tracking; personenbezogene Bezüge werden vor Übertragung minimiert.</li>
+    </ul>
+
+    <div class="todo-box">
+      <strong>TODO vor Veröffentlichung:</strong> Bitte gegen den aktuellen Betriebsstand prüfen und ergänzen — insbesondere (a) tatsächlicher Standort des Dokploy-Servers, (b) konkrete Verschlüsselung „at rest" (Datenbank / R2), (c) Zwei-Faktor-Verfahren, (d) tatsächlicher Backup-Aufbewahrungszeitraum, (e) etwaige ISO/RAL/BSI-Grundschutz-Zertifikate.
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       Anlage 2 — Unterauftragsverarbeiter
+       ===================================================================== -->
+  <div class="anlage">
+    <h2>Anlage 2 — Unterauftragsverarbeiter</h2>
+    <p class="subtitle">Stand August 2026. Änderungen werden gemäß § 8 dieses AVV mitgeteilt.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name / Anbieter</th>
+          <th>Sitz</th>
+          <th>Erbrachte Leistung</th>
+          <th>Ort der Verarbeitung</th>
+          <th>Drittland?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cloudflare, Inc. — Cloudflare R2</td>
+          <td>USA</td>
+          <td>Objekt-Speicher für Foto- und Dateidokumentation</td>
+          <td>Region EU (Endpoint <code>*.eu.r2.cloudflarestorage.com</code>)</td>
+          <td>Nein (EU-Region gewählt); für Fallbacks Standardvertragsklauseln</td>
+        </tr>
+        <tr>
+          <td>Cloudflare, Inc. — Content Delivery Network</td>
+          <td>USA</td>
+          <td>Reverse Proxy, DDoS-Schutz, statische Auslieferung</td>
+          <td>global verteiltes CDN, primäre Region EU</td>
+          <td>Ggf. ja — Absicherung über Standardvertragsklauseln</td>
+        </tr>
+        <tr>
+          <td>Dokploy-Betreiber / Hosting-Provider für Backend-Cluster</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO</span></td>
+          <td>Betrieb der Backend-Services (Docker Swarm), PostgreSQL, Redis</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Ziel: Rechenzentrum in Deutschland</span></td>
+          <td>Nein (Ziel)</td>
+        </tr>
+        <tr>
+          <td>Vercel Inc.</td>
+          <td>USA</td>
+          <td>Hosting der Marketing-Website taskeyapp.com (keine Kunden-Betriebsdaten)</td>
+          <td>Region Frankfurt (fra1)</td>
+          <td>Nein (EU-Region); Standardvertragsklauseln vorhanden</td>
+        </tr>
+        <tr>
+          <td>Resend, Inc.</td>
+          <td>USA</td>
+          <td>Transaktionaler E-Mail-Versand (Passwort-Reset, Einladungen, Systemnachrichten)</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — EU-Region prüfen</span></td>
+          <td>Ggf. ja — Standardvertragsklauseln bzw. EU-US Data Privacy Framework</td>
+        </tr>
+        <tr>
+          <td>Functional Software, Inc. („Sentry")</td>
+          <td>USA</td>
+          <td>Fehler- und Absturzberichte der Anwendung</td>
+          <td><span class="todo-box" style="margin:0;padding:2px 6px;">TODO — Region prüfen (EU verfügbar)</span></td>
+          <td>Ggf. ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
+        </tr>
+        <tr>
+          <td>Stripe Payments Europe, Ltd.</td>
+          <td>Irland</td>
+          <td>Zahlungsabwicklung (nur bei aktiviertem Billing-Layer)</td>
+          <td>EU / EWR</td>
+          <td>Nein (Vertragspartner in Irland)</td>
+        </tr>
+        <tr>
+          <td>Google Ireland Ltd. — Google Maps Platform</td>
+          <td>Irland</td>
+          <td>Kartendarstellung, Geocoding im Dashboard</td>
+          <td>EU sowie ggf. USA</td>
+          <td>Ggf. ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
+        </tr>
+        <tr>
+          <td>Push-Benachrichtigungen (Apple APNs, Google FCM)</td>
+          <td>USA</td>
+          <td>Zustellung mobiler Push-Benachrichtigungen — nur Geräte-Token und Nachrichten-ID, keine Inhaltsdaten</td>
+          <td>global</td>
+          <td>Ja — Standardvertragsklauseln bzw. Data Privacy Framework</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="todo-box">
+      <strong>TODO vor Veröffentlichung:</strong> Diese Liste ist auf Basis der aktuellen Konfigurationsdateien erstellt. Bitte vollständig verifizieren und ergänzen (insbesondere: konkreter Dokploy-Hosting-Provider und Rechenzentrumsstandort; ob bei Resend und Sentry die EU-Regionen tatsächlich gebucht sind; ob Web-Analytics oder Session-Recording eingesetzt werden; ob externer Backup-Provider verwendet wird).
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Schulz &amp; Stosse GbR &ensp;|&ensp; Auftragsverarbeitungsvertrag &ensp;|&ensp; Stand August 2026 &ensp;|&ensp; Völklingen
+  </footer>
+
+</div>
+</body>
+</html>

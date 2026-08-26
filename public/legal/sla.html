@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Level Agreement (SLA) – Taskey Betriebsplattform</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: #1f2937; max-width: 1100px; margin: 0 auto; padding: 30px; background: #f1f5f9; }
+        .doc-card { background: #fff; padding: 45px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 8px solid #10b981; }
+        .sla-card { border-top: 8px solid #3b82f6; }
+        h1 { color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 15px; font-size: 1.8em; }
+        h2 { color: #10b981; margin-top: 35px; font-size: 1.4em; border-left: 4px solid #10b981; padding-left: 15px; }
+        .sla-card h2 { color: #3b82f6; border-left-color: #3b82f6; }
+        h3 { color: #1e293b; font-size: 1.05em; margin-top: 20px; margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+        th, td { border: 1px solid #e5e7eb; padding: 12px; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .danger-box { background: #fef2f2; border-left: 5px solid #ef4444; padding: 20px; color: #991b1b; margin: 20px 0; font-weight: 600; }
+        .info-box { background: #eff6ff; border-left: 5px solid #3b82f6; padding: 18px 20px; color: #1e3a8a; margin: 20px 0; font-size: 0.95em; }
+        .tarif-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #d1fae5; color: #065f46; font-size: 0.8em; font-weight: bold; }
+        .meta { font-size: 0.9em; color: #64748b; margin-bottom: 20px; }
+        footer { text-align: center; color: #94a3b8; font-size: 0.8em; margin-top: 50px; }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .doc-card { box-shadow: none; border-top-width: 3px; padding: 0; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-card sla-card">
+        <h1>Service Level Agreement (SLA)</h1>
+        <div class="meta">
+            <strong>Anbieter:</strong> Schulz &amp; Stosse GbR, In der Acht 44, 66333 Völklingen &nbsp;|&nbsp;
+            <strong>Geltungsbereich:</strong> Taskey Betriebsplattform (Web-Dashboard, Mobile App, API, Datenbank) &nbsp;|&nbsp;
+            <strong>Stand:</strong> August 2026
+        </div>
+
+        <h2>§ 1 Geltungsbereich, Vorrang &amp; Übergabepunkt</h2>
+        <p>(1) Dieses SLA ist verbindliche Anlage zu den AGB (B2B) sowie zu allen darüber hinaus geschlossenen Einzelverträgen zwischen Taskey und dem Kunden.</p>
+        <p>(2) <strong>Vorrang individueller Vereinbarungen (§ 305b BGB):</strong> Regelt der Individualvertrag einen im SLA behandelten Punkt (insbesondere Verfügbarkeit, Wartungsfenster, Reaktionszeiten, Support-Umfang, Gutschriften), so geht die individuelle Regelung diesem SLA vor. Ist im Einzelvertrag lediglich ein Verfügbarkeitswert (z.&thinsp;B. 98 %) vereinbart, gilt dieser Wert; die Zuordnung zu einer Tarifstufe der Verfügbarkeitstabelle in § 2 erfolgt anhand dieses Werts.</p>
+        <p>(3) <strong>Übergabepunkt:</strong> „Übergabepunkt des Rechenzentrums" bezeichnet den öffentlich erreichbaren Netzeingang der Server-Infrastruktur, an dem die Taskey-Dienste (HTTPS-Endpoint) dem Internet zur Verfügung gestellt werden. Nur Störungen, die an diesem Übergabepunkt messbar sind, werden als Ausfallzeit im Sinne dieses SLA gewertet. Störungen auf Seiten des Kunden (Endgeräte, Client-Netzwerk, Zugangsprovider des Kunden, öffentliche Internet-Routing-Störungen zwischen Kunde und Rechenzentrum) fallen nicht darunter.</p>
+
+        <h2>§ 2 Verfügbarkeit</h2>
+        <p>(1) Taskey stellt die Betriebsplattform mit der folgenden Verfügbarkeit pro Kalendermonat bereit. Ist im Einzelvertrag ein abweichender Verfügbarkeitswert vereinbart, gilt § 1 (2).</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarifstufe</th>
+                    <th>Verfügbarkeit</th>
+                    <th>Max. Ausfall / Monat</th>
+                    <th>Reaktionszeit P1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tarif-badge">START</span></td>
+                    <td>97,0 %</td>
+                    <td>~ 21,9 Stunden</td>
+                    <td>24 h (Mo–Fr, 09:00–18:00 MEZ/MESZ)</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge">GROW</span></td>
+                    <td>98,0 %</td>
+                    <td>~ 14,6 Stunden</td>
+                    <td>12 h (Mo–Fr, 09:00–18:00 MEZ/MESZ)</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge">SCALE</span></td>
+                    <td>98,5 %</td>
+                    <td>~ 11,0 Stunden</td>
+                    <td>8 h (Mo–Fr, 09:00–18:00 MEZ/MESZ)</td>
+                </tr>
+                <tr>
+                    <td><span class="tarif-badge" style="background:#3b82f6; color:#fff;">ENTERPRISE</span></td>
+                    <td>99,9 %</td>
+                    <td>~ 43 Minuten</td>
+                    <td>2 h (24/7)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>(2) Von der Verfügbarkeitsberechnung ausgenommen sind angekündigte Wartungsfenster gemäß § 3 sowie Ausfälle aufgrund höherer Gewalt gemäß § 7 (2) der AGB (B2B).</p>
+        <p>(3) Die Messung erfolgt am Übergabepunkt nach § 1 (3) durch ein standardisiertes externes Monitoring in Intervallen von höchstens fünf Minuten.</p>
+
+        <h2>§ 3 Wartungsfenster</h2>
+        <p>(1) <strong>Umfang:</strong> Angekündigte Wartungsarbeiten sind auf insgesamt <strong>höchstens 24 Stunden pro Kalendermonat</strong> begrenzt.</p>
+        <p>(2) <strong>Ankündigung:</strong> Wartungsfenster werden dem Kunden mindestens <strong>48 Stunden vorher in Textform</strong> (E-Mail oder In-App-Benachrichtigung) angekündigt und finden – soweit technisch möglich – zwischen 20:00 und 06:00 Uhr MEZ/MESZ statt.</p>
+        <p>(3) <strong>Notfall-Wartung:</strong> Sicherheitskritische Notfall-Wartungen (z.&thinsp;B. Einspielen eines Zero-Day-Patches) dürfen ohne Einhaltung der 48-Stunden-Frist durchgeführt werden. Der Kunde wird in diesem Fall unverzüglich informiert; die Notfall-Wartung wird auf das monatliche Kontingent nach Absatz (1) angerechnet, sofern sie länger als 30 Minuten dauert.</p>
+        <p>(4) Ordnungsgemäß angekündigte und im Kontingent nach Absatz (1) liegende Wartungsfenster gelten <strong>nicht als Ausfallzeit</strong> im Sinne von § 2.</p>
+
+        <h2>§ 4 Störungsklassen &amp; Support-Reaktionszeiten</h2>
+        <p>(1) Störungsmeldungen des Kunden werden nach folgenden Klassen priorisiert:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Klasse</th>
+                    <th>Definition</th>
+                    <th>Beispiel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>P1 – Ausfall</strong></td>
+                    <td>Die Betriebsplattform ist vollständig nicht erreichbar oder eine zentrale Kernfunktion (Anmeldung, Zeiterfassung, Auftragsplanung) ist für alle Nutzer des Kunden dauerhaft nicht nutzbar.</td>
+                    <td>Login weltweit unmöglich; komplettes Dashboard liefert HTTP&nbsp;5xx.</td>
+                </tr>
+                <tr>
+                    <td><strong>P2 – Erhebliche Einschränkung</strong></td>
+                    <td>Eine wichtige Funktion ist fehlerhaft oder deutlich verlangsamt, ein Workaround ist jedoch möglich; einzelne Nutzergruppen sind spürbar beeinträchtigt.</td>
+                    <td>Foto-Uploads schlagen sporadisch fehl; NFC-Scans werden mit Verzögerung übertragen.</td>
+                </tr>
+                <tr>
+                    <td><strong>P3 – Sonstige Störung</strong></td>
+                    <td>Kleinere Fehler ohne wesentliche Auswirkung auf den laufenden Betrieb (kosmetische Fehler, einzelne Randfunktionen).</td>
+                    <td>Falsche Sortierung in einer Liste; einzelnes Icon lädt nicht.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>(2) Reaktionszeit ist die Zeit bis zur ersten qualifizierten Rückmeldung durch den Support (nicht die Zeit bis zur endgültigen Behebung). Reaktionszeiten P1 nach Tarifstufe siehe § 2; für P2 und P3 gelten:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Klasse</th>
+                    <th>START / GROW / SCALE</th>
+                    <th>ENTERPRISE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P2</td>
+                    <td>1 Werktag</td>
+                    <td>4 Stunden (Mo–Fr, 09:00–18:00 MEZ/MESZ)</td>
+                </tr>
+                <tr>
+                    <td>P3</td>
+                    <td>3 Werktage</td>
+                    <td>2 Werktage</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>(3) Werktage sind Montag bis Freitag, ausgenommen bundesweite gesetzliche Feiertage in Deutschland. Störungsmeldungen sind per E-Mail an <a href="mailto:support@taskey.de">support@taskey.de</a> zu richten und müssen eine Beschreibung des Fehlers, den betroffenen Nutzer bzw. Mandanten sowie den Zeitpunkt des ersten Auftretens enthalten.</p>
+
+        <h2>§ 5 Priority-Support (Zusatzleistung)</h2>
+        <p>(1) Ist im Einzelvertrag „Priority-Support" vereinbart, gelten unabhängig von der Tarifstufe folgende Zusagen:</p>
+        <ul style="margin-left:20px;">
+            <li><strong>Reaktionszeit:</strong> spätestens innerhalb eines Werktags für alle Störungsklassen (P1–P3).</li>
+            <li><strong>Kanäle:</strong> E-Mail an <a href="mailto:support@taskey.de">support@taskey.de</a> sowie telefonische Erreichbarkeit über die dem Kunden gesondert mitgeteilte Priority-Support-Rufnummer.</li>
+            <li><strong>Servicezeiten Telefon:</strong> Mo–Fr 09:00–18:00 MEZ/MESZ, außerhalb dieser Zeiten Voicemail mit garantierter Rückmeldung am nächsten Werktag.</li>
+            <li>Ein benannter Ansprechpartner beim Kunden ist zu hinterlegen.</li>
+        </ul>
+        <p>(2) Priority-Support ersetzt nicht die Verfügbarkeitszusagen aus § 2; er ergänzt lediglich das Support-Regime.</p>
+
+        <h2>§ 6 Reporting</h2>
+        <p>(1) Taskey stellt monatlich einen Uptime-Report bereit, der die tatsächliche Verfügbarkeit am Übergabepunkt (§ 1 (3)) sowie die Wartungsfenster ausweist.</p>
+        <p>(2) In den Tarifen START / GROW / SCALE erfolgt der Report auf Anfrage; im Tarif ENTERPRISE sowie bei vereinbartem Priority-Support proaktiv innerhalb der ersten fünf Werktage des Folgemonats.</p>
+
+        <h2>§ 7 Weiterentwicklung &amp; Wartung</h2>
+        <p>(1) Taskey schuldet „Best Efforts" für die kontinuierliche Wartung und die Bereitstellung von Sicherheitsfixes.</p>
+        <p>(2) Ein Anspruch auf die Umsetzung individueller Wunschfunktionen (Custom Features) besteht nicht, sofern nicht separat vereinbart.</p>
+        <p>(3) Taskey führt ein monatliches Changelog. Sicherheitsrelevante Änderungen werden zusätzlich per E-Mail an die vom Kunden hinterlegte Administrator-Adresse angekündigt.</p>
+
+        <!--
+            HINWEIS AN REDAKTION / RECHT:
+            Für § 8 (Rechtsfolgen / Gutschriften) liegen zwei Varianten zur Entscheidung vor.
+            Aktuell eingebaut: VARIANTE B (konservativ) — Gutschriften nur für Self-Service-Tarife,
+            nicht bei abweichender Individualvereinbarung.
+            VARIANTE A (Gutschriften auch für Individualvertragskunden mit Antragsfrist, Nachweis,
+            Deckelung) steht im Konsistenzbericht zur Auswahl.
+        -->
+        <h2>§ 8 Rechtsfolgen bei Nichteinhaltung (Gutschrift)</h2>
+        <div class="info-box">
+            Diese Regelung gilt ausschließlich für Kunden in den Self-Service-Tarifen START, GROW, SCALE und ENTERPRISE. Für Kunden mit individueller Vertragsabrede zur Verfügbarkeit gelten ausschließlich die dort vereinbarten Rechtsfolgen; Gutschriften nach dieser Regelung stehen ihnen nicht zu.
+        </div>
+        <p>(1) Wird die vertraglich zugesicherte monatliche Verfügbarkeit nach § 2 in einem Kalendermonat unterschritten, erhält der Kunde auf schriftlichen Antrag eine Gutschrift auf die nächste Monatsrechnung. Die Höhe richtet sich nach der Tarifstufe:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarifstufe</th>
+                    <th>Gutschrift je 1,0 % Unterschreitung*</th>
+                    <th>Deckel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="tarif-badge">START</span></td><td>1 % der Monatsgebühr</td><td>max. 10 % der Monatsgebühr</td></tr>
+                <tr><td><span class="tarif-badge">GROW</span></td><td>2 % der Monatsgebühr</td><td>max. 20 % der Monatsgebühr</td></tr>
+                <tr><td><span class="tarif-badge">SCALE</span></td><td>5 % der Monatsgebühr</td><td>max. 30 % der Monatsgebühr</td></tr>
+                <tr><td><span class="tarif-badge" style="background:#3b82f6; color:#fff;">ENTERPRISE</span></td><td>10 % je 0,1 % Unterschreitung</td><td>max. 50 % der Monatsgebühr</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:0.85em; color:#64748b;">* Beim Tarif ENTERPRISE erfolgt die Staffelung feiner (je 0,1 % Unterschreitung).</p>
+        <p>(2) <strong>Antragsfrist:</strong> Der Antrag auf Gutschrift ist innerhalb von 30 Kalendertagen nach Ende des betroffenen Monats in Textform an <a href="mailto:support@taskey.de">support@taskey.de</a> zu richten. Später eingehende Anträge sind ausgeschlossen.</p>
+        <p>(3) <strong>Nachweis:</strong> Grundlage der Berechnung ist der Uptime-Report nach § 6. Bei Abweichung der vom Kunden vorgelegten Messwerte gilt der Uptime-Report von Taskey; der Kunde kann eine gemeinsame Analyse verlangen.</p>
+        <p>(4) Die Gutschrift stellt den abschließenden Ausgleich für die Unterschreitung dar. Weitergehende Schadensersatzansprüche des Kunden richten sich nach § 7 der AGB (B2B) und bleiben von dieser Regelung unberührt.</p>
+    </div>
+
+    <footer>
+        &copy; 2026 Schulz &amp; Stosse GbR &nbsp;|&nbsp; Stand: August 2026 &nbsp;|&nbsp; Gerichtsstand: Saarbrücken
+    </footer>
+
+</body>
+</html>

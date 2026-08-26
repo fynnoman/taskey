@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGB (B2B) – Taskey Projektsoftware</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #fafaf8;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --border: #e2e2dd;
+    --muted: #6b7280;
+    --highlight-bg: #fffbe6;
+    --highlight-border: #f59e0b;
+    --section-gap: 2.8rem;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.72;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem 6rem;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  header .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  header .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 2rem;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  header .meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ── Sections ── */
+  section {
+    margin-bottom: var(--section-gap);
+  }
+
+  section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1.5px solid var(--border);
+    color: var(--ink);
+  }
+
+  section h2 .num {
+    color: var(--accent);
+    margin-right: 0.3em;
+  }
+
+  .clause {
+    margin-bottom: 0.85rem;
+    padding-left: 1.6rem;
+    position: relative;
+  }
+
+  .clause::before {
+    content: attr(data-abs);
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    top: 0.12em;
+  }
+
+  .clause strong {
+    font-weight: 600;
+  }
+
+  /* ── Highlighted / Changed clause ── */
+  .clause.changed {
+    background: var(--highlight-bg);
+    border-left: 3px solid var(--highlight-border);
+    padding: 0.85rem 1rem 0.85rem 1.8rem;
+    border-radius: 0 6px 6px 0;
+    margin-left: -0.2rem;
+  }
+
+  .clause.changed::before {
+    left: 0.55rem;
+  }
+
+  .change-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--highlight-border);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  /* ── Haftungsdeckel box ── */
+  .info-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 14.5px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1.5px solid var(--border);
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  /* ── Print ── */
+  @media print {
+    body { font-size: 12pt; }
+    .page { padding: 0; max-width: 100%; }
+    .clause.changed { border-left-color: #000; background: #f5f5f5; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 2rem 1.2rem 3rem; }
+    header h1 { font-size: 1.7rem; }
+    header .meta { flex-direction: column; gap: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="label">Allgemeine Geschäftsbedingungen (B2B)</div>
+    <h1>Taskey Projektsoftware</h1>
+    <div class="meta">
+      <span><strong>Anbieter:</strong> Schulz &amp; Stosse GbR, In der Acht 44, 66333 Völklingen</span>
+      <span><strong>Vertragspartner:</strong> Ausschließlich Unternehmer (§ 14 BGB), jur. Personen d. öR oder öR-Sondervermögen</span>
+      <span><strong>Stand:</strong> März 2026</span>
+    </div>
+  </header>
+
+  <!-- § 1 -->
+  <section>
+    <h2><span class="num">§ 1</span> Vertragsgegenstand &amp; Infrastruktur</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey stellt dem Kunden eine cloudbasierte Software-Infrastruktur (SaaS) zur Betriebsführung zur Verfügung. Dies umfasst das Web-Dashboard, die mobile App sowie die Datenbank-Infrastruktur.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Der Funktionsumfang (Speicherplatz, Historie, Features) richtet sich nach dem gewählten Tarif (START, GROW, SCALE oder ENTERPRISE).
+    </div>
+    <div class="clause" data-abs="(3)">
+      Ergänzend zu diesen AGB gilt das <strong>Service Level Agreement (SLA)</strong> als verbindliche technische Anlage.
+    </div>
+  </section>
+
+  <!-- § 2 -->
+  <section>
+    <h2><span class="num">§ 2</span> Software-Verfügbarkeit &amp; Support</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey gewährleistet die System-Verfügbarkeit gemäß den im SLA definierten Parametern (z.&thinsp;B. 97,0 % Uptime im START-Tarif). Die Messung erfolgt via Ping-Test am Übergabepunkt des Rechenzentrums.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Support-Leistungen und Reaktionszeiten (Response-Times) richten sich nach der Priorisierung (P1–P3) und dem gebuchten Tarif gemäß SLA.
+    </div>
+  </section>
+
+  <!-- § 3 -->
+  <section>
+    <h2><span class="num">§ 3</span> Nutzungsrechte &amp; Geistiges Eigentum</h2>
+    <div class="clause" data-abs="(1)">
+      Der Kunde erhält ein einfaches, nicht übertragbares Recht zur Nutzung der Software für eigene betriebliche Zwecke.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Alle Rechte am Quellcode und der Software-IP verbleiben bei Taskey. Der Kunde behält alle Rechte an den von ihm eingespeisten Daten.
+    </div>
+  </section>
+
+  <!-- § 4 -->
+  <section>
+    <h2><span class="num">§ 4</span> NFC-Hardware (Kaufkomponente)</h2>
+    <div class="clause" data-abs="(1)">
+      Der Erwerb von NFC-Tags unterliegt dem Kaufrecht. Das Eigentum geht erst nach vollständiger Bezahlung über.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Rügepflicht:</strong> Mängel an Hardware sind innerhalb von 7 Tagen schriftlich anzuzeigen (§ 377 HGB).
+    </div>
+    <div class="clause" data-abs="(3)">
+      <strong>Haftungsausschluss Hardware:</strong> Taskey haftet nicht für die dauerhafte Lesbarkeit oder physische Integrität der Tags unter Baustellenbedingungen (Witterung, Abfallen, mechanische Zerstörung). NFC-Anzeigen sind rein informativ und ersetzen keine gesetzliche Sichtprüfung von Maschinen.
+    </div>
+  </section>
+
+  <!-- § 5 -->
+  <section>
+    <h2><span class="num">§ 5</span> Preise &amp; Pay-per-Active-User</h2>
+    <div class="clause" data-abs="(1)">
+      Die Abrechnung erfolgt pro „Active User" (aktiviertes Mitarbeiterprofil) gemäß der jeweils gültigen Preisliste.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Alle Preise sind Nettopreise zzgl. gesetzlicher Umsatzsteuer. Zahlungen sind im Voraus fällig.
+    </div>
+  </section>
+
+  <!-- § 6 – mit geändertem Absatz 3 -->
+  <section>
+    <h2><span class="num">§ 6</span> Testphase, Laufzeit, Kündigung &amp; Datenexport</h2>
+    <div class="clause" data-abs="(1)">
+      <strong>Monatliche Tarife:</strong> Kündigungsfrist von 7 Tagen zum Ende des Abrechnungsmonats.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Jährliche Tarife:</strong> Mindestlaufzeit 12 Monate. Die Kündigungsfrist beträgt 30 Tage vor Ablauf der Laufzeit.
+    </div>
+    <div class="clause" data-abs="(3)">
+      <strong>Kostenlose Testphase &amp; automatische Vertragsübernahme:</strong>
+      Jeder Neukunde erhält eine kostenlose Testphase von 14 Kalendertagen. Nach Ablauf der Testphase geht der Vertrag automatisch in das vom Kunden gewählte kostenpflichtige Paket über, sofern der Kunde nicht zuvor kündigt. Taskey informiert den Kunden spätestens 3 Tage vor Ablauf der Testphase per E-Mail über die bevorstehende Umstellung und die damit verbundenen Kosten. Die Kündigung während der Testphase ist jederzeit formlos (z.&thinsp;B. per E-Mail) möglich.
+    </div>
+    <div class="clause" data-abs="(4)">
+      <strong>Datenexport:</strong> Nach Vertragsende erhält der Kunde auf Anfrage für 30 Tage Zugriff auf einen Datenexport. Danach werden alle Daten (inkl. Projekthistorie und Fotos) unwiderruflich gelöscht.
+    </div>
+  </section>
+
+  <!-- § 7 -->
+  <section>
+    <h2><span class="num">§ 7</span> Haftung &amp; Schadensersatz (Haftungsdeckel)</h2>
+    <div class="info-box">
+      <strong>Haftungsbegrenzung:</strong> Bei leichter Fahrlässigkeit haftet Taskey nur bei Verletzung von Kardinalpflichten. In diesem Fall ist die Haftung systemweit auf die Summe der vom Kunden in den letzten 12 Monaten vor Schadenseintritt gezahlten SaaS-Gebühren begrenzt.
+    </div>
+    <div class="clause" data-abs="(1)">
+      Eine Haftung für entgangenen Gewinn (z.&thinsp;B. durch Fehlkalkulationen in der Live-Margen-Berechnung) ist ausgeschlossen.
+    </div>
+    <div class="clause" data-abs="(2)">
+      <strong>Höhere Gewalt:</strong> Taskey haftet nicht für Ausfälle durch DDoS-Attacken (&gt;100 Gbps), Cloud-Provider-Störungen (Vercel/AWS) oder Stromausfälle.
+    </div>
+  </section>
+
+  <!-- § 8 -->
+  <section>
+    <h2><span class="num">§ 8</span> Weiterentwicklung &amp; Best Efforts</h2>
+    <div class="clause" data-abs="(1)">
+      Taskey schuldet „Best Efforts" bei der kontinuierlichen Wartung und Bereitstellung von Sicherheitsfixes.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Ein Anspruch auf die Programmierung individueller Wunschfunktionen (Custom-Features) besteht nicht.
+    </div>
+  </section>
+
+  <!-- § 9 -->
+  <section>
+    <h2><span class="num">§ 9</span> Datenschutz &amp; Schlussbestimmungen</h2>
+    <div class="clause" data-abs="(1)">
+      Die Parteien schließen zwingend einen Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO.
+    </div>
+    <div class="clause" data-abs="(2)">
+      Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist <strong>Saarbrücken</strong>.
+    </div>
+    <div class="clause" data-abs="(3)">
+      Änderungen dieser AGB werden 2 Monate vorher mitgeteilt. Widerspricht der Kunde nicht innerhalb von 30 Tagen, gelten diese als akzeptiert.
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Schulz &amp; Stosse GbR &ensp;|&ensp; Taskey Projektsoftware &ensp;|&ensp; Völklingen
+  </footer>
+
+</div>
+</body>
+</html>
