@@ -39,7 +39,7 @@ export default function LanguageSwitcher({ tone = "light" }: { tone?: "light" | 
         aria-label="Sprache wechseln"
       >
         <span className="text-base leading-none">{current.flag}</span>
-        <span className="hidden sm:inline">{current.code.toUpperCase()}</span>
+        <span>{current.code.toUpperCase()}</span>
         <svg
           className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
@@ -51,7 +51,7 @@ export default function LanguageSwitcher({ tone = "light" }: { tone?: "light" | 
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-xl shadow-lg overflow-hidden z-50">
+        <div className="absolute left-0 lg:right-0 lg:left-auto mt-2 w-40 bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-xl shadow-lg overflow-hidden z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}

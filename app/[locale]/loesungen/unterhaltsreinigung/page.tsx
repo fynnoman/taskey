@@ -91,7 +91,7 @@ const CONTENT = {
         heading: "Drei Schichten pro Tag, 40 Objekte, 12 Mitarbeitende.",
         body: [
           "Typische Unterhaltsreinigung in Deutschland: morgens vor 8 Uhr Büros, mittags Treppenhäuser in Wohnanlagen, abends Schulen oder Kitas. Jeder Auftrag hat seine eigenen Sonderwünsche, Schlüsselregelungen und Abrechnungsmodalitäten.",
-          "Excel und WhatsApp halten das nicht aus. Taskey macht den Plan in der App live für jedes Teammitglied sichtbar – inklusive Wegbeschreibung, Schlüsselübergabe-Protokoll und individueller Aufgabenliste pro Objekt.",
+          "Excel und Chats halten das nicht aus. Taskey macht den Plan in der App live für jedes Teammitglied sichtbar – inklusive Wegbeschreibung, Schlüsselübergabe-Protokoll und individueller Aufgabenliste pro Objekt.",
         ],
         bullets: [
           "Wiederkehrende Touren pro Woche, Monat oder individuell",
@@ -102,7 +102,7 @@ const CONTENT = {
       },
       {
         eyebrow: "Nachweis",
-        heading: "NFC-Tag am Eingang löst die WhatsApp-Beweispflicht ab.",
+        heading: "NFC-Tag am Eingang löst die Chat-Beweispflicht ab.",
         body: [
           "In der Unterhaltsreinigung kommt der Auftraggeber selten persönlich vorbei – er sieht nicht, ob Sie gereinigt haben oder nicht. Damit Sie Reklamationen mit Daten statt mit Worten begegnen, dokumentiert Taskey jeden Einsatz automatisch.",
           "Ein wetterfester NFC-Tag im Treppenhaus oder am Schlüsselkasten reicht. Der Tap der Reinigungskraft erzeugt einen Zeitstempel, GPS-Punkt und Mitarbeiter-Nachweis – auf Wunsch mit Foto.",
@@ -192,7 +192,7 @@ const CONTENT = {
         heading: "Three shifts a day, 40 sites, 12 employees.",
         body: [
           "Typical maintenance cleaning in Germany: offices before 8 a.m., stairwells in housing complexes around midday, schools or daycares in the evening. Every contract has its own special requests, key arrangements and billing terms.",
-          "Excel and WhatsApp can’t keep up. Taskey puts the plan live in the app for every team member – including directions, key handover record and an individual task list per site.",
+          "Excel and chats can’t keep up. Taskey puts the plan live in the app for every team member – including directions, key handover record and an individual task list per site.",
         ],
         bullets: [
           "Recurring tours weekly, monthly or individually",
@@ -203,7 +203,7 @@ const CONTENT = {
       },
       {
         eyebrow: "Proof",
-        heading: "NFC tag at the entrance replaces WhatsApp evidence.",
+        heading: "NFC tag at the entrance replaces chat evidence.",
         body: [
           "In maintenance cleaning, the client rarely shows up in person – they can’t see whether you cleaned or not. So that you can answer complaints with data instead of words, Taskey documents every job automatically.",
           "A weatherproof NFC tag in the stairwell or on the key box is enough. The cleaner’s tap creates a timestamp, GPS point and employee proof – with a photo if desired.",
@@ -293,7 +293,7 @@ const CONTENT = {
         heading: "Trois équipes par jour, 40 sites, 12 collaborateurs.",
         body: [
           "Le nettoyage d’entretien typique en Allemagne : des bureaux avant 8 h, des cages d’escalier d’immeubles le midi, des écoles ou crèches le soir. Chaque contrat a ses propres demandes, ses règles de clés et ses modalités de facturation.",
-          "Excel et WhatsApp ne tiennent pas la charge. Taskey rend le plan visible en direct dans l’application pour chaque membre de l’équipe – avec itinéraire, protocole de remise de clés et liste de tâches individuelle par site.",
+          "Excel et les chats ne tiennent pas la charge. Taskey rend le plan visible en direct dans l’application pour chaque membre de l’équipe – avec itinéraire, protocole de remise de clés et liste de tâches individuelle par site.",
         ],
         bullets: [
           "Tournées récurrentes hebdomadaires, mensuelles ou personnalisées",
@@ -304,7 +304,7 @@ const CONTENT = {
       },
       {
         eyebrow: "Preuve",
-        heading: "Le tag NFC à l’entrée remplace la preuve par WhatsApp.",
+        heading: "Le tag NFC à l’entrée remplace la preuve par chat.",
         body: [
           "En nettoyage d’entretien, le donneur d’ordres passe rarement en personne – il ne voit pas si vous avez nettoyé ou non. Pour que vous répondiez aux réclamations avec des données plutôt qu’avec des mots, Taskey documente chaque intervention automatiquement.",
           "Un tag NFC résistant aux intempéries dans la cage d’escalier ou sur la boîte à clés suffit. Le tap de l’agent génère un horodatage, un point GPS et une preuve collaborateur – avec photo en option.",

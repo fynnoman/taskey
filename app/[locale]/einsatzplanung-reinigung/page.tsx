@@ -62,15 +62,15 @@ const CONTENT = {
     eyebrow: "Pillar · Einsatzplanung",
     h1: "Einsatzplanung für Reinigungsbetriebe —",
     h1Accent: "Schichten, Touren, Vertretungen.",
-    lead: "Wer in der Gebäudereinigung mit Excel oder WhatsApp plant, verliert Zeit, Marge und Nerven. Taskey gibt Ihnen einen Live-Plan über alle Objekte, Schichten und Touren – mit automatischen Vertretungsvorschlägen, Mobil-Sync und integrierter Zeiterfassung.",
+    lead: "Wer in der Gebäudereinigung mit Excel oder Chats plant, verliert Zeit, Marge und Nerven. Taskey gibt Ihnen einen Live-Plan über alle Objekte, Schichten und Touren – mit automatischen Vertretungsvorschlägen, Mobil-Sync und integrierter Zeiterfassung.",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Einsatzplanung Reinigung",
     sec1Eyebrow: "Problem",
-    sec1Heading: "Excel, WhatsApp und Anrufe sind keine Einsatzplanung.",
+    sec1Heading: "Excel, Chats und Anrufe sind keine Einsatzplanung.",
     sec1Intro:
-      "Die meisten Reinigungsbetriebe planen ihre Mitarbeitenden in einer Tabelle, kommunizieren Änderungen per WhatsApp und merken bei Krankheit erst dann, dass jemand fehlt, wenn der Auftraggeber sich beschwert.",
+      "Die meisten Reinigungsbetriebe planen ihre Mitarbeitenden in einer Tabelle, kommunizieren Änderungen per Chat und merken bei Krankheit erst dann, dass jemand fehlt, wenn der Auftraggeber sich beschwert.",
     sec1Body1:
-      "Das Problem dabei: Niemand hat eine einzige verlässliche Quelle. Die Disposition pflegt Excel, der Vorarbeiter hat eine andere Version, das Team hat einen WhatsApp-Stand von gestern und der Auftraggeber bekommt – wenn überhaupt – einen Wochenplan per Mail. Spätestens bei der ersten Krankmeldung läuft alles auseinander.",
+      "Das Problem dabei: Niemand hat eine einzige verlässliche Quelle. Die Disposition pflegt Excel, der Vorarbeiter hat eine andere Version, das Team hat einen Chat-Stand von gestern und der Auftraggeber bekommt – wenn überhaupt – einen Wochenplan per Mail. Spätestens bei der ersten Krankmeldung läuft alles auseinander.",
     sec1Body2:
       "Hinzu kommt: Excel rechnet keine Fahrtzeiten, kein Mindestpausen, keine Doppelbesetzungen und keine Überstunden. Was auf dem Plan steht, hat oft wenig mit dem zu tun, was am Ende des Monats abgerechnet werden kann.",
     sec2Eyebrow: "Lösung",
@@ -113,7 +113,7 @@ const CONTENT = {
       "Ja. Sie hinterlegen pro Mitarbeiter Qualifikation, Tarif und Verfügbarkeit. Die Planung berücksichtigt diese Faktoren automatisch und schlägt nur passende Personen vor.",
     faq2Q: "Wie kommen meine Mitarbeitenden an den aktuellen Plan?",
     faq2A:
-      "Jeder Mitarbeitende hat die Taskey-App auf dem Handy und sieht nur seine eigenen Einsätze. Bei Änderungen kommt automatisch eine Push-Benachrichtigung. WhatsApp-Spam entfällt.",
+      "Jeder Mitarbeitende hat die Taskey-App auf dem Handy und sieht nur seine eigenen Einsätze. Bei Änderungen kommt automatisch eine Push-Benachrichtigung. Chat-Spam entfällt.",
     faq3Q: "Funktioniert das auch für 1-Mann-Betriebe oder erst ab einer bestimmten Größe?",
     faq3A:
       "Taskey lohnt sich ab dem ersten festen Mitarbeitenden. Auch Soloselbstständige nutzen die Planung als zentrale Übersicht für Touren, Auftraggeber und Termine.",
@@ -140,15 +140,15 @@ const CONTENT = {
     eyebrow: "Pillar · Workforce Scheduling",
     h1: "Workforce scheduling for cleaning companies —",
     h1Accent: "shifts, routes, replacements.",
-    lead: "Anyone planning a building cleaning operation in Excel or WhatsApp loses time, margin and nerves. Taskey gives you a live plan across every site, shift and route – with automatic replacement suggestions, mobile sync and built-in time tracking.",
+    lead: "Anyone planning a building cleaning operation in Excel or chats loses time, margin and nerves. Taskey gives you a live plan across every site, shift and route – with automatic replacement suggestions, mobile sync and built-in time tracking.",
     breadcrumbHome: "Home",
     breadcrumbCurrent: "Cleaning Workforce Scheduling",
     sec1Eyebrow: "Problem",
-    sec1Heading: "Excel, WhatsApp and phone calls are not scheduling.",
+    sec1Heading: "Excel, chats and phone calls are not scheduling.",
     sec1Intro:
-      "Most cleaning companies plan their workforce in a spreadsheet, push changes through WhatsApp, and only notice someone is missing once the client complains.",
+      "Most cleaning companies plan their workforce in a spreadsheet, push changes through chats, and only notice someone is missing once the client complains.",
     sec1Body1:
-      "The real problem: nobody has a single trusted source. Dispatch maintains Excel, the foreman has a different version, the team has yesterday’s WhatsApp status, and the client gets – at best – a weekly plan by email. By the first sick-call, everything falls apart.",
+      "The real problem: nobody has a single trusted source. Dispatch maintains Excel, the foreman has a different version, the team has yesterday’s chat status, and the client gets – at best – a weekly plan by email. By the first sick-call, everything falls apart.",
     sec1Body2:
       "On top of that: Excel doesn’t calculate travel times, minimum breaks, double-bookings or overtime. What ends up on the plan often has little to do with what can actually be invoiced at the end of the month.",
     sec2Eyebrow: "Solution",
@@ -191,7 +191,7 @@ const CONTENT = {
       "Yes. You store qualification, pay rate and availability per employee. The scheduling automatically takes these factors into account and only suggests suitable people.",
     faq2Q: "How do my staff get the current plan?",
     faq2A:
-      "Every employee has the Taskey app on their phone and only sees their own assignments. Changes trigger an automatic push notification. WhatsApp spam is gone.",
+      "Every employee has the Taskey app on their phone and only sees their own assignments. Changes trigger an automatic push notification. Chat spam is gone.",
     faq3Q: "Does this work for one-person operations or only from a certain size?",
     faq3A:
       "Taskey is worth it from the first permanent employee onwards. Sole traders also use the scheduling as a central overview for routes, clients and appointments.",
@@ -218,15 +218,15 @@ const CONTENT = {
     eyebrow: "Pillar · Planification",
     h1: "Planification pour les entreprises de nettoyage —",
     h1Accent: "équipes, tournées, remplacements.",
-    lead: "Planifier le nettoyage de bâtiments dans Excel ou WhatsApp fait perdre du temps, de la marge et de l’énergie. Taskey vous donne un plan en direct sur l’ensemble des sites, équipes et tournées – avec suggestions de remplacement automatiques, synchronisation mobile et pointage intégré.",
+    lead: "Planifier le nettoyage de bâtiments dans Excel ou dans des chats fait perdre du temps, de la marge et de l’énergie. Taskey vous donne un plan en direct sur l’ensemble des sites, équipes et tournées – avec suggestions de remplacement automatiques, synchronisation mobile et pointage intégré.",
     breadcrumbHome: "Accueil",
     breadcrumbCurrent: "Planification des interventions de nettoyage",
     sec1Eyebrow: "Problème",
-    sec1Heading: "Excel, WhatsApp et les appels ne sont pas de la planification.",
+    sec1Heading: "Excel, chats et appels ne sont pas de la planification.",
     sec1Intro:
-      "La plupart des entreprises de nettoyage planifient leurs équipes dans un tableur, communiquent les changements par WhatsApp et ne remarquent une absence que lorsque le client se plaint.",
+      "La plupart des entreprises de nettoyage planifient leurs équipes dans un tableur, communiquent les changements par chat et ne remarquent une absence que lorsque le client se plaint.",
     sec1Body1:
-      "Le vrai problème : personne n’a de source fiable unique. Le dispatch tient Excel, le chef d’équipe a une autre version, les agents ont un état WhatsApp d’hier et le client reçoit – au mieux – un planning hebdomadaire par e-mail. Au premier arrêt maladie, tout part en vrille.",
+      "Le vrai problème : personne n’a de source fiable unique. Le dispatch tient Excel, le chef d’équipe a une autre version, les agents ont un état de chat d’hier et le client reçoit – au mieux – un planning hebdomadaire par e-mail. Au premier arrêt maladie, tout part en vrille.",
     sec1Body2:
       "S’y ajoute : Excel ne calcule ni les temps de trajet, ni les pauses minimales, ni les doublons d’affectation, ni les heures supplémentaires. Ce qui figure sur le planning a souvent peu à voir avec ce qui pourra réellement être facturé en fin de mois.",
     sec2Eyebrow: "Solution",
@@ -269,7 +269,7 @@ const CONTENT = {
       "Oui. Vous enregistrez par agent la qualification, le tarif et la disponibilité. La planification tient compte automatiquement de ces critères et ne propose que des personnes adaptées.",
     faq2Q: "Comment mes agents reçoivent-ils le planning à jour ?",
     faq2A:
-      "Chaque agent a l’application Taskey sur son téléphone et ne voit que ses propres interventions. Les changements déclenchent une notification push automatique. Le spam WhatsApp disparaît.",
+      "Chaque agent a l’application Taskey sur son téléphone et ne voit que ses propres interventions. Les changements déclenchent une notification push automatique. Le spam par chat disparaît.",
     faq3Q: "Cela fonctionne-t-il aussi pour des structures à 1 personne ou seulement à partir d’une certaine taille ?",
     faq3A:
       "Taskey est pertinent dès le premier salarié permanent. Les indépendants l’utilisent aussi comme vue d’ensemble centrale pour tournées, clients et rendez-vous.",

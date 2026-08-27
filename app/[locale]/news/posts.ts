@@ -264,7 +264,7 @@ Dieser Artikel nimmt das Thema ernst. Keine Buzzwords, keine Heilsversprechen. W
 
 ## Was „Kommunikation zwischen Einsatzort und Büro" wirklich umfasst
 
-Wenn Geschäftsführer:innen über „Kommunikation" sprechen, meinen sie häufig WhatsApp-Gruppen, Zurufe im Vorbeigehen und das morgendliche Briefing. Das ist ein Teil davon — aber der kleinste.
+Wenn Geschäftsführer:innen über „Kommunikation" sprechen, meinen sie häufig Messenger-Gruppen, Zurufe im Vorbeigehen und das morgendliche Briefing. Das ist ein Teil davon — aber der kleinste.
 
 Tatsächlich umfasst die Kommunikation zwischen Feld und Büro mindestens sieben Informationsströme, die in beide Richtungen funktionieren müssen:
 
@@ -296,7 +296,7 @@ Wir verzichten bewusst auf pauschale Aussagen wie „spart bis zu X Stunden". Di
 
 Wir sehen immer wieder dieselben vier Muster — unabhängig von Branche und Betriebsgröße.
 
-**Muster 1: „Wir machen das über WhatsApp."** WhatsApp ist kein Kommunikationssystem. Es ist ein Nachrichtenkanal. Der Unterschied: Nachrichten verschwinden im Chronologiefluss. Informationen werden dem Kontext (Auftrag, Objekt, Kunde) nicht automatisch zugeordnet. Wer im August wissen will, was im Februar auf Baustelle XY besprochen wurde, hat ein Problem. Außerdem: datenschutzrechtlich heikel, arbeitsrechtlich nicht revisionssicher, und bei Mitarbeiterwechsel geht die gesamte Historie verloren.
+**Muster 1: „Wir machen das im Messenger."** Ein Messenger ist kein Kommunikationssystem. Es ist ein Nachrichtenkanal. Der Unterschied: Nachrichten verschwinden im Chronologiefluss. Informationen werden dem Kontext (Auftrag, Objekt, Kunde) nicht automatisch zugeordnet. Wer im August wissen will, was im Februar auf Baustelle XY besprochen wurde, hat ein Problem. Außerdem: datenschutzrechtlich heikel, arbeitsrechtlich nicht revisionssicher, und bei Mitarbeiterwechsel geht die gesamte Historie verloren.
 
 **Muster 2: „Wir haben eine Software, aber keiner nutzt sie."** Das häufigste Szenario. Der Grund ist fast nie „die Mitarbeiter wollen nicht". Der Grund ist, dass die Software zusätzlichen Aufwand erzeugt, statt Aufwand zu ersetzen. Wenn eine Reinigungskraft nach der Schicht noch zehn Minuten am Handy braucht, um einzutragen, was sie ohnehin gemacht hat, wird sie es nicht dauerhaft tun. Und sie hat recht. Die einzige Lösung, die nachweislich funktioniert: Erfassung muss im Arbeitsablauf passieren, nicht daneben. Ein Handgriff, der ohnehin stattfindet — Ankommen, Starten, Fertigmelden — muss gleichzeitig die Dokumentation sein.
 
@@ -336,7 +336,7 @@ Das Thema Kommunikation zwischen Einsatzort und Büro wird in den nächsten Jahr
 
 Höhere Deckungsbeiträge durch belastbare Kalkulation. Geringerer Reklamationsaufwand durch lückenlose Nachweise. Spürbar reduzierte Administrationslast im Büro. Höhere Mitarbeiterbindung durch weniger „Papierkram nach Feierabend". Führbarkeit auch bei Wachstum, ohne dass die Geschäftsführung im Operativen untergeht.
 
-Wer heute noch glaubt, dieses Thema ließe sich mit mehr Disziplin, besseren WhatsApp-Gruppen oder einer zweiten Sekretariatsstelle lösen, wird in den nächsten drei bis fünf Jahren einen Wettbewerbsnachteil aufbauen, den er später nur schwer einholt.
+Wer heute noch glaubt, dieses Thema ließe sich mit mehr Disziplin, besseren Messenger-Gruppen oder einer zweiten Sekretariatsstelle lösen, wird in den nächsten drei bis fünf Jahren einen Wettbewerbsnachteil aufbauen, den er später nur schwer einholt.
 
 Die gute Nachricht: Die technischen und organisatorischen Voraussetzungen, um das Problem strukturell zu lösen, sind heute vorhanden, bezahlbar und erprobt. Was fehlt, ist in den meisten Fällen nicht die Lösung, sondern die Entscheidung.
 
@@ -351,7 +351,7 @@ Wenn dieser Artikel einen Punkt bei Ihnen getroffen hat: Sprechen Sie mit Ihrem 
     metaTitle: "MG Gebäudeservice Düsseldorf: Digitalisierung mit Taskey | Case Study",
     metaDescription: "Wie MG Gebäudeservice aus Düsseldorf mit 30 Mitarbeitern die Zeiterfassung, Einsatzplanung und Dokumentation mit Taskey digitalisiert hat. Echte Ergebnisse nach zwei Wochen.",
     summary:
-      "30 Mitarbeiter, Stundenzettel auf Papier, Einsatzplanung per WhatsApp — MG Gebäudeservice aus Düsseldorf hat den Schritt vom analogen Betrieb zum datengetriebenen Unternehmen gemacht. Eine Case Study über NFC-Zeiterfassung, Echtzeit-Überblick und messbare Ergebnisse.",
+      "30 Mitarbeiter, Stundenzettel auf Papier, Einsatzplanung per Chat — MG Gebäudeservice aus Düsseldorf hat den Schritt vom analogen Betrieb zum datengetriebenen Unternehmen gemacht. Eine Case Study über NFC-Zeiterfassung, Echtzeit-Überblick und messbare Ergebnisse.",
     heroImage: "/095818D7-E56D-4784-AB51-A0EC8E9E85D5.webp",
     body: `MG Gebäudeservice gehört zu den etablierten Gebäudereinigern in Düsseldorf. 30 Mitarbeiter, ein breit aufgestelltes Objektportfolio — von Bürokomplexen über Arztpraxen bis hin zu Produktionshallen. Der Betrieb läuft, die Kunden sind zufrieden, das Team ist eingespielt.
 
@@ -407,7 +407,7 @@ Für MG Gebäudeservice hat das zwei Dinge auf einmal gelöst. Erstens: Die Zeit
 
 **Auftragsplanung? Erledigt sich von selbst**
 
-Vorher sah die Einsatzplanung bei MG Gebäudeservice so aus: Excel-Tabelle mit Schichtplänen, Änderungen per WhatsApp durchgeben, hoffen dass jeder die aktuelle Version hat. Bei Krankheit oder Ausfall: Telefon-Rallye.
+Vorher sah die Einsatzplanung bei MG Gebäudeservice so aus: Excel-Tabelle mit Schichtplänen, Änderungen per Chat durchgeben, hoffen dass jeder die aktuelle Version hat. Bei Krankheit oder Ausfall: Telefon-Rallye.
 
 Mit Taskey ist die gesamte Auftragsplanung digital. Objekte anlegen, Mitarbeiter zuweisen, Schichtzeiten definieren — alles im System. Änderungen kommen in Echtzeit auf dem Handy des Mitarbeiters an. Kein Hin-und-Her, keine veralteten Pläne, kein „Ich wusste nicht, dass ich heute dort sein soll."
 
@@ -429,7 +429,7 @@ Vorher hat das Einsammeln, Kontrollieren und Übertragen der Stundenzettel bei M
 
 **Einsatzplanung: 3 Stunden pro Woche gespart**
 
-Die manuelle Koordination über Excel und WhatsApp hat vorher gut 3 Stunden pro Woche verschlungen — Schichtpläne bauen, Änderungen kommunizieren, Rückfragen beantworten. Seit die Planung digital über Taskey läuft, reichen 20 Minuten. Änderungen kommen in Echtzeit auf dem Handy der Mitarbeiter an, Rückfragen sind fast komplett weggefallen.
+Die manuelle Koordination über Excel und Chat hat vorher gut 3 Stunden pro Woche verschlungen — Schichtpläne bauen, Änderungen kommunizieren, Rückfragen beantworten. Seit die Planung digital über Taskey läuft, reichen 20 Minuten. Änderungen kommen in Echtzeit auf dem Handy der Mitarbeiter an, Rückfragen sind fast komplett weggefallen.
 
 **Kundenkommunikation: Vom Bauchgefühl zur Dokumentation**
 
@@ -448,7 +448,7 @@ Wenn ein Auftraggeber heute fragt, ob und wann ein bestimmtes Objekt gereinigt w
 
 MG Gebäudeservice ist kein Betrieb, der vorher schlecht aufgestellt war. Im Gegenteil: 30 Mitarbeiter, fester Kundenstamm, guter Ruf in Düsseldorf. Aber wie in vielen Unternehmen dieser Größe waren die Abläufe an einem Punkt, an dem analoges Arbeiten mehr Energie gekostet hat als es gebracht hat.
 
-Zwei Wochen mit Taskey haben gereicht, um die täglichen Reibungsverluste spürbar zu reduzieren. Keine verlorenen Stundenzettel mehr, keine WhatsApp-Koordination, keine Sucherei nach Dokumenten. Stattdessen: ein System, das dem Chef in Echtzeit zeigt, wo der Betrieb steht — und das die Mitarbeiter draußen in zwei Minuten verstanden haben.
+Zwei Wochen mit Taskey haben gereicht, um die täglichen Reibungsverluste spürbar zu reduzieren. Keine verlorenen Stundenzettel mehr, keine Chat-Koordination, keine Sucherei nach Dokumenten. Stattdessen: ein System, das dem Chef in Echtzeit zeigt, wo der Betrieb steht — und das die Mitarbeiter draußen in zwei Minuten verstanden haben.
 
 Gianluca von MG Gebäudeservice bringt es auf den Punkt:
 
@@ -472,7 +472,7 @@ Das ist kein Einzelfall. Das ist Alltag in der Gebäudereinigung. Und es kostet 
 
 **Das Problem ist nicht dein Team. Das Problem ist das System.**
 
-Reinigungskräfte arbeiten dezentral. Sie sind morgens alleine im Bürogebäude, abends im Einkaufszentrum, nachts in der Produktionshalle. Es gibt keine zentrale Stechuhr, an der sich alle ein- und ausstempeln. Also wird improvisiert: WhatsApp-Nachrichten, Anrufe beim Chef, Zettel in der Jackentasche — oder es wird einfach gar nichts dokumentiert und am Monatsende aus dem Kopf geschrieben.
+Reinigungskräfte arbeiten dezentral. Sie sind morgens alleine im Bürogebäude, abends im Einkaufszentrum, nachts in der Produktionshalle. Es gibt keine zentrale Stechuhr, an der sich alle ein- und ausstempeln. Also wird improvisiert: Messenger-Nachrichten, Anrufe beim Chef, Zettel in der Jackentasche — oder es wird einfach gar nichts dokumentiert und am Monatsende aus dem Kopf geschrieben.
 
 Das Ergebnis: Du hast keine belastbaren Daten. Nicht für die Lohnabrechnung, nicht für den Kunden, nicht für dich selbst. Du weißt nicht, ob Objekt A wirklich 3,5 Stunden dauert oder ob da eine halbe Stunde Puffer drinsteckt. Du kannst deine Margen nicht sauber kalkulieren. Und wenn mal jemand behauptet, er war da — hast du keinen Beweis.
 
@@ -510,13 +510,13 @@ Genau deshalb setzt Taskey auf NFC. Die Hürde ist praktisch null. Smartphone an
 
 Taskey ist keine reine Zeiterfassungs-App. Es ist die Einsatzplanung, Zeiterfassung, Auftragssteuerung und Dokumentation in einem System. Für dich heißt das: Du planst den Einsatz, dein Team stempelt per NFC ein und aus, die Zeiten fließen automatisch in die Aufträge, und du rechnest direkt ab.
 
-Ein System. Kein Zusammenstückeln aus drei verschiedenen Tools, keinem Excel-Sheet und zwei WhatsApp-Gruppen.
+Ein System. Kein Zusammenstückeln aus drei verschiedenen Tools, keinem Excel-Sheet und zwei Messenger-Gruppen.
 
 Taskey ist komplett DSGVO-konform, Made in Germany, und läuft auf jedem Smartphone. Keine Installation von spezieller Hardware. Keine Schulung, die einen halben Tag dauert. Dein Team kann heute Nachmittag damit anfangen.
 
 **Die Rechnung ist einfach**
 
-Nehmen wir an, du hast 20 Mitarbeiter. Jeder braucht pro Tag 10 Minuten für Zettel ausfüllen, Zeiten notieren, WhatsApp-Updates schicken. Das sind über 30 Stunden pro Monat — nur für die Zeiterfassung. Dazu kommen deine eigenen Stunden fürs Einsammeln, Kontrollieren und Übertragen.
+Nehmen wir an, du hast 20 Mitarbeiter. Jeder braucht pro Tag 10 Minuten für Zettel ausfüllen, Zeiten notieren, Chat-Updates schicken. Das sind über 30 Stunden pro Monat — nur für die Zeiterfassung. Dazu kommen deine eigenen Stunden fürs Einsammeln, Kontrollieren und Übertragen.
 
 Mit NFC-Stempeln und automatischer Erfassung fällt das weg. Komplett. Die Zeit, die du sparst, ist bares Geld — oder besser: Zeit, die du in Akquise, Qualitätskontrolle oder einfach mal Feierabend stecken kannst.
 

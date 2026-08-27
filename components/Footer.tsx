@@ -307,6 +307,13 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* AI Act Hinweis — global auf jeder Seite */}
+        <div className="border-t border-slate-800 py-5">
+          <p className="text-[11px] text-slate-500 leading-relaxed text-center max-w-3xl mx-auto">
+            {t("footer.aiNotice")}
+          </p>
+        </div>
+
         {/* Bottom bar */}
         <div className="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
           <p>&copy; {new Date().getFullYear()} Taskey. {t("footer.rights")}</p>

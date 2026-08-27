@@ -131,7 +131,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         badge: "Team & Kunden",
         headline: "Zentral, sauber, in einem System.",
         intro:
-          "Mitarbeiter, Kunden, Objekte — alles in einer Datenbank. Keine Excel-Listen, keine WhatsApp-Suche.",
+          "Mitarbeiter, Kunden, Objekte — alles in einer Datenbank. Keine Excel-Listen, keine Chat-Suche.",
         features: [
           {
             title: "Mitarbeiter-Verwaltung",
@@ -304,7 +304,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         badge: "Team & customers",
         headline: "Central, clean, one system.",
         intro:
-          "Employees, customers, properties — all in one database. No Excel lists, no WhatsApp searches.",
+          "Employees, customers, properties — all in one database. No Excel lists, no chat searches.",
         features: [
           {
             title: "Employee management",
@@ -477,7 +477,7 @@ const content: Record<"de" | "en" | "fr", Content> = {
         badge: "Équipe & clients",
         headline: "Central, propre, un seul système.",
         intro:
-          "Employés, clients, sites — tout dans une base de données. Pas de listes Excel, pas de recherches WhatsApp.",
+          "Employés, clients, sites — tout dans une base de données. Pas de listes Excel, pas de recherches dans les chats.",
         features: [
           {
             title: "Gestion des employés",

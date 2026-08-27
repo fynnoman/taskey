@@ -8,7 +8,13 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
 
 const branchenItems: { href: string; labelKey: string }[] = [
+  { href: "/enterprise", labelKey: "nav.branche.enterprise" },
   { href: "/oepnv", labelKey: "nav.branche.oepnv" },
+  { href: "/enterprise#grosskonzerne", labelKey: "nav.branche.grosskonzerne" },
+  { href: "/enterprise#kliniken", labelKey: "nav.branche.kliniken" },
+  { href: "/enterprise#logistik", labelKey: "nav.branche.logistik" },
+  { href: "/enterprise#handel", labelKey: "nav.branche.handel" },
+  { href: "/enterprise#bildung", labelKey: "nav.branche.bildung" },
 ];
 
 export default function Header() {
@@ -313,25 +319,52 @@ function BranchenMobileSection({
   isActive: (href: string) => boolean;
   onNavigate: () => void;
 }) {
+  const anyActive = branchenItems.some((i) => isActive(i.href));
+  const [open, setOpen] = useState(anyActive);
+
   return (
-    <div className="pb-1">
-      <div className="px-4 pt-2 pb-1 text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
-        {t("nav.branchen")}
-      </div>
-      {branchenItems.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          onClick={onNavigate}
-          className={`block px-4 py-3 rounded-lg transition ${
-            isActive(item.href)
-              ? "text-blue-700 bg-blue-50 font-bold"
-              : "text-slate-700 hover:bg-blue-50 hover:text-slate-900"
-          }`}
+    <div>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition ${
+          anyActive
+            ? "text-blue-700 bg-blue-50 font-bold"
+            : "text-slate-700 hover:bg-blue-50 hover:text-slate-900"
+        }`}
+      >
+        <span>{t("nav.branchen")}</span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          aria-hidden
         >
-          {t(item.labelKey)}
-        </Link>
-      ))}
+          <path d="M5 8l5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {open && (
+        <div className="pl-2 mt-1 mb-1 border-l border-slate-200 space-y-1">
+          {branchenItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={onNavigate}
+              className={`block px-4 py-2.5 rounded-lg text-sm transition ${
+                isActive(item.href)
+                  ? "text-blue-700 bg-blue-50 font-semibold"
+                  : "text-slate-600 hover:bg-blue-50 hover:text-slate-900"
+              }`}
+            >
+              {t(item.labelKey)}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

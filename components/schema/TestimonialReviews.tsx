@@ -73,7 +73,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Schichtplanung für 30 Reinigungskräfte ging vorher per Excel und WhatsApp. Heute klicke ich 10 Minuten und der Plan steht.",
+      "Schichtplanung für 30 Reinigungskräfte ging vorher per Excel und Chat. Heute klicke ich 10 Minuten und der Plan steht.",
     name: "L. M.",
     role: "Disposition",
     company: ANON_COMPANY,

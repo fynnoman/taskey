@@ -70,7 +70,7 @@ const CONTENT = {
     sec1Intro:
       "Wer Arbeitszeit in der Gebäudereinigung mit Papier oder Excel erfasst, zahlt am Monatsende dreimal: in vergessenen Stunden, in Rückfragen ans Team und in Bußgeldrisiko durch fehlende Nachweise.",
     sec1Body1:
-      "Das Mindestlohngesetz (§17 MiLoG) verpflichtet jeden Gebäudereinigungsbetrieb, Beginn, Ende und Dauer der täglichen Arbeitszeit jeder Reinigungskraft innerhalb von sieben Tagen aufzuzeichnen und zwei Jahre aufzubewahren. Stundenzettel im Auto-Handschuhfach, abfotografierte Notizzettel auf WhatsApp und nachträglich ausgefüllte Excel-Tabellen halten dieser Anforderung nicht stand.",
+      "Das Mindestlohngesetz (§17 MiLoG) verpflichtet jeden Gebäudereinigungsbetrieb, Beginn, Ende und Dauer der täglichen Arbeitszeit jeder Reinigungskraft innerhalb von sieben Tagen aufzuzeichnen und zwei Jahre aufzubewahren. Stundenzettel im Auto-Handschuhfach, abfotografierte Notizzettel im Chat und nachträglich ausgefüllte Excel-Tabellen halten dieser Anforderung nicht stand.",
     sec1Body2:
       "In der Praxis bedeutet das: Bei einer Zollkontrolle kann der Betrieb die Arbeitszeiten nicht lückenlos nachweisen. Die Folge sind Bußgelder von bis zu 30.000 Euro pro Verstoß. Hinzu kommt der unsichtbare Schaden: Pausen werden falsch verbucht, Fahrtzeiten verschwinden, Überstunden werden vergessen – auf Kosten der Marge.",
     sec1Bullet1: "Bußgeldrisiko bei Zollkontrollen (FKS)",
@@ -151,7 +151,7 @@ const CONTENT = {
     sec1Intro:
       "Anyone recording working time in building cleaning on paper or in Excel pays at month-end three times over: in forgotten hours, in follow-ups with the team and in fine risk from missing proof.",
     sec1Body1:
-      "The Minimum Wage Act (§17 MiLoG) obliges every building cleaning operation to record start, end and duration of each cleaner’s daily working time within seven days and to keep it for two years. Timesheets in the car glove box, photographed notes on WhatsApp and Excel sheets filled in after the fact don’t meet that requirement.",
+      "The Minimum Wage Act (§17 MiLoG) obliges every building cleaning operation to record start, end and duration of each cleaner’s daily working time within seven days and to keep it for two years. Timesheets in the car glove box, photographed notes shared in chats and Excel sheets filled in after the fact don’t meet that requirement.",
     sec1Body2:
       "In practice, this means: in a customs inspection, the operation can’t produce complete working-time proof. The result is fines of up to 30,000 euro per violation. On top comes the invisible damage: breaks are recorded wrong, travel times disappear, overtime is forgotten – at the expense of the margin.",
     sec1Bullet1: "Fine risk in customs inspections (FKS)",
@@ -232,7 +232,7 @@ const CONTENT = {
     sec1Intro:
       "Saisir le temps de travail dans le nettoyage sur papier ou Excel, c’est payer trois fois en fin de mois : en heures oubliées, en relances à l’équipe et en risque d’amende pour défaut de justificatif.",
     sec1Body1:
-      "La loi sur le salaire minimum (§17 MiLoG) oblige toute entreprise de nettoyage à consigner début, fin et durée du temps de travail quotidien de chaque agent dans les sept jours et à les conserver deux ans. Feuilles d’heures dans la boîte à gants, notes photographiées sur WhatsApp et tableurs Excel remplis après coup ne répondent pas à cette exigence.",
+      "La loi sur le salaire minimum (§17 MiLoG) oblige toute entreprise de nettoyage à consigner début, fin et durée du temps de travail quotidien de chaque agent dans les sept jours et à les conserver deux ans. Feuilles d’heures dans la boîte à gants, notes photographiées dans les chats et tableurs Excel remplis après coup ne répondent pas à cette exigence.",
     sec1Body2:
       "En pratique : lors d’un contrôle douanier, l’entreprise ne peut pas justifier intégralement les heures de travail. À la clé, des amendes allant jusqu’à 30 000 euros par infraction. S’y ajoutent les dégâts invisibles : pauses mal saisies, temps de trajet qui disparaissent, heures supplémentaires oubliées – au détriment de la marge.",
     sec1Bullet1: "Risque d’amende lors des contrôles douaniers (FKS)",

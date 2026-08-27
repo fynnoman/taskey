@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { springs, staggerChild, staggerParent } from "./motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Row = {
   name: string;
@@ -14,42 +15,94 @@ type Row = {
   warning?: string;
 };
 
-const ROWS: Row[] = [
-  {
-    name: "Bürogebäude Müller GmbH",
-    sum: "38.500 €",
-    cost: "26.120 €",
-    progress: 68,
-    delta: "+12,4%",
-    deltaTone: "up",
-    marginLabel: "4.773 € Marge",
+type Copy = {
+  totalMarginLabel: string;
+  totalMarginSub: string;
+  warningLabel: string;
+  warningValue: string;
+  warningSub: string;
+  liveLabel: string;
+  liveValue: string;
+  liveSub: string;
+  overviewEyebrow: string;
+  overviewSub: string;
+  contractSum: string;
+  costLabel: string;
+  progressSuffix: string;
+  rows: Row[];
+};
+
+const CONTENT_BY_LANG: Record<"de" | "en" | "fr", Copy> = {
+  de: {
+    totalMarginLabel: "Gesamt-Marge",
+    totalMarginSub: "Ø aus 3 Objekten",
+    warningLabel: "Warnung",
+    warningValue: "1 Objekt",
+    warningSub: "Personalkosten 18% ↑",
+    liveLabel: "In Echtzeit",
+    liveValue: "0,3 s",
+    liveSub: "Update-Latenz",
+    overviewEyebrow: "Objekt-Übersicht",
+    overviewSub: "3 aktive Verträge · heute 14:07 Uhr",
+    contractSum: "Vertragssumme",
+    costLabel: "Kosten",
+    progressSuffix: "% abgeschlossen",
+    rows: [
+      { name: "Bürogebäude Müller GmbH", sum: "38.500 €", cost: "26.120 €", progress: 68, delta: "+12,4%", deltaTone: "up", marginLabel: "4.773 € Marge" },
+      { name: "Treppenhaus Hausverwaltung Krause", sum: "22.000 €", cost: "9.350 €", progress: 45, delta: "+8,2%", deltaTone: "up", marginLabel: "1.804 € Marge" },
+      { name: "Klinikreinigung Waldklinik", sum: "51.200 €", cost: "43.280 €", progress: 82, delta: "−3,1%", deltaTone: "down", marginLabel: "−1.587 € Verlust", warning: "Achtung: Personalkosten 18% über Plan" },
+    ],
   },
-  {
-    name: "Treppenhaus Hausverwaltung Krause",
-    sum: "22.000 €",
-    cost: "9.350 €",
-    progress: 45,
-    delta: "+8,2%",
-    deltaTone: "up",
-    marginLabel: "1.804 € Marge",
+  en: {
+    totalMarginLabel: "Total margin",
+    totalMarginSub: "Avg across 3 sites",
+    warningLabel: "Alert",
+    warningValue: "1 site",
+    warningSub: "Labour cost 18% ↑",
+    liveLabel: "Real time",
+    liveValue: "0.3 s",
+    liveSub: "Update latency",
+    overviewEyebrow: "Site overview",
+    overviewSub: "3 active contracts · today 14:07",
+    contractSum: "Contract sum",
+    costLabel: "Cost",
+    progressSuffix: "% completed",
+    rows: [
+      { name: "Office building Müller GmbH", sum: "€38,500", cost: "€26,120", progress: 68, delta: "+12.4%", deltaTone: "up", marginLabel: "€4,773 margin" },
+      { name: "Stairwell property manager Krause", sum: "€22,000", cost: "€9,350", progress: 45, delta: "+8.2%", deltaTone: "up", marginLabel: "€1,804 margin" },
+      { name: "Clinical cleaning Waldklinik", sum: "€51,200", cost: "€43,280", progress: 82, delta: "−3.1%", deltaTone: "down", marginLabel: "−€1,587 loss", warning: "Warning: labour cost 18% over plan" },
+    ],
   },
-  {
-    name: "Klinikreinigung Waldklinik",
-    sum: "51.200 €",
-    cost: "43.280 €",
-    progress: 82,
-    delta: "−3,1%",
-    deltaTone: "down",
-    marginLabel: "−1.587 € Verlust",
-    warning: "Achtung: Personalkosten 18% über Plan",
+  fr: {
+    totalMarginLabel: "Marge totale",
+    totalMarginSub: "Moy. sur 3 sites",
+    warningLabel: "Alerte",
+    warningValue: "1 site",
+    warningSub: "Coût main-d’œuvre 18% ↑",
+    liveLabel: "En temps réel",
+    liveValue: "0,3 s",
+    liveSub: "Latence de mise à jour",
+    overviewEyebrow: "Vue des sites",
+    overviewSub: "3 contrats actifs · aujourd’hui 14h07",
+    contractSum: "Montant du contrat",
+    costLabel: "Coût",
+    progressSuffix: "% réalisé",
+    rows: [
+      { name: "Immeuble de bureaux Müller GmbH", sum: "38 500 €", cost: "26 120 €", progress: 68, delta: "+12,4%", deltaTone: "up", marginLabel: "4 773 € de marge" },
+      { name: "Cage d’escalier Gestion Krause", sum: "22 000 €", cost: "9 350 €", progress: 45, delta: "+8,2%", deltaTone: "up", marginLabel: "1 804 € de marge" },
+      { name: "Nettoyage clinique Waldklinik", sum: "51 200 €", cost: "43 280 €", progress: 82, delta: "−3,1%", deltaTone: "down", marginLabel: "−1 587 € de perte", warning: "Attention : coût main-d’œuvre 18 % au-dessus du plan" },
+    ],
   },
-];
+};
 
 /**
  * Standalone dashboard mock for the "Live-Margen" section.
  * Pure presentation, animates in with stagger when visible.
  */
 export default function DashboardMarge() {
+  const { language } = useLanguage();
+  const c = CONTENT_BY_LANG[language];
+  const ROWS = c.rows;
   return (
     <div
       className="tk-glass-heavy"
@@ -66,9 +119,9 @@ export default function DashboardMarge() {
         className="grid grid-cols-3 gap-3 md:gap-4"
         style={{ marginBottom: "4px" }}
       >
-        <KpiCard label="Gesamt-Marge" value="+9,8%" sub="Ø aus 3 Objekten" tone="ok" />
-        <KpiCard label="Warnung" value="1 Objekt" sub="Personalkosten 18% ↑" tone="warn" />
-        <KpiCard label="In Echtzeit" value="0,3 s" sub="Update-Latenz" tone="info" />
+        <KpiCard label={c.totalMarginLabel} value="+9,8%" sub={c.totalMarginSub} tone="ok" />
+        <KpiCard label={c.warningLabel} value={c.warningValue} sub={c.warningSub} tone="warn" />
+        <KpiCard label={c.liveLabel} value={c.liveValue} sub={c.liveSub} tone="info" />
       </div>
 
       {/* Table header */}
@@ -82,9 +135,9 @@ export default function DashboardMarge() {
         }}
       >
         <div>
-          <div className="tk-eyebrow">Objekt-Übersicht</div>
+          <div className="tk-eyebrow">{c.overviewEyebrow}</div>
           <div style={{ fontSize: "13px", color: "var(--tk-ink-muted)", marginTop: "2px" }}>
-            3 aktive Verträge · heute 14:07 Uhr
+            {c.overviewSub}
           </div>
         </div>
         <span
@@ -120,7 +173,7 @@ export default function DashboardMarge() {
       >
         {ROWS.map((row) => (
           <motion.div key={row.name} variants={staggerChild}>
-            <ObjectRow row={row} />
+            <ObjectRow row={row} contractSumLabel={c.contractSum} costLabel={c.costLabel} progressSuffix={c.progressSuffix} />
           </motion.div>
         ))}
       </motion.div>
@@ -171,7 +224,7 @@ function KpiCard({
   );
 }
 
-function ObjectRow({ row }: { row: Row }) {
+function ObjectRow({ row, contractSumLabel, costLabel, progressSuffix }: { row: Row; contractSumLabel: string; costLabel: string; progressSuffix: string }) {
   const good = row.deltaTone === "up";
   return (
     <div
@@ -206,7 +259,7 @@ function ObjectRow({ row }: { row: Row }) {
             {row.name}
           </div>
           <div style={{ fontSize: "12px", color: "var(--tk-ink-muted)", marginTop: "2px" }}>
-            Vertragssumme: {row.sum}
+            {contractSumLabel}: {row.sum}
           </div>
         </div>
         <div style={{ textAlign: "right", flexShrink: 0 }}>
@@ -247,8 +300,8 @@ function ObjectRow({ row }: { row: Row }) {
           color: "var(--tk-ink-muted)",
         }}
       >
-        <span>Kosten: {row.cost}</span>
-        <span>{row.progress}% abgeschlossen</span>
+        <span>{costLabel}: {row.cost}</span>
+        <span>{row.progress}{progressSuffix}</span>
       </div>
       <div
         style={{

@@ -183,7 +183,7 @@ This article takes the topic seriously. No buzzwords, no silver bullets. We'll s
 
 ## What "field-to-office communication" really covers
 
-When owners talk about "communication", they often mean WhatsApp groups, hallway chats and the morning briefing. That's part of it — the smallest part.
+When owners talk about "communication", they often mean messenger groups, hallway chats and the morning briefing. That's part of it — the smallest part.
 
 In reality, communication between field and office covers at least seven information flows that must work in both directions:
 
@@ -215,7 +215,7 @@ We deliberately avoid generic claims like "saves up to X hours." Those numbers d
 
 We see the same four patterns over and over — independent of industry or company size.
 
-**Pattern 1: "We handle it on WhatsApp."** WhatsApp isn't a communication system. It's a message channel. The difference: messages disappear into the chronological feed. Information isn't automatically attached to context (job, site, client). Anyone trying in August to find what was discussed about site XY in February has a problem. On top of that: questionable from a data-protection angle, not audit-proof for labour law, and the entire history is lost when someone leaves.
+**Pattern 1: "We handle it in a chat."** messenger isn't a communication system. It's a message channel. The difference: messages disappear into the chronological feed. Information isn't automatically attached to context (job, site, client). Anyone trying in August to find what was discussed about site XY in February has a problem. On top of that: questionable from a data-protection angle, not audit-proof for labour law, and the entire history is lost when someone leaves.
 
 **Pattern 2: "We have software, but nobody uses it."** The most common scenario. The reason is almost never "the staff don't want to". The reason is that the software adds work instead of replacing it. If a cleaner needs ten extra minutes on their phone after a shift to log what they already did, they won't keep doing it. And they're right. The only solution that demonstrably works: capture has to happen inside the workflow, not next to it. A motion that's already happening — arriving, starting, finishing — must double as the documentation.
 
@@ -255,7 +255,7 @@ Communication between field and office will be a competitive factor in operation
 
 Higher contribution margins through reliable costing. Lower complaint overhead through complete proof of service. Noticeably reduced admin load in the office. Better staff retention through less "paperwork after hours". Manageability even with growth, without the owner drowning in operations.
 
-Anyone who still believes this topic can be fixed with more discipline, better WhatsApp groups or a second back-office hire is building a competitive disadvantage over the next three to five years that they'll struggle to close later.
+Anyone who still believes this topic can be fixed with more discipline, better messenger groups or a second back-office hire is building a competitive disadvantage over the next three to five years that they'll struggle to close later.
 
 The good news: the technical and organisational conditions to solve the problem structurally exist today, are affordable and battle-tested. What's missing in most cases isn't the solution — it's the decision.
 
@@ -281,7 +281,7 @@ Cet article prend le sujet au sérieux. Pas de buzzwords, pas de promesses mirac
 
 ## Ce que recouvre vraiment la « communication terrain-bureau »
 
-Quand les dirigeants parlent de « communication », ils pensent souvent aux groupes WhatsApp, aux échanges à la volée et au briefing du matin. C'en est une partie — la plus petite.
+Quand les dirigeants parlent de « communication », ils pensent souvent aux groupes de messagerie, aux échanges à la volée et au briefing du matin. C'en est une partie — la plus petite.
 
 En réalité, la communication entre terrain et bureau couvre au moins sept flux d'information, qui doivent fonctionner dans les deux sens :
 
@@ -313,7 +313,7 @@ Nous évitons délibérément les formules génériques du type « économise ju
 
 On retrouve les quatre mêmes schémas en boucle — quel que soit le secteur ou la taille.
 
-**Schéma 1 : « On gère sur WhatsApp. »** WhatsApp n'est pas un système de communication. C'est un canal de messages. La différence : les messages disparaissent dans le fil chronologique. L'information n'est pas rattachée automatiquement au contexte (mission, site, client). Quiconque essaie en août de retrouver ce qui s'est dit en février sur le chantier XY a un problème. En plus : sensible sur le plan de la protection des données, non opposable côté droit du travail, et tout l'historique se perd au départ d'un collaborateur.
+**Schéma 1 : « On gère dans un chat. »** messenger n'est pas un système de communication. C'est un canal de messages. La différence : les messages disparaissent dans le fil chronologique. L'information n'est pas rattachée automatiquement au contexte (mission, site, client). Quiconque essaie en août de retrouver ce qui s'est dit en février sur le chantier XY a un problème. En plus : sensible sur le plan de la protection des données, non opposable côté droit du travail, et tout l'historique se perd au départ d'un collaborateur.
 
 **Schéma 2 : « On a un logiciel, mais personne ne l'utilise. »** Le scénario le plus fréquent. La raison n'est presque jamais « les équipes ne veulent pas ». La raison, c'est que le logiciel crée du travail au lieu de remplacer du travail. Si un agent d'entretien doit passer dix minutes de plus sur son téléphone après son service pour saisir ce qu'il a déjà fait, il ne le fera pas durablement. Et il a raison. La seule solution qui marche : la saisie doit se faire dans le flux de travail, pas à côté. Un geste qui a lieu de toute façon — arriver, démarrer, clôturer — doit aussi être la documentation.
 
@@ -353,7 +353,7 @@ La communication terrain-bureau sera dans les prochaines années un facteur de c
 
 Des marges plus solides grâce à un chiffrage fiable. Moins de coût de réclamation grâce à des preuves complètes. Une charge administrative nettement réduite au bureau. Une fidélisation supérieure grâce à moins de « paperasse en heures sup ». Et une entreprise pilotable même en croissance, sans que la direction se noie dans l'opérationnel.
 
-Quiconque croit encore qu'on règle ce sujet avec plus de discipline, de meilleurs groupes WhatsApp ou un second poste de secrétariat construit, sur trois à cinq ans, un désavantage compétitif qu'il aura du mal à rattraper.
+Quiconque croit encore qu'on règle ce sujet avec plus de discipline, de meilleurs groupes de messagerie ou un second poste de secrétariat construit, sur trois à cinq ans, un désavantage compétitif qu'il aura du mal à rattraper.
 
 La bonne nouvelle : les conditions techniques et organisationnelles pour traiter le problème structurellement existent aujourd'hui, sont abordables et éprouvées. Ce qui manque dans la plupart des cas, ce n'est pas la solution — c'est la décision.
 
@@ -424,7 +424,7 @@ For MG Gebäudeservice, that solved two things at once. First: time tracking run
 
 **Scheduling? Takes care of itself**
 
-Before, scheduling at MG Gebäudeservice looked like this: Excel sheet with shift plans, changes pushed via WhatsApp, hoping everyone had the current version. In case of sickness or no-shows: phone rally.
+Before, scheduling at MG Gebäudeservice looked like this: Excel sheet with shift plans, changes pushed via chat, hoping everyone had the current version. In case of sickness or no-shows: phone rally.
 
 With Taskey, the entire scheduling is digital. Set up sites, assign employees, define shift times — everything in the system. Changes arrive in real time on the employee's phone. No back-and-forth, no outdated plans, no "I didn't know I was supposed to be there today."
 
@@ -446,7 +446,7 @@ Before, collecting, checking and transferring timesheets at MG Gebäudeservice t
 
 **Scheduling: 3 hours saved per week**
 
-Manual coordination via Excel and WhatsApp used to eat up a solid 3 hours per week — building shift plans, communicating changes, answering questions. Since scheduling runs digitally through Taskey, 20 minutes are enough. Changes arrive in real time on the team's phones; follow-up questions have almost completely disappeared.
+Manual coordination via Excel and chat used to eat up a solid 3 hours per week — building shift plans, communicating changes, answering questions. Since scheduling runs digitally through Taskey, 20 minutes are enough. Changes arrive in real time on the team's phones; follow-up questions have almost completely disappeared.
 
 **Client communication: from gut feel to documentation**
 
@@ -465,7 +465,7 @@ When a client now asks whether and when a specific site was cleaned, MG Gebäude
 
 MG Gebäudeservice wasn't a poorly run business before. Quite the opposite: 30 employees, a solid customer base, a good name in Düsseldorf. But as in many companies of this size, processes had reached a point where working analogue cost more energy than it delivered.
 
-Two weeks with Taskey were enough to noticeably reduce the daily friction. No more lost timesheets, no more WhatsApp coordination, no more hunting for documents. Instead: a system that shows management in real time where the operation stands — and that the field team understood in two minutes.
+Two weeks with Taskey were enough to noticeably reduce the daily friction. No more lost timesheets, no more chat coordination, no more hunting for documents. Instead: a system that shows management in real time where the operation stands — and that the field team understood in two minutes.
 
 Gianluca of MG Gebäudeservice sums it up:
 
@@ -533,7 +533,7 @@ Pour MG Gebäudeservice, cela a réglé deux choses d'un coup. Premièrement : l
 
 **La planification ? Elle se fait toute seule**
 
-Avant, la planification chez MG Gebäudeservice ressemblait à ceci : un tableau Excel avec les plannings de vacation, les changements communiqués par WhatsApp, l'espoir que chacun ait bien la dernière version. En cas d'absence ou de maladie : rallye téléphonique.
+Avant, la planification chez MG Gebäudeservice ressemblait à ceci : un tableau Excel avec les plannings de vacation, les changements communiqués par chat, l'espoir que chacun ait bien la dernière version. En cas d'absence ou de maladie : rallye téléphonique.
 
 Avec Taskey, toute la planification est digitale. On crée les sites, on assigne les collaborateurs, on définit les horaires — tout est dans le système. Les changements arrivent en temps réel sur le téléphone du collaborateur. Plus d'allers-retours, plus de plannings périmés, plus de « je ne savais pas que je devais être là aujourd'hui ».
 
@@ -555,7 +555,7 @@ Avant, la collecte, le contrôle et la saisie des fiches d'heures chez MG Gebäu
 
 **Planification : 3 heures économisées par semaine**
 
-La coordination manuelle via Excel et WhatsApp prenait facilement 3 heures par semaine — construire les plannings, communiquer les changements, répondre aux questions. Depuis que la planification passe par Taskey, 20 minutes suffisent. Les changements arrivent en temps réel sur les téléphones des équipes ; les questions de suivi ont quasiment disparu.
+La coordination manuelle via Excel et chat prenait facilement 3 heures par semaine — construire les plannings, communiquer les changements, répondre aux questions. Depuis que la planification passe par Taskey, 20 minutes suffisent. Les changements arrivent en temps réel sur les téléphones des équipes ; les questions de suivi ont quasiment disparu.
 
 **Communication client : de l'intuition à la documentation**
 
@@ -574,7 +574,7 @@ Quand un donneur d'ordre demande aujourd'hui si et quand un site précis a été
 
 MG Gebäudeservice n'était pas une entreprise mal organisée avant. Au contraire : 30 collaborateurs, un portefeuille de clients solide, une bonne réputation à Düsseldorf. Mais comme dans beaucoup d'entreprises de cette taille, les processus avaient atteint un point où l'analogique coûtait plus d'énergie qu'il n'en rapportait.
 
-Deux semaines avec Taskey ont suffi pour réduire sensiblement les frictions quotidiennes. Plus de fiches d'heures perdues, plus de coordination par WhatsApp, plus de chasse aux documents. À la place : un système qui montre à la direction en temps réel où en est l'entreprise — et que les équipes terrain ont compris en deux minutes.
+Deux semaines avec Taskey ont suffi pour réduire sensiblement les frictions quotidiennes. Plus de fiches d'heures perdues, plus de coordination par chat, plus de chasse aux documents. À la place : un système qui montre à la direction en temps réel où en est l'entreprise — et que les équipes terrain ont compris en deux minutes.
 
 Gianluca, de MG Gebäudeservice, le résume ainsi :
 
@@ -599,7 +599,7 @@ This isn't a one-off. This is everyday life in commercial cleaning. And it costs
 
 **The problem isn't your team. The problem is the system.**
 
-Cleaning staff work decentrally. They're alone in an office building in the morning, in a shopping centre in the evening, in a production hall at night. There's no central time clock to punch in and out at. So things get improvised: WhatsApp messages, phone calls to the boss, paper slips in a jacket pocket — or nothing gets logged at all and it gets written from memory at month end.
+Cleaning staff work decentrally. They're alone in an office building in the morning, in a shopping centre in the evening, in a production hall at night. There's no central time clock to punch in and out at. So things get improvised: messenger messages, phone calls to the boss, paper slips in a jacket pocket — or nothing gets logged at all and it gets written from memory at month end.
 
 The result: you have no reliable data. Not for payroll, not for the client, not for yourself. You don't know whether site A really takes 3.5 hours or whether there's half an hour of buffer baked in. You can't cleanly calculate your margins. And when someone claims they were on site — you have no proof.
 
@@ -637,13 +637,13 @@ That's exactly why Taskey uses NFC. The threshold is essentially zero. Smartphon
 
 Taskey isn't a pure time-tracking app. It's scheduling, time tracking, job management and documentation in one system. For you that means: you plan the job, your team clocks in and out by NFC, the times flow automatically into the jobs, and you bill directly.
 
-One system. No patchwork of three different tools, an Excel sheet and two WhatsApp groups.
+One system. No patchwork of three different tools, an Excel sheet and two messenger groups.
 
 Taskey is fully GDPR-compliant, Made in Germany, and runs on every smartphone. No specialised hardware to install. No half-day training session. Your team can start this afternoon.
 
 **The maths is simple**
 
-Say you have 20 staff. Each one spends 10 minutes a day filling in slips, noting times, sending WhatsApp updates. That's over 30 hours a month — just for time tracking. Plus your own hours collecting, checking and transferring it.
+Say you have 20 staff. Each one spends 10 minutes a day filling in slips, noting times, sending chat updates. That's over 30 hours a month — just for time tracking. Plus your own hours collecting, checking and transferring it.
 
 With NFC check-ins and automatic capture, that disappears. Completely. The time you save is money — or better: time you can put into sales, quality control, or simply ending the day on time.
 
@@ -671,7 +671,7 @@ Ce n'est pas un cas isolé. C'est le quotidien du nettoyage professionnel. Et ç
 
 **Le problème n'est pas votre équipe. Le problème, c'est le système.**
 
-Les agents d'entretien travaillent en mode décentralisé. Seuls dans un immeuble de bureaux le matin, dans un centre commercial le soir, dans un hall de production la nuit. Pas de pointeuse centrale pour entrer et sortir. Alors on improvise : messages WhatsApp, appels au chef, papiers dans la poche de la veste — ou rien n'est noté et on écrit de tête à la fin du mois.
+Les agents d'entretien travaillent en mode décentralisé. Seuls dans un immeuble de bureaux le matin, dans un centre commercial le soir, dans un hall de production la nuit. Pas de pointeuse centrale pour entrer et sortir. Alors on improvise : messages de chat, appels au chef, papiers dans la poche de la veste — ou rien n'est noté et on écrit de tête à la fin du mois.
 
 Résultat : pas de données fiables. Ni pour la paie, ni pour le client, ni pour vous. Vous ne savez pas si le site A prend vraiment 3,5 heures ou s'il y a une demi-heure de mou dedans. Vous ne pouvez pas chiffrer proprement vos marges. Et si quelqu'un prétend être passé — vous n'avez pas de preuve.
 
@@ -709,13 +709,13 @@ C'est précisément pour ça que Taskey mise sur le NFC. La barrière est quasi 
 
 Taskey n'est pas une simple appli de pointage. C'est la planification, le pointage, le pilotage des missions et la documentation dans un seul système. Pour vous, ça veut dire : vous planifiez la mission, votre équipe pointe par NFC, les heures alimentent automatiquement les missions, et vous facturez directement.
 
-Un système. Pas un assemblage de trois outils différents, d'un Excel et de deux groupes WhatsApp.
+Un système. Pas un assemblage de trois outils différents, d'un Excel et de deux groupes de messagerie.
 
 Taskey est totalement conforme DSGVO/GDPR, Made in Germany, et fonctionne sur tout smartphone. Pas de matériel spécifique à installer. Pas de formation qui prend une demi-journée. Votre équipe peut s'y mettre cet après-midi.
 
 **Le calcul est simple**
 
-Mettons que vous avez 20 collaborateurs. Chacun passe 10 minutes par jour à remplir des fiches, noter des heures, envoyer des messages WhatsApp. Ça fait plus de 30 heures par mois — rien que pour le pointage. Plus vos propres heures à collecter, contrôler, ressaisir.
+Mettons que vous avez 20 collaborateurs. Chacun passe 10 minutes par jour à remplir des fiches, noter des heures, envoyer des messages de chat. Ça fait plus de 30 heures par mois — rien que pour le pointage. Plus vos propres heures à collecter, contrôler, ressaisir.
 
 Avec le pointage NFC et la saisie automatique, ça disparaît. Complètement. Le temps que vous gagnez, c'est de l'argent — ou mieux : du temps que vous pouvez mettre dans la prospection, le contrôle qualité, ou simplement votre fin de journée.
 

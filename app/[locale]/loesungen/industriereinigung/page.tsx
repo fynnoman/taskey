@@ -88,7 +88,7 @@ const CONTENT = {
           "Schichten Früh / Spät / Nacht parallel",
           "Mindestruhezeiten automatisch geprüft",
           "Vertretungs-Engine mit Qualifikations-Matching",
-          "Push-Benachrichtigung an Mitarbeiter ohne WhatsApp-Spam",
+          "Push-Benachrichtigung an Mitarbeiter ohne Chat-Spam",
         ],
       },
       {
@@ -189,7 +189,7 @@ const CONTENT = {
           "Early / late / night shifts in parallel",
           "Minimum rest periods checked automatically",
           "Substitution engine with qualification matching",
-          "Push notifications to employees without WhatsApp spam",
+          "Push notifications to employees without chat spam",
         ],
       },
       {
@@ -290,7 +290,7 @@ const CONTENT = {
           "Équipes matin / après-midi / nuit en parallèle",
           "Temps de repos minimaux vérifiés automatiquement",
           "Moteur de remplacement avec matching de qualifications",
-          "Notifications push aux collaborateurs sans spam WhatsApp",
+          "Notifications push aux collaborateurs sans spam de chat",
         ],
       },
       {

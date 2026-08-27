@@ -77,7 +77,7 @@ const CONTENT = {
     sec2Eyebrow: "Was ein 5-Personen-Betrieb sparte",
     sec2Heading: "Echte Zahlen aus dem Reinigungsalltag.",
     sec2Body1:
-      "Ein typischer 5-Personen-Betrieb in unserer Kundschaft verbringt vor Taskey rund 8–12 Stunden pro Woche mit Stundenzetteln, Wochenplänen, WhatsApp-Antworten und Rechnungsversand. Nach der Umstellung auf Taskey sind das 2–3 Stunden pro Woche.",
+      "Ein typischer 5-Personen-Betrieb in unserer Kundschaft verbringt vor Taskey rund 8–12 Stunden pro Woche mit Stundenzetteln, Wochenplänen, Chat-Antworten und Rechnungsversand. Nach der Umstellung auf Taskey sind das 2–3 Stunden pro Woche.",
     sec2Body2:
       "Das ergibt – bei einem Stundensatz des Inhabers von 50 € – eine Zeitersparnis im Wert von etwa 18.000 bis 24.000 € pro Jahr. Plus 5–15 % höhere Marge pro Objekt, weil Stunden, Pausen und Vertretungen korrekt erfasst werden.",
     sec2Body3:
@@ -147,7 +147,7 @@ const CONTENT = {
     sec2Eyebrow: "What a 5-person operation saved",
     sec2Heading: "Real numbers from cleaning everyday life.",
     sec2Body1:
-      "A typical 5-person operation in our customer base spends around 8–12 hours per week on timesheets, weekly plans, WhatsApp replies and invoice dispatch before Taskey. After the switch, that’s 2–3 hours per week.",
+      "A typical 5-person operation in our customer base spends around 8–12 hours per week on timesheets, weekly plans, chat replies and invoice dispatch before Taskey. After the switch, that’s 2–3 hours per week.",
     sec2Body2:
       "That translates – at an owner hourly rate of EUR 50 – into time savings worth roughly EUR 18,000 to 24,000 per year. Plus a 5–15 % higher margin per site, because hours, breaks and replacements are recorded correctly.",
     sec2Body3:
@@ -217,7 +217,7 @@ const CONTENT = {
     sec2Eyebrow: "Ce qu’a économisé une entreprise de 5 personnes",
     sec2Heading: "Des chiffres réels du quotidien du nettoyage.",
     sec2Body1:
-      "Une entreprise type de 5 personnes chez nos clients passe, avant Taskey, environ 8 à 12 heures par semaine sur feuilles d’heures, plannings hebdomadaires, réponses WhatsApp et envoi de factures. Après le passage à Taskey, c’est 2 à 3 heures par semaine.",
+      "Une entreprise type de 5 personnes chez nos clients passe, avant Taskey, environ 8 à 12 heures par semaine sur feuilles d’heures, plannings hebdomadaires, réponses par chat et envoi de factures. Après le passage à Taskey, c’est 2 à 3 heures par semaine.",
     sec2Body2:
       "Cela représente – avec un taux horaire dirigeant de 50 € – un gain de temps d’environ 18 000 à 24 000 € par an. Plus 5 à 15 % de marge en plus par site, parce que les heures, pauses et remplacements sont correctement saisis.",
     sec2Body3:

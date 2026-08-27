@@ -110,7 +110,7 @@ const CONTENT = {
     sec1Eyebrow: "Problem",
     sec1Heading: "Warum klassische Software in der Gebäudereinigung scheitert.",
     sec1Intro:
-      "Die meisten Reinigungsbetriebe arbeiten heute mit einem Flickenteppich aus Excel, WhatsApp, einem Buchhaltungs-Tool, einer separaten Zeiterfassung und einer Cloud für Dokumente. Eine echte Software für Gebäudereinigung muss diesen Flickenteppich ersetzen – nicht erweitern.",
+      "Die meisten Reinigungsbetriebe arbeiten heute mit einem Flickenteppich aus Excel, Chats, einem Buchhaltungs-Tool, einer separaten Zeiterfassung und einer Cloud für Dokumente. Eine echte Software für Gebäudereinigung muss diesen Flickenteppich ersetzen – nicht erweitern.",
     sec1Body1:
       "In der Gebäudereinigung gibt es keine zwei gleichen Objekte. Tarife sind unterschiedlich, Schichten verschieben sich kurzfristig, Krankmeldungen kommen am Sonntagabend, Auftraggeber verlangen tagesaktuelle Nachweise. Klassische Branchensoftware ist auf den Industriebetrieb oder den Handwerksbetrieb zugeschnitten – und passt deshalb nie zu hundert Prozent.",
     sec1Body2:
@@ -175,7 +175,7 @@ const CONTENT = {
     sec5Intro:
       "So verändert sich der Alltag, wenn eine Reinigungsfirma vom Excel-Flickenteppich auf eine echte Branchensoftware Gebäudereinigung umstellt.",
     sec5Bullet1: "Stundenzettel auf Papier → NFC-Nachweis automatisch digital",
-    sec5Bullet2: "Disposition per WhatsApp → Einsatzplan live in der App, dokumentiert",
+    sec5Bullet2: "Disposition per Chat → Einsatzplan live in der App, dokumentiert",
     sec5Bullet3: "Streit mit Auftraggebern → lückenloser Nachweis pro Objekt",
     sec5Bullet4: "Rechnungen 2 Wochen später → mit einem Klick aus den Stunden",
     sec5Bullet5: "Kein Überblick über Marge → Live-Marge pro Objekt sichtbar",
@@ -250,7 +250,7 @@ const CONTENT = {
     sec1Eyebrow: "Problem",
     sec1Heading: "Why classic software fails in building cleaning.",
     sec1Intro:
-      "Most cleaning operations work today with a patchwork of Excel, WhatsApp, an accounting tool, a separate time tracker and a cloud for documents. Real software for building cleaning has to replace that patchwork – not extend it.",
+      "Most cleaning operations work today with a patchwork of Excel, chats, an accounting tool, a separate time tracker and a cloud for documents. Real software for building cleaning has to replace that patchwork – not extend it.",
     sec1Body1:
       "In building cleaning, no two sites are alike. Pay rates differ, shifts shift at short notice, sick calls arrive on a Sunday evening, clients demand same-day proof. Classic industry software is designed for industrial operations or trade workshops – and therefore never fits one hundred percent.",
     sec1Body2:
@@ -315,7 +315,7 @@ const CONTENT = {
     sec5Intro:
       "This is how daily life changes when a cleaning company moves from the Excel patchwork to real industry software for building cleaning.",
     sec5Bullet1: "Paper timesheets → NFC proof automatically digital",
-    sec5Bullet2: "Dispatch by WhatsApp → schedule live in the app, documented",
+    sec5Bullet2: "Dispatch by chat → schedule live in the app, documented",
     sec5Bullet3: "Disputes with clients → complete proof per site",
     sec5Bullet4: "Invoices two weeks late → with one click from the hours",
     sec5Bullet5: "No overview of margin → live margin per site visible",
@@ -390,7 +390,7 @@ const CONTENT = {
     sec1Eyebrow: "Problème",
     sec1Heading: "Pourquoi les logiciels classiques échouent dans le nettoyage.",
     sec1Intro:
-      "La plupart des entreprises de nettoyage travaillent aujourd’hui avec un patchwork d’Excel, WhatsApp, un outil de compta, un pointage séparé et un cloud pour les documents. Un vrai logiciel pour le nettoyage de bâtiments doit remplacer ce patchwork – pas l’élargir.",
+      "La plupart des entreprises de nettoyage travaillent aujourd’hui avec un patchwork d’Excel, de chats, d’un outil de compta, d’un pointage séparé et d’un cloud pour les documents. Un vrai logiciel pour le nettoyage de bâtiments doit remplacer ce patchwork – pas l’élargir.",
     sec1Body1:
       "Dans le nettoyage de bâtiments, deux sites ne se ressemblent jamais. Les tarifs diffèrent, les plannings bougent à la dernière minute, les arrêts maladie tombent un dimanche soir, les donneurs d’ordre exigent des justificatifs le jour même. Les logiciels métiers classiques sont conçus pour l’industrie ou l’artisanat – et ne collent donc jamais à 100 %.",
     sec1Body2:
@@ -455,7 +455,7 @@ const CONTENT = {
     sec5Intro:
       "Voilà comment le quotidien change quand une entreprise de nettoyage passe du patchwork Excel à un vrai logiciel métier de nettoyage de bâtiments.",
     sec5Bullet1: "Feuilles d’heures papier → justificatif NFC automatiquement numérique",
-    sec5Bullet2: "Dispatch via WhatsApp → planning en direct dans l’app, documenté",
+    sec5Bullet2: "Dispatch par chat → planning en direct dans l’app, documenté",
     sec5Bullet3: "Litiges avec donneurs d’ordre → justificatif complet par site",
     sec5Bullet4: "Factures 2 semaines plus tard → en un clic depuis les heures",
     sec5Bullet5: "Aucune vue sur la marge → marge en direct par site visible",

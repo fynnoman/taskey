@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-import WhatsAppFab from "@/components/WhatsAppFab";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
 
@@ -31,7 +30,6 @@ export default async function LocaleLayout({
       {children}
       <Footer />
       <CookieConsent />
-      <WhatsAppFab />
     </LanguageProvider>
   );
 }

@@ -3,6 +3,7 @@
 import Link from "@/components/LocaleLink";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import AiImageBadge from "@/components/AiImageBadge";
 
 /**
  * TargetAudiences
@@ -63,7 +64,7 @@ const CONTENT = {
         ],
         pains: [
           "Unvollständige Stundenzettel",
-          "Leistungsnachweise im WhatsApp-Chaos",
+          "Leistungsnachweise im Chat-Chaos",
         ],
         cta: "Für Unterhaltsreinigung",
         image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
@@ -202,7 +203,7 @@ const CONTENT = {
         ],
         pains: [
           "Incomplete timesheets",
-          "Service records lost in WhatsApp chaos",
+          "Service records lost in chat chaos",
         ],
         cta: "For maintenance cleaning",
         image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
@@ -341,7 +342,7 @@ const CONTENT = {
         ],
         pains: [
           "Feuilles d'heures incomplètes",
-          "Justificatifs de prestation noyés dans WhatsApp",
+          "Justificatifs de prestation noyés dans les chats",
         ],
         cta: "Pour le nettoyage d'entretien",
         image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
@@ -520,6 +521,7 @@ export default function TargetAudiences({
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-slate-950/20" />
+                <AiImageBadge position="top-right" />
               </div>
 
               {/* Progress-Bar */}

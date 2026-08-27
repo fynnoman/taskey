@@ -2,21 +2,51 @@
 
 import { motion } from "motion/react";
 import { springs } from "./motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Row = { label: string; value: string; tone: "ok" | "warn" | "info" };
 
-const ROWS: Row[] = [
-  { label: "Teams im Einsatz", value: "12 aktiv · alle in Zeit", tone: "ok" },
-  { label: "Marge diesen Monat", value: "+5,4 % über Ziel", tone: "ok" },
-  { label: "Postfach", value: "beantwortet · 3 Anfragen bewertet", tone: "info" },
-  { label: "Ausschreibungen", value: "2 passende · vorbewertet", tone: "info" },
-];
+const ROWS_BY_LANG: Record<"de" | "en" | "fr", { today: string; headline: string; rows: Row[] }> = {
+  de: {
+    today: "Heute",
+    headline: "alles im grünen Bereich",
+    rows: [
+      { label: "Teams im Einsatz", value: "12 aktiv · alle in Zeit", tone: "ok" },
+      { label: "Marge diesen Monat", value: "+5,4 % über Ziel", tone: "ok" },
+      { label: "Postfach", value: "beantwortet · 3 Anfragen bewertet", tone: "info" },
+      { label: "Ausschreibungen", value: "2 passende · vorbewertet", tone: "info" },
+    ],
+  },
+  en: {
+    today: "Today",
+    headline: "everything in the green",
+    rows: [
+      { label: "Teams on shift", value: "12 active · all on time", tone: "ok" },
+      { label: "Margin this month", value: "+5.4 % over target", tone: "ok" },
+      { label: "Inbox", value: "handled · 3 requests reviewed", tone: "info" },
+      { label: "Tenders", value: "2 matches · pre-scored", tone: "info" },
+    ],
+  },
+  fr: {
+    today: "Aujourd’hui",
+    headline: "tout est au vert",
+    rows: [
+      { label: "Équipes en poste", value: "12 actives · toutes à l’heure", tone: "ok" },
+      { label: "Marge ce mois-ci", value: "+5,4 % au-dessus de la cible", tone: "ok" },
+      { label: "Boîte mail", value: "traitée · 3 demandes évaluées", tone: "info" },
+      { label: "Appels d’offres", value: "2 pertinents · pré-notés", tone: "info" },
+    ],
+  },
+};
 
 /**
  * Phone-shaped glass surface showing a "everything green" dashboard.
  * Purely presentational — used inside AufEinenBlick section.
  */
 export default function PhoneAtAGlance() {
+  const { language } = useLanguage();
+  const content = ROWS_BY_LANG[language];
+  const ROWS = content.rows;
   return (
     <motion.div
       initial={{ opacity: 0, y: 40, rotate: -2 }}
@@ -88,7 +118,7 @@ export default function PhoneAtAGlance() {
 
         <div>
           <div className="tk-eyebrow" style={{ color: "#64748b" }}>
-            Heute
+            {content.today}
           </div>
           <div
             style={{
@@ -99,7 +129,7 @@ export default function PhoneAtAGlance() {
               marginTop: "2px",
             }}
           >
-            alles im grünen Bereich
+            {content.headline}
           </div>
         </div>
 

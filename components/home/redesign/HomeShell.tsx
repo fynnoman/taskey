@@ -11,8 +11,69 @@ import PhoneAtAGlance from "./PhoneAtAGlance";
 import DashboardMarge from "./DashboardMarge";
 import FaqBoard from "./FaqBoard";
 import CalendlyInline from "./CalendlyInline";
+import AiImageBadge from "@/components/AiImageBadge";
+import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp, springs, staggerChild, staggerParent } from "./motion";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+
+type Lang = "de" | "en" | "fr";
+
+const HERO_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h1Line1: string;
+  h1Line2: string;
+  lead: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  ctaDemo: string;
+  ctaNote: string;
+  fundingEyebrow: string;
+  fundingProgram: string;
+  fundingSubtitle: string;
+  scroll: string;
+}> = {
+  de: {
+    eyebrow: "Die sauberste Software von allen.",
+    h1Line1: "Ihr Betrieb läuft.",
+    h1Line2: "Sie sehen es auf einen Blick.",
+    lead: "Objekte, Personal, Zeiterfassung, Kalkulation, Ausschreibungen. Alles gebündelt in einer Plattform, gebaut für Gebäudereinigungsbetriebe, die effizient arbeiten wollen. Weniger Tools. Weniger Aufwand. Mehr Marge, direkt vom Handy.",
+    ctaPrimary: "Kostenlosen Account erstellen",
+    ctaSecondary: "Alle Funktionen",
+    ctaDemo: "Kundendashboard-Demo anschauen",
+    ctaNote: "Keine Kreditkarte. Kein Risiko. Sofort loslegen.",
+    fundingEyebrow: "Gefördert im",
+    fundingProgram: "Startup Launchpad 2026",
+    fundingSubtitle: "Universität des Saarlandes · Triathlon",
+    scroll: "Scroll",
+  },
+  en: {
+    eyebrow: "The cleanest software out there.",
+    h1Line1: "Your operation is running.",
+    h1Line2: "You see it at a glance.",
+    lead: "Sites, workforce, time tracking, calculation, tenders. Everything on one platform, built for building cleaning operations that want to run efficiently. Fewer tools. Less overhead. More margin, straight from your phone.",
+    ctaPrimary: "Create free account",
+    ctaSecondary: "All features",
+    ctaDemo: "See the client dashboard demo",
+    ctaNote: "No credit card. No risk. Start right away.",
+    fundingEyebrow: "Backed by",
+    fundingProgram: "Startup Launchpad 2026",
+    fundingSubtitle: "Saarland University · Triathlon",
+    scroll: "Scroll",
+  },
+  fr: {
+    eyebrow: "Le logiciel le plus propre du marché.",
+    h1Line1: "Votre entreprise tourne.",
+    h1Line2: "Vous le voyez d’un coup d’œil.",
+    lead: "Sites, équipes, pointage, calcul, appels d’offres. Tout sur une plateforme, pensée pour les entreprises de nettoyage de bâtiments qui veulent travailler efficacement. Moins d’outils. Moins de charge. Plus de marge, directement depuis le téléphone.",
+    ctaPrimary: "Créer un compte gratuit",
+    ctaSecondary: "Toutes les fonctionnalités",
+    ctaDemo: "Voir la démo du tableau client",
+    ctaNote: "Sans carte bancaire. Sans risque. Démarrez tout de suite.",
+    fundingEyebrow: "Soutenu par",
+    fundingProgram: "Startup Launchpad 2026",
+    fundingSubtitle: "Université de la Sarre · Triathlon",
+    scroll: "Défiler",
+  },
+};
 
 /* ─────────────────────────────────────────────────────────────────────────────
  * Reusable atoms
@@ -93,6 +154,8 @@ function Eyebrow({ children, tone = "muted" }: { children: ReactNode; tone?: "mu
  * ────────────────────────────────────────────────────────────────────────── */
 
 function HeroScene() {
+  const { language } = useLanguage();
+  const c = HERO_CONTENT[language];
   const ref = useRef<HTMLDivElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
   const glassRef = useRef<HTMLDivElement | null>(null);
@@ -169,7 +232,7 @@ function HeroScene() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...springs.soft, delay: 0.1 }}
             >
-              <Eyebrow tone="light">Die sauberste Software von allen.</Eyebrow>
+              <Eyebrow tone="light">{c.eyebrow}</Eyebrow>
               <h1
                 className="tk-display mt-6"
                 style={{
@@ -178,10 +241,10 @@ function HeroScene() {
                   maxWidth: "18ch",
                 }}
               >
-                Ihr Betrieb läuft.
+                {c.h1Line1}
                 <br />
                 <span style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Sie sehen es auf einen Blick.
+                  {c.h1Line2}
                 </span>
               </h1>
               <p
@@ -193,9 +256,7 @@ function HeroScene() {
                   maxWidth: "56ch",
                 }}
               >
-                Objekte, Personal, Zeiterfassung, Kalkulation, Ausschreibungen. Alles gebündelt
-                in einer Plattform, gebaut für Gebäudereinigungsbetriebe, die effizient arbeiten
-                wollen. Weniger Tools. Weniger Aufwand. Mehr Marge, direkt vom Handy.
+                {c.lead}
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -211,7 +272,7 @@ function HeroScene() {
                     boxShadow: "0 20px 50px -20px rgba(15,23,42,0.5)",
                   }}
                 >
-                  Kostenlosen Account erstellen
+                  {c.ctaPrimary}
                   <span aria-hidden>→</span>
                 </motion.a>
                 <motion.a
@@ -221,7 +282,7 @@ function HeroScene() {
                   className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium tk-glass-dark"
                   style={{ fontSize: "16px" }}
                 >
-                  Alle Funktionen
+                  {c.ctaSecondary}
                 </motion.a>
                 <motion.a
                   href="https://demo.kunden.taskeyapp.com"
@@ -237,28 +298,8 @@ function HeroScene() {
                     boxShadow: "0 20px 50px -20px rgba(249,115,22,0.55)",
                   }}
                 >
-                  Kundendashboard-Demo anschauen
+                  {c.ctaDemo}
                   <span aria-hidden>→</span>
-                </motion.a>
-                <motion.a
-                  href={getWhatsAppUrl("de")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Per WhatsApp schreiben"
-                  whileTap={{ scale: 0.97 }}
-                  transition={springs.snappy}
-                  className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
-                  style={{
-                    background: "#25D366",
-                    color: "#fff",
-                    fontSize: "16px",
-                    boxShadow: "0 20px 50px -20px rgba(37,211,102,0.55)",
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
-                    <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
-                  </svg>
-                  WhatsApp
                 </motion.a>
               </div>
 
@@ -266,7 +307,7 @@ function HeroScene() {
                 className="mt-6"
                 style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px" }}
               >
-                Keine Kreditkarte. Kein Risiko. Sofort loslegen.
+                {c.ctaNote}
               </p>
             </motion.div>
           </div>
@@ -283,7 +324,7 @@ function HeroScene() {
                 className="p-6"
                 style={{ maxWidth: "320px" }}
               >
-                <Eyebrow tone="light">Gefördert im</Eyebrow>
+                <Eyebrow tone="light">{c.fundingEyebrow}</Eyebrow>
                 <div style={{ marginTop: "10px", display: "flex", alignItems: "center", gap: "12px" }}>
                   <Image
                     src="/launchpad-saarland.png"
@@ -294,10 +335,10 @@ function HeroScene() {
                   />
                   <div>
                     <div style={{ fontSize: "14px", fontWeight: 600, color: "#fff" }}>
-                      Startup Launchpad 2026
+                      {c.fundingProgram}
                     </div>
                     <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)", marginTop: "2px" }}>
-                      Universität des Saarlandes · Triathlon
+                      {c.fundingSubtitle}
                     </div>
                   </div>
                 </div>
@@ -328,7 +369,7 @@ function HeroScene() {
           gap: "8px",
         }}
       >
-        Scroll
+        {c.scroll}
         <motion.span
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
@@ -344,92 +385,182 @@ function HeroScene() {
  * Section 2 — Feature Trio (Kalkulation / Ausschreibungen / Ein System)
  * ────────────────────────────────────────────────────────────────────────── */
 
-const FEATURE_TRIO: {
+type FeatureTrioCard = {
   eyebrow: string;
   title: string;
   body: string;
   image: string;
   alt: string;
-}[] = [
-  {
-    eyebrow: "Kalkulation, die mitdenkt",
-    title: "Wenn die Objektkalkulation selbst mitrechnet.",
-    body:
-      "Taskey liest Fläche, Leistungsverzeichnis und verfügbare Personalkapazität und schlägt vor, an welcher Stelle ein Subunternehmer sinnvoll ist, wie oft und in welchem Umfang. Das Ganze abgestimmt auf das LV, damit die Marge nicht nur auf dem Papier steht. Nachunternehmer werden direkt aus dem System angebunden, ohne Umweg über zusätzliche Tools.",
-    image: "/sections/feature-kalkulation.png",
-    alt: "Kalkulationen-Übersicht mit Vertragsmargen pro Objekt",
-  },
-  {
-    eyebrow: "Neue Aufträge, gezielt",
-    title: "Die passende Ausschreibung findet Sie zuerst.",
-    body:
-      "Öffentliche und private Ausschreibungen werden nach dem gefiltert, was realistisch zu Ihrem Betrieb passt. Sie werden benachrichtigt, sobald eine dabei ist, die Sie mit Ihrer Struktur tatsächlich gewinnen können. Inklusive Einschätzung, mit welcher Strategie der Zuschlag am wahrscheinlichsten wird.",
-    image: "/sections/feature-ausschreibungen.png",
-    alt: "Ausschreibungen-Suche mit TED und öffentlicher Vergabe",
-  },
-  {
-    eyebrow: "Auftraggeber-Portal",
-    title: "Ihre Kunden wissen es, bevor sie fragen.",
-    body:
-      "Statt Anrufe und E-Mail-Ketten sieht der Auftraggeber selbst nach: Live-Status pro Raum, Grundriss mit Farbcodes, Team vor Ort, offene Tickets. Der Ton mit Ihren Kunden ändert sich, ohne dass Sie ein Wort mehr sagen müssen.",
-    image: "/sections/feature-taskey-share.png",
-    alt: "Auftraggeber-Portal mit Live-Grundriss und Raumstatus",
-  },
-];
+  href: string;
+  detailsLabel: string;
+};
+
+const FEATURE_TRIO_CONTENT: Record<Lang, FeatureTrioCard[]> = {
+  de: [
+    {
+      eyebrow: "Kalkulation, die mitdenkt",
+      title: "Wenn die Objektkalkulation selbst mitrechnet.",
+      body:
+        "Taskey liest Fläche, Leistungsverzeichnis und verfügbare Personalkapazität und schlägt vor, an welcher Stelle ein Subunternehmer sinnvoll ist, wie oft und in welchem Umfang. Das Ganze abgestimmt auf das LV, damit die Marge nicht nur auf dem Papier steht. Nachunternehmer werden direkt aus dem System angebunden, ohne Umweg über zusätzliche Tools.",
+      image: "/sections/feature-kalkulation.png",
+      alt: "Kalkulationen-Übersicht mit Vertragsmargen pro Objekt",
+      href: "/features/kalkulation",
+      detailsLabel: "Details ansehen",
+    },
+    {
+      eyebrow: "Neue Aufträge, gezielt",
+      title: "Die passende Ausschreibung findet Sie zuerst.",
+      body:
+        "Öffentliche und private Ausschreibungen werden nach dem gefiltert, was realistisch zu Ihrem Betrieb passt. Sie werden benachrichtigt, sobald eine dabei ist, die Sie mit Ihrer Struktur tatsächlich gewinnen können. Inklusive Einschätzung, mit welcher Strategie der Zuschlag am wahrscheinlichsten wird.",
+      image: "/sections/feature-ausschreibungen.png",
+      alt: "Ausschreibungen-Suche mit TED und öffentlicher Vergabe",
+      href: "/features/ausschreibungen",
+      detailsLabel: "Details ansehen",
+    },
+    {
+      eyebrow: "Auftraggeber-Portal",
+      title: "Ihre Kunden wissen es, bevor sie fragen.",
+      body:
+        "Statt Anrufe und E-Mail-Ketten sieht der Auftraggeber selbst nach: Live-Status pro Raum, Grundriss mit Farbcodes, Team vor Ort, offene Tickets. Der Ton mit Ihren Kunden ändert sich, ohne dass Sie ein Wort mehr sagen müssen.",
+      image: "/sections/feature-taskey-share.png",
+      alt: "Auftraggeber-Portal mit Live-Grundriss und Raumstatus",
+      href: "/enterprise",
+      detailsLabel: "Details ansehen",
+    },
+  ],
+  en: [
+    {
+      eyebrow: "Calculation that thinks along",
+      title: "When site calculation does the maths for you.",
+      body:
+        "Taskey reads area, scope of work and available capacity and suggests where a subcontractor makes sense, how often and to what extent. All in line with the scope, so the margin doesn’t only exist on paper. Subcontractors are integrated straight from the system, without a detour through extra tools.",
+      image: "/sections/feature-kalkulation.png",
+      alt: "Calculation overview with contract margins per site",
+      href: "/features/kalkulation",
+      detailsLabel: "See details",
+    },
+    {
+      eyebrow: "New business, targeted",
+      title: "The right tender finds you first.",
+      body:
+        "Public and private tenders are filtered by what realistically fits your operation. You get notified as soon as one comes in that you can actually win with your structure. Including a read on the strategy most likely to land the award.",
+      image: "/sections/feature-ausschreibungen.png",
+      alt: "Tender search with TED and public procurement",
+      href: "/features/ausschreibungen",
+      detailsLabel: "See details",
+    },
+    {
+      eyebrow: "Client portal",
+      title: "Your clients know before they ask.",
+      body:
+        "Instead of calls and email chains, the client looks in themselves: live status per room, floor plan with colour codes, team on site, open tickets. The tone with your clients shifts without you having to say a word more.",
+      image: "/sections/feature-taskey-share.png",
+      alt: "Client portal with live floor plan and room status",
+      href: "/enterprise",
+      detailsLabel: "See details",
+    },
+  ],
+  fr: [
+    {
+      eyebrow: "Un calcul qui pense avec vous",
+      title: "Quand le calcul de site fait les comptes pour vous.",
+      body:
+        "Taskey lit la surface, le cahier des charges et la capacité disponible, puis suggère où un sous-traitant a du sens, à quelle fréquence et pour quel périmètre. Le tout aligné sur le cahier des charges, pour que la marge ne soit pas seulement sur le papier. Les sous-traitants sont intégrés directement dans le système, sans passer par un outil externe.",
+      image: "/sections/feature-kalkulation.png",
+      alt: "Vue des calculs avec marges par contrat et par site",
+      href: "/features/kalkulation",
+      detailsLabel: "Voir les détails",
+    },
+    {
+      eyebrow: "De nouvelles affaires, ciblées",
+      title: "Le bon appel d’offres vous parvient en premier.",
+      body:
+        "Les appels d’offres publics et privés sont filtrés selon ce qui vous correspond réellement. Vous êtes notifié dès qu’un appel d’offres à votre portée arrive. Avec une lecture de la stratégie la plus probable pour l’emporter.",
+      image: "/sections/feature-ausschreibungen.png",
+      alt: "Recherche d’appels d’offres avec TED et marchés publics",
+      href: "/features/ausschreibungen",
+      detailsLabel: "Voir les détails",
+    },
+    {
+      eyebrow: "Portail donneur d’ordre",
+      title: "Vos clients savent avant de demander.",
+      body:
+        "Fini les appels et les chaînes d’e-mails, le client regarde lui-même : statut en direct par salle, plan avec codes couleur, équipe sur site, tickets ouverts. Le ton avec vos clients change sans que vous ayez à dire un mot de plus.",
+      image: "/sections/feature-taskey-share.png",
+      alt: "Portail donneur d’ordre avec plan en direct et statut par salle",
+      href: "/enterprise",
+      detailsLabel: "Voir les détails",
+    },
+  ],
+};
 
 function FeatureTrio() {
+  const { language } = useLanguage();
+  const cards = FEATURE_TRIO_CONTENT[language];
   return (
     <SectionShell size="lg" tone="canvas">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-        {FEATURE_TRIO.map((feat, i) => (
-          <motion.article
+        {cards.map((feat, i) => (
+          <motion.div
             key={feat.eyebrow}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ ...springs.base, delay: i * 0.08 }}
-            className="tk-glass"
-            style={{
-              borderRadius: "var(--tk-radius-panel)",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              background: "rgba(255,255,255,0.85)",
-            }}
           >
-            <div style={{ position: "relative", aspectRatio: "16 / 11", overflow: "hidden" }}>
-              <Image
-                src={feat.image}
-                alt={feat.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                style={{ objectFit: "cover" }}
-              />
-              <div
-                aria-hidden
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.55) 100%)",
-                }}
-              />
-              <div style={{ position: "absolute", left: "20px", bottom: "18px" }}>
-                <Eyebrow tone="light">{feat.eyebrow}</Eyebrow>
+            <Link
+              href={feat.href}
+              className="tk-glass block h-full group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-[var(--tk-radius-panel)]"
+              style={{
+                borderRadius: "var(--tk-radius-panel)",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                background: "rgba(255,255,255,0.85)",
+              }}
+            >
+              <div style={{ position: "relative", aspectRatio: "16 / 11", overflow: "hidden" }}>
+                <Image
+                  src={feat.image}
+                  alt={feat.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                  className="transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <div
+                  aria-hidden
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.55) 100%)",
+                  }}
+                />
+                <AiImageBadge position="top-right" />
+                <div style={{ position: "absolute", left: "20px", bottom: "18px" }}>
+                  <Eyebrow tone="light">{feat.eyebrow}</Eyebrow>
+                </div>
               </div>
-            </div>
-            <div style={{ padding: "clamp(20px, 2.4vw, 30px)", display: "flex", flexDirection: "column", gap: "14px" }}>
-              <h3
-                className="tk-headline"
-                style={{ fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)", color: "var(--tk-ink)" }}
-              >
-                {feat.title}
-              </h3>
-              <p style={{ color: "var(--tk-ink-muted)", fontSize: "15px", lineHeight: 1.6 }}>
-                {feat.body}
-              </p>
-            </div>
-          </motion.article>
+              <div style={{ padding: "clamp(20px, 2.4vw, 30px)", display: "flex", flexDirection: "column", gap: "14px" }}>
+                <h3
+                  className="tk-headline"
+                  style={{ fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)", color: "var(--tk-ink)" }}
+                >
+                  {feat.title}
+                </h3>
+                <p style={{ color: "var(--tk-ink-muted)", fontSize: "15px", lineHeight: 1.6 }}>
+                  {feat.body}
+                </p>
+                <span
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 group-hover:text-blue-600 transition"
+                >
+                  {feat.detailsLabel}
+                  <span aria-hidden>→</span>
+                </span>
+              </div>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </SectionShell>
@@ -440,33 +571,67 @@ function FeatureTrio() {
  * Section 3 — BookMeeting (Kennenlerngespräch)
  * ────────────────────────────────────────────────────────────────────────── */
 
+const BOOK_MEETING_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  chips: string[];
+  ctaLabel: string;
+}> = {
+  de: {
+    eyebrow: "Kennenlerngespräch",
+    h2Line1: "Sprich direkt mit uns.",
+    h2Line2: "15 Minuten, unverbindlich.",
+    body: "Zeig uns euren Betrieb, wir zeigen dir, wie Taskey deine Einsatzplanung, Zeiterfassung und Dokumentation in einem System bündelt. Kein Vertriebsdruck. Nur ein ehrlicher Blick auf euren Alltag.",
+    chips: ["Direkt mit Fynn (Gründer)", "Individuelle Live-Demo", "Keine Verkaufspräsentation"],
+    ctaLabel: "Termin bei Calendly öffnen",
+  },
+  en: {
+    eyebrow: "Intro call",
+    h2Line1: "Talk to us directly.",
+    h2Line2: "15 minutes, no strings.",
+    body: "Show us your operation, we’ll show you how Taskey bundles your scheduling, time tracking and documentation into one system. No sales pressure. Just an honest look at your day.",
+    chips: ["Straight with Fynn (founder)", "Live demo for your setup", "No sales pitch"],
+    ctaLabel: "Open a slot on Calendly",
+  },
+  fr: {
+    eyebrow: "Rendez-vous découverte",
+    h2Line1: "Parlez-nous directement.",
+    h2Line2: "15 minutes, sans engagement.",
+    body: "Montrez-nous votre entreprise, on vous montre comment Taskey regroupe planification, pointage et documentation dans un seul système. Sans pression commerciale. Juste un regard honnête sur votre quotidien.",
+    chips: ["En direct avec Fynn (fondateur)", "Démo live pour votre cas", "Pas de discours commercial"],
+    ctaLabel: "Ouvrir un créneau sur Calendly",
+  },
+};
+
 function BookMeetingSection() {
+  const { language } = useLanguage();
+  const c = BOOK_MEETING_CONTENT[language];
   return (
     <SectionShell size="md" tone="transparent" style={{ background: "var(--tk-ink)" }}>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7">
-          <Eyebrow tone="light">Kennenlerngespräch</Eyebrow>
+          <Eyebrow tone="light">{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)", color: "#fff" }}
           >
-            Sprich direkt mit uns.
+            {c.h2Line1}
             <br />
             <span style={{ color: "rgba(255,255,255,0.6)" }}>
-              15 Minuten, unverbindlich.
+              {c.h2Line2}
             </span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.0625rem", lineHeight: 1.6, maxWidth: "56ch" }}
           >
-            Zeig uns euren Betrieb, wir zeigen dir, wie Taskey deine Einsatzplanung,
-            Zeiterfassung und Dokumentation in einem System bündelt. Kein Vertriebsdruck. Nur
-            ein ehrlicher Blick auf euren Alltag.
+            {c.body}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            {["Direkt mit Fynn (Gründer)", "Individuelle Live-Demo", "Keine Verkaufspräsentation"].map(
+            {c.chips.map(
               (chip) => (
                 <span
                   key={chip}
@@ -499,7 +664,7 @@ function BookMeetingSection() {
                 boxShadow: "0 20px 50px -20px rgba(255,255,255,0.35)",
               }}
             >
-              Termin bei Calendly öffnen
+              {c.ctaLabel}
               <span aria-hidden>↗</span>
             </motion.a>
           </div>
@@ -545,32 +710,60 @@ function BookMeetingSection() {
  * Section 4 — AufEinenBlick (End-State phone hero)
  * ────────────────────────────────────────────────────────────────────────── */
 
+const AT_A_GLANCE_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  italic: string;
+}> = {
+  de: {
+    eyebrow: "Ihr Alltag mit Taskey",
+    h2Line1: "Auf einen Blick.",
+    h2Line2: "Und Sie wissen, dass alles läuft.",
+    body: "Ein Kurzblick aufs Handy, und Sie sehen, wo Ihre Teams gerade sind, wie die Margen dieses Monats stehen, welche Kundenanfragen Ihr Postfach längst beantwortet hat und welche neuen Ausschreibungen die Nacht überstanden haben. Ist alles im grünen Bereich, legen Sie das Handy weg. Taskey hat den Rest schon erledigt.",
+    italic: "Für Inhaber und Geschäftsführer, die ihren Betrieb im Kopf tragen wollen, nicht in der Inbox.",
+  },
+  en: {
+    eyebrow: "Your day with Taskey",
+    h2Line1: "At a glance.",
+    h2Line2: "And you know it’s running.",
+    body: "A quick look at your phone and you see where your teams are, how this month’s margin stands, which client requests your inbox has already answered and which new tenders survived the night. If everything is in the green, put the phone away. Taskey has done the rest.",
+    italic: "For owners and MDs who want to carry the operation in their head, not in their inbox.",
+  },
+  fr: {
+    eyebrow: "Votre quotidien avec Taskey",
+    h2Line1: "D’un coup d’œil.",
+    h2Line2: "Et vous savez que tout tourne.",
+    body: "Un rapide coup d’œil au téléphone : vous voyez où sont vos équipes, où en est la marge du mois, quelles demandes clients votre boîte mail a déjà traitées, et quels nouveaux appels d’offres ont passé la nuit. Si tout est au vert, vous rangez le téléphone. Taskey s’occupe du reste.",
+    italic: "Pour les dirigeants qui veulent porter leur entreprise dans la tête, pas dans leur boîte mail.",
+  },
+};
+
 function AufEinenBlickSection() {
+  const { language } = useLanguage();
+  const c = AT_A_GLANCE_CONTENT[language];
   return (
     <SectionShell size="lg" tone="canvas">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-7">
           <motion.div {...fadeUp}>
-            <Eyebrow>Ihr Alltag mit Taskey</Eyebrow>
+            <Eyebrow>{c.eyebrow}</Eyebrow>
             <h2
               className="tk-headline mt-4"
               style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
             >
-              Auf einen Blick.
+              {c.h2Line1}
               <br />
               <span style={{ color: "var(--tk-ink-muted)" }}>
-                Und Sie wissen, dass alles läuft.
+                {c.h2Line2}
               </span>
             </h2>
             <p
               className="mt-6"
               style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6, maxWidth: "60ch" }}
             >
-              Ein Kurzblick aufs Handy, und Sie sehen, wo Ihre Teams gerade sind, wie die
-              Margen dieses Monats stehen, welche Kundenanfragen Ihr Postfach längst
-              beantwortet hat und welche neuen Ausschreibungen die Nacht überstanden haben. Ist
-              alles im grünen Bereich, legen Sie das Handy weg. Taskey hat den Rest schon
-              erledigt.
+              {c.body}
             </p>
             <p
               className="mt-6"
@@ -582,8 +775,7 @@ function AufEinenBlickSection() {
                 maxWidth: "60ch",
               }}
             >
-              Für Inhaber und Geschäftsführer, die ihren Betrieb im Kopf tragen wollen, nicht
-              in der Inbox.
+              {c.italic}
             </p>
           </motion.div>
         </div>
@@ -600,23 +792,42 @@ function AufEinenBlickSection() {
  * Section 5 — IntroVideo
  * ────────────────────────────────────────────────────────────────────────── */
 
+const INTRO_VIDEO_CONTENT: Record<Lang, { eyebrow: string; h3: string; body: string }> = {
+  de: {
+    eyebrow: "Kunden-Interview",
+    h3: "Wie ein Reinigungsbetrieb mit Taskey arbeitet.",
+    body: "Ein Gespräch aus der Praxis: was sich im Alltag verändert hat, seit der Betrieb seine Einsätze, Zeiten und Nachweise in Taskey bündelt.",
+  },
+  en: {
+    eyebrow: "Client interview",
+    h3: "How a cleaning business runs with Taskey.",
+    body: "A conversation from the field: what changed in daily operations once the business brought its assignments, hours and proof of service into Taskey.",
+  },
+  fr: {
+    eyebrow: "Entretien client",
+    h3: "Comment une entreprise de nettoyage travaille avec Taskey.",
+    body: "Une conversation issue du terrain : ce qui a changé au quotidien depuis que l’entreprise regroupe interventions, heures et preuves dans Taskey.",
+  },
+};
+
 function IntroVideoSection() {
+  const { language } = useLanguage();
+  const c = INTRO_VIDEO_CONTENT[language];
   return (
     <SectionShell size="md" tone="canvas">
       <motion.div {...fadeUp} className="text-center">
-        <Eyebrow>Kunden-Interview</Eyebrow>
+        <Eyebrow>{c.eyebrow}</Eyebrow>
         <h3
           className="tk-headline mt-3"
           style={{ fontSize: "clamp(1.5rem, 2.6vw, 2rem)", color: "var(--tk-ink)" }}
         >
-          Wie ein Reinigungsbetrieb mit Taskey arbeitet.
+          {c.h3}
         </h3>
         <p
           className="mt-4 mx-auto"
           style={{ color: "var(--tk-ink-muted)", fontSize: "1rem", maxWidth: "60ch", lineHeight: 1.6 }}
         >
-          Ein Gespräch aus der Praxis: was sich im Alltag verändert hat, seit der Betrieb
-          seine Einsätze, Zeiten und Nachweise in Taskey bündelt.
+          {c.body}
         </p>
       </motion.div>
 
@@ -691,60 +902,148 @@ function IntroVideoSection() {
  * Section 6 — CommunicationUSP ("Sie müssen nichts mehr abfragen")
  * ────────────────────────────────────────────────────────────────────────── */
 
-const COMM_CARDS: { title: string; sub: string; image: string; alt: string }[] = [
-  {
-    title: "Sie sehen es, während es passiert.",
-    sub: "Live-Standort, Scan und Statuswechsel. Der WhatsApp-Ping, den Sie früher gemacht hätten, entfällt.",
-    image: "/sections/echtzeit-feld-buero.png",
-    alt: "Reinigungskraft im Einsatz, sichtbar dokumentiert per App",
+type CommCard = { title: string; sub: string; image: string; alt: string };
+
+const COMM_SECTION_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  cards: CommCard[];
+}> = {
+  de: {
+    eyebrow: "Kommunikation Feld ↔ Büro",
+    h2Line1: "Sie müssen nichts mehr abfragen.",
+    h2Line2: "Es steht schon da.",
+    body: "Was Ihr Team draußen tut, ist innen längst bekannt. Standort, Zeit, Foto, Status. Der Anruf, den Sie früher machen mussten, hat sich erledigt, bevor Sie ans Handy gedacht haben.",
+    ctaPrimary: "Kostenlos starten",
+    ctaSecondary: "Funktionen ansehen",
+    cards: [
+      {
+        title: "Sie sehen es, während es passiert.",
+        sub: "Live-Standort, Scan und Statuswechsel. Der Chat-Ping, den Sie früher gemacht hätten, entfällt.",
+        image: "/sections/echtzeit-feld-buero.png",
+        alt: "Reinigungskraft im Einsatz, sichtbar dokumentiert per App",
+      },
+      {
+        title: "Der Kunde muss nicht fragen.",
+        sub: "Auftraggeber sieht Leistungen und Protokolle live. Die Reklamation, die Sie fürchten, kommt seltener bei Ihnen an.",
+        image: "/sections/transparenz-kunde.png",
+        alt: "Auftraggeberin prüft Berichte am Laptop",
+      },
+      {
+        title: "Nachweisbar, ohne beweisen zu müssen.",
+        sub: "NFC-Scan, Zeit, Ort, Foto. Jede Leistung ist dokumentiert, bevor jemand nachhakt.",
+        image: "/sections/nachweisbarkeit.png",
+        alt: "Hand mit Smartphone scannt NFC-Tag",
+      },
+      {
+        title: "Das Team versteht es sofort.",
+        sub: "Wenige Taps, große Symbole, Offline-Sync. Sie schulen niemanden mehr, es funktioniert einfach.",
+        image: "/sections/team-versteht-es-sofort.png",
+        alt: "Reinigungskraft öffnet lächelnd die Taskey-App im Büro-Einsatz",
+      },
+    ],
   },
-  {
-    title: "Der Kunde muss nicht fragen.",
-    sub: "Auftraggeber sieht Leistungen und Protokolle live. Die Reklamation, die Sie fürchten, kommt seltener bei Ihnen an.",
-    image: "/sections/transparenz-kunde.png",
-    alt: "Auftraggeberin prüft Berichte am Laptop",
+  en: {
+    eyebrow: "Field ↔ office communication",
+    h2Line1: "You don’t have to ask anything anymore.",
+    h2Line2: "It’s already there.",
+    body: "What your team does outside is already known inside. Location, time, photo, status. The call you used to make is handled before you reach for the phone.",
+    ctaPrimary: "Start for free",
+    ctaSecondary: "See features",
+    cards: [
+      {
+        title: "You see it as it happens.",
+        sub: "Live location, scan and status change. The chat ping you used to send is gone.",
+        image: "/sections/echtzeit-feld-buero.png",
+        alt: "Cleaner on site, documented live through the app",
+      },
+      {
+        title: "The client doesn’t have to ask.",
+        sub: "Your client sees services and records live. The complaint you dread rarely reaches you.",
+        image: "/sections/transparenz-kunde.png",
+        alt: "Client reviewing reports on a laptop",
+      },
+      {
+        title: "Provable, without having to prove.",
+        sub: "NFC scan, time, place, photo. Every service is documented before anyone asks.",
+        image: "/sections/nachweisbarkeit.png",
+        alt: "Hand with smartphone scanning an NFC tag",
+      },
+      {
+        title: "The team gets it instantly.",
+        sub: "Few taps, large icons, offline sync. You stop training anyone, it just works.",
+        image: "/sections/team-versteht-es-sofort.png",
+        alt: "Cleaner smiling as they open the Taskey app during an office job",
+      },
+    ],
   },
-  {
-    title: "Nachweisbar, ohne beweisen zu müssen.",
-    sub: "NFC-Scan, Zeit, Ort, Foto. Jede Leistung ist dokumentiert, bevor jemand nachhakt.",
-    image: "/sections/nachweisbarkeit.png",
-    alt: "Hand mit Smartphone scannt NFC-Tag",
+  fr: {
+    eyebrow: "Communication terrain ↔ bureau",
+    h2Line1: "Vous n’avez plus rien à demander.",
+    h2Line2: "C’est déjà là.",
+    body: "Ce que votre équipe fait dehors est déjà connu à l’intérieur. Position, heure, photo, statut. L’appel que vous auriez passé est réglé avant que vous ne pensiez au téléphone.",
+    ctaPrimary: "Commencer gratuitement",
+    ctaSecondary: "Voir les fonctionnalités",
+    cards: [
+      {
+        title: "Vous le voyez pendant que ça se passe.",
+        sub: "Position live, scan et changement de statut. Le ping par chat que vous auriez envoyé n’a plus lieu d’être.",
+        image: "/sections/echtzeit-feld-buero.png",
+        alt: "Agent de nettoyage en intervention, documenté en direct via l’app",
+      },
+      {
+        title: "Le client n’a pas besoin de demander.",
+        sub: "Le donneur d’ordre voit prestations et rapports en direct. La réclamation que vous redoutez vous parvient beaucoup moins souvent.",
+        image: "/sections/transparenz-kunde.png",
+        alt: "Cliente consultant les rapports sur un ordinateur",
+      },
+      {
+        title: "Prouvé, sans avoir à prouver.",
+        sub: "Scan NFC, heure, lieu, photo. Chaque prestation est documentée avant qu’on ne demande.",
+        image: "/sections/nachweisbarkeit.png",
+        alt: "Main avec smartphone scannant un tag NFC",
+      },
+      {
+        title: "L’équipe comprend tout de suite.",
+        sub: "Peu de gestes, grandes icônes, synchro hors ligne. Vous n’avez plus personne à former, ça fonctionne, c’est tout.",
+        image: "/sections/team-versteht-es-sofort.png",
+        alt: "Agent souriant ouvrant l’app Taskey en intervention bureau",
+      },
+    ],
   },
-  {
-    title: "Das Team versteht es sofort.",
-    sub: "Wenige Taps, große Symbole, Offline-Sync. Sie schulen niemanden mehr, es funktioniert einfach.",
-    image: "/sections/team-versteht-es-sofort.png",
-    alt: "Reinigungskraft öffnet lächelnd die Taskey-App im Büro-Einsatz",
-  },
-];
+};
 
 function CommunicationUSPSection() {
+  const { language } = useLanguage();
+  const c = COMM_SECTION_CONTENT[language];
   return (
     <SectionShell size="lg" tone="elev">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow>Kommunikation Feld ↔ Büro</Eyebrow>
+          <Eyebrow>{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
           >
-            Sie müssen nichts mehr abfragen.
+            {c.h2Line1}
             <br />
-            <span style={{ color: "var(--tk-ink-muted)" }}>Es steht schon da.</span>
+            <span style={{ color: "var(--tk-ink-muted)" }}>{c.h2Line2}</span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Was Ihr Team draußen tut, ist innen längst bekannt. Standort, Zeit, Foto, Status.
-            Der Anruf, den Sie früher machen mussten, hat sich erledigt, bevor Sie ans Handy
-            gedacht haben.
+            {c.body}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <CtaButton href="https://signup.taskeyapp.com">Kostenlos starten</CtaButton>
+            <CtaButton href="https://signup.taskeyapp.com">{c.ctaPrimary}</CtaButton>
             <CtaButton href="/features" variant="ghost">
-              Funktionen ansehen
+              {c.ctaSecondary}
             </CtaButton>
           </div>
         </motion.div>
@@ -754,7 +1053,7 @@ function CommunicationUSPSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        {COMM_CARDS.map((card) => (
+        {c.cards.map((card) => (
           <motion.article
             key={card.title}
             variants={staggerChild}
@@ -773,6 +1072,7 @@ function CommunicationUSPSection() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
+              <AiImageBadge position="top-right" />
             </div>
             <div style={{ padding: "clamp(20px, 2.4vw, 28px)" }}>
               <h3
@@ -798,86 +1098,96 @@ function CommunicationUSPSection() {
  * Section 7 — All-In-One (Ein Blick. Ein System. Kein Wechsel.)
  * ────────────────────────────────────────────────────────────────────────── */
 
-const ALLINONE_SLIDES: { label: string; title: string; subtitle: string; tag: string; image: string; alt: string }[] = [
-  {
-    label: "Zeit erfasst sich selbst",
-    title: "Zeit erfasst sich selbst",
-    subtitle: "Ein Tap am Objekt. Zeit, Ort, Person — Sie erfahren es später, ohne nachzufragen.",
-    tag: "Zeiterfassung",
-    image: "/sections/zeiterfassung.png",
-    alt: "Hand mit Smartphone scannt NFC-Tag am Objekt",
+type AllInOneSlide = { label: string; title: string; subtitle: string; tag: string; image: string; alt: string };
+
+const ALLINONE_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  slides: AllInOneSlide[];
+}> = {
+  de: {
+    eyebrow: "Ein System statt fünf",
+    h2Line1: "Ein Blick.",
+    h2Line2: "Ein System. Kein Wechsel.",
+    body: "Kein Tool für die Zeit, ein anderes für die Rechnung, ein drittes für den Kunden. Taskey deckt vom ersten Tag an ab, was Ihr Betrieb wirklich braucht, der Chef schaut in eine App, nicht in fünf.",
+    ctaPrimary: "Kostenlosen Account erstellen",
+    ctaSecondary: "Alle Funktionen",
+    slides: [
+      { label: "Zeit erfasst sich selbst", title: "Zeit erfasst sich selbst", subtitle: "Ein Tap am Objekt. Zeit, Ort, Person, Sie erfahren es später, ohne nachzufragen.", tag: "Zeiterfassung", image: "/sections/zeiterfassung.png", alt: "Hand mit Smartphone scannt NFC-Tag am Objekt" },
+      { label: "Der Plan schreibt sich", title: "Der Plan schreibt sich", subtitle: "Teams, Touren, Objekte im selben Kalender. Änderungen laufen automatisch durch, ohne dass Sie sie durchgeben.", tag: "Planung", image: "/sections/einsatzplanung.png", alt: "Disponentin plant Einsätze am Laptop" },
+      { label: "Rechnung raus in Minuten", title: "Rechnung raus in Minuten", subtitle: "Aus Auftrag wird Angebot, wird Rechnung. Kein Copy-Paste, keine Excel-Runde.", tag: "Abrechnung", image: "/sections/angebote.png", alt: "Person erstellt Rechnung am Laptop" },
+      { label: "DATEV geht von allein", title: "DATEV geht von allein", subtitle: "Zeiten, Rechnungen, Stammdaten beim Steuerberater, ohne dass Sie sie hinschicken.", tag: "Buchhaltung", image: "/sections/datev-export.webp", alt: "Buchhalter prüft Zahlen am Bildschirm" },
+      { label: "Ihr Kunde sieht selbst nach", title: "Ihr Kunde sieht selbst nach", subtitle: "Live-Status, Fotos, Protokolle, Budget. Der Anruf, den er früher gemacht hätte, entfällt.", tag: "Kundendashboard", image: "/sections/kundendashboard.png", alt: "Auftraggeber-Dashboard mit Live-Status pro Objekt" },
+      { label: "Subunternehmer laufen mit", title: "Subunternehmer laufen mit", subtitle: "Nachunternehmer werden direkt aus dem System angebunden, mit Einsätzen, Nachweisen und Abrechnung. Kein zweites Tool, kein zweites Login.", tag: "Subunternehmer", image: "/sections/allinone-subunternehmer.png", alt: "Team stimmt sich im Büro ab, entspannt bei der Zusammenarbeit" },
+    ],
   },
-  {
-    label: "Der Plan schreibt sich",
-    title: "Der Plan schreibt sich",
-    subtitle: "Teams, Touren, Objekte im selben Kalender. Änderungen laufen automatisch durch, ohne dass Sie sie durchgeben.",
-    tag: "Planung",
-    image: "/sections/einsatzplanung.png",
-    alt: "Disponentin plant Einsätze am Laptop",
+  en: {
+    eyebrow: "One system, not five",
+    h2Line1: "One view.",
+    h2Line2: "One system. No switching.",
+    body: "No tool for time, another for invoicing, a third for the client. Taskey covers what your operation actually needs from day one. The boss looks at one app, not five.",
+    ctaPrimary: "Create free account",
+    ctaSecondary: "All features",
+    slides: [
+      { label: "Time tracks itself", title: "Time tracks itself", subtitle: "One tap on site. Time, place, person, you find out later, without asking.", tag: "Time tracking", image: "/sections/zeiterfassung.png", alt: "Hand with smartphone scanning an NFC tag on site" },
+      { label: "The plan writes itself", title: "The plan writes itself", subtitle: "Teams, routes and sites in one calendar. Changes flow through automatically, you don’t have to relay them.", tag: "Scheduling", image: "/sections/einsatzplanung.png", alt: "Dispatcher planning assignments on a laptop" },
+      { label: "Invoice out in minutes", title: "Invoice out in minutes", subtitle: "Job becomes quote becomes invoice. No copy-paste, no Excel round.", tag: "Billing", image: "/sections/angebote.png", alt: "Person creating an invoice on a laptop" },
+      { label: "DATEV runs on its own", title: "DATEV runs on its own", subtitle: "Hours, invoices and master data at your accountant’s, without you having to send it.", tag: "Bookkeeping", image: "/sections/datev-export.webp", alt: "Bookkeeper checking numbers on a screen" },
+      { label: "Your client checks in themselves", title: "Your client checks in themselves", subtitle: "Live status, photos, records, budget. The call they used to make is gone.", tag: "Client dashboard", image: "/sections/kundendashboard.png", alt: "Client dashboard with live status per site" },
+      { label: "Subcontractors flow with you", title: "Subcontractors flow with you", subtitle: "Subcontractors are integrated straight from the system, with assignments, proof of service and billing. No second tool, no second login.", tag: "Subcontractors", image: "/sections/allinone-subunternehmer.png", alt: "Team aligning in the office, relaxed collaboration" },
+    ],
   },
-  {
-    label: "Rechnung raus in Minuten",
-    title: "Rechnung raus in Minuten",
-    subtitle: "Aus Auftrag wird Angebot, wird Rechnung. Kein Copy-Paste, keine Excel-Runde.",
-    tag: "Abrechnung",
-    image: "/sections/angebote.png",
-    alt: "Person erstellt Rechnung am Laptop",
+  fr: {
+    eyebrow: "Un système, pas cinq",
+    h2Line1: "Un regard.",
+    h2Line2: "Un système. Sans jonglage.",
+    body: "Pas un outil pour le temps, un autre pour la facturation, un troisième pour le client. Taskey couvre dès le premier jour ce dont votre entreprise a vraiment besoin. Le dirigeant regarde une seule app, pas cinq.",
+    ctaPrimary: "Créer un compte gratuit",
+    ctaSecondary: "Toutes les fonctionnalités",
+    slides: [
+      { label: "Le temps s’enregistre tout seul", title: "Le temps s’enregistre tout seul", subtitle: "Un tap sur site. Heure, lieu, personne, vous l’apprenez ensuite, sans demander.", tag: "Pointage", image: "/sections/zeiterfassung.png", alt: "Main avec smartphone scannant un tag NFC sur site" },
+      { label: "Le planning s’écrit tout seul", title: "Le planning s’écrit tout seul", subtitle: "Équipes, tournées et sites dans un même calendrier. Les changements se propagent sans que vous n’ayez à les transmettre.", tag: "Planification", image: "/sections/einsatzplanung.png", alt: "Dispatcher planifiant les interventions sur un ordinateur" },
+      { label: "La facture sort en quelques minutes", title: "La facture sort en quelques minutes", subtitle: "L’intervention devient devis, puis facture. Pas de copier-coller, pas de tour de rôle Excel.", tag: "Facturation", image: "/sections/angebote.png", alt: "Personne créant une facture sur un ordinateur" },
+      { label: "DATEV tourne tout seul", title: "DATEV tourne tout seul", subtitle: "Heures, factures et référentiels chez votre comptable, sans que vous ayez à les envoyer.", tag: "Comptabilité", image: "/sections/datev-export.webp", alt: "Comptable contrôlant les chiffres à l’écran" },
+      { label: "Votre client regarde lui-même", title: "Votre client regarde lui-même", subtitle: "Statut en direct, photos, comptes-rendus, budget. L’appel qu’il aurait passé n’a plus lieu d’être.", tag: "Portail client", image: "/sections/kundendashboard.png", alt: "Tableau client avec statut en direct par site" },
+      { label: "Les sous-traitants suivent avec vous", title: "Les sous-traitants suivent avec vous", subtitle: "Les sous-traitants sont intégrés directement dans le système, avec interventions, preuves et facturation. Pas de second outil, pas de second login.", tag: "Sous-traitants", image: "/sections/allinone-subunternehmer.png", alt: "Équipe qui s’aligne au bureau, collaboration détendue" },
+    ],
   },
-  {
-    label: "DATEV geht von allein",
-    title: "DATEV geht von allein",
-    subtitle: "Zeiten, Rechnungen, Stammdaten beim Steuerberater, ohne dass Sie sie hinschicken.",
-    tag: "Buchhaltung",
-    image: "/sections/datev-export.webp",
-    alt: "Buchhalter prüft Zahlen am Bildschirm",
-  },
-  {
-    label: "Ihr Kunde sieht selbst nach",
-    title: "Ihr Kunde sieht selbst nach",
-    subtitle: "Live-Status, Fotos, Protokolle, Budget. Der Anruf, den er früher gemacht hätte, entfällt.",
-    tag: "Kundendashboard",
-    image: "/sections/kundendashboard.png",
-    alt: "Auftraggeber-Dashboard mit Live-Status pro Objekt",
-  },
-  {
-    label: "Subunternehmer laufen mit",
-    title: "Subunternehmer laufen mit",
-    subtitle: "Nachunternehmer werden direkt aus dem System angebunden, mit Einsätzen, Nachweisen und Abrechnung. Kein zweites Tool, kein zweites Login.",
-    tag: "Subunternehmer",
-    image: "/sections/allinone-subunternehmer.png",
-    alt: "Team stimmt sich im Büro ab, entspannt bei der Zusammenarbeit",
-  },
-];
+};
 
 function AllInOneSection() {
+  const { language } = useLanguage();
+  const c = ALLINONE_CONTENT[language];
   return (
     <SectionShell size="lg" tone="canvas">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow>Ein System statt fünf</Eyebrow>
+          <Eyebrow>{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
           >
-            Ein Blick.
+            {c.h2Line1}
             <br />
             <span style={{ color: "var(--tk-ink-muted)" }}>
-              Ein System. Kein Wechsel.
+              {c.h2Line2}
             </span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Kein Tool für die Zeit, ein anderes für die Rechnung, ein drittes für den Kunden.
-            Taskey deckt vom ersten Tag an ab, was Ihr Betrieb wirklich braucht — der Chef
-            schaut in eine App, nicht in fünf.
+            {c.body}
           </p>
         </motion.div>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
-          <CtaButton href="/features" variant="ghost">Alle Funktionen</CtaButton>
+          <CtaButton href="https://signup.taskeyapp.com">{c.ctaPrimary}</CtaButton>
+          <CtaButton href="/features" variant="ghost">{c.ctaSecondary}</CtaButton>
         </div>
       </div>
 
@@ -885,7 +1195,7 @@ function AllInOneSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {ALLINONE_SLIDES.map((slide, i) => {
+        {c.slides.map((slide, i) => {
           const featured = i === 0;
           return (
             <motion.article
@@ -922,6 +1232,7 @@ function AllInOneSection() {
                 >
                   {slide.tag}
                 </div>
+                <AiImageBadge position="top-right" variant="ghost" />
               </div>
               <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
                 <h3
@@ -946,7 +1257,27 @@ function AllInOneSection() {
  * Section 8 — SoloPackage strip
  * ────────────────────────────────────────────────────────────────────────── */
 
+const SOLO_STRIP_CONTENT: Record<Lang, { badge: string; body: string; cta: string }> = {
+  de: {
+    badge: "Neu",
+    body: "Einzelunternehmer-Paket, 59 € pro Monat all inklusive: CRM, Subunternehmer-Portal, Finanzen, Kalkulationen und Kundenverwaltung.",
+    cta: "Zum Paket →",
+  },
+  en: {
+    badge: "New",
+    body: "Solo plan, €59 per month all-in: CRM, subcontractor portal, finance, calculations and client management.",
+    cta: "See the plan →",
+  },
+  fr: {
+    badge: "Nouveau",
+    body: "Formule Solo, 59 € par mois tout compris : CRM, portail sous-traitants, finance, calculs et gestion clients.",
+    cta: "Voir la formule →",
+  },
+};
+
 function SoloPackageStrip() {
+  const { language } = useLanguage();
+  const c = SOLO_STRIP_CONTENT[language];
   return (
     <SectionShell size="sm" tone="canvas">
       <motion.div
@@ -979,11 +1310,10 @@ function SoloPackageStrip() {
               textTransform: "uppercase",
             }}
           >
-            Neu
+            {c.badge}
           </span>
           <span style={{ color: "var(--tk-ink)", fontSize: "15px", maxWidth: "60ch" }}>
-            Einzelunternehmer-Paket — 59 € pro Monat all inklusive: CRM, Subunternehmer-Portal,
-            Finanzen, Kalkulationen und Kundenverwaltung.
+            {c.body}
           </span>
         </div>
         <Link
@@ -997,7 +1327,7 @@ function SoloPackageStrip() {
             fontWeight: 500,
           }}
         >
-          Zum Paket →
+          {c.cta}
         </Link>
       </motion.div>
     </SectionShell>
@@ -1008,86 +1338,107 @@ function SoloPackageStrip() {
  * Section 9 — TargetAudiences (Reinigungsarten)
  * ────────────────────────────────────────────────────────────────────────── */
 
-const AUDIENCES: {
-  title: string;
-  subtitle: string;
-  pains: string[];
-  image: string;
-  alt: string;
-}[] = [
-  {
-    title: "Unterhaltsreinigung",
-    subtitle: "Für Büro-, Praxis- und Verwaltungsobjekte mit täglichen Reinigungstouren.",
-    pains: ["Unvollständige Stundenzettel", "Leistungsnachweise im WhatsApp-Chaos"],
-    image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png",
-    alt: "Reinigungskraft bei der Büroreinigung",
-  },
-  {
-    title: "Glas- & Fassadenreinigung",
-    subtitle: "Für Glas-, Fenster- und Fassadenreiniger mit Höhen- und Spezialeinsätzen.",
-    pains: ["Aufmaß und Abrechnung händisch", "Sicherheits- und Einsatznachweise unvollständig"],
-    image: "/sections/glasreinigung.jpg",
-    alt: "Glasreiniger an einer Fensterfront",
-  },
-  {
-    title: "Industrie- & Produktionsreinigung",
-    subtitle: "Für Produktionsreinigung, Maschinenreinigung und Werksreinigung.",
-    pains: ["Dokumentationspflicht gegenüber Auftraggebern", "Revisionssichere Nachweise für Audits"],
-    image: "/sections/industriereinigung.png",
-    alt: "Industriereinigung in einer Produktionshalle",
-  },
-  {
-    title: "Klinik- & Hygienereinigung",
-    subtitle: "Für Krankenhäuser, Praxen, Pflegeheime und Reinräume mit höchstem Hygienelevel.",
-    pains: ["Hygienenachweise auf Papier", "Audit-Vorbereitung kostet Tage"],
-    image: "/sections/klinikreinigung.png",
-    alt: "Hygiene- und Klinikreinigung",
-  },
-  {
-    title: "Hotel-Housekeeping",
-    subtitle: "Für Reinigungsfirmen mit Hotel-, Ferienanlagen- und Apartment-Aufträgen.",
-    pains: ["Zimmerstatus telefonisch durchgesagt", "Reklamationen ohne Foto-Nachweis"],
-    image: "/sections/hotel-housekeeping.png",
-    alt: "Housekeeping im Hotelzimmer",
-  },
-  {
-    title: "Sonder- & Baureinigung",
-    subtitle: "Für Bau-, Grund-, Brand- und Wasserschadensanierung sowie Spezialreinigung.",
-    pains: ["Aufträge schlecht kalkuliert – Marge weg", "Doku für Versicherungen fehlt"],
-    image: "/sections/baureinigung.jpg",
-    alt: "Sonderreinigung auf einer Baustelle",
-  },
-];
+type Audience = { title: string; subtitle: string; pains: string[]; image: string; alt: string };
 
-const MORE_AUDIENCES = "Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern, Containerreinigung, Tank- und Behälterreinigung, Reinigern für Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen, Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung, Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung, Reinigern für Banken und öffentliche Gebäude, Apartment- und Ferienwohnungsreinigung, mobile Reinigungsdiensten, Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie Spezialreinigern für Brand- und Wasserschadensanierung.";
+const AUDIENCES_CONTENT: Record<Lang, Audience[]> = {
+  de: [
+    { title: "Unterhaltsreinigung", subtitle: "Für Büro-, Praxis- und Verwaltungsobjekte mit täglichen Reinigungstouren.", pains: ["Unvollständige Stundenzettel", "Leistungsnachweise im Chat-Chaos"], image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png", alt: "Reinigungskraft bei der Büroreinigung" },
+    { title: "Glas- & Fassadenreinigung", subtitle: "Für Glas-, Fenster- und Fassadenreiniger mit Höhen- und Spezialeinsätzen.", pains: ["Aufmaß und Abrechnung händisch", "Sicherheits- und Einsatznachweise unvollständig"], image: "/sections/glasreinigung.jpg", alt: "Glasreiniger an einer Fensterfront" },
+    { title: "Industrie- & Produktionsreinigung", subtitle: "Für Produktionsreinigung, Maschinenreinigung und Werksreinigung.", pains: ["Dokumentationspflicht gegenüber Auftraggebern", "Revisionssichere Nachweise für Audits"], image: "/sections/industriereinigung.png", alt: "Industriereinigung in einer Produktionshalle" },
+    { title: "Klinik- & Hygienereinigung", subtitle: "Für Krankenhäuser, Praxen, Pflegeheime und Reinräume mit höchstem Hygienelevel.", pains: ["Hygienenachweise auf Papier", "Audit-Vorbereitung kostet Tage"], image: "/sections/klinikreinigung.png", alt: "Hygiene- und Klinikreinigung" },
+    { title: "Hotel-Housekeeping", subtitle: "Für Reinigungsfirmen mit Hotel-, Ferienanlagen- und Apartment-Aufträgen.", pains: ["Zimmerstatus telefonisch durchgesagt", "Reklamationen ohne Foto-Nachweis"], image: "/sections/hotel-housekeeping.png", alt: "Housekeeping im Hotelzimmer" },
+    { title: "Sonder- & Baureinigung", subtitle: "Für Bau-, Grund-, Brand- und Wasserschadensanierung sowie Spezialreinigung.", pains: ["Aufträge schlecht kalkuliert, Marge weg", "Doku für Versicherungen fehlt"], image: "/sections/baureinigung.jpg", alt: "Sonderreinigung auf einer Baustelle" },
+  ],
+  en: [
+    { title: "Maintenance cleaning", subtitle: "For office, practice and admin sites with daily cleaning rounds.", pains: ["Incomplete timesheets", "Proof of service lost in chat chaos"], image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png", alt: "Cleaner during office cleaning" },
+    { title: "Glass & facade cleaning", subtitle: "For glass, window and facade cleaners with height and specialist work.", pains: ["Measuring and billing done by hand", "Incomplete safety and job records"], image: "/sections/glasreinigung.jpg", alt: "Glass cleaner on a facade" },
+    { title: "Industrial & production cleaning", subtitle: "For production cleaning, machine cleaning and works cleaning.", pains: ["Documentation duty to clients", "Audit-proof records for audits"], image: "/sections/industriereinigung.png", alt: "Industrial cleaning in a production hall" },
+    { title: "Clinical & hygiene cleaning", subtitle: "For hospitals, practices, care homes and clean rooms with top hygiene standards.", pains: ["Hygiene proofs on paper", "Audit prep takes days"], image: "/sections/klinikreinigung.png", alt: "Hygiene and clinical cleaning" },
+    { title: "Hotel housekeeping", subtitle: "For cleaning companies with hotel, resort and apartment contracts.", pains: ["Room status called in by phone", "Complaints without photo evidence"], image: "/sections/hotel-housekeeping.png", alt: "Housekeeping in a hotel room" },
+    { title: "Special & post-construction cleaning", subtitle: "For construction, deep, fire and water damage restoration and specialist cleaning.", pains: ["Jobs badly costed, margin gone", "Documentation for insurers missing"], image: "/sections/baureinigung.jpg", alt: "Specialist cleaning on a construction site" },
+  ],
+  fr: [
+    { title: "Nettoyage d’entretien", subtitle: "Pour les bureaux, cabinets et bâtiments administratifs avec tournées quotidiennes.", pains: ["Feuilles d’heures incomplètes", "Preuves de service noyées dans les chats"], image: "https://i.ibb.co/wFhjnSYW/Chat-GPT-Image-3-Juli-2026-15-37-33.png", alt: "Agent d’entretien en nettoyage de bureaux" },
+    { title: "Nettoyage de vitres & façades", subtitle: "Pour les nettoyeurs de vitres, fenêtres et façades avec interventions en hauteur et spéciales.", pains: ["Métré et facturation manuels", "Preuves de sécurité et d’intervention incomplètes"], image: "/sections/glasreinigung.jpg", alt: "Nettoyeur de vitres devant une façade" },
+    { title: "Nettoyage industriel & production", subtitle: "Pour le nettoyage en production, machines et sites industriels.", pains: ["Obligation de documentation pour les donneurs d’ordre", "Preuves opposables pour audits"], image: "/sections/industriereinigung.png", alt: "Nettoyage industriel dans un hall de production" },
+    { title: "Nettoyage clinique & hygiène", subtitle: "Pour hôpitaux, cabinets, EHPAD et salles blanches au plus haut niveau d’hygiène.", pains: ["Preuves d’hygiène sur papier", "Préparation d’audit qui prend des jours"], image: "/sections/klinikreinigung.png", alt: "Nettoyage hygiène et clinique" },
+    { title: "Housekeeping hôtelier", subtitle: "Pour les entreprises de nettoyage avec contrats hôteliers, résidences et appartements.", pains: ["Statut de chambre transmis par téléphone", "Réclamations sans preuve photo"], image: "/sections/hotel-housekeeping.png", alt: "Housekeeping en chambre d’hôtel" },
+    { title: "Nettoyage spécial & après chantier", subtitle: "Pour chantier, remise à neuf, sinistres feu et eau et nettoyage spécialisé.", pains: ["Missions mal chiffrées, marge perdue", "Documentation pour l’assurance manquante"], image: "/sections/baureinigung.jpg", alt: "Nettoyage spécialisé sur un chantier" },
+  ],
+};
+
+const MORE_AUDIENCES_CONTENT: Record<Lang, { eyebrow: string; body: string }> = {
+  de: {
+    eyebrow: "Und viele weitere Reinigungs-Spezialisierungen",
+    body: "Taskey wird auch eingesetzt von: Treppenhausreinigern, Teppich- und Polsterreinigern, Solarmodul-Reinigern, Fahrzeugreinigern, Containerreinigung, Tank- und Behälterreinigung, Reinigern für Lebensmittelproduktion, Reinräume und Pharma, Krankenhaus-Servicefirmen, Pflegeheim-Reinigung, Schul- und Kita-Reinigung, Sportstätten-Reinigung, Schwimmbad- und Saunareinigung, Veranstaltungs- und Event-Reinigung, Reinigern für Banken und öffentliche Gebäude, Apartment- und Ferienwohnungsreinigung, mobile Reinigungsdiensten, Glas- und Wintergartenreinigung, Photovoltaik-Reinigung sowie Spezialreinigern für Brand- und Wasserschadensanierung.",
+  },
+  en: {
+    eyebrow: "And many more cleaning specialisations",
+    body: "Taskey is also used by: stairwell cleaners, carpet and upholstery cleaners, solar panel cleaners, vehicle cleaners, container cleaning, tank and vessel cleaning, cleaners for food production, clean rooms and pharma, hospital service companies, care home cleaning, school and day-care cleaning, sports facility cleaning, pool and sauna cleaning, event and function cleaning, cleaners for banks and public buildings, apartment and holiday rental cleaning, mobile cleaning services, glass and conservatory cleaning, photovoltaic cleaning and specialist cleaners for fire and water damage restoration.",
+  },
+  fr: {
+    eyebrow: "Et bien d’autres spécialisations du nettoyage",
+    body: "Taskey est également utilisé par : nettoyeurs de cages d’escalier, nettoyeurs de tapis et de tissus d’ameublement, nettoyeurs de panneaux solaires, nettoyage de véhicules, nettoyage de conteneurs, nettoyage de citernes et de cuves, nettoyage pour la production alimentaire, salles blanches et pharma, prestataires de services hospitaliers, nettoyage en EHPAD, nettoyage en écoles et crèches, nettoyage de sites sportifs, piscines et saunas, nettoyage événementiel, nettoyage de banques et bâtiments publics, nettoyage d’appartements et de locations saisonnières, services mobiles, nettoyage de vitres et de vérandas, nettoyage photovoltaïque et nettoyage spécialisé après sinistre feu ou eau.",
+  },
+};
+
+const AUDIENCES_HEADER_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  italic: string;
+}> = {
+  de: {
+    eyebrow: "Für wen ist Taskey gemacht?",
+    h2Line1: "Gebaut für",
+    h2Line2: "Reinigungsfirmen.",
+    body: "Keine generische Business-Software. Taskey ist zu 100 % auf den Alltag von Reinigungsbetrieben im DACH-Raum zugeschnitten.",
+    italic: "Für die Chefs, die längst gemerkt haben: Kontrolle heißt nicht, überall dabei zu sein, sondern immer zu wissen, dass es läuft.",
+  },
+  en: {
+    eyebrow: "Who is Taskey built for?",
+    h2Line1: "Built for",
+    h2Line2: "cleaning companies.",
+    body: "No generic business software. Taskey is 100 % tailored to the day-to-day of cleaning operations in the DACH region.",
+    italic: "For the bosses who have long realised: control doesn’t mean being everywhere, it means always knowing that it’s running.",
+  },
+  fr: {
+    eyebrow: "Pour qui Taskey est-il fait ?",
+    h2Line1: "Bâti pour",
+    h2Line2: "les entreprises de nettoyage.",
+    body: "Pas un logiciel générique. Taskey est taillé à 100 % pour le quotidien des entreprises de nettoyage en zone DACH.",
+    italic: "Pour les dirigeants qui savent déjà : contrôler, ce n’est pas être partout, c’est toujours savoir que ça tourne.",
+  },
+};
 
 function AudiencesSection() {
+  const { language } = useLanguage();
+  const c = AUDIENCES_HEADER_CONTENT[language];
   return (
     <SectionShell size="lg" tone="ink">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow tone="light">Für wen ist Taskey gemacht?</Eyebrow>
+          <Eyebrow tone="light">{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "#fff" }}
           >
-            Gebaut für
+            {c.h2Line1}
             <br />
-            <span style={{ color: "rgba(255,255,255,0.55)" }}>Reinigungsfirmen.</span>
+            <span style={{ color: "rgba(255,255,255,0.55)" }}>{c.h2Line2}</span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Keine generische Business-Software. Taskey ist 100 % auf den Alltag von
-            Reinigungsbetrieben im DACH-Raum zugeschnitten.
+            {c.body}
           </p>
           <p
             className="mt-4"
             style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem", lineHeight: 1.6, fontStyle: "italic" }}
           >
-            Für die Chefs, die längst gemerkt haben: Kontrolle heißt nicht, überall dabei zu
-            sein — sondern immer zu wissen, dass es läuft.
+            {c.italic}
           </p>
         </motion.div>
       </div>
@@ -1096,7 +1447,7 @@ function AudiencesSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
       >
-        {AUDIENCES.map((aud) => (
+        {AUDIENCES_CONTENT[language].map((aud) => (
           <motion.article
             key={aud.title}
             variants={staggerChild}
@@ -1129,6 +1480,7 @@ function AudiencesSection() {
                     "linear-gradient(180deg, rgba(2,6,23,0) 40%, rgba(2,6,23,0.75) 100%)",
                 }}
               />
+              <AiImageBadge position="top-right" />
             </div>
             <div style={{ padding: "22px", flex: 1, display: "flex", flexDirection: "column", gap: "14px" }}>
               <div>
@@ -1175,7 +1527,7 @@ function AudiencesSection() {
         className="mt-16 max-w-4xl"
       >
         <div className="tk-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>
-          Und viele weitere Reinigungs-Spezialisierungen
+          {MORE_AUDIENCES_CONTENT[language].eyebrow}
         </div>
         <p
           style={{
@@ -1185,7 +1537,7 @@ function AudiencesSection() {
             lineHeight: 1.65,
           }}
         >
-          {MORE_AUDIENCES}
+          {MORE_AUDIENCES_CONTENT[language].body}
         </p>
         <div className="mt-8">
           <motion.a
@@ -1195,7 +1547,7 @@ function AudiencesSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium"
             style={{ background: "#fff", color: "var(--tk-ink)" }}
           >
-            Kostenlosen Account erstellen →
+            {language === "en" ? "Create free account →" : language === "fr" ? "Créer un compte gratuit →" : "Kostenlosen Account erstellen →"}
           </motion.a>
         </div>
       </motion.div>
@@ -1207,66 +1559,171 @@ function AudiencesSection() {
  * Section 10 — Testimonials + Stats bar + CTA
  * ────────────────────────────────────────────────────────────────────────── */
 
-const TESTIMONIALS = [
-  {
-    quote:
-      "Ich rufe niemanden mehr an. Ich mache die App auf, sehe alles im grünen Bereich und leg das Handy weg. So habe ich noch nie gearbeitet — endlich.",
-    initials: "MW",
-    name: "M. W.",
-    role: "Geschäftsführer · Reinigungsbetrieb (anonymisiert)",
-    tag: "Unterhaltsreinigung",
-    location: "Stuttgart",
-    size: "42 Mitarbeitende",
-  },
-  {
-    quote:
-      "Ich habe aufgehört, mir Sorgen um Nachweise zu machen. Die stehen längst da, bevor ich sie brauche. Zum ersten Mal seit Jahren atme ich montags durch.",
-    initials: "SK",
-    name: "S. K.",
-    role: "Objektleiterin · Reinigungsbetrieb (anonymisiert)",
-    tag: "Industriereinigung",
-    location: "München",
-    size: "120 Mitarbeitende",
-  },
-  {
-    quote:
-      "Vorher hatte ich vier Tools nebeneinander offen. Heute schaue ich einmal am Vormittag hinein — und weiß Bescheid. Der Rest der Zeit gehört mir wieder.",
-    initials: "TR",
-    name: "T. R.",
-    role: "Inhaber · Reinigungsbetrieb (anonymisiert)",
-    tag: "Glas- & Fassadenreinigung",
-    location: "Köln",
-    size: "18 Mitarbeitende",
-  },
-];
+type Testimonial = {
+  quote: string;
+  initials: string;
+  name: string;
+  role: string;
+  tag: string;
+  location: string;
+  size: string;
+};
 
-const STATS = [
-  { value: "DE", label: "Entwickelt in Deutschland" },
-  { value: "DACH", label: "DE · AT · CH" },
-  { value: "100 %", label: "DSGVO-konform" },
-];
+const TESTIMONIALS_CONTENT: Record<Lang, Testimonial[]> = {
+  de: [
+    {
+      quote: "Ich rufe niemanden mehr an. Ich mache die App auf, sehe alles im grünen Bereich und leg das Handy weg. So habe ich noch nie gearbeitet, endlich.",
+      initials: "MW",
+      name: "M. W.",
+      role: "Geschäftsführer · Reinigungsbetrieb (anonymisiert)",
+      tag: "Unterhaltsreinigung",
+      location: "Stuttgart",
+      size: "42 Mitarbeitende",
+    },
+    {
+      quote: "Ich habe aufgehört, mir Sorgen um Nachweise zu machen. Die stehen längst da, bevor ich sie brauche. Zum ersten Mal seit Jahren atme ich montags durch.",
+      initials: "SK",
+      name: "S. K.",
+      role: "Objektleiterin · Reinigungsbetrieb (anonymisiert)",
+      tag: "Industriereinigung",
+      location: "München",
+      size: "120 Mitarbeitende",
+    },
+    {
+      quote: "Vorher hatte ich vier Tools nebeneinander offen. Heute schaue ich einmal am Vormittag hinein und weiß Bescheid. Der Rest der Zeit gehört mir wieder.",
+      initials: "TR",
+      name: "T. R.",
+      role: "Inhaber · Reinigungsbetrieb (anonymisiert)",
+      tag: "Glas- & Fassadenreinigung",
+      location: "Köln",
+      size: "18 Mitarbeitende",
+    },
+  ],
+  en: [
+    {
+      quote: "I don’t call anyone anymore. I open the app, see everything in the green and put the phone down. I’ve never worked like this before, finally.",
+      initials: "MW",
+      name: "M. W.",
+      role: "Managing Director · Cleaning company (anonymised)",
+      tag: "Maintenance cleaning",
+      location: "Stuttgart",
+      size: "42 employees",
+    },
+    {
+      quote: "I stopped worrying about proof of service. It’s there long before I need it. For the first time in years, I actually breathe on a Monday.",
+      initials: "SK",
+      name: "S. K.",
+      role: "Site Manager · Cleaning company (anonymised)",
+      tag: "Industrial cleaning",
+      location: "Munich",
+      size: "120 employees",
+    },
+    {
+      quote: "I used to have four tools open side by side. Now I check in once in the morning and I know. The rest of the day belongs to me again.",
+      initials: "TR",
+      name: "T. R.",
+      role: "Owner · Cleaning company (anonymised)",
+      tag: "Glass & facade cleaning",
+      location: "Cologne",
+      size: "18 employees",
+    },
+  ],
+  fr: [
+    {
+      quote: "Je n’appelle plus personne. J’ouvre l’app, je vois tout au vert et je repose le téléphone. Je n’ai jamais travaillé comme ça, enfin.",
+      initials: "MW",
+      name: "M. W.",
+      role: "Directeur général · Entreprise de nettoyage (anonymisée)",
+      tag: "Nettoyage d’entretien",
+      location: "Stuttgart",
+      size: "42 collaborateurs",
+    },
+    {
+      quote: "J’ai arrêté de m’inquiéter des preuves de service. Elles sont là bien avant que j’en aie besoin. Pour la première fois depuis des années, je respire le lundi.",
+      initials: "SK",
+      name: "S. K.",
+      role: "Responsable de site · Entreprise de nettoyage (anonymisée)",
+      tag: "Nettoyage industriel",
+      location: "Munich",
+      size: "120 collaborateurs",
+    },
+    {
+      quote: "Avant j’avais quatre outils ouverts côte à côte. Aujourd’hui je regarde une fois le matin et je sais. Le reste de la journée m’appartient à nouveau.",
+      initials: "TR",
+      name: "T. R.",
+      role: "Gérant · Entreprise de nettoyage (anonymisée)",
+      tag: "Nettoyage de vitres & façades",
+      location: "Cologne",
+      size: "18 collaborateurs",
+    },
+  ],
+};
+
+const STATS_CONTENT: Record<Lang, { value: string; label: string }[]> = {
+  de: [
+    { value: "DE", label: "Entwickelt in Deutschland" },
+    { value: "DACH", label: "DE · AT · CH" },
+    { value: "100 %", label: "DSGVO-konform" },
+  ],
+  en: [
+    { value: "DE", label: "Built in Germany" },
+    { value: "DACH", label: "DE · AT · CH" },
+    { value: "100 %", label: "GDPR-compliant" },
+  ],
+  fr: [
+    { value: "DE", label: "Conçu en Allemagne" },
+    { value: "DACH", label: "DE · AT · CH" },
+    { value: "100 %", label: "Conforme RGPD" },
+  ],
+};
+
+const TESTIMONIAL_HEADER_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+}> = {
+  de: {
+    eyebrow: "Chefs, die das Handy wieder weglegen.",
+    h2Line1: "Ruhige Betriebe.",
+    h2Line2: "Und deren Chefs.",
+    body: "Wir sind seit Februar 2026 am Markt. Das Ziel: Software bauen, die Chefs im Feierabend lässt, und den Betrieb trotzdem im grünen Bereich hält. Hier ein paar erste Stimmen aus Pilotgesprächen mit Reinigungsbetrieben.",
+  },
+  en: {
+    eyebrow: "Bosses who put the phone down again.",
+    h2Line1: "Calm operations.",
+    h2Line2: "And their bosses.",
+    body: "We launched in February 2026. The goal: build software that lets the boss actually clock off, and still keeps the operation in the green. Here are a few early voices from pilot conversations with cleaning companies.",
+  },
+  fr: {
+    eyebrow: "Des dirigeants qui reposent le téléphone.",
+    h2Line1: "Des entreprises calmes.",
+    h2Line2: "Et leurs dirigeants.",
+    body: "Nous sommes sur le marché depuis février 2026. L’objectif : bâtir un logiciel qui laisse enfin le dirigeant décrocher, tout en gardant l’entreprise au vert. Voici quelques premières voix issues d’échanges pilotes avec des entreprises de nettoyage.",
+  },
+};
 
 function TestimonialsSection() {
+  const { language } = useLanguage();
+  const c = TESTIMONIAL_HEADER_CONTENT[language];
   return (
     <SectionShell size="lg" tone="canvas">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow>Chefs, die das Handy wieder weglegen.</Eyebrow>
+          <Eyebrow>{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
           >
-            Ruhige Betriebe.
+            {c.h2Line1}
             <br />
-            <span style={{ color: "var(--tk-ink-muted)" }}>Und deren Chefs.</span>
+            <span style={{ color: "var(--tk-ink-muted)" }}>{c.h2Line2}</span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Wir sind seit Februar 2026 am Markt. Das Ziel: Software bauen, die Chefs im
-            Feierabend lässt — und den Betrieb trotzdem im grünen Bereich hält. Hier ein paar
-            erste Stimmen aus Pilotgesprächen mit Reinigungsbetrieben.
+            {c.body}
           </p>
         </motion.div>
       </div>
@@ -1275,7 +1732,7 @@ function TestimonialsSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
       >
-        {TESTIMONIALS.map((t) => (
+        {TESTIMONIALS_CONTENT[language].map((t) => (
           <motion.blockquote
             key={t.initials}
             variants={staggerChild}
@@ -1352,7 +1809,7 @@ function TestimonialsSection() {
         {...staggerParent}
         className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto"
       >
-        {STATS.map((s) => (
+        {STATS_CONTENT[language].map((s) => (
           <motion.div
             key={s.label}
             variants={staggerChild}
@@ -1389,18 +1846,17 @@ function TestimonialsSection() {
           className="tk-headline"
           style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.25rem)", color: "var(--tk-ink)" }}
         >
-          Sehen Sie selbst, wie Ruhe im Betrieb aussieht.
+          {language === "en" ? "See for yourself what calm operations look like." : language === "fr" ? "Voyez par vous-même à quoi ressemble une entreprise calme." : "Sehen Sie selbst, wie Ruhe im Betrieb aussieht."}
         </h3>
         <p
           className="mt-4"
           style={{ color: "var(--tk-ink-muted)", fontSize: "1rem", lineHeight: 1.6 }}
         >
-          Erstellen Sie kostenlos Ihren Taskey-Account. Kein Setup-Aufwand, keine
-          Vertragsbindung, voller Funktionsumfang.
+          {language === "en" ? "Create your free Taskey account. No setup effort, no lock-in, full feature set." : language === "fr" ? "Créez votre compte Taskey gratuit. Sans mise en place, sans engagement, fonctionnalités complètes." : "Erstellen Sie kostenlos Ihren Taskey-Account. Kein Setup-Aufwand, keine Vertragsbindung, voller Funktionsumfang."}
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
-          <CtaButton href="/features" variant="ghost">Alle Funktionen</CtaButton>
+          <CtaButton href="https://signup.taskeyapp.com">{language === "en" ? "Create free account" : language === "fr" ? "Créer un compte gratuit" : "Kostenlosen Account erstellen"}</CtaButton>
+          <CtaButton href="/features" variant="ghost">{language === "en" ? "All features" : language === "fr" ? "Toutes les fonctionnalités" : "Alle Funktionen"}</CtaButton>
         </div>
       </motion.div>
     </SectionShell>
@@ -1411,34 +1867,68 @@ function TestimonialsSection() {
  * Section — Live-Margen
  * ────────────────────────────────────────────────────────────────────────── */
 
+const LIVE_MARGIN_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+}> = {
+  de: {
+    eyebrow: "Die Marge im grünen Bereich",
+    h2Line1: "Die Marge sehen Sie,",
+    h2Line2: "bevor der Monat sie versteckt.",
+    body: "Den Anruf vom Steuerberater, der Ihnen sagt, dass ein Auftrag ein Verlust war, den kennen Sie. Mit Taskey passiert der nicht mehr. Sie sehen es, während es passiert, und drehen bei, solange es noch etwas nützt.",
+    ctaPrimary: "Kostenlosen Account erstellen",
+    ctaSecondary: "Mehr erfahren",
+  },
+  en: {
+    eyebrow: "Margin in the green",
+    h2Line1: "You see the margin",
+    h2Line2: "before the month hides it.",
+    body: "The call from your accountant telling you a job was a loss, you know the one. With Taskey, that call doesn’t come. You see it as it happens and adjust while it still helps.",
+    ctaPrimary: "Create free account",
+    ctaSecondary: "Learn more",
+  },
+  fr: {
+    eyebrow: "La marge au vert",
+    h2Line1: "Vous voyez la marge",
+    h2Line2: "avant que le mois ne la cache.",
+    body: "L’appel du comptable qui vous annonce qu’une affaire a été perdante, vous le connaissez. Avec Taskey, il n’arrive plus. Vous le voyez pendant que ça se passe et vous ajustez tant que ça sert encore.",
+    ctaPrimary: "Créer un compte gratuit",
+    ctaSecondary: "En savoir plus",
+  },
+};
+
 function LiveMargenSection() {
+  const { language } = useLanguage();
+  const c = LIVE_MARGIN_CONTENT[language];
   return (
     <SectionShell size="lg" tone="elev">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-32">
           <motion.div {...fadeUp}>
-            <Eyebrow>Die Marge im grünen Bereich</Eyebrow>
+            <Eyebrow>{c.eyebrow}</Eyebrow>
             <h2
               className="tk-headline mt-4"
               style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
             >
-              Die Marge sehen Sie,
+              {c.h2Line1}
               <br />
               <span style={{ color: "var(--tk-ink-muted)" }}>
-                bevor der Monat sie versteckt.
+                {c.h2Line2}
               </span>
             </h2>
             <p
               className="mt-6"
               style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
             >
-              Den Anruf vom Steuerberater, der Ihnen sagt, dass ein Auftrag ein Verlust war —
-              den kennen Sie. Mit Taskey passiert der nicht mehr. Sie sehen es, während es
-              passiert, und drehen bei, solange es noch etwas nützt.
+              {c.body}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <CtaButton href="https://signup.taskeyapp.com">Kostenlosen Account erstellen</CtaButton>
-              <CtaButton href="/features" variant="ghost">Mehr erfahren</CtaButton>
+              <CtaButton href="https://signup.taskeyapp.com">{c.ctaPrimary}</CtaButton>
+              <CtaButton href="/features" variant="ghost">{c.ctaSecondary}</CtaButton>
             </div>
           </motion.div>
         </div>
@@ -1462,43 +1952,102 @@ function LiveMargenSection() {
  * Section — iOS App (three phone screens with parallax)
  * ────────────────────────────────────────────────────────────────────────── */
 
-const IOS_FEATURES = [
-  "So einfach wie WhatsApp",
-  "Funktioniert auch ohne Internet",
-  "Sofort-Nachrichten aufs Handy",
-  "Anmelden per Fingerabdruck",
-];
+const IOS_SECTION_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  features: string[];
+  ctaAppStore: string;
+  ctaFeatures: string;
+  phones: { src: string; alt: string; offset: number }[];
+}> = {
+  de: {
+    eyebrow: "Die Handy-App für Ihr Team",
+    h2Line1: "Der Betrieb",
+    h2Line2: "in der Hosentasche.",
+    body: "Ihr Team öffnet die App, macht seinen Job, geht wieder raus. Sie öffnen dieselbe App auf dem Sofa und wissen, dass alles läuft.",
+    features: [
+      "So einfach wie ein Chat",
+      "Funktioniert auch ohne Internet",
+      "Sofort-Nachrichten aufs Handy",
+      "Anmelden per Fingerabdruck",
+    ],
+    ctaAppStore: "Im App Store laden",
+    ctaFeatures: "Alle Funktionen entdecken",
+    phones: [
+      { src: "/sections/phone-screen-1.jpg", alt: "Taskey App – Übersicht des Reinigungs-Teams", offset: 0 },
+      { src: "/sections/phone-screen-3.jpg", alt: "Taskey App – Aufgaben und Nachweise", offset: 40 },
+      { src: "/sections/phone-screen-2.jpg", alt: "Taskey App in Aktion", offset: 0 },
+    ],
+  },
+  en: {
+    eyebrow: "The mobile app for your team",
+    h2Line1: "The operation",
+    h2Line2: "in your pocket.",
+    body: "Your team opens the app, does the job, walks out again. You open the same app from the couch and know it’s running.",
+    features: [
+      "As easy as a chat",
+      "Works offline too",
+      "Instant notifications on the phone",
+      "Sign in with fingerprint",
+    ],
+    ctaAppStore: "Get it on the App Store",
+    ctaFeatures: "Discover all features",
+    phones: [
+      { src: "/sections/phone-screen-1.jpg", alt: "Taskey app — cleaning team overview", offset: 0 },
+      { src: "/sections/phone-screen-3.jpg", alt: "Taskey app — tasks and proof of service", offset: 40 },
+      { src: "/sections/phone-screen-2.jpg", alt: "Taskey app in action", offset: 0 },
+    ],
+  },
+  fr: {
+    eyebrow: "L’app mobile pour votre équipe",
+    h2Line1: "L’entreprise",
+    h2Line2: "dans la poche.",
+    body: "Votre équipe ouvre l’app, fait le boulot, repart. Vous ouvrez la même app depuis le canapé et vous savez que ça tourne.",
+    features: [
+      "Aussi simple qu’un chat",
+      "Fonctionne aussi hors ligne",
+      "Notifications instantanées sur le téléphone",
+      "Connexion par empreinte digitale",
+    ],
+    ctaAppStore: "Télécharger sur l’App Store",
+    ctaFeatures: "Découvrir toutes les fonctionnalités",
+    phones: [
+      { src: "/sections/phone-screen-1.jpg", alt: "App Taskey — vue d’ensemble de l’équipe de nettoyage", offset: 0 },
+      { src: "/sections/phone-screen-3.jpg", alt: "App Taskey — tâches et preuves de service", offset: 40 },
+      { src: "/sections/phone-screen-2.jpg", alt: "App Taskey en action", offset: 0 },
+    ],
+  },
+};
 
 function IOSAppRedesignSection() {
+  const { language } = useLanguage();
+  const c = IOS_SECTION_CONTENT[language];
   return (
     <SectionShell size="lg" tone="ink">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow tone="light">Die Handy-App für Ihr Team</Eyebrow>
+          <Eyebrow tone="light">{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "#fff" }}
           >
-            Der Betrieb
+            {c.h2Line1}
             <br />
-            <span style={{ color: "rgba(255,255,255,0.55)" }}>in der Hosentasche.</span>
+            <span style={{ color: "rgba(255,255,255,0.55)" }}>{c.h2Line2}</span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Ihr Team öffnet die App, macht seinen Job, geht wieder raus. Sie öffnen dieselbe
-            App auf dem Sofa und wissen, dass alles läuft.
+            {c.body}
           </p>
         </motion.div>
       </div>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-        {[
-          { src: "/sections/phone-screen-1.jpg", alt: "Taskey App – Übersicht des Reinigungs-Teams", offset: 0 },
-          { src: "/sections/phone-screen-3.jpg", alt: "Taskey App – Aufgaben und Nachweise", offset: 40 },
-          { src: "/sections/phone-screen-2.jpg", alt: "Taskey App in Aktion", offset: 0 },
-        ].map((p, i) => (
+        {c.phones.map((p, i) => (
           <motion.div
             key={p.src}
             initial={{ opacity: 0, y: 60 }}
@@ -1529,7 +2078,7 @@ function IOSAppRedesignSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
       >
-        {IOS_FEATURES.map((f) => (
+        {c.features.map((f) => (
           <motion.div
             key={f}
             variants={staggerChild}
@@ -1561,7 +2110,7 @@ function IOSAppRedesignSection() {
           className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
           style={{ background: "#fff", color: "var(--tk-ink)", fontSize: "16px" }}
         >
-          Im App Store laden
+          {c.ctaAppStore}
         </motion.a>
         <motion.a
           href="/features"
@@ -1570,10 +2119,10 @@ function IOSAppRedesignSection() {
           className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium tk-glass-dark"
           style={{ fontSize: "16px" }}
         >
-          Alle Funktionen entdecken
+          {c.ctaFeatures}
         </motion.a>
         <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "13px" }}>
-          Genutzt von Betrieben im DACH-Raum
+          {language === "en" ? "Used by operations across the DACH region" : language === "fr" ? "Utilisé par des entreprises dans toute la zone DACH" : "Genutzt von Betrieben im DACH-Raum"}
         </span>
       </div>
     </SectionShell>
@@ -1584,51 +2133,74 @@ function IOSAppRedesignSection() {
  * Section 15 — Ablauf (4 steps)
  * ────────────────────────────────────────────────────────────────────────── */
 
-const STEPS: { n: string; title: string; body: string; cta?: { label: string; href: string } }[] = [
-  {
-    n: "Schritt 1",
-    title: "Kennenlerngespräch",
-    body: "Komplett kostenlos und unverbindlich. Wir hören zu, verstehen Ihren Betrieb und beantworten Ihre Fragen. Kein Verkaufsdruck.",
-    cta: { label: "Jetzt Termin buchen", href: "https://calendly.com/fynn-taskeyapp/new-meeting" },
+type Step = { n: string; title: string; body: string; cta?: { label: string; href: string } };
+
+const ABLAUF_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  steps: Step[];
+}> = {
+  de: {
+    eyebrow: "In 4 Schritten zu Taskey",
+    h2Line1: "So läuft es",
+    h2Line2: "mit uns ab.",
+    body: "Klar strukturiert, ohne Überraschungen. Vom ersten Gespräch bis zum passenden Tarif begleiten wir Sie persönlich.",
+    steps: [
+      { n: "Schritt 1", title: "Kennenlerngespräch", body: "Komplett kostenlos und unverbindlich. Wir hören zu, verstehen Ihren Betrieb und beantworten Ihre Fragen. Kein Verkaufsdruck.", cta: { label: "Jetzt Termin buchen", href: "https://calendly.com/fynn-taskeyapp/new-meeting" } },
+      { n: "Schritt 2", title: "Einrichtungstermin", body: "Sie bekommen von uns einen Upload-Link. Im gemeinsamen Zoom-Meeting laden Sie alle bestehenden Daten per Drag & Drop hoch. Innerhalb von 48 Stunden ist alles vollständig in Taskey übertragen." },
+      { n: "Schritt 3", title: "14 Tage kostenlos testen", body: "Ihr Team nutzt Taskey mit echten Daten und im echten Alltag. Wir bleiben in dieser Zeit für Sie erreichbar, klären Rückfragen und helfen beim Feintuning." },
+      { n: "Schritt 4", title: "Tarif-Beratung", body: "Wir kommen aktiv auf Sie zu und besprechen gemeinsam, welcher Tarif von der Preise-Seite am besten zu Ihrem Betrieb passt. Keine automatische Verlängerung ohne Absprache.", cta: { label: "Preise ansehen", href: "/pricing" } },
+    ],
   },
-  {
-    n: "Schritt 2",
-    title: "Einrichtungstermin",
-    body: "Sie bekommen von uns einen Upload-Link. Im gemeinsamen Zoom-Meeting laden Sie alle bestehenden Daten per Drag & Drop hoch. Innerhalb von 48 Stunden ist alles vollständig in Taskey übertragen.",
+  en: {
+    eyebrow: "Taskey in 4 steps",
+    h2Line1: "Here’s how it",
+    h2Line2: "runs with us.",
+    body: "Clearly structured, no surprises. From the first call to the right plan, we’re with you in person.",
+    steps: [
+      { n: "Step 1", title: "Intro call", body: "Completely free, no strings attached. We listen, understand your operation and answer your questions. No sales pressure.", cta: { label: "Book a slot", href: "https://calendly.com/fynn-taskeyapp/new-meeting" } },
+      { n: "Step 2", title: "Setup session", body: "You get an upload link from us. In a shared Zoom session you drop your existing data via drag & drop. Within 48 hours everything is fully migrated into Taskey." },
+      { n: "Step 3", title: "14 days free trial", body: "Your team uses Taskey with real data in real operations. We stay reachable during that time, answer follow-ups and help with fine-tuning." },
+      { n: "Step 4", title: "Plan consultation", body: "We reach out proactively and go through together which plan from the pricing page fits your operation best. No auto-renewal without a chat.", cta: { label: "See pricing", href: "/pricing" } },
+    ],
   },
-  {
-    n: "Schritt 3",
-    title: "14 Tage kostenlos testen",
-    body: "Ihr Team nutzt Taskey mit echten Daten und im echten Alltag. Wir bleiben in dieser Zeit für Sie erreichbar, klären Rückfragen und helfen beim Feintuning.",
+  fr: {
+    eyebrow: "Taskey en 4 étapes",
+    h2Line1: "Voici comment",
+    h2Line2: "ça se passe avec nous.",
+    body: "Clairement structuré, sans surprise. Du premier échange au bon forfait, nous vous accompagnons personnellement.",
+    steps: [
+      { n: "Étape 1", title: "Rendez-vous découverte", body: "Entièrement gratuit et sans engagement. On écoute, on comprend votre entreprise et on répond à vos questions. Sans pression commerciale.", cta: { label: "Réserver un créneau", href: "https://calendly.com/fynn-taskeyapp/new-meeting" } },
+      { n: "Étape 2", title: "Séance de mise en place", body: "Vous recevez un lien d’upload. En Zoom partagé, vous déposez toutes vos données existantes par glisser-déposer. En 48 heures tout est migré dans Taskey." },
+      { n: "Étape 3", title: "14 jours d’essai gratuit", body: "Votre équipe utilise Taskey avec de vraies données et en conditions réelles. Nous restons disponibles, répondons aux questions et aidons à l’ajustement fin." },
+      { n: "Étape 4", title: "Conseil sur le forfait", body: "Nous revenons vers vous et regardons ensemble quel forfait de la page Tarifs correspond le mieux à votre entreprise. Pas de renouvellement automatique sans validation.", cta: { label: "Voir les tarifs", href: "/pricing" } },
+    ],
   },
-  {
-    n: "Schritt 4",
-    title: "Tarif-Beratung",
-    body: "Wir kommen aktiv auf Sie zu und besprechen gemeinsam, welcher Tarif von der Preise-Seite am besten zu Ihrem Betrieb passt. Keine automatische Verlängerung ohne Absprache.",
-    cta: { label: "Preise ansehen", href: "/pricing" },
-  },
-];
+};
 
 function AblaufRedesignSection() {
+  const { language } = useLanguage();
+  const c = ABLAUF_CONTENT[language];
   return (
     <SectionShell size="lg" tone="canvas">
       <div className="max-w-3xl">
         <motion.div {...fadeUp}>
-          <Eyebrow>In 4 Schritten zu Taskey</Eyebrow>
+          <Eyebrow>{c.eyebrow}</Eyebrow>
           <h2
             className="tk-headline mt-4"
             style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
           >
-            So läuft es
+            {c.h2Line1}
             <br />
-            <span style={{ color: "var(--tk-ink-muted)" }}>mit uns ab.</span>
+            <span style={{ color: "var(--tk-ink-muted)" }}>{c.h2Line2}</span>
           </h2>
           <p
             className="mt-6"
             style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
           >
-            Klar strukturiert, ohne Überraschungen. Vom ersten Gespräch bis zum passenden
-            Tarif begleiten wir Sie persönlich.
+            {c.body}
           </p>
         </motion.div>
       </div>
@@ -1637,7 +2209,7 @@ function AblaufRedesignSection() {
         {...staggerParent}
         className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
       >
-        {STEPS.map((s, i) => (
+        {c.steps.map((s, i) => (
           <motion.article
             key={s.n}
             variants={staggerChild}
@@ -1714,35 +2286,71 @@ function AblaufRedesignSection() {
  * Section 16 — FAQ
  * ────────────────────────────────────────────────────────────────────────── */
 
+const FAQ_HEADER_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  h2Line3: string;
+  body: string;
+  cta: string;
+}> = {
+  de: {
+    eyebrow: "Häufig gestellte Fragen",
+    h2Line1: "Alles,",
+    h2Line2: "was Sie",
+    h2Line3: "wissen müssen.",
+    body: "Alles, was Sie über Taskey wissen müssen.",
+    cta: "Persönlich fragen",
+  },
+  en: {
+    eyebrow: "Frequently asked",
+    h2Line1: "Everything",
+    h2Line2: "you need",
+    h2Line3: "to know.",
+    body: "Everything you need to know about Taskey.",
+    cta: "Ask in person",
+  },
+  fr: {
+    eyebrow: "Questions fréquentes",
+    h2Line1: "Tout ce que",
+    h2Line2: "vous devez",
+    h2Line3: "savoir.",
+    body: "Tout ce que vous devez savoir sur Taskey.",
+    cta: "Poser la question en direct",
+  },
+};
+
 function FAQRedesignSection() {
+  const { language } = useLanguage();
+  const c = FAQ_HEADER_CONTENT[language];
   return (
     <SectionShell size="lg" tone="elev">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-5 lg:sticky lg:top-32">
           <motion.div {...fadeUp}>
-            <Eyebrow>Häufig gestellte Fragen</Eyebrow>
+            <Eyebrow>{c.eyebrow}</Eyebrow>
             <h2
               className="tk-headline mt-4"
               style={{ fontSize: "clamp(2rem, 4.4vw, 3.5rem)", color: "var(--tk-ink)" }}
             >
-              Alles,
+              {c.h2Line1}
               <br />
-              was Sie
+              {c.h2Line2}
               <br />
-              <span style={{ color: "var(--tk-ink-muted)" }}>wissen müssen.</span>
+              <span style={{ color: "var(--tk-ink-muted)" }}>{c.h2Line3}</span>
             </h2>
             <p
               className="mt-6"
               style={{ color: "var(--tk-ink-muted)", fontSize: "1.0625rem", lineHeight: 1.6 }}
             >
-              Alles, was Sie über Taskey wissen müssen.
+              {c.body}
             </p>
             <a
               href="https://calendly.com/fynn-taskeyapp/new-meeting"
               className="mt-6 inline-flex items-center gap-2"
               style={{ color: "var(--tk-accent)", fontSize: "14px", fontWeight: 500 }}
             >
-              Persönlich fragen <span aria-hidden>→</span>
+              {c.cta} <span aria-hidden>→</span>
             </a>
           </motion.div>
         </div>
@@ -1759,27 +2367,63 @@ function FAQRedesignSection() {
  * Final closing CTA
  * ────────────────────────────────────────────────────────────────────────── */
 
+const FINAL_CTA_CONTENT: Record<Lang, {
+  eyebrow: string;
+  h2Line1: string;
+  h2Line2: string;
+  body: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+}> = {
+  de: {
+    eyebrow: "Weniger Tools. Weniger Aufwand.",
+    h2Line1: "Die sauberste Software",
+    h2Line2: "von allen.",
+    body: "Ihre Teams draußen. Ihre Zahlen live. Ihre Nachweise fertig, bevor jemand fragt.",
+    ctaPrimary: "Kostenlosen Account erstellen →",
+    ctaSecondary: "Alle Funktionen",
+  },
+  en: {
+    eyebrow: "Fewer tools. Less overhead.",
+    h2Line1: "The cleanest software",
+    h2Line2: "out there.",
+    body: "Your teams outside. Your numbers live. Your proof of service ready before anyone asks.",
+    ctaPrimary: "Create free account →",
+    ctaSecondary: "All features",
+  },
+  fr: {
+    eyebrow: "Moins d’outils. Moins de charge.",
+    h2Line1: "Le logiciel le plus propre",
+    h2Line2: "du marché.",
+    body: "Vos équipes sur le terrain. Vos chiffres en direct. Vos preuves prêtes avant qu’on ne demande.",
+    ctaPrimary: "Créer un compte gratuit →",
+    ctaSecondary: "Toutes les fonctionnalités",
+  },
+};
+
 function FinalCTASection() {
+  const { language } = useLanguage();
+  const c = FINAL_CTA_CONTENT[language];
   return (
     <SectionShell size="lg" tone="ink">
       <motion.div
         {...fadeUp}
         className="text-center max-w-3xl mx-auto"
       >
-        <Eyebrow tone="light">Weniger Tools. Weniger Aufwand.</Eyebrow>
+        <Eyebrow tone="light">{c.eyebrow}</Eyebrow>
         <h2
           className="tk-display mt-6"
           style={{ fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)", color: "#fff" }}
         >
-          Die sauberste Software
+          {c.h2Line1}
           <br />
-          <span style={{ color: "rgba(255,255,255,0.55)" }}>von allen.</span>
+          <span style={{ color: "rgba(255,255,255,0.55)" }}>{c.h2Line2}</span>
         </h2>
         <p
           className="mt-8"
           style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.0625rem", lineHeight: 1.6 }}
         >
-          Ihre Teams draußen. Ihre Zahlen live. Ihre Nachweise fertig, bevor jemand fragt.
+          {c.body}
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <motion.a
@@ -1789,7 +2433,7 @@ function FinalCTASection() {
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium"
             style={{ background: "#fff", color: "var(--tk-ink)", fontSize: "16px" }}
           >
-            Kostenlosen Account erstellen →
+            {c.ctaPrimary}
           </motion.a>
           <motion.a
             href="/features"
@@ -1798,7 +2442,7 @@ function FinalCTASection() {
             className="inline-flex items-center gap-2 px-7 py-4 rounded-full font-medium tk-glass-dark"
             style={{ fontSize: "16px" }}
           >
-            Alle Funktionen
+            {c.ctaSecondary}
           </motion.a>
         </div>
       </motion.div>
@@ -1829,6 +2473,7 @@ function BridgeParallax({
       strength={160}
       overlay="linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.75) 100%)"
     >
+      <AiImageBadge position="top-right" />
       {quote ? (
         <div
           className="tk-container-wide"
@@ -1882,6 +2527,34 @@ function BridgeParallax({
  * Composition
  * ────────────────────────────────────────────────────────────────────────── */
 
+const BRIDGE_QUOTE: Record<Lang, { quote: string; attribution: string }> = {
+  de: {
+    quote: "Jeder Einsatz beweist sich selbst. Zeiten erfassen sich, während gearbeitet wird. Wenn eine Reklamation kommt, sind Sie schon fertig.",
+    attribution: "Der Motor unter der Ruhe",
+  },
+  en: {
+    quote: "Every assignment proves itself. Time records itself while the work happens. When a complaint comes in, you’re already done.",
+    attribution: "The engine under the calm",
+  },
+  fr: {
+    quote: "Chaque intervention se prouve toute seule. Le temps s’enregistre pendant qu’on travaille. Quand une réclamation arrive, vous avez déjà terminé.",
+    attribution: "Le moteur sous le calme",
+  },
+};
+
+function LocalizedBridgeParallax() {
+  const { language } = useLanguage();
+  const c = BRIDGE_QUOTE[language];
+  return (
+    <BridgeParallax
+      src="/sections/motor-unter-ruhe.png"
+      alt="Team in Bürobesprechung, entspannte Stimmung"
+      quote={c.quote}
+      attribution={c.attribution}
+    />
+  );
+}
+
 export default function HomeShell() {
   return (
     <main style={{ background: "var(--tk-canvas)" }}>
@@ -1892,12 +2565,7 @@ export default function HomeShell() {
       <IntroVideoSection />
       <CommunicationUSPSection />
 
-      <BridgeParallax
-        src="/sections/motor-unter-ruhe.png"
-        alt="Team in Bürobesprechung, entspannte Stimmung"
-        quote="Jeder Einsatz beweist sich selbst. Zeiten erfassen sich, während gearbeitet wird. Wenn eine Reklamation kommt, sind Sie schon fertig."
-        attribution="Der Motor unter der Ruhe"
-      />
+      <LocalizedBridgeParallax />
 
       <AllInOneSection />
       <SoloPackageStrip />
