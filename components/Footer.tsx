@@ -108,6 +108,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/features/taskey-share" className="text-slate-300 hover:text-white transition break-words">
+                  {t("footer.link.taskeyShare")}
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="text-slate-300 hover:text-white transition break-words">
                   {t("footer.link.pricing")}
                 </Link>

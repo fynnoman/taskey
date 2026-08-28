@@ -52,6 +52,7 @@ const STATIC_ENTRIES: Entry[] = [
   // Kernseiten
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/features", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/features/taskey-share", changeFrequency: "monthly", priority: 0.85 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.9 },
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/partnerschaften", changeFrequency: "monthly", priority: 0.7 },

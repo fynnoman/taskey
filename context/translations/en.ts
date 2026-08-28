@@ -204,6 +204,7 @@ const translations: Record<string, string> = {
     "footer.usp.line1": "The",
     "footer.usp.line2": "most efficient and most intuitive",
     "footer.usp.line3": "software. Your business at a glance.",
+    "footer.link.taskeyShare": "Taskey Share",
     "footer.link.iosApp": "iOS app",
     "footer.link.nfcProof": "NFC site verification",
     "footer.link.enterprise": "Enterprise",

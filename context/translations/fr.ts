@@ -197,6 +197,7 @@ const translations: Record<string, string> = {
     "footer.usp.line1": "Le logiciel",
     "footer.usp.line2": "le plus efficace et le plus intuitif",
     "footer.usp.line3": "pour votre entreprise. En un coup d'œil.",
+    "footer.link.taskeyShare": "Taskey Share",
     "footer.link.iosApp": "Application iOS",
     "footer.link.nfcProof": "Preuve de présence NFC",
     "footer.link.enterprise": "Enterprise",
