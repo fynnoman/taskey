@@ -8,9 +8,9 @@ import {
   type Reinigungsart,
   type ReinigungskostenInput,
 } from "@/lib/rechner/reinigungskosten";
-import EmailCapture, {
-  type EmailCaptureLabels,
-} from "@/components/rechner/EmailCapture";
+import CalculatorGate, {
+  type GateLabels,
+} from "@/components/rechner/CalculatorGate";
 
 export type ReinigungsartOption = { value: Reinigungsart; label: string };
 export type ObjektartOption = { value: Objektart; label: string };
@@ -46,18 +46,12 @@ export type ReinigungskostenLabels = {
     empfohlenerPreis: string;
     preisProQm: string;
   };
-  cta: {
-    primary: string;
-    secondary: string;
-    disclaimer: string;
-  };
   currency: string;
   currencySymbol: string;
   locale: "de" | "en" | "fr";
-  handoffUrl: string;
   objektartOptions: ObjektartOption[];
   reinigungsartOptions: ReinigungsartOption[];
-  emailCapture?: EmailCaptureLabels;
+  gate: GateLabels;
 };
 
 const DEFAULTS: Omit<ReinigungskostenInput, "objektart" | "reinigungsart"> = {
@@ -146,44 +140,6 @@ export default function ReinigungskostenRechner({
       }),
     [labels.locale]
   );
-
-  const handoffHref = useMemo(() => {
-    const params = new URLSearchParams({
-      source: "rechner-reinigungskosten",
-      lang: labels.locale,
-      objektart,
-      reinigungsart,
-      qm: String(quadratmeter),
-      freq: String(reinigungenProMonat),
-      stundensatz: String(stundensatz),
-      material: String(materialkosten),
-      fahrt: String(fahrtkosten),
-      sonstige: String(sonstigeKosten),
-      marge: String(zielmarge),
-      preis_monat: String(ergebnis.empfohlenerPreisProMonat),
-      preis_reinigung: String(ergebnis.empfohlenerPreisProReinigung),
-      kosten_monat: String(ergebnis.gesamtkostenProMonat),
-      stunden_monat: String(ergebnis.arbeitsstundenProMonat),
-    });
-    const sep = labels.handoffUrl.includes("?") ? "&" : "?";
-    return `${labels.handoffUrl}${sep}${params.toString()}`;
-  }, [
-    labels.handoffUrl,
-    labels.locale,
-    objektart,
-    reinigungsart,
-    quadratmeter,
-    reinigungenProMonat,
-    stundensatz,
-    materialkosten,
-    fahrtkosten,
-    sonstigeKosten,
-    zielmarge,
-    ergebnis.empfohlenerPreisProMonat,
-    ergebnis.empfohlenerPreisProReinigung,
-    ergebnis.gesamtkostenProMonat,
-    ergebnis.arbeitsstundenProMonat,
-  ]);
 
   const emailRows = useMemo(
     () => [
@@ -294,80 +250,67 @@ export default function ReinigungskostenRechner({
         <p className="mt-6 text-xs text-slate-500">{labels.hints.formula}</p>
       </div>
 
-      <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-          {labels.ergebnis.heading}
-        </h3>
+      <CalculatorGate
+        labels={labels.gate}
+        rechnerType="reinigungskosten"
+        headline={emailHeadline}
+        rows={emailRows}
+      >
+        <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            {labels.ergebnis.heading}
+          </h3>
 
-        <div className="mt-4 rounded-xl bg-white p-5 ring-1 ring-slate-200">
-          <div className="text-xs font-medium uppercase tracking-wide text-slate-500">
-            {labels.ergebnis.empfohlenerPreis}
+          <div className="mt-4 rounded-xl bg-white p-5 ring-1 ring-slate-200">
+            <div className="text-xs font-medium uppercase tracking-wide text-slate-500">
+              {labels.ergebnis.empfohlenerPreis}
+            </div>
+            <div className="mt-2 text-3xl font-semibold text-slate-900">
+              {fmtCurrency.format(ergebnis.empfohlenerPreisProMonat)}
+              <span className="ml-1 text-sm font-normal text-slate-500">
+                {labels.hints.perMonat}
+              </span>
+            </div>
+            <div className="mt-1 text-sm text-slate-600">
+              {fmtCurrency.format(ergebnis.empfohlenerPreisProReinigung)}{" "}
+              {labels.hints.perReinigung}
+            </div>
+            <div className="mt-1 text-sm text-slate-500">
+              {fmtCurrency.format(ergebnis.preisProQuadratmeter)}{" "}
+              {labels.hints.perQuadratmeter}
+            </div>
           </div>
-          <div className="mt-2 text-3xl font-semibold text-slate-900">
-            {fmtCurrency.format(ergebnis.empfohlenerPreisProMonat)}
-            <span className="ml-1 text-sm font-normal text-slate-500">
-              {labels.hints.perMonat}
-            </span>
-          </div>
-          <div className="mt-1 text-sm text-slate-600">
-            {fmtCurrency.format(ergebnis.empfohlenerPreisProReinigung)}{" "}
-            {labels.hints.perReinigung}
-          </div>
-          <div className="mt-1 text-sm text-slate-500">
-            {fmtCurrency.format(ergebnis.preisProQuadratmeter)}{" "}
-            {labels.hints.perQuadratmeter}
-          </div>
-        </div>
 
-        <dl className="mt-5 space-y-2 text-sm text-slate-700">
-          <Row
-            label={labels.ergebnis.arbeitsstunden}
-            value={`${fmtNumber.format(ergebnis.arbeitsstundenProMonat)} h`}
-          />
-          <Row
-            label={labels.ergebnis.personalkosten}
-            value={fmtCurrency.format(ergebnis.personalkostenProMonat)}
-          />
-          <Row
-            label={labels.ergebnis.materialkosten}
-            value={fmtCurrency.format(ergebnis.materialkostenProMonat)}
-          />
-          <Row
-            label={labels.ergebnis.fahrtkosten}
-            value={fmtCurrency.format(ergebnis.fahrtkostenProMonat)}
-          />
-          <Row
-            label={labels.ergebnis.gesamtkosten}
-            value={fmtCurrency.format(ergebnis.gesamtkostenProMonat)}
-            emphasize
-          />
-          <Row
-            label={labels.ergebnis.zielmargeEuro}
-            value={fmtCurrency.format(ergebnis.zielmargeEuro)}
-          />
-        </dl>
-
-        <a
-          href={handoffHref}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          rel="nofollow"
-        >
-          {labels.cta.primary}
-        </a>
-        <p className="mt-3 text-center text-xs text-slate-500">
-          {labels.cta.secondary}
-        </p>
-        <p className="mt-4 text-xs text-slate-400">{labels.cta.disclaimer}</p>
-      </aside>
+          <dl className="mt-5 space-y-2 text-sm text-slate-700">
+            <Row
+              label={labels.ergebnis.arbeitsstunden}
+              value={`${fmtNumber.format(ergebnis.arbeitsstundenProMonat)} h`}
+            />
+            <Row
+              label={labels.ergebnis.personalkosten}
+              value={fmtCurrency.format(ergebnis.personalkostenProMonat)}
+            />
+            <Row
+              label={labels.ergebnis.materialkosten}
+              value={fmtCurrency.format(ergebnis.materialkostenProMonat)}
+            />
+            <Row
+              label={labels.ergebnis.fahrtkosten}
+              value={fmtCurrency.format(ergebnis.fahrtkostenProMonat)}
+            />
+            <Row
+              label={labels.ergebnis.gesamtkosten}
+              value={fmtCurrency.format(ergebnis.gesamtkostenProMonat)}
+              emphasize
+            />
+            <Row
+              label={labels.ergebnis.zielmargeEuro}
+              value={fmtCurrency.format(ergebnis.zielmargeEuro)}
+            />
+          </dl>
+        </aside>
+      </CalculatorGate>
       </div>
-      {labels.emailCapture ? (
-        <EmailCapture
-          labels={labels.emailCapture}
-          rechnerType="reinigungskosten"
-          headline={emailHeadline}
-          rows={emailRows}
-        />
-      ) : null}
     </div>
   );
 }

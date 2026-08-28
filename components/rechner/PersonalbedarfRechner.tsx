@@ -9,9 +9,9 @@ import {
   LEISTUNG_QM_PRO_STUNDE,
   type Reinigungsart,
 } from "@/lib/rechner/reinigungskosten";
-import EmailCapture, {
-  type EmailCaptureLabels,
-} from "@/components/rechner/EmailCapture";
+import CalculatorGate, {
+  type GateLabels,
+} from "@/components/rechner/CalculatorGate";
 
 export type ReinigungsartOption = { value: Reinigungsart; label: string };
 
@@ -41,17 +41,11 @@ export type PersonalbedarfLabels = {
     vollzeitAequivalente: string;
     personalkostenProMonat: string;
   };
-  cta: {
-    primary: string;
-    secondary: string;
-    disclaimer: string;
-  };
   currency: string;
   currencySymbol: string;
   locale: "de" | "en" | "fr";
-  handoffUrl: string;
   reinigungsartOptions: ReinigungsartOption[];
-  emailCapture?: EmailCaptureLabels;
+  gate: GateLabels;
 };
 
 const DEFAULTS: PersonalbedarfInput = {
@@ -98,31 +92,6 @@ export default function PersonalbedarfRechner({
       }),
     [labels.locale]
   );
-
-  const handoffHref = useMemo(() => {
-    const params = new URLSearchParams({
-      source: "rechner-personalbedarf",
-      lang: labels.locale,
-      qm: String(state.quadratmeter),
-      reinigungsart: state.reinigungsart,
-      freq: String(state.reinigungenProMonat),
-      wochenstd: String(state.wochenarbeitszeitStunden),
-      produktiv_monat: String(state.produktivStundenProMonatProVzk),
-      stundensatz: String(state.stundensatz),
-      stunden_monat: String(ergebnis.stundenProMonat),
-      vzae: String(ergebnis.vollzeitAequivalente),
-      personalkosten_monat: String(ergebnis.personalkostenProMonat),
-    });
-    const sep = labels.handoffUrl.includes("?") ? "&" : "?";
-    return `${labels.handoffUrl}${sep}${params.toString()}`;
-  }, [
-    labels.handoffUrl,
-    labels.locale,
-    state,
-    ergebnis.stundenProMonat,
-    ergebnis.vollzeitAequivalente,
-    ergebnis.personalkostenProMonat,
-  ]);
 
   const emailRows = useMemo(
     () => [
@@ -212,7 +181,13 @@ export default function PersonalbedarfRechner({
         <p className="mt-6 text-xs text-slate-500">{labels.hints.formula}</p>
       </div>
 
-      <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <CalculatorGate
+        labels={labels.gate}
+        rechnerType="personalbedarf"
+        headline={emailHeadline}
+        rows={emailRows}
+      >
+        <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
           {labels.ergebnis.heading}
         </h3>
@@ -251,27 +226,9 @@ export default function PersonalbedarfRechner({
           />
         </dl>
 
-        <a
-          href={handoffHref}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          rel="nofollow"
-        >
-          {labels.cta.primary}
-        </a>
-        <p className="mt-3 text-center text-xs text-slate-500">
-          {labels.cta.secondary}
-        </p>
-        <p className="mt-4 text-xs text-slate-400">{labels.cta.disclaimer}</p>
-      </aside>
+        </aside>
+      </CalculatorGate>
       </div>
-      {labels.emailCapture ? (
-        <EmailCapture
-          labels={labels.emailCapture}
-          rechnerType="personalbedarf"
-          headline={emailHeadline}
-          rows={emailRows}
-        />
-      ) : null}
     </div>
   );
 }

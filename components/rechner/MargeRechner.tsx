@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { berechneMarge, type MargeInput } from "@/lib/rechner/marge";
-import EmailCapture, {
-  type EmailCaptureLabels,
-} from "@/components/rechner/EmailCapture";
+import CalculatorGate, {
+  type GateLabels,
+} from "@/components/rechner/CalculatorGate";
 
 export type MargeLabels = {
   inputs: {
@@ -28,16 +28,10 @@ export type MargeLabels = {
     szenarioPreis: string;
     szenarioMarge: string;
   };
-  cta: {
-    primary: string;
-    secondary: string;
-    disclaimer: string;
-  };
-  emailCapture?: EmailCaptureLabels;
+  gate: GateLabels;
   currency: string;
   currencySymbol: string;
   locale: "de" | "en" | "fr";
-  handoffUrl: string;
 };
 
 const DEFAULTS: MargeInput = {
@@ -73,28 +67,6 @@ export default function MargeRechner({ labels }: { labels: MargeLabels }) {
       }),
     [labels.locale]
   );
-
-  const handoffHref = useMemo(() => {
-    const params = new URLSearchParams({
-      source: "rechner-marge",
-      lang: labels.locale,
-      preis: String(state.verkaufspreis),
-      kosten: String(state.gesamtkosten),
-      zielmarge: String(state.zielmargeProzent),
-      marge_prozent: String(ergebnis.aktuelleMargeProzent),
-      marge_euro: String(ergebnis.aktuelleMargeEuro),
-      empfohlen_preis: String(ergebnis.empfohlenerPreisFuerZielmarge),
-    });
-    const sep = labels.handoffUrl.includes("?") ? "&" : "?";
-    return `${labels.handoffUrl}${sep}${params.toString()}`;
-  }, [
-    labels.handoffUrl,
-    labels.locale,
-    state,
-    ergebnis.aktuelleMargeProzent,
-    ergebnis.aktuelleMargeEuro,
-    ergebnis.empfohlenerPreisFuerZielmarge,
-  ]);
 
   const emailRows = useMemo(
     () => [
@@ -147,6 +119,12 @@ export default function MargeRechner({ labels }: { labels: MargeLabels }) {
           <p className="mt-6 text-xs text-slate-500">{labels.hints.formula}</p>
         </div>
 
+        <CalculatorGate
+          labels={labels.gate}
+          rechnerType="marge"
+          headline={emailHeadline}
+          rows={emailRows}
+        >
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
             {labels.ergebnis.heading}
@@ -203,28 +181,9 @@ export default function MargeRechner({ labels }: { labels: MargeLabels }) {
             </div>
           </div>
 
-          <a
-            href={handoffHref}
-            className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            rel="nofollow"
-          >
-            {labels.cta.primary}
-          </a>
-          <p className="mt-3 text-center text-xs text-slate-500">
-            {labels.cta.secondary}
-          </p>
-          <p className="mt-4 text-xs text-slate-400">{labels.cta.disclaimer}</p>
         </aside>
+        </CalculatorGate>
       </div>
-
-      {labels.emailCapture ? (
-        <EmailCapture
-          labels={labels.emailCapture}
-          rechnerType="marge"
-          headline={emailHeadline}
-          rows={emailRows}
-        />
-      ) : null}
     </div>
   );
 }

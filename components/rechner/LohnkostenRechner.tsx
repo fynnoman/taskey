@@ -5,9 +5,9 @@ import {
   berechneLohnkosten,
   type LohnkostenInput,
 } from "@/lib/rechner/lohnkosten";
-import EmailCapture, {
-  type EmailCaptureLabels,
-} from "@/components/rechner/EmailCapture";
+import CalculatorGate, {
+  type GateLabels,
+} from "@/components/rechner/CalculatorGate";
 
 export type LohnkostenLabels = {
   inputs: {
@@ -39,16 +39,10 @@ export type LohnkostenLabels = {
     kostenProSollstunde: string;
     aufschlagProzent: string;
   };
-  cta: {
-    primary: string;
-    secondary: string;
-    disclaimer: string;
-  };
-  emailCapture: EmailCaptureLabels;
+  gate: GateLabels;
   currency: string;
   currencySymbol: string;
   locale: "de" | "en" | "fr";
-  handoffUrl: string;
 };
 
 const DEFAULTS: LohnkostenInput = {
@@ -94,34 +88,6 @@ export default function LohnkostenRechner({
       }),
     [labels.locale]
   );
-
-  const handoffHref = useMemo(() => {
-    const params = new URLSearchParams({
-      source: "rechner-lohnkosten",
-      lang: labels.locale,
-      bruttolohn: String(state.bruttolohnProStunde),
-      wochenstd: String(state.wochenarbeitszeitStunden),
-      nebenkosten: String(state.lohnnebenkostenProzent),
-      weihnachtsgeld: String(state.weihnachtsgeldEuro),
-      urlaubsgeld: String(state.urlaubsgeldEuro),
-      vl: String(state.vermoegensLeistungenProMonat),
-      kleidung: String(state.arbeitskleidungProJahr),
-      fortbildung: String(state.fortbildungProJahr),
-      sonstiges: String(state.sonstigesProJahr),
-      gesamt_jahr: String(ergebnis.gesamtkostenJahr),
-      kosten_stunde: String(ergebnis.kostenProSollstunde),
-      aufschlag: String(ergebnis.aufschlagProzent),
-    });
-    const sep = labels.handoffUrl.includes("?") ? "&" : "?";
-    return `${labels.handoffUrl}${sep}${params.toString()}`;
-  }, [
-    labels.handoffUrl,
-    labels.locale,
-    state,
-    ergebnis.gesamtkostenJahr,
-    ergebnis.kostenProSollstunde,
-    ergebnis.aufschlagProzent,
-  ]);
 
   const emailRows = useMemo(
     () => [
@@ -224,6 +190,12 @@ export default function LohnkostenRechner({
           <p className="mt-6 text-xs text-slate-500">{labels.hints.formula}</p>
         </div>
 
+        <CalculatorGate
+          labels={labels.gate}
+          rechnerType="lohnkosten"
+          headline={emailHeadline}
+          rows={emailRows}
+        >
         <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
             {labels.ergebnis.heading}
@@ -272,26 +244,9 @@ export default function LohnkostenRechner({
             />
           </dl>
 
-          <a
-            href={handoffHref}
-            className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            rel="nofollow"
-          >
-            {labels.cta.primary}
-          </a>
-          <p className="mt-3 text-center text-xs text-slate-500">
-            {labels.cta.secondary}
-          </p>
-          <p className="mt-4 text-xs text-slate-400">{labels.cta.disclaimer}</p>
         </aside>
+        </CalculatorGate>
       </div>
-
-      <EmailCapture
-        labels={labels.emailCapture}
-        rechnerType="lohnkosten"
-        headline={emailHeadline}
-        rows={emailRows}
-      />
     </div>
   );
 }

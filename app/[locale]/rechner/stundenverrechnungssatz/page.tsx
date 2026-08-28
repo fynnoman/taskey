@@ -7,7 +7,6 @@ import StundenverrechnungssatzRechner, {
 } from "@/components/rechner/StundenverrechnungssatzRechner";
 
 const path = "/rechner/stundenverrechnungssatz";
-const HANDOFF_URL = "https://landingpage.taskeyapp.com/";
 const BASE = "https://www.taskeyapp.com";
 
 const COPY: PageCopy = {
@@ -218,26 +217,22 @@ const CONTENT: Record<Locale, Content> = {
         jahresPersonalkosten: "Jahres-Personalkosten",
         overheadJahr: "Overhead pro Jahr",
       },
-      cta: {
-        primary: "Verrechnungssatz in Taskey speichern",
-        secondary: "Übernimmt alle Werte in Ihr Taskey-Konto.",
-        disclaimer: "Der Rechner liefert eine kalkulatorische Näherung auf Basis Ihrer Angaben. Regionale Tarife und individuelle Kostenstruktur sollten geprüft werden.",
-      },
       currency: "EUR",
       currencySymbol: "€",
       locale: "de",
-      handoffUrl: HANDOFF_URL,
-      emailCapture: {
-        heading: "Kalkulation per E-Mail erhalten",
-        subheading: "Sie bekommen den Verrechnungssatz mit allen Zwischenwerten als E-Mail. Nur Ihre E-Mail-Adresse wird verwendet, es wird nichts weiter gespeichert.",
+      gate: {
+        computeButton: "Ergebnis berechnen",
+        computeHint: "Alle Werte eingetragen? Ergebnis in wenigen Sekunden.",
+        loadingText: "Kalkulation läuft",
+        modalHeading: "Ergebnis freischalten",
+        modalSubheading: "Tragen Sie Ihre E-Mail-Adresse ein, um den Verrechnungssatz zu erhalten. Nur die E-Mail wird verwendet, es wird nichts weiter gespeichert.",
         emailPlaceholder: "E-Mail-Adresse",
         copyToUserLabel: "Kopie an meine E-Mail-Adresse senden.",
-        submit: "Kalkulation senden",
+        submitButton: "Ergebnis freischalten",
         submitting: "Wird gesendet",
-        successTitle: "Kalkulation ist unterwegs.",
-        successBody: "Die Kalkulation wurde versendet. Bei Fragen antworten Sie einfach auf die E-Mail.",
         errorGeneric: "E-Mail konnte nicht gesendet werden. Bitte prüfen Sie die Adresse und versuchen Sie es erneut.",
         privacyNote: "Kein Newsletter, keine weiteren Zusendungen. Ihre Adresse wird nur für diese Kalkulation genutzt.",
+        successHint: "Verrechnungssatz wurde ebenfalls per E-Mail versendet.",
         locale: "de",
       },
     },
@@ -382,26 +377,22 @@ const CONTENT: Record<Locale, Content> = {
         jahresPersonalkosten: "Annual personnel cost",
         overheadJahr: "Overhead per year",
       },
-      cta: {
-        primary: "Save rate in Taskey",
-        secondary: "Takes all values into your Taskey account.",
-        disclaimer: "The calculator provides an estimate based on your inputs. Regional tariffs and individual cost structure should be verified.",
-      },
       currency: "EUR",
       currencySymbol: "€",
       locale: "en",
-      handoffUrl: HANDOFF_URL,
-      emailCapture: {
-        heading: "Get the calculation by email",
-        subheading: "You will receive the billing rate with all intermediate values by email. Only your email address is used, nothing else is stored.",
+      gate: {
+        computeButton: "Show result",
+        computeHint: "All values entered? Result in seconds.",
+        loadingText: "Calculating",
+        modalHeading: "Unlock your result",
+        modalSubheading: "Enter your email to receive the billing rate. Only the email is used, nothing else is stored.",
         emailPlaceholder: "Email address",
         copyToUserLabel: "Send a copy to my email address.",
-        submit: "Send calculation",
+        submitButton: "Unlock result",
         submitting: "Sending",
-        successTitle: "Calculation on its way.",
-        successBody: "The calculation has been sent. If you have questions, just reply to the email.",
         errorGeneric: "Could not send email. Please check the address and try again.",
         privacyNote: "No newsletter, no further mailings. Your address is used only for this calculation.",
+        successHint: "The billing rate has also been emailed to you.",
         locale: "en",
       },
     },
@@ -546,26 +537,22 @@ const CONTENT: Record<Locale, Content> = {
         jahresPersonalkosten: "Coût personnel annuel",
         overheadJahr: "Frais généraux par an",
       },
-      cta: {
-        primary: "Enregistrer le taux dans Taskey",
-        secondary: "Reprend toutes les valeurs dans votre compte Taskey.",
-        disclaimer: "Le calculateur fournit une estimation basée sur vos saisies. Les grilles régionales et la structure de coûts individuelle doivent être vérifiées.",
-      },
       currency: "EUR",
       currencySymbol: "€",
       locale: "fr",
-      handoffUrl: HANDOFF_URL,
-      emailCapture: {
-        heading: "Recevoir la calculation par e-mail",
-        subheading: "Vous recevrez le taux avec toutes les valeurs intermédiaires par e-mail. Seule votre adresse est utilisée, rien d'autre n'est stocké.",
+      gate: {
+        computeButton: "Voir le résultat",
+        computeHint: "Toutes les valeurs saisies? Résultat en quelques secondes.",
+        loadingText: "Calcul en cours",
+        modalHeading: "Débloquer le résultat",
+        modalSubheading: "Saisissez votre adresse e-mail pour recevoir le taux. Seule l'adresse est utilisée, rien d'autre n'est stocké.",
         emailPlaceholder: "Adresse e-mail",
         copyToUserLabel: "Envoyer une copie à mon adresse e-mail.",
-        submit: "Envoyer la calculation",
+        submitButton: "Débloquer le résultat",
         submitting: "Envoi en cours",
-        successTitle: "Calculation envoyée.",
-        successBody: "La calculation a été envoyée. Pour toute question, il suffit de répondre à l'e-mail.",
         errorGeneric: "Impossible d'envoyer l'e-mail. Vérifiez l'adresse et réessayez.",
         privacyNote: "Aucune newsletter, aucun autre envoi. Votre adresse ne sert que pour cette calculation.",
+        successHint: "Le taux vous a aussi été envoyé par e-mail.",
         locale: "fr",
       },
     },
@@ -665,19 +652,6 @@ export default async function Page({
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="mt-16 rounded-2xl bg-slate-900 p-8 text-white sm:p-10">
-        <h2 className="text-2xl font-semibold">{c.ctaBlock.heading}</h2>
-        <p className="mt-3 max-w-2xl text-slate-200">{c.ctaBlock.body}</p>
-        <a
-          href={HANDOFF_URL}
-          rel="nofollow"
-          className="mt-6 inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
-        >
-          {c.ctaBlock.primary}
-        </a>
-        <p className="mt-3 text-xs text-slate-400">{c.ctaBlock.secondary}</p>
       </section>
 
       <section className="mt-16">

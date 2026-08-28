@@ -5,7 +5,6 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
 import MargeRechner, { type MargeLabels } from "@/components/rechner/MargeRechner";
 
 const path = "/rechner/marge-gebaeudereinigung";
-const HANDOFF_URL = "https://landingpage.taskeyapp.com/";
 const BASE = "https://www.taskeyapp.com";
 
 const COPY: PageCopy = {
@@ -198,28 +197,24 @@ const CONTENT: Record<Locale, Content> = {
         szenarioPreis: "Preis",
         szenarioMarge: "Marge",
       },
-      cta: {
-        primary: "Marge in Taskey speichern",
-        secondary: "Übernimmt alle Werte in Ihr Taskey-Konto.",
-        disclaimer: "Der Rechner liefert eine kalkulatorische Näherung auf Basis Ihrer Angaben. Er ersetzt keine individuelle Preisstrategie.",
-      },
-      emailCapture: {
-        heading: "Kalkulation per E-Mail erhalten",
-        subheading: "Sie bekommen Marge, Zielpreis und Sensitivität als E-Mail. Nur Ihre E-Mail-Adresse wird verwendet, es wird nichts weiter gespeichert.",
+      gate: {
+        computeButton: "Ergebnis berechnen",
+        computeHint: "Alle Werte eingetragen? Ergebnis in wenigen Sekunden.",
+        loadingText: "Kalkulation läuft",
+        modalHeading: "Ergebnis freischalten",
+        modalSubheading: "Tragen Sie Ihre E-Mail-Adresse ein, um Marge und Zielpreis zu erhalten. Nur die E-Mail wird verwendet, es wird nichts weiter gespeichert.",
         emailPlaceholder: "E-Mail-Adresse",
         copyToUserLabel: "Kopie an meine E-Mail-Adresse senden.",
-        submit: "Kalkulation senden",
+        submitButton: "Ergebnis freischalten",
         submitting: "Wird gesendet",
-        successTitle: "Kalkulation ist unterwegs.",
-        successBody: "Die Kalkulation wurde versendet. Bei Fragen antworten Sie einfach auf die E-Mail.",
         errorGeneric: "E-Mail konnte nicht gesendet werden. Bitte prüfen Sie die Adresse und versuchen Sie es erneut.",
         privacyNote: "Kein Newsletter, keine weiteren Zusendungen. Ihre Adresse wird nur für diese Kalkulation genutzt.",
+        successHint: "Die Kalkulation wurde ebenfalls per E-Mail versendet.",
         locale: "de",
       },
       currency: "EUR",
       currencySymbol: "€",
       locale: "de",
-      handoffUrl: HANDOFF_URL,
     },
   },
   en: {
@@ -344,28 +339,24 @@ const CONTENT: Record<Locale, Content> = {
         szenarioPreis: "Price",
         szenarioMarge: "Margin",
       },
-      cta: {
-        primary: "Save margin in Taskey",
-        secondary: "Takes all values into your Taskey account.",
-        disclaimer: "The calculator provides an estimate based on your inputs. It does not replace an individual pricing strategy.",
-      },
-      emailCapture: {
-        heading: "Get the calculation by email",
-        subheading: "You will receive margin, target price and sensitivity by email. Only your email address is used, nothing else is stored.",
+      gate: {
+        computeButton: "Show result",
+        computeHint: "All values entered? Result in seconds.",
+        loadingText: "Calculating",
+        modalHeading: "Unlock your result",
+        modalSubheading: "Enter your email to receive margin and target price. Only the email is used, nothing else is stored.",
         emailPlaceholder: "Email address",
         copyToUserLabel: "Send a copy to my email address.",
-        submit: "Send calculation",
+        submitButton: "Unlock result",
         submitting: "Sending",
-        successTitle: "Calculation on its way.",
-        successBody: "The calculation has been sent. If you have questions, just reply to the email.",
         errorGeneric: "Could not send email. Please check the address and try again.",
         privacyNote: "No newsletter, no further mailings. Your address is used only for this calculation.",
+        successHint: "Calculation has also been emailed to you.",
         locale: "en",
       },
       currency: "EUR",
       currencySymbol: "€",
       locale: "en",
-      handoffUrl: HANDOFF_URL,
     },
   },
   fr: {
@@ -490,28 +481,24 @@ const CONTENT: Record<Locale, Content> = {
         szenarioPreis: "Prix",
         szenarioMarge: "Marge",
       },
-      cta: {
-        primary: "Enregistrer la marge dans Taskey",
-        secondary: "Reprend toutes les valeurs dans votre compte Taskey.",
-        disclaimer: "Le calculateur fournit une estimation basée sur vos saisies. Il ne remplace pas une stratégie de prix individuelle.",
-      },
-      emailCapture: {
-        heading: "Recevoir la calculation par e-mail",
-        subheading: "Vous recevrez marge, prix cible et sensibilité par e-mail. Seule votre adresse est utilisée, rien d'autre n'est stocké.",
+      gate: {
+        computeButton: "Voir le résultat",
+        computeHint: "Toutes les valeurs saisies? Résultat en quelques secondes.",
+        loadingText: "Calcul en cours",
+        modalHeading: "Débloquer le résultat",
+        modalSubheading: "Saisissez votre adresse e-mail pour recevoir marge et prix cible. Seule l'adresse est utilisée, rien d'autre n'est stocké.",
         emailPlaceholder: "Adresse e-mail",
         copyToUserLabel: "Envoyer une copie à mon adresse e-mail.",
-        submit: "Envoyer la calculation",
+        submitButton: "Débloquer le résultat",
         submitting: "Envoi en cours",
-        successTitle: "Calculation envoyée.",
-        successBody: "La calculation a été envoyée. Pour toute question, il suffit de répondre à l'e-mail.",
         errorGeneric: "Impossible d'envoyer l'e-mail. Vérifiez l'adresse et réessayez.",
         privacyNote: "Aucune newsletter, aucun autre envoi. Votre adresse ne sert que pour cette calculation.",
+        successHint: "La calculation vous a aussi été envoyée par e-mail.",
         locale: "fr",
       },
       currency: "EUR",
       currencySymbol: "€",
       locale: "fr",
-      handoffUrl: HANDOFF_URL,
     },
   },
 };
@@ -609,19 +596,6 @@ export default async function Page({
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="mt-16 rounded-2xl bg-slate-900 p-8 text-white sm:p-10">
-        <h2 className="text-2xl font-semibold">{c.ctaBlock.heading}</h2>
-        <p className="mt-3 max-w-2xl text-slate-200">{c.ctaBlock.body}</p>
-        <a
-          href={HANDOFF_URL}
-          rel="nofollow"
-          className="mt-6 inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
-        >
-          {c.ctaBlock.primary}
-        </a>
-        <p className="mt-3 text-xs text-slate-400">{c.ctaBlock.secondary}</p>
       </section>
 
       <section className="mt-16">

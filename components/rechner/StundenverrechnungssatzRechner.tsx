@@ -5,9 +5,9 @@ import {
   berechneStundenverrechnungssatz,
   type StundenverrechnungssatzInput,
 } from "@/lib/rechner/stundenverrechnungssatz";
-import EmailCapture, {
-  type EmailCaptureLabels,
-} from "@/components/rechner/EmailCapture";
+import CalculatorGate, {
+  type GateLabels,
+} from "@/components/rechner/CalculatorGate";
 
 export type StundenverrechnungssatzLabels = {
   inputs: {
@@ -41,16 +41,10 @@ export type StundenverrechnungssatzLabels = {
     jahresPersonalkosten: string;
     overheadJahr: string;
   };
-  cta: {
-    primary: string;
-    secondary: string;
-    disclaimer: string;
-  };
   currency: string;
   currencySymbol: string;
   locale: "de" | "en" | "fr";
-  handoffUrl: string;
-  emailCapture?: EmailCaptureLabels;
+  gate: GateLabels;
 };
 
 const DEFAULTS: StundenverrechnungssatzInput = {
@@ -102,37 +96,6 @@ export default function StundenverrechnungssatzRechner({
       }),
     [labels.locale]
   );
-
-  const handoffHref = useMemo(() => {
-    const params = new URLSearchParams({
-      source: "rechner-stundenverrechnungssatz",
-      lang: labels.locale,
-      bruttolohn: String(state.bruttolohnProStunde),
-      wochenstd: String(state.wochenarbeitszeitStunden),
-      urlaub: String(state.urlaubstage),
-      krank: String(state.krankheitstage),
-      feiertag: String(state.feiertageProJahr),
-      unprod: String(state.unproduktivProzent),
-      nebenkosten: String(state.lohnnebenkostenProzent),
-      material: String(state.materialProMonat),
-      fahrzeug: String(state.fahrzeugProMonat),
-      verwaltung: String(state.verwaltungProMonat),
-      versicherung: String(state.versicherungProMonat),
-      marge: String(state.zielmargeProzent),
-      empfohlen: String(ergebnis.empfohlenerStundensatz),
-      kostendeckend: String(ergebnis.kostendeckenderStundensatz),
-      produktiv_std: String(ergebnis.produktiveStundenProJahr),
-    });
-    const sep = labels.handoffUrl.includes("?") ? "&" : "?";
-    return `${labels.handoffUrl}${sep}${params.toString()}`;
-  }, [
-    labels.handoffUrl,
-    labels.locale,
-    state,
-    ergebnis.empfohlenerStundensatz,
-    ergebnis.kostendeckenderStundensatz,
-    ergebnis.produktiveStundenProJahr,
-  ]);
 
   const emailRows = useMemo(
     () => [
@@ -259,7 +222,13 @@ export default function StundenverrechnungssatzRechner({
         <p className="mt-6 text-xs text-slate-500">{labels.hints.formula}</p>
       </div>
 
-      <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <CalculatorGate
+        labels={labels.gate}
+        rechnerType="stundenverrechnungssatz"
+        headline={emailHeadline}
+        rows={emailRows}
+      >
+        <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
           {labels.ergebnis.heading}
         </h3>
@@ -308,27 +277,9 @@ export default function StundenverrechnungssatzRechner({
           />
         </dl>
 
-        <a
-          href={handoffHref}
-          className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          rel="nofollow"
-        >
-          {labels.cta.primary}
-        </a>
-        <p className="mt-3 text-center text-xs text-slate-500">
-          {labels.cta.secondary}
-        </p>
-        <p className="mt-4 text-xs text-slate-400">{labels.cta.disclaimer}</p>
-      </aside>
+        </aside>
+      </CalculatorGate>
       </div>
-      {labels.emailCapture ? (
-        <EmailCapture
-          labels={labels.emailCapture}
-          rechnerType="stundenverrechnungssatz"
-          headline={emailHeadline}
-          rows={emailRows}
-        />
-      ) : null}
     </div>
   );
 }
