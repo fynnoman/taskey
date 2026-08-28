@@ -9,10 +9,10 @@ const COPY: PageCopy = {
     title:
       "Taskey Share für Auftraggeber | Live-Zugang zur Reinigung Ihres Objekts",
     description:
-      "Taskey Share ist Ihr Auftraggeber-Zugang zur Reinigung Ihres Objekts. Live-Status, Foto-Nachweise, Beanstandungen und Reports. Kostenlos für Sie, freischaltbar über Ihre Reinigungsfirma.",
+      "Taskey Share ist Ihre Demo-Ansicht von Taskey für Auftraggeber. Live-Status, Foto-Nachweise, Beanstandungen und Reports. Freischaltbar über Ihre Reinigungsfirma, Konditionen auf Anfrage.",
     ogTitle: "Taskey Share für Auftraggeber | Taskey",
     ogDescription:
-      "Ihr Auftraggeber-Zugang zur Reinigung. Live-Status, Foto-Nachweise, Beanstandungen, Reports. Kostenlos, freischaltbar über Ihre Reinigungsfirma.",
+      "Ihre Demo-Ansicht von Taskey für Auftraggeber. Live-Status, Foto-Nachweise, Beanstandungen, Reports. Freischaltbar über Ihre Reinigungsfirma.",
     twitterTitle: "Taskey Share für Auftraggeber",
     twitterDescription:
       "Live-Status, Foto-Nachweise und Reports zu Ihrem Objekt. Freischaltung über Ihre Reinigungsfirma.",
@@ -21,10 +21,10 @@ const COPY: PageCopy = {
     title:
       "Taskey Share for clients | Live access to the cleaning of your site",
     description:
-      "Taskey Share is your client access to the cleaning of your site. Live status, photo proof, complaints and reports. Free for you, activated by your cleaning company.",
+      "Taskey Share is your demo view of Taskey for clients. Live status, photo proof, complaints and reports. Activated by your cleaning company, pricing on request.",
     ogTitle: "Taskey Share for clients | Taskey",
     ogDescription:
-      "Your client access to the cleaning of your site. Live status, photo proof, complaints, reports. Free for you, activated by your cleaning company.",
+      "Your demo view of Taskey for clients. Live status, photo proof, complaints, reports. Activated by your cleaning company.",
     twitterTitle: "Taskey Share for clients",
     twitterDescription:
       "Live status, photo proof and reports on your site. Activated by your cleaning company.",
@@ -33,10 +33,10 @@ const COPY: PageCopy = {
     title:
       "Taskey Share pour donneurs d'ordre | Accès en direct au nettoyage de votre site",
     description:
-      "Taskey Share est votre accès de donneur d'ordre au nettoyage de votre site. Statut en direct, preuves photo, réclamations et rapports. Gratuit pour vous, activé par votre entreprise de nettoyage.",
+      "Taskey Share est votre vue démo de Taskey pour donneurs d'ordre. Statut en direct, preuves photo, réclamations et rapports. Activé par votre entreprise de nettoyage, tarifs sur demande.",
     ogTitle: "Taskey Share pour donneurs d'ordre | Taskey",
     ogDescription:
-      "Votre accès au nettoyage de votre site. Statut en direct, preuves photo, réclamations, rapports. Gratuit, activé par votre entreprise de nettoyage.",
+      "Votre vue démo de Taskey pour donneurs d'ordre. Statut en direct, preuves photo, réclamations, rapports. Activé par votre entreprise de nettoyage.",
     twitterTitle: "Taskey Share pour donneurs d'ordre",
     twitterDescription:
       "Statut en direct, preuves photo et rapports sur votre site. Activation par votre entreprise de nettoyage.",
@@ -71,10 +71,10 @@ export async function generateMetadata({
 }
 
 const HERO_IMAGE = {
-  src: "/sections/feature-taskey-share.png",
-  altDe: "Taskey Share Auftraggeber-Ansicht mit Grundriss, Live-Status pro Raum und Stockwerk-Übersicht",
-  altEn: "Taskey Share client view with floor plan, live status per room and floor overview",
-  altFr: "Vue Taskey Share pour donneur d'ordre avec plan, statut en direct par pièce et étages",
+  src: "/sections/taskey-share-kundendashboard.png",
+  altDe: "Taskey Share Kundendashboard mit Musterfirma Düsseldorf, Live-Status, offenen Tickets, Reinigungsteam vor Ort und Grundriss des Erdgeschosses",
+  altEn: "Taskey Share client dashboard with sample company in Düsseldorf, live status, open tickets, on-site cleaning team and floor plan of the ground floor",
+  altFr: "Tableau de bord client Taskey Share avec entreprise type à Düsseldorf, statut en direct, tickets ouverts, équipe de nettoyage sur site et plan du rez-de-chaussée",
 };
 
 const NACHWEIS_IMAGE = {
@@ -93,11 +93,11 @@ const REPORTS_IMAGE = {
 
 const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
   de: {
-    eyebrow: "Für Auftraggeber · Taskey Share",
+    eyebrow: "Für Auftraggeber · Taskey Share Demo",
     h1: "Sehen Sie, was Ihre Reinigungsfirma",
     h1Accent: "gerade für Sie tut.",
     lead:
-      "Taskey Share ist Ihr Auftraggeber-Zugang zu allem, was Ihre Reinigungsfirma in Ihrem Objekt erledigt. Live-Status, Foto-Nachweise, Beanstandungen und Reports. An einem Ort. Ohne Rückfragen. Ohne E-Mail-Ping-Pong.",
+      "Taskey Share ist Ihre Demo-Ansicht von Taskey für Ihr Objekt. Ihr Auftraggeber-Zugang zu allem, was Ihre Reinigungsfirma in Ihrem Objekt erledigt. Live-Status, Foto-Nachweise, Beanstandungen und Reports. An einem Ort. Ohne Rückfragen. Ohne E-Mail-Ping-Pong.",
     primaryCta: "Bei Ihrer Reinigungsfirma anfragen",
     secondaryCta: "So funktioniert es",
     heroImage: { src: HERO_IMAGE.src, alt: HERO_IMAGE.altDe },
@@ -171,15 +171,8 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
         "Ihre Reinigungsfirma legt Sie in Taskey an",
         "Sie erhalten eine E-Mail mit Login-Zugang",
         "Zugriff auf alle Objekte, für die Sie freigeschaltet sind",
-        "Kostenlos für Sie als Auftraggeber",
+        "Umfang und Konditionen klärt Ihre Reinigungsfirma mit Ihnen",
       ],
-      templateEyebrow: "Textvorlage für Ihre Reinigungsfirma",
-      templateHeading: "Einfach kopieren und an Ihre Reinigungsfirma senden.",
-      templateSubject: "Betreff: Taskey Share für unser Objekt einrichten",
-      templateBody:
-        "Sehr geehrte Damen und Herren,\n\nwir möchten die Reinigung in unserem Objekt künftig live nachvollziehen können und Nachweise, Beanstandungen und Reports zentral einsehen. Bitte richten Sie uns dafür Ihren Taskey-Share-Zugang für unser Objekt ein.\n\nFalls Sie noch nicht mit Taskey arbeiten, können Sie sich unter https://www.taskeyapp.com informieren. Wir würden uns freuen, wenn Sie den Zugang für uns bereitstellen.\n\nVielen Dank und beste Grüße",
-      copyLabel: "Text kopieren",
-      copiedLabel: "Kopiert",
       contactHint:
         "Ihre Reinigungsfirma arbeitet noch nicht mit Taskey und Sie wünschen sich Taskey Share dennoch?",
       contactCta: "Kontakt zu Taskey",
@@ -187,9 +180,9 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
     faqHeading: "Was Auftraggeber zu Taskey Share wissen wollen.",
     faqs: [
       {
-        question: "Was kostet mich Taskey Share als Auftraggeber?",
+        question: "Was kostet Taskey Share?",
         answer:
-          "Nichts. Taskey Share ist Teil des Zugangs, den Ihre Reinigungsfirma für Sie bereitstellt. Für Sie als Auftraggeber fallen keine Lizenzkosten an.",
+          "Preise nennen wir auf Anfrage. Sie werden direkt Ihrer Reinigungsfirma mitgeteilt, die den Zugang für Sie bereitstellt.",
       },
       {
         question: "Wie bekomme ich meinen Zugang?",
@@ -246,11 +239,11 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
     ],
   },
   en: {
-    eyebrow: "For clients · Taskey Share",
+    eyebrow: "For clients · Taskey Share Demo",
     h1: "See what your cleaning company",
     h1Accent: "is doing for you, right now.",
     lead:
-      "Taskey Share is your client access to everything your cleaning company does on your site. Live status, photo proof, complaints and reports. In one place. No chasing. No email ping-pong.",
+      "Taskey Share is your demo view of Taskey for your site. Your client access to everything your cleaning company does on your site. Live status, photo proof, complaints and reports. In one place. No chasing. No email ping-pong.",
     primaryCta: "Request it from your cleaning company",
     secondaryCta: "How it works",
     heroImage: { src: HERO_IMAGE.src, alt: HERO_IMAGE.altEn },
@@ -324,15 +317,8 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
         "Your cleaning company creates your account in Taskey",
         "You receive an email with login access",
         "Access to all sites you are approved for",
-        "Free for you as a client",
+        "Scope and pricing are agreed with your cleaning company",
       ],
-      templateEyebrow: "Message template for your cleaning company",
-      templateHeading: "Copy and send it to your cleaning company.",
-      templateSubject: "Subject: Please set up Taskey Share for our site",
-      templateBody:
-        "Dear Sir or Madam,\n\nwe would like to be able to follow the cleaning at our site live and to see proof of service, complaints and reports in one place. Please set up your Taskey Share access for our site.\n\nIf you do not yet work with Taskey, you can learn more at https://www.taskeyapp.com. We would be glad if you could provide the access for us.\n\nMany thanks and best regards",
-      copyLabel: "Copy text",
-      copiedLabel: "Copied",
       contactHint:
         "Your cleaning company does not yet work with Taskey and you would still like Taskey Share?",
       contactCta: "Contact Taskey",
@@ -340,9 +326,9 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
     faqHeading: "What clients want to know about Taskey Share.",
     faqs: [
       {
-        question: "What does Taskey Share cost me as a client?",
+        question: "What does Taskey Share cost?",
         answer:
-          "Nothing. Taskey Share is part of the access your cleaning company provides for you. There are no license fees on your side as a client.",
+          "Pricing is provided on request and communicated directly to your cleaning company, which sets up your access.",
       },
       {
         question: "How do I get my access?",
@@ -399,11 +385,11 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
     ],
   },
   fr: {
-    eyebrow: "Pour donneurs d'ordre · Taskey Share",
+    eyebrow: "Pour donneurs d'ordre · Démo Taskey Share",
     h1: "Voyez ce que votre entreprise de nettoyage",
     h1Accent: "fait pour vous, en direct.",
     lead:
-      "Taskey Share est votre accès de donneur d'ordre à tout ce que votre entreprise de nettoyage effectue sur votre site. Statut en direct, preuves photo, réclamations et rapports. Au même endroit. Sans relance. Sans ping-pong d'e-mails.",
+      "Taskey Share est votre vue démo de Taskey pour votre site. Votre accès de donneur d'ordre à tout ce que votre entreprise de nettoyage effectue sur votre site. Statut en direct, preuves photo, réclamations et rapports. Au même endroit. Sans relance. Sans ping-pong d'e-mails.",
     primaryCta: "Demander à votre entreprise de nettoyage",
     secondaryCta: "Comment ça marche",
     heroImage: { src: HERO_IMAGE.src, alt: HERO_IMAGE.altFr },
@@ -477,15 +463,8 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
         "Votre entreprise de nettoyage crée votre compte dans Taskey",
         "Vous recevez un e-mail avec vos identifiants",
         "Accès à tous les sites pour lesquels vous êtes autorisé",
-        "Gratuit pour vous en tant que donneur d'ordre",
+        "Le périmètre et les conditions sont convenus avec votre entreprise de nettoyage",
       ],
-      templateEyebrow: "Modèle de message pour votre prestataire",
-      templateHeading: "À copier et à envoyer à votre entreprise de nettoyage.",
-      templateSubject: "Objet : Merci de mettre en place Taskey Share pour notre site",
-      templateBody:
-        "Madame, Monsieur,\n\nnous souhaitons pouvoir suivre le nettoyage de notre site en direct et consulter les preuves de service, les réclamations et les rapports au même endroit. Merci de mettre en place votre accès Taskey Share pour notre site.\n\nSi vous n'utilisez pas encore Taskey, vous trouverez plus d'informations sur https://www.taskeyapp.com. Nous serions ravis que vous puissiez nous fournir cet accès.\n\nMerci et cordialement",
-      copyLabel: "Copier le texte",
-      copiedLabel: "Copié",
       contactHint:
         "Votre entreprise de nettoyage n'utilise pas encore Taskey et vous souhaitez tout de même Taskey Share ?",
       contactCta: "Contacter Taskey",
@@ -493,9 +472,9 @@ const CONTENT: Record<"de" | "en" | "fr", TaskeyShareContent> = {
     faqHeading: "Ce que les donneurs d'ordre veulent savoir sur Taskey Share.",
     faqs: [
       {
-        question: "Combien Taskey Share me coûte-t-il en tant que donneur d'ordre ?",
+        question: "Combien coûte Taskey Share ?",
         answer:
-          "Rien. Taskey Share fait partie de l'accès mis à votre disposition par votre entreprise de nettoyage. Aucun frais de licence de votre côté.",
+          "Les tarifs sont communiqués sur demande, directement à votre entreprise de nettoyage qui met votre accès en place.",
       },
       {
         question: "Comment obtenir mon accès ?",

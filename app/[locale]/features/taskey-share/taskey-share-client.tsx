@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "@/components/LocaleLink";
 
@@ -21,12 +20,6 @@ export type TaskeyShareRequestBlock = {
   heading: string;
   body: string;
   bullets: string[];
-  templateEyebrow: string;
-  templateHeading: string;
-  templateSubject: string;
-  templateBody: string;
-  copyLabel: string;
-  copiedLabel: string;
   contactHint: string;
   contactCta: string;
 };
@@ -48,19 +41,6 @@ export type TaskeyShareContent = {
 };
 
 export default function TaskeyShareClient({ content }: { content: TaskeyShareContent }) {
-  const [copied, setCopied] = useState(false);
-  const fullTemplate = `${content.request.templateSubject}\n\n${content.request.templateBody}`;
-
-  async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(fullTemplate);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
-
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 overflow-hidden">
       {/* Ambient glows */}
@@ -304,52 +284,7 @@ export default function TaskeyShareClient({ content }: { content: TaskeyShareCon
             ))}
           </ul>
 
-          {/* Template block */}
-          <div className="rounded-3xl bg-white border border-slate-200 p-6 md:p-8">
-            <p className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700 mb-3">
-              {content.request.templateEyebrow}
-            </p>
-            <h3 className="text-xl md:text-2xl font-black leading-tight mb-5 text-slate-900">
-              {content.request.templateHeading}
-            </h3>
-            <div className="rounded-2xl bg-slate-50 border border-slate-200 p-5 mb-5 font-mono text-[13px] md:text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">
-              <div className="font-bold text-slate-900 mb-3">{content.request.templateSubject}</div>
-              {content.request.templateBody}
-            </div>
-            <button
-              type="button"
-              onClick={handleCopy}
-              aria-live="polite"
-              className={`inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-full transition-colors ${
-                copied
-                  ? "bg-cyan-500 text-white"
-                  : "bg-blue-600 text-white hover:bg-blue-500"
-              }`}
-            >
-              {copied ? (
-                <>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {content.request.copiedLabel}
-                </>
-              ) : (
-                <>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                    />
-                  </svg>
-                  {content.request.copyLabel}
-                </>
-              )}
-            </button>
-          </div>
-
-          <div className="mt-10 rounded-2xl bg-white border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div className="rounded-2xl bg-white border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl">
               {content.request.contactHint}
             </p>
