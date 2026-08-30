@@ -5,6 +5,14 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
 import LohnkostenRechner, {
   type LohnkostenLabels,
 } from "@/components/rechner/LohnkostenRechner";
+import NewsletterForm from "@/components/newsletter/NewsletterForm";
+import { NEWSLETTER_LABELS } from "@/lib/newsletter-labels";
+
+const NEWSLETTER_SOURCE_LABELS: Record<Locale, string> = {
+  de: "Lohnkosten-Rechner",
+  en: "Labour cost calculator",
+  fr: "Calculateur de coût salarial",
+};
 
 const path = "/rechner/lohnkosten-reinigung";
 const BASE = "https://www.taskeyapp.com";
@@ -680,6 +688,14 @@ export default async function Page({
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <NewsletterForm
+          source={path}
+          sourceLabel={NEWSLETTER_SOURCE_LABELS[l]}
+          labels={NEWSLETTER_LABELS[l]}
+        />
       </section>
     </main>
   );

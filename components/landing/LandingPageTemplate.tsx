@@ -3,6 +3,9 @@
 import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { useLanguage } from "@/context/LanguageContext";
+import NewsletterForm, {
+  type NewsletterLabels,
+} from "@/components/newsletter/NewsletterForm";
 
 const CONTENT = {
   de: {
@@ -89,6 +92,12 @@ export type LandingPageProps = {
   /** Schluss-CTA-Text. Default: "Kostenlosen Account erstellen" */
   ctaTitle?: string;
   ctaSubtitle?: string;
+  /** Optional: Newsletter-Anmeldung vor dem Bottom-CTA */
+  newsletter?: {
+    source: string;
+    sourceLabel: string;
+    labels: NewsletterLabels;
+  };
 };
 
 export default function LandingPageTemplate({
@@ -103,6 +112,7 @@ export default function LandingPageTemplate({
   related,
   ctaTitle,
   ctaSubtitle,
+  newsletter,
 }: LandingPageProps) {
   const { language } = useLanguage();
   const c = CONTENT[language];
@@ -378,6 +388,19 @@ export default function LandingPageTemplate({
           </div>
         </section>
       )}
+
+      {/* ─── Newsletter (optional) ────────────────────────── */}
+      {newsletter ? (
+        <section className="relative pt-16 md:pt-20">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <NewsletterForm
+              source={newsletter.source}
+              sourceLabel={newsletter.sourceLabel}
+              labels={newsletter.labels}
+            />
+          </div>
+        </section>
+      ) : null}
 
       {/* ─── Bottom CTA ───────────────────────────────────── */}
       <section className="relative pb-24 md:pb-32 pt-20 md:pt-24">

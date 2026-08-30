@@ -5,6 +5,14 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
 import ReinigungskostenRechner, {
   type ReinigungskostenLabels,
 } from "@/components/rechner/ReinigungskostenRechner";
+import NewsletterForm from "@/components/newsletter/NewsletterForm";
+import { NEWSLETTER_LABELS } from "@/lib/newsletter-labels";
+
+const NEWSLETTER_SOURCE_LABELS: Record<Locale, string> = {
+  de: "Reinigungskosten-Rechner",
+  en: "Cleaning cost calculator",
+  fr: "Calculateur de coûts de nettoyage",
+};
 
 const path = "/rechner/reinigungskosten";
 const BASE = "https://www.taskeyapp.com";
@@ -740,6 +748,14 @@ export default async function Page({
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <NewsletterForm
+          source={path}
+          sourceLabel={NEWSLETTER_SOURCE_LABELS[l]}
+          labels={NEWSLETTER_LABELS[l]}
+        />
       </section>
     </main>
   );

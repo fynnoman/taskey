@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
-import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+import { buildMetadata, pickLocale, type PageCopy, type Locale } from "@/lib/i18n-metadata";
+import { NEWSLETTER_LABELS } from "@/lib/newsletter-labels";
 
 const path = "/loesungen/digitalisierung-gebaeudereinigung";
+
+const NEWSLETTER_SOURCE_LABELS: Record<Locale, string> = {
+  de: "Ratgeber Digitalisierung Gebäudereinigung",
+  en: "Guide Digitisation in cleaning",
+  fr: "Guide Digitalisation en propreté",
+};
 
 const COPY: PageCopy = {
   de: {
@@ -496,6 +503,11 @@ export default async function Page({
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      newsletter={{
+        source: path,
+        sourceLabel: NEWSLETTER_SOURCE_LABELS[l],
+        labels: NEWSLETTER_LABELS[l],
+      }}
     />
   );
 }

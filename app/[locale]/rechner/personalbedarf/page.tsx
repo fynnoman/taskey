@@ -5,6 +5,14 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
 import PersonalbedarfRechner, {
   type PersonalbedarfLabels,
 } from "@/components/rechner/PersonalbedarfRechner";
+import NewsletterForm from "@/components/newsletter/NewsletterForm";
+import { NEWSLETTER_LABELS } from "@/lib/newsletter-labels";
+
+const NEWSLETTER_SOURCE_LABELS: Record<Locale, string> = {
+  de: "Personalbedarf-Rechner",
+  en: "Staff requirement calculator",
+  fr: "Calculateur d'effectif",
+};
 
 const path = "/rechner/personalbedarf";
 const BASE = "https://www.taskeyapp.com";
@@ -684,6 +692,14 @@ export default async function Page({
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <NewsletterForm
+          source={path}
+          sourceLabel={NEWSLETTER_SOURCE_LABELS[l]}
+          labels={NEWSLETTER_LABELS[l]}
+        />
       </section>
     </main>
   );

@@ -3,6 +3,14 @@ import Link from "next/link";
 import { buildMetadata, pickLocale, type PageCopy, type Locale } from "@/lib/i18n-metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
 import MargeRechner, { type MargeLabels } from "@/components/rechner/MargeRechner";
+import NewsletterForm from "@/components/newsletter/NewsletterForm";
+import { NEWSLETTER_LABELS } from "@/lib/newsletter-labels";
+
+const NEWSLETTER_SOURCE_LABELS: Record<Locale, string> = {
+  de: "Marge-Rechner",
+  en: "Margin calculator",
+  fr: "Calculateur de marge",
+};
 
 const path = "/rechner/marge-gebaeudereinigung";
 const BASE = "https://www.taskeyapp.com";
@@ -642,6 +650,14 @@ export default async function Page({
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <NewsletterForm
+          source={path}
+          sourceLabel={NEWSLETTER_SOURCE_LABELS[l]}
+          labels={NEWSLETTER_LABELS[l]}
+        />
       </section>
     </main>
   );
