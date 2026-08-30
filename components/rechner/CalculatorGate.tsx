@@ -10,7 +10,6 @@ export type GateLabels = {
   modalHeading: string;
   modalSubheading: string;
   emailPlaceholder: string;
-  copyToUserLabel: string;
   submitButton: string;
   submitting: string;
   errorGeneric: string;
@@ -34,7 +33,7 @@ export type CalculatorGateProps = {
 
 type Phase = "idle" | "computing" | "locked" | "submitting" | "unlocked" | "error";
 
-const LOADING_DURATION_MS = 1500;
+const LOADING_DURATION_MS = 8000;
 
 export default function CalculatorGate({
   labels,
@@ -45,7 +44,6 @@ export default function CalculatorGate({
 }: CalculatorGateProps) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [email, setEmail] = useState("");
-  const [copyToUser, setCopyToUser] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
@@ -111,7 +109,6 @@ export default function CalculatorGate({
           locale: labels.locale,
           headline,
           rows,
-          copyToUser,
         }),
       });
 
@@ -258,16 +255,6 @@ export default function CalculatorGate({
                 className="mb-3 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 disabled:opacity-60"
                 aria-label={labels.emailPlaceholder}
               />
-
-              <label className="mb-4 flex items-center gap-2 text-xs text-slate-600">
-                <input
-                  type="checkbox"
-                  checked={copyToUser}
-                  onChange={(e) => setCopyToUser(e.target.checked)}
-                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-                />
-                <span>{labels.copyToUserLabel}</span>
-              </label>
 
               <button
                 type="submit"

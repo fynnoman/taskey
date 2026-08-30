@@ -27,7 +27,6 @@ type Payload = {
   email?: unknown;
   rechnerType?: unknown;
   locale?: unknown;
-  copyToUser?: unknown;
   rows?: unknown;
   headline?: unknown;
 };
@@ -63,7 +62,6 @@ export async function POST(request: NextRequest) {
     const rechnerType = safeString(body.rechnerType, 60);
     const locale = safeString(body.locale, 8) || "de";
     const headline = safeString(body.headline, 200);
-    const copyToUser = body.copyToUser === true;
 
     if (!EMAIL_REGEX.test(email)) {
       return NextResponse.json(
@@ -131,7 +129,6 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: "finolino9@gmail.com",
       to: "fynn@taskeyapp.com",
-      cc: copyToUser ? email : undefined,
       replyTo: email,
       subject,
       text: textBody,
