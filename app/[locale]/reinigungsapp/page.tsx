@@ -6,8 +6,8 @@ import ReinigungsappFeatures from "@/components/reinigungsapp/Features";
 import ReinigungsappCTA from "@/components/reinigungsapp/CTA";
 
 const AufEinenBlick = dynamic(() => import("@/components/home/AufEinenBlick"));
-const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
-const AblaufSection = dynamic(() => import("@/components/home/AblaufSection"));
+const IntroVideo = dynamic(() => import("@/components/home/IntroVideo"));
+const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
 const FAQ = dynamic(() => import("@/components/home/FAQ"));
 
 const CANONICAL = "https://www.taskeyapp.com/reinigungsapp";
@@ -105,9 +105,9 @@ export default async function ReinigungsappPage({
       <main>
         <ReinigungsappHero />
         <AufEinenBlick />
+        <IntroVideo />
         <ReinigungsappFeatures />
-        <LiveMargen />
-        <AblaufSection />
+        <IOSAppSection />
         <FAQ />
         <ReinigungsappCTA />
       </main>

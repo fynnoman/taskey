@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { motion, type Transition } from "motion/react";
 import type { CSSProperties, ReactNode } from "react";
 
-const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 const AblaufSection = dynamic(() => import("@/components/home/AblaufSection"));
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -1240,7 +1239,6 @@ export default function ReinigersoftwareShell() {
       <HeroScene />
       <DefinitionSection />
       <FeaturesSection />
-      <LiveMargen />
       <TransitionSection />
       <TaskeySpotlight />
       <AudienceSection />
