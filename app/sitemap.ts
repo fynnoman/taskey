@@ -164,6 +164,9 @@ const VERGLEICH_ENTRIES: Entry[] = [
   { path: "/vergleich/taskey-vs-pland", changeFrequency: "monthly", priority: 0.8 },
   { path: "/vergleich/taskey-vs-blink", changeFrequency: "monthly", priority: 0.8 },
   { path: "/vergleich/taskey-vs-cleanmanager", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/reinigungsapp", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/reinigungssoftware", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/reinigersoftware", changeFrequency: "weekly", priority: 0.9 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

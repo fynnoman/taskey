@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
 import TestimonialReviews from "@/components/schema/TestimonialReviews";
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+
+const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
+const AblaufSection = dynamic(() => import("@/components/home/AblaufSection"));
+const FeaturePreview = dynamic(() => import("@/components/home/FeaturePreview"));
 
 const path = "/reinigungssoftware";
 
@@ -590,6 +595,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
       />
       <TestimonialReviews />
+      <FeaturePreview />
+      <LiveMargen />
+      <AblaufSection />
       <LandingPageTemplate
         path={path}
         title={c.title}
