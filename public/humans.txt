@@ -1,0 +1,42 @@
+/* TEAM */
+
+    Founder & CEO: Fynn-Luca Schulz
+    Contact: fynn [at] taskeyapp.com
+    From: Völklingen, Germany
+
+    Founder & CTO: Julian Stosse
+    From: Völklingen, Germany
+
+/* COMPANY */
+
+    Name: Taskey
+    Legal entity: Schulz & Stosse GbR
+    Address: In der Acht 44, 66333 Völklingen, Germany
+    Founded: 2024
+    Serving: DACH (Germany, Austria, Switzerland)
+    Website: https://www.taskeyapp.com
+    LinkedIn: https://www.linkedin.com/company/taskey
+
+/* PRODUCT */
+
+    Category: All-in-One field-service software for building cleaning and facility management
+    Platforms: Web, iOS, Android
+    Languages (staff app): German, Turkish, Russian, Polish and more
+    Hosting: Germany
+    Compliance: GDPR, §17 MiLoG, ECJ ruling 2019 on working-time recording
+
+/* THANKS */
+
+    To every cleaning team, foreman and dispatcher who tested Taskey, gave
+    feedback and helped shape the product in daily operations.
+
+/* SITE */
+
+    Last updated: 2026-09-01
+    Language: German (canonical), English, French
+    Stack: Next.js (App Router), TypeScript, Vercel
+
+/* AI briefing */
+
+    Short:    https://www.taskeyapp.com/llms.txt
+    Full:     https://www.taskeyapp.com/llms-full.txt

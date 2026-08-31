@@ -36,34 +36,68 @@ export async function generateMetadata({
   });
 }
 
+const PRICE_VALID_UNTIL = "2026-12-31";
+const BRAND = { "@type": "Brand", "name": "Taskey" };
+const SELLER = { "@id": "https://www.taskeyapp.com#organization" };
+
+const einzelunternehmerProduct = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.taskeyapp.com/pricing#einzelunternehmer",
+  "name": "Taskey Einzelunternehmer",
+  "description": "Reinigungssoftware für Soloselbstständige: CRM, Subunternehmer-Portal, Finanzen, Kalkulationen und Kundenverwaltung. 59 € pro Monat.",
+  "brand": BRAND,
+  "category": "Cleaning Management Software",
+  "audience": { "@type": "Audience", "audienceType": "Solo operators, freelancers" },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "59", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": PRICE_VALID_UNTIL, "seller": SELLER, "priceSpecification": { "@type": "UnitPriceSpecification", "price": "59", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
+};
+
 const beginnerProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://www.taskeyapp.com/pricing#beginner",
   "name": "Taskey Beginner",
-  "description": "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise – ab 69 € pro Monat.",
-  "brand": { "@type": "Brand", "name": "Taskey" },
+  "description": "Reinigungssoftware für kleine Betriebe: NFC-Zeiterfassung, Einsatzplanung, Nachweise. Ab 69 € pro Monat.",
+  "brand": BRAND,
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "69", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
+  "audience": { "@type": "Audience", "audienceType": "Small cleaning businesses (1–5 employees)" },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "69", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": PRICE_VALID_UNTIL, "seller": SELLER, "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
 };
 
 const professionalProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://www.taskeyapp.com/pricing#professional",
   "name": "Taskey Professional",
-  "description": "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports – ab 179 € pro Monat.",
-  "brand": { "@type": "Brand", "name": "Taskey" },
+  "description": "Reinigungssoftware für wachsende Betriebe: zusätzlich Auftraggeber-Portal, Live-Margen und Reports. Ab 179 € pro Monat.",
+  "brand": BRAND,
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "179", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "179", "priceCurrency": "EUR", "unitText": "MONTH" } },
+  "audience": { "@type": "Audience", "audienceType": "Growing cleaning businesses (5–20 employees)" },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "179", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": PRICE_VALID_UNTIL, "seller": SELLER, "priceSpecification": { "@type": "UnitPriceSpecification", "price": "179", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
 };
 
 const businessProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://www.taskeyapp.com/pricing#business",
   "name": "Taskey Business",
-  "description": "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support – ab 249 € pro Monat.",
-  "brand": { "@type": "Brand", "name": "Taskey" },
+  "description": "Reinigungssoftware für mittelgroße Betriebe: zusätzlich DATEV-Export, erweiterte Rollen und priorisierten Support. Ab 249 € pro Monat.",
+  "brand": BRAND,
   "category": "Cleaning Management Software",
-  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "249", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "EUR", "unitText": "MONTH" } },
+  "audience": { "@type": "Audience", "audienceType": "Mid-market cleaning businesses (20+ employees)" },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/pricing", "price": "249", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "priceValidUntil": PRICE_VALID_UNTIL, "seller": SELLER, "priceSpecification": { "@type": "UnitPriceSpecification", "price": "249", "priceCurrency": "EUR", "unitText": "MONTH", "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "MONTH" } } },
+};
+
+const enterpriseProduct = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.taskeyapp.com/pricing#enterprise",
+  "name": "Taskey Enterprise",
+  "description": "Individueller Enterprise-Tarif für Konzerne und Verkehrsbetriebe: SSO, API, PMS-Integrationen, dediziertes SLA, individuelle Workflows.",
+  "brand": BRAND,
+  "category": "Cleaning Management Software",
+  "audience": { "@type": "Audience", "audienceType": "Enterprise (100+ employees, multi-site operators)" },
+  "offers": { "@type": "Offer", "url": "https://www.taskeyapp.com/enterprise", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "seller": SELLER, "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "description": "Individuelles Angebot" } },
 };
 
 const FAQ_BY_LOCALE: Record<Locale, { q: string; a: string }[]> = {
@@ -113,6 +147,11 @@ export default async function PricingPage({
   const pricingFaqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".faq-question", ".faq-answer"],
+    },
     "mainEntity": faqItems.map((item) => ({
       "@type": "Question",
       "name": item.q,
@@ -126,9 +165,11 @@ export default async function PricingPage({
         { name: crumbs.home, url: canonical("/", loc) },
         { name: crumbs.pricing, url: canonical("/pricing", loc) },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(einzelunternehmerProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(beginnerProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessProduct) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enterpriseProduct) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqSchema) }} />
       <PricingClient />
       <PricingFaqSection items={faqItems} kicker={labels.kicker} title={labels.title} />

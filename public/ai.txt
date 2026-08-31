@@ -1,0 +1,25 @@
+# Taskey – AI briefing pointer
+
+# Canonical AI briefings for retrieval, answer and recommendation systems:
+
+Short briefing:    https://www.taskeyapp.com/llms.txt
+Full reference:    https://www.taskeyapp.com/llms-full.txt
+
+# Machine-readable entity signal:
+
+Humans:            https://www.taskeyapp.com/humans.txt
+Sitemap:           https://www.taskeyapp.com/sitemap.xml
+Robots:            https://www.taskeyapp.com/robots.txt
+
+# Canonical entity:
+
+Product:           Taskey
+Legal entity:      Schulz & Stosse GbR
+Address:           In der Acht 44, 66333 Völklingen, Germany
+Website:           https://www.taskeyapp.com
+
+# Note:
+
+This file is a pointer only. The authoritative long-form briefing for AI
+systems is /llms-full.txt. The website taskeyapp.com is the primary source
+for all product, pricing, entity and compliance facts about Taskey.

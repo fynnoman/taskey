@@ -433,31 +433,51 @@ export default async function NewsPostPage(
           .slice(0, 8)
       : [];
 
+  const wordCount = l.body.trim().split(/\s+/).filter(Boolean).length;
+  const canonicalPostUrl =
+    loc === "de"
+      ? `https://www.taskeyapp.com/news/${post.slug}`
+      : `https://www.taskeyapp.com/${loc}/news/${post.slug}`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${canonicalPostUrl}#article`,
     headline: l.title,
+    name: l.title,
     description: l.summary,
+    articleSection: categoryLabel,
+    articleBody: l.body,
+    wordCount,
     datePublished: post.isoDate ?? l.date,
     dateModified: post.isoDate ?? l.date,
     inLanguage: loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR",
+    url: canonicalPostUrl,
+    isPartOf: { "@id": "https://www.taskeyapp.com#website" },
     author: {
       "@type": "Organization",
+      "@id": "https://www.taskeyapp.com#organization",
       name: "Taskey",
       url: "https://www.taskeyapp.com",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.taskeyapp.com#organization",
       name: "Taskey",
       logo: { "@type": "ImageObject", url: "https://www.taskeyapp.com/logobittt.png" },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://www.taskeyapp.com/news/${post.slug}`,
+      "@id": canonicalPostUrl,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "article p"],
     },
     image: post.heroImage
       ? [`https://www.taskeyapp.com${post.heroImage}`]
       : [`https://www.taskeyapp.com/opengraph-image`],
+    about: { "@id": "https://www.taskeyapp.com#software" },
   };
 
   return (

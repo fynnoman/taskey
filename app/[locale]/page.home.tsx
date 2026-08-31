@@ -110,11 +110,23 @@ export default async function Home({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://www.taskeyapp.com#software-home",
     "name": "Taskey",
+    "alternateName": ["Taskey App", "Taskey Software"],
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Cleaning Management Software",
     "operatingSystem": "iOS, Android, Web",
     "url": baseUrl,
+    "downloadUrl": "https://apps.apple.com/de/app/taskey/id6748812720",
+    "installUrl": "https://signup.taskeyapp.com",
+    "releaseNotes": "https://www.taskeyapp.com/news",
+    "softwareHelp": "https://www.taskeyapp.com/support",
+    "screenshot": [
+      "https://www.taskeyapp.com/hero-app-mockup.webp",
+      "https://www.taskeyapp.com/feature-zeiterfassung.webp",
+    ],
+    "availableOnDevice": ["iPhone", "iPad", "Android", "Web Browser"],
+    "countriesSupported": ["DE", "AT", "CH"],
     "description": SOFTWARE_DESC[loc],
     "inLanguage": [loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR", "tr", "ru", "pl"],
     "publisher": {
@@ -122,12 +134,20 @@ export default async function Home({
       "name": "Schulz & Stosse GbR",
       "url": "https://www.taskeyapp.com",
     },
+    "provider": { "@id": "https://www.taskeyapp.com#organization" },
+    "sameAs": [
+      "https://apps.apple.com/de/app/taskey/id6748812720",
+      "https://www.linkedin.com/company/taskey",
+      "https://twitter.com/taskey",
+    ],
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "69",
-      "highPrice": "429",
+      "lowPrice": "59",
+      "highPrice": "249",
       "priceCurrency": "EUR",
-      "offerCount": "3",
+      "offerCount": "4",
+      "url": "https://www.taskeyapp.com/pricing",
+      "priceValidUntil": "2026-12-31",
     },
     "softwareVersion": "2.0",
     "keywords": loc === "de"
@@ -279,6 +299,11 @@ export default async function Home({
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".faq-question", ".faq-answer"],
+    },
     "mainEntity": [...GEO_QA[loc], ...FAQ_BY_LOCALE[loc]].map((item) => ({
       "@type": "Question",
       "name": item.q,

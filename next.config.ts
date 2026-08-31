@@ -53,6 +53,40 @@ const nextConfig: NextConfig = {
           }
         ],
       },
+      {
+        source: '/llms.txt',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+          { key: 'Link', value: '<https://www.taskeyapp.com/llms-full.txt>; rel="alternate"; type="text/plain"' },
+        ],
+      },
+      {
+        source: '/llms-full.txt',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+          { key: 'Link', value: '<https://www.taskeyapp.com/llms.txt>; rel="alternate"; type="text/plain"' },
+        ],
+      },
+      {
+        source: '/humans.txt',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+        ],
+      },
+      {
+        source: '/ai.txt',
+        headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
+          { key: 'Cache-Control', value: 'public, max-age=3600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+        ],
+      },
     ];
   },
   // Fängt versehentliche Aufrufe der alten CDN-Pfade auf der Website-Domain ab und
