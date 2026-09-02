@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigungsplan erstellen —",
     h1Accent: "Struktur, Pflichtinhalte, Umsetzung.",
     lead: "Ein guter Reinigungsplan ist die Grundlage für saubere Objekte, zufriedene Auftraggeber und ein Team, das ohne Rückfragen arbeitet. Was gehört rein, wie ist der Aufbau, und wie kommt der Plan vom Papier in den Arbeitsalltag der Reinigungskräfte?",
+    answer: "Ein Reinigungsplan enthält Objektbeschreibung, Reinigungszyklen pro Bereich, verwendete Mittel und Geräte, Verantwortliche und Kontrollintervalle und wird digital direkt an das ausführende Team ausgespielt.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -214,6 +215,7 @@ const CONTENT = {
     h1: "Create a cleaning plan —",
     h1Accent: "structure, required content, delivery.",
     lead: "A good cleaning plan is the foundation for clean sites, satisfied clients and a team that works without follow-up questions. What belongs in it, how is it structured, and how does it move from paper into the daily work of the cleaners?",
+    answer: "A cleaning plan contains site description, cleaning cycles per area, agents and equipment used, responsible staff and control intervals and is delivered digitally to the operating team.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -347,6 +349,7 @@ const CONTENT = {
     h1: "Créer un plan de nettoyage —",
     h1Accent: "structure, contenus obligatoires, mise en œuvre.",
     lead: "Un bon plan de nettoyage est la base pour des sites propres, des donneurs d'ordre satisfaits et une équipe qui travaille sans questions de suivi. Que doit-il contenir, comment est-il structuré, et comment passer du papier au quotidien des agents?",
+    answer: "Un plan de nettoyage contient description du site, cycles de nettoyage par zone, produits et équipements utilisés, responsables et intervalles de contrôle, et est diffusé numériquement à l’équipe d’exploitation.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -493,6 +496,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

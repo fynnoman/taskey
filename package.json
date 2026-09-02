@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "llm:visibility": "npx tsx scripts/llm-visibility.ts"
+    "llm:visibility": "npx tsx scripts/llm-visibility.ts",
+    "indexnow:ping": "node scripts/indexnow-ping.mjs"
   },
   "dependencies": {
     "motion": "^13.1.0",

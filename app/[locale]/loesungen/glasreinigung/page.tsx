@@ -71,6 +71,10 @@ const CONTENT = {
     h1: "Software für Glasreinigung —",
     h1Accent: "Touren, Nachweise, Rechnungen.",
     lead: "Glasreinigung ist Tourengeschäft: viele kleine Objekte, enge Zeitfenster, oft mehrere Kolonnen parallel. Taskey gibt Ihnen die Werkzeuge, um Touren effizient zu planen, jeden Glasfassaden-Einsatz nachweissicher zu dokumentieren und sofort abzurechnen.",
+    answer: "Taskey plant Glasreinigungs-Touren automatisch, dokumentiert jeden Einsatz per NFC direkt am Objekt und rechnet abgeschlossene Fassaden noch am selben Tag ab.",
+    serviceName: "Software für Glasreinigung",
+    serviceDescription: "Branchensoftware für Glasreinigungsbetriebe: Tourenplanung, NFC-Nachweis am Objekt, Sicherheitsdokumentation für Höhenarbeit und Sofortabrechnung.",
+    audienceType: "Glasreinigungsbetriebe und Fassadenreiniger im DACH-Raum",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen/glasreinigung" },
@@ -172,6 +176,10 @@ const CONTENT = {
     h1: "Window cleaning software —",
     h1Accent: "tours, proof, invoicing.",
     lead: "Window cleaning is route business: many small sites, tight time windows, often several crews in parallel. Taskey gives you the tools to plan tours efficiently, document every glass-facade job with hard evidence and invoice it immediately.",
+    answer: "Taskey plans window cleaning tours automatically, documents every job via NFC on-site and invoices completed facades the same day.",
+    serviceName: "Window cleaning software",
+    serviceDescription: "Industry software for window cleaning companies: tour planning, NFC on-site proof, safety documentation for work at heights and same-day invoicing.",
+    audienceType: "Window cleaning and facade cleaning companies in DACH",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/glasreinigung" },
@@ -273,6 +281,10 @@ const CONTENT = {
     h1: "Logiciel pour le nettoyage de vitres —",
     h1Accent: "tournées, preuves, factures.",
     lead: "Le nettoyage de vitres est un métier de tournée : beaucoup de petits sites, des créneaux serrés, souvent plusieurs équipes en parallèle. Taskey vous donne les outils pour planifier vos tournées efficacement, documenter chaque intervention de façade vitrée de manière probante et facturer immédiatement.",
+    answer: "Taskey planifie automatiquement les tournées de nettoyage de vitres, documente chaque intervention par NFC sur site et facture les façades terminées le jour même.",
+    serviceName: "Logiciel pour le nettoyage de vitres",
+    serviceDescription: "Logiciel métier pour les entreprises de nettoyage de vitres : planification des tournées, preuve NFC sur site, documentation sécurité pour le travail en hauteur et facturation le jour même.",
+    audienceType: "Entreprises de nettoyage de vitres et de façades dans la zone DACH",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/glasreinigung" },
@@ -387,10 +399,18 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as any}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      service={{
+        name: c.serviceName,
+        description: c.serviceDescription,
+        serviceType: "Window and facade cleaning management software",
+        areaServed: ["DE", "AT", "CH"],
+        audienceType: c.audienceType,
+      }}
     />
   );
 }

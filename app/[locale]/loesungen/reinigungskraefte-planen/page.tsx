@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigungskräfte planen —",
     h1Accent: "Einsätze, Kolonnen, Vertretung.",
     lead: "Personalplanung ist in der Gebäudereinigung der operativ heikelste Bereich. Wechselnde Schichten, mehrere Objekte pro Tag, kranke Mitarbeitende und Objektleitungen, die Vertretungen aus dem Hut zaubern müssen. Ein sauberer Plan spart Nerven, Fahrtkilometer und Reklamationen.",
+    answer: "Reinigungskräfte werden zuverlässig geplant, wenn Verfügbarkeit, Qualifikation und Objektzuordnung in einem Kalender liegen, Vertretungen mit einem Klick eingespielt werden und der Mitarbeiter seine Schicht live auf dem Handy sieht.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -183,6 +184,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Software für Gebäudereinigung",
+        description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+      },
+      {
         href: "/rechner/personalbedarf",
         label: "Personalbedarf-Rechner",
         description: "Aus Fläche und Frequenz die benötigte Kapazität pro Objekt.",
@@ -215,6 +221,7 @@ const CONTENT = {
     h1: "Plan cleaning staff —",
     h1Accent: "shifts, crews, substitution.",
     lead: "Staff planning is the most sensitive operational area in commercial cleaning. Shifting schedules, multiple sites per day, sick staff and account managers who need to conjure substitutes from a hat. A clean plan saves nerves, mileage and complaints.",
+    answer: "Cleaning staff are planned reliably when availability, qualification and site allocation live in one calendar, substitutions can be swapped in with one click and the employee sees the shift live on the phone.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -317,6 +324,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Building services software",
+        description: "All-in-one industry software: scheduling, NFC proof, time tracking, quotes, invoices, live margins.",
+      },
+      {
         href: "/rechner/personalbedarf",
         label: "Staff requirement calculator",
         description: "Required capacity per site from area and frequency.",
@@ -349,6 +361,7 @@ const CONTENT = {
     h1: "Planifier les agents de nettoyage —",
     h1Accent: "interventions, équipes, remplacements.",
     lead: "La planification du personnel est le domaine opérationnel le plus sensible en propreté. Horaires changeants, plusieurs sites par jour, agents malades et encadrement qui doit sortir des remplaçants de son chapeau. Un plan propre économise nerfs, kilomètres et réclamations.",
+    answer: "Les agents sont planifiés de manière fiable quand disponibilité, qualification et affectation vivent dans un même calendrier, les remplacements se font en un clic et l’agent voit son intervention en direct sur son téléphone.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -451,6 +464,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Logiciel pour le nettoyage de bâtiments",
+        description: "Logiciel métier tout-en-un : planification, preuve NFC, pointage, devis, factures, marges en direct.",
+      },
+      {
         href: "/rechner/personalbedarf",
         label: "Calculateur d'effectif",
         description: "Capacité requise par site depuis surface et fréquence.",
@@ -496,6 +514,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

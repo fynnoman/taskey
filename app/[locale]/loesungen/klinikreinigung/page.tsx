@@ -77,6 +77,10 @@ const CONTENT = {
     h1: "Software für Klinik- und Hygienereinigung —",
     h1Accent: "lückenlos dokumentiert.",
     lead: "In Krankenhäusern, Reha-Kliniken und Pflegeheimen ist Reinigung lebenswichtig – und Dokumentation streng. Taskey hilft Reinigungsdienstleistern, jeden Einsatz manipulationssicher zu erfassen, RKI-Vorgaben einzuhalten und Auftraggebern lückenlose Berichte zu liefern.",
+    answer: "Taskey dokumentiert jede Reinigung in Kliniken und Pflegeheimen pro Raum, Zyklus, Mittel und Personal, liefert monatliche PDF-Reports für Hygienebeauftragte und ist DSGVO-konform mit Hosting in Deutschland.",
+    serviceName: "Software für Klinik- und Hygienereinigung",
+    serviceDescription: "Betriebssoftware für Reinigungsdienstleister im Klinik- und Pflegeumfeld: raum- und zyklusgenaue Dokumentation nach Hygieneplan, Schichtübergaben, Auftraggeber-Reports und Audit-Trail.",
+    audienceType: "Reinigungsdienstleister für Krankenhäuser, Reha-Kliniken und Pflegeheime im DACH-Raum",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen/klinikreinigung" },
@@ -178,6 +182,10 @@ const CONTENT = {
     h1: "Clinic and hygiene cleaning software —",
     h1Accent: "fully documented.",
     lead: "In hospitals, rehab clinics and care homes, cleaning is vital – and documentation is strict. Taskey helps cleaning service providers record every job in a tamper-proof way, meet RKI requirements and deliver gap-free reports to clients.",
+    answer: "Taskey documents every cleaning in hospitals and care homes per room, cycle, agent and staff, generates monthly PDF reports for hygiene officers and is DSGVO-compliant with hosting in Germany.",
+    serviceName: "Clinic and hygiene cleaning software",
+    serviceDescription: "Operational software for cleaning service providers in clinical and care environments: room- and cycle-level documentation aligned with the hygiene plan, shift handovers, client reports and audit trail.",
+    audienceType: "Cleaning service providers for hospitals, rehab clinics and care homes in DACH",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/klinikreinigung" },
@@ -279,6 +287,10 @@ const CONTENT = {
     h1: "Logiciel pour le nettoyage hospitalier et d’hygiène —",
     h1Accent: "documenté sans faille.",
     lead: "Dans les hôpitaux, cliniques de rééducation et EHPAD, le nettoyage est vital – et la documentation, stricte. Taskey aide les prestataires de nettoyage à enregistrer chaque intervention de manière infalsifiable, à respecter les exigences RKI et à fournir aux donneurs d’ordres des rapports sans faille.",
+    answer: "Taskey documente chaque nettoyage en hôpital et EHPAD par pièce, cycle, produit et personnel, génère des rapports PDF mensuels pour les référents hygiène et est conforme DSGVO avec un hébergement en Allemagne.",
+    serviceName: "Logiciel pour le nettoyage hospitalier et d’hygiène",
+    serviceDescription: "Logiciel métier pour les prestataires de nettoyage en milieu hospitalier et médico-social : documentation par pièce et par cycle selon le plan d’hygiène, transmissions d’équipe, rapports clients et piste d’audit.",
+    audienceType: "Prestataires de nettoyage pour hôpitaux, cliniques de rééducation et EHPAD dans la zone DACH",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/klinikreinigung" },
@@ -393,10 +405,18 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as any}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      service={{
+        name: c.serviceName,
+        description: c.serviceDescription,
+        serviceType: "Cleaning management software for clinical environments",
+        areaServed: ["DE", "AT", "CH"],
+        audienceType: c.audienceType,
+      }}
     />
   );
 }

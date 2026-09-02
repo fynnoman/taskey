@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Objektübergabe in der Reinigung —",
     h1Accent: "Übernahme, Vertretung, Kontraktwechsel.",
     lead: "Eine saubere Objektübergabe entscheidet, ob ein neuer Auftrag gut startet oder direkt Reklamationen produziert. Drei Übergabesituationen prägen den Alltag: Übernahme eines neuen Objekts, Vertretung im laufenden Betrieb, Kontraktwechsel zwischen Anbietern. Für alle drei gibt es einen wiederholbaren Prozess.",
+    answer: "Eine saubere Objektübergabe folgt drei Schritten: Objekt-Rundgang mit Foto-Dokumentation, digitale Übergabe-Checkliste mit Unterschrift von Auftraggeber und Reinigungsdienstleister und Übernahme der Objektdaten inklusive Schlüsselprotokoll in das Betriebssystem.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -183,6 +184,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Software für Gebäudereinigung",
+        description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+      },
+      {
         href: "/loesungen/reinigungsobjekte-verwalten",
         label: "Reinigungsobjekte verwalten",
         description: "Objektakte als Grundlage jeder Übergabe.",
@@ -215,6 +221,7 @@ const CONTENT = {
     h1: "Site handover in commercial cleaning —",
     h1Accent: "onboarding, substitution, contract change.",
     lead: "A clean site handover decides whether a new contract starts well or produces complaints straight away. Three handover situations shape daily work: taking on a new site, substitution during operations, handover between providers on contract change. All three follow a repeatable process.",
+    answer: "A clean site handover follows three steps: site walk with photo documentation, digital handover checklist signed by client and cleaning provider and takeover of site data including key protocol into the operational system.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -317,6 +324,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Building services software",
+        description: "All-in-one industry software: scheduling, NFC proof, time tracking, quotes, invoices, live margins.",
+      },
+      {
         href: "/loesungen/reinigungsobjekte-verwalten",
         label: "Manage cleaning sites",
         description: "Site record as basis for every handover.",
@@ -349,6 +361,7 @@ const CONTENT = {
     h1: "Reprise de site en propreté —",
     h1Accent: "reprise, remplacement, changement de contrat.",
     lead: "Une reprise de site propre décide si un nouveau contrat démarre bien ou produit des réclamations immédiatement. Trois situations de reprise marquent le quotidien: prise en charge d'un nouveau site, remplacement en cours, transition entre prestataires en fin de contrat. Toutes suivent un processus reproductible.",
+    answer: "Une reprise de site propre suit trois étapes : tour du site avec documentation photo, checklist de reprise numérique signée par le donneur d’ordre et le prestataire et reprise des données du site, protocole de clés inclus, dans le système d’exploitation.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -451,6 +464,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Logiciel pour le nettoyage de bâtiments",
+        description: "Logiciel métier tout-en-un : planification, preuve NFC, pointage, devis, factures, marges en direct.",
+      },
+      {
         href: "/loesungen/reinigungsobjekte-verwalten",
         label: "Gérer les sites",
         description: "Fiche site comme base de toute passation.",
@@ -496,6 +514,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

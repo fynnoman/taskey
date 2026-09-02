@@ -73,6 +73,10 @@ const CONTENT = {
     h1: "Hotel Housekeeping Software —",
     h1Accent: "Zimmer, Touren, Live-Status.",
     lead: "In der Hotellerie zählt jede Minute zwischen Check-out und Check-in. Taskey gibt Housekeeping-Teams einen Live-Plan auf dem Handy: welches Zimmer ist frei, welches dringend, was wurde bereits erledigt – und die Rezeption sieht in Echtzeit, ob das Zimmer für den nächsten Gast bereit ist.",
+    answer: "Taskey gibt Housekeeping-Teams einen Live-Zimmerplan auf dem Handy, verbindet sich mit dem PMS und meldet der Rezeption in Echtzeit, welche Zimmer bezugsfertig sind.",
+    serviceName: "Hotel Housekeeping Software",
+    serviceDescription: "Housekeeping-Software für Hotels und Reinigungsdienstleister: Live-Zimmerplan, PMS-Integration, Tourenplanung, Wäsche- und Materialverbrauch.",
+    audienceType: "Hotels und externe Housekeeping-Dienstleister im DACH-Raum",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen/hotel-housekeeping" },
@@ -172,6 +176,10 @@ const CONTENT = {
     h1: "Hotel housekeeping software —",
     h1Accent: "rooms, tours, live status.",
     lead: "In hospitality, every minute between check-out and check-in counts. Taskey gives housekeeping teams a live plan on their phone: which room is free, which is urgent, what has already been done – and reception sees in real time whether the room is ready for the next guest.",
+    answer: "Taskey gives housekeeping teams a live room plan on their phone, connects to the PMS and reports to reception in real time which rooms are ready for guests.",
+    serviceName: "Hotel housekeeping software",
+    serviceDescription: "Housekeeping software for hotels and outsourced housekeeping providers: live room plan, PMS integration, tour planning, linen and supplies tracking.",
+    audienceType: "Hotels and external housekeeping providers in DACH",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/hotel-housekeeping" },
@@ -271,6 +279,10 @@ const CONTENT = {
     h1: "Logiciel de housekeeping hôtelier —",
     h1Accent: "chambres, tournées, statut en direct.",
     lead: "Dans l’hôtellerie, chaque minute entre le check-out et le check-in compte. Taskey donne aux équipes de housekeeping un plan en direct sur le téléphone : quelle chambre est libre, laquelle est urgente, ce qui a déjà été fait – et la réception voit en temps réel si la chambre est prête pour le prochain client.",
+    answer: "Taskey donne aux équipes de housekeeping un plan des chambres en direct sur le téléphone, se connecte au PMS et signale à la réception en temps réel les chambres prêtes.",
+    serviceName: "Logiciel de housekeeping hôtelier",
+    serviceDescription: "Logiciel de housekeeping pour hôtels et prestataires externes : plan des chambres en direct, intégration PMS, planification des tournées, suivi du linge et des consommables.",
+    audienceType: "Hôtels et prestataires externes de housekeeping dans la zone DACH",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/hotel-housekeeping" },
@@ -383,10 +395,18 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as any}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      service={{
+        name: c.serviceName,
+        description: c.serviceDescription,
+        serviceType: "Hotel housekeeping management software",
+        areaServed: ["DE", "AT", "CH"],
+        audienceType: c.audienceType,
+      }}
     />
   );
 }

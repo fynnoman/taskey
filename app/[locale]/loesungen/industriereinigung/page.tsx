@@ -71,6 +71,10 @@ const CONTENT = {
     h1: "Software für Industriereinigung —",
     h1Accent: "Protokolle, Schichten, DATEV.",
     lead: "Industriereinigung läuft anders: 24/7-Schichten, strenge Sicherheits- und Hygieneprotokolle, hohe Dokumentationspflichten gegenüber Auftraggebern und Behörden. Taskey strukturiert Schichtbetrieb, dokumentiert Protokolle revisionssicher und übergibt Stunden direkt an DATEV.",
+    answer: "Taskey organisiert 24/7-Schichten der Industriereinigung, dokumentiert Sicherheits- und Hygieneprotokolle revisionssicher und übergibt Stunden automatisch an DATEV.",
+    serviceName: "Software für Industriereinigung",
+    serviceDescription: "Branchensoftware für Industriereiniger: Schichtplanung im 24/7-Betrieb, revisionssichere Protokolldokumentation, Auftraggeber-Reporting und DATEV-Lohnübergabe.",
+    audienceType: "Industriereinigungsbetriebe mit Schichtbetrieb im DACH-Raum",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen/industriereinigung" },
@@ -172,6 +176,10 @@ const CONTENT = {
     h1: "Industrial cleaning software —",
     h1Accent: "protocols, shifts, DATEV.",
     lead: "Industrial cleaning works differently: 24/7 shifts, strict safety and hygiene protocols, heavy documentation duties towards clients and authorities. Taskey structures shift operations, documents protocols in an audit-proof way and hands hours over to DATEV directly.",
+    answer: "Taskey organises 24/7 shifts in industrial cleaning, documents safety and hygiene protocols in an audit-proof way and hands hours over to DATEV automatically.",
+    serviceName: "Industrial cleaning software",
+    serviceDescription: "Industry software for industrial cleaning companies: 24/7 shift planning, audit-proof protocol documentation, client reporting and DATEV payroll handover.",
+    audienceType: "Industrial cleaning companies with shift operations in DACH",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/industriereinigung" },
@@ -273,6 +281,10 @@ const CONTENT = {
     h1: "Logiciel pour le nettoyage industriel —",
     h1Accent: "protocoles, postes, DATEV.",
     lead: "Le nettoyage industriel fonctionne différemment : équipes 24/7, protocoles de sécurité et d’hygiène stricts, exigences de documentation élevées vis-à-vis des donneurs d’ordres et des autorités. Taskey structure le travail posté, documente les protocoles de manière infalsifiable et transmet les heures directement à DATEV.",
+    answer: "Taskey organise les équipes 24/7 en nettoyage industriel, documente les protocoles de sécurité et d’hygiène de manière infalsifiable et transmet les heures à DATEV automatiquement.",
+    serviceName: "Logiciel pour le nettoyage industriel",
+    serviceDescription: "Logiciel métier pour le nettoyage industriel : planification des équipes 24/7, documentation infalsifiable des protocoles, reporting client et transfert des heures vers DATEV.",
+    audienceType: "Entreprises de nettoyage industriel en travail posté dans la zone DACH",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/industriereinigung" },
@@ -387,10 +399,18 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as any}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      service={{
+        name: c.serviceName,
+        description: c.serviceDescription,
+        serviceType: "Industrial cleaning management software",
+        areaServed: ["DE", "AT", "CH"],
+        audienceType: c.audienceType,
+      }}
     />
   );
 }

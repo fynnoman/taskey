@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigungsaufträge verwalten —",
     h1Accent: "vom Angebot bis zur Abrechnung.",
     lead: "Ein Reinigungsauftrag lebt länger als eine Rechnung. Er beginnt mit dem Angebot, läuft über Monate oder Jahre und endet oft mit einer Nachverhandlung. Wer das sauber verwaltet, verliert weniger Umsatz durch verpasste Fristen und Reklamationen.",
+    answer: "Ein Reinigungsauftrag wird effizient verwaltet, wenn Angebot, Vertrag, Einsatzplan, Nachweise, Reklamationen und Rechnungen in einem System an einem gemeinsamen Objekt-Datensatz hängen, statt in vier Tools und drei E-Mail-Ordnern verteilt zu sein.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -213,6 +214,7 @@ const CONTENT = {
     h1: "Manage cleaning contracts —",
     h1Accent: "from quote to invoicing.",
     lead: "A cleaning contract lives longer than an invoice. It starts with a quote, runs for months or years, and often ends with a renegotiation. Anyone who manages this cleanly loses less revenue to missed deadlines and complaints.",
+    answer: "A cleaning contract is managed efficiently when quote, contract, schedule, proof of service, complaints and invoices all live on one shared site record in one system, not across four tools and three email folders.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -345,6 +347,7 @@ const CONTENT = {
     h1: "Gérer les contrats de nettoyage —",
     h1Accent: "du devis à la facturation.",
     lead: "Un contrat de nettoyage vit plus longtemps qu'une facture. Il commence par un devis, court sur des mois ou des années et se termine souvent par une renégociation. Qui gère cela proprement perd moins de chiffre pour échéances manquées et réclamations.",
+    answer: "Un contrat de nettoyage est géré efficacement quand devis, contrat, planning, preuves, réclamations et factures sont rattachés à une fiche site commune dans un seul système, au lieu de quatre outils et trois dossiers e-mail.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -490,6 +493,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

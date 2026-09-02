@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata, pickLocale, type PageCopy, type Locale } from "@/lib/i18n-metadata";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/StructuredData";
+import { BreadcrumbJsonLd, FaqJsonLd, HowToJsonLd } from "@/components/StructuredData";
 import ReinigungskostenRechner, {
   type ReinigungskostenLabels,
 } from "@/components/rechner/ReinigungskostenRechner";
@@ -636,6 +636,14 @@ export default async function Page({
     <main className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
       <FaqJsonLd items={c.faqs} id="ld-faq-reinigungskosten" />
       <BreadcrumbJsonLd crumbs={crumbs} id="ld-breadcrumb-reinigungskosten" />
+      <HowToJsonLd
+        name={c.formula.heading}
+        description={c.formula.intro}
+        steps={c.formula.steps}
+        inLanguage={l === "de" ? "de-DE" : l === "en" ? "en-US" : "fr-FR"}
+        url={`https://www.taskeyapp.com${path}`}
+        id="ld-howto-reinigungskosten"
+      />
 
       <header className="mb-10 max-w-3xl">
         <p className="text-sm font-medium uppercase tracking-wide text-blue-700">

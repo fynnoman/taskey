@@ -83,6 +83,28 @@ Zeiterfassung protokolliert Beginn und Ende einer Schicht. Ein Reinigungsnachwei
 - [Taskey vs. Blink](https://www.taskeyapp.com/vergleich/taskey-vs-blink): Reinigungs-Branchensoftware vs. Frontline-Plattform.
 - [Taskey vs. CleanManager](https://www.taskeyapp.com/vergleich/taskey-vs-cleanmanager): Made in Germany vs. skandinavisches ERP.
 
+## Feature- und Ratgeber-Landingpages (Long-Tail)
+
+- [Digitalisierung Gebäudereinigung](https://www.taskeyapp.com/loesungen/digitalisierung-gebaeudereinigung): Ratgeber zur schrittweisen Digitalisierung, welche Module sich zuerst rechnen und typische Fallstricke.
+- [Reinigungsplan erstellen](https://www.taskeyapp.com/loesungen/reinigungsplan-erstellen): Aufbau, Pflichtinhalte und digitale Umsetzung eines Reinigungsplans pro Objekt.
+- [Reinigungsvertrag erstellen](https://www.taskeyapp.com/loesungen/reinigungsvertrag-erstellen): Vertragsstruktur, Preismodelle mit Mindestlohn-Klausel, typische Fehler.
+- [Reinigungsobjekte verwalten](https://www.taskeyapp.com/loesungen/reinigungsobjekte-verwalten): Zentrale Objektakte für Stammdaten, Schlüssel, Plan und Nachweise.
+- [Reinigungsaufträge verwalten](https://www.taskeyapp.com/loesungen/reinigungsauftraege-verwalten): Vom Angebot bis zur Abrechnung an einem gemeinsamen Objekt-Datensatz.
+- [Reinigungskräfte planen](https://www.taskeyapp.com/loesungen/reinigungskraefte-planen): Einsatzplanung mit Verfügbarkeit, Qualifikation und Vertretungslogik.
+- [Reinigung kontrollieren](https://www.taskeyapp.com/loesungen/reinigung-kontrollieren): Objektive Kontrolle mit Standardbogen, Foto und Reklamations-Ticket.
+- [Objektübergabe in der Reinigung](https://www.taskeyapp.com/loesungen/objektuebergabe-reinigung): Übernahme, Vertretung und Kontraktwechsel als wiederholbarer Prozess.
+- [Schlüsselverwaltung in der Gebäudereinigung](https://www.taskeyapp.com/loesungen/schluesselverwaltung-gebaeudereinigung): Digitales Protokoll pro Schlüssel und Übergabe, haftungssicher.
+- [Springer in der Reinigung](https://www.taskeyapp.com/loesungen/springer-reinigung): Reserve-Planung mit 8 bis 12 Prozent der Einsatzstunden.
+
+## Interaktive Rechner
+
+- [Rechner-Übersicht](https://www.taskeyapp.com/rechner): Alle Kalkulatoren auf einen Blick.
+- [Reinigungskosten berechnen](https://www.taskeyapp.com/rechner/reinigungskosten): Preis pro Monat aus Fläche, Frequenz, Personal-, Material- und Fahrtkosten sowie Zielmarge.
+- [Stundenverrechnungssatz berechnen](https://www.taskeyapp.com/rechner/stundenverrechnungssatz): Kalkulation des Verrechnungssatzes aus Bruttolohn, Nebenkosten, Overhead und Zielmarge.
+- [Personalbedarf berechnen](https://www.taskeyapp.com/rechner/personalbedarf): Stunden pro Monat und Vollzeitäquivalente aus Fläche, Leistung und Frequenz.
+- [Lohnkosten Reinigung berechnen](https://www.taskeyapp.com/rechner/lohnkosten-reinigung): Vollkosten pro Jahr inklusive Nebenkosten und Sonderzahlungen.
+- [Marge Gebäudereinigung berechnen](https://www.taskeyapp.com/rechner/marge-gebaeudereinigung): Marge in Euro und Prozent oder Zielpreis aus Kosten und Zielmarge.
+
 ## Rechtliches
 
 - [Impressum](https://www.taskeyapp.com/impressum)

@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigung kontrollieren —",
     h1Accent: "objektiv, dokumentiert, wiederholbar.",
     lead: "Die Frage was gute Reinigung ausmacht wird oft mit Bauchgefühl beantwortet. Das reicht für ein Objekt, nicht für fünfzig. Wer Reinigung zuverlässig kontrollieren will, braucht einen objektiven Standard, einen dokumentierten Nachweis und eine klare Abfolge für Reklamationen.",
+    answer: "Reinigung wird objektiv kontrolliert, wenn ein Standard-Kontrollbogen pro Objekttyp existiert, jede Kontrolle mit Foto und Zeitstempel dokumentiert wird und Reklamationen als Ticket mit klarer Fristsetzung an das Team zurückfließen.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -210,6 +211,7 @@ const CONTENT = {
     h1: "Control cleaning —",
     h1Accent: "objective, documented, repeatable.",
     lead: "What makes cleaning good is often answered by gut feel. That works for one site, not for fifty. Anyone who wants to control cleaning reliably needs an objective standard, documented proof and a clear sequence for complaints.",
+    answer: "Cleaning is controlled objectively when a standard checklist per site type exists, every control is documented with photo and timestamp and complaints flow back to the team as tickets with clear deadlines.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -339,6 +341,7 @@ const CONTENT = {
     h1: "Contrôler le nettoyage —",
     h1Accent: "objectif, documenté, reproductible.",
     lead: "Ce qui fait un bon nettoyage est souvent répondu au feeling. Cela suffit pour un site, pas pour cinquante. Qui veut contrôler le nettoyage de manière fiable a besoin d'un standard objectif, d'une preuve documentée et d'une séquence claire pour les réclamations.",
+    answer: "Le nettoyage est contrôlé objectivement quand un formulaire standard existe par type de site, chaque contrôle est documenté avec photo et horodatage et les réclamations reviennent à l’équipe sous forme de tickets avec des délais clairs.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -481,6 +484,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

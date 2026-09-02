@@ -21,6 +21,7 @@ const CONTENT = {
     ctaSubtitleDefault:
       "Keine Kreditkarte, kein Risiko. Einrichtung in 48 Stunden – Done-for-You durch unser Team.",
     bottomCta: "Jetzt starten",
+    updatedPrefix: "Stand",
   },
   en: {
     breadcrumbAriaLabel: "Breadcrumb",
@@ -35,6 +36,7 @@ const CONTENT = {
     ctaSubtitleDefault:
       "No credit card, no risk. Set up in 48 hours – Done-for-You by our team.",
     bottomCta: "Get started",
+    updatedPrefix: "Updated",
   },
   fr: {
     breadcrumbAriaLabel: "Fil d’Ariane",
@@ -49,8 +51,50 @@ const CONTENT = {
     ctaSubtitleDefault:
       "Sans carte bancaire, sans risque. Mise en place en 48 heures – Done-for-You par notre équipe.",
     bottomCta: "Démarrer maintenant",
+    updatedPrefix: "Mis à jour",
   },
 } as const;
+
+const LOCALE_TO_BCP47: Record<"de" | "en" | "fr", string> = {
+  de: "de-DE",
+  en: "en-US",
+  fr: "fr-FR",
+};
+
+function formatUpdatedDate(iso: string, locale: "de" | "en" | "fr"): string {
+  try {
+    return new Intl.DateTimeFormat(LOCALE_TO_BCP47[locale], {
+      year: "numeric",
+      month: "long",
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
+
+function slugifyQuestion(input: string): string {
+  const map: Record<string, string> = {
+    ä: "ae", ö: "oe", ü: "ue", ß: "ss",
+    Ä: "ae", Ö: "oe", Ü: "ue",
+    à: "a", á: "a", â: "a", ã: "a",
+    è: "e", é: "e", ê: "e", ë: "e",
+    ì: "i", í: "i", î: "i", ï: "i",
+    ò: "o", ó: "o", ô: "o", õ: "o",
+    ù: "u", ú: "u", û: "u",
+    ç: "c", ñ: "n",
+  };
+  const normalized = Array.from(input)
+    .map((ch) => map[ch] ?? ch)
+    .join("")
+    .toLowerCase();
+  return (
+    "faq-" +
+    normalized
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 80)
+  );
+}
 
 export type LandingFaq = { question: string; answer: string };
 export type LandingSection = {
@@ -92,6 +136,30 @@ export type LandingPageProps = {
   /** Schluss-CTA-Text. Default: "Kostenlosen Account erstellen" */
   ctaTitle?: string;
   ctaSubtitle?: string;
+  /** ISO-Datum (YYYY-MM-DD) der Erstveroeffentlichung. Fliesst in WebPage-Schema. */
+  datePublished?: string;
+  /**
+   * Optionaler Direct-Answer-Block: 10 bis 30 Woerter, direkt unter Lead.
+   * Wird von AI-Systemen (Perplexity, AI Overviews, Copilot) als Passage bevorzugt.
+   * Aktiviert zusaetzlich SpeakableSpecification im WebPage-Schema.
+   */
+  answerBlock?: string;
+  /**
+   * Optionales Service-Schema fuer branchen- oder leistungsspezifische Landings.
+   * Provider wird automatisch als @id-Referenz auf die globale Organization gesetzt.
+   */
+  service?: {
+    /** Klartext-Name der Leistung, z. B. "Software fuer Klinikreinigung" */
+    name: string;
+    /** Kurzbeschreibung fuer Suchmaschinen (1 bis 2 Saetze) */
+    description: string;
+    /** z. B. "Cleaning management software" */
+    serviceType?: string;
+    /** ISO-Laendercodes; Default: ["DE", "AT", "CH"] */
+    areaServed?: string[];
+    /** Zielgruppe, z. B. "Cleaning companies with 10 to 500 employees" */
+    audienceType?: string;
+  };
   /** Optional: Newsletter-Anmeldung vor dem Bottom-CTA */
   newsletter?: {
     source: string;
@@ -112,10 +180,18 @@ export default function LandingPageTemplate({
   related,
   ctaTitle,
   ctaSubtitle,
+  datePublished,
+  answerBlock,
+  service,
   newsletter,
 }: LandingPageProps) {
   const { language } = useLanguage();
   const c = CONTENT[language];
+  const LANG_TAG: Record<"de" | "en" | "fr", string> = {
+    de: "de-DE",
+    en: "en-US",
+    fr: "fr-FR",
+  };
   const resolvedCtaTitle = ctaTitle ?? c.ctaTitleDefault;
   const resolvedCtaSubtitle = ctaSubtitle ?? c.ctaSubtitleDefault;
 
@@ -133,25 +209,19 @@ export default function LandingPageTemplate({
   // beim Re-Build aktualisiert sich dateModified automatisch (Frische-Signal).
   const buildDate = new Date().toISOString().split("T")[0];
 
-  const articleSchema = {
+  const articleSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": `https://www.taskeyapp.com${path}#webpage`,
     "name": h1,
     "url": `https://www.taskeyapp.com${path}`,
     "description": lead,
-    "inLanguage": "de-DE",
-    "datePublished": "2026-05-21",
+    "inLanguage": LANG_TAG[language],
+    "datePublished": datePublished ?? "2026-05-21",
     "dateModified": buildDate,
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Taskey",
-      "url": "https://www.taskeyapp.com",
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Schulz & Stosse GbR",
-      "url": "https://www.taskeyapp.com",
-    },
+    "isPartOf": { "@id": "https://www.taskeyapp.com#website" },
+    "about": { "@id": "https://www.taskeyapp.com#software" },
+    "publisher": { "@id": "https://www.taskeyapp.com#organization" },
     "primaryImageOfPage": {
       "@type": "ImageObject",
       "url": `https://www.taskeyapp.com/opengraph-image`,
@@ -159,6 +229,32 @@ export default function LandingPageTemplate({
       "height": 630,
     },
   };
+  if (answerBlock) {
+    articleSchema["speakable"] = {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#answer-block", "h1"],
+    };
+  }
+
+  const serviceSchema = service
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `https://www.taskeyapp.com${path}#service`,
+        name: service.name,
+        description: service.description,
+        serviceType: service.serviceType ?? "Software as a Service",
+        url: `https://www.taskeyapp.com${path}`,
+        provider: { "@id": "https://www.taskeyapp.com#organization" },
+        areaServed: (service.areaServed ?? ["DE", "AT", "CH"]).map((code) => ({
+          "@type": "Country",
+          name: code,
+        })),
+        ...(service.audienceType
+          ? { audience: { "@type": "Audience", audienceType: service.audienceType } }
+          : {}),
+      }
+    : null;
 
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-slate-900 overflow-hidden">
@@ -171,6 +267,12 @@ export default function LandingPageTemplate({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
 
       {/* Ambient glows – konsistent mit Home/News/Support */}
       <div className="absolute top-0 left-1/4 w-[800px] h-[600px] bg-cyan-500/12 rounded-full blur-[90px] pointer-events-none" />
@@ -203,14 +305,22 @@ export default function LandingPageTemplate({
             </ol>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
-            </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
-              {eyebrow}
-            </span>
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-slate-200 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+              </span>
+              <span className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-blue-700 uppercase">
+                {eyebrow}
+              </span>
+            </div>
+            <time
+              dateTime={buildDate}
+              className="text-[11px] sm:text-xs text-slate-500 font-medium"
+            >
+              {c.updatedPrefix}: {formatUpdatedDate(buildDate, language)}
+            </time>
           </div>
 
           <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black leading-[0.95] tracking-tight mb-6">
@@ -226,9 +336,18 @@ export default function LandingPageTemplate({
             )}
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed mb-6">
             {lead}
           </p>
+
+          {answerBlock && (
+            <div
+              id="answer-block"
+              className="max-w-3xl mb-10 rounded-2xl border-l-4 border-cyan-400 bg-blue-50/60 px-5 py-4 text-slate-800 text-base md:text-lg leading-relaxed"
+            >
+              {answerBlock}
+            </div>
+          )}
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -336,7 +455,8 @@ export default function LandingPageTemplate({
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6"
+                id={slugifyQuestion(faq.question)}
+                className="group rounded-2xl bg-blue-50/70 border border-slate-200 p-6 scroll-mt-24"
               >
                 <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-base md:text-lg font-bold">
                   <span>{faq.question}</span>

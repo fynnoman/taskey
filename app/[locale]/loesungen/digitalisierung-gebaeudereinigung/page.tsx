@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Digitalisierung in der Gebäudereinigung —",
     h1Accent: "wo anfangen, was rechnet sich.",
     lead: "Digitalisierung klingt nach Großprojekt. In der Gebäudereinigung ist sie einfacher, wenn man beim größten Schmerzpunkt anfängt und schrittweise ausbaut. Dieser Ratgeber zeigt, welche Schritte sich zuerst rechnen und welche Fallstricke Betriebe regelmäßig treffen.",
+    answer: "Digitalisierung in der Gebäudereinigung rechnet sich am schnellsten, wenn Sie zuerst Zeiterfassung und Nachweise digitalisieren, danach Einsatzplanung und Kalkulation und erst zuletzt Rechnungsstellung und Auftraggeber-Portal.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -216,6 +217,7 @@ const CONTENT = {
     h1: "Digitisation in commercial cleaning —",
     h1Accent: "where to start, what pays off.",
     lead: "Digitisation sounds like a big project. In commercial cleaning it is easier when you start at the biggest pain point and build out step by step. This guide shows which steps pay off first and which pitfalls hit companies regularly.",
+    answer: "Digitisation in commercial cleaning pays off fastest when you first digitise time tracking and service proof, then scheduling and calculation, and only last invoicing and the client portal.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -351,6 +353,7 @@ const CONTENT = {
     h1: "Digitalisation en propreté —",
     h1Accent: "par où commencer, ce qui rapporte.",
     lead: "La digitalisation sonne comme un grand projet. En propreté, elle est plus simple quand on commence par le plus grand point douloureux et qu'on construit étape par étape. Ce guide montre quelles étapes rapportent d'abord et quels pièges frappent régulièrement les entreprises.",
+    answer: "La digitalisation en propreté rapporte le plus vite si vous digitalisez d’abord le pointage et les preuves de prestation, puis la planification et le chiffrage, et en dernier la facturation et le portail client.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -499,6 +502,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

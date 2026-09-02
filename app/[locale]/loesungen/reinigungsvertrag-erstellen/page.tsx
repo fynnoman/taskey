@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigungsvertrag erstellen —",
     h1Accent: "Aufbau, Klauseln, Fallstricke.",
     lead: "Ein Reinigungsvertrag entscheidet, ob ein Auftrag über die Vertragslaufzeit trägt oder ob er zum Verlustbringer wird. Dieser Ratgeber zeigt, welcher Aufbau in der Praxis funktioniert, welche Klauseln oft fehlen und wie der Vertrag mit der operativen Realität zusammenpasst. Keine Rechtsberatung, sondern Erfahrungswerte aus dem Reinigungsalltag.",
+    answer: "Ein tragfähiger Reinigungsvertrag definiert Leistungsumfang pro Bereich und Frequenz, Preismodell mit Anpassungsklausel für den Mindestlohn, Kündigungs- und Nachbesserungsregeln und Nachweispflichten für die Dokumentation.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -185,6 +186,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Software für Gebäudereinigung",
+        description: "All-in-One Branchensoftware: Einsatzplanung, NFC-Nachweis, Zeiterfassung, Angebote, Rechnungen, Live-Margen.",
+      },
+      {
         href: "/loesungen/reinigungsauftraege-verwalten",
         label: "Reinigungsaufträge verwalten",
         description: "Wie der Vertrag im laufenden Betrieb geführt wird.",
@@ -217,6 +223,7 @@ const CONTENT = {
     h1: "Create a cleaning contract —",
     h1Accent: "structure, clauses, pitfalls.",
     lead: "A cleaning contract decides whether a job holds its margin over the contract term or becomes a loss maker. This guide shows what structure works in practice, which clauses are often missing and how the contract aligns with operational reality. Not legal advice, but experience from daily cleaning operations.",
+    answer: "A viable cleaning contract defines scope of service per area and frequency, a pricing model with a minimum wage adjustment clause, notice and remedy rules and documentation duties for proof of service.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -321,6 +328,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Building services software",
+        description: "All-in-one industry software: scheduling, NFC proof, time tracking, quotes, invoices, live margins.",
+      },
+      {
         href: "/loesungen/reinigungsauftraege-verwalten",
         label: "Manage cleaning contracts",
         description: "How the contract runs in daily operations.",
@@ -353,6 +365,7 @@ const CONTENT = {
     h1: "Créer un contrat de nettoyage —",
     h1Accent: "structure, clauses, pièges.",
     lead: "Un contrat de nettoyage décide si un marché tient sa marge sur la durée ou devient déficitaire. Ce guide montre quelle structure fonctionne en pratique, quelles clauses manquent souvent et comment le contrat s'aligne avec la réalité opérationnelle. Pas de conseil juridique, mais l'expérience du quotidien.",
+    answer: "Un contrat de nettoyage viable définit l’étendue par zone et fréquence, un modèle de prix avec clause d’indexation salaire minimum, les règles de préavis et de reprise et les obligations de preuve documentaire.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -457,6 +470,11 @@ const CONTENT = {
     ],
     related: [
       {
+        href: "/software-gebaeudereinigung",
+        label: "Logiciel pour le nettoyage de bâtiments",
+        description: "Logiciel métier tout-en-un : planification, preuve NFC, pointage, devis, factures, marges en direct.",
+      },
+      {
         href: "/loesungen/reinigungsauftraege-verwalten",
         label: "Gérer les contrats",
         description: "Comment le contrat tourne au quotidien.",
@@ -502,6 +520,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

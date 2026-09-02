@@ -80,6 +80,10 @@ const CONTENT = {
     h1: "Software für Unterhaltsreinigung —",
     h1Accent: "Planung, Nachweis, Abrechnung.",
     lead: "Unterhaltsreinigung lebt von wiederkehrenden Touren, dünnen Margen und Auftraggebern, die hohe Erwartungen an die Dokumentation haben. Taskey automatisiert genau diese drei Punkte: Schichten und Touren planen, jeden Einsatz per NFC nachweisen, jede Leistung sauber abrechnen.",
+    answer: "Taskey plant wiederkehrende Reinigungstouren, weist jeden Einsatz per NFC am Objekt nach und rechnet Leistungen automatisch ab, damit dünne Margen nicht durch Papierarbeit weiter schrumpfen.",
+    serviceName: "Software für Unterhaltsreinigung",
+    serviceDescription: "Branchensoftware für Unterhaltsreiniger: Schicht- und Tourenplanung, NFC-Objektnachweis, Auftraggeber-Portal und automatisierte Abrechnung wiederkehrender Leistungen.",
+    audienceType: "Gebäudereinigungsbetriebe mit Fokus Unterhaltsreinigung im DACH-Raum",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen/unterhaltsreinigung" },
@@ -181,6 +185,10 @@ const CONTENT = {
     h1: "Maintenance cleaning software —",
     h1Accent: "planning, proof, invoicing.",
     lead: "Maintenance cleaning lives off recurring tours, thin margins and clients with high expectations on documentation. Taskey automates precisely those three points: plan shifts and tours, prove every job via NFC, invoice every service cleanly.",
+    answer: "Taskey plans recurring cleaning tours, proves every job via NFC on-site and invoices services automatically so thin margins are not eaten further by paperwork.",
+    serviceName: "Maintenance cleaning software",
+    serviceDescription: "Industry software for maintenance cleaning companies: shift and tour planning, NFC on-site proof, client portal and automated recurring invoicing.",
+    audienceType: "Commercial cleaning companies focused on maintenance cleaning in DACH",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/unterhaltsreinigung" },
@@ -282,6 +290,10 @@ const CONTENT = {
     h1: "Logiciel pour le nettoyage d’entretien —",
     h1Accent: "planification, preuve, facturation.",
     lead: "Le nettoyage d’entretien vit de tournées récurrentes, de marges serrées et de donneurs d’ordres aux fortes attentes en matière de documentation. Taskey automatise précisément ces trois points : planifier les équipes et les tournées, prouver chaque intervention par NFC, facturer chaque prestation proprement.",
+    answer: "Taskey planifie les tournées de nettoyage récurrentes, prouve chaque intervention par NFC sur site et facture automatiquement, pour que les marges serrées ne soient pas rognées par la paperasse.",
+    serviceName: "Logiciel pour le nettoyage d’entretien",
+    serviceDescription: "Logiciel métier pour le nettoyage d’entretien : planification des équipes et des tournées, preuve NFC sur site, portail client et facturation récurrente automatisée.",
+    audienceType: "Entreprises de propreté axées sur le nettoyage d’entretien dans la zone DACH",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen/unterhaltsreinigung" },
@@ -396,10 +408,18 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as any}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
       related={[...c.related] as { href: string; label: string; description?: string }[]}
+      service={{
+        name: c.serviceName,
+        description: c.serviceDescription,
+        serviceType: "Maintenance cleaning management software",
+        areaServed: ["DE", "AT", "CH"],
+        audienceType: c.audienceType,
+      }}
     />
   );
 }

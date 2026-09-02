@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Springer in der Reinigung —",
     h1Accent: "Reserve für den Ernstfall.",
     lead: "In der Gebäudereinigung fällt regelmäßig jemand aus. Krank, Urlaub, Familientermin. Wer keinen sauberen Springer-Prozess hat, führt jeden Ausfall als Krise. Wer Reserve fest eingeplant hat, führt jeden Ausfall als Standardvorgang.",
+    answer: "Ein Springer-Prozess funktioniert, wenn Sie 8 bis 12 Prozent der Einsatzstunden als Reserve fest planen, Springer-Profile mit Qualifikationen und Verfügbarkeit hinterlegen und Ausfälle mit einem Klick auf eine passende Reserve umleiten.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -214,6 +215,7 @@ const CONTENT = {
     h1: "Floaters in commercial cleaning —",
     h1Accent: "reserve for the real world.",
     lead: "In commercial cleaning, someone drops out regularly. Sick, vacation, family. Anyone without a clean floater process runs every absence as a crisis. Anyone with reserve built in runs every absence as a standard event.",
+    answer: "A floater process works when you plan 8 to 12 percent of your operational hours as reserve, maintain floater profiles with qualification and availability and reroute absences to a matching reserve with one click.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -347,6 +349,7 @@ const CONTENT = {
     h1: "Volants en propreté —",
     h1Accent: "réserve pour le monde réel.",
     lead: "En propreté, quelqu'un manque régulièrement. Maladie, congés, urgence familiale. Qui n'a pas de processus volants propre vit chaque absence comme une crise. Qui a de la réserve intégrée vit chaque absence comme un standard.",
+    answer: "Un processus volants fonctionne quand vous planifiez 8 à 12 pour cent des heures d’exploitation en réserve, tenez des profils volants avec qualification et disponibilité, et redirigez les absences vers une réserve compatible en un clic.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -493,6 +496,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

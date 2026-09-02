@@ -409,6 +409,46 @@ export function ServiceJsonLd({
   return jsonLdScript(id ?? "ld-service", data);
 }
 
+export function HowToJsonLd({
+  name,
+  description,
+  steps,
+  inLanguage,
+  url,
+  id,
+}: {
+  name: string;
+  description?: string;
+  steps: { title: string; body: string }[];
+  inLanguage?: string;
+  url?: string;
+  id?: string;
+}) {
+  if (!steps.length) return null;
+  const data: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.body,
+    })),
+    ...(description ? { description } : {}),
+    ...(inLanguage ? { inLanguage } : {}),
+    ...(url ? { url } : {}),
+    ...(url
+      ? {
+          isPartOf: { "@id": `${SITE_URL}#website` },
+          about: { "@id": `${SITE_URL}#software` },
+          publisher: { "@id": `${SITE_URL}#organization` },
+        }
+      : {}),
+  };
+  return jsonLdScript(id ?? "ld-howto", data);
+}
+
 export function BreadcrumbJsonLd({ crumbs, id }: { crumbs: Crumb[]; id?: string }) {
   if (!crumbs.length) return null;
   const data = {

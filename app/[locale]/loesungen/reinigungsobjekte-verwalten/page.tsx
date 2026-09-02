@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Reinigungsobjekte verwalten —",
     h1Accent: "Stammdaten, Plan, Team.",
     lead: "Sobald ein Reinigungsbetrieb mehr als eine Handvoll Objekte betreut, wird die zentrale Objektverwaltung zum Nerv des Betriebs. Wer Objektstammdaten, Kontakte, Schlüssel, Reinigungsplan und Nachweise in einem System hat, spart tägliche Rückfragen und liefert Auftraggebern das, was sie erwarten.",
+    answer: "Reinigungsobjekte werden zentral verwaltet, wenn Stammdaten, Ansprechpartner, Schlüssel, Reinigungsplan und Nachweise pro Objekt in einem System liegen und jede Änderung vom Team sofort auf dem Handy sichtbar ist.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -213,6 +214,7 @@ const CONTENT = {
     h1: "Manage cleaning sites —",
     h1Accent: "master data, plan, team.",
     lead: "As soon as a cleaning company runs more than a handful of sites, central site management becomes the nerve of operations. Anyone with master data, contacts, keys, cleaning plan and proof in one system saves daily back-and-forth and delivers what clients expect.",
+    answer: "Cleaning sites are managed centrally when master data, contacts, keys, cleaning plan and proof of service live per site in one system and every change is visible on the team’s phone immediately.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -345,6 +347,7 @@ const CONTENT = {
     h1: "Gérer les sites de nettoyage —",
     h1Accent: "données maîtres, plan, équipe.",
     lead: "Dès qu'une société de nettoyage gère plus qu'une poignée de sites, la gestion centrale devient le nerf de l'exploitation. Avec données maîtres, contacts, clés, plan et justificatif dans un système, on économise les allers-retours quotidiens et on livre ce que les donneurs d'ordre attendent.",
+    answer: "Les sites de nettoyage sont gérés centralement quand données maîtres, contacts, clés, plan de nettoyage et preuves vivent par site dans un système et chaque modification est visible sur le téléphone de l’équipe immédiatement.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -490,6 +493,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}

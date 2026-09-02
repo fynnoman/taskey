@@ -81,6 +81,7 @@ const CONTENT = {
     h1: "Schlüsselverwaltung in der Gebäudereinigung —",
     h1Accent: "Protokoll, Nachweis, Haftung.",
     lead: "Schlüssel sind das operativ heikelste Thema in der Gebäudereinigung. Ein verlorener Schließanlagen-Schlüssel kann fünfstellige Schäden bedeuten. Wer Ausgabe und Rückgabe nicht dokumentiert, hat im Streitfall keine Grundlage. Dieser Ratgeber zeigt, wie ein sauberer Prozess aussieht und wie er sich digital umsetzen lässt.",
+    answer: "Schlüsselverwaltung ist haftungssicher, wenn jede Übergabe digital mit Zeitstempel und Unterschrift protokolliert wird, jeder Schlüssel einem konkreten Mitarbeiter zugeordnet ist und ein Verlust sofort in der Objektakte sichtbar wird.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Lösungen", url: "https://www.taskeyapp.com/loesungen" },
@@ -213,6 +214,7 @@ const CONTENT = {
     h1: "Key management in commercial cleaning —",
     h1Accent: "protocol, proof, liability.",
     lead: "Keys are the most sensitive operational topic in commercial cleaning. A single lost master key can cause five-figure damage. Anyone who does not document issue and return has no basis in a dispute. This guide shows what a clean process looks like and how to deliver it digitally.",
+    answer: "Key management is liability-proof when every handover is logged digitally with timestamp and signature, every key is assigned to a specific employee and a loss is visible in the site record immediately.",
     breadcrumbs: [
       { name: "Home", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -345,6 +347,7 @@ const CONTENT = {
     h1: "Gestion des clés en propreté —",
     h1Accent: "protocole, preuve, engagement.",
     lead: "Les clés sont le sujet opérationnel le plus sensible en propreté. Une seule clé maîtresse perdue peut causer un dommage à cinq chiffres. Qui ne documente pas remise et retour n'a aucune base en litige. Ce guide montre à quoi ressemble un processus propre et comment le livrer en digital.",
+    answer: "La gestion des clés est sûre en responsabilité quand chaque remise est journalisée numériquement avec horodatage et signature, chaque clé est attribuée à un agent précis et une perte est visible dans le dossier du site immédiatement.",
     breadcrumbs: [
       { name: "Accueil", url: "https://www.taskeyapp.com" },
       { name: "Solutions", url: "https://www.taskeyapp.com/loesungen" },
@@ -490,6 +493,7 @@ export default async function Page({
       h1={c.h1}
       h1Accent={c.h1Accent}
       lead={c.lead}
+      answerBlock={c.answer}
       breadcrumbs={[...c.breadcrumbs] as { name: string; url: string }[]}
       sections={c.sections as unknown as import("@/components/landing/LandingPageTemplate").LandingSection[]}
       faqs={c.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
