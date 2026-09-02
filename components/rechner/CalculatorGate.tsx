@@ -3,6 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import type { EmailCaptureRow } from "./EmailCapture";
 
+const ENDPOINT = "https://internal.taskeyapp.com/newsletter/subscribe";
+
+type RechnerType =
+  | "reinigungskosten"
+  | "stundenverrechnungssatz"
+  | "personalbedarf"
+  | "lohnkosten"
+  | "marge";
+
+const RECHNER_LABELS: Record<RechnerType, string> = {
+  reinigungskosten: "Reinigungskosten-Rechner",
+  stundenverrechnungssatz: "Stundenverrechnungssatz-Rechner",
+  personalbedarf: "Personalbedarf-Rechner",
+  lohnkosten: "Lohnkosten-Rechner",
+  marge: "Marge-Rechner",
+};
+
 export type GateLabels = {
   computeButton: string;
   computeHint: string;
@@ -20,12 +37,7 @@ export type GateLabels = {
 
 export type CalculatorGateProps = {
   labels: GateLabels;
-  rechnerType:
-    | "reinigungskosten"
-    | "stundenverrechnungssatz"
-    | "personalbedarf"
-    | "lohnkosten"
-    | "marge";
+  rechnerType: RechnerType;
   headline: string;
   rows: EmailCaptureRow[];
   children: React.ReactNode;
@@ -44,9 +56,15 @@ export default function CalculatorGate({
 }: CalculatorGateProps) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const emailInputRef = useRef<HTMLInputElement | null>(null);
+  const openedAt = useRef<number | null>(null);
+
+  useEffect(() => {
+    openedAt.current = Date.now();
+  }, []);
 
   function startCompute() {
     setPhase("computing");
@@ -99,30 +117,78 @@ export default function CalculatorGate({
     setPhase("submitting");
     setErrorMessage(null);
 
+    const rechnerLabel = RECHNER_LABELS[rechnerType] ?? "Taskey Rechner";
+    const now = new Date();
+    const params = new URLSearchParams(window.location.search);
+    const nav = navigator as Navigator & {
+      userAgentData?: { platform?: string };
+    };
+
+    const payload = {
+      email: trimmed,
+      website: honeypot,
+      source: `rechner-${rechnerType}`,
+      source_label: rechnerLabel,
+      page_url: window.location.href,
+      page_title: document.title,
+      referrer: document.referrer || null,
+      utm: {
+        source: params.get("utm_source"),
+        medium: params.get("utm_medium"),
+        campaign: params.get("utm_campaign"),
+        term: params.get("utm_term"),
+        content: params.get("utm_content"),
+      },
+      click_id:
+        params.get("gclid") ?? params.get("fbclid") ?? params.get("msclkid"),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      timezone_offset: -now.getTimezoneOffset(),
+      local_time: now.toString(),
+      language: navigator.language,
+      languages: navigator.languages
+        ? Array.prototype.slice.call(navigator.languages)
+        : null,
+      platform: nav.userAgentData?.platform ?? navigator.platform,
+      screen: {
+        width: window.screen.width,
+        height: window.screen.height,
+        dpr: window.devicePixelRatio || 1,
+      },
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+      touch_points: navigator.maxTouchPoints || 0,
+      time_on_page_ms: openedAt.current ? Date.now() - openedAt.current : 0,
+      consent_text: labels.privacyNote,
+      rechner_type: rechnerType,
+      rechner_label: rechnerLabel,
+      rechner_headline: headline,
+      rechner_locale: labels.locale,
+      rechner_rows: rows,
+    };
+
     try {
-      const res = await fetch("/api/rechner-email", {
+      const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: trimmed,
-          rechnerType,
-          locale: labels.locale,
-          headline,
-          rows,
-        }),
+        body: JSON.stringify(payload),
       });
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
 
       if (!res.ok) {
-        const data = (await res.json().catch(() => ({}))) as {
-          error?: string;
-        };
-        throw new Error(data.error ?? labels.errorGeneric);
+        setPhase("error");
+        setErrorMessage(data.error ?? labels.errorGeneric);
+        return;
       }
 
       setPhase("unlocked");
-    } catch (err) {
+    } catch {
       setPhase("error");
-      setErrorMessage(err instanceof Error ? err.message : labels.errorGeneric);
+      setErrorMessage(labels.errorGeneric);
     }
   }
 
@@ -237,11 +303,12 @@ export default function CalculatorGate({
 
             <p className="mb-5 text-sm text-slate-600">{labels.modalSubheading}</p>
 
-            <form onSubmit={submitEmail}>
+            <form onSubmit={submitEmail} noValidate>
               <input
                 ref={emailInputRef}
                 type="email"
                 required
+                autoComplete="email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -255,6 +322,29 @@ export default function CalculatorGate({
                 className="mb-3 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 disabled:opacity-60"
                 aria-label={labels.emailPlaceholder}
               />
+
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  width: "1px",
+                  height: "1px",
+                  overflow: "hidden",
+                }}
+              >
+                <label>
+                  Website
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </label>
+              </div>
 
               <button
                 type="submit"
