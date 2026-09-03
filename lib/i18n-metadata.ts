@@ -28,6 +28,18 @@ export function alternates(path: string) {
   };
 }
 
+export function alternatesDeOnly(path: string) {
+  const clean = path === "/" ? "" : path;
+  const de = clean ? `${BASE}${clean}` : BASE;
+  return {
+    canonical: de,
+    languages: {
+      "de-DE": de,
+      "x-default": de,
+    },
+  };
+}
+
 type Copy = {
   title: string;
   description: string;
@@ -45,21 +57,23 @@ export function buildMetadata({
   path,
   type = "website",
   image = "/opengraph-image",
+  deOnly = false,
 }: {
   copyByLocale: PageCopy;
   locale: Locale;
   path: string;
   type?: "website" | "article";
   image?: string;
+  deOnly?: boolean;
 }): Metadata {
   const copy = copyByLocale[locale];
-  const url = canonical(path, locale);
+  const url = deOnly ? canonical(path, "de") : canonical(path, locale);
   const ogLocale = locale === "de" ? "de_DE" : locale === "en" ? "en_US" : "fr_FR";
 
   return {
     title: copy.title,
     description: copy.description,
-    alternates: alternates(path),
+    alternates: deOnly ? alternatesDeOnly(path) : alternates(path),
     openGraph: {
       title: copy.ogTitle ?? copy.title,
       description: copy.ogDescription ?? copy.description,

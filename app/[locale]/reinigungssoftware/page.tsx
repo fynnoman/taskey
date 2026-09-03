@@ -3,10 +3,20 @@ import dynamic from "next/dynamic";
 import LandingPageTemplate from "@/components/landing/LandingPageTemplate";
 import TestimonialReviews from "@/components/schema/TestimonialReviews";
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+import {
+  TASKEY_ORG,
+  TASKEY_WEBSITE,
+  TASKEY_AUTHOR,
+  breadcrumbList,
+  jsonLdGraph,
+} from "@/lib/schema-blocks";
 
 const LiveMargen = dynamic(() => import("@/components/home/LiveMargen"));
 
 const path = "/reinigungssoftware";
+const CANONICAL_DE = `https://www.taskeyapp.com${path}`;
+const PUBLISHED = "2026-05-01";
+const MODIFIED = "2026-09-03";
 
 const META_COPY: PageCopy = {
   de: {
@@ -554,14 +564,17 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const c = CONTENT[loc];
   const sc = SCHEMA_COPY[loc];
 
+  const pageUrl =
+    loc === "de" ? CANONICAL_DE : `https://www.taskeyapp.com/${loc}${path}`;
+  const inLanguage = loc === "de" ? "de-DE" : loc === "en" ? "en-US" : "fr-FR";
+
   const softwareApplicationSchema = {
-    "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: sc.schemaName,
     applicationCategory: "BusinessApplication",
     applicationSubCategory: sc.schemaSubCategory,
     operatingSystem: "Web, iOS, Android",
-    url: `https://www.taskeyapp.com${path}`,
+    url: pageUrl,
     description: sc.schemaDescription,
     offers: {
       "@type": "Offer",
@@ -577,20 +590,63 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       url: "https://signup.taskeyapp.com",
       description: sc.schemaOfferDescription,
     },
-    author: {
-      "@type": "Organization",
-      name: "Schulz & Stosse GbR",
-      url: "https://www.taskeyapp.com",
-    },
+    publisher: { "@id": TASKEY_ORG["@id"] },
     featureList: sc.schemaFeatures,
     inLanguage: sc.inLanguage,
   };
+
+  const articleSchema = {
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: c.title,
+    description: META_COPY[loc].description,
+    url: pageUrl,
+    mainEntityOfPage: pageUrl,
+    inLanguage,
+    datePublished: PUBLISHED,
+    dateModified: MODIFIED,
+    isPartOf: { "@id": "https://www.taskeyapp.com/#website" },
+    about: { "@id": TASKEY_ORG["@id"] },
+    author: { "@id": TASKEY_AUTHOR["@id"] },
+    publisher: { "@id": TASKEY_ORG["@id"] },
+  };
+
+  const faqSchema = {
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: c.faq1Q, acceptedAnswer: { "@type": "Answer", text: c.faq1A } },
+      { "@type": "Question", name: c.faq2Q, acceptedAnswer: { "@type": "Answer", text: c.faq2A } },
+      { "@type": "Question", name: c.faq3Q, acceptedAnswer: { "@type": "Answer", text: c.faq3A } },
+      { "@type": "Question", name: c.faq4Q, acceptedAnswer: { "@type": "Answer", text: c.faq4A } },
+      { "@type": "Question", name: c.faq5Q, acceptedAnswer: { "@type": "Answer", text: c.faq5A } },
+      { "@type": "Question", name: c.faq6Q, acceptedAnswer: { "@type": "Answer", text: c.faq6A } },
+      { "@type": "Question", name: c.faq7Q, acceptedAnswer: { "@type": "Answer", text: c.faq7A } },
+      { "@type": "Question", name: c.faq8Q, acceptedAnswer: { "@type": "Answer", text: c.faq8A } },
+      { "@type": "Question", name: c.faq9Q, acceptedAnswer: { "@type": "Answer", text: c.faq9A } },
+      { "@type": "Question", name: c.faq10Q, acceptedAnswer: { "@type": "Answer", text: c.faq10A } },
+    ],
+  };
+
+  const breadcrumbSchema = breadcrumbList([
+    { name: c.breadcrumbHome, url: "https://www.taskeyapp.com" },
+    { name: c.breadcrumbCurrent, url: pageUrl },
+  ]);
+
+  const graph = jsonLdGraph(
+    TASKEY_ORG,
+    TASKEY_WEBSITE,
+    TASKEY_AUTHOR,
+    articleSchema,
+    softwareApplicationSchema,
+    faqSchema,
+    breadcrumbSchema,
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+        dangerouslySetInnerHTML={{ __html: graph }}
       />
       <TestimonialReviews />
       <LiveMargen />
@@ -724,6 +780,36 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             href: "/leistungsnachweis-gebaeudereinigung",
             label: c.rel6Label,
             description: c.rel6Desc,
+          },
+          {
+            href: "/reinigersoftware",
+            label:
+              loc === "de"
+                ? "Reinigersoftware im Vergleich"
+                : loc === "en"
+                ? "Cleaning software compared"
+                : "Logiciels de nettoyage comparés",
+            description:
+              loc === "de"
+                ? "Sechs Kriterien und sechs Funktionen, an denen sich Reinigersoftware im Alltag beweist."
+                : loc === "en"
+                ? "Six criteria and six functions that separate serious cleaning software from marketing."
+                : "Six critères et six fonctions qui distinguent un vrai logiciel de nettoyage.",
+          },
+          {
+            href: "/reinigungsapp",
+            label:
+              loc === "de"
+                ? "Reinigungsapp für den Betrieb"
+                : loc === "en"
+                ? "Cleaning app for the whole company"
+                : "Application de nettoyage pour l'entreprise",
+            description:
+              loc === "de"
+                ? "NFC-Zeiterfassung, Einsatzplanung und Live-Margen direkt auf dem Handy."
+                : loc === "en"
+                ? "NFC time tracking, scheduling and live margins right on the phone."
+                : "Pointage NFC, planification et marges en direct sur le téléphone.",
           },
         ]}
       />

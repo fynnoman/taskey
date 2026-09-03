@@ -4,13 +4,34 @@ import dynamic from "next/dynamic";
 import ReinigungsappHero from "@/components/reinigungsapp/Hero";
 import ReinigungsappFeatures from "@/components/reinigungsapp/Features";
 import ReinigungsappCTA from "@/components/reinigungsapp/CTA";
+import ReinigungsappFAQ from "@/components/reinigungsapp/FAQ";
+import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+import {
+  TASKEY_ORG,
+  TASKEY_WEBSITE,
+  TASKEY_AUTHOR,
+  breadcrumbList,
+  jsonLdGraph,
+} from "@/lib/schema-blocks";
 
-const AufEinenBlick = dynamic(() => import("@/components/home/AufEinenBlick"));
-const IntroVideo = dynamic(() => import("@/components/home/IntroVideo"));
-const IOSAppSection = dynamic(() => import("@/components/home/iOSAppSection"));
-const FAQ = dynamic(() => import("@/components/home/FAQ"));
+const path = "/reinigungsapp";
+const CANONICAL = `https://www.taskeyapp.com${path}`;
 
-const CANONICAL = "https://www.taskeyapp.com/reinigungsapp";
+const META_COPY: PageCopy = {
+  de: {
+    title: "Reinigungsapp | NFC Zeiterfassung, Einsatzplanung & Live-Margen | Taskey",
+    description:
+      "Die Reinigungsapp für Ihren Betrieb: NFC-Zeiterfassung, Einsatzplanung, Angebote, Rechnungen, DATEV-Export und Live-Margen. Alles in einer App. DSGVO-konform, Made in Germany. Kostenlos starten.",
+    ogTitle: "Reinigungsapp – Die App für professionelle Reinigungsbetriebe",
+    ogDescription:
+      "Zeiterfassung per NFC, Einsatzplanung, Rechnungen und Live-Margen in einer Reinigungsapp. DSGVO-konform, Made in Germany.",
+  },
+  en: { title: "", description: "" },
+  fr: { title: "", description: "" },
+};
+
+const PUBLISHED = "2026-06-01";
+const MODIFIED = "2026-09-03";
 
 export async function generateMetadata({
   params,
@@ -21,26 +42,16 @@ export async function generateMetadata({
   if (locale !== "de") {
     return { robots: { index: false, follow: false } };
   }
-
-  return {
-    title: "Reinigungsapp | NFC Zeiterfassung, Einsatzplanung & Live-Margen | Taskey",
-    description:
-      "Die Reinigungsapp für Ihren Betrieb: NFC-Zeiterfassung, Einsatzplanung, Angebote, Rechnungen, DATEV-Export und Live-Margen. Alles in einer App. DSGVO-konform, Made in Germany. Kostenlos starten.",
-    alternates: { canonical: CANONICAL },
-    openGraph: {
-      title: "Reinigungsapp – Die App für professionelle Reinigungsbetriebe",
-      description:
-        "Zeiterfassung per NFC, Einsatzplanung, Rechnungen und Live-Margen in einer Reinigungsapp. DSGVO-konform, Made in Germany.",
-      url: CANONICAL,
-      type: "website",
-      locale: "de_DE",
-      siteName: "Taskey",
-    },
-  };
+  return buildMetadata({
+    copyByLocale: META_COPY,
+    locale: pickLocale(locale),
+    path,
+    type: "website",
+    deOnly: true,
+  });
 }
 
 const FAQ_SCHEMA = {
-  "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
     {
@@ -86,6 +97,56 @@ const FAQ_SCHEMA = {
   ],
 };
 
+const SOFTWARE_APP_SCHEMA = {
+  "@type": "SoftwareApplication",
+  name: "Taskey · Reinigungsapp",
+  operatingSystem: "iOS, Android, Web",
+  applicationCategory: "BusinessApplication",
+  url: CANONICAL,
+  publisher: { "@id": `${TASKEY_ORG["@id"]}` },
+  offers: {
+    "@type": "Offer",
+    price: "69",
+    priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "69",
+      priceCurrency: "EUR",
+      unitText: "MONTH",
+    },
+  },
+  featureList: [
+    "NFC-Zeiterfassung",
+    "Einsatzplanung",
+    "Leistungsnachweis",
+    "Angebote und Rechnungen",
+    "DATEV-Export",
+    "Live-Margen",
+    "Offline-Modus",
+    "Mehrsprachige Mitarbeiter-App",
+  ],
+};
+
+const ARTICLE_SCHEMA = {
+  "@type": "WebPage",
+  "@id": `${CANONICAL}#webpage`,
+  url: CANONICAL,
+  name: META_COPY.de.title,
+  description: META_COPY.de.description,
+  inLanguage: "de-DE",
+  datePublished: PUBLISHED,
+  dateModified: MODIFIED,
+  isPartOf: { "@id": "https://www.taskeyapp.com/#website" },
+  about: { "@id": TASKEY_ORG["@id"] },
+  author: { "@id": TASKEY_AUTHOR["@id"] },
+  publisher: { "@id": TASKEY_ORG["@id"] },
+};
+
+const BREADCRUMB = breadcrumbList([
+  { name: "Home", url: "https://www.taskeyapp.com" },
+  { name: "Reinigungsapp", url: CANONICAL },
+]);
+
 export default async function ReinigungsappPage({
   params,
 }: {
@@ -96,19 +157,26 @@ export default async function ReinigungsappPage({
     notFound();
   }
 
+  const graph = jsonLdGraph(
+    TASKEY_ORG,
+    TASKEY_WEBSITE,
+    TASKEY_AUTHOR,
+    ARTICLE_SCHEMA,
+    SOFTWARE_APP_SCHEMA,
+    FAQ_SCHEMA,
+    BREADCRUMB,
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: graph }}
       />
       <main>
         <ReinigungsappHero />
-        <AufEinenBlick />
-        <IntroVideo />
         <ReinigungsappFeatures />
-        <IOSAppSection />
-        <FAQ />
+        <ReinigungsappFAQ />
         <ReinigungsappCTA />
       </main>
     </>

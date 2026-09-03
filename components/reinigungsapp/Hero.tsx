@@ -10,6 +10,8 @@ const ASSETS = {
 
 const TASKEY_HOME = "https://www.taskeyapp.com";
 const TASKEY_FEATURES = "https://www.taskeyapp.com/features";
+const APP_STORE_URL = "https://apps.apple.com/de/app/taskey/id6757116248";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.taskey.taskey_android";
 
 export default function ReinigungsappHero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -120,6 +122,47 @@ export default function ReinigungsappHero() {
         <p className="text-center text-sm text-white/60">
           Keine Kreditkarte. Kein Risiko. Sofort loslegen.
         </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <span className="text-[10px] font-black tracking-[0.24em] uppercase text-white/50">
+            Auch als App
+          </span>
+          <div className="flex items-center gap-3">
+            <Link
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Taskey im Apple App Store"
+              className="inline-flex items-center gap-2 rounded-xl bg-black/50 border border-white/20 backdrop-blur-md px-3.5 py-2 hover:bg-black/70 transition-colors"
+            >
+              <svg width="18" height="20" viewBox="0 0 24 27" fill="white" aria-hidden>
+                <path d="M18.7 14.3c0-3.6 2.9-5.3 3-5.4-1.6-2.3-4.2-2.7-5.1-2.7-2.2-.2-4.2 1.3-5.3 1.3-1.1 0-2.8-1.2-4.5-1.2-2.3 0-4.4 1.3-5.6 3.4-2.4 4.1-.6 10.1 1.7 13.5 1.1 1.6 2.5 3.4 4.2 3.3 1.7-.1 2.4-1.1 4.4-1.1 2.1 0 2.7 1.1 4.5 1 1.9 0 3-1.6 4.1-3.3 1.3-1.9 1.8-3.7 1.9-3.8-.1 0-3.5-1.3-3.6-5.3zM15.3 4c.9-1.1 1.6-2.7 1.4-4.3-1.4.1-3 .9-4 2-.9 1-1.6 2.6-1.4 4.1 1.6.1 3.2-.8 4-1.8z" />
+              </svg>
+              <span className="text-left leading-tight">
+                <span className="block text-[9px] uppercase tracking-widest text-white/60">Download im</span>
+                <span className="block text-[13px] font-semibold text-white">App Store</span>
+              </span>
+            </Link>
+            <Link
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Taskey bei Google Play"
+              className="inline-flex items-center gap-2 rounded-xl bg-black/50 border border-white/20 backdrop-blur-md px-3.5 py-2 hover:bg-black/70 transition-colors"
+            >
+              <svg width="18" height="20" viewBox="0 0 512 512" aria-hidden>
+                <path fill="#00D2FF" d="M56 43c-6 6-9 14-9 25v376c0 11 3 19 9 25l260-260L56 43z" />
+                <path fill="#FBBC04" d="M403 224 316 137 76 401l327-177z" />
+                <path fill="#EA4335" d="M76 401l240-137-260-260 260 260-240 137z" opacity="0.35" />
+                <path fill="#34A853" d="M76 43l327 181-87 87L76 43z" />
+              </svg>
+              <span className="text-left leading-tight">
+                <span className="block text-[9px] uppercase tracking-widest text-white/60">Jetzt bei</span>
+                <span className="block text-[13px] font-semibold text-white">Google Play</span>
+              </span>
+            </Link>
+          </div>
+        </div>
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 md:pb-28">

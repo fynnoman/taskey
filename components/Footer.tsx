@@ -220,6 +220,21 @@ export default function Footer() {
                   {t("footer.link.softwareKleineReinigung")}
                 </Link>
               </li>
+              <li>
+                <Link href="/reinigungssoftware" className="text-slate-300 hover:text-white transition break-words">
+                  Reinigungssoftware Ratgeber
+                </Link>
+              </li>
+              <li>
+                <Link href="/reinigersoftware" className="text-slate-300 hover:text-white transition break-words">
+                  Reinigersoftware im Vergleich
+                </Link>
+              </li>
+              <li>
+                <Link href="/reinigungsapp" className="text-slate-300 hover:text-white transition break-words">
+                  Taskey Reinigungsapp
+                </Link>
+              </li>
             </ul>
           </div>
 

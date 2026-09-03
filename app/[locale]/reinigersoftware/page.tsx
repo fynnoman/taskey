@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata, pickLocale, type PageCopy } from "@/lib/i18n-metadata";
+import {
+  TASKEY_ORG,
+  TASKEY_WEBSITE,
+  TASKEY_AUTHOR,
+  breadcrumbList,
+  jsonLdGraph,
+} from "@/lib/schema-blocks";
 import ReinigersoftwareShell from "./ReinigersoftwareShell";
 
 const path = "/reinigersoftware";
+const CANONICAL = `https://www.taskeyapp.com${path}`;
+const PUBLISHED = "2026-05-15";
+const MODIFIED = "2026-09-03";
 
 const META_COPY: PageCopy = {
   de: {
@@ -35,11 +45,11 @@ export async function generateMetadata({
     path,
     type: "article",
     image: "/opengraph-image",
+    deOnly: true,
   });
 }
 
 const FAQ_SCHEMA = {
-  "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
     {
@@ -99,6 +109,56 @@ const FAQ_SCHEMA = {
   ],
 };
 
+const SOFTWARE_APP_SCHEMA = {
+  "@type": "SoftwareApplication",
+  name: "Taskey · Reinigersoftware",
+  operatingSystem: "iOS, Android, Web",
+  applicationCategory: "BusinessApplication",
+  url: CANONICAL,
+  publisher: { "@id": TASKEY_ORG["@id"] },
+  offers: {
+    "@type": "Offer",
+    price: "119",
+    priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "119",
+      priceCurrency: "EUR",
+      unitText: "MONTH",
+    },
+  },
+  featureList: [
+    "Einsatzplanung mit Kolonnen und Springern",
+    "NFC- und GPS-Zeiterfassung",
+    "Digitaler Leistungsnachweis pro Raum",
+    "Kalkulation nach Fläche und Leistungsverzeichnis",
+    "Angebots- und Rechnungserstellung",
+    "Auftraggeberportal mit Live-Status",
+    "DATEV-Export",
+  ],
+};
+
+const ARTICLE_SCHEMA = {
+  "@type": "Article",
+  "@id": `${CANONICAL}#article`,
+  headline: META_COPY.de.title,
+  description: META_COPY.de.description,
+  url: CANONICAL,
+  mainEntityOfPage: CANONICAL,
+  inLanguage: "de-DE",
+  datePublished: PUBLISHED,
+  dateModified: MODIFIED,
+  isPartOf: { "@id": "https://www.taskeyapp.com/#website" },
+  about: { "@id": TASKEY_ORG["@id"] },
+  author: { "@id": TASKEY_AUTHOR["@id"] },
+  publisher: { "@id": TASKEY_ORG["@id"] },
+};
+
+const BREADCRUMB = breadcrumbList([
+  { name: "Home", url: "https://www.taskeyapp.com" },
+  { name: "Reinigersoftware", url: CANONICAL },
+]);
+
 export default async function ReinigersoftwarePage({
   params,
 }: {
@@ -107,11 +167,21 @@ export default async function ReinigersoftwarePage({
   const { locale } = await params;
   if (locale !== "de") notFound();
 
+  const graph = jsonLdGraph(
+    TASKEY_ORG,
+    TASKEY_WEBSITE,
+    TASKEY_AUTHOR,
+    ARTICLE_SCHEMA,
+    SOFTWARE_APP_SCHEMA,
+    FAQ_SCHEMA,
+    BREADCRUMB,
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: graph }}
       />
       <ReinigersoftwareShell />
     </>

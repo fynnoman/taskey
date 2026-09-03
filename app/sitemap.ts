@@ -70,6 +70,7 @@ const STATIC_ENTRIES: Entry[] = [
   { path: "/leistungsnachweis-gebaeudereinigung", changeFrequency: "monthly", priority: 0.9 },
   { path: "/software-kleine-reinigungsfirma", changeFrequency: "monthly", priority: 0.9 },
   { path: "/oepnv", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/reinigungssoftware", changeFrequency: "weekly", priority: 0.9 },
 
   // Branchen (Hub + Pillars)
   { path: "/loesungen", changeFrequency: "monthly", priority: 0.8 },
@@ -118,7 +119,6 @@ const VERGLEICH_ENTRIES: Entry[] = [
   { path: "/vergleich/taskey-vs-blink", changeFrequency: "monthly", priority: 0.8 },
   { path: "/vergleich/taskey-vs-cleanmanager", changeFrequency: "monthly", priority: 0.8 },
   { path: "/reinigungsapp", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/reinigungssoftware", changeFrequency: "weekly", priority: 0.9 },
   { path: "/reinigersoftware", changeFrequency: "weekly", priority: 0.9 },
 ];
 
