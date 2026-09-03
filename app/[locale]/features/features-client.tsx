@@ -626,43 +626,20 @@ export default function FeaturesClient() {
               <p className="text-base md:text-lg text-slate-600">{cat.intro}</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            <div className="mx-auto max-w-5xl grid gap-x-10 gap-y-6 md:grid-cols-3">
               {cat.features.map((f, i) => (
-                <div
-                  key={f.title}
-                  className={`relative rounded-3xl p-[1.5px] ${
-                    i === 0
-                      ? "bg-gradient-to-br from-cyan-400/40 via-blue-500/30 to-purple-500/20"
-                      : "bg-blue-100"
-                  }`}
-                >
-                  <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-blue-100 p-7 md:p-8 h-full flex flex-col">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-300 flex items-center justify-center mb-5">
-                      <span className="text-blue-700 font-black text-sm">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-3 leading-tight">
+                <div key={f.title} className="flex flex-col gap-1.5">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-mono text-[11px] font-black text-blue-600 tabular-nums">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-[15px] font-black text-slate-900 leading-tight">
                       {f.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-5">{f.desc}</p>
-                    <ul className="space-y-2.5 mt-auto">
-                      {f.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5 text-sm text-slate-700">
-                          <svg
-                            className="w-4 h-4 text-blue-700 flex-shrink-0 mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2.5}
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
+                  <p className="text-[13.5px] text-slate-600 leading-relaxed">
+                    {f.desc}
+                  </p>
                 </div>
               ))}
             </div>
