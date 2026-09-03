@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
+import CalculationDemo from "@/components/features/CalculationDemo";
+import CalendarDemo from "@/components/features/CalendarDemo";
 
 /* FEATURES — Mainpage-Stil. Mehrsprachig (DE / EN / FR). */
 
@@ -696,6 +698,18 @@ export default function FeaturesClient() {
                     ? "Directement dans le navigateur — sans connexion, sans inscription."
                     : "Direkt im Browser — kein Login, keine Anmeldung."}
                 </p>
+              </div>
+            )}
+
+            {cat.id === "kalender" && (
+              <div className="mt-14 md:mt-16">
+                <CalendarDemo />
+              </div>
+            )}
+
+            {cat.id === "kalkulationen" && (
+              <div className="mt-14 md:mt-16">
+                <CalculationDemo />
               </div>
             )}
           </div>
