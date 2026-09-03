@@ -41,7 +41,7 @@ robots.txt:   /robots.txt
 - Bundesland: Saarland
 - Gründungsjahr: 2024
 - Gründer: Fynn-Luca Schulz (CEO), Julian Stosse (CTO)
-- Kontakt E-Mail: fynn@taskeyapp.com
+- Kontakt E-Mail: info@taskeyapp.com
 - Kontakt Telefon: +49 151 68488999
 - LinkedIn: https://www.linkedin.com/company/taskey
 - X (Twitter): https://twitter.com/taskey

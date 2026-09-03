@@ -626,7 +626,7 @@ function PricingPage() {
                     </div>
 
                     <a
-                      href="mailto:fynn@taskeyapp.com?subject=Enterprise%20Anfrage"
+                      href="mailto:info@taskeyapp.com?subject=Enterprise%20Anfrage"
                       aria-label={c.ent.apply}
                       className="relative inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-bold rounded-full overflow-hidden text-white bg-gradient-to-b from-slate-700 via-slate-800 to-slate-950 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.55),inset_0_1px_0_rgba(255,255,255,0.18)] hover:from-slate-600 hover:via-slate-700 hover:to-slate-900 transition-all"
                     >

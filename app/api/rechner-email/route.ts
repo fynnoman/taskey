@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail({
       from: "finolino9@gmail.com",
-      to: "fynn@taskeyapp.com",
+      to: "info@taskeyapp.com",
       replyTo: email,
       subject,
       text: textBody,

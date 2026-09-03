@@ -113,10 +113,10 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen",
-    sec1Email: "E-Mail: fynn@taskeyapp.com",
+    sec1Email: "E-Mail: info@taskeyapp.com",
     sec1Phone: "Telefon: 015168488999",
     sec1Contact:
-      "Kontakt für Datenschutzanfragen und Kontolöschung: fynn@taskeyapp.com",
+      "Kontakt für Datenschutzanfragen und Kontolöschung: info@taskeyapp.com",
 
     sec2Title: "2. Geltungsbereich",
     sec2Body:
@@ -274,7 +274,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec8Body:
       "Nutzerinnen und Nutzer können die Löschung ihres Kontos und der zugeordneten personenbezogenen Daten jederzeit anfordern.",
     sec8Steps: [
-      "E-Mail mit dem Betreff „Kontolöschung Taskey“ an fynn@taskeyapp.com senden.",
+      "E-Mail mit dem Betreff „Kontolöschung Taskey“ an info@taskeyapp.com senden.",
       "Die Anfrage muss die im Konto hinterlegte E-Mail-Adresse enthalten, damit die Zuordnung erfolgen kann.",
       "Nach Bestätigung erfolgt die Löschung innerhalb von 30 Tagen. Über den Abschluss der Löschung wird per E-Mail bestätigt.",
       "Daten, für die gesetzliche Aufbewahrungspflichten bestehen, werden zunächst gesperrt und nach Ablauf der Frist gelöscht.",
@@ -285,7 +285,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec9Title: "9. Rechte der betroffenen Personen",
     sec9Intro:
-      "Nach der DSGVO stehen betroffenen Personen die folgenden Rechte zu. Anfragen können jederzeit an fynn@taskeyapp.com gerichtet werden.",
+      "Nach der DSGVO stehen betroffenen Personen die folgenden Rechte zu. Anfragen können jederzeit an info@taskeyapp.com gerichtet werden.",
     sec9List: [
       "Auskunft über die verarbeiteten Daten (Art. 15 DSGVO)",
       "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
@@ -316,7 +316,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       "Datenverwendung: App-Funktionalität, Kontoverwaltung, digitale Zeiterfassung, Nachrichtenversand. Keine Werbung, kein Verkauf, kein Analytics-Tracking.",
       "Datenweitergabe an Dritte: Google (Firebase Cloud Messaging, Play Services Location) und OpenStreetMap Foundation (Kartenkacheln). Kein Verkauf, keine Werbung.",
       "Datensicherheit: Übertragung ausschließlich über TLS, Passwörter als Hash gespeichert, Anmelde-Token auf dem Gerät verschlüsselt abgelegt.",
-      "Datenlöschung: Konto- und Datenlöschung auf Anfrage per E-Mail an fynn@taskeyapp.com innerhalb von 30 Tagen.",
+      "Datenlöschung: Konto- und Datenlöschung auf Anfrage per E-Mail an info@taskeyapp.com innerhalb von 30 Tagen.",
     ],
 
     sec14Title: "14. Änderungen dieser App-Datenschutzerklärung",
@@ -344,10 +344,10 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen, Germany",
-    sec1Email: "Email: fynn@taskeyapp.com",
+    sec1Email: "Email: info@taskeyapp.com",
     sec1Phone: "Phone: +49 151 68488999",
     sec1Contact:
-      "Contact for privacy requests and account deletion: fynn@taskeyapp.com",
+      "Contact for privacy requests and account deletion: info@taskeyapp.com",
 
     sec2Title: "2. Scope",
     sec2Body:
@@ -481,7 +481,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec8Body:
       "Users can request the deletion of their account and the associated personal data at any time.",
     sec8Steps: [
-      "Send an email with the subject line \"Taskey account deletion\" to fynn@taskeyapp.com.",
+      "Send an email with the subject line \"Taskey account deletion\" to info@taskeyapp.com.",
       "The request must contain the email address associated with the account so that the request can be matched.",
       "After confirmation, deletion is completed within 30 days. Completion is confirmed by email.",
       "Data subject to statutory retention obligations is first blocked and then deleted once the retention period has expired.",
@@ -492,7 +492,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec9Title: "9. Rights of data subjects",
     sec9Intro:
-      "Under the GDPR, data subjects have the following rights. Requests can be sent to fynn@taskeyapp.com at any time.",
+      "Under the GDPR, data subjects have the following rights. Requests can be sent to info@taskeyapp.com at any time.",
     sec9List: [
       "Access to the processed data (Art. 15 GDPR)",
       "Rectification of inaccurate data (Art. 16 GDPR)",
@@ -523,7 +523,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       "Data use: app functionality, account management, digital time tracking, messaging. No advertising, no sale, no analytics tracking.",
       "Data sharing with third parties: Google (Firebase Cloud Messaging, Play Services Location) and OpenStreetMap Foundation (map tiles). No sale, no advertising.",
       "Data security: transmission exclusively via TLS, passwords stored as a hash, sign-in token stored encrypted on the device.",
-      "Data deletion: account and data deletion upon request by email to fynn@taskeyapp.com within 30 days.",
+      "Data deletion: account and data deletion upon request by email to info@taskeyapp.com within 30 days.",
     ],
 
     sec14Title: "14. Changes to this app privacy policy",
@@ -552,10 +552,10 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen, Allemagne",
-    sec1Email: "E-mail : fynn@taskeyapp.com",
+    sec1Email: "E-mail : info@taskeyapp.com",
     sec1Phone: "Téléphone : +49 151 68488999",
     sec1Contact:
-      "Contact pour les demandes de confidentialité et la suppression de compte : fynn@taskeyapp.com",
+      "Contact pour les demandes de confidentialité et la suppression de compte : info@taskeyapp.com",
 
     sec2Title: "2. Champ d'application",
     sec2Body:
@@ -689,7 +689,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
     sec8Body:
       "Les utilisateurs peuvent demander à tout moment la suppression de leur compte et des données à caractère personnel associées.",
     sec8Steps: [
-      "Envoyer un e-mail avec pour objet « Suppression du compte Taskey » à fynn@taskeyapp.com.",
+      "Envoyer un e-mail avec pour objet « Suppression du compte Taskey » à info@taskeyapp.com.",
       "La demande doit contenir l'adresse e-mail enregistrée dans le compte pour permettre le rapprochement.",
       "Après confirmation, la suppression est réalisée dans un délai de 30 jours. La finalisation est confirmée par e-mail.",
       "Les données soumises à des obligations légales de conservation sont d'abord bloquées, puis supprimées à l'expiration du délai.",
@@ -700,7 +700,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
 
     sec9Title: "9. Droits des personnes concernées",
     sec9Intro:
-      "Le RGPD confère aux personnes concernées les droits suivants. Les demandes peuvent être adressées à tout moment à fynn@taskeyapp.com.",
+      "Le RGPD confère aux personnes concernées les droits suivants. Les demandes peuvent être adressées à tout moment à info@taskeyapp.com.",
     sec9List: [
       "Droit d'accès aux données traitées (art. 15 du RGPD)",
       "Droit de rectification des données inexactes (art. 16 du RGPD)",
@@ -731,7 +731,7 @@ const CONTENT: Record<"de" | "en" | "fr", SectionContent> = {
       "Utilisation des données : fonctionnalités de l'application, gestion du compte, pointage numérique, messagerie. Pas de publicité, pas de vente, pas de suivi analytique.",
       "Partage avec des tiers : Google (Firebase Cloud Messaging, Play Services Location) et OpenStreetMap Foundation (tuiles cartographiques). Pas de vente, pas de publicité.",
       "Sécurité des données : transmission exclusivement en TLS, mots de passe stockés sous forme de hachage, jeton d'authentification chiffré sur l'appareil.",
-      "Suppression des données : suppression du compte et des données sur demande par e-mail à fynn@taskeyapp.com dans un délai de 30 jours.",
+      "Suppression des données : suppression du compte et des données sur demande par e-mail à info@taskeyapp.com dans un délai de 30 jours.",
     ],
 
     sec14Title: "14. Modifications de la présente politique",

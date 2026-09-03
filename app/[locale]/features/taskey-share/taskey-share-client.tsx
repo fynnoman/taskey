@@ -289,7 +289,7 @@ export default function TaskeyShareClient({ content }: { content: TaskeyShareCon
               {content.request.contactHint}
             </p>
             <Link
-              href="mailto:fynn@taskeyapp.com?subject=Taskey%20Share%20anfragen"
+              href="mailto:info@taskeyapp.com?subject=Taskey%20Share%20anfragen"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-full bg-slate-900 text-white hover:bg-slate-800 transition-colors whitespace-nowrap"
             >
               {content.request.contactCta}

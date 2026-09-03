@@ -22,7 +22,7 @@ const organizationSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+49-151-68488999",
-    "email": "fynn@taskeyapp.com",
+    "email": "info@taskeyapp.com",
     "contactType": "customer service",
     "availableLanguage": ["German"],
   },
@@ -45,7 +45,7 @@ const founderFynn = {
   "worksFor": { "@type": "Organization", "name": "Taskey", "url": "https://www.taskeyapp.com" },
   "knowsAbout": ["Gebäudereinigungssoftware", "NFC-Zeiterfassung", "Digitalisierung Reinigungsbranche", "Einsatzplanung"],
   "url": "https://www.taskeyapp.com/about",
-  "email": "fynn@taskeyapp.com",
+  "email": "info@taskeyapp.com",
   "nationality": "DE",
 };
 

@@ -267,7 +267,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.contact")}</h4>
             <ul className="space-y-4 text-sm text-slate-300">
-              <li>fynn@taskeyapp.com</li>
+              <li>info@taskeyapp.com</li>
               <li>+49 151 68488999</li>
               <li>In der Acht 44</li>
               <li>66333 Völklingen</li>

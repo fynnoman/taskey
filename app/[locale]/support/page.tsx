@@ -233,14 +233,14 @@ export default async function SupportPage({
       <section className="relative pb-20 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
           <a
-            href="mailto:fynn@taskeyapp.com"
+            href="mailto:info@taskeyapp.com"
             className="group rounded-3xl bg-blue-50/70 border border-slate-200 hover:border-cyan-400 p-8 md:p-10 transition-colors"
           >
             <p className="text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 mb-4">
               {ui.emailLabel}
             </p>
             <h2 className="text-2xl md:text-3xl font-black mb-3 group-hover:text-blue-700 transition-colors">
-              fynn@taskeyapp.com
+              info@taskeyapp.com
             </h2>
             <p className="text-slate-600 text-sm md:text-base leading-relaxed">
               {ui.emailBody}

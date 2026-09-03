@@ -335,7 +335,7 @@ export default async function LoesungenPage({
                 </p>
               </div>
               <a
-                href="mailto:fynn@taskeyapp.com"
+                href="mailto:info@taskeyapp.com"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-bold rounded-full hover:bg-blue-500 transition-colors whitespace-nowrap"
               >
                 {c.contactCta}

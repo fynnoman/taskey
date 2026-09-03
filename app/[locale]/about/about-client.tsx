@@ -518,10 +518,10 @@ export default function AboutClient() {
                   {t("about.contact.email")}
                 </h4>
                 <a
-                  href="mailto:fynn@taskeyapp.com"
+                  href="mailto:info@taskeyapp.com"
                   className="text-slate-900 hover:text-blue-700 font-bold text-lg break-all transition-colors"
                 >
-                  fynn@taskeyapp.com
+                  info@taskeyapp.com
                 </a>
               </div>
               <div>

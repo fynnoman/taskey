@@ -34,7 +34,7 @@ const CONTENT = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen",
-    sec1Email: "E-Mail: fynn@taskeyapp.com",
+    sec1Email: "E-Mail: info@taskeyapp.com",
     sec1Phone: "Telefon: 015168488999",
 
     sec2Title: "2. Allgemeines zur Datenverarbeitung",
@@ -210,7 +210,7 @@ const CONTENT = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen",
-    sec1Email: "Email: fynn@taskeyapp.com",
+    sec1Email: "Email: info@taskeyapp.com",
     sec1Phone: "Phone: 015168488999",
 
     sec2Title: "2. General information on data processing",
@@ -385,7 +385,7 @@ const CONTENT = {
     sec1Company: "Schulz & Stosse GbR",
     sec1Street: "In der Acht 44",
     sec1City: "66333 Völklingen",
-    sec1Email: "E-mail : fynn@taskeyapp.com",
+    sec1Email: "E-mail : info@taskeyapp.com",
     sec1Phone: "Téléphone : 015168488999",
 
     sec2Title: "2. Informations générales sur le traitement des données",

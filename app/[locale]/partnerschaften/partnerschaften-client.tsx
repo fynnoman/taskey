@@ -449,8 +449,8 @@ export default function PartnerschaftenClient() {
               </p>
               <p className="text-slate-500 text-sm pt-1">
                 {t('partner.contact.emailDirect')}{' '}
-                <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:text-blue-500 font-medium">
-                  fynn@taskeyapp.com
+                <a href="mailto:info@taskeyapp.com" className="text-blue-700 hover:text-blue-500 font-medium">
+                  info@taskeyapp.com
                 </a>
               </p>
             </div>

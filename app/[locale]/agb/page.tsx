@@ -286,7 +286,7 @@ export default async function AGBPage({
             <div>
               <p className="text-sm text-slate-700 font-semibold mb-1">{c.footerCompany}</p>
               <p className="text-sm text-slate-600">{c.footerAddress}</p>
-              <p className="text-sm text-slate-500 mt-2">{c.footerContactPrefix} <a href="mailto:fynn@taskeyapp.com" className="text-blue-700 hover:underline font-medium">fynn@taskeyapp.com</a></p>
+              <p className="text-sm text-slate-500 mt-2">{c.footerContactPrefix} <a href="mailto:info@taskeyapp.com" className="text-blue-700 hover:underline font-medium">info@taskeyapp.com</a></p>
             </div>
           </div>
         </div>

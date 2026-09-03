@@ -210,7 +210,7 @@ export default async function Home({
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+49-151-68488999",
-      "email": "fynn@taskeyapp.com",
+      "email": "info@taskeyapp.com",
       "contactType": "customer service",
       "areaServed": ["DE", "AT", "CH"],
       "availableLanguage": ["German", "English", "French"],

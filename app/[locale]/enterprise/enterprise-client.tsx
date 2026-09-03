@@ -427,7 +427,7 @@ export default function EnterpriseClient() {
                     </Link>
                   ) : (
                     <a
-                      href="mailto:fynn@taskeyapp.com?subject=Enterprise-Anfrage"
+                      href="mailto:info@taskeyapp.com?subject=Enterprise-Anfrage"
                       className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-600 transition"
                     >
                       {s.ctaLabel}
@@ -454,7 +454,7 @@ export default function EnterpriseClient() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="mailto:fynn@taskeyapp.com?subject=Enterprise-Anfrage"
+                  href="mailto:info@taskeyapp.com?subject=Enterprise-Anfrage"
                   className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors text-base text-center"
                 >
                   {c.ctaPrimary}

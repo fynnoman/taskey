@@ -35,7 +35,7 @@ export function OrganizationJsonLd() {
     description:
       "Taskey ist eine All-in-One-Software für Gebäudereinigungsbetriebe im DACH-Raum mit NFC-Objektnachweis, Zeiterfassung, Einsatzplanung, Kalkulation, Angeboten, Rechnungen und DATEV-Export.",
     slogan: "Betriebssoftware für Gebäudereinigung und Facility Management.",
-    email: "fynn@taskeyapp.com",
+    email: "info@taskeyapp.com",
     telephone: "+49-151-68488999",
     foundingDate: "2024",
     foundingLocation: {
@@ -54,14 +54,14 @@ export function OrganizationJsonLd() {
       {
         "@type": "ContactPoint",
         telephone: "+49-151-68488999",
-        email: "fynn@taskeyapp.com",
+        email: "info@taskeyapp.com",
         contactType: "customer service",
         areaServed: ["DE", "AT", "CH"],
         availableLanguage: ["German", "English", "French"],
       },
       {
         "@type": "ContactPoint",
-        email: "fynn@taskeyapp.com",
+        email: "info@taskeyapp.com",
         contactType: "sales",
         areaServed: ["DE", "AT", "CH"],
         availableLanguage: ["German", "English"],
@@ -72,7 +72,7 @@ export function OrganizationJsonLd() {
         "@type": "Person",
         name: "Fynn-Luca Schulz",
         jobTitle: "Co-Founder & CEO",
-        email: "fynn@taskeyapp.com",
+        email: "info@taskeyapp.com",
         worksFor: { "@id": `${SITE_URL}#organization` },
       },
       {
@@ -302,7 +302,7 @@ export function ProfessionalServiceJsonLd() {
     image: LOGO_URL,
     priceRange: "€€",
     telephone: "+49-151-68488999",
-    email: "fynn@taskeyapp.com",
+    email: "info@taskeyapp.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "In der Acht 44",
