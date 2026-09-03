@@ -5,6 +5,10 @@ import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/context/LanguageContext";
 import CalculationDemo from "@/components/features/CalculationDemo";
 import CalendarDemo from "@/components/features/CalendarDemo";
+import NfcDemo from "@/components/features/NfcDemo";
+import TimeAccountingDemo from "@/components/features/TimeAccountingDemo";
+import TeamClientDemo from "@/components/features/TeamClientDemo";
+import { FloorPlanSection } from "@/components/FloorPlan/FloorPlanSection";
 
 /* FEATURES — Mainpage-Stil. Mehrsprachig (DE / EN / FR). */
 
@@ -663,47 +667,70 @@ export default function FeaturesClient() {
               ))}
             </div>
 
-            {cat.id === "share" && (
-              <div className="mt-14 md:mt-16 flex flex-col items-center text-center">
-                <Link
-                  href="https://demo.kunden.taskeyapp.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white text-sm md:text-base font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
-                >
-                  {language === "en"
-                    ? "Open live demo"
-                    : language === "fr"
-                    ? "Ouvrir la démo en direct"
-                    : "Live-Demo öffnen"}
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-                <p className="text-sm text-slate-500 mt-4">
-                  {language === "en"
-                    ? "Right in the browser — no login, no signup."
-                    : language === "fr"
-                    ? "Directement dans le navigateur — sans connexion, sans inscription."
-                    : "Direkt im Browser — kein Login, keine Anmeldung."}
-                </p>
+            {cat.id === "nfc" && (
+              <div className="mt-14 md:mt-16">
+                <NfcDemo />
               </div>
             )}
 
             {cat.id === "kalender" && (
               <div className="mt-14 md:mt-16">
                 <CalendarDemo />
+              </div>
+            )}
+
+            {cat.id === "zeit" && (
+              <div className="mt-14 md:mt-16">
+                <TimeAccountingDemo />
+              </div>
+            )}
+
+            {cat.id === "share" && (
+              <div className="mt-14 md:mt-16 space-y-8">
+                <div className="rounded-[28px] overflow-hidden border border-blue-100 bg-white/60 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)]">
+                  <FloorPlanSection />
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <Link
+                    href="https://taskey-share.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white text-sm md:text-base font-bold rounded-full hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20"
+                  >
+                    {language === "en"
+                      ? "Open the Taskey Share site"
+                      : language === "fr"
+                      ? "Ouvrir le site Taskey Share"
+                      : "Zur Taskey Share Website"}
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                  <p className="text-sm text-slate-500 mt-4">
+                    {language === "en"
+                      ? "Right in the browser — no login, no signup."
+                      : language === "fr"
+                      ? "Directement dans le navigateur — sans connexion, sans inscription."
+                      : "Direkt im Browser — kein Login, keine Anmeldung."}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {cat.id === "team" && (
+              <div className="mt-14 md:mt-16">
+                <TeamClientDemo />
               </div>
             )}
 

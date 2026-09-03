@@ -45,7 +45,7 @@ const COPY: Record<Lang, Copy> = {
     chip: "Live-Kalkulation · Beispiel",
     title: "Bewegen Sie die Regler. Sie sehen, was ein Objekt kostet.",
     intro:
-      "Vier Angaben — Fläche, Frequenz, Stundenlohn, Zielmarge — und Sie sehen den empfohlenen Monatspreis, die tatsächlichen Lohnkosten und die Marge in Euro. So wie es in Taskey pro Objekt läuft, nur mit Beispiel-Werten.",
+      "Vier Angaben, nämlich Fläche, Frequenz, Stundenlohn und Zielmarge. Sie sehen den empfohlenen Monatspreis, die tatsächlichen Lohnkosten und die Marge in Euro. So wie es in Taskey pro Objekt läuft, nur mit Beispiel-Werten.",
     inputsLabel: "Ihre Eingaben",
     outputsLabel: "Ergebnis",
     area: "Fläche",
@@ -74,7 +74,7 @@ const COPY: Record<Lang, Copy> = {
     chip: "Live calculation · sample",
     title: "Move the sliders. You see what a site really costs.",
     intro:
-      "Four inputs — area, frequency, hourly rate, target margin — and you see the recommended monthly price, the actual wage cost and the margin in Euros. Same logic as inside Taskey per site, just with sample values.",
+      "Four inputs: area, frequency, hourly rate, target margin. You see the recommended monthly price, the actual wage cost and the margin in Euros. Same logic as inside Taskey per site, just with sample values.",
     inputsLabel: "Your inputs",
     outputsLabel: "Result",
     area: "Area",
@@ -97,13 +97,13 @@ const COPY: Record<Lang, Copy> = {
     ruleBody:
       "100 m²/h general cleaning as an industry benchmark · month = 4.33 weeks · price set so target margin is reached after wages. Additional costs (material, travel, fixed share) are handled per site inside Taskey.",
     hint: "Sample values, no customer data.",
-    hintValues: "Move the sliders — the numbers update immediately.",
+    hintValues: "Move the sliders, the numbers update immediately.",
   },
   fr: {
     chip: "Calcul en direct · exemple",
     title: "Déplacez les curseurs. Vous voyez ce qu'un site coûte vraiment.",
     intro:
-      "Quatre saisies — surface, fréquence, taux horaire, marge cible — et vous voyez le prix mensuel recommandé, le coût salarial réel et la marge en euros. Même logique qu'à l'intérieur de Taskey par site, avec des valeurs d'exemple.",
+      "Quatre saisies : surface, fréquence, taux horaire, marge cible. Vous voyez le prix mensuel recommandé, le coût salarial réel et la marge en euros. Même logique qu'à l'intérieur de Taskey par site, avec des valeurs d'exemple.",
     inputsLabel: "Vos saisies",
     outputsLabel: "Résultat",
     area: "Surface",
@@ -126,7 +126,7 @@ const COPY: Record<Lang, Copy> = {
     ruleBody:
       "100 m²/h en nettoyage courant comme référence sectorielle · mois = 4,33 semaines · prix défini pour atteindre la marge cible après salaires. Coûts supplémentaires (matériel, trajet, part fixe) à définir par site dans Taskey.",
     hint: "Valeurs d'exemple, aucune donnée client.",
-    hintValues: "Déplacez les curseurs — les chiffres se mettent à jour immédiatement.",
+    hintValues: "Déplacez les curseurs, les chiffres se mettent à jour immédiatement.",
   },
 };
 

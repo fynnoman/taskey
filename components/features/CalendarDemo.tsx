@@ -49,7 +49,7 @@ const DE_COPY: Copy = {
   chip: "Wochenplaner · interaktiv",
   title: "Wählen Sie einen Mitarbeiter, klicken Sie in den Plan.",
   intro:
-    "Vier Objekte, fünf Werktage. Wählen Sie einen Mitarbeiter oben und klicken Sie in einen Slot, um ihn dort einzusetzen. Nochmal klicken macht ihn frei. Konflikte (derselbe Kopf zweimal am selben Tag) werden rot markiert — genau wie in Taskey.",
+    "Vier Objekte, fünf Werktage. Wählen Sie einen Mitarbeiter oben und klicken Sie in einen Slot, um ihn dort einzusetzen. Nochmal klicken macht ihn frei. Konflikte (derselbe Kopf zweimal am selben Tag) werden rot markiert, genau wie in Taskey.",
   daysLong: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"],
   daysShort: ["Mo", "Di", "Mi", "Do", "Fr"],
   slotEmpty: "Frei",
@@ -62,7 +62,7 @@ const DE_COPY: Copy = {
   statAssigned: "Auslastung",
   statConflict: "Konflikte",
   reset: "Zurücksetzen",
-  clickHint: "Klicken Sie in einen Slot, um den ausgewählten Mitarbeiter einzusetzen — oder ihn dort wieder zu entfernen.",
+  clickHint: "Klicken Sie in einen Slot, um den ausgewählten Mitarbeiter einzusetzen, oder ihn dort wieder zu entfernen.",
   properties: [
     { id: "kaiserstr", name: "Bürohaus Kaiserstraße 12", sub: "Unterhaltsreinigung · 2× pro Woche" },
     { id: "lindenhof", name: "Wohnanlage Lindenhof", sub: "Treppenhaus · täglich" },
@@ -92,7 +92,7 @@ const EN_COPY: Copy = {
   chip: "Weekly planner · interactive",
   title: "Pick an employee, click into the plan.",
   intro:
-    "Four sites, five working days. Pick an employee above and click a slot to assign them. Click again to remove. Conflicts (the same person twice on the same day) are marked red — just like in Taskey.",
+    "Four sites, five working days. Pick an employee above and click a slot to assign them. Click again to remove. Conflicts (the same person twice on the same day) are marked red, just like in Taskey.",
   daysLong: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   daysShort: ["Mon", "Tue", "Wed", "Thu", "Fri"],
   slotEmpty: "Free",
@@ -105,7 +105,7 @@ const EN_COPY: Copy = {
   statAssigned: "Load",
   statConflict: "Conflicts",
   reset: "Reset",
-  clickHint: "Click a slot to assign the selected employee — or to remove them.",
+  clickHint: "Click a slot to assign the selected employee, or to remove them.",
   properties: [
     { id: "kaiserstr", name: "Office Kaiserstraße 12", sub: "General cleaning · 2× per week" },
     { id: "lindenhof", name: "Residential Lindenhof", sub: "Staircase · daily" },
@@ -135,7 +135,7 @@ const FR_COPY: Copy = {
   chip: "Planificateur hebdo · interactif",
   title: "Choisissez un employé, cliquez dans le plan.",
   intro:
-    "Quatre sites, cinq jours ouvrés. Choisissez un employé en haut et cliquez sur un créneau pour l'y affecter. Un nouveau clic libère le créneau. Les conflits (la même personne deux fois le même jour) sont marqués en rouge — exactement comme dans Taskey.",
+    "Quatre sites, cinq jours ouvrés. Choisissez un employé en haut et cliquez sur un créneau pour l'y affecter. Un nouveau clic libère le créneau. Les conflits (la même personne deux fois le même jour) sont marqués en rouge, exactement comme dans Taskey.",
   daysLong: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"],
   daysShort: ["Lun", "Mar", "Mer", "Jeu", "Ven"],
   slotEmpty: "Libre",
@@ -148,7 +148,7 @@ const FR_COPY: Copy = {
   statAssigned: "Charge",
   statConflict: "Conflits",
   reset: "Réinitialiser",
-  clickHint: "Cliquez sur un créneau pour affecter l'employé sélectionné — ou pour le retirer.",
+  clickHint: "Cliquez sur un créneau pour affecter l'employé sélectionné, ou pour le retirer.",
   properties: [
     { id: "kaiserstr", name: "Bureau Kaiserstraße 12", sub: "Nettoyage courant · 2× par semaine" },
     { id: "lindenhof", name: "Résidence Lindenhof", sub: "Cage d'escalier · tous les jours" },
