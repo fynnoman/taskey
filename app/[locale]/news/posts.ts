@@ -41,6 +41,49 @@ export function getCategoryLabel(category: PostCategory, locale: Locale): string
 // ─────────────────────────────────────────────────────────────
 export const posts: Post[] = [
   {
+    slug: "taskey-share-website",
+    category: "Release",
+    date: "4. September 2026",
+    isoDate: "2026-09-04",
+    title: "Taskey Share hat jetzt eine eigene Website: taskey-share.de",
+    metaTitle: "Taskey Share Website · taskey-share.de · Live-Demo für Auftraggeber",
+    metaDescription:
+      "Taskey Share, das Auftraggeber-Portal von Taskey, hat ab sofort eine eigene Website unter taskey-share.de — mit interaktiver Grundriss-Demo, Branchenseiten und Nachweis-Erklärung. Ohne Login, ohne App.",
+    summary:
+      "Taskey Share bekommt eine eigene Website: taskey-share.de. Mit interaktiver Live-Demo eines Verwaltungsgebäudes, sechs ausgearbeiteten Branchen-Ansichten (Immobilien, Bahn, Luftfahrt, Klinik, Lebensmittel, Öffentliche Hand) und einer klaren Nachweis-Erklärung. Alles ohne Login, ohne App.",
+    body: `Taskey Share ist seit einigen Monaten Teil jedes Taskey-Tarifs. Der Auftraggeber-Zugang, in dem Ihre Kund:innen live sehen, was an ihren Objekten passiert, hat sich in der Praxis bewährt. Was gefehlt hat: ein eigener Ort im Netz, an dem man sich das Ganze in Ruhe anschauen kann, ohne erst durch die Taskey-Preisstruktur zu klicken.
+
+Ab heute gibt es genau das: **[taskey-share.de](https://taskey-share.de)**.
+
+## Was auf der Website ist
+
+**Interaktive Grundriss-Demo.** Ein Beispiel-Verwaltungsgebäude mit fünf Stockwerken. Räume anklickbar, Status farbcodiert (grün erledigt, orange in Bearbeitung, rot offene Aufgabe, weiß steht noch an). Tooltip mit Details pro Raum, Aufgaben-Historie, Live-Präsenz vor Ort. Genau das, was Ihr Auftraggeber später auch sieht — nur mit erfundenen Daten.
+
+**Sechs Branchen im Detail.** Für Immobilien & Asset Management, Bahn & ÖPNV, Luftfahrt, Klinik & Pflege, Lebensmittel & Großküche und Öffentliche Hand gibt es jeweils eine eigene Seite. Aufgebaut nach demselben Muster: das Problem, drei Argumente, die konkreten Ansichten, die Funktionen, der Nachweis, die typischen Fragen. Sechs weitere Branchen (Handel, Hotellerie, Außenanlagen, Industrie, Veranstaltung, Sicherheitsdienst) sind angekündigt.
+
+**Nachweis-Seite.** Wie der Live-Link zum belastbaren Nachweis wird: sechs Bausteine, vier Anwendungsszenarien, rechtlicher Hinweis. Für alle, die belegen müssen, was ihre Dienstleister an ihren Objekten geleistet haben.
+
+**Kontakt in vier Wegen.** Anruf, E-Mail mit vorformuliertem Text, Kalender-Buchung oder direkt in die Live-Demo. Kein Formular, keine Warteschleife.
+
+## Warum eine eigene Website
+
+Die Frage kam von unseren Kund:innen selbst. Wer als Reinigungsbetrieb oder Facility-Dienstleister seinen Auftraggeber:innen den Zugang einrichtet, will einen Ort haben, an dem er die Erklärung nicht selbst leisten muss. „Schauen Sie sich das kurz an" statt „lassen Sie mich das erklären" — genau diese Kürzung war der Auftrag an die neue Website.
+
+Auf der anderen Seite sind Auftraggeber:innen aus Immobilien, ÖPNV, Luftfahrt und dem Gesundheitswesen selten die Zielgruppe der Taskey-Hauptseite. Die spricht Betreibende an: Menschen, die Reinigung, Winterdienst oder technischen Service als Unternehmen operativ steuern. Für die Empfänger:innen des Nachweises brauchte es einen eigenen Auftritt, in ihrer Sprache und mit ihren Beispielen.
+
+## Was das für Bestandskunden bedeutet
+
+Nichts, was Sie tun müssen. Taskey Share läuft weiter wie bisher aus Ihrem Taskey-Account heraus, unter [share.taskeyapp.com](https://share.taskeyapp.com). Der neue Auftritt ist eine reine Kommunikations-Website und ändert am Produkt selbst nichts.
+
+Wenn Sie Ihren Auftraggeber:innen den Zugang vorstellen wollen, können Sie ab sofort einfach den Link **[taskey-share.de](https://taskey-share.de)** teilen. Die interaktive Demo dort erklärt in wenigen Klicks, wie das Portal später bei ihnen aussieht.
+
+## Was noch kommt
+
+Die sechs „In Vorbereitung"-Branchenseiten werden Zug um Zug freigeschaltet, jeweils sobald das branchenspezifische Briefing final ist. Und wir bauen die Demo Schritt für Schritt aus, damit sich noch mehr aus dem Alltag Ihrer Auftraggeber:innen darin wiederfindet.
+
+Ein Blick lohnt sich: **[taskey-share.de](https://taskey-share.de)**.`,
+  },
+  {
     slug: "einzelunternehmer-paket",
     category: "Release",
     date: "8. Juli 2026",

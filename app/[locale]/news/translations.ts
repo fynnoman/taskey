@@ -12,6 +12,86 @@ import type { PostTranslation } from "./posts";
 type Locale = "en" | "fr";
 
 const T: Record<string, Partial<Record<Locale, PostTranslation>>> = {
+  "taskey-share-website": {
+    en: {
+      title: "Taskey Share now has its own website: taskey-share.de",
+      summary:
+        "Taskey Share, the client portal from Taskey, now has its own dedicated website at taskey-share.de — with an interactive floor plan demo, six industry pages and a clear explanation of the proof-of-service model. No login, no app.",
+      metaTitle: "Taskey Share website · taskey-share.de · Live demo for clients",
+      metaDescription:
+        "Taskey Share, the client portal by Taskey, is now available on its own dedicated website at taskey-share.de — with an interactive floor plan demo, industry pages and proof-of-service explanations. No login, no app.",
+      body: `Taskey Share has been part of every Taskey plan for several months now. The client portal, where your customers see live what is happening at their sites, has proven itself in practice. What was missing: a dedicated place on the web where you could look at the whole thing in peace, without having to click through the Taskey pricing structure first.
+
+As of today that exists: **[taskey-share.de](https://taskey-share.de/en)**.
+
+## What's on the site
+
+**Interactive floor plan demo.** A sample office building with five floors. Rooms are clickable, status is colour-coded (green done, orange in progress, red open task, white pending). Tooltip per room, task history, live presence on site. Exactly what your client will see later — just with fictional data.
+
+**Six industries in detail.** Real Estate & Asset Management, Rail & Public Transport, Aviation, Hospital & Care, Food & Commercial Kitchens, and Public Sector each have their own page. Same structure everywhere: the problem, three arguments, the concrete views, the functions, the proof, the typical questions. Six more industries (retail, hospitality, outdoor & winter service, industry, events, security) are announced.
+
+**Proof page.** How the live link becomes robust evidence: six building blocks, four use cases, a legal note. For everyone who has to prove what their service providers delivered on their sites.
+
+**Contact in four ways.** Call, email with a pre-filled template, calendar booking or straight into the live demo. No form, no queue.
+
+## Why a dedicated website
+
+The request came from our own customers. Anyone who, as a cleaning company or facility service provider, sets up the portal for their clients wants a place where they don't have to do the explaining themselves. "Have a quick look at this" instead of "let me explain this" — that shortcut was exactly the brief for the new site.
+
+On the other side, clients from real estate, public transit, aviation and healthcare are rarely the audience of the main Taskey site. That one speaks to operators: people who run cleaning, winter service or technical services as a business. The recipients of the proof needed a site of their own, in their language and with their examples.
+
+## What this means for existing customers
+
+Nothing you need to do. Taskey Share keeps running as before from your Taskey account, at [share.taskeyapp.com](https://share.taskeyapp.com). The new site is a pure marketing website and doesn't change anything about the product itself.
+
+If you want to introduce the portal to your clients, from now on you can simply share the link **[taskey-share.de](https://taskey-share.de/en)**. The interactive demo there explains in a few clicks what the portal will look like for them later.
+
+## What's next
+
+The six "in preparation" industry pages will be released one by one, each as soon as the industry-specific briefing is final. And we are expanding the demo step by step, so that even more of your clients' day-to-day workflow ends up in it.
+
+Worth a look: **[taskey-share.de](https://taskey-share.de/en)**.`,
+    },
+    fr: {
+      title: "Taskey Share a désormais son propre site : taskey-share.de",
+      summary:
+        "Taskey Share, le portail donneur d'ordre de Taskey, a maintenant son propre site à taskey-share.de — avec une démo interactive de plan d'étage, six pages sectorielles et une explication claire de la preuve de service. Sans connexion, sans application.",
+      metaTitle: "Site Taskey Share · taskey-share.de · Démo en direct pour donneurs d'ordre",
+      metaDescription:
+        "Taskey Share, le portail donneur d'ordre de Taskey, est désormais disponible sur son propre site à taskey-share.de — démo interactive de plan, pages sectorielles et explication de la preuve de service. Sans connexion, sans application.",
+      body: `Taskey Share fait partie de chaque forfait Taskey depuis plusieurs mois. Le portail donneur d'ordre, dans lequel vos client·e·s voient en direct ce qui se passe sur leurs sites, a fait ses preuves. Ce qui manquait : un lieu dédié sur le web où l'on peut regarder tout cela tranquillement, sans devoir d'abord parcourir la grille tarifaire de Taskey.
+
+Depuis aujourd'hui c'est le cas : **[taskey-share.de](https://taskey-share.de/fr)**.
+
+## Ce que l'on trouve sur le site
+
+**Démo interactive de plan d'étage.** Un immeuble de bureaux exemple avec cinq étages. Pièces cliquables, statut codé par couleur (vert terminé, orange en cours, rouge tâche ouverte, blanc à faire). Info-bulle par pièce, historique des tâches, présence en direct sur site. Exactement ce que votre donneur d'ordre verra ensuite — avec des données fictives.
+
+**Six secteurs en détail.** Immobilier & Asset Management, Ferroviaire & Transports publics, Aviation, Hôpital & Soins, Alimentation & Cuisines collectives, Secteur public : chacun a sa page. Même structure partout : le problème, trois arguments, les vues concrètes, les fonctions, la preuve, les questions typiques. Six autres secteurs (commerce, hôtellerie, espaces extérieurs, industrie, événementiel, sécurité) sont annoncés.
+
+**Page preuve.** Comment le lien en direct devient une preuve solide : six éléments, quatre cas d'usage, une mention légale. Pour toutes celles et ceux qui doivent démontrer ce que leurs prestataires ont livré sur leurs sites.
+
+**Contact en quatre voies.** Appel, e-mail avec texte pré-rempli, prise de rendez-vous ou accès direct à la démo. Pas de formulaire, pas de file d'attente.
+
+## Pourquoi un site dédié
+
+La demande vient de nos client·e·s eux-mêmes. Quiconque, en tant qu'entreprise de nettoyage ou de facility, met en place le portail pour ses donneur·euses d'ordre veut un endroit où il n'a pas à faire l'explication lui-même. « Regardez rapidement ça » à la place de « laissez-moi vous expliquer » — c'est exactement le raccourci qui a servi de brief pour le nouveau site.
+
+De l'autre côté, les donneur·euses d'ordre de l'immobilier, des transports publics, de l'aviation ou de la santé sont rarement l'audience du site principal de Taskey. Celui-ci s'adresse aux opérateur·rice·s : celles et ceux qui pilotent le nettoyage, le déneigement ou les services techniques en tant qu'entreprise. Il fallait donc un site à part pour les destinataires de la preuve, dans leur langue et avec leurs exemples.
+
+## Ce que cela change pour les client·e·s existant·e·s
+
+Rien à faire de votre côté. Taskey Share continue de fonctionner comme avant depuis votre compte Taskey, à [share.taskeyapp.com](https://share.taskeyapp.com). Le nouveau site est une pure vitrine et ne change rien au produit lui-même.
+
+Si vous souhaitez présenter le portail à vos donneur·euses d'ordre, vous pouvez désormais simplement partager le lien **[taskey-share.de](https://taskey-share.de/fr)**. La démo interactive qui s'y trouve leur explique en quelques clics à quoi le portail ressemblera pour eux ensuite.
+
+## La suite
+
+Les six pages sectorielles « en préparation » seront publiées les unes après les autres, dès que le brief propre à chaque secteur sera finalisé. Et nous enrichissons la démo pas à pas pour qu'elle reflète encore davantage le quotidien de vos donneur·euses d'ordre.
+
+Un coup d'œil vaut la peine : **[taskey-share.de](https://taskey-share.de/fr)**.`,
+    },
+  },
   "taskey-share-live": {
     en: {
       title: "Taskey Share is live: the client portal is here",
