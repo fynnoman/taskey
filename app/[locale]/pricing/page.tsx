@@ -104,18 +104,21 @@ const FAQ_BY_LOCALE: Record<Locale, { q: string; a: string }[]> = {
   de: [
     { q: "Kann ich das Paket wechseln?", a: "Ja, Sie können jederzeit zwischen Beginner, Professional und Business upgraden oder downgraden – wirksam zum nächsten Monat." },
     { q: "Gibt es etwas Größeres als Business?", a: "Ja. Für größere Reinigungsunternehmen und Verkehrsbetriebe bieten wir Enterprise mit SSO, API- und PMS-Anbindungen, individueller SLA und priorisiertem Support. Sprechen Sie uns an, wir konfigurieren Enterprise passend zu Ihrer Objektstruktur." },
+    { q: "Gibt es bei euch Lohnabrechnung?", a: "Nein. Wir übernehmen keine Lohnabrechnung, können aber auf Wunsch eine Schnittstelle zu Ihrem bestehenden Anbieter einpflegen, damit Ihre Zeiterfassungs- und Einsatzdaten aus Taskey direkt in Ihre Lohnsoftware fließen." },
     { q: "Sind Updates und neue Funktionen inklusive?", a: "Ja. Alle Updates, Sicherheitsfixes und neuen Funktionen sind in jedem Tarif kostenlos enthalten und werden automatisch eingespielt." },
     { q: "Ist die Anzahl der Mitarbeitenden begrenzt?", a: "Nein. In jedem Tarif sind unbegrenzt viele Mitarbeitende enthalten." },
   ],
   en: [
     { q: "Can I switch plans?", a: "Yes, you can upgrade or downgrade between Beginner, Professional and Business at any time – effective the next month." },
     { q: "Is there anything bigger than Business?", a: "Yes. For larger cleaning companies and transit operators we offer Enterprise with SSO, API and PMS integrations, an individual SLA and priority support. Get in touch and we will configure Enterprise to fit your site structure." },
+    { q: "Do you handle payroll?", a: "No. We do not run payroll ourselves, but on request we can build an interface to your existing payroll provider so your time tracking and scheduling data from Taskey flows directly into your payroll software." },
     { q: "Are updates and new features included?", a: "Yes. All updates, security fixes and new features are included in every plan at no extra cost and are rolled out automatically." },
     { q: "Is the number of employees limited?", a: "No. Every plan includes unlimited employees." },
   ],
   fr: [
     { q: "Puis-je changer de forfait ?", a: "Oui, vous pouvez passer entre Beginner, Professional et Business à tout moment – avec effet le mois suivant." },
     { q: "Existe-t-il une offre supérieure à Business ?", a: "Oui. Pour les grandes entreprises de nettoyage et les exploitants de transport, nous proposons Enterprise avec SSO, intégrations API et PMS, un SLA individuel et un support prioritaire. Contactez-nous, nous configurons Enterprise selon votre structure de sites." },
+    { q: "Gérez-vous la paie ?", a: "Non. Nous ne réalisons pas la paie nous-mêmes, mais nous pouvons sur demande mettre en place une interface avec votre prestataire de paie existant, afin que vos données de pointage et de planification issues de Taskey soient directement transmises à votre logiciel de paie." },
     { q: "Les mises à jour et nouvelles fonctionnalités sont-elles incluses ?", a: "Oui. Toutes les mises à jour, correctifs de sécurité et nouvelles fonctionnalités sont inclus gratuitement dans chaque forfait et déployés automatiquement." },
     { q: "Le nombre d'employés est-il limité ?", a: "Non. Chaque forfait inclut un nombre illimité d'employés." },
   ],

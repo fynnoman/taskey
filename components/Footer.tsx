@@ -282,6 +282,25 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-slate-400 mb-6">{t("footer.col.contact")}</h4>
             <ul className="space-y-4 text-sm text-slate-300">
+              <li>
+                <Link
+                  href="/support"
+                  className="group inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    className="opacity-90 group-hover:opacity-100"
+                  >
+                    <circle cx="7" cy="7" r="5.6" stroke="currentColor" strokeWidth="1.3" />
+                    <path d="M7 7.4v.05M6.05 5.5a1 1 0 0 1 1.95.25c0 .7-.95.9-.95 1.65" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                  </svg>
+                  {t("footer.link.support")}
+                </Link>
+              </li>
               <li>info@taskeyapp.com</li>
               <li>+49 151 68488999</li>
               <li>In der Acht 44</li>

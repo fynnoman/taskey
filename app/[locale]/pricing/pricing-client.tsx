@@ -41,6 +41,7 @@ type NfcOffer = {
 
 type Content = {
   hero: { badge: string; title1: string; title2: string; subtitle: string };
+  welcome: { badge: string; title: string };
   trustBar: { unlimited: string; cancel: string; noHidden: string; vat: string };
   popular: string;
   tiers: Tier[];
@@ -95,6 +96,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       subtitle:
         "Keine Setup-Tricks. Keine Mindestlaufzeit. Kostenlos starten — täglich kündbar.",
     },
+    welcome: {
+      badge: "Neu",
+      title: "10 % Willkommensrabatt für Neukunden im ersten Jahr.",
+    },
     trustBar: {
       unlimited: "Unbegrenzte Mitarbeiter",
       cancel: "Täglich kündbar",
@@ -147,7 +152,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Priority-Support per Telefon",
           "CRM-Tool mit E-Mail-Anbindung & Automatisierung",
           "Subunternehmer-Portal",
-          "Lohnabrechnungen",
           "Taskey Share (animiertes Kundendashboard + Ticketsystem)",
           "Ausschreibungsportal + Empfehlungen",
         ],
@@ -186,10 +190,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       lossTitle: "Verlustersatz inklusive",
       lossDesc:
         "Tag verloren oder beschädigt? Wir ersetzen ihn kostenlos — bis zu 5 % der bestellten Menge pro Jahr.",
-      onsiteBadge: "Vor Ort",
-      onsiteTitle: "Wir richten Ihre Objekte komplett vor Ort ein",
+      onsiteBadge: "Vor Ort · Deutschlandweit",
+      onsiteTitle: "Wir richten Ihre Objekte deutschlandweit komplett vor Ort ein",
       onsiteDesc:
-        "Sie müssen die NFC-Tags nicht selbst anbringen. Unser Team kommt vor Ort und übernimmt die komplette Einrichtung.",
+        "Sie müssen die NFC-Tags nicht selbst anbringen. Unser Team kommt deutschlandweit vor Ort und übernimmt gegen einmalige Gebühr die komplette Einrichtung aller Tags an Ihren Objekten.",
       onsiteBullets: [
         "Alle Räume und Bereiche in Taskey angelegt",
         "NFC-Tags an der optimalen Position montiert",
@@ -228,6 +232,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title2: "with your business.",
       subtitle:
         "No setup tricks. No minimum term. Start free — cancel daily.",
+    },
+    welcome: {
+      badge: "New",
+      title: "10% welcome discount for new customers in the first year.",
     },
     trustBar: {
       unlimited: "Unlimited employees",
@@ -281,7 +289,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Priority phone support",
           "CRM tool with email integration & automation",
           "Subcontractor portal",
-          "Payroll management",
           "Taskey Share (animated client dashboard + ticket system)",
           "Tender portal + referrals",
         ],
@@ -320,10 +327,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       lossTitle: "Loss replacement included",
       lossDesc:
         "Tag lost or damaged? We replace it free of charge — up to 5% of the ordered amount per year.",
-      onsiteBadge: "On-site",
-      onsiteTitle: "We set up your properties fully on-site",
+      onsiteBadge: "On-site · Germany-wide",
+      onsiteTitle: "We set up your properties fully on-site, Germany-wide",
       onsiteDesc:
-        "You don't need to place the NFC tags yourself. Our team comes on-site and takes care of the complete setup.",
+        "You don't need to place the NFC tags yourself. Our team travels anywhere in Germany and takes care of the complete setup of all tags across your properties for a one-time fee.",
       onsiteBullets: [
         "All rooms and zones created in Taskey",
         "NFC tags placed at the optimal position",
@@ -362,6 +369,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       title2: "avec votre entreprise.",
       subtitle:
         "Pas d'astuces de mise en place. Pas de durée minimale. Démarrer gratuitement — résiliable au jour le jour.",
+    },
+    welcome: {
+      badge: "Nouveau",
+      title: "10 % de remise de bienvenue pour les nouveaux clients la première année.",
     },
     trustBar: {
       unlimited: "Employés illimités",
@@ -415,7 +426,6 @@ const content: Record<"de" | "en" | "fr", Content> = {
           "Support prioritaire par téléphone",
           "Outil CRM avec intégration e-mail & automatisation",
           "Portail sous-traitants",
-          "Gestion de la paie",
           "Taskey Share (tableau de bord client animé + système de tickets)",
           "Portail d'appels d'offres + recommandations",
         ],
@@ -454,10 +464,10 @@ const content: Record<"de" | "en" | "fr", Content> = {
       lossTitle: "Remplacement en cas de perte inclus",
       lossDesc:
         "Étiquette perdue ou endommagée ? Nous la remplaçons gratuitement — jusqu'à 5 % de la quantité commandée par an.",
-      onsiteBadge: "Sur site",
-      onsiteTitle: "Nous installons vos sites entièrement sur place",
+      onsiteBadge: "Sur site · Partout en Allemagne",
+      onsiteTitle: "Nous installons vos sites entièrement sur place, partout en Allemagne",
       onsiteDesc:
-        "Vous n'avez pas à poser les étiquettes NFC vous-même. Notre équipe se déplace et prend en charge l'installation complète.",
+        "Vous n'avez pas à poser les étiquettes NFC vous-même. Notre équipe se déplace partout en Allemagne et prend en charge l'installation complète de toutes les étiquettes sur vos sites, pour un forfait unique.",
       onsiteBullets: [
         "Toutes les pièces et zones créées dans Taskey",
         "Étiquettes NFC placées à la position optimale",
@@ -536,6 +546,8 @@ function PricingPage() {
         </div>
       </section>
 
+      <WelcomeDiscountBanner welcome={c.welcome} />
+
       <SoloBanner solo={c.solo} />
 
       <section className="relative pt-4 pb-20 md:pb-28">
@@ -556,16 +568,30 @@ function PricingPage() {
       </section>
 
       {/* Enterprise — Premium silver / chrome / liquid-glass */}
-      <section id="enterprise" className="relative pb-16 md:pb-24 scroll-mt-24">
+      <section id="enterprise" className="relative pt-8 md:pt-16 pb-16 md:pb-24 scroll-mt-24">
+        {/* Attention divider — leitet visuell zur Enterprise-Section */}
+        <div aria-hidden="true" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-14">
+          <div className="relative h-px w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+          <div className="flex justify-center -mt-[9px]">
+            <span className="h-4 w-4 rounded-full bg-white border border-slate-300 shadow-[0_2px_6px_rgba(15,23,42,0.08)]" />
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 md:mb-12">
-            <span className="inline-block px-4 py-1.5 text-[10px] font-black tracking-[0.3em] uppercase text-slate-700 bg-gradient-to-b from-white via-slate-100 to-slate-200 border border-white/80 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_6px_rgba(15,23,42,0.12)]">
+          <div className="text-center mb-8 md:mb-12 flex flex-col items-center gap-4">
+            <span className="inline-flex items-center gap-2 px-5 py-2 text-[11px] sm:text-xs font-black tracking-[0.28em] uppercase text-slate-900 bg-gradient-to-b from-white via-slate-100 to-slate-200 border border-white/90 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_4px_16px_rgba(15,23,42,0.18)]">
+              <svg className="w-3.5 h-3.5 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                <path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               {c.ent.addon}
             </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[0.98] tracking-tight bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+              {c.ent.badge}
+            </h2>
           </div>
 
           {/* Outer chrome ring */}
-          <div className="relative rounded-[2rem] p-[1px] bg-gradient-to-br from-white via-slate-300 to-slate-500 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.4)]">
+          <div className="relative rounded-[2rem] p-[1.5px] bg-gradient-to-br from-white via-slate-300 to-slate-500 shadow-[0_45px_120px_-30px_rgba(15,23,42,0.55)]">
             {/* Inner liquid-glass surface */}
             <div className="relative rounded-[calc(2rem-1px)] overflow-hidden bg-gradient-to-br from-white/85 via-slate-50/70 to-white/60 backdrop-blur-2xl">
               {/* Top hairline highlight */}
@@ -582,17 +608,11 @@ function PricingPage() {
                 <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-start">
                   {/* Left: Badge + headline + features */}
                   <div>
-                    <div className="inline-flex items-center gap-2 mb-5">
-                      <span className="inline-block px-3.5 py-1 text-[10px] font-black tracking-[0.3em] uppercase text-slate-900 bg-gradient-to-b from-white via-slate-100 to-slate-300 border border-white/80 rounded-full shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_8px_rgba(15,23,42,0.15)]">
-                        {c.ent.badge}
-                      </span>
-                    </div>
-
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[0.95] tracking-tight mb-5">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[0.98] tracking-tight mb-5">
                       <span className="bg-gradient-to-b from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
                         {c.ent.title}
                       </span>
-                    </h2>
+                    </h3>
 
                     <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
                       {c.ent.desc}
@@ -768,6 +788,41 @@ function PricingPage() {
       </section>
 
     </main>
+  );
+}
+
+function WelcomeDiscountBanner({ welcome }: { welcome: Content["welcome"] }) {
+  return (
+    <section className="relative pb-6 md:pb-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-2xl p-[1.5px] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-xl shadow-cyan-500/20">
+          <div className="rounded-[calc(1rem-1.5px)] bg-white border border-blue-100 px-5 py-4 sm:px-7 sm:py-5 flex items-center gap-4">
+            <div className="grid place-items-center h-11 w-11 sm:h-12 sm:w-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-lg shadow-blue-500/30 shrink-0">
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              >
+                <path d="M19 5L5 19" strokeLinecap="round" />
+                <circle cx="7.5" cy="7.5" r="2.25" />
+                <circle cx="16.5" cy="16.5" r="2.25" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <span className="inline-block px-2.5 py-0.5 text-[10px] font-black tracking-[0.25em] uppercase text-blue-700 bg-cyan-50 border border-cyan-300 rounded-full mb-1.5">
+                {welcome.badge}
+              </span>
+              <p className="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-snug">
+                {welcome.title}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
