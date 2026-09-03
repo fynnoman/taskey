@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/LocaleLink";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import HandbookSearch from "@/components/HandbookSearch";
 import { buildMetadata, pickLocale, type Locale, type PageCopy } from "@/lib/i18n-metadata";
 
 const COPY: PageCopy = {
@@ -229,6 +230,8 @@ export default async function SupportPage({
           </p>
         </div>
       </section>
+
+      {loc === "de" && <HandbookSearch />}
 
       <section className="relative pb-20 md:pb-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6">
