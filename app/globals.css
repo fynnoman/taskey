@@ -330,3 +330,25 @@ html {
             backdrop-filter: none;
   }
 }
+
+/* ==========================================================================
+   FLOORPLAN – dedicated palette (portiert aus Taskey-Share)
+   Namespace fp-* so it does not collide with the rest of the design tokens.
+   Wird verwendet vom interaktiven Grundriss-Demo auf der Startseite.
+   ========================================================================== */
+:root {
+  --fp-bg:            #FAFAFA;
+  --fp-surface:       #FFFFFF;
+  --fp-text:          #202124;
+  --fp-text-muted:    #8A8F98;
+  --fp-border:        #E8EAED;
+  --fp-blue:          #0B8EDB;
+  --fp-blue-soft:     #EAF7FF;
+  --fp-green:         #22C55E;
+  --fp-green-soft:    rgba(34, 197, 94, 0.18);
+  --fp-orange:        #F59E0B;
+  --fp-orange-soft:   rgba(245, 158, 11, 0.20);
+  --fp-red:           #F43F5E;
+  --fp-red-soft:      rgba(244, 63, 94, 0.18);
+  --fp-wall:          #111111;
+}

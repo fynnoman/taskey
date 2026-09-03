@@ -12,6 +12,7 @@ import DashboardMarge from "./DashboardMarge";
 import FaqBoard from "./FaqBoard";
 import CalendlyInline from "./CalendlyInline";
 import AiImageBadge from "@/components/AiImageBadge";
+import { FloorPlanSection } from "@/components/FloorPlan/FloorPlanSection";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp, springs, staggerChild, staggerParent } from "./motion";
 
@@ -424,7 +425,7 @@ const FEATURE_TRIO_CONTENT: Record<Lang, FeatureTrioCard[]> = {
         "Statt Anrufe und E-Mail-Ketten sieht der Auftraggeber selbst nach: Live-Status pro Raum, Grundriss mit Farbcodes, Team vor Ort, offene Tickets. Der Ton mit Ihren Kunden ändert sich, ohne dass Sie ein Wort mehr sagen müssen.",
       image: "/sections/feature-taskey-share.png",
       alt: "Auftraggeber-Portal mit Live-Grundriss und Raumstatus",
-      href: "/enterprise",
+      href: "https://taskey-share.de",
       detailsLabel: "Details ansehen",
     },
   ],
@@ -456,7 +457,7 @@ const FEATURE_TRIO_CONTENT: Record<Lang, FeatureTrioCard[]> = {
         "Instead of calls and email chains, the client looks in themselves: live status per room, floor plan with colour codes, team on site, open tickets. The tone with your clients shifts without you having to say a word more.",
       image: "/sections/feature-taskey-share.png",
       alt: "Client portal with live floor plan and room status",
-      href: "/enterprise",
+      href: "https://taskey-share.de/en",
       detailsLabel: "See details",
     },
   ],
@@ -488,7 +489,7 @@ const FEATURE_TRIO_CONTENT: Record<Lang, FeatureTrioCard[]> = {
         "Fini les appels et les chaînes d’e-mails, le client regarde lui-même : statut en direct par salle, plan avec codes couleur, équipe sur site, tickets ouverts. Le ton avec vos clients change sans que vous ayez à dire un mot de plus.",
       image: "/sections/feature-taskey-share.png",
       alt: "Portail donneur d’ordre avec plan en direct et statut par salle",
-      href: "/enterprise",
+      href: "https://taskey-share.de/fr",
       detailsLabel: "Voir les détails",
     },
   ],
@@ -510,6 +511,7 @@ function FeatureTrio() {
           >
             <Link
               href={feat.href}
+              {...(/^https?:\/\//.test(feat.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="tk-glass block h-full group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-[var(--tk-radius-panel)]"
               style={{
                 borderRadius: "var(--tk-radius-panel)",
@@ -1901,6 +1903,88 @@ const LIVE_MARGIN_CONTENT: Record<Lang, {
   },
 };
 
+/* ──────────────────────────────────────────────────────────────────────────
+ * Section — Taskey Share Demo (interaktiver Grundriss)
+ * Nutzt die FloorPlanSection-Komponente aus components/FloorPlan
+ * ────────────────────────────────────────────────────────────────────────── */
+
+const TASKEY_SHARE_HEADER: Record<Lang, { eyebrow: string; title: string; body: string; cta: string; ctaHref: string }> = {
+  de: {
+    eyebrow: "Taskey Share",
+    title: "So sieht Ihr Auftraggeber Ihre Leistung.",
+    body:
+      "Ihr Auftraggeber öffnet einen Link, ohne Login und ohne App. Er sieht den Live-Status jedes Raums, wer gerade vor Ort ist, offene Tickets und Rechnungen. Probieren Sie es selbst — klicken Sie sich durch den Beispiel-Grundriss.",
+    cta: "Zur Taskey Share Website",
+    ctaHref: "https://taskey-share.de",
+  },
+  en: {
+    eyebrow: "Taskey Share",
+    title: "This is how your client sees your work.",
+    body:
+      "Your client opens a link — no login, no app. They see the live status of every room, who is on site right now, open tickets and invoices. Try it yourself — click through the sample floor plan.",
+    cta: "Go to the Taskey Share website",
+    ctaHref: "https://taskey-share.de/en",
+  },
+  fr: {
+    eyebrow: "Taskey Share",
+    title: "Voici comment votre client voit votre travail.",
+    body:
+      "Votre client ouvre un lien, sans connexion et sans application. Il voit le statut en direct de chaque pièce, qui est sur place, les tickets ouverts et les factures. Essayez vous-même — cliquez à travers le plan d'exemple.",
+    cta: "Voir le site Taskey Share",
+    ctaHref: "https://taskey-share.de/fr",
+  },
+};
+
+function TaskeyShareDemoSection() {
+  const { language } = useLanguage();
+  const c = TASKEY_SHARE_HEADER[language];
+  return (
+    <section className="relative bg-white">
+      <SectionShell size="md" tone="canvas">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={staggerParent}
+          className="max-w-3xl flex flex-col gap-5 mb-10 md:mb-14"
+        >
+          <motion.p
+            variants={staggerChild}
+            className="text-[10px] sm:text-xs font-black tracking-[0.3em] uppercase text-blue-700"
+          >
+            {c.eyebrow}
+          </motion.p>
+          <motion.h2
+            variants={staggerChild}
+            className="tk-headline text-slate-900"
+            style={{ fontSize: "clamp(1.9rem, 3.6vw, 3rem)" }}
+          >
+            {c.title}
+          </motion.h2>
+          <motion.p
+            variants={staggerChild}
+            className="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl"
+          >
+            {c.body}
+          </motion.p>
+          <motion.a
+            variants={staggerChild}
+            href={c.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-600 transition self-start"
+          >
+            {c.cta}
+            <span aria-hidden>→</span>
+          </motion.a>
+        </motion.div>
+      </SectionShell>
+
+      <FloorPlanSection />
+    </section>
+  );
+}
+
 function LiveMargenSection() {
   const { language } = useLanguage();
   const c = LIVE_MARGIN_CONTENT[language];
@@ -2571,7 +2655,7 @@ export default function HomeShell() {
       <SoloPackageStrip />
       <AudiencesSection />
       <TestimonialsSection />
-      <LiveMargenSection />
+      <TaskeyShareDemoSection />
       <IOSAppRedesignSection />
       <AblaufRedesignSection />
       <FAQRedesignSection />
