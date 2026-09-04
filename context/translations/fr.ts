@@ -190,7 +190,7 @@ const translations: Record<string, string> = {
     "footer.rights": "Tous droits réservés.",
     "footer.cookie": "Paramètrès des cookies",
     "footer.madeIn": "🇩🇪 Fabriqué en Allemagne",
-    "footer.aiNotice": "Mention conforme à l’EU AI Act, article 50 : les images de ce site portant le badge « Généré par IA » ont été créées avec des modèles d’IA générative. Les photographies de personnes et d’objets réels sont signalées comme telles ou apparaissent sans badge.",
+    "footer.aiNotice": "Ce site et certaines images ont été créés avec l'aide de l'IA.",
 
     // Footer extra (USP blocks + extended columns)
     "footer.usp.tag": "Taskey",

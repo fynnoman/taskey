@@ -190,7 +190,7 @@ const translations: Record<string, string> = {
     "footer.rights": "Alle Rechte vorbehalten.",
     "footer.cookie": "Cookie-Einstellungen",
     "footer.madeIn": "🇩🇪 Made in Germany",
-    "footer.aiNotice": "Hinweis nach EU AI Act, Artikel 50: Bilder auf dieser Website, die mit einem \"KI-generiert\"-Badge gekennzeichnet sind, wurden mit generativen KI-Modellen erstellt. Alle Fotografien echter Personen und Objekte sind entsprechend gekennzeichnet oder liegen ohne Badge vor.",
+    "footer.aiNotice": "Diese Website und vereinzelte Bilder wurden mit Hilfe von KI erstellt.",
 
     // Footer extra (USP blocks + extended columns)
     "footer.usp.tag": "Taskey",

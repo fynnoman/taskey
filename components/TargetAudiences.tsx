@@ -3,7 +3,6 @@
 import Link from "@/components/LocaleLink";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import AiImageBadge from "@/components/AiImageBadge";
 
 /**
  * TargetAudiences
@@ -521,7 +520,6 @@ export default function TargetAudiences({
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-slate-950/20" />
-                <AiImageBadge position="top-right" />
               </div>
 
               {/* Progress-Bar */}

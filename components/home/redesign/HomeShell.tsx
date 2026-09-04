@@ -11,7 +11,6 @@ import PhoneAtAGlance from "./PhoneAtAGlance";
 import DashboardMarge from "./DashboardMarge";
 import FaqBoard from "./FaqBoard";
 import CalendlyInline from "./CalendlyInline";
-import AiImageBadge from "@/components/AiImageBadge";
 import { FloorPlanSection } from "@/components/FloorPlan/FloorPlanSection";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp, springs, staggerChild, staggerParent } from "./motion";
@@ -539,7 +538,6 @@ function FeatureTrio() {
                       "linear-gradient(180deg, rgba(15,23,42,0) 40%, rgba(15,23,42,0.55) 100%)",
                   }}
                 />
-                <AiImageBadge position="top-right" />
                 <div style={{ position: "absolute", left: "20px", bottom: "18px" }}>
                   <Eyebrow tone="light">{feat.eyebrow}</Eyebrow>
                 </div>
@@ -1074,7 +1072,6 @@ function CommunicationUSPSection() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
-              <AiImageBadge position="top-right" />
             </div>
             <div style={{ padding: "clamp(20px, 2.4vw, 28px)" }}>
               <h3
@@ -1234,7 +1231,6 @@ function AllInOneSection() {
                 >
                   {slide.tag}
                 </div>
-                <AiImageBadge position="top-right" variant="ghost" />
               </div>
               <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
                 <h3
@@ -1482,7 +1478,6 @@ function AudiencesSection() {
                     "linear-gradient(180deg, rgba(2,6,23,0) 40%, rgba(2,6,23,0.75) 100%)",
                 }}
               />
-              <AiImageBadge position="top-right" />
             </div>
             <div style={{ padding: "22px", flex: 1, display: "flex", flexDirection: "column", gap: "14px" }}>
               <div>
@@ -2557,7 +2552,6 @@ function BridgeParallax({
       strength={160}
       overlay="linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0.75) 100%)"
     >
-      <AiImageBadge position="top-right" />
       {quote ? (
         <div
           className="tk-container-wide"
